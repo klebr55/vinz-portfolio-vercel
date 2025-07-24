@@ -77,13 +77,13 @@ export async function generateMetadata({
       siteName: "Kleber Vinicius Portfolio",
       images: [
         {
-          url: 'https://klebervinicius.dev/KV-logo.svg',
+          url: 'https://klebervinicius.dev/KV-logo.png',
           width: 1200,
           height: 630,
           alt: isPortuguese 
             ? 'Logo do Portfólio Kleber Vinicius'
             : 'Kleber Vinicius Portfolio Logo',
-          type: 'image/svg+xml',
+          type: 'image/png',
         },
       ],
     },
@@ -95,7 +95,7 @@ export async function generateMetadata({
       description: isPortuguese
         ? "Desenvolvedor Web Front-End criando experiências web excepcionais"
         : "Front-End Web Developer creating exceptional web experiences",
-      images: ['https://klebervinicius.dev/KV-logo.svg'],
+      images: ['https://klebervinicius.dev/KV-logo.png'],
     },
     alternates: {
       canonical: `/${locale}`,
@@ -188,7 +188,6 @@ export default async function LocaleLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="theme-color" content="#000319" />
-        <meta property="og:image" content="/KV-logo.svg"></meta>
         <link rel="icon" href="/kv-favicon.svg" />
       </head>
       <body className={`${inter.className} antialiased`}>
