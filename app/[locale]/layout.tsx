@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Inter } from 'next/font/google';
 import "../globals.css";
 import "../animista.css"
 import { ThemeProvider } from "@/components/theme/provider";
@@ -6,13 +7,80 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import WebVitals from "@/components/WebVitals";
 
-// Forçar renderização estática
-export const dynamic = 'force-static';
+// Configuração da fonte Inter otimizada
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter',
+});
 
-export const metadata: Metadata = {
-  title: "Kleber Vinicius's Portfolio",
-  description: "Modern & Minimalist JS Portfolio",
-};
+// Static generation com ISR para revalidação automática
+export const revalidate = 3600; // Revalida a cada hora
+
+// Gerar metadata dinâmica baseada no locale
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  
+  const isPortuguese = locale === 'pt-br';
+  
+  return {
+    title: isPortuguese 
+      ? "Portfólio Kleber Vinicius | Desenvolvedor Full Stack"
+      : "Kleber Vinicius's Portfolio | Full Stack Developer",
+    description: isPortuguese
+      ? "Desenvolvedor Full Stack especializado em React, Next.js e tecnologias modernas. Criando experiências web excepcionais."
+      : "Full Stack Developer specialized in React, Next.js and modern technologies. Creating exceptional web experiences.",
+    keywords: isPortuguese
+      ? "desenvolvedor, full stack, react, nextjs, javascript, typescript, portfolio"
+      : "developer, full stack, react, nextjs, javascript, typescript, portfolio",
+    authors: [{ name: "Kleber Vinicius" }],
+    creator: "Kleber Vinicius",
+    publisher: "Kleber Vinicius",
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    openGraph: {
+      type: 'website',
+      locale: locale === 'pt-br' ? 'pt_BR' : 'en_US',
+      title: isPortuguese 
+        ? "Portfólio Kleber Vinicius"
+        : "Kleber Vinicius's Portfolio",
+      description: isPortuguese
+        ? "Desenvolvedor Full Stack criando experiências web excepcionais"
+        : "Full Stack Developer creating exceptional web experiences",
+      siteName: "Kleber Vinicius Portfolio",
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: isPortuguese 
+        ? "Portfólio Kleber Vinicius"
+        : "Kleber Vinicius's Portfolio",
+      description: isPortuguese
+        ? "Desenvolvedor Full Stack criando experiências web excepcionais"
+        : "Full Stack Developer creating exceptional web experiences",
+    },
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        'en': '/en',
+        'pt-BR': '/pt-br',
+      },
+    },
+  };
+}
 
 // Função necessária para export estático com rotas dinâmicas
 export function generateStaticParams() {
@@ -39,22 +107,25 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   
   return (
-    <html lang={validLocale} suppressHydrationWarning>
+    <html lang={validLocale} suppressHydrationWarning className={inter.variable}>
       <head>
-        {/* Preload critical resources */}
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" as="style" />
+        {/* Preconnect para melhor performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Critical CSS inlined */}
+        {/* Critical CSS inlined para above-the-fold */}
         <style dangerouslySetInnerHTML={{
           __html: `
+            :root {
+              --font-inter: ${inter.style.fontFamily};
+            }
             /* Critical above-the-fold styles */
             body { 
-              font-family: Inter, sans-serif; 
+              font-family: var(--font-inter), system-ui, -apple-system, sans-serif; 
               margin: 0; 
               background: #000319;
               color: white;
+              font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
             }
             .hero-section { 
               min-height: 100vh; 
@@ -62,7 +133,7 @@ export default async function LocaleLayout({
               align-items: center; 
               justify-content: center; 
             }
-            /* Loading states */
+            /* Loading states otimizados */
             .loading-skeleton {
               background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
               background-size: 200% 100%;
@@ -72,31 +143,24 @@ export default async function LocaleLayout({
               0% { background-position: 200% 0; }
               100% { background-position: -200% 0; }
             }
+            /* Smooth scrolling e performance */
+            html {
+              scroll-behavior: smooth;
+            }
+            * {
+              scrollbar-width: thin;
+              scrollbar-color: #4b5563 transparent;
+            }
           `
         }} />
         
-        {/* Load non-critical CSS after render - using media query hack */}
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" 
-          rel="stylesheet" 
-          media="print" 
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Switch font loading to all media after page load
-              window.addEventListener('load', function() {
-                const fontLink = document.querySelector('link[media="print"]');
-                if (fontLink) fontLink.media = 'all';
-              });
-            `
-          }}
-        />
-        <noscript>
-          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-        </noscript>
+        {/* Meta tags para performance e SEO */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="theme-color" content="#000319" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className="font-inter antialiased">
+      <body className={`${inter.className} antialiased`}>
         <NextIntlClientProvider 
           locale={validLocale} 
           messages={messages}

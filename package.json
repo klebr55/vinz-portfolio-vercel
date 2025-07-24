@@ -5,11 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "analyze": "ANALYZE=true npm run build",
+    "build:analyze": "cross-env ANALYZE=true npm run build",
     "optimize-svgs": "node scripts/optimize-svgs.js",
     "performance-budget": "node scripts/performance-budget.js",
-    "start": "next start",
-    "lint": "next lint"
+    "type-check": "tsc --noEmit",
+    "preview": "npm run build && npm run start",
+    "clean": "rimraf .next out",
+    "vercel-build": "npm run clean && npm run build"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",

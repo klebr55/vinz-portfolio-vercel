@@ -1,17 +1,34 @@
 import createMiddleware from 'next-intl/middleware';
 
-// Cria middleware com configuração para export estático
+// Middleware otimizado para Vercel com detecção de locale
 export default createMiddleware({
-  // Lista explícita de locales
   locales: ['en', 'pt-br'],
   defaultLocale: 'en',
-  // Desabilitar detecção automática para export estático
-  localeDetection: false,
-  localePrefix: 'always' // Sempre mostra o prefix do locale nas URLs
+  // Reabilitar detecção automática para melhor UX na Vercel
+  localeDetection: true,
+  localePrefix: 'always',
+  // Estratégia de redirecionamento otimizada
+  pathnames: {
+    '/': '/',
+    '/about': {
+      en: '/about',
+      'pt-br': '/sobre'
+    }
+  }
 });
 
-// Define os padrões que o middleware deve interceptar
+// Configuração otimizada para Vercel
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ['/', '/(pt-br|en)/:path*']
+  // Matcher otimizado para performance
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * - public folder
+     */
+    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)'
+  ]
 };
