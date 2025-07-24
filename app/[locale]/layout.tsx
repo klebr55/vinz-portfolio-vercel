@@ -189,6 +189,14 @@ export default async function LocaleLayout({
         <meta name="format-detection" content="telephone=no" />
         <meta name="theme-color" content="#000319" />
         <meta property="og:image" content="https://klebervinicius.dev/KV-logo.png" />
+        <meta name="description" content={validLocale === 'pt-br' 
+          ? "Desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas. Criando experiências web excepcionais."
+          : "Front-End Web Developer specialized in React, Next.js and modern technologies. Creating exceptional web experiences."
+        } />
+        <meta name="keywords" content={validLocale === 'pt-br'
+          ? "desenvolvedor web, desenvolvedor, front-end, react, nextjs, javascript, typescript, portfolio"
+          : "web developer, developer, front-end, react, nextjs, javascript, typescript, portfolio"
+        } />
         <link rel="icon" href="/kv-favicon.svg" />
       </head>
       <body className={`${inter.className} antialiased`}>
