@@ -30,6 +30,7 @@ export async function generateMetadata({
   const isPortuguese = locale === 'pt-br';
   
   return {
+    metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
     title: isPortuguese 
       ? "Portfólio Kleber Vinicius | Desenvolvedor Full Stack"
       : "Kleber Vinicius's Portfolio | Full Stack Developer",
@@ -63,6 +64,16 @@ export async function generateMetadata({
         ? "Desenvolvedor Full Stack criando experiências web excepcionais"
         : "Full Stack Developer creating exceptional web experiences",
       siteName: "Kleber Vinicius Portfolio",
+      images: [
+        {
+          url: '/KV-logo.svg',
+          width: 1200,
+          height: 630,
+          alt: isPortuguese 
+            ? 'Logo do Portfólio Kleber Vinicius'
+            : 'Kleber Vinicius Portfolio Logo',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
@@ -72,6 +83,7 @@ export async function generateMetadata({
       description: isPortuguese
         ? "Desenvolvedor Full Stack criando experiências web excepcionais"
         : "Full Stack Developer creating exceptional web experiences",
+      images: ['/KV-logo.svg'],
     },
     alternates: {
       canonical: `/${locale}`,

@@ -86,12 +86,43 @@ export async function generateMetadata({
   const isPortuguese = locale === 'pt-br';
   
   return {
+    metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
     title: isPortuguese 
       ? "Kleber Vinicius | Desenvolvedor Web Front-End" 
       : "Kleber Vinicius | Front-End Web Developer",
     description: isPortuguese
       ? "Portfólio de Kleber Vinicius, desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas."
       : "Portfolio of Kleber Vinicius, Front-End Web Developer specialized in React, Next.js and modern technologies.",
+    openGraph: {
+      title: isPortuguese 
+        ? "Kleber Vinicius | Desenvolvedor Web Front-End" 
+        : "Kleber Vinicius | Front-End Web Developer",
+      description: isPortuguese
+        ? "Portfólio de Kleber Vinicius, desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas."
+        : "Portfolio of Kleber Vinicius, Front-End Web Developer specialized in React, Next.js and modern technologies.",
+      images: [
+        {
+          url: '/KV-logo.svg',
+          width: 512,
+          height: 512,
+          alt: isPortuguese 
+            ? 'Logo do Portfólio Kleber Vinicius'
+            : 'Kleber Vinicius Portfolio Logo',
+        },
+      ],
+      type: 'website',
+      locale: locale === 'pt-br' ? 'pt_BR' : 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: isPortuguese 
+        ? "Kleber Vinicius | Desenvolvedor Web Front-End" 
+        : "Kleber Vinicius | Front-End Web Developer",
+      description: isPortuguese
+        ? "Portfólio de Kleber Vinicius, desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas."
+        : "Portfolio of Kleber Vinicius, Front-End Web Developer specialized in React, Next.js and modern technologies.",
+      images: ['/KV-logo.svg'],
+    },
   };
 }
 
