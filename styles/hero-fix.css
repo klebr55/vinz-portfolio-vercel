@@ -1,0 +1,66 @@
+/* Hero Height Fix - Específico para corrigir problema de altura */
+
+/* 
+  IMPORTANTE: Este CSS garante que o hero mantenha altura original 
+  removendo qualquer interferência de outros CSS de performance
+*/
+
+/* 1. Remover qualquer contain que possa estar interferindo */
+.hero-section,
+.hero-section * {
+  contain: none !important;
+}
+
+/* 2. Garantir altura completa do hero background */
+.hero-section .absolute.flex.h-screen,
+.hero-section .h-screen {
+  height: 100vh !important;
+  min-height: 100vh !important;
+  max-height: none !important;
+}
+
+/* 3. Preservar altura específica dos spotlights */
+.hero-section .spotlight {
+  height: 100vh !important;
+}
+
+.hero-section .spotlight[class*="h-[80vh]"],
+.hero-section .h-\[80vh\] {
+  height: 80vh !important;
+  min-height: 80vh !important;
+}
+
+/* 4. Garantir que o container principal mantenha altura */
+.hero-section {
+  min-height: unset !important;
+  height: auto !important;
+  /* Remover qualquer restrição que possa estar aplicada */
+  max-height: none !important;
+}
+
+/* 5. Override para Tailwind utilities que podem estar sendo sobrescritas */
+.hero-section .min-h-screen {
+  min-height: 100vh !important;
+}
+
+/* 6. Garantir que padding não seja alterado */
+.hero-section.pb-20 {
+  padding-bottom: 5rem !important; /* pb-20 = 5rem */
+}
+
+.hero-section.pt-36 {
+  padding-top: 9rem !important; /* pt-36 = 9rem */
+}
+
+/* 7. Preservar flexbox behavior */
+.hero-section .flex {
+  display: flex !important;
+}
+
+.hero-section .items-center {
+  align-items: center !important;
+}
+
+.hero-section .justify-center {
+  justify-content: center !important;
+}

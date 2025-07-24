@@ -1,0 +1,160 @@
+{
+  "hero": {
+    "subtitle": "Next.js em Ação",
+    "title": "Transformando Ideias em Experiências Incríveis",
+    "description": "Oi! Eu sou o Kleber Vinícius, desenvolvedor Next.js lá do Brasil.",
+    "button": "Veja meus projetos"
+  },
+  "navigation": {
+    "items": [
+      "Sobre mim",
+      "Projetos",
+      "Depoimentos",
+      "Fale comigo"
+    ]
+  },
+  "grid": {
+    "items": [
+      {
+        "title": "Gosto de trabalhar de perto com o cliente, com muita transparência",
+        "description": ""
+      },
+      {
+        "title": "Disponível para conversas em qualquer fuso",
+        "description": ""
+      },
+      {
+        "title": "Minhas tecnologias",
+        "description": "Sempre aprendendo algo novo"
+      },
+      {
+        "title": "Apaixonado por código e inovação",
+        "description": ""
+      },
+      {
+        "title": "Hoje estou criando uma biblioteca de animações em JavaScript",
+        "description": "Quer saber os detalhes? Te conto tudo nos bastidores"
+      },
+      {
+        "title": "Vamos tocar um projeto juntos?",
+        "description": ""
+      }
+    ],
+    "copyEmail": "Copiar e-mail",
+    "emailCopied": "E-mail copiado com sucesso!"
+  },
+  "projects": {
+    "heading": {
+      "prefix": "Dê uma olhada em alguns dos meus",
+      "highlight": "projetos recentes"
+    },
+    "checkLiveSite": "Acessar site",
+    "items": [
+      {
+        "title": "NKS CONNECT",
+        "description": "Website feito para uma plataforma de criações de Website por assinatura."
+      },
+      {
+        "title": "Milan Móveis",
+        "description": "Website feito sob medida para uma das maiores empresas de venda de móveis do Centro-Oeste."
+      },
+      {
+        "title": "Sincad-MT",
+        "description": "Website feito para o Sindicato do Comércio Atacadista e Distribuidor do Estado de Mato Grosso em parceria com a Fecomércio-MT."
+      },
+      {
+        "title": "Criactive Design",
+        "description": "Website feito para a Criactive Design, uma agência de desenvolvimento de Websites."
+      }
+    ]
+  },
+  "clients": {
+    "heading": {
+      "prefix": "O que falam sobre",
+      "highlight": "meu trabalho"
+    },
+    "testimonials": [
+      {
+        "content": "Trabalhar em projetos com o Kleber Vinícius é sempre uma experiência verdadeiramente construtiva e inovadora. Sua notável capacidade de aprendizado e constante renovação de conhecimento são qualidades que agregam imensa confiança e garantem a alta qualidade na entrega de seus serviços.",
+        "name": "João Paulo da Silva",
+        "title": "Gestor de Relacionamento e Projetos da Aequilibrio Sistemas"
+      },
+      {
+        "content": "Trabalhar com o Adrian foi sensacional! Profissionalismo, rapidez e aquele cuidado com cada detalhe fizeram toda a diferença. Se você quer dar um upgrade no seu site e na sua marca, pode apostar no Adrian sem medo.",
+        "name": "Michael Johnson",
+        "title": "Diretor da AlphaStream Technologies"
+      },
+      {
+        "content": "Trabalhar com o Adrian foi sensacional! Profissionalismo, rapidez e aquele cuidado com cada detalhe fizeram toda a diferença. Se você quer dar um upgrade no seu site e na sua marca, pode apostar no Adrian sem medo.",
+        "name": "Michael Johnson",
+        "title": "Diretor da AlphaStream Technologies"
+      },
+      {
+        "content": "Trabalhar com o Adrian foi sensacional! Profissionalismo, rapidez e aquele cuidado com cada detalhe fizeram toda a diferença. Se você quer dar um upgrade no seu site e na sua marca, pode apostar no Adrian sem medo.",
+        "name": "Michael Johnson",
+        "title": "Diretor da AlphaStream Technologies"
+      },
+      {
+        "content": "Trabalhar com o Adrian foi sensacional! Profissionalismo, rapidez e aquele cuidado com cada detalhe fizeram toda a diferença. Se você quer dar um upgrade no seu site e na sua marca, pode apostar no Adrian sem medo.",
+        "name": "Michael Johnson",
+        "title": "Diretor da AlphaStream Technologies"
+      }
+    ]
+  },
+  "experience": {
+    "heading": {
+      "prefix": "Minha",
+      "highlight": "trajetória"
+    },
+    "jobs": [
+      {
+        "title": "Estagiário de Frontend",
+        "desc": "Colaborei no desenvolvimento de uma plataforma web com React.js, deixando tudo mais interativo."
+      },
+      {
+        "title": "Desenvolvedor Mobile - JSM Tech",
+        "desc": "Projetei e desenvolvi apps para iOS e Android usando React Native."
+      },
+      {
+        "title": "Projeto Freelance de App",
+        "desc": "Liderei um projeto de app do zero, desde a ideia até a publicação nas lojas."
+      },
+      {
+        "title": "Lead Frontend Developer",
+        "desc": "Criei e mantive funcionalidades modernas, focado na melhor experiência para o usuário."
+      }
+    ]
+  },
+  "approach": {
+    "heading": {
+      "prefix": "Meu",
+      "highlight": "jeito de trabalhar"
+    },
+    "phases": [
+      {
+        "order": "Etapa 1",
+        "title": "Descoberta e Planejamento",
+        "description": "Primeiro, entendo seus objetivos, público e expectativas. Depois, criamos juntos um plano estratégico que faça sentido."
+      },
+      {
+        "order": "Etapa 2",
+        "title": "Desenvolvimento e Feedback",
+        "description": "Com tudo definido, coloco minha playlist de lo-fi para tocar e começo a codar. Sempre te mantendo por dentro do progresso."
+      },
+      {
+        "order": "Etapa 3",
+        "title": "Finalização e Lançamento",
+        "description": "Hora de transformar o design em código de verdade e entregar uma experiência impecável para seu público."
+      }
+    ]
+  },
+  "footer": {
+    "heading": {
+      "prefix": "Pronto para levar",
+      "highlight": "sua marca ao próximo nível?"
+    },
+    "subheading": "Fale comigo agora e vamos conversar sobre como realizar seus objetivos.",
+    "contactButton": "Vamos lá!",
+    "copyright": "Copyright © 2025 Kleber Vinícius"
+  }
+}
