@@ -93,6 +93,15 @@ export async function generateMetadata({
     description: isPortuguese
       ? "Portfólio de Kleber Vinicius, desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas."
       : "Portfolio of Kleber Vinicius, Front-End Web Developer specialized in React, Next.js and modern technologies.",
+    // Adicionando favicon com kv-favicon.svg
+    icons: {
+      icon: [
+        { url: '/kv-favicon.svg', type: 'image/svg+xml' },
+        { url: '/kv-favicon.svg', sizes: '32x32' },
+      ],
+      apple: '/kv-favicon.svg',
+      shortcut: '/kv-favicon.svg',
+    },
     openGraph: {
       title: isPortuguese 
         ? "Kleber Vinicius | Desenvolvedor Web Front-End" 

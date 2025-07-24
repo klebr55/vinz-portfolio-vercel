@@ -32,14 +32,14 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
     title: isPortuguese 
-      ? "Portfólio Kleber Vinicius | Desenvolvedor Full Stack"
-      : "Kleber Vinicius's Portfolio | Full Stack Developer",
+      ? "Portfólio Kleber Vinicius | Desenvolvedor Web Front-End"
+      : "Kleber Vinicius's Portfolio | Front-End Web Developer",
     description: isPortuguese
-      ? "Desenvolvedor Full Stack especializado em React, Next.js e tecnologias modernas. Criando experiências web excepcionais."
-      : "Full Stack Developer specialized in React, Next.js and modern technologies. Creating exceptional web experiences.",
+      ? "Desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas. Criando experiências web excepcionais."
+      : "Front-End Web Developer specialized in React, Next.js and modern technologies. Creating exceptional web experiences.",
     keywords: isPortuguese
-      ? "desenvolvedor, full stack, react, nextjs, javascript, typescript, portfolio"
-      : "developer, full stack, react, nextjs, javascript, typescript, portfolio",
+      ? "desenvolvedor web, desenvolvedor, front-end, react, nextjs, javascript, typescript, portfolio"
+      : "web developer, developer, front-end, react, nextjs, javascript, typescript, portfolio",
     authors: [{ name: "Kleber Vinicius" }],
     creator: "Kleber Vinicius",
     publisher: "Kleber Vinicius",
@@ -54,6 +54,16 @@ export async function generateMetadata({
         'max-snippet': -1,
       },
     },
+    icons: {
+      icon: [
+        { url: '/kv-favicon.svg', type: 'image/svg+xml' },
+        { url: '/kv-favicon.svg', sizes: 'any' },
+      ],
+      apple: [
+        { url: '/kv-favicon.svg', sizes: '180x180' },
+      ],
+      shortcut: '/kv-favicon.svg',
+    },
     openGraph: {
       type: 'website',
       locale: locale === 'pt-br' ? 'pt_BR' : 'en_US',
@@ -61,14 +71,14 @@ export async function generateMetadata({
         ? "Portfólio Kleber Vinicius"
         : "Kleber Vinicius's Portfolio",
       description: isPortuguese
-        ? "Desenvolvedor Full Stack criando experiências web excepcionais"
-        : "Full Stack Developer creating exceptional web experiences",
+        ? "Desenvolvedor Web Front-End criando experiências web excepcionais"
+        : "Front-End Web Developer creating exceptional web experiences",
       siteName: "Kleber Vinicius Portfolio",
       images: [
         {
           url: '/KV-logo.svg',
-          width: 1200,
-          height: 630,
+          width: 512,
+          height: 512,
           alt: isPortuguese 
             ? 'Logo do Portfólio Kleber Vinicius'
             : 'Kleber Vinicius Portfolio Logo',
@@ -81,8 +91,8 @@ export async function generateMetadata({
         ? "Portfólio Kleber Vinicius"
         : "Kleber Vinicius's Portfolio",
       description: isPortuguese
-        ? "Desenvolvedor Full Stack criando experiências web excepcionais"
-        : "Full Stack Developer creating exceptional web experiences",
+        ? "Desenvolvedor Web Front-End criando experiências web excepcionais"
+        : "Front-End Web Developer creating exceptional web experiences",
       images: ['/KV-logo.svg'],
     },
     alternates: {
@@ -171,7 +181,7 @@ export default async function LocaleLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="theme-color" content="#000319" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/kv-favicon.svg" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <NextIntlClientProvider 
