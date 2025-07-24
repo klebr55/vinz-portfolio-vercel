@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Metadata } from "next";
 import { Inter } from 'next/font/google';
 import "../globals.css";
@@ -7,7 +6,7 @@ import { ThemeProvider } from "@/components/theme/provider";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import WebVitals from "@/components/WebVitals";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import VercelTracking from "@/components/VercelTracking";
 
 // Configuração da fonte Inter otimizada
 const inter = Inter({
@@ -176,6 +175,7 @@ export default async function LocaleLayout({
               disableTransitionOnChange
             >
               <WebVitals />
+              <VercelTracking />
               {children}
           </ThemeProvider>
         </NextIntlClientProvider>
