@@ -15,8 +15,8 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
-// Static generation com ISR para revalidação automática
-export const revalidate = 3600; // Revalida a cada hora
+// Static generation com ISR otimizado para plano gratuito
+export const revalidate = 7200; // Revalida a cada 2 horas (mais conservador)
 
 // Gerar metadata dinâmica baseada no locale
 export async function generateMetadata({

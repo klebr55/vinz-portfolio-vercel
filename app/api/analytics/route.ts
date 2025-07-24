@@ -1,12 +1,9 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
-// API Route para analytics e métricas em tempo real
-export async function GET(request: NextRequest) {
+// API Route simplificada para plano gratuito
+export async function GET() {
   try {
-    const { searchParams } = new URL(request.url);
-    const metric = searchParams.get('metric');
-    
-    // Simulação de dados de performance em tempo real
+    // Dados estáticos para demonstração (sem dynamic usage)
     const metrics = {
       visitors: Math.floor(Math.random() * 1000) + 500,
       pageViews: Math.floor(Math.random() * 5000) + 2000,
@@ -20,20 +17,11 @@ export async function GET(request: NextRequest) {
         { name: 'Portfolio', views: Math.floor(Math.random() * 500) + 100 },
         { name: 'E-commerce', views: Math.floor(Math.random() * 300) + 80 },
         { name: 'Dashboard', views: Math.floor(Math.random() * 200) + 50 }
-      ]
+      ],
+      timestamp: new Date().toISOString()
     };
     
-    if (metric && metrics[metric as keyof typeof metrics]) {
-      return NextResponse.json({ 
-        [metric]: metrics[metric as keyof typeof metrics],
-        timestamp: new Date().toISOString()
-      });
-    }
-    
-    return NextResponse.json({ 
-      ...metrics,
-      timestamp: new Date().toISOString()
-    });
+    return NextResponse.json(metrics);
     
   } catch (error) {
     console.error('Analytics API error:', error);
@@ -44,6 +32,6 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// Cache configurado para Vercel
-export const runtime = 'edge';
-export const revalidate = 60; // Revalida a cada minuto
+// Configuração otimizada para plano gratuito da Vercel
+export const runtime = 'nodejs';
+export const revalidate = 300; // Revalida a cada 5 minutos (mais conservador)

@@ -48,5 +48,5 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Configuração para Vercel Edge Runtime
-export const runtime = 'edge';
+// Configuração para plano gratuito da Vercel
+export const runtime = 'nodejs';

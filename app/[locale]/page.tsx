@@ -73,8 +73,8 @@ const Footer = NextDynamic(() => import("@/components/Footer"), {
   ),
 });
 
-// ISG - Incremental Static Generation com revalidação
-export const revalidate = 3600; // Revalida a cada hora
+// ISG - Incremental Static Generation com revalidação conservadora
+export const revalidate = 7200; // Revalida a cada 2 horas
 
 // Metadata dinâmica para SEO otimizado
 export async function generateMetadata({
