@@ -30,7 +30,7 @@ export async function generateMetadata({
   const isPortuguese = locale === 'pt-br';
   
   return {
-    metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
+    metadataBase: new URL('https://klebervinicius.dev'),
     title: isPortuguese 
       ? "Portfólio Kleber Vinicius | Desenvolvedor Web Front-End"
       : "Kleber Vinicius's Portfolio | Front-End Web Developer",
@@ -66,22 +66,24 @@ export async function generateMetadata({
     },
     openGraph: {
       type: 'website',
+      url: `https://klebervinicius.dev/${locale}`,
       locale: locale === 'pt-br' ? 'pt_BR' : 'en_US',
       title: isPortuguese 
-        ? "Portfólio Kleber Vinicius"
-        : "Kleber Vinicius's Portfolio",
+        ? "Portfólio Kleber Vinicius | Desenvolvedor Web Front-End"
+        : "Kleber Vinicius's Portfolio | Front-End Web Developer",
       description: isPortuguese
-        ? "Desenvolvedor Web Front-End criando experiências web excepcionais"
-        : "Front-End Web Developer creating exceptional web experiences",
+        ? "Desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas. Criando experiências web excepcionais."
+        : "Front-End Web Developer specialized in React, Next.js and modern technologies. Creating exceptional web experiences.",
       siteName: "Kleber Vinicius Portfolio",
       images: [
         {
-          url: '/KV-logo.svg',
-          width: 512,
-          height: 512,
+          url: 'https://klebervinicius.dev/KV-logo.svg',
+          width: 1200,
+          height: 630,
           alt: isPortuguese 
             ? 'Logo do Portfólio Kleber Vinicius'
             : 'Kleber Vinicius Portfolio Logo',
+          type: 'image/svg+xml',
         },
       ],
     },
@@ -93,7 +95,7 @@ export async function generateMetadata({
       description: isPortuguese
         ? "Desenvolvedor Web Front-End criando experiências web excepcionais"
         : "Front-End Web Developer creating exceptional web experiences",
-      images: ['/KV-logo.svg'],
+      images: ['https://klebervinicius.dev/KV-logo.svg'],
     },
     alternates: {
       canonical: `/${locale}`,
@@ -101,6 +103,11 @@ export async function generateMetadata({
         'en': '/en',
         'pt-BR': '/pt-br',
       },
+    },
+    other: {
+      'fb:app_id': '123456789', // Substitua pelo seu Facebook App ID quando tiver
+      'og:url': `https://klebervinicius.dev/${locale}`,
+      'og:site_name': 'Kleber Vinicius Portfolio',
     },
   };
 }
