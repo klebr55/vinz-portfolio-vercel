@@ -87,11 +87,11 @@ export async function generateMetadata({
   
   return {
     title: isPortuguese 
-      ? "Kleber Vinicius | Desenvolvedor Full Stack" 
-      : "Kleber Vinicius | Full Stack Developer",
+      ? "Kleber Vinicius | Desenvolvedor Web Front-End" 
+      : "Kleber Vinicius | Front-End Web Developer",
     description: isPortuguese
-      ? "Portfólio de Kleber Vinicius, desenvolvedor Full Stack especializado em React, Next.js e tecnologias modernas."
-      : "Portfolio of Kleber Vinicius, Full Stack Developer specialized in React, Next.js and modern technologies.",
+      ? "Portfólio de Kleber Vinicius, desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas."
+      : "Portfolio of Kleber Vinicius, Front-End Web Developer specialized in React, Next.js and modern technologies.",
   };
 }
 
