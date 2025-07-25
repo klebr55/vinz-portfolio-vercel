@@ -89,7 +89,16 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['framer-motion', 'lucide-react', '@heroicons/react'],
   },
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+  },
   webpack: (config, { isServer }) => {
+    // Configurações do Webpack (usadas quando não usar --turbo)
     config.module.rules.push({
       test: /\.json$/,
       type: 'json'
