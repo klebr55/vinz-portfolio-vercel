@@ -111,7 +111,7 @@ export async function generateMetadata({
         : "Portfolio of Kleber Vinicius, Front-End Web Developer specialized in React, Next.js and modern technologies.",
       images: [
         {
-          url: '/KV-logo.svg',
+          url: 'https://klebervinicius.dev/KV-logo.png',
           width: 512,
           height: 512,
           alt: isPortuguese 
@@ -130,7 +130,7 @@ export async function generateMetadata({
       description: isPortuguese
         ? "Portfólio de Kleber Vinicius, desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas."
         : "Portfolio of Kleber Vinicius, Front-End Web Developer specialized in React, Next.js and modern technologies.",
-      images: ['/KV-logo.svg'],
+      images: ['https://klebervinicius.dev/KV-logo.png'],
     },
   };
 }
