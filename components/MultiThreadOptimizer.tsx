@@ -9,53 +9,50 @@ const MultiThreadOptimizer = () => {
     const memory = (navigator as unknown as { deviceMemory?: number }).deviceMemory || 4;
     const isLowEndDevice = cores <= 4 || memory < 4;
     
-    console.log('🚀 Multi-thread optimization initialized (Basic Mode)');
-    console.log(`� Device: ${cores} cores, ${isLowEndDevice ? 'Low-end' : 'High-performance'} device`);
+    console.log('🚀 Multi-thread optimization initialized (Conservative Mode)');
+    console.log(`📱 Device: ${cores} cores, ${isLowEndDevice ? 'Low-end' : 'High-performance'} device`);
 
-    // Aplica otimizações CSS baseadas no hardware
+    // Aplica otimizações CSS conservadoras baseadas no hardware
     const styleEl = document.createElement('style');
+    styleEl.id = 'multi-thread-optimizer-styles';
     
     let optimizedCSS = '';
     
     if (isLowEndDevice) {
-      // CSS otimizado para dispositivos de baixa performance
+      // CSS otimizado mais conservador para dispositivos de baixa performance
       optimizedCSS = `
-        * {
-          /* Reduz complexidade de rendering */
-          transform: translateZ(0);
-          backface-visibility: hidden;
-          perspective: 1000px;
-        }
+        /* Otimizações conservadoras para dispositivos fracos - preserva animações */
         
-        /* Desabilita animações custosas em dispositivos fracos */
-        @media (prefers-reduced-motion: reduce) {
-          *, *::before, *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-          }
-        }
-        
-        /* Otimiza scrolling */
+        /* Otimiza scrolling sem afetar animações */
         body {
           -webkit-overflow-scrolling: touch;
           overscroll-behavior: contain;
         }
         
-        /* Reduz qualidade de imagens para economizar memória */
-        img {
+        /* Otimizações de imagem apenas quando necessário */
+        img:not([class*="hero"]):not([class*="avatar"]):not([class*="logo"]) {
           image-rendering: -webkit-optimize-contrast;
-          image-rendering: -moz-crisp-edges;
-          image-rendering: crisp-edges;
+        }
+        
+        /* Força aceleração de hardware apenas em elementos específicos */
+        .scroll-element,
+        .moving-card,
+        .floating-element {
+          transform: translateZ(0);
+          backface-visibility: hidden;
+        }
+        
+        /* Preserva todas as animações do Animista e apenas otimiza as mais custosas */
+        @media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
+          .heavy-animation:not([class*="slide"]):not([class*="fade"]):not([class*="bounce"]):not([class*="flip"]):not([class*="rotate"]) {
+            animation-duration: 0.8s !important;
+          }
         }
       `;
     } else {
-      // CSS para dispositivos de alta performance
+      // CSS mínimo para dispositivos de alta performance
       optimizedCSS = `
-        /* Aproveita aceleração de hardware */
-        * {
-          will-change: auto;
-        }
+        /* Otimizações mínimas para dispositivos potentes */
         
         /* Smooth scrolling apenas em dispositivos potentes */
         html {
@@ -66,32 +63,33 @@ const MultiThreadOptimizer = () => {
         img {
           image-rendering: auto;
         }
+        
+        /* Aproveita GPU para elementos que precisam */
+        .gpu-accelerated {
+          will-change: transform;
+        }
       `;
     }
     
     styleEl.textContent = optimizedCSS;
     document.head.appendChild(styleEl);
 
-    // Adiciona meta tag para PWA em dispositivos de baixa performance
+    // Adiciona meta tag para PWA apenas em dispositivos de baixa performance
+    let pwaMeta: HTMLMetaElement | null = null;
     if (isLowEndDevice) {
-      const meta = document.createElement('meta');
-      meta.name = 'mobile-web-app-capable';
-      meta.content = 'yes';
-      document.head.appendChild(meta);
-
-      return () => {
-        if (document.head.contains(styleEl)) {
-          document.head.removeChild(styleEl);
-        }
-        if (document.head.contains(meta)) {
-          document.head.removeChild(meta);
-        }
-      };
+      pwaMeta = document.createElement('meta');
+      pwaMeta.name = 'mobile-web-app-capable';
+      pwaMeta.content = 'yes';
+      document.head.appendChild(pwaMeta);
     }
 
+    // Cleanup function
     return () => {
       if (document.head.contains(styleEl)) {
         document.head.removeChild(styleEl);
+      }
+      if (pwaMeta && document.head.contains(pwaMeta)) {
+        document.head.removeChild(pwaMeta);
       }
     };
   }, []);
