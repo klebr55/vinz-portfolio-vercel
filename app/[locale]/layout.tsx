@@ -187,7 +187,6 @@ export default async function LocaleLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="theme-color" content="#000319" />
-        <meta property="og:image" content="https://klebervinicius.dev/KV-logo.png" />
         <link rel="icon" href="/kv-favicon.svg" />
       </head>
       <body className={`${inter.className} antialiased`}>
