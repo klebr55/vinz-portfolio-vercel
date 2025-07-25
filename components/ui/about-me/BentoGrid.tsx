@@ -57,10 +57,19 @@ export const BentoGridItem = ({
   const locale = useLocale();
   const t = useTranslations('grid');
   const [copied, setCopied] = useState(false);
+  const [isSafariMobile, setIsSafariMobile] = useState(false);
   const [gridTexts, setGridTexts] = useState({
     copyEmail: 'Copy my email',
     emailCopied: 'Email copied!'
   });
+
+  useEffect(() => {
+    // Detecta Safari mobile para otimizações específicas
+    const userAgent = navigator.userAgent;
+    const isSafari = /Safari/.test(userAgent) && !/Chrome/.test(userAgent);
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(userAgent);
+    setIsSafariMobile(isSafari && isMobile);
+  }, []);
 
   useEffect(() => {
     // Força a atualização baseada no locale detectado da URL
@@ -127,20 +136,51 @@ export const BentoGridItem = ({
         </div>
         <div className={`absolute right-0 -bottom-5 ${id === 5 && 'w-full h-[510px] opacity-25 bottom-0'} ${id === 4 && 'w-full h-full !bottom-0'}`}>
                 {spareImg && (
-                    <Image
-                        src={spareImg}
-                        alt={spareImg}
-                        width={id === 4 ? 400 : 100}
-                        height={id === 4 ? 200 : 100}
-                        className={`${
-                          id === 4 
-                            ? "w-full h-full object-cover object-center opacity-80 sm:opacity-100" 
-                            : "w-full h-full object-cover object-center"
-                        }`}
-                        priority={id === 4}
-                        sizes={id === 4 ? "(max-width: 768px) 100vw, 50vw" : undefined}
-                        quality={id === 4 ? 90 : 75}
-                    />
+                    <>
+                      {/* Versão otimizada para mobile/Safari */}
+                      {id === 4 ? (
+                        <div 
+                          className="w-full h-full relative"
+                          style={{
+                            // Força hardware acceleration no Safari mobile
+                            ...(isSafariMobile ? {
+                              WebkitTransform: 'translate3d(0, 0, 0)',
+                              transform: 'translate3d(0, 0, 0)',
+                              WebkitBackfaceVisibility: 'hidden',
+                              backfaceVisibility: 'hidden',
+                            } : {})
+                          }}
+                        >
+                          <Image
+                            src={spareImg}
+                            alt="background pattern"
+                            fill
+                            className={`object-cover object-center ${isSafariMobile ? 'opacity-90' : 'opacity-80 sm:opacity-100'}`}
+                            priority
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            quality={isSafariMobile ? 75 : 85}
+                            style={{
+                              objectFit: 'cover',
+                              objectPosition: 'center',
+                              // Forçar re-renderização no Safari mobile
+                              ...(isSafariMobile ? {
+                                willChange: 'transform',
+                                WebkitTransform: 'translateZ(0)',
+                                transform: 'translateZ(0)',
+                              } : {})
+                            }}
+                          />
+                        </div>
+                      ) : (
+                        <Image
+                          src={spareImg}
+                          alt={spareImg}
+                          width={100}
+                          height={100}
+                          className="w-full h-full object-cover object-center"
+                        />
+                      )}
+                    </>
                 )}
         </div>
 
