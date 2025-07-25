@@ -78,12 +78,25 @@ export async function generateMetadata({
       siteName: "Kleber Vinicius Portfolio",
       images: [
         {
-          url: 'https://klebervinicius.dev/KV-logo.png',
+          url: `https://klebervinicius.dev/api/og?title=${encodeURIComponent(
+            'Kleber Vinicius'
+          )}&subtitle=${encodeURIComponent(
+            isPortuguese
+              ? 'Desenvolvedor Web Front-End'
+              : 'Front-End Web Developer'
+          )}`,
           width: 1200,
           height: 630,
           alt: isPortuguese 
             ? 'Kleber Vinicius - Desenvolvedor Web Front-End'
             : 'Kleber Vinicius - Front-End Web Developer',
+          type: 'image/png',
+        },
+        {
+          url: 'https://klebervinicius.dev/icon-192.png',
+          width: 192,
+          height: 192,
+          alt: 'Kleber Vinicius Logo',
           type: 'image/png',
         },
       ],
@@ -96,7 +109,13 @@ export async function generateMetadata({
       description: isPortuguese
         ? "Desenvolvedor Web Front-End criando experiências web excepcionais"
         : "Front-End Web Developer creating exceptional web experiences",
-      images: ['https://klebervinicius.dev/KV-logo.png'],
+      images: [`https://klebervinicius.dev/api/og?title=${encodeURIComponent(
+        'Kleber Vinicius'
+      )}&subtitle=${encodeURIComponent(
+        isPortuguese
+          ? 'Desenvolvedor Web Front-End'
+          : 'Front-End Web Developer'
+      )}`],
       creator: '@klebervinicius',
       site: '@klebervinicius',
     },
@@ -110,15 +129,27 @@ export async function generateMetadata({
     other: {
       'og:url': `https://klebervinicius.dev/${locale}`,
       'og:site_name': 'Kleber Vinicius Portfolio',
-      'og:image:width': '512',
-      'og:image:height': '512',
+      'og:image:width': '1200',
+      'og:image:height': '630',
       'og:image:type': 'image/png',
       'og:image:alt': isPortuguese 
         ? 'Kleber Vinicius - Desenvolvedor Web Front-End'
         : 'Kleber Vinicius - Front-End Web Developer',
       // WhatsApp específico
-      'og:image': 'https://klebervinicius.dev/KV-logo.png',
-      'og:image:secure_url': 'https://klebervinicius.dev/KV-logo.png',
+      'og:image': `https://klebervinicius.dev/api/og?title=${encodeURIComponent(
+        'Kleber Vinicius'
+      )}&subtitle=${encodeURIComponent(
+        isPortuguese
+          ? 'Desenvolvedor Web Front-End'
+          : 'Front-End Web Developer'
+      )}`,
+      'og:image:secure_url': `https://klebervinicius.dev/api/og?title=${encodeURIComponent(
+        'Kleber Vinicius'
+      )}&subtitle=${encodeURIComponent(
+        isPortuguese
+          ? 'Desenvolvedor Web Front-End'
+          : 'Front-End Web Developer'
+      )}`,
       // Facebook específico
       'fb:app_id': '', // Adicione seu Facebook App ID se tiver
       // Telegram específico
@@ -159,15 +190,35 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* Meta tags específicas para WhatsApp e redes sociais */}
-        <meta property="og:image" content="https://klebervinicius.dev/KV-logo.png" />
-        <meta property="og:image:secure_url" content="https://klebervinicius.dev/KV-logo.png" />
+        <meta property="og:image" content={`https://klebervinicius.dev/api/og?title=${encodeURIComponent(
+          'Kleber Vinicius'
+        )}&subtitle=${encodeURIComponent(
+          validLocale === 'pt-br'
+            ? 'Desenvolvedor Web Front-End'
+            : 'Front-End Web Developer'
+        )}`} />
+        <meta property="og:image:secure_url" content={`https://klebervinicius.dev/api/og?title=${encodeURIComponent(
+          'Kleber Vinicius'
+        )}&subtitle=${encodeURIComponent(
+          validLocale === 'pt-br'
+            ? 'Desenvolvedor Web Front-End'
+            : 'Front-End Web Developer'
+        )}`} />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="512" />
-        <meta property="og:image:height" content="512" />
-        <meta name="twitter:image" content="https://klebervinicius.dev/KV-logo.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content={`https://klebervinicius.dev/api/og?title=${encodeURIComponent(
+          'Kleber Vinicius'
+        )}&subtitle=${encodeURIComponent(
+          validLocale === 'pt-br'
+            ? 'Desenvolvedor Web Front-End'
+            : 'Front-End Web Developer'
+        )}`} />
+        <meta name="twitter:image:alt" content={validLocale === 'pt-br' ? 'Kleber Vinicius - Desenvolvedor Web' : 'Kleber Vinicius - Web Developer'} />
         
         {/* Força o WhatsApp a recarregar a imagem */}
         <meta property="og:updated_time" content={new Date().toISOString()} />
+        <meta property="article:modified_time" content={new Date().toISOString()} />
         
         {/* DNS prefetch para melhor performance */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />

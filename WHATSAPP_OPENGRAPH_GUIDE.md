@@ -11,7 +11,8 @@
 ### 2. **Estrutura de Metadata**
 - **Title**: Título dinâmico baseado no idioma
 - **Description**: Descrição otimizada para cada idioma  
-- **Image**: Logo KV-logo.png (512x512px, 439KB)
+- **Image**: API dinâmica `/api/og` (1200x630px, otimizada)
+- **Fallback**: icon-192.png (192x192px, 755 bytes)
 - **URL**: URLs canônicas com locale
 
 ### 3. **Arquivos de SEO**
@@ -38,6 +39,9 @@
 ### Método 3: API de Teste
 Acesse: `https://klebervinicius.dev/api/test-og?url=https://klebervinicius.dev`
 
+### Método 4: Imagem OpenGraph Direta
+Visualize: `https://klebervinicius.dev/api/og?title=Kleber%20Vinicius&subtitle=Front-End%20Web%20Developer`
+
 ## 🔄 Cache do WhatsApp
 
 O WhatsApp faz cache das previews por até 7 dias. Para forçar atualização:
@@ -59,10 +63,25 @@ O WhatsApp faz cache das previews por até 7 dias. Para forçar atualização:
 
 ### ✅ Checklist WhatsApp
 - [x] Imagem acessível via HTTPS
-- [x] Dimensões adequadas (512x512px)
-- [x] Tamanho otimizado (<1MB)
+- [x] Dimensões ideais (1200x630px para OpenGraph)
+- [x] Tamanho otimizado (<100KB via API)
 - [x] Meta tags duplicadas removidas
 - [x] URLs sem redirecionamentos
+- [x] Fallback de imagem (icon-192.png)
+
+## 🔄 Problemas Identificados e Soluções
+
+### ❌ Problema: Imagem muito grande
+- **Causa**: KV-logo.png (439KB) é muito pesada
+- **Solução**: API `/api/og` gera imagem otimizada dinamicamente
+
+### ❌ Problema: Dimensões inadequadas  
+- **Causa**: 512x512px não é ideal para redes sociais
+- **Solução**: 1200x630px (padrão OpenGraph) + fallback 192x192px
+
+### ❌ Problema: Cache do WhatsApp
+- **Causa**: WhatsApp cacheia por 7 dias
+- **Solução**: URL dinâmica com parâmetros únicos
 
 ## 🚀 Melhorias Futuras
 
@@ -77,12 +96,19 @@ O WhatsApp faz cache das previews por até 7 dias. Para forçar atualização:
 - Teste URL em ferramentas de debug
 - Aguarde até 24h para propagação
 
-### Problema: Imagem não carrega
-- Confirme URL absoluta com HTTPS
-- Verifique se imagem é acessível publicamente
-- Teste dimensões e formato (PNG/JPG)
+### Problema: Imagem não carrega (RESOLVIDO)
+- ❌ **Antes**: KV-logo.png (439KB, 512x512px)
+- ✅ **Agora**: API `/api/og` (otimizada, 1200x630px)
+- ✅ **Fallback**: icon-192.png (755 bytes, 192x192px)
+- **Teste a imagem**: `https://klebervinicius.dev/api/og?title=Test&subtitle=Preview`
 
 ### Problema: Título/descrição errados
 - Limpe cache das ferramentas de debug
-- Adicione parâmetro único na URL
+- Adicione parâmetro único na URL: `?v=2025`
 - Verifique meta tags no código fonte
+
+### ⚡ Forçar Atualização no WhatsApp
+1. **URL com timestamp**: `https://klebervinicius.dev?t=` + timestamp atual
+2. **Limpe cache Facebook**: https://developers.facebook.com/tools/debug/
+3. **Aguarde 1-2 horas** para propagação
+4. **Teste em novo chat** no WhatsApp
