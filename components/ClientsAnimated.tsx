@@ -37,7 +37,7 @@ const ClientsAnimated = () => {
     
     const testimonialsData = isPortuguese ? [
       {
-        quote: 'Conheci o Kleber quando ele ainda dava os primeiros passos na carreira e me orgulho demais de ver seu crescimento como profissional e ser humano. Ele não só entrega, mas supera expectativas — seja em projetos complexos, prazos apertados ou desafios inéditos — sempre com seriedade e maestria técnica.',
+        quote: 'Conheci o Kleber quando ele ainda dava os primeiros passos na carreira e me orgulho demais de ver seu crescimento como profissional e ser humano. Ele não só entrega, mas supera expectativas seja em projetos complexos, prazos apertados ou desafios inéditos, sempre com seriedade e maestria técnica.',
         name: 'Éder Lemes',
         designation: 'Coordenador de Inovação e Projetos na SEPLAG-MT',
         src: '/Eder.svg',
