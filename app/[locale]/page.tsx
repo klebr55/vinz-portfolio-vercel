@@ -27,7 +27,7 @@ const RecentProjects = NextDynamic(() => import("@/components/RecentProjects"), 
   ),
 });
 
-const Clients = NextDynamic(() => import("@/components/Clients"), {
+const Clients = NextDynamic(() => import("@/components/ClientsAnimated"), {
   loading: () => (
     <div className="h-64 flex items-center justify-center">
       <div className="loading-skeleton w-full max-w-4xl h-32 rounded-lg"></div>
