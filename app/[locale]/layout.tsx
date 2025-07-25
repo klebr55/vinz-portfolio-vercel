@@ -7,6 +7,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import WebVitals from "@/components/WebVitals";
 import VercelTracking from "@/components/VercelTracking";
+import ClientMultiThreadOptimizer from '@/components/ClientMultiThreadOptimizer';
 
 // Configuração da fonte Inter otimizada
 const inter = Inter({
@@ -202,6 +203,7 @@ export default async function LocaleLayout({
               enableSystem
               disableTransitionOnChange
             >
+              <ClientMultiThreadOptimizer />
               <WebVitals />
               <VercelTracking />
               {children}

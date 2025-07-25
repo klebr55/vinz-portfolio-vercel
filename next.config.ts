@@ -30,6 +30,23 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        source: '/workers/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'Cross-Origin-Embedder-Policy',
+            value: 'require-corp',
+          },
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin',
+          },
+        ],
+      },
+      {
         source: '/(.*)',
         headers: [
           {
