@@ -3,7 +3,7 @@ import { navItems } from "@/data";
 import NextDynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 
-// Dynamic imports otimizados para SSR/SSG
+// Dynamic imports com estratégia otimizada para mobile
 const Grid = NextDynamic(() => import("@/components/Grid"), {
   loading: () => (
     <div className="h-screen flex items-center justify-center">
