@@ -451,3 +451,25 @@ html {
     );
   }
 }
+
+/* Fix para renderização de background no mobile (especialmente Safari iOS) */
+.bento-grid-item {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.bento-grid-item img {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+/* Força hardware acceleration no Safari mobile */
+@media screen and (-webkit-min-device-pixel-ratio: 1) {
+  .bento-grid-item {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}

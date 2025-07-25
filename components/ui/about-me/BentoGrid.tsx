@@ -103,7 +103,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        `group/bento shadow-input row-span-1 overflow-hidden flex flex-col ${id === 3 ? 'justify-center' : 'justify-between'} space-y-4 relative rounded-3xl transition duration-200 hover:shadow-xl dark:shadow-none border border-white/[0.1]`,
+        `group/bento bento-grid-item shadow-input row-span-1 overflow-hidden flex flex-col ${id === 3 ? 'justify-center' : 'justify-between'} space-y-4 relative rounded-3xl transition duration-200 hover:shadow-xl dark:shadow-none border border-white/[0.1]`,
         className
       )}
       style={{
@@ -130,9 +130,16 @@ export const BentoGridItem = ({
                     <Image
                         src={spareImg}
                         alt={spareImg}
-                        width={100}
-                        height={100}
-                        className="w-full h-full object-cover object-center"
+                        width={id === 4 ? 400 : 100}
+                        height={id === 4 ? 200 : 100}
+                        className={`${
+                          id === 4 
+                            ? "w-full h-full object-cover object-center opacity-80 sm:opacity-100" 
+                            : "w-full h-full object-cover object-center"
+                        }`}
+                        priority={id === 4}
+                        sizes={id === 4 ? "(max-width: 768px) 100vw, 50vw" : undefined}
+                        quality={id === 4 ? 90 : 75}
                     />
                 )}
         </div>
