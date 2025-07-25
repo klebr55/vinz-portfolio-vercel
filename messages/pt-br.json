@@ -108,19 +108,19 @@
     },
     "jobs": [
       {
-        "title": "Estagiário de Frontend",
-        "desc": "Colaborei no desenvolvimento de uma plataforma web com React.js, deixando tudo mais interativo."
+        "title": "Aluno do Senac",
+        "desc": "Comecei fazendo cursos do Senac relacionados a Desenvolvimento Web."
       },
       {
-        "title": "Desenvolvedor Mobile - JSM Tech",
-        "desc": "Projetei e desenvolvi apps para iOS e Android usando React Native."
+        "title": "Meu primeiro projeto",
+        "desc": "Me destaquei dentro do Senac e fui convidado para desenvolver meu primeiro projeto real para a Fecomércio-MT."
       },
       {
-        "title": "Projeto Freelance de App",
-        "desc": "Liderei um projeto de app do zero, desde a ideia até a publicação nas lojas."
+        "title": "Trabalhos em equipe",
+        "desc": "Comecei a colaborar com Desenvolvedores Web Back-End no desenvolvimento de um site completo com CMS Customizado."
       },
       {
-        "title": "Lead Frontend Developer",
+        "title": "Desenvolvedor Web Front-End",
         "desc": "Criei e mantive funcionalidades modernas, focado na melhor experiência para o usuário."
       }
     ]
