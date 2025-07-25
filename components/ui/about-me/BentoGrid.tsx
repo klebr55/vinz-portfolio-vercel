@@ -208,18 +208,18 @@ export const BentoGridItem = ({
           <div className="flex gap-1 lg:gap-5 w-fit absolute right-1 lg:right-1">
               <div className="flex flex-col mb-3 lg:mb-4 gap-3 lg:gap-8">
                   {['React.js', 'Next.js', 'Typescript'].map((item) => (
-                      <span key={item} className="py-2 lg:py-3.5 lg:px-3 px-3 text-xs lg:text-base opacity-100 text-center text-shadow-black glass-card">
+                      <span key={item} className="py-2 lg:py-3.5 lg:px-3 px-3 text-xs lg:text-base opacity-100 text-center text-shadow-black glass-card backdrop-blur-sm">
                           <span className="relative z-10">{item}</span>
                       </span>
                   ))}
-                  <span className="py-2 hidden lg:py-3.5 lg:px-3 px-3 text-xs lg:text-base opacity-100 text-center text-shadow-black glass-card sm:hidden">
+                  <span className="py-2 hidden lg:py-3.5 lg:px-3 px-3 text-xs lg:text-base opacity-100 text-center text-shadow-black glass-card backdrop-blur-sm sm:hidden">
                   </span>
               </div>
               <div className="flex flex-col mt-3 lg:mt-4 gap-3 lg:gap-8">
-                  <span className="py-2 hidden lg:py-3.5 lg:px-3 px-3 text-xs lg:text-base opacity-100 text-center text-shadow-black glass-card">
+                  <span className="py-2 hidden lg:py-3.5 lg:px-3 px-3 text-xs lg:text-base opacity-100 text-center text-shadow-black glass-card backdrop-blur-sm">
                   </span>
                   {['Bootstrap 5', 'TailwindCSS', 'jQuery'].map((item) => (
-                      <span key={item} className="py-2 lg:py-3.5 lg:px-3 px-3 text-xs lg:text-base opacity-100 text-center text-shadow-black glass-card">
+                      <span key={item} className="py-2 lg:py-3.5 lg:px-3 px-3 text-xs lg:text-base opacity-100 text-center text-shadow-black glass-card backdrop-blur-sm">
                           <span className="relative z-10">{item}</span>
                       </span>
                   ))}
