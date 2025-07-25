@@ -82,8 +82,8 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           alt: isPortuguese 
-            ? 'Logo do Portfólio Kleber Vinicius'
-            : 'Kleber Vinicius Portfolio Logo',
+            ? 'Kleber Vinicius - Desenvolvedor Web Front-End'
+            : 'Kleber Vinicius - Front-End Web Developer',
           type: 'image/png',
         },
       ],
@@ -97,6 +97,8 @@ export async function generateMetadata({
         ? "Desenvolvedor Web Front-End criando experiências web excepcionais"
         : "Front-End Web Developer creating exceptional web experiences",
       images: ['https://klebervinicius.dev/KV-logo.png'],
+      creator: '@klebervinicius',
+      site: '@klebervinicius',
     },
     alternates: {
       canonical: `/${locale}`,
@@ -105,9 +107,22 @@ export async function generateMetadata({
         'pt-BR': '/pt-br',
       },
     },
-    other: { // Substitua pelo seu Facebook App ID quando tiver
+    other: {
       'og:url': `https://klebervinicius.dev/${locale}`,
       'og:site_name': 'Kleber Vinicius Portfolio',
+      'og:image:width': '512',
+      'og:image:height': '512',
+      'og:image:type': 'image/png',
+      'og:image:alt': isPortuguese 
+        ? 'Kleber Vinicius - Desenvolvedor Web Front-End'
+        : 'Kleber Vinicius - Front-End Web Developer',
+      // WhatsApp específico
+      'og:image': 'https://klebervinicius.dev/KV-logo.png',
+      'og:image:secure_url': 'https://klebervinicius.dev/KV-logo.png',
+      // Facebook específico
+      'fb:app_id': '', // Adicione seu Facebook App ID se tiver
+      // Telegram específico
+      'telegram:channel': '@klebervinicius',
     },
   };
 }
@@ -142,6 +157,21 @@ export default async function LocaleLayout({
         {/* Preconnect para melhor performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Meta tags específicas para WhatsApp e redes sociais */}
+        <meta property="og:image" content="https://klebervinicius.dev/KV-logo.png" />
+        <meta property="og:image:secure_url" content="https://klebervinicius.dev/KV-logo.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="512" />
+        <meta property="og:image:height" content="512" />
+        <meta name="twitter:image" content="https://klebervinicius.dev/KV-logo.png" />
+        
+        {/* Força o WhatsApp a recarregar a imagem */}
+        <meta property="og:updated_time" content={new Date().toISOString()} />
+        
+        {/* DNS prefetch para melhor performance */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         
         {/* Critical CSS inlined para above-the-fold */}
         <style dangerouslySetInnerHTML={{

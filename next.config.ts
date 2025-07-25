@@ -30,6 +30,19 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        source: '/api/og',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400, s-maxage=86400',
+          },
+          {
+            key: 'Content-Type',
+            value: 'image/png',
+          },
+        ],
+      },
+      {
         source: '/workers/:path*',
         headers: [
           {
