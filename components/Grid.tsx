@@ -34,8 +34,8 @@ const Grid = () => {
       description: ""
     },
     {
-      title: "Lead Developer of NKS Criactive Design™",
-      description: "Leading innovative projects"
+      title: "Front-End Web Developer",
+      description: "Freelancer in collaboration with NKS Criactive Design™"
     },
     {
       title: "Do you want to hire me or maybe start a project together?",
@@ -81,8 +81,8 @@ const Grid = () => {
           description: ""
         },
         {
-          title: "Lead Developer da NKS Criactive Design™",
-          description: "Liderando projetos inovadores"
+          title: "Desenvolvedor Web Front-End",
+          description: "Freelancer em colaboração com a NKS Criactive Design™"
         },
         {
           title: "Quer me contratar ou quem sabe iniciar um projeto juntos?",
@@ -116,8 +116,8 @@ const Grid = () => {
           description: ""
         },
         {
-          title: "Lead Developer of NKS Criactive Design™",
-          description: "Leading innovative projects"
+          title: "Front-End Web Developer",
+          description: "Freelancer in collaboration with NKS Criactive Design™"
         },
         {
           title: "Do you want to hire me or maybe start a project together?",
