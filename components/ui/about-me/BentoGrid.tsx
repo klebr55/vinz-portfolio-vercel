@@ -218,7 +218,7 @@ export const BentoGridItem = ({
               <div className="flex flex-col mt-3 lg:mt-4 gap-3 lg:gap-8">
                   <span className="py-2 hidden lg:py-3.5 lg:px-3 px-3 text-xs lg:text-base opacity-100 text-center text-shadow-black glass-card backdrop-blur-sm">
                   </span>
-                  {['Bootstrap 5', 'TailwindCSS', 'jQuery'].map((item) => (
+                  {['Node.js', 'TailwindCSS', 'Three.js'].map((item) => (
                       <span key={item} className="py-2 lg:py-3.5 lg:px-3 px-3 text-xs lg:text-base opacity-100 text-center text-shadow-black glass-card backdrop-blur-sm">
                           <span className="relative z-10">{item}</span>
                       </span>
