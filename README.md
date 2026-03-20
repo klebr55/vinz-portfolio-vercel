@@ -24,7 +24,7 @@
 
 ---
 
-## �🇧 English Version
+## 🇬🇧 English Version
 
 Welcome to the source code of my professional portfolio! More than just a digital resume, this application is a **statement of Frontend Engineering excellence**. It was meticulously crafted to deliver a flawless user experience (UX) and raw performance, passing strict Core Web Vitals metrics.
 
