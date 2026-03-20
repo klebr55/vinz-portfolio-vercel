@@ -88,11 +88,11 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
     title: isPortuguese 
-      ? "Kleber Vinicius | Desenvolvedor Web Front-End" 
-      : "Kleber Vinicius | Front-End Web Developer",
+      ? "Kleber Vinicius | Desenvolvedor Web Full-Stack" 
+      : "Kleber Vinicius | Full-Stack Web Developer",
     description: isPortuguese
-      ? "Portfólio de Kleber Vinicius, desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas."
-      : "Portfolio of Kleber Vinicius, Front-End Web Developer specialized in React, Next.js and modern technologies.",
+      ? "Portfólio de Kleber Vinicius, desenvolvedor Web Full-Stack especializado em React, Next.js e tecnologias modernas."
+      : "Portfolio of Kleber Vinicius, Full-Stack Web Developer specialized in React, Next.js and modern technologies.",
     // Adicionando favicon com kv-favicon.svg
     icons: {
       icon: [
@@ -104,11 +104,11 @@ export async function generateMetadata({
     },
     openGraph: {
       title: isPortuguese 
-        ? "Kleber Vinicius | Desenvolvedor Web Front-End" 
-        : "Kleber Vinicius | Front-End Web Developer",
+        ? "Kleber Vinicius | Desenvolvedor Web Full-Stack" 
+        : "Kleber Vinicius | Full-Stack Web Developer",
       description: isPortuguese
-        ? "Portfólio de Kleber Vinicius, desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas."
-        : "Portfolio of Kleber Vinicius, Front-End Web Developer specialized in React, Next.js and modern technologies.",
+        ? "Portfólio de Kleber Vinicius, desenvolvedor Web Full-Stack especializado em React, Next.js e tecnologias modernas."
+        : "Portfolio of Kleber Vinicius, Full-Stack Web Developer specialized in React, Next.js and modern technologies.",
       images: [
         {
           url: 'https://klebervinicius.dev/KV-logo.png',
@@ -125,11 +125,11 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: isPortuguese 
-        ? "Kleber Vinicius | Desenvolvedor Web Front-End" 
-        : "Kleber Vinicius | Front-End Web Developer",
+        ? "Kleber Vinicius | Desenvolvedor Web Full-Stack" 
+        : "Kleber Vinicius | Full-Stack Web Developer",
       description: isPortuguese
-        ? "Portfólio de Kleber Vinicius, desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas."
-        : "Portfolio of Kleber Vinicius, Front-End Web Developer specialized in React, Next.js and modern technologies.",
+        ? "Portfólio de Kleber Vinicius, desenvolvedor Web Full-Stack especializado em React, Next.js e tecnologias modernas."
+        : "Portfolio of Kleber Vinicius, Full-Stack Web Developer specialized in React, Next.js and modern technologies.",
       images: ['https://klebervinicius.dev/KV-logo.png'],
     },
   };
