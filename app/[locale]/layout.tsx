@@ -33,14 +33,14 @@ export async function generateMetadata({
   return {
     metadataBase: new URL('https://klebervinicius.dev'),
     title: isPortuguese 
-      ? "Portfólio Kleber Vinicius | Desenvolvedor Web Front-End"
-      : "Kleber Vinicius's Portfolio | Front-End Web Developer",
+      ? "Portfólio Kleber Vinicius | Desenvolvedor Web Full-Stack"
+      : "Kleber Vinicius's Portfolio | Full-Stack Web Developer",
     description: isPortuguese
-      ? "Desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas. Criando experiências web excepcionais."
-      : "Front-End Web Developer specialized in React, Next.js and modern technologies. Creating exceptional web experiences.",
+      ? "Desenvolvedor Web Full-Stack especializado em React, Next.js e tecnologias modernas. Criando experiências web excepcionais."
+      : "Full-Stack Web Developer specialized in React, Next.js and modern technologies. Creating exceptional web experiences.",
     keywords: isPortuguese
-      ? "desenvolvedor web, desenvolvedor, front-end, react, nextjs, javascript, typescript, portfolio"
-      : "web developer, developer, front-end, react, nextjs, javascript, typescript, portfolio",
+      ? "desenvolvedor web, desenvolvedor, full-stack, react, nextjs, javascript, typescript, portfolio"
+      : "web developer, developer, full-stack, react, nextjs, javascript, typescript, portfolio",
     authors: [{ name: "Kleber Vinicius" }],
     creator: "Kleber Vinicius",
     publisher: "Kleber Vinicius",
@@ -70,11 +70,11 @@ export async function generateMetadata({
       url: `https://klebervinicius.dev/${locale}`,
       locale: locale === 'pt-br' ? 'pt_BR' : 'en_US',
       title: isPortuguese 
-        ? "Portfólio Kleber Vinicius | Desenvolvedor Web Front-End"
-        : "Kleber Vinicius's Portfolio | Front-End Web Developer",
+        ? "Portfólio Kleber Vinicius | Desenvolvedor Web Full-Stack"
+        : "Kleber Vinicius's Portfolio | Full-Stack Web Developer",
       description: isPortuguese
-        ? "Desenvolvedor Web Front-End especializado em React, Next.js e tecnologias modernas. Criando experiências web excepcionais."
-        : "Front-End Web Developer specialized in React, Next.js and modern technologies. Creating exceptional web experiences.",
+        ? "Desenvolvedor Web Full-Stack especializado em React, Next.js e tecnologias modernas. Criando experiências web excepcionais."
+        : "Full-Stack Web Developer specialized in React, Next.js and modern technologies. Creating exceptional web experiences.",
       siteName: "Kleber Vinicius Portfolio",
       images: [
         {
@@ -82,14 +82,14 @@ export async function generateMetadata({
             'Kleber Vinicius'
           )}&subtitle=${encodeURIComponent(
             isPortuguese
-              ? 'Desenvolvedor Web Front-End'
-              : 'Front-End Web Developer'
+              ? 'Desenvolvedor Web Full-Stack'
+              : 'Full-Stack Web Developer'
           )}`,
           width: 1200,
           height: 630,
           alt: isPortuguese 
-            ? 'Kleber Vinicius - Desenvolvedor Web Front-End'
-            : 'Kleber Vinicius - Front-End Web Developer',
+            ? 'Kleber Vinicius - Desenvolvedor Web Full-Stack'
+            : 'Kleber Vinicius - Full-Stack Web Developer',
           type: 'image/png',
         },
         {
@@ -107,14 +107,14 @@ export async function generateMetadata({
         ? "Portfólio Kleber Vinicius"
         : "Kleber Vinicius's Portfolio",
       description: isPortuguese
-        ? "Desenvolvedor Web Front-End criando experiências web excepcionais"
-        : "Front-End Web Developer creating exceptional web experiences",
+        ? "Desenvolvedor Web Full-Stack criando experiências web excepcionais"
+        : "Full-Stack Web Developer creating exceptional web experiences",
       images: [`https://klebervinicius.dev/api/og?title=${encodeURIComponent(
         'Kleber Vinicius'
       )}&subtitle=${encodeURIComponent(
         isPortuguese
-          ? 'Desenvolvedor Web Front-End'
-          : 'Front-End Web Developer'
+          ? 'Desenvolvedor Web Full-Stack'
+          : 'Full-Stack Web Developer'
       )}`],
       creator: '@klebervinicius',
       site: '@klebervinicius',
@@ -133,22 +133,22 @@ export async function generateMetadata({
       'og:image:height': '630',
       'og:image:type': 'image/png',
       'og:image:alt': isPortuguese 
-        ? 'Kleber Vinicius - Desenvolvedor Web Front-End'
-        : 'Kleber Vinicius - Front-End Web Developer',
+        ? 'Kleber Vinicius - Desenvolvedor Web Full-Stack'
+        : 'Kleber Vinicius - Full-Stack Web Developer',
       // WhatsApp específico
       'og:image': `https://klebervinicius.dev/api/og?title=${encodeURIComponent(
         'Kleber Vinicius'
       )}&subtitle=${encodeURIComponent(
         isPortuguese
-          ? 'Desenvolvedor Web Front-End'
-          : 'Front-End Web Developer'
+          ? 'Desenvolvedor Web Full-Stack'
+          : 'Full-Stack Web Developer'
       )}`,
       'og:image:secure_url': `https://klebervinicius.dev/api/og?title=${encodeURIComponent(
         'Kleber Vinicius'
       )}&subtitle=${encodeURIComponent(
         isPortuguese
-          ? 'Desenvolvedor Web Front-End'
-          : 'Front-End Web Developer'
+          ? 'Desenvolvedor Web Full-Stack'
+          : 'Full-stack Web Developer'
       )}`,
       // Facebook específico
       'fb:app_id': '', // Adicione seu Facebook App ID se tiver
@@ -194,15 +194,15 @@ export default async function LocaleLayout({
           'Kleber Vinicius'
         )}&subtitle=${encodeURIComponent(
           validLocale === 'pt-br'
-            ? 'Desenvolvedor Web Front-End'
-            : 'Front-End Web Developer'
+            ? 'Desenvolvedor Web Full-Stack'
+            : 'Full-Stack Web Developer'
         )}`} />
         <meta property="og:image:secure_url" content={`https://klebervinicius.dev/api/og?title=${encodeURIComponent(
           'Kleber Vinicius'
         )}&subtitle=${encodeURIComponent(
           validLocale === 'pt-br'
-            ? 'Desenvolvedor Web Front-End'
-            : 'Front-End Web Developer'
+            ? 'Desenvolvedor Web Full-Stack'
+            : 'Full-Stack Web Developer'
         )}`} />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
@@ -211,8 +211,8 @@ export default async function LocaleLayout({
           'Kleber Vinicius'
         )}&subtitle=${encodeURIComponent(
           validLocale === 'pt-br'
-            ? 'Desenvolvedor Web Front-End'
-            : 'Front-End Web Developer'
+            ? 'Desenvolvedor Web Full-Stack'
+            : 'Full-Stack Web Developer'
         )}`} />
         <meta name="twitter:image:alt" content={validLocale === 'pt-br' ? 'Kleber Vinicius - Desenvolvedor Web' : 'Kleber Vinicius - Web Developer'} />
         
