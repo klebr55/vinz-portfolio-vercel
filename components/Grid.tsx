@@ -34,7 +34,7 @@ const Grid = () => {
       description: ""
     },
     {
-      title: "Front-End Web Developer",
+      title: "Full-Stack Web Developer",
       description: "Freelancer in collaboration with NKS Criactive Design™"
     },
     {
@@ -81,7 +81,7 @@ const Grid = () => {
           description: ""
         },
         {
-          title: "Desenvolvedor Web Front-End",
+          title: "Desenvolvedor Web Full-Stack",
           description: "Freelancer em colaboração com a NKS Criactive Design™"
         },
         {
@@ -116,7 +116,7 @@ const Grid = () => {
           description: ""
         },
         {
-          title: "Front-End Web Developer",
+          title: "Full-Stack Web Developer",
           description: "Freelancer in collaboration with NKS Criactive Design™"
         },
         {
