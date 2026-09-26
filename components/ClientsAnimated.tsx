@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect, useState } from 'react'
+import React from 'react'
+import { useLocale } from 'next-intl'
 import { AnimatedTestimonials } from './ui/testimonials/animated-testimonials'
 import { companies } from '@/data'
 import Image from 'next/image'
@@ -21,21 +22,26 @@ interface ClientTexts {
 }
 
 const ClientsAnimated = () => {
-  // Estado inicial vazio
-  const [clientTexts, setClientTexts] = useState<ClientTexts>({
-    heading: {
-      prefix: '',
-      highlight: ''
-    },
-    testimonials: []
-  });
+  /*
+   * The testimonial text below is the published wording and attribution and is
+   * left byte-for-byte as it shipped.
+   *
+   * What changed is only how the language is chosen. This used to start from an
+   * empty useState and fill it in a useEffect that read
+   * window.location.pathname, with an `if (testimonials.length === 0) return
+   * null` guard above the markup. On the server that guard always hit, so the
+   * whole section (including id="testimonials") was missing from the HTML and
+   * the navbar's #testimonials link pointed at nothing until hydration.
+   *
+   * messages/*.json does carry a clients.testimonials block, but it is stale:
+   * five entries in an older shape (content/name/title) with no photo or
+   * LinkedIn. Wiring to it would silently replace real, attributed testimonials
+   * with older copy, so the data stays here and only the locale source moved.
+   */
+  const locale = useLocale();
+  const isPortuguese = locale === 'pt-br';
 
-  useEffect(() => {
-    // Detecta o idioma baseado na URL atual
-    const currentPath = window.location.pathname;
-    const isPortuguese = currentPath.includes('/pt-br');
-    
-    const testimonialsData = isPortuguese ? [
+  const testimonialsData: Testimonial[] = isPortuguese ? [
       {
         quote: 'Conheci o Kleber quando ele ainda dava os primeiros passos na carreira e me orgulho demais de ver seu crescimento como profissional e ser humano. Ele não só entrega, mas supera expectativas seja em projetos complexos, prazos apertados ou desafios inéditos, sempre com seriedade e maestria técnica.',
         name: 'Éder Lemes',
@@ -81,22 +87,12 @@ const ClientsAnimated = () => {
       }
     ];
     
-    setClientTexts({
-      heading: isPortuguese ? {
-        prefix: 'O que os clientes dizem sobre',
-        highlight: 'meu trabalho'
-      } : {
-        prefix: 'What clients say about',
-        highlight: 'my work'
-      },
-      testimonials: testimonialsData
-    });
-  }, []);
-
-  // Não renderiza nada até que os dados sejam carregados
-  if (clientTexts.testimonials.length === 0) {
-    return null;
-  }
+  const clientTexts: ClientTexts = {
+    heading: isPortuguese
+      ? { prefix: 'O que os clientes dizem sobre', highlight: 'meu trabalho' }
+      : { prefix: 'What clients say about', highlight: 'my work' },
+    testimonials: testimonialsData,
+  };
 
   return (
     <div className='py-20 scroll-mt-28' id='testimonials'>

@@ -1,7 +1,7 @@
 "use client";
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
@@ -22,6 +22,7 @@ export const AnimatedTestimonials = ({
 }) => {
   const [active, setActive] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -35,24 +36,29 @@ export const AnimatedTestimonials = ({
     return index === active;
   };
 
+  // Autoplay stops for hover, for keyboard focus inside the carousel, and
+  // entirely under prefers-reduced-motion. Rotating quotes on their own timer
+  // is motion the user did not ask for, and WCAG requires a way to stop it.
   useEffect(() => {
-    if (autoplay && !isPaused) {
-      const interval = setInterval(() => {
-        setActive((prev) => (prev + 1) % testimonials.length);
-      }, 6000); // 6 segundos para dar tempo de ler
-      return () => clearInterval(interval);
-    }
-  }, [autoplay, isPaused, testimonials.length]);
+    if (!autoplay || isPaused || reduceMotion) return;
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % testimonials.length);
+    }, 6000); // 6 segundos para dar tempo de ler
+    return () => clearInterval(interval);
+  }, [autoplay, isPaused, reduceMotion, testimonials.length]);
 
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
-  };
+  // Was Math.random() called during render, which gave the server and the
+  // client different angles and mismatched on hydration. Deterministic per
+  // card, and flat when motion is reduced.
+  const tiltFor = (index: number) => (reduceMotion ? 0 : [-8, 5, -3, 7, -6][index % 5]);
 
   return (
-    <div 
+    <div
       className="mx-auto max-w-sm px-4 py-10 font-sans antialiased md:max-w-6xl md:px-8 lg:px-12"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={() => setIsPaused(false)}
     >
       <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2 lg:gap-32">
         {/* Coluna das imagens */}
@@ -66,13 +72,13 @@ export const AnimatedTestimonials = ({
                     opacity: 0,
                     scale: 0.9,
                     z: -100,
-                    rotate: randomRotateY(),
+                    rotate: tiltFor(index),
                   }}
                   animate={{
                     opacity: isActive(index) ? 1 : 0.7,
                     scale: isActive(index) ? 1 : 0.95,
                     z: isActive(index) ? 0 : -100,
-                    rotate: isActive(index) ? 0 : randomRotateY(),
+                    rotate: isActive(index) ? 0 : tiltFor(index),
                     zIndex: isActive(index)
                       ? 40
                       : testimonials.length + 2 - index,
@@ -82,7 +88,7 @@ export const AnimatedTestimonials = ({
                     opacity: 0,
                     scale: 0.9,
                     z: 100,
-                    rotate: randomRotateY(),
+                    rotate: tiltFor(index),
                   }}
                   transition={{
                     duration: 0.4,
