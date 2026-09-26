@@ -113,4 +113,4 @@ Auditoria das regras atuais: links de idioma têm nome, idioma, `aria-current` e
 3. Na Fase 4, testar 1024×768, 390×844, foco durante scroll, teclado/touch, WebGL indisponível e registrar evidências por seção.
 4. Criar commit de checkpoint da fundação; não houve push, merge nem publicação.
 
-Decisões D01–D05 permanecem pendentes. Commit local de P1 será registrado após a criação; sem push, merge ou publicação. A branch remota permanece em `c381d4fd300e366cc335a85edb9b26713a7324e7`.
+Decisões D01–D05 permanecem pendentes. Commit local da implementação P1: `e6bb64988c0f06d121f3a5b593c11e892c7b59bb` (`fix: restore portfolio foundation`). Worktree limpo após o commit; nenhuma publicação ou merge. A branch remota permanece em `c381d4fd300e366cc335a85edb9b26713a7324e7`.
