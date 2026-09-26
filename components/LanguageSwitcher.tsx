@@ -84,7 +84,17 @@ export default function LanguageSwitcher() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <MenuButton className="inline-flex w-full justify-center gap-x-1 rounded-lg pl-1 py-2 text-sm font-semibold text-white shadow-xs border-none focus:outline-none focus:ring-0">
+        {/*
+          The trigger's only content is a flag span (a CSS background, so no
+          text) plus an aria-hidden chevron, which left it with an empty
+          accessible name: assistive tech announced just "button". It also had
+          focus:outline-none focus:ring-0, removing the focus indicator with no
+          replacement.
+        */}
+        <MenuButton
+          aria-label={currentLocale === 'pt-br' ? 'Mudar idioma, atual: Português' : 'Change language, current: English'}
+          className="inline-flex w-full justify-center gap-x-1 rounded-lg pl-1 py-2 text-sm font-semibold text-white shadow-xs border-none focus:outline-none focus-visible:ring-2 focus-visible:ring-purple focus-visible:ring-offset-2 focus-visible:ring-offset-black-100"
+        >
           <span 
             className={`${flagMap[currentLocale]} text-lg`}
             style={{ 

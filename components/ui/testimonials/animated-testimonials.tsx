@@ -3,6 +3,7 @@
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
+import { useLocale } from "next-intl";
 import Image from "next/image";
 
 type Testimonial = {
@@ -23,6 +24,18 @@ export const AnimatedTestimonials = ({
   const [active, setActive] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const reduceMotion = useReducedMotion();
+  const locale = useLocale();
+
+  // These control labels were hardcoded in Portuguese, so the English page
+  // announced "Depoimento anterior" and "Ir para depoimento 1" to assistive
+  // tech. Only visible through the accessibility tree, never in a screenshot.
+  const isPt = locale === 'pt-br';
+  const label = {
+    prev: isPt ? 'Depoimento anterior' : 'Previous testimonial',
+    next: isPt ? 'Próximo depoimento' : 'Next testimonial',
+    goTo: (n: number) => (isPt ? `Ir para depoimento ${n}` : `Go to testimonial ${n}`),
+    linkedin: (name: string) => (isPt ? `LinkedIn de ${name}` : `${name} on LinkedIn`),
+  };
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -147,7 +160,7 @@ export const AnimatedTestimonials = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors transform hover:scale-110"
-                  aria-label={`LinkedIn de ${testimonials[active].name}`}
+                  aria-label={label.linkedin(testimonials[active].name)}
                 >
                   <svg
                     width="24"
@@ -195,17 +208,17 @@ export const AnimatedTestimonials = ({
           <div className="flex gap-4 pt-12 md:pt-8">
             <button
               onClick={handlePrev}
-              className="group/button flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-              aria-label="Depoimento anterior"
+              className="group/button flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition-colors duration-300 shadow-lg hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple focus-visible:ring-offset-2 focus-visible:ring-offset-black-100"
+              aria-label={label.prev}
             >
-              <IconArrowLeft className="h-6 w-6 text-gray-600 transition-transform duration-300 group-hover/button:-translate-x-1 dark:text-neutral-400" />
+              <IconArrowLeft aria-hidden="true" className="h-6 w-6 text-gray-600 transition-transform duration-300 group-hover/button:-translate-x-1 dark:text-neutral-400" />
             </button>
             <button
               onClick={handleNext}
-              className="group/button flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-              aria-label="Próximo depoimento"
+              className="group/button flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition-colors duration-300 shadow-lg hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple focus-visible:ring-offset-2 focus-visible:ring-offset-black-100"
+              aria-label={label.next}
             >
-              <IconArrowRight className="h-6 w-6 text-gray-600 transition-transform duration-300 group-hover/button:translate-x-1 dark:text-neutral-400" />
+              <IconArrowRight aria-hidden="true" className="h-6 w-6 text-gray-600 transition-transform duration-300 group-hover/button:translate-x-1 dark:text-neutral-400" />
             </button>
           </div>
 
@@ -215,12 +228,13 @@ export const AnimatedTestimonials = ({
               <button
                 key={index}
                 onClick={() => setActive(index)}
-                className={`h-3 w-10 rounded-full transition-all duration-300 ${
+                aria-current={isActive(index)}
+                className={`h-3 w-10 rounded-full transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple focus-visible:ring-offset-2 focus-visible:ring-offset-black-100 ${
                   isActive(index)
                     ? "bg-purple-500 shadow-lg shadow-purple-500/30"
                     : "bg-gray-300 dark:bg-neutral-600 hover:bg-gray-400 dark:hover:bg-neutral-500"
                 }`}
-                aria-label={`Ir para depoimento ${index + 1}`}
+                aria-label={label.goTo(index + 1)}
               />
             ))}
           </div>
