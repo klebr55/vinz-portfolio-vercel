@@ -4,27 +4,27 @@ Estado inicial: todas as tarefas abaixo estão abertas. O Kiro relatou verifica�
 
 ## P0 · Recursos no ambiente de cada agente
 
-- [ ] Mastermind: carregar Orchestrator Pipeline, executar os sete itens abaixo em seu ambiente e registrar provas antes de orientar, revisar ou delegar implementação.
-- [ ] Worker: carregar Orchestrator Pipeline e executar independentemente os mesmos sete itens em seu ambiente antes de implementar. Se não houver delegação, o agente registra que acumula ambos os papéis.
-- [ ] shadcn MCP: chamada real para pesquisar primitivas compatíveis.
+- [ ] Mastermind: não atuo neste papel nesta sessão.
+- [ ] Worker: Orchestrator Pipeline carregado; prova de recursos incompleta porque o MCP 21st.dev não está disponível neste ambiente.
+- [x] shadcn MCP: chamada real; `components.json` não configura registries e a busca direta em `@shadcn` não encontrou item compatível.
 - [ ] 21st.dev MCP: chamada real para procurar composições pertinentes; registrar o que inspirou o trabalho.
-- [ ] Taste Skill: carregar e registrar leitura da audiência e valores de direção.
-- [ ] Build Awwwards-Quality Sites: carregar e registrar tese visual.
-- [ ] Animate: carregar e planejar função, ferramenta, interrupção e saída do movimento.
-- [ ] Vercel Web Design Guidelines: carregar regras atuais para auditoria após styling.
-- [ ] Chrome DevTools MCP: testar com chamada real. Se falhar, o proprietário autorizou o navegador nativo do agente para evidência equivalente; registrar a exceção e seguir sem laço infinito.
+- [x] Taste Skill: carregada; leitura e dials registrados no Checkpoint P1.
+- [x] Build Awwwards-Quality Sites: carregada; direção visual da fase 2 segue bloqueada pelo recurso 21st.dev ausente.
+- [x] Animate: carregada; movimento só foi mantido onde já existia; novas correções incluem saída e reduced motion.
+- [x] Vercel Web Design Guidelines: regras atuais obtidas da URL oficial para auditoria do diff.
+- [x] Chrome DevTools MCP: chamada real, inspeção de `/pt-br` e `/en`, snapshots, console, rede e screenshots.
 
 O Mastermind e o Worker usam todos os recursos para suas responsabilidades: pesquisa, direção, implementação quando pertinente e revisão. Os recursos devem ser comprovados em **cada** ambiente, mesmo que Kiro os tenha usado. Se um acesso essencial faltar, relatar qual e continuar as partes independentes. A exceção de navegador autorizada pelo proprietário prevalece sobre a regra padrão da skill de Orchestrator Pipeline que exigiria parar no gate Chrome.
 
 ## P1 · Recuperação da fundação
 
-- [ ] Inspecionar os commits `4d65d48`, `a226c78`, `78a81d7` e o diff real; preservar acertos.
-- [ ] Verificar HTML servido de `/pt-br` e `/en`: canonical, alternates, OG, `h1`, idioma inicial, CTA, âncoras e conteúdo sem JS.
-- [ ] Reproduzir/refutar as hipóteses da seção 4 de `SPEC.md`: hero após hidratação, depoimentos e reduced motion, seletor de idioma/CDN, processo touch/foco, navbar 360 px, canonical em preview, analytics simulados; corrigir problemas confirmados.
-- [ ] Executar `npm ci`, `npm run type-check`, `npm run lint`, `npm run build` e `git diff --check`. Se o script lint legado falhar pela versão de Next, executar ESLint diretamente e registrar falha e substituto.
-- [ ] Registrar tabela requisito, rota/arquivo, método, saída ou screenshot, PASS/FAIL/BLOCKED; checkpoint e commit de fase.
+- [x] Inspecionar os commits `4d65d48`, `a226c78`, `78a81d7` e o diff real; preservar acertos.
+- [x] Verificar HTML servido de `/pt-br` e `/en`: canonical, alternates, OG, `h1`, idioma inicial, CTA, âncoras e conteúdo sem JS.
+- [x] Reproduzir as hipóteses da seção 4 no escopo independente de P1; correções e limites das emulações estão no Checkpoint P1.
+- [x] Executar `npm ci`, `npm run type-check`, `npm run lint`, `npm run build` e `git diff --check`; resultados literais no Checkpoint P1.
+- [x] Registrar evidências de P1, preencher a tabela no Checkpoint P1 e criar commit local de fase.
 
-**Gate P1:** navegação e conteúdo básicos funcionam nas duas línguas. Falhas centrais impedem avanço; itens editoriais sem resposta seguem marcados como pendentes.
+**Gate P1:** concluído para a fundação funcional. As duas rotas, HTML servido, navegação, canonical de produção em build local e em build Preview simulado, controles do carrossel e fallback sob reduced motion foram verificados. O gate visual P2 segue bloqueado até conectar 21st.dev.
 
 ## P2 · Direção visual e implementação
 

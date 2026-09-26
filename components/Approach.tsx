@@ -1,69 +1,35 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import React, { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from "motion/react";
+import React from 'react';
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { CanvasRevealEffect } from './ui/approach/CanvasRevealEffect';
-import { useTranslations, useLocale } from 'next-intl';
-import enMessages from '@/messages/en.json';
-import ptBrMessages from '@/messages/pt-br.json';
+import { useTranslations } from 'next-intl';
 
 const Approach = () => {
   const t = useTranslations('approach');
-  const locale = useLocale();
-  const [localMessages, setLocalMessages] = useState<typeof ptBrMessages.approach | null>(null);
-
-  useEffect(() => {
-    const correctMessages = locale === 'pt-br' ? ptBrMessages : enMessages;
-    setLocalMessages(correctMessages.approach);
-  }, [locale]);
-
-  const approachTexts = localMessages || {
-    heading: {
-      prefix: t('heading.prefix'),
-      highlight: t('heading.highlight')
-    },
-    phases: [
-      {
-        order: t('phases.0.order'),
-        title: t('phases.0.title'),
-        description: t('phases.0.description')
-      },
-      {
-        order: t('phases.1.order'),
-        title: t('phases.1.title'),
-        description: t('phases.1.description')
-      },
-      {
-        order: t('phases.2.order'),
-        title: t('phases.2.title'),
-        description: t('phases.2.description')
-      }
-    ]
-  };
+  const phases = [0, 1, 2].map((index) => ({
+    order: t(`phases.${index}.order`),
+    title: t(`phases.${index}.title`),
+    description: t(`phases.${index}.description`),
+  }));
 
   return (
     <section className='w-full py-20'>
 
       <h2 className='heading'>
-        {approachTexts.heading.prefix} <span className='text-purple'>{approachTexts.heading.highlight}</span>
+        {t('heading.prefix')} <span className='text-purple'>{t('heading.highlight')}</span>
       </h2>
 
         <div className="my-20 flex flex-col lg:flex-row items-center justify-center gap-4">
-        <Card title={approachTexts.phases[0].title} 
-              icon={<AceternityIcon 
-              order={approachTexts.phases[0].order}/>}
-              description={approachTexts.phases[0].description}>
+        <Card title={phases[0].title} order={phases[0].order} description={phases[0].description}>
           <CanvasRevealEffect
             animationSpeed={5.1}
             containerClassName="bg-emerald-900"
           />
         </Card>
         <Card 
-          title={approachTexts.phases[1].title}
-          icon={<AceternityIcon 
-          order={approachTexts.phases[1].order}/>
-          }
-          description={approachTexts.phases[1].description}>
+          title={phases[1].title}
+          order={phases[1].order}
+          description={phases[1].description}>
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-black"
@@ -76,10 +42,9 @@ const Approach = () => {
           <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" /> 
         </Card>
         <Card 
-          title={approachTexts.phases[2].title}
-          icon={<AceternityIcon 
-          order={approachTexts.phases[2].order}/>}
-          description={approachTexts.phases[2].description}>
+          title={phases[2].title}
+          order={phases[2].order}
+          description={phases[2].description}>
           <CanvasRevealEffect
             animationSpeed={3}
             containerClassName="bg-sky-600"
@@ -95,16 +60,17 @@ export default Approach;
 
 const Card = ({
   title,
-  icon,
+  order,
   children,
   description
 }: {
   title: string;
-  icon: React.ReactNode;
+  order: string;
   children?: React.ReactNode;
   description: string;
 }) => {
   const [hovered, setHovered] = React.useState(false);
+  const reduceMotion = useReducedMotion();
   return (
     <div
       onMouseEnter={() => setHovered(true)}
@@ -117,10 +83,12 @@ const Card = ({
       <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
  
       <AnimatePresence>
-        {hovered && (
+        {hovered && !reduceMotion && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
             className="h-full w-full absolute inset-0"
           >
             {children}
@@ -128,36 +96,22 @@ const Card = ({
         )}
       </AnimatePresence>
  
-      <div className="relative z-20">
-        <div className="text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
-          {icon}
-        </div>
-        <h2 className="dark:text-white opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center text-3xl">
+      <div className="relative z-20 flex flex-col items-center text-center">
+        <span aria-hidden="true" className="mb-5 inline-flex h-12 min-w-12 items-center justify-center rounded-full border border-white/30 bg-black/70 px-3 text-lg font-bold text-white">
+          {order}
+        </span>
+        <h3 className="relative z-10 text-3xl font-bold text-black dark:text-white">
           {title}
-        </h2>
-        <h2 className="text-sm opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center"
-        style={{ color: '#e4ecff'}}>
+        </h3>
+        <p className="relative z-10 mt-4 text-sm font-medium text-slate-700 dark:text-slate-100">
           {description}
-        </h2>
+        </p>
       </div>
     </div>
   );
 };
  
-const AceternityIcon = ({ order }: { order: string }) => {
-  return (
-    <div>
-      <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-5 py-2 font-bold text-white backdrop-blur-3xl text-2xl">
-          {order}
-        </span>
-      </button>
-    </div>
-  );
-};
- 
-export const Icon = ({ className, ...rest }: any) => {
+export const Icon = ({ className, ...rest }: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

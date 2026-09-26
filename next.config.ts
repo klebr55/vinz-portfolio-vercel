@@ -97,6 +97,7 @@ const nextConfig: NextConfig = {
     storePicturesInWEBP: 'true',
     generateAndUseBlurImages: 'true',
     imageOptimization: 'true',
+    NEXT_PUBLIC_VERCEL_ENV: process.env.VERCEL_ENV ?? '',
   },
   // Performance optimizations
   experimental: {

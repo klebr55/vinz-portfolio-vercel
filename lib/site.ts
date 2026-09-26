@@ -7,8 +7,12 @@
  *
  * Override with NEXT_PUBLIC_SITE_URL for preview deployments.
  */
+const PRODUCTION_SITE_URL = "https://www.klebervinicius.tech";
+
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.klebervinicius.tech"
+  process.env.NEXT_PUBLIC_VERCEL_ENV === "preview"
+    ? PRODUCTION_SITE_URL
+    : process.env.NEXT_PUBLIC_SITE_URL ?? PRODUCTION_SITE_URL
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "Kleber Vinicius Portfolio";

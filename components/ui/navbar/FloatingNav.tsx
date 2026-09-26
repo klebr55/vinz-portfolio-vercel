@@ -5,6 +5,7 @@ import React, { JSX, useState, useEffect, useRef } from "react";
 import {
   useScroll,
   useMotionValueEvent,
+  useReducedMotion,
 } from "motion/react";
 import { cn } from "@/utils/cn";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -25,6 +26,8 @@ export const FloatingNav = ({
   const locale = useLocale();
   const t = useTranslations('navigation');
   const navRef = useRef<HTMLDivElement>(null);
+  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const reduceMotion = useReducedMotion();
   
   const [visible, setVisible] = useState(true);
   const [navTexts, setNavTexts] = useState(['About', 'Projects', 'Testimonials', 'Contact']);
@@ -171,16 +174,25 @@ export const FloatingNav = ({
   }, [locale, t]);
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
+    if (reduceMotion) {
+      if (hideTimer.current) clearTimeout(hideTimer.current);
+      setVisible(true);
+      setShouldAnimate(false);
+      setShouldAnimateOut(false);
+      return;
+    }
     if (typeof current === "number") {
       const direction = current! - scrollYProgress.getPrevious()!;
 
       if (scrollYProgress.get() < 0.05) {
+        if (hideTimer.current) clearTimeout(hideTimer.current);
         setVisible(true);
         setShouldAnimate(false);
         setShouldAnimateOut(false);
         setCanAnimate(false);
       } else {
         if (direction < 0) {
+          if (hideTimer.current) clearTimeout(hideTimer.current);
           if (!visible && canAnimate) {
             setShouldAnimate(true);
             setShouldAnimateOut(false);
@@ -192,8 +204,9 @@ export const FloatingNav = ({
             setShouldAnimate(false);
             setShouldAnimateOut(true);
             setCanAnimate(true);
-            
-            setTimeout(() => {
+            if (hideTimer.current) clearTimeout(hideTimer.current);
+            hideTimer.current = setTimeout(() => {
+              if (navRef.current?.contains(document.activeElement)) return;
               setVisible(false);
               setShouldAnimateOut(false);
             }, 450);
@@ -202,6 +215,18 @@ export const FloatingNav = ({
       }
     }
   });
+
+  useEffect(() => () => {
+    if (hideTimer.current) clearTimeout(hideTimer.current);
+  }, []);
+
+  useEffect(() => {
+    if (!reduceMotion) return;
+    if (hideTimer.current) clearTimeout(hideTimer.current);
+    setVisible(true);
+    setShouldAnimate(false);
+    setShouldAnimateOut(false);
+  }, [reduceMotion]);
 
   useEffect(() => {
     if (shouldAnimate) {
@@ -215,7 +240,7 @@ export const FloatingNav = ({
 
   // Classes dinâmicas da navbar
   const navbarClasses = cn(
-    "flex !py-5 md:!py-6 md:!px-10 !px-6 fixed top-10 inset-x-0 mx-auto border rounded-full z-[5000] items-center justify-center transition-all duration-300",
+    "flex !py-5 md:!py-6 md:!px-10 !px-6 fixed top-10 inset-x-0 mx-auto border rounded-full z-[5000] items-center justify-center transition-[opacity,transform,background-color,border-color,box-shadow] duration-300",
     "bg-gradient-to-br !from-purple-300/30 !via-purple-200/10 !to-purple-100/5 dark:!bg-gradient-to-br dark:!from-purple-800/30 dark:!via-purple-900/10 dark:!to-black/5",
     "backdrop-blur-sm",
     "border-purple-300/50 dark:border-purple-700/50",
@@ -247,7 +272,7 @@ export const FloatingNav = ({
           key={`link=${idx}`}
           href={navItem.link}
           className={cn(
-            "relative dark:text-neutral-50 items-center flex text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500 text-shadow-black font-medium antialiased transition-all duration-200",
+            "relative dark:text-neutral-50 items-center flex text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500 text-shadow-black font-medium antialiased transition-colors duration-200",
             "cursor-pointer whitespace-nowrap"
           )}
           style={{
@@ -264,7 +289,7 @@ export const FloatingNav = ({
           
           {/* Texto sempre visível, apenas varia o tamanho */}
           <span 
-            className="transition-all duration-300"
+            className="transition-[font-size] duration-300"
             style={{ fontSize: dynamicStyles.fontSize }}
           >
             {navTexts[idx] || navItem.name}
@@ -292,6 +317,11 @@ export const FloatingNav = ({
           ref={navRef}
           className={navbarClasses}
           style={navbarStyle}
+          onFocusCapture={() => {
+            if (hideTimer.current) clearTimeout(hideTimer.current);
+            setVisible(true);
+            setShouldAnimateOut(false);
+          }}
         >
           {navbarContent}
         </div>

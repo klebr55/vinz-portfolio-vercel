@@ -1,6 +1,6 @@
 "use client";
 
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { IconArrowLeft, IconArrowRight, IconPlayerPause, IconPlayerPlay } from "@tabler/icons-react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
 import { useLocale } from "next-intl";
@@ -23,6 +23,7 @@ export const AnimatedTestimonials = ({
 }) => {
   const [active, setActive] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isInteracting, setIsInteracting] = useState(false);
   const reduceMotion = useReducedMotion();
   const locale = useLocale();
 
@@ -33,6 +34,8 @@ export const AnimatedTestimonials = ({
   const label = {
     prev: isPt ? 'Depoimento anterior' : 'Previous testimonial',
     next: isPt ? 'Próximo depoimento' : 'Next testimonial',
+    pause: isPt ? 'Pausar reprodução automática' : 'Pause autoplay',
+    resume: isPt ? 'Retomar reprodução automática' : 'Resume autoplay',
     goTo: (n: number) => (isPt ? `Ir para depoimento ${n}` : `Go to testimonial ${n}`),
     linkedin: (name: string) => (isPt ? `LinkedIn de ${name}` : `${name} on LinkedIn`),
   };
@@ -53,12 +56,12 @@ export const AnimatedTestimonials = ({
   // entirely under prefers-reduced-motion. Rotating quotes on their own timer
   // is motion the user did not ask for, and WCAG requires a way to stop it.
   useEffect(() => {
-    if (!autoplay || isPaused || reduceMotion) return;
+    if (!autoplay || isPaused || isInteracting || reduceMotion) return;
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % testimonials.length);
     }, 6000); // 6 segundos para dar tempo de ler
     return () => clearInterval(interval);
-  }, [autoplay, isPaused, reduceMotion, testimonials.length]);
+  }, [autoplay, isPaused, isInteracting, reduceMotion, testimonials.length]);
 
   // Was Math.random() called during render, which gave the server and the
   // client different angles and mismatched on hydration. Deterministic per
@@ -68,10 +71,14 @@ export const AnimatedTestimonials = ({
   return (
     <div
       className="mx-auto max-w-sm px-4 py-10 font-sans antialiased md:max-w-6xl md:px-8 lg:px-12"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onFocusCapture={() => setIsPaused(true)}
-      onBlurCapture={() => setIsPaused(false)}
+      onMouseEnter={() => setIsInteracting(true)}
+      onMouseLeave={() => setIsInteracting(false)}
+      onFocusCapture={() => setIsInteracting(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setIsInteracting(false);
+        }
+      }}
     >
       <div className="relative grid grid-cols-1 gap-20 md:grid-cols-2 lg:gap-32">
         {/* Coluna das imagens */}
@@ -81,7 +88,7 @@ export const AnimatedTestimonials = ({
               {testimonials.map((testimonial, index) => (
                 <motion.div
                   key={testimonial.src}
-                  initial={{
+                  initial={reduceMotion ? false : {
                     opacity: 0,
                     scale: 0.9,
                     z: -100,
@@ -95,22 +102,21 @@ export const AnimatedTestimonials = ({
                     zIndex: isActive(index)
                       ? 40
                       : testimonials.length + 2 - index,
-                    y: isActive(index) ? [0, -80, 0] : 0,
+                    y: reduceMotion ? 0 : isActive(index) ? [0, -80, 0] : 0,
                   }}
                   exit={{
                     opacity: 0,
-                    scale: 0.9,
-                    z: 100,
+                    scale: reduceMotion ? 1 : 0.9,
+                    z: reduceMotion ? 0 : 100,
                     rotate: tiltFor(index),
                   }}
                   transition={{
-                    duration: 0.4,
+                    duration: reduceMotion ? 0 : 0.4,
                     ease: "easeInOut",
                   }}
-                  className="absolute inset-0 origin-bottom cursor-pointer"
-                  onClick={() => setActive(index)}
+                  className="absolute inset-0 origin-bottom"
                 >
-                  <div className="relative h-full w-full rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+                  <div className="relative h-full w-full rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl">
                     <Image
                       src={testimonial.src}
                       alt={testimonial.name}
@@ -133,7 +139,7 @@ export const AnimatedTestimonials = ({
         <div className="flex flex-col justify-between py-4">
           <motion.div
             key={active}
-            initial={{
+            initial={reduceMotion ? false : {
               y: 20,
               opacity: 0,
             }}
@@ -142,11 +148,11 @@ export const AnimatedTestimonials = ({
               opacity: 1,
             }}
             exit={{
-              y: -20,
+              y: reduceMotion ? 0 : -20,
               opacity: 0,
             }}
             transition={{
-              duration: 0.3,
+              duration: reduceMotion ? 0 : 0.3,
               ease: "easeInOut",
             }}
           >
@@ -177,35 +183,40 @@ export const AnimatedTestimonials = ({
             <p className="text-sm md:text-base text-gray-500 dark:text-neutral-400 mb-6 font-medium">
               {testimonials[active].designation}
             </p>
-            <motion.blockquote className="text-lg md:text-xl text-gray-700 dark:text-neutral-300 leading-relaxed font-medium italic border-l-4 border-purple-500 pl-4">
-              {testimonials[active].quote.split(" ").map((word, index) => (
-                <motion.span
-                  key={index}
-                  initial={{
-                    filter: "blur(10px)",
-                    opacity: 0,
-                    y: 5,
-                  }}
-                  animate={{
-                    filter: "blur(0px)",
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.2,
-                    ease: "easeInOut",
-                    delay: 0.02 * index,
-                  }}
-                  className="inline-block"
-                >
-                  {word}&nbsp;
-                </motion.span>
-              ))}
-            </motion.blockquote>
+            {reduceMotion ? (
+              <blockquote className="border-l-4 border-purple-500 pl-4 text-lg font-medium italic leading-relaxed text-gray-700 dark:text-neutral-300 md:text-xl">
+                {testimonials[active].quote}
+              </blockquote>
+            ) : (
+              <motion.blockquote className="border-l-4 border-purple-500 pl-4 text-lg font-medium italic leading-relaxed text-gray-700 dark:text-neutral-300 md:text-xl">
+                {testimonials[active].quote.split(" ").map((word, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, transform: "translateY(5px)" }}
+                    animate={{ opacity: 1, transform: "translateY(0px)" }}
+                    transition={{ duration: 0.2, ease: "easeInOut", delay: 0.02 * index }}
+                    className="inline-block"
+                  >
+                    {word}&nbsp;
+                  </motion.span>
+                ))}
+              </motion.blockquote>
+            )}
           </motion.div>
           
           {/* Controles de navegação */}
           <div className="flex gap-4 pt-12 md:pt-8">
+            {autoplay && !reduceMotion && (
+              <button
+                onClick={() => setIsPaused((paused) => !paused)}
+                className="flex h-12 items-center justify-center gap-2 rounded-full bg-gray-100 px-4 text-gray-700 shadow-lg transition-colors hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple focus-visible:ring-offset-2 dark:bg-neutral-800 dark:text-neutral-100 dark:hover:bg-neutral-700"
+                aria-label={isPaused ? label.resume : label.pause}
+                aria-pressed={isPaused}
+              >
+                {isPaused ? <IconPlayerPlay aria-hidden="true" className="h-5 w-5" /> : <IconPlayerPause aria-hidden="true" className="h-5 w-5" />}
+                <span className="sr-only">{isPaused ? label.resume : label.pause}</span>
+              </button>
+            )}
             <button
               onClick={handlePrev}
               className="group/button flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 transition-colors duration-300 shadow-lg hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple focus-visible:ring-offset-2 focus-visible:ring-offset-black-100"
