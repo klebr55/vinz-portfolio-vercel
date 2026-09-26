@@ -67,6 +67,8 @@ Tabela com requisito, rota/arquivo, comando ou interação, resultado observado,
 
 ## 5. Gate obrigatório de recursos para cada novo agente
 
+**Papéis e obrigação compartilhada:** o Mastermind é o agente que coordena a direção, verifica evidências, decide a sequência e revisa a entrega; o Worker é o agente que implementa uma tarefa delegada. Codex, Antigravity ou outro agente pode ocupar qualquer papel. **Ambos** devem carregar a skill Orchestrator Pipeline no próprio ambiente e cumprir integralmente os sete recursos abaixo, com chamadas reais aos MCPs e leitura das skills. O Mastermind usa as mesmas fontes para orientar e revisar o trabalho, não apenas para mandar o Worker usá-las. Antes de delegar, o Mastermind registra a própria prova P0 e exige a prova P0 independente do Worker; trocar de papel ou ambiente requer nova prova. Se uma pessoa/agente fizer os dois papéis, um gate no mesmo ambiente serve para ambos, mas as decisões e revisões devem ser registradas.
+
 Antes de delegar ou implementar UI, inventariar o ambiente do Codex ou Antigravity e comprovar cada recurso com carregamento/chamada. Não herdar o “✅” do Kiro, pois são ambientes diferentes:
 
 1. shadcn MCP: pesquisar/inspecionar primitivas compatíveis.
