@@ -5,11 +5,11 @@ Estado inicial: todas as tarefas abaixo estão abertas. O Kiro relatou verifica�
 ## P0 · Recursos no ambiente de cada agente
 
 - [ ] Mastermind: não atuo neste papel nesta sessão.
-- [ ] Worker: Orchestrator Pipeline carregado; prova de recursos incompleta porque o MCP 21st.dev não está disponível neste ambiente.
-- [x] shadcn MCP: chamada real; `components.json` não configura registries e a busca direta em `@shadcn` não encontrou item compatível.
-- [ ] 21st.dev MCP: chamada real para procurar composições pertinentes; registrar o que inspirou o trabalho.
+- [x] Worker: Orchestrator Pipeline carregado; sete recursos comprovados no ambiente, com pesquisa 21st.dev e checkpoint de retomada abaixo.
+- [x] shadcn MCP: chamada real; `components.json` não configura registries próprios. Nova busca em `@shadcn` encontrou `navigation-menu` e `navigation-menu-demo`; nenhum componente foi instalado na etapa de tese.
+- [x] 21st.dev MCP: quatro buscas reais e uma chamada `get_inspiration`; autores, IDs, URLs e seleção registrados em `VISUAL_DIRECTION_REVIEW.md` e no Checkpoint P2 de pesquisa.
 - [x] Taste Skill: carregada; leitura e dials registrados no Checkpoint P1.
-- [x] Build Awwwards-Quality Sites: carregada; direção visual da fase 2 segue bloqueada pelo recurso 21st.dev ausente.
+- [x] Build Awwwards-Quality Sites: carregada; tese visual candidata registrada para revisão do Mastermind.
 - [x] Animate: carregada; movimento só foi mantido onde já existia; novas correções incluem saída e reduced motion.
 - [x] Vercel Web Design Guidelines: regras atuais obtidas da URL oficial para auditoria do diff.
 - [x] Chrome DevTools MCP: chamada real, inspeção de `/pt-br` e `/en`, snapshots, console, rede e screenshots.
@@ -26,8 +26,11 @@ O Mastermind e o Worker usam todos os recursos para suas responsabilidades: pesq
 
 **Gate P1:** concluído para a fundação funcional. As duas rotas, HTML servido, navegação, canonical de produção em build local e em build Preview simulado, controles do carrossel e fallback sob reduced motion foram verificados. O gate visual P2 segue bloqueado até conectar 21st.dev.
 
+**Atualização 26/09/2026:** o bloqueio do MCP 21st.dev foi resolvido e comprovado no Checkpoint P2 de pesquisa. A direção P2 está em revisão do Mastermind; a implementação visual ainda não começou.
+
 ## P2 · Direção visual e implementação
 
+- [x] Pesquisa 21st.dev e tese visual candidata documentadas em `VISUAL_DIRECTION_REVIEW.md` para revisão do Mastermind antes de consolidar a direção.
 - [ ] Documentar tese visual, referências humanas com autor/URL, procedência e direitos de assets, paleta, tipografia, grid, narrativa, breakpoints, plano WebGL/vidro e matriz de movimento.
 - [ ] Implementar a experiência inteira, preservando os quatro cases, três depoimentos, PT/EN, âncoras e contato.
 - [ ] Entregar navbar refrativa autoral e cena de assinatura, com texto e controles independentes do efeito, fallbacks e movimento reduzido.

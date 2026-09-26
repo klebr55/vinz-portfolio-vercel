@@ -114,3 +114,41 @@ Auditoria das regras atuais: links de idioma têm nome, idioma, `aria-current` e
 4. Criar commit de checkpoint da fundação; não houve push, merge nem publicação.
 
 Decisões D01–D05 permanecem pendentes. Commit local da implementação P1: `e6bb64988c0f06d121f3a5b593c11e892c7b59bb` (`fix: restore portfolio foundation`). Worktree limpo após o commit; nenhuma publicação ou merge. A branch remota permanece em `c381d4fd300e366cc335a85edb9b26713a7324e7`.
+
+## Checkpoint P2 de pesquisa: direção candidata para o Mastermind
+
+Data: 2026-09-26 · Papel: Worker · Estado: P0 completo neste ambiente; P2 iniciada como pesquisa e direção candidata, aguardando revisão antes de consolidar a linguagem visual.
+
+```text
+Branch: redesign/awwwards-repagination
+HEAD inicial: c14c60b (docs: record foundation checkpoint)
+Commit P1 preservado: e6bb649 (fix: restore portfolio foundation)
+SHA remoto consultado nesta retomada: c381d4fd300e366cc335a85edb9b26713a7324e7
+Push/merge/deploy: nenhum
+```
+
+### P0 do Worker nesta retomada
+
+| Recurso | Chamada/leitura observada | Estado |
+| --- | --- | --- |
+| Orchestrator Pipeline | `SKILL.md` lido; gate de sete recursos e ordem de fases aplicados. | PASS |
+| shadcn MCP | `get_project_registries` retornou lista vazia; `search_items_in_registries({query:"navigation-menu",registries:["@shadcn"],limit:5})` retornou `navigation-menu` e `navigation-menu-demo`. Sem instalação, pois os links atuais são simples e a navbar candidata requer composição própria. | PASS para pesquisa; decisão de não instalar agora. |
+| 21st.dev MCP | `search` para `creative developer portfolio editorial projects` → 4 resultados; `cinematic portfolio hero` → 8; `glass navigation` → 8; `portfolio case study layout` → 4. `get_inspiration` para composição editorial de cases com vidro discreto → 8 resultados, `contextApplied=false`, confiança 0,51–0,53. URLs e princípios selecionados em `VISUAL_DIRECTION_REVIEW.md`. Nenhum `get_component` ou instalação. | PASS; chamada real e resultado registrados. |
+| Taste Skill | `SKILL.md` lido; Design Read e dials `9/9/4` na tese candidata. | PASS |
+| Build Awwwards-Quality Sites | `SKILL.md` lido; tese, narrativa, cena focal e mídia com procedência na proposta. | PASS para concepção; implementação pendente. |
+| Animate | `SKILL.md` lido; matriz de função, gatilho, técnica, propriedades, interrupção e reduced motion registrada. | PASS para concepção; implementação pendente. |
+| Vercel Web Design Guidelines | `SKILL.md` lido; a P1 já buscou regras oficiais atuais. Buscar novamente na auditoria P3, após mudar UI. | PASS para disponibilidade; auditoria P3 pendente. |
+| Chrome DevTools MCP | `list_pages` retornou a sessão `about:blank`; MCP acessível. Capturas P1 existentes foram revisadas para diagnóstico visual. | PASS para disponibilidade; P2/P4 precisam de sessão com novo código. |
+
+O MCP 21st.dev mostrou metadados de componentes, não evidência de licença de mídia/código para reutilização. A seleção foi deliberadamente restrita a princípios: sobreposição com foco em um case (`isaiahbjork`, ID 7517), assimetria com texto legível (`uiable`, ID 29523), hero em camadas (`felipemenezes098`, ID 19074) e sincronização mídia/narrativa com controles (`piyushxdev`, ID 24368). As páginas públicas foram consultadas; a pontuação automática de `get_inspiration` foi baixa, portanto não é tratada como aprovação de direção.
+
+### Artefato e limites deste checkpoint
+
+- `docs/awwwards/VISUAL_DIRECTION_REVIEW.md`: tese **Interfaces em órbita**, sequência de seções, paleta, tipos candidatos, grid, referências com autores/URLs, limites de direitos, plano de vidro/WebGL, escolha de scroll nativo e matriz de movimento. Documento para revisão, sem implementação visual.
+- `docs/awwwards/TASKS.md`: P0 e pesquisa inicial de P2 atualizados com evidência.
+- `docs/awwwards/DECISIONS.md`: este checkpoint. D01–D05 continuam pendentes; cores, fontes e tratamento óptico são hipóteses para Mastermind.
+- Git `ls-remote origin refs/heads/redesign/awwwards-repagination` retornou o SHA remoto acima. A primeira tentativa no sandbox falhou por rede; a consulta repetida com acesso de rede concluiu. Nenhum fetch, rebase, push ou mudança no remoto.
+- A captura de base P1 consultada foi `F:\Users\Vinz\Documents\Codex\2026-09-26\c\outputs\phase1-pt-br-1440-full-page.png` (1440×900); ela mostra o estado anterior à P2, não valida a proposta.
+- `git diff --cached --check` concluído com exit 0 para os três documentos do checkpoint. Nenhum build, lint, type-check ou nova captura foi executado nesta etapa documental, pois não houve alteração de interface. O SHA do commit local fica registrado na entrega ao Mastermind.
+
+**Próximo passo numerado:** (1) receber revisão do Mastermind sobre tese, paleta e tipografia; (2) prototipar hero, navbar e primeiro case na branch local; (3) expandir linguagem às demais seções e cumprir os gates P2, P3 e P4 com evidência. Nenhum commit local desta retomada equivale a publicação.
