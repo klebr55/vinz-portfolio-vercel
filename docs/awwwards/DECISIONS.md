@@ -152,3 +152,5 @@ O MCP 21st.dev mostrou metadados de componentes, não evidência de licença de 
 - `git diff --cached --check` concluído com exit 0 para os três documentos do checkpoint. Nenhum build, lint, type-check ou nova captura foi executado nesta etapa documental, pois não houve alteração de interface. O SHA do commit local fica registrado na entrega ao Mastermind.
 
 **Próximo passo numerado:** (1) receber revisão do Mastermind sobre tese, paleta e tipografia; (2) prototipar hero, navbar e primeiro case na branch local; (3) expandir linguagem às demais seções e cumprir os gates P2, P3 e P4 com evidência. Nenhum commit local desta retomada equivale a publicação.
+
+**Atualização de publicação e acesso do Mastermind:** os commits `e6bb649`, `c14c60b` e `7c75acc` foram enviados a `origin/redesign/awwwards-repagination` após autorização posterior do proprietário. O resumo do Worker para acompanhamento contínuo agora está em `docs/awwwards/P2-Checkpoint-Worker.md` e será atualizado junto com alterações futuras.
