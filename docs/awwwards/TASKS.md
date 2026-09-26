@@ -4,6 +4,8 @@ Estado inicial: todas as tarefas abaixo estão abertas. O Kiro relatou verifica�
 
 ## P0 · Recursos no ambiente de cada agente
 
+- [ ] Mastermind: carregar Orchestrator Pipeline, executar os sete itens abaixo em seu ambiente e registrar provas antes de orientar, revisar ou delegar implementação.
+- [ ] Worker: carregar Orchestrator Pipeline e executar independentemente os mesmos sete itens em seu ambiente antes de implementar. Se não houver delegação, o agente registra que acumula ambos os papéis.
 - [ ] shadcn MCP: chamada real para pesquisar primitivas compatíveis.
 - [ ] 21st.dev MCP: chamada real para procurar composições pertinentes; registrar o que inspirou o trabalho.
 - [ ] Taste Skill: carregar e registrar leitura da audiência e valores de direção.
@@ -12,7 +14,7 @@ Estado inicial: todas as tarefas abaixo estão abertas. O Kiro relatou verifica�
 - [ ] Vercel Web Design Guidelines: carregar regras atuais para auditoria após styling.
 - [ ] Chrome DevTools MCP: testar com chamada real. Se falhar, o proprietário autorizou o navegador nativo do agente para evidência equivalente; registrar a exceção e seguir sem laço infinito.
 
-Os recursos devem ser comprovados em **cada** ambiente, mesmo que Kiro os tenha usado. Se um acesso essencial faltar, relatar qual e continuar as partes independentes. A exceção de navegador autorizada pelo proprietário prevalece sobre a regra padrão da skill de Orchestrator Pipeline que exigiria parar no gate Chrome.
+O Mastermind e o Worker usam todos os recursos para suas responsabilidades: pesquisa, direção, implementação quando pertinente e revisão. Os recursos devem ser comprovados em **cada** ambiente, mesmo que Kiro os tenha usado. Se um acesso essencial faltar, relatar qual e continuar as partes independentes. A exceção de navegador autorizada pelo proprietário prevalece sobre a regra padrão da skill de Orchestrator Pipeline que exigiria parar no gate Chrome.
 
 ## P1 · Recuperação da fundação
 
