@@ -30,7 +30,7 @@ Documento criado na branch de redesign para orientar agentes futuros. Não houve
 
 ## Checkpoint P1: recuperação da fundação
 
-Data: 2026-09-26 · Papel: Worker · Estado: P1 concluída para a fundação; P2 bloqueada pelo MCP 21st.dev ausente.
+Data: 2026-09-26 · Papel: Worker · Estado deste registro histórico: P1 concluída para a fundação; 21st.dev foi conectado e validado no checkpoint seguinte.
 
 ```text
 Branch: redesign/awwwards-repagination
@@ -46,7 +46,7 @@ Fase/gate: P0 parcial; P1 PASS; gates P2-P4 não iniciados.
 | Recurso | Evidência | Estado |
 | --- | --- | --- |
 | shadcn MCP | Chamada real `search_items_in_registries`; sem registries em `components.json`. Busca direta em `@shadcn` retornou “No items found”. | Parcial; chamada comprovada, nenhum padrão útil. |
-| 21st.dev MCP | Não aparece entre os MCPs/ferramentas disponíveis neste ambiente; nenhuma chamada pode ser feita. | BLOCKED; precisa conectar/instalar o MCP 21st.dev. |
+| 21st.dev MCP | Ausente na sessão P1 original; chamadas reais de pesquisa foram realizadas após a conexão, conforme checkpoint P2. | PASS no estado atual. |
 | Taste Skill | SKILL.md carregado. Leitura: portfólio de dev full-stack para clientes, equipes e recrutadores; autoria e qualidade de engenharia; dials iniciais `9 / 9 / 4` do handoff. | PASS |
 | Build Awwwards-Quality Sites | SKILL.md carregado. Referências ficam como princípio de ritmo e autoria; nenhuma composição/asset de GTA VI, Lando Norris ou Apple foi copiada. | PASS |
 | Animate | SKILL.md carregado. Autoplay pausável, reduced motion e conteúdo legível sem animação; transições usam propriedades permitidas onde tocadas. | PASS |
@@ -108,12 +108,12 @@ Auditoria das regras atuais: links de idioma têm nome, idioma, `aria-current` e
 
 ### Pendências e próximo passo
 
-1. Conectar e chamar MCP 21st.dev neste ambiente; depois registrar pesquisa/macrocomposições antes da Fase 2.
+1. Conexão e pesquisa do MCP 21st.dev concluídas no checkpoint P2 posterior.
 2. Quando houver URL de Preview real, verificar console/rede e canonical no deploy; a regra foi provada no build local simulado.
 3. Na Fase 4, testar 1024×768, 390×844, foco durante scroll, teclado/touch, WebGL indisponível e registrar evidências por seção.
-4. Criar commit de checkpoint da fundação; não houve push, merge nem publicação.
+4. Commit de checkpoint da fundação criado e posteriormente enviado à branch remota por autorização do proprietário; nenhum merge ou deploy.
 
-Decisões D01–D05 permanecem pendentes. Commit local da implementação P1: `e6bb64988c0f06d121f3a5b593c11e892c7b59bb` (`fix: restore portfolio foundation`). Worktree limpo após o commit; nenhuma publicação ou merge. A branch remota permanece em `c381d4fd300e366cc335a85edb9b26713a7324e7`.
+Decisões D01–D05 permanecem pendentes. Commit da implementação P1: `e6bb64988c0f06d121f3a5b593c11e892c7b59bb` (`fix: restore portfolio foundation`), posteriormente publicado junto com os checkpoints na branch remota. O SHA `c381d4f` abaixo identifica apenas a base histórica anterior ao trabalho; nenhum merge ou deploy foi feito.
 
 ## Checkpoint P2 de pesquisa: direção candidata para o Mastermind
 
@@ -124,7 +124,7 @@ Branch: redesign/awwwards-repagination
 HEAD inicial: c14c60b (docs: record foundation checkpoint)
 Commit P1 preservado: e6bb649 (fix: restore portfolio foundation)
 SHA remoto consultado nesta retomada: c381d4fd300e366cc335a85edb9b26713a7324e7
-Push/merge/deploy: nenhum
+Push no instante deste registro: nenhum; publicação posterior documentada abaixo. Merge/deploy: nenhum.
 ```
 
 ### P0 do Worker nesta retomada
@@ -140,17 +140,27 @@ Push/merge/deploy: nenhum
 | Vercel Web Design Guidelines | `SKILL.md` lido; a P1 já buscou regras oficiais atuais. Buscar novamente na auditoria P3, após mudar UI. | PASS para disponibilidade; auditoria P3 pendente. |
 | Chrome DevTools MCP | `list_pages` retornou a sessão `about:blank`; MCP acessível. Capturas P1 existentes foram revisadas para diagnóstico visual. | PASS para disponibilidade; P2/P4 precisam de sessão com novo código. |
 
-O MCP 21st.dev mostrou metadados de componentes, não evidência de licença de mídia/código para reutilização. A seleção foi deliberadamente restrita a princípios: sobreposição com foco em um case (`isaiahbjork`, ID 7517), assimetria com texto legível (`uiable`, ID 29523), hero em camadas (`felipemenezes098`, ID 19074) e sincronização mídia/narrativa com controles (`piyushxdev`, ID 24368). As páginas públicas foram consultadas; a pontuação automática de `get_inspiration` foi baixa, portanto não é tratada como aprovação de direção.
+O MCP 21st.dev mostrou metadados de componentes, não evidência de licença de mídia/código para reutilização. A pesquisa inicial incluiu Portfolio Gallery (`isaiahbjork`, ID 7517), **rejeitada pelo Mastermind como referência de composição**. Permaneceram apenas princípios de hero em camadas (`felipemenezes098`, ID 19074) e sincronização de mídia e narrativa (`piyushxdev`, ID 24368), sem importar código ou mídia. A pontuação automática de `get_inspiration` foi baixa e não é tratada como aprovação de direção.
 
 ### Artefato e limites deste checkpoint
 
-- `docs/awwwards/VISUAL_DIRECTION_REVIEW.md`: tese **Interfaces em órbita**, sequência de seções, paleta, tipos candidatos, grid, referências com autores/URLs, limites de direitos, plano de vidro/WebGL, escolha de scroll nativo e matriz de movimento. Documento para revisão, sem implementação visual.
+- `docs/awwwards/VISUAL_DIRECTION_REVIEW.md`: a primeira tese **Interfaces em órbita** foi um registro histórico de pesquisa, posteriormente substituído pela direção **Sistemas em travessia** após a revisão do Mastermind. O documento atual contém protótipo e styleframes.
 - `docs/awwwards/TASKS.md`: P0 e pesquisa inicial de P2 atualizados com evidência.
 - `docs/awwwards/DECISIONS.md`: este checkpoint. D01–D05 continuam pendentes; cores, fontes e tratamento óptico são hipóteses para Mastermind.
 - Git `ls-remote origin refs/heads/redesign/awwwards-repagination` retornou o SHA remoto acima. A primeira tentativa no sandbox falhou por rede; a consulta repetida com acesso de rede concluiu. Nenhum fetch, rebase, push ou mudança no remoto.
 - A captura de base P1 consultada foi `F:\Users\Vinz\Documents\Codex\2026-09-26\c\outputs\phase1-pt-br-1440-full-page.png` (1440×900); ela mostra o estado anterior à P2, não valida a proposta.
 - `git diff --cached --check` concluído com exit 0 para os três documentos do checkpoint. Nenhum build, lint, type-check ou nova captura foi executado nesta etapa documental, pois não houve alteração de interface. O SHA do commit local fica registrado na entrega ao Mastermind.
 
-**Próximo passo numerado:** (1) receber revisão do Mastermind sobre tese, paleta e tipografia; (2) prototipar hero, navbar e primeiro case na branch local; (3) expandir linguagem às demais seções e cumprir os gates P2, P3 e P4 com evidência. Nenhum commit local desta retomada equivale a publicação.
+**Próximo passo atualizado:** a revisão do Mastermind rejeitou a composição Gallery. O protótipo hero → NKS e dois styleframes foram implementados depois; revisar `VISUAL_DIRECTION_REVIEW.md` e o checkpoint atual antes de expandir as demais seções.
 
 **Atualização de publicação e acesso do Mastermind:** os commits `e6bb649`, `c14c60b` e `7c75acc` foram enviados a `origin/redesign/awwwards-repagination` após autorização posterior do proprietário. O resumo do Worker para acompanhamento contínuo agora está em `docs/awwwards/P2-Checkpoint-Worker.md` e será atualizado junto com alterações futuras.
+
+## Checkpoint P2 visual: Sistemas em travessia
+
+Data: 2026-09-26 · Papel: Worker · Base publicada antes deste corte: `2fd88cd` · Estado: dois styleframes e protótipo hero → NKS prontos para revisão do Mastermind. Os commits anteriores `e6bb649`, `c14c60b`, `7c75acc` e `2fd88cd` estão na branch remota. O SHA desta revisão é o commit que contém este registro.
+
+O Mastermind rejeitou Portfolio Gallery, de Isaiah Bjork, como composição. A tese foi reformulada em `VISUAL_DIRECTION_REVIEW.md` para capítulos cinematográficos ligados por uma estrutura 3D contínua. A referência de Dennis Snellenberg fica restrita a cuidado de tipografia, interação e transição. A prévia funcional tem as duas direções A/Matéria e B/Espectro, localizadas em PT/EN e isoladas em rotas `awwwards-preview` com `noindex`. A mídia NKS vem do repositório. Os demais cases e seções estão no storyboard, aguardando revisão visual.
+
+Lenis cuida apenas do scroll; GSAP/ScrollTrigger cuida da timeline de DOM e progresso; Three.js/R3F transforma câmera e malhas com renderização sob demanda; Framer Motion cuida apenas de gestos locais. Reduced motion e ausência de WebGL mantêm a mídia, o texto e os links. Matriz completa de gatilho, dono, término e interrupção está no documento visual.
+
+`npm run type-check`, `npm run lint`, `npm run build` e `git diff --check` terminaram com exit 0 no protótipo; o build final foi após os ajustes de acessibilidade. Três warnings de hooks já presentes permaneceram, assim como avisos de Browserslist/Edge. Chrome DevTools MCP verificou A/B em 1440×900, mobile 390×844 sem overflow, PT/EN, Canvas normal, reduced motion e WebGL indisponível emulados, além de HTML servido sem JS. Capturas versionadas estão em `docs/awwwards/styleframes/`. O console local mostrou apenas os 404 dos scripts Vercel fora do runtime, também observados em P1. Os limites e próximos passos estão no `P2-Checkpoint-Worker.md`.

@@ -1,0 +1,41 @@
+export type PrototypeStyle = 'ember' | 'spectral';
+export type PrototypeLocale = 'pt-br' | 'en';
+
+export const prototypeCopy = {
+  'pt-br': {
+    role: 'Desenvolvedor web full-stack',
+    heroLead: 'Kleber',
+    heroEnd: 'Vinícius',
+    heroAside: 'Experiências digitais com forma, ritmo e propósito.',
+    explore: 'Explorar projeto 01',
+    portfolio: 'Portfólio completo',
+    caseLabel: 'Projeto em foco / 01',
+    caseName: 'NKS CONNECT',
+    caseDescription: 'Website feito para uma plataforma de criações de Website por assinatura.',
+    caseLink: 'Acessar site',
+    contact: 'Contato',
+    reviewLabel: 'Direções para revisão',
+    firstStyle: 'A / Matéria',
+    secondStyle: 'B / Espectro',
+    sceneFallback: 'Composição estática da experiência',
+    next: 'Ver os quatro projetos no portfólio',
+  },
+  en: {
+    role: 'Full-stack web developer',
+    heroLead: 'Kleber',
+    heroEnd: 'Vinícius',
+    heroAside: 'Digital experiences with form, rhythm and purpose.',
+    explore: 'Explore project 01',
+    portfolio: 'Full portfolio',
+    caseLabel: 'Featured project / 01',
+    caseName: 'NKS CONNECT',
+    caseDescription: 'A platform for creating subscription-based websites.',
+    caseLink: 'Visit website',
+    contact: 'Contact',
+    reviewLabel: 'Directions for review',
+    firstStyle: 'A / Matter',
+    secondStyle: 'B / Spectrum',
+    sceneFallback: 'Static composition of the experience',
+    next: 'See all four projects in the portfolio',
+  },
+} as const;

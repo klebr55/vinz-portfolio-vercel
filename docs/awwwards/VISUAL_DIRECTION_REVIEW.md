@@ -1,72 +1,77 @@
-# P2 · Direção visual candidata para revisão do Mastermind
+# P2 · Sistemas em travessia — direção e protótipo para o Mastermind
 
-Data: 26/09/2026 · Worker · Branch `redesign/awwwards-repagination` · Base local `c14c60b`.
+Revisão 2 · 26/09/2026 · Worker · `redesign/awwwards-repagination`.
 
-**Estado:** pesquisa e tese de pré-implementação. Nenhum componente, tema, fonte ou asset desta proposta foi incorporado ao site. A direção só será consolidada após revisão do Mastermind.
+## Correção de direção
 
-## Leitura e tese
+O Mastermind rejeitou **Portfolio Gallery, de Isaiah Bjork**, como referência de composição. A proposta anterior, **Interfaces em órbita**, também foi substituída: o portfólio não deve parecer uma galeria contida ou quatro cartões projetados no espaço. A referência de [Dennis Snellenberg](https://dennissnellenberg.com/) permanece apenas pelo cuidado com tipografia, ritmo, interação e transições; seu layout, código e mídia não são modelo a reproduzir. A busca real do MCP 21st.dev continua registrada no gate P0, mas nenhum componente pesquisado determina o layout.
 
-**Design Read (Taste):** portfólio pessoal de um desenvolvedor full-stack para clientes, equipes e recrutadores, com linguagem editorial e espacial, apoiada em Tailwind/CSS próprios e uma cena Three.js de autoria. Dials propostos: `DESIGN_VARIANCE=9`, `MOTION_INTENSITY=9`, `VISUAL_DENSITY=4`.
+**Design Read (Taste):** portfólio autoral de desenvolvedor web full-stack para clientes, equipes e recrutadores, com linguagem cinematográfica/editorial e evidência concreta de trabalho. Dials de projeto: `DESIGN_VARIANCE=9`, `MOTION_INTENSITY=9`, `VISUAL_DENSITY=4`. A composição principal é imersiva; os fallbacks preservam conteúdo e operação.
 
-**Tese — Interfaces em órbita.** O trabalho de Kleber aparece como um conjunto de sistemas reais organizados no espaço. O site abre com tipografia clara e uma única estrutura tridimensional feita de planos de interface; a câmera e a composição conduzem o olhar aos quatro cases. O contraste entre matéria escura, luz cálida e superfícies claras substitui a repetição atual de caixas roxas. A experiência continua legível como documento quando JS ou WebGL não estiverem disponíveis.
+**Tese — Sistemas em travessia.** Uma estrutura óptica e arquitetônica atravessa a página, transforma-se ao encontrar cada projeto e muda o modo de enquadrar sua mídia real. O scroll conduz cortes, aproximações e pausas; cada case ganha um capítulo próprio com contribuição já publicada e link. A cena 3D é a costura entre capítulos, não a apresentação dos projetos como cartões. A página começa escura, abre a imagem de NKS Connect em escala de cinema e alterna matéria, temperatura e ritmo conforme a obra seguinte. A tipografia faz parte da montagem, sem depender de animação para ser lida.
 
-A cena não representa clientes fictícios nem resultados inventados. Os quatro cases existentes são o assunto principal. O efeito espacial demonstra precisão de composição e engenharia; o texto explica o trabalho e preserva os links.
+## Dois styleframes implementados
 
-## Sequência proposta
+Ambos são capturas da rota funcional em 1440×900, no primeiro quadro. Servem à escolha da linguagem visual; nenhum deles é um template importado.
 
-1. **Abertura:** monograma KV, nome e função provisória aprovados em texto HTML; CTA de projetos no primeiro quadro. Uma moldura espacial construída em código usa quatro planos, com um case real em foco. O objeto ocupa parte da tela, não cobre o título.
-2. **Sobre:** introdução editorial curta; colaboração, atuação, stack e disponibilidade factual em módulos de tamanhos variados. Retirar o aspecto de seis cartões iguais. O globo existente só permanece se a informação de colaboração/fusos justificar a visualização.
-3. **Projetos:** NKS Connect, Milan Móveis, Sincad-MT e Criactive Design em quatro capítulos numerados em pares assimétricos, cada um com mídia real existente, nome, contribuição verificável e link. A alternância entre painel amplo e bloco de texto cria ritmo sem esconder conteúdo em hover. A mídia avança por scroll nativo; em mobile vira sequência vertical.
-4. **Depoimentos:** uma citação legível de cada vez com atribuição e controles explícitos já recuperados na P1. O retrato apoia a credibilidade, sem monopolizar a página. Logos de ferramentas não aparecem como prova social.
-5. **Trajetória e processo:** marcos reais em linha editorial; três etapas legíveis sem hover. O shader pode pontuar a passagem entre capítulos, desde que não substitua informação.
-6. **Contato:** fecho tipográfico direto com um CTA principal de e-mail e links sociais atuais. A cena retorna em forma de contorno estático; sem segundo espetáculo que concorra com o contato.
+| Direção | Intenção | Captura |
+| --- | --- | --- |
+| **A / Matéria** | Carbono e cobre, grande nome assimétrico com segunda linha em serifa; luz quente atravessa uma estrutura de planos. A passagem chega a papel claro e mantém a mídia NKS como foco. | ![Styleframe A: Matéria](styleframes/styleframe-A-ember-hero-1440.jpg) |
+| **B / Espectro** | Azul noturno e luz óptica fria; nome central em grotesca de escala monumental, geometria mais nítida e fechamento sobre azul pálido. | ![Styleframe B: Espectro](styleframes/styleframe-B-spectral-hero-1440.jpg) |
 
-## Sistema visual candidato
+Rotas locais da revisão: `/pt-br/awwwards-preview/ember`, `/pt-br/awwwards-preview/spectral`, `/en/awwwards-preview/ember` e `/en/awwwards-preview/spectral`. As rotas originais `/pt-br` e `/en` continuam disponíveis. A prévia tem `noindex` e seletor A/B próprio. Fontes do site existente e mídia do repositório são usadas nesta etapa; a escolha tipográfica final depende da revisão dos styleframes. Não há asset externo novo.
 
-| Elemento | Direção |
-| --- | --- |
-| Paleta | Carbono `#080B10`, papel quente `#F2EEE6`, cobre `#F06A45` como sinal, azul óptico `#80AFFF` apenas em luz/refração. Roxo atual deixa de ser fundo dominante; KV continua reconhecível. Valores ainda sujeitos a teste de contraste. |
-| Tipografia | Display editorial com serifa expressiva só em poucas palavras; grotesca legível para títulos e corpo; mono para metadados reais de cases. Candidatas: Instrument Serif, Manrope e IBM Plex Mono, hospedadas via `next/font` após checar licença e disponibilidade. O nome, função e CTAs não dependem de animação para aparecer. |
-| Grid | 12 colunas até 1440 px, 6 em tablet, 4 em mobile; largura de leitura limitada para texto, margens generosas, assimetria controlada em projetos. O layout atual de dois cards por linha vira capítulos com hierarquia própria. |
-| Ícones | Manter ícones já usados quando informativos e símbolos de marca com origem comprovada. Sem emblemas decorativos novos que pareçam credenciais. |
-| Mídia | Usar primeiro imagens dos quatro projetos e retratos já presentes no repositório; registrar a procedência antes de criar novos derivados públicos. A estrutura 3D, texturas geométricas e poster estático serão de autoria em código. Nenhuma imagem, vídeo ou código das referências será copiado. |
-| Breakpoints de revisão | 1440×900, 1024×768, 390×844 e 360×800 nas duas rotas. Hero e cases refluem em coluna em telas pequenas; controles de idioma, navegação e CTA permanecem visíveis. |
+## Storyboard de ponta a ponta
 
-## Pesquisa de referências
-
-Pesquisa real via MCP `mcp__21st__search` em 26/09/2026. Consultas: `creative developer portfolio editorial projects` (4 resultados), `cinematic portfolio hero` (8), `glass navigation` (8), `portfolio case study layout` (4). `mcp__21st__get_inspiration` também retornou 8 candidatos para composição editorial/vidro, com `contextApplied=false` e confiança entre 0,51 e 0,53; essa pontuação baixa pede seleção humana. Apenas metadados foram consultados; nenhum código pago ou instalação foi solicitada.
-
-| Obra e autor | URL | Princípio considerado | Limite de uso |
+| Capítulo | Quadro e conteúdo real | Câmera, cena e corte | Entrada/saída e interação |
 | --- | --- | --- | --- |
-| Portfolio Gallery, Isaiah Bjork (`isaiahbjork`), 21st.dev ID 7517 | https://21st.dev/@isaiahbjork/components/portfolio-gallery | Profundidade por sobreposição e um projeto em foco. | Sem copiar layout, marquee, mídia ou código; o nosso case precisa continuar legível e navegável em mobile. |
-| Portfolio Showcase Grid, `uiable`, 21st.dev ID 29523 | https://21st.dev/@uiable/components/block-portfolio-9 | Hierarquia assimétrica de projetos com texto e imagem. | Referência de composição; quatro cases e copy próprios. |
-| Editorial Collage Hero, `felipemenezes098`, 21st.dev ID 19074 | https://21st.dev/@felipemenezes098/components/hero-04 | Relação entre título, CTA e collage em camadas. | Não reutilizar collage ou template; adaptar a tensão espacial à identidade KV. |
-| Interactive Video Portfolio Scroller, `piyushxdev`, 21st.dev ID 24368 | https://21st.dev/@piyushxdev/components/interactive-video-portfolio-scroller | Sincronizar mídia e narrativa mantendo controle manual. | Nenhum vídeo novo sem origem/direito; evitar scroll capturado e autoplay sem controle. |
-| Work, Dennis Snellenberg | https://dennissnellenberg.com/work | Metadados claros de cliente, serviço e ano ao lado dos cases. | Modelo de clareza factual; não copiar visual ou conteúdo. |
-| Bruno's Home, Bruno Simon | https://bruno-simon.com/ | Cena espacial como expressão do autor, com opções de qualidade e controles. | Referência de intencionalidade; o portfólio KV não vira jogo nem usa assets da obra. |
+| **Abertura** | Nome KV, função provisória aprovada e CTA no primeiro quadro. Uma abertura arquitetônica com duas lâminas translúcidas ocupa a profundidade. | Câmera oblíqua aproxima e gira até o eixo frontal; as lâminas se afastam para revelar a abertura. | ScrollTrigger dissolve o título só quando a mídia seguinte ganha presença. O CTA leva ao case também sem JS. Ponteiro desloca apenas a luz da navbar; teclado recebe foco estável. |
+| **01 · NKS Connect** | Mockup já publicado, título, descrição existente de plataforma de sites por assinatura e link real. | A abertura se achata em uma tela; a câmera avança enquanto o mockup HTML cresce e substitui o vazio. A estrutura recua em opacidade. | No protótipo, imagem entra ainda sobre fundo escuro; o corte para papel claro ocorre depois que ela é reconhecível. Scroll reverso remonta o hero. Conteúdo completo permanece após a sequência sticky. |
+| **02 · Milan Móveis** | Mídia e texto existentes do site para varejo de móveis; contribuição só nos termos já publicados. | Em futura expansão, câmera faz travessia lateral sem reset para o zero; planos ganham luz material mais quente, derivada da mídia real. | A tela NKS sai lateralmente; a nova mídia ocupa o enquadramento antes do título. Sem textura de madeira fictícia ou números inventados. |
+| **03 · Sincad-MT** | Mídia e texto existentes do site do sindicato. | Movimento desacelera e a câmera se torna frontal; linhas estruturais se alinham para uma leitura mais institucional. | Corte mais sóbrio, com metadados claros e sem selos, métricas ou autorização pública presumida. |
+| **04 · Criactive Design** | Mídia e texto existentes do site da agência. | A estrutura abre novamente em profundidade; a câmera passa entre dois planos e entrega a imagem final. | A energia aumenta sem converter a seção em grade de miniaturas; o link real encerra a série. |
+| **Sobre / trajetória** | Colaboração, stack e marcos já publicados, revistos quanto a fatos pendentes D01–D05. | A câmera recua; a estrutura deixa de ser moldura de mídia e vira linha de tempo espacial discreta. | ScrollTrigger alterna escala de leitura, nunca a disponibilidade de texto. Foco/âncoras chegam ao conteúdo sem efeito obrigatório. |
+| **Depoimentos** | Três depoimentos preservados com retrato, nome, atribuição e controle de pausa. | Câmera quase imóvel; a cena segura a atenção na voz e não compete com ela. | Framer Motion controla apenas a troca local já existente; autoplay pausável por botão, hover e foco. Reduzido movimento mostra citação estática. |
+| **Processo** | Três etapas existentes sempre legíveis. | A câmera percorre três juntas da estrutura, sem shader sobre o texto. | Transições marcam explicação, não descoberta de conteúdo; touch e teclado não dependem de hover. |
+| **Contato** | E-mail e redes atuais; CTA direto. | Plano final recua para sugerir KV na geometria e encerra o movimento. | Scroll termina em quadro estável; links e foco permanecem sem deslocamento. |
 
-As referências GTA VI/Rockstar, Lando Norris e materiais de Apple Liquid Glass continuam como referências de alto nível dadas no brief, sem reaproveitamento de mídia ou alegação de implementação nativa da Apple no navegador.
+Os capítulos 02–contato são storyboard, não implementação declarada. A revisão visual do Mastermind acontece antes de multiplicar o sistema do protótipo.
 
-## Vidro, cena e movimento
+## Responsabilidade de cada sistema
 
-**Navbar refrativa:** refração limitada à cápsula e ao fundo decorativo que ela atravessa; links e foco ficam em camada sem distorção. Prototipar amostragem/deslocamento visual local e medir contraste sobre cena escura, painel claro e imagem. Se a técnica não se sustentar em Safari/iOS ou sem `backdrop-filter`, usar preenchimento sólido, borda e realce, mantendo o mesmo tamanho e semântica. `prefers-reduced-transparency` remove a transparência quando suportado. Descrever no código como aproximação web, sem chamar de Liquid Glass nativo.
-
-**Cena de assinatura:** um conjunto de quatro planos de interface próprios, associáveis aos quatro cases sem fingir que são capturas reais. R3F/Three existentes permitem uma câmera discreta que reorganiza os planos até a entrada dos projetos. Poster estático de autoria para SSR/falha de WebGL; DPR limitado; animação pausada fora da tela e com aba oculta; recursos descartados e contexto perdido tratado. O título e CTA são HTML acima da cena.
-
-**Scroll:** nativo, para preservar âncoras, teclado e restauração. GSAP fica como sistema primário de coreografia; CSS atende estados simples. Nenhum motor de smooth scroll adicional nesta direção. Motion já presente no carrossel permanece isolado, sem disputar as mesmas propriedades da cena/GSAP.
-
-| Cena/efeito | Função e gatilho | Técnica e duração candidata | Interrupção, touch e movimento reduzido |
+| Sistema | Responsabilidade exclusiva | O que não controla | Vida útil |
 | --- | --- | --- | --- |
-| Entrada do hero | Apresentar nome e plano espacial no load | GSAP; opacidade/translate, 0,65–0,9 s | Concluir ao navegar/scroll rápido; texto sempre no HTML; sob reduced motion usar quadro final imediato. |
-| Planos do hero | Conduzir aos projetos conforme scroll | R3F, câmera/planos por progresso de ScrollTrigger, sem pin de página | Pausar offscreen/aba oculta; touch segue scroll nativo; poster estático sob reduced motion/falha WebGL. |
-| Cases | Destacar capítulo ativo e mídia | GSAP; opacidade/translate de bloco, 0,4–0,6 s | Revelação não bloqueia links; ao reentrar/reverter, terminar de forma estável; sem reveal sob reduced motion. |
-| Vidro da navbar | Dar resposta óptica local ao fundo/ponteiro | Camada visual separada; atualização limitada a RAF; feedback curto | Sem tracking em touch; texto intacto; fallback sólido e sem distorção sob reduced motion/transparency. |
-| Depoimentos | Acompanhar troca acionada ou autoplay já controlável | Motion existente, com botão de pausa | Hover/foco pausam; teclado/touch operáveis; quote estática e sem autoplay sob reduced motion. |
+| **Lenis** | Suavizar wheel e sincronizar âncoras no desktop; fornecer posição de scroll a ScrollTrigger. Touch mantém arraste natural. | Transform/opacity de DOM, câmera ou gestos locais. | Um Lenis na rota de prévia, `autoRaf:false`, alimentado pelo ticker GSAP; `destroy()` na saída; ignorado sob reduced motion. |
+| **GSAP + ScrollTrigger** | Uma timeline scrub da passagem hero → NKS: opacidade/translate do título, escala/entrada da mídia, cor do fundo e progresso normalizado. Nas futuras seções, timelines de capítulo com dono único dos elementos DOM. | Transform de malhas Three, press/hover de controles, render loop. | `gsap.context().revert()` e triggers removidos no unmount; `refresh()` após fontes/imagem; ticker desconectado em aba oculta. |
+| **Three.js / R3F** | Câmera e malhas da estrutura 3D, lendo o progresso normalizado entregue por GSAP. | Scroll, DOM, links ou conteúdo editorial. | `frameloop="demand"`; só invalida após mudança de progresso; DPR 1–1,5; canvas desmontado em perda de contexto, indisponibilidade ou reduced motion. |
+| **Framer Motion** | Press do CTA e hover do link do case no protótipo; depois, gestos locais e trocas do carrossel. | Scrolltelling, câmera ou elementos controlados por GSAP. | Elementos React desmontam sem ticker global; teclado usa foco e ativação nativos sem coreografia de press. |
+| **CSS** | Foco, layout responsivo, cor e estado do vidro; poster de reserva. | Progressão de capítulo. | Sem loop; `prefers-reduced-motion` e `prefers-reduced-transparency` preservam legibilidade. |
 
-## Pontos para revisão do Mastermind
+A ligação Lenis/GSAP segue a [integração oficial do Lenis](https://github.com/darkroomengineering/lenis#gsap-scrolltrigger). O `onUpdate` foi colocado na timeline, conforme a [orientação de ScrollTrigger para scrub numérico](https://gsap.com/docs/v3/Plugins/ScrollTrigger/), para manter DOM e cena no mesmo progresso. A cena usa renderização sob demanda. Só um motor suaviza scroll; nenhum sistema disputa `transform` ou `opacity` do mesmo elemento.
 
-1. Aprovar ou ajustar a tese **Interfaces em órbita** e o deslocamento do roxo para carbono/papel/cobre.
-2. Confirmar se a serifa editorial deve entrar no hero ou ficar restrita a detalhes; a copy D01/D02 segue provisória.
-3. Confirmar a prioridade dos quatro cases e qualquer material próprio disponível. D03–D05 continuam pendentes; nenhum fato novo será publicado a partir desta proposta.
+## Matriz de interação e interrupção
 
-**Gate nesta entrega:** P0 do Worker desbloqueado por chamada real do 21st.dev. P2 em revisão de direção; implementação visual, screenshots de P2 e validação P3/P4 ainda não ocorreram. Próximo passo, após a revisão: protótipo de hero/navbar e primeiro case, com comparação desktop/mobile, fallback e matriz de movimento; então expandir a linguagem às demais seções.
+| Ação | Função e gatilho | Controlador / propriedades | Término, reversão e fallback |
+| --- | --- | --- | --- |
+| Abertura → NKS | Explicar relação entre estrutura e obra ao rolar. | ScrollTrigger: transform/opacity de hero e mídia, background do stage; Three: câmera/rotação/escala de malhas. | Scrub segue scroll em ambos os sentidos; interrupção para onde o usuário parou. Sob reduced motion, hero e case aparecem em fluxo estático. |
+| Suavização | Tornar a progressão contínua no wheel. | Lenis: somente posição de scroll; GSAP ticker fornece um único relógio. | Pode parar em qualquer ponto; aba oculta remove ticker; touch não usa inércia artificial; sob reduced motion Lenis não é criado. |
+| Reação da navbar | Comunicar profundidade e presença sem perturbar links. | CSS `backdrop-filter`/filtro SVG na camada óptica; ponteiro atualiza posição da luz em um RAF solicitado por evento. | Pointer leave congela a luz sem loop; teclado não move a lente; fundo sólido em transparência reduzida ou filtro indisponível. O texto e o foco ficam fora da distorção. |
+| CTA e link do case | Feedback de gesto local. | Framer Motion: `scale` do CTA em pointer/touch press, `translateY` do link em hover fino. | Pointer up/cancel/leave retorna ao estado inicial; ativação por teclado é imediata e mantém foco visível; reduced motion remove o gesto. |
+| Troca de idioma / direção | Navegar para estado equivalente. | Links HTML PT/EN e A/B; navegador/Next. | Sem transição que bloqueie a navegação; a URL retém o styleframe escolhido ao trocar idioma. |
+| Perda de WebGL | Manter a história operável. | React desmonta Canvas; CSS oferece poster; GSAP continua a transição da mídia HTML. | Context loss cancela a cena; mídia, link, navbar e scroll continuam presentes. |
+
+## Vidro, mídia e direitos
+
+A cápsula da prévia tem preenchimento semitransparente, `backdrop-filter` com blur e deslocamento SVG onde suportado, realce que acompanha ponteiro fino e cor de texto que muda quando o stage clareia. Trata-se de **aproximação web**, não de Liquid Glass nativo da Apple. O efeito fica atrás de links/foco e tem fallback sólido para Safari/iOS ou preferência de transparência reduzida. A validação visual em Safari real e sobre todas as mídias ainda pertence ao gate P2.
+
+O protótipo usa `public/LaptopMockup.svg` do NKS Connect já presente no portfólio. Sua procedência anterior ao repositório continua a ser auditada antes de criar derivados novos. Capturas de referências 21st.dev, Dennis, Rockstar, Lando Norris ou Apple não foram usadas como mídia, código, marca ou layout. Outros cases manterão as mídias existentes até confirmação do proprietário; nada no storyboard autoriza nova métrica, depoimento, vínculo ou divulgação institucional.
+
+## Evidência e gate desta revisão
+
+![Transição desktop: estrutura dando lugar à mídia NKS](styleframes/prototype-transition-1440.jpg)
+
+![Case 01 em 390×844](styleframes/prototype-case-mobile-390.jpg)
+
+No protótipo, PT/EN têm título, case, link e idioma inicial próprios; HTML servido contém um `h1`, descrição e link NKS sem executar JS. Chrome DevTools MCP mostrou Canvas ativo no modo normal; emulação de WebGL indisponível mostrou zero Canvas, poster e mídia do case; emulação de reduced motion mostrou zero Canvas, sequência estática e conteúdo acessível. Essas são emulações de navegador, não teste físico de Safari/iOS. Capturas são da prévia local. O site principal permanece como na P1.
+
+**Gate:** direção reformulada e primeiro corte hero → case implementado para revisão. A escolha A/B, refinamento do vidro, os outros três cases e as seções seguintes aguardam avaliação visual do Mastermind. P2 integral, P3 e P4 continuam abertos.

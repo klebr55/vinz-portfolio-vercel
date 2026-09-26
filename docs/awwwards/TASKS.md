@@ -24,14 +24,15 @@ O Mastermind e o Worker usam todos os recursos para suas responsabilidades: pesq
 - [x] Executar `npm ci`, `npm run type-check`, `npm run lint`, `npm run build` e `git diff --check`; resultados literais no Checkpoint P1.
 - [x] Registrar evidências de P1, preencher a tabela no Checkpoint P1 e criar commit local de fase.
 
-**Gate P1:** concluído para a fundação funcional. As duas rotas, HTML servido, navegação, canonical de produção em build local e em build Preview simulado, controles do carrossel e fallback sob reduced motion foram verificados. O gate visual P2 segue bloqueado até conectar 21st.dev.
+**Gate P1:** concluído para a fundação funcional. As duas rotas, HTML servido, navegação, canonical de produção em build local e em build Preview simulado, controles do carrossel e fallback sob reduced motion foram verificados. O MCP 21st.dev foi conectado e pesquisado no gate P0 antes do protótipo P2.
 
-**Atualização 26/09/2026:** o bloqueio do MCP 21st.dev foi resolvido e comprovado no Checkpoint P2 de pesquisa. A direção P2 está em revisão do Mastermind; a implementação visual ainda não começou.
+**Atualização 26/09/2026:** o protótipo hero → NKS e dois styleframes estão implementados para revisão do Mastermind. As demais seções permanecem em storyboard.
 
 ## P2 · Direção visual e implementação
 
 - [x] Pesquisa 21st.dev e tese visual candidata documentadas em `VISUAL_DIRECTION_REVIEW.md` para revisão do Mastermind antes de consolidar a direção.
-- [ ] Documentar tese visual, referências humanas com autor/URL, procedência e direitos de assets, paleta, tipografia, grid, narrativa, breakpoints, plano WebGL/vidro e matriz de movimento.
+- [x] Documentar tese visual, referências humanas com autor/URL, procedência e limites de direitos dos assets, paleta, tipografia, grid, narrativa, breakpoints, plano WebGL/vidro e matriz de movimento no escopo de revisão.
+- [x] Entregar dois styleframes e protótipo funcional hero → NKS com GSAP, Lenis, Three.js e Framer Motion, PT/EN e fallbacks.
 - [ ] Implementar a experiência inteira, preservando os quatro cases, três depoimentos, PT/EN, âncoras e contato.
 - [ ] Entregar navbar refrativa autoral e cena de assinatura, com texto e controles independentes do efeito, fallbacks e movimento reduzido.
 - [ ] Verificar seção por seção em desktop/mobile, foco, touch, contraste e interrupção das animações; capturar evidência.
