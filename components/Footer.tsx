@@ -31,7 +31,7 @@ const Footer = () => {
   };
 
   return (
-    <footer id='contact' className='w-full pt-20 pb-10'>
+    <footer id='contact' className='w-full pt-20 pb-10 scroll-mt-28'>
       <div className='w-full absolute left-0 -bottom-72 min-h-96'>
         <Image 
         src="/footer-grid.svg" 
@@ -42,9 +42,9 @@ const Footer = () => {
       </div>
 
       <div className='flex flex-col items-center'>
-        <h1 className='heading lg:max-w-[45vw]'>
+        <h2 className='heading lg:max-w-[45vw]'>
           {footerTexts.heading.prefix} <span className='text-purple'>{footerTexts.heading.highlight}</span>
-        </h1>
+        </h2>
         <p className='text-white-200 md:mt-10 my-5 text-center'>
           {footerTexts.subheading}
         </p>

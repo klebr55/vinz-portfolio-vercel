@@ -31,11 +31,11 @@ const RecentProjects = () => {
   };
 
   return (
-    <div className='py-20' id='projects'>
-        <h1 className='heading'>
+    <div className='py-20 scroll-mt-28' id='projects'>
+        <h2 className='heading'>
             {projectTexts.heading.prefix} {''}
             <span className='text-purple'>{projectTexts.heading.highlight}</span>
-        </h1>
+        </h2>
         <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10'>
             {projects.map(({ id, img, iconLists, link }, index) => (
                 <div key={id} className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]'>
@@ -56,9 +56,9 @@ const RecentProjects = () => {
                                 className='z-10 absolute w-full h-full bottom-0 object-cover' />
                             </div>
                         </div>
-                        <h1 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1'>
+                        <h3 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1'>
                             {projectTexts.items[index]?.title}
-                        </h1>
+                        </h3>
 
                         <p className='lg:text-lg lg:font-normal font-light text-sm line-clamp-3'>
                             {projectTexts.items[index]?.description}

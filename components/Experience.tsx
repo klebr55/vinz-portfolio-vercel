@@ -30,14 +30,17 @@ const Experience = () => {
 
   return (
     <div className='w-full py-20' id='experience'>
-        <h1 className='heading'>
+        <h2 className='heading'>
             {experienceTexts.heading.prefix} {''}
             <span className='text-purple'>{experienceTexts.heading.highlight}</span>
-        </h1>
+        </h2>
         <div className='w-full mt-12 grid lg:grid-cols-4 grid-cols-1 gap-10'>
             {workExperience.map((card, index) => (
                 <Button key={card.id}
-                duration={Math.floor(Math.random() * 10000) + 10000}
+                // Was Math.random() during render, so the server and the client
+                // produced different durations on every hydration. Derived from
+                // the index instead: stable, still varied per card.
+                duration={10000 + (index % 4) * 2500}
                 borderRadius="1.75rem"
                 style={{
                     background: "rgb(4,7,29)",
@@ -55,9 +58,9 @@ const Experience = () => {
                         className='max-w-[161.38px] lg:w-32 md:w-20 w-16'/>
                     </div>
                     <div className='lg:ms-5 py-4 px-4'>
-                        <h1 className='text-start text-xl md:text-2xl font-bold'>
+                        <h3 className='text-start text-xl md:text-2xl font-bold'>
                             {experienceTexts.jobs[index]?.title}
-                        </h1>
+                        </h3>
                         <p className='text-start text-white-100 mt-3 font-semibold'>
                             {experienceTexts.jobs[index]?.desc}
                         </p>

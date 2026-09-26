@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from 'next/font/google';
 import "../globals.css";
 import "../animista.css"
@@ -8,6 +8,7 @@ import { getMessages } from 'next-intl/server';
 import WebVitals from "@/components/WebVitals";
 import VercelTracking from "@/components/VercelTracking";
 import ClientMultiThreadOptimizer from '@/components/ClientMultiThreadOptimizer';
+import { SITE_URL, SITE_NAME, ogImageUrl } from '@/lib/site';
 
 // Configuração da fonte Inter otimizada
 const inter = Inter({
@@ -20,6 +21,15 @@ const inter = Inter({
 // Static generation com ISR otimizado para plano gratuito
 export const revalidate = 7200; // Revalida a cada 2 horas (mais conservador)
 
+// Next 15 expects viewport/theme-color through this export, not a hand-written
+// <meta> in <head>. Keeps viewport-fit=cover for env(safe-area-inset-*).
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  themeColor: '#000319',
+};
+
 // Gerar metadata dinâmica baseada no locale
 export async function generateMetadata({
   params,
@@ -29,15 +39,30 @@ export async function generateMetadata({
   const { locale } = await params;
   
   const isPortuguese = locale === 'pt-br';
-  
+
+  // Titles below are the strings currently indexed for /pt-br and /en.
+  // They previously lived in page.tsx, whose metadata silently overrode this
+  // layout (including its metadataBase). Consolidated here so there is one
+  // source of truth; do not reword without checking search impact.
+  const title = isPortuguese
+    ? "Kleber Vinicius | Desenvolvedor Web Full-Stack"
+    : "Kleber Vinicius | Full-Stack Web Developer";
+
+  const description = isPortuguese
+    ? "Portfólio de Kleber Vinicius, desenvolvedor Web Full-Stack especializado em React, Next.js e tecnologias modernas."
+    : "Portfolio of Kleber Vinicius, Full-Stack Web Developer specialized in React, Next.js and modern technologies.";
+
+  const ogSubtitle = isPortuguese
+    ? 'Desenvolvedor Web Full-Stack'
+    : 'Full-Stack Web Developer';
+
+  const ogImage = ogImageUrl('Kleber Vinicius', ogSubtitle);
+  const ogAlt = `Kleber Vinicius - ${ogSubtitle}`;
+
   return {
-    metadataBase: new URL('https://klebervinicius.dev'),
-    title: isPortuguese 
-      ? "Portfólio Kleber Vinicius | Desenvolvedor Web Full-Stack"
-      : "Kleber Vinicius's Portfolio | Full-Stack Web Developer",
-    description: isPortuguese
-      ? "Desenvolvedor Web Full-Stack especializado em React, Next.js e tecnologias modernas. Criando experiências web excepcionais."
-      : "Full-Stack Web Developer specialized in React, Next.js and modern technologies. Creating exceptional web experiences.",
+    metadataBase: new URL(SITE_URL),
+    title,
+    description,
     keywords: isPortuguese
       ? "desenvolvedor web, desenvolvedor, full-stack, react, nextjs, javascript, typescript, portfolio"
       : "web developer, developer, full-stack, react, nextjs, javascript, typescript, portfolio",
@@ -67,55 +92,26 @@ export async function generateMetadata({
     },
     openGraph: {
       type: 'website',
-      url: `https://klebervinicius.dev/${locale}`,
+      url: `${SITE_URL}/${locale}`,
       locale: locale === 'pt-br' ? 'pt_BR' : 'en_US',
-      title: isPortuguese 
-        ? "Portfólio Kleber Vinicius | Desenvolvedor Web Full-Stack"
-        : "Kleber Vinicius's Portfolio | Full-Stack Web Developer",
-      description: isPortuguese
-        ? "Desenvolvedor Web Full-Stack especializado em React, Next.js e tecnologias modernas. Criando experiências web excepcionais."
-        : "Full-Stack Web Developer specialized in React, Next.js and modern technologies. Creating exceptional web experiences.",
-      siteName: "Kleber Vinicius Portfolio",
+      title,
+      description,
+      siteName: SITE_NAME,
       images: [
         {
-          url: `https://klebervinicius.dev/api/og?title=${encodeURIComponent(
-            'Kleber Vinicius'
-          )}&subtitle=${encodeURIComponent(
-            isPortuguese
-              ? 'Desenvolvedor Web Full-Stack'
-              : 'Full-Stack Web Developer'
-          )}`,
+          url: ogImage,
           width: 1200,
           height: 630,
-          alt: isPortuguese 
-            ? 'Kleber Vinicius - Desenvolvedor Web Full-Stack'
-            : 'Kleber Vinicius - Full-Stack Web Developer',
-          type: 'image/png',
-        },
-        {
-          url: 'https://klebervinicius.dev/icon-192.png',
-          width: 192,
-          height: 192,
-          alt: 'Kleber Vinicius Logo',
+          alt: ogAlt,
           type: 'image/png',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: isPortuguese 
-        ? "Portfólio Kleber Vinicius"
-        : "Kleber Vinicius's Portfolio",
-      description: isPortuguese
-        ? "Desenvolvedor Web Full-Stack criando experiências web excepcionais"
-        : "Full-Stack Web Developer creating exceptional web experiences",
-      images: [`https://klebervinicius.dev/api/og?title=${encodeURIComponent(
-        'Kleber Vinicius'
-      )}&subtitle=${encodeURIComponent(
-        isPortuguese
-          ? 'Desenvolvedor Web Full-Stack'
-          : 'Full-Stack Web Developer'
-      )}`],
+      title,
+      description,
+      images: [ogImage],
       creator: '@klebervinicius',
       site: '@klebervinicius',
     },
@@ -125,35 +121,6 @@ export async function generateMetadata({
         'en': '/en',
         'pt-BR': '/pt-br',
       },
-    },
-    other: {
-      'og:url': `https://klebervinicius.dev/${locale}`,
-      'og:site_name': 'Kleber Vinicius Portfolio',
-      'og:image:width': '1200',
-      'og:image:height': '630',
-      'og:image:type': 'image/png',
-      'og:image:alt': isPortuguese 
-        ? 'Kleber Vinicius - Desenvolvedor Web Full-Stack'
-        : 'Kleber Vinicius - Full-Stack Web Developer',
-      // WhatsApp específico
-      'og:image': `https://klebervinicius.dev/api/og?title=${encodeURIComponent(
-        'Kleber Vinicius'
-      )}&subtitle=${encodeURIComponent(
-        isPortuguese
-          ? 'Desenvolvedor Web Full-Stack'
-          : 'Full-Stack Web Developer'
-      )}`,
-      'og:image:secure_url': `https://klebervinicius.dev/api/og?title=${encodeURIComponent(
-        'Kleber Vinicius'
-      )}&subtitle=${encodeURIComponent(
-        isPortuguese
-          ? 'Desenvolvedor Web Full-Stack'
-          : 'Full-stack Web Developer'
-      )}`,
-      // Facebook específico
-      'fb:app_id': '', // Adicione seu Facebook App ID se tiver
-      // Telegram específico
-      'telegram:channel': '@klebervinicius',
     },
   };
 }
@@ -188,47 +155,25 @@ export default async function LocaleLayout({
         {/* Preconnect para melhor performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* Meta tags específicas para WhatsApp e redes sociais */}
-        <meta property="og:image" content={`https://klebervinicius.dev/api/og?title=${encodeURIComponent(
-          'Kleber Vinicius'
-        )}&subtitle=${encodeURIComponent(
-          validLocale === 'pt-br'
-            ? 'Desenvolvedor Web Full-Stack'
-            : 'Full-Stack Web Developer'
-        )}`} />
-        <meta property="og:image:secure_url" content={`https://klebervinicius.dev/api/og?title=${encodeURIComponent(
-          'Kleber Vinicius'
-        )}&subtitle=${encodeURIComponent(
-          validLocale === 'pt-br'
-            ? 'Desenvolvedor Web Full-Stack'
-            : 'Full-Stack Web Developer'
-        )}`} />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta name="twitter:image" content={`https://klebervinicius.dev/api/og?title=${encodeURIComponent(
-          'Kleber Vinicius'
-        )}&subtitle=${encodeURIComponent(
-          validLocale === 'pt-br'
-            ? 'Desenvolvedor Web Full-Stack'
-            : 'Full-Stack Web Developer'
-        )}`} />
-        <meta name="twitter:image:alt" content={validLocale === 'pt-br' ? 'Kleber Vinicius - Desenvolvedor Web' : 'Kleber Vinicius - Web Developer'} />
-        
-        {/* Força o WhatsApp a recarregar a imagem */}
-        <meta property="og:updated_time" content={new Date().toISOString()} />
-        <meta property="article:modified_time" content={new Date().toISOString()} />
-        
+
         {/* DNS prefetch para melhor performance */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-        
+
+        {/*
+          og:image / og:image:secure_url / twitter:image and the og:updated_time
+          pair used to be emitted here by hand. They duplicated what the
+          metadata export already renders, and the timestamps were built from
+          `new Date()` on every render, which defeats crawler caching. Social
+          tags now come from generateMetadata only.
+        */}
+
         {/* Critical CSS inlined para above-the-fold */}
         <style dangerouslySetInnerHTML={{
           __html: `
             :root {
               --font-inter: ${inter.style.fontFamily};
+              color-scheme: dark;
             }
             /* Critical above-the-fold styles */
             body { 
@@ -239,7 +184,7 @@ export default async function LocaleLayout({
               font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
             }
             .hero-section { 
-              min-height: 100vh; 
+              min-height: 100dvh; 
               display: flex; 
               align-items: center; 
               justify-content: center; 
@@ -254,9 +199,12 @@ export default async function LocaleLayout({
               0% { background-position: 200% 0; }
               100% { background-position: -200% 0; }
             }
-            /* Smooth scrolling e performance */
-            html {
-              scroll-behavior: smooth;
+            /* Smooth scrolling gated on motion preference */
+            @media (prefers-reduced-motion: no-preference) {
+              html { scroll-behavior: smooth; }
+            }
+            @media (prefers-reduced-motion: reduce) {
+              .loading-skeleton { animation: none; }
             }
             * {
               scrollbar-width: thin;
@@ -264,12 +212,8 @@ export default async function LocaleLayout({
             }
           `
         }} />
-        
-        {/* Meta tags para performance e SEO */}
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
         <meta name="format-detection" content="telephone=no" />
-        <meta name="theme-color" content="#000319" />
-        <link rel="icon" href="/kv-favicon.svg" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <NextIntlClientProvider 

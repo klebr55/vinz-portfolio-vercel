@@ -99,11 +99,11 @@ const ClientsAnimated = () => {
   }
 
   return (
-    <div className='py-20' id='testimonials'>
-      <h1 className='heading mb-10'>
+    <div className='py-20 scroll-mt-28' id='testimonials'>
+      <h2 className='heading mb-10'>
         {clientTexts.heading.prefix} {''}
         <span className='text-purple'>{clientTexts.heading.highlight}</span>
-      </h1>
+      </h2>
 
       {/* Componente AnimatedTestimonials */}
       <div className='flex flex-col items-center'>

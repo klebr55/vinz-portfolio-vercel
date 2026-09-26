@@ -44,9 +44,9 @@ const Approach = () => {
   return (
     <section className='w-full py-20'>
 
-      <h1 className='heading'>
+      <h2 className='heading'>
         {approachTexts.heading.prefix} <span className='text-purple'>{approachTexts.heading.highlight}</span>
-      </h1>
+      </h2>
 
         <div className="my-20 flex flex-col lg:flex-row items-center justify-center gap-4">
         <Card title={approachTexts.phases[0].title} 

@@ -1,43 +1,22 @@
-"use client";
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Spotlight } from './ui/hero/Spotlight';
 import { cn } from '@/utils/cn';
 import { TextGenerateEffect } from './ui/hero/TextGenerateEffect';
 import MagicButton from './ui/button/MagicButton';
 import { FaLocationArrow } from 'react-icons/fa';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
+/*
+ * Copy comes from messages/{locale}.json through next-intl.
+ *
+ * It previously came from a useState default plus a useEffect that read
+ * window.location.pathname, so the first paint was always English (a visible
+ * flash on /pt-br), the imported `t` was never called, and the strings in
+ * messages/*.json were dead. The age claim lived only in those hardcoded
+ * defaults and is gone with them.
+ */
 const Hero = () => {
-  const locale = useLocale();
   const t = useTranslations('hero');
-  const [heroTexts, setHeroTexts] = useState({
-    subtitle: 'Dynamic Web Magic With Next.js',
-    title: 'Transforming Concepts Into Seamless User Experiences',
-    description: "Hi, I'm Kleber Vinícius, a 23 years old Next.js Developer Based in Brazil.",
-    button: 'Show my work'
-  });
-
-  useEffect(() => {
-    // Força a atualização baseada no locale detectado da URL
-    const currentPath = window.location.pathname;
-    const isPortuguese = currentPath.includes('/pt-br');
-    
-    if (isPortuguese) {
-      setHeroTexts({
-        subtitle: 'Next.js em Ação',
-        title: 'Transformando Ideias em Experiências Incríveis',
-        description: 'Prazer, sou Kleber Vinícius, um desenvolvedor Next.js de 23 anos nascido no Brasil.',
-        button: 'Veja meus projetos'
-      });
-    } else {
-      setHeroTexts({
-        subtitle: 'Dynamic Web Magic With Next.js',
-        title: 'Transforming Concepts Into Seamless User Experiences',
-        description: "Hi, I'm Kleber Vinícius, a 23 years old Next.js Developer Based in Brazil.",
-        button: 'Show my work'
-      });
-    }
-  }, [locale, t]);
 
   return (
     <div className='pb-10 pt-36'>
@@ -49,6 +28,7 @@ const Hero = () => {
 
         <div className="absolute flex h-screen w-full items-center justify-center bg-white dark:bg-black-100 top-0 left-0">
             <div
+                aria-hidden="true"
                 className={cn(
                 "absolute inset-0",
                 "[background-size:40px_40px]",
@@ -56,33 +36,36 @@ const Hero = () => {
                 "dark:[background-image:linear-gradient(to_right,rgba(38,38,38,0.3)_1px,transparent_1px),linear-gradient(to_bottom,rgba(38,38,38,0.3)_1px,transparent_1px)]",
                 )}
             />
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black-100"></div>
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black-100"></div>
         </div>
 
         <div className='flex justify-center relative my-20 z-10'>
             <div className='max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center'>
-                <h2 className='uppercase tracking-widest text-xs text-center text-blue-100 max-w-80'>
-                    {heroTexts.subtitle}
-                </h2>
-
-                <TextGenerateEffect
-                    key={heroTexts.title} // Força re-renderização quando o título muda
-                    className='text-center text-[40px] md:text-5xl lg:text-6xl'
-                    words={heroTexts.title} // Passa a string completa
-                />
-                
-                <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl'>
-                    {heroTexts.description}
+                <p className='uppercase tracking-widest text-xs text-center text-blue-100 max-w-80'>
+                    {t('subtitle')}
                 </p>
 
-                <a href="#about" className='w-full flex justify-center md:w-60 md:mt-10'>
-                    <MagicButton 
-                        title={heroTexts.button}
-                        icon={<FaLocationArrow className='relative z-10'/>}
+                {/* The document's only h1. This block used to render a <div>,
+                    leaving the page with no h1 at all. */}
+                <TextGenerateEffect
+                    as='h1'
+                    className='text-center text-[40px] md:text-5xl lg:text-6xl text-balance'
+                    words={t('title')}
+                />
+
+                <p className='text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl text-pretty'>
+                    {t('description')}
+                </p>
+
+                <div className='w-full flex justify-center md:w-60 md:mt-10'>
+                    {/* href was "#about" while the label said "see my projects". */}
+                    <MagicButton
+                        href='#projects'
+                        title={t('button')}
+                        icon={<FaLocationArrow className='relative z-10' aria-hidden='true' />}
                         position='right'
-                    >
-                    </MagicButton>
-                </a>
+                    />
+                </div>
             </div>
         </div>
     </div>

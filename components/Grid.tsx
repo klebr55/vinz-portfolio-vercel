@@ -128,7 +128,7 @@ const Grid = () => {
   }, [locale, t]);
 
   return (
-    <section id='about' className='py-20'>
+    <section id='about' className='py-20 scroll-mt-28'>
         <BentoGrid>
             {gridItems.map(({ id, className, img, imgClassName, titleClassName, spareImg }, index) => (
                 <BentoGridItem 

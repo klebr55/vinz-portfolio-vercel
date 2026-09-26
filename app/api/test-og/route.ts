@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { SITE_URL } from '@/lib/site';
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const url = searchParams.get('url') || 'https://klebervinicius.dev';
+  const url = searchParams.get('url') || SITE_URL;
 
   try {
     const response = await fetch(url);

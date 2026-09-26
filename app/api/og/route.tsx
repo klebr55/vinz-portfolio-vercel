@@ -112,7 +112,7 @@ export async function GET(request: Request) {
                 opacity: 0.7,
               }}
             >
-              klebervinicius.dev
+              klebervinicius.tech
             </div>
           </div>
         </div>

@@ -76,64 +76,17 @@ const Footer = NextDynamic(() => import("@/components/Footer"), {
 // ISG - Incremental Static Generation com revalidação conservadora
 export const revalidate = 7200; // Revalida a cada 2 horas
 
-// Metadata dinâmica para SEO otimizado
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-  const isPortuguese = locale === 'pt-br';
-  
-  return {
-    metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000'),
-    title: isPortuguese 
-      ? "Kleber Vinicius | Desenvolvedor Web Full-Stack" 
-      : "Kleber Vinicius | Full-Stack Web Developer",
-    description: isPortuguese
-      ? "Portfólio de Kleber Vinicius, desenvolvedor Web Full-Stack especializado em React, Next.js e tecnologias modernas."
-      : "Portfolio of Kleber Vinicius, Full-Stack Web Developer specialized in React, Next.js and modern technologies.",
-    // Adicionando favicon com kv-favicon.svg
-    icons: {
-      icon: [
-        { url: '/kv-favicon.svg', type: 'image/svg+xml' },
-        { url: '/kv-favicon.svg', sizes: '32x32' },
-      ],
-      apple: '/kv-favicon.svg',
-      shortcut: '/kv-favicon.svg',
-    },
-    openGraph: {
-      title: isPortuguese 
-        ? "Kleber Vinicius | Desenvolvedor Web Full-Stack" 
-        : "Kleber Vinicius | Full-Stack Web Developer",
-      description: isPortuguese
-        ? "Portfólio de Kleber Vinicius, desenvolvedor Web Full-Stack especializado em React, Next.js e tecnologias modernas."
-        : "Portfolio of Kleber Vinicius, Full-Stack Web Developer specialized in React, Next.js and modern technologies.",
-      images: [
-        {
-          url: 'https://klebervinicius.dev/KV-logo.png',
-          width: 512,
-          height: 512,
-          alt: isPortuguese 
-            ? 'Logo do Portfólio Kleber Vinicius'
-            : 'Kleber Vinicius Portfolio Logo',
-        },
-      ],
-      type: 'website',
-      locale: locale === 'pt-br' ? 'pt_BR' : 'en_US',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: isPortuguese 
-        ? "Kleber Vinicius | Desenvolvedor Web Full-Stack" 
-        : "Kleber Vinicius | Full-Stack Web Developer",
-      description: isPortuguese
-        ? "Portfólio de Kleber Vinicius, desenvolvedor Web Full-Stack especializado em React, Next.js e tecnologias modernas."
-        : "Portfolio of Kleber Vinicius, Full-Stack Web Developer specialized in React, Next.js and modern technologies.",
-      images: ['https://klebervinicius.dev/KV-logo.png'],
-    },
-  };
-}
+/*
+ * This route deliberately exports NO generateMetadata.
+ *
+ * It used to declare its own, which silently won over app/[locale]/layout.tsx
+ * (page metadata merges on top of layout metadata). Two consequences:
+ *   1. metadataBase resolved to VERCEL_URL or http://localhost:3000, so every
+ *      relative canonical/alternate was built against the wrong origin.
+ *   2. og:image pointed at the retired /KV-logo.png instead of the dynamic
+ *      /api/og card.
+ * The indexed titles and descriptions were moved verbatim into the layout.
+ */
 
 export default function Home() {
   return (

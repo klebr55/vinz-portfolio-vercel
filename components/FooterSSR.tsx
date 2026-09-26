@@ -34,11 +34,11 @@ const FooterSSR = async () => {
       </div>
 
       <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
+        <h2 className="heading lg:max-w-[45vw]">
           {footerTexts.heading.prefix}{" "}
           <span className="text-purple">{footerTexts.heading.highlight}</span>{" "}
           {footerTexts.subheading}
-        </h1>
+        </h2>
         <p className="text-white-200 md:mt-10 my-5 text-center">
           {footerTexts.subheading}
         </p>
