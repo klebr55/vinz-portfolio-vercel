@@ -18,6 +18,41 @@ O campo `asset.extras` do GLB declara: obra **Laptop**, autor **Aullwen**, orige
 
 O novo GLB está anexado à conversa com o Mastermind, **não foi adicionado à branch** e não fica automaticamente acessível ao Worker. O proprietário deve anexar `laptop (1).glb` diretamente à sessão do Worker ou disponibilizar um caminho de arquivo acessível a ele. Não pedir ao Worker para baixar o anexo deste chat por uma URL privada presumida. Não buscar um modelo substituto sem discutir a mudança.
 
+## Gate 3D adicional · duas skills instaladas pelo proprietário
+
+O proprietário instalou no ambiente do Worker as skills [three-best-practices](https://github.com/emalorenzo/three-agent-skills/tree/main/skills/three-best-practices) e [r3f-best-practices](https://github.com/emalorenzo/three-agent-skills/tree/main/skills/r3f-best-practices). O Worker deve **abrir os dois `SKILL.md` no próprio ambiente e provar sua disponibilidade** antes de alterar a cena. Elas complementam os sete recursos do Orchestrator Pipeline; não substituem shadcn, 21st.dev, Taste, Awwwards, Animate, Vercel Web Design Guidelines nem a validação de navegador. A exceção já autorizada para navegador nativo permanece se Chrome DevTools MCP falhar; registrar a falha e a evidência equivalente. Não herdar o gate comprovado em outra sessão.
+
+| Skill | Uso obrigatório nesta passagem | Evidência no checkpoint |
+| --- | --- | --- |
+| `r3f-best-practices` | Carregar o GLB com Drei/R3F; separar `Frame` de `Screen`; manter atualizações de câmera/material fora de `setState` por frame; tratar Suspense, erro, eventos, progresso e render sob demanda conforme o comportamento real da cena. | Informar regras consultadas, arquitetura e arquivos onde foram aplicadas ou justificadamente descartadas. |
+| `three-best-practices` | Inspecionar GLB, textura/UV/cor da tela, iluminação, shader e pós-processamento, ciclo de vida de materiais/texturas, perda de contexto e análise de custo visual. Confrontar cada receita com as versões de Three/R3F presentes no projeto. | Informar regras consultadas, resultado do render real, descarte/reutilização e limites observados nos dispositivos testados. |
+
+Estas skills são guias, não uma ordem de converter a cena para WebGPU, instalar física, reduzir a experiência a uma meta fixa de FPS ou atualizar dependências sem necessidade. A prioridade artística do proprietário continua alta. Escolher efeitos pelo impacto visual e preservar scroll, links, leitura e reversão; medir problemas reais em vez de cortar a direção preventivamente.
+
+## Direção vinculante da passagem hero → case
+
+A ideia do proprietário é substituir o wireframe e o mockup plano por **um notebook 3D físico como protagonista**. Ele gostou da transformação durante o scroll, mas rejeitou o X na hero. O notebook deve expor na própria tela as mídias verdadeiras dos sites que criou; a câmera se aproxima até a obra ocupar o quadro; durante a entrega para o case editorial, o chassi do notebook **perde opacidade progressivamente**. A tela e a mídia de destino devem permanecer legíveis durante essa dissolução. No scroll reverso, o notebook e o enquadramento se recompõem sem salto.
+
+Sequência a prototipar com **NKS Connect**, usando o `laptop (1).glb` fornecido e mídia real já autorizada no repositório:
+
+1. **Primeiro quadro:** nome, função e CTA legíveis, notebook presente com materialidade, luz e profundidade; nenhum X, cruz diagonal ou placeholder de wireframe substituindo o objeto. A direção A / Matéria orienta a composição inicial, sem congelar paleta e iluminação antes de observar o modelo e a mídia juntos.
+2. **Travessia:** uma timeline GSAP/ScrollTrigger, sincronizada com Lenis, fornece progresso contínuo para câmera e transformação do notebook em R3F. Movimento de ponteiro pode modular luz/reflexo de forma local e interrompível; não controlar o mesmo transform/opacity em GSAP e Motion.
+3. **Tela em foco:** NKS aparece corretamente orientado na malha `Screen`, com aspecto, UV e cor conferidos visualmente. Decidir entre textura de captura, sequência autorizada ou composição HTML alinhada à tela a partir da prova real de render. Não representar um iframe externo como textura WebGL interativa.
+4. **Entrega:** a tela preenche a composição; a mídia HTML semântica do case assume o enquadramento. O chassi `Frame` dissolve por camadas/materiais ou solução equivalente justificada, sem apagar prematuramente a tela ou deixar um retângulo preto. Conferir transparência, ordenação de desenho, reflexos e continuidade sobre fundos reais.
+5. **Case estabelecido e retorno:** título, contribuição já publicada, mídia e link do NKS ficam acessíveis e estáveis. Scroll reverso recupera tela, chassi, câmera e hero em qualquer ponto, inclusive após interrupções e scroll rápido.
+
+Projetar uma interface de conteúdo capaz de trocar as mídias dos **quatro cases reais** (NKS Connect, Milan Móveis, Sincad-MT e Criactive Design), mas **implementar e validar primeiro a passagem NKS**. Os capítulos seguintes só entram depois da revisão visual deste corte. Cada projeto pode exigir cor, luz, enquadramento e ritmo próprios; não transformar os quatro em uma galeria de cartões iguais.
+
+### Gate de aceitação deste corte
+
+- Mostrar o modelo GLB renderizado, com nós `Frame` e `Screen` identificados no código e em captura; documentar eventual ajuste de orientação, pivô, UV ou material. Preservar o original e registrar qualquer derivado e atribuição CC BY 4.0.
+- Entregar quadros da hero, tela NKS reconhecível, chassi a meio caminho da dissolução, case completo e retorno por scroll, em desktop e mobile. Um vídeo curto ou sequência de quadros deve provar continuidade e reversibilidade, não só extremos estáticos.
+- Conferir PT/EN, 1440×900, 390×844 e 360×800; demonstrar que a mídia da tela é legível em mobile por enquadramento próprio, que CTA/links funcionam por teclado e touch e que as âncoras continuam úteis.
+- Exercitar `prefers-reduced-motion`, WebGL indisponível, perda de contexto durante uso, carregamento do GLB e scroll rápido. Nessas condições, conteúdo e navegação permanecem disponíveis; registrar o que foi emulado e o que foi testado em dispositivo real.
+- Registrar regras aplicadas das duas skills, matriz de ownership GSAP/Lenis/R3F/Motion, capturas com rota/viewport/SHA, console/rede e resultados literais de type-check, lint, build e `git diff --check`. Se alguma prova faltar, marcar BLOCKED sem afirmar que P2 inteira terminou.
+
+Esta instrução é autorização para **evoluir o protótipo de P2 e publicar o checkpoint na branch de redesign para revisão**. Não é aprovação da direção final, merge em `master` ou publicação em produção.
+
 ## Instrução de implementação ao Worker
 
 1. Preservar a rota de prévia e o estado do commit `304188b`. Primeiro retirar o X do CSS/poster e inspecionar a cena em desktop e mobile; preservar um fundo de profundidade sem diagonais cruzadas.
