@@ -8,6 +8,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
+import { caseMedia } from './case-media';
 import type { prototypeCopy, PrototypeLocale, PrototypeStyle } from './prototype-copy';
 import styles from './story-prototype.module.css';
 
@@ -78,7 +79,6 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
 
     lenis.on('scroll', updateTrigger);
     gsap.ticker.add(tick);
-    gsap.ticker.lagSmoothing(0);
     document.addEventListener('visibilitychange', handleVisibility);
 
     const context = gsap.context(() => {
@@ -90,7 +90,7 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
       const sequence = sequenceRef.current;
       if (!hero || !media || !details || !scene || !stage || !sequence) return;
 
-      gsap.set(media, { autoAlpha: 0, yPercent: 14, scale: 0.8 });
+      gsap.set(media, { autoAlpha: 0 });
       gsap.set(details, { autoAlpha: 0, y: 48 });
 
       const timeline = gsap.timeline({
@@ -99,7 +99,7 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
           const value = timeline.progress();
           progressRef.current = value;
           invalidateScene.current?.();
-          const next = value >= 0.58;
+          const next = value >= 0.86;
           if (next !== activeRef.current) {
             activeRef.current = next;
             setCaseActive(next);
@@ -108,11 +108,11 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
       });
 
       timeline
-        .to(hero, { opacity: 0, yPercent: -25, duration: 0.32, ease: 'none' }, 0.08)
-        .to(media, { autoAlpha: 1, yPercent: 0, scale: 1, duration: 0.36, ease: 'none' }, 0.25)
-        .to(scene, { opacity: 0.08, duration: 0.35, ease: 'none' }, 0.34)
-        .to(stage, { backgroundColor: style === 'ember' ? '#e9e1d4' : '#d9e8ed', duration: 0.26, ease: 'none' }, 0.54)
-        .to(details, { autoAlpha: 1, y: 0, duration: 0.27, ease: 'none' }, 0.66);
+        .to(hero, { autoAlpha: 0, yPercent: -20, duration: 0.3, ease: 'none' }, 0.1)
+        .to(scene, { opacity: 0, duration: 0.07, ease: 'none' }, 0.75)
+        .to(media, { autoAlpha: 1, duration: 0.03, ease: 'none' }, 0.79)
+        .to(stage, { backgroundColor: style === 'ember' ? '#e9e1d4' : '#d9e8ed', duration: 0.17, ease: 'none' }, 0.83)
+        .to(details, { autoAlpha: 1, y: 0, duration: 0.12, ease: 'none' }, 0.88);
 
       const heading = hero.querySelector('h1');
       if (heading) gsap.from(heading, { opacity: 0.72, y: 18, duration: 0.75, ease: 'power3.out', clearProps: 'transform,opacity' });
@@ -129,7 +129,6 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
       gsap.ticker.remove(tick);
       lenis.destroy();
       context.revert();
-      gsap.ticker.lagSmoothing(500, 33);
     };
   }, [reducedMotion, style]);
 
@@ -214,7 +213,9 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
           <div ref={caseMediaRef} className={styles.caseMedia} aria-hidden="true">
             <div className={styles.caseMediaInner}>
               <span className={styles.caseMediaIndex}>01 / 04</span>
-              <Image src="/LaptopMockup.svg" alt="" width={1857} height={919} priority unoptimized className={styles.caseImage} />
+              <div className={styles.screenCapture}>
+                <Image src={caseMedia.nks.source} alt="" width={1280} height={853} priority unoptimized />
+              </div>
             </div>
           </div>
 
@@ -235,17 +236,25 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
         <div className={styles.caseDetailsBody}>
           <p>{copy.caseDescription}</p>
           <motion.a
-            href="https://nksconnect.com.br"
+            href={caseMedia.nks.link}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={reducedMotion ? undefined : { transform: 'translateY(-3px)' }}
             transition={{ duration: 0.16, ease: [0.23, 1, 0.32, 1] }}
           >{copy.caseLink}<span aria-hidden="true">↗</span></motion.a>
         </div>
-        <div className={styles.caseStill}>
-          <Image src="/LaptopMockup.svg" alt={copy.caseName} width={1857} height={919} unoptimized />
+        <div className={styles.caseStill} role="img" aria-label={copy.caseName}>
+          <div className={styles.screenCapture}>
+            <Image src={caseMedia.nks.source} alt="" width={1280} height={853} unoptimized />
+          </div>
         </div>
         <a className={styles.nextLink} href={`${base}#projects`}>{copy.next}<span aria-hidden="true">↗</span></a>
+        <p className={styles.assetCredit}>
+          {locale === 'pt-br' ? 'Modelo 3D Laptop por ' : 'Laptop 3D model by '}
+          <a href="https://sketchfab.com/3d-models/laptop-7d870e900889481395b4a575b9fa8c3e" target="_blank" rel="noopener noreferrer">Aullwen</a>
+          {' · '}<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>
+          {locale === 'pt-br' ? ' · tela adaptada com captura NKS Connect' : ' · screen adapted with an NKS Connect capture'}
+        </p>
       </section>
 
       <aside className={styles.reviewSwitcher} aria-label={copy.reviewLabel}>
