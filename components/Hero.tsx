@@ -4,7 +4,7 @@ import { cn } from '@/utils/cn';
 import { TextGenerateEffect } from './ui/hero/TextGenerateEffect';
 import MagicButton from './ui/button/MagicButton';
 import { FaLocationArrow } from 'react-icons/fa';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 /*
  * Copy comes from messages/{locale}.json through next-intl.
@@ -17,6 +17,7 @@ import { useTranslations } from 'next-intl';
  */
 const Hero = () => {
   const t = useTranslations('hero');
+  const locale = useLocale();
 
   return (
     <div className='pb-10 pt-36'>
@@ -66,6 +67,12 @@ const Hero = () => {
                         position='right'
                     />
                 </div>
+                <a
+                    href={`/${locale}/awwwards-preview/ember`}
+                    className='relative mt-5 inline-flex min-h-11 items-center gap-2 rounded-full border border-white/40 px-5 py-2 text-sm font-medium text-white transition-colors hover:border-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
+                >
+                    {t('preview')} <span aria-hidden='true'>↗</span>
+                </a>
             </div>
         </div>
     </div>

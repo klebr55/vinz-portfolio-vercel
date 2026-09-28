@@ -12,17 +12,13 @@ const SCREEN_WIDTH = 0.2936;
 const SCREEN_HEIGHT = 0.1696;
 const SCREEN_CROP = (SCREEN_WIDTH / SCREEN_HEIGHT) / (16 / 9);
 
-type VideoWithCallback = HTMLVideoElement & {
-  requestVideoFrameCallback?: (callback: () => void) => number;
-  cancelVideoFrameCallback?: (handle: number) => void;
-};
-
 type SceneProps = {
   style: PrototypeStyle;
   progress: MutableRefObject<number>;
   invalidateScene: MutableRefObject<(() => void) | null>;
   onUnavailable: () => void;
-  video: HTMLVideoElement | null;
+  frameCanvas: HTMLCanvasElement | null;
+  paintedFrame: MutableRefObject<number>;
   mediaReady: boolean;
 };
 
@@ -42,10 +38,11 @@ class SceneBoundary extends Component<{ children: ReactNode; onUnavailable: () =
   }
 }
 
-function Laptop({ style, progress, invalidateScene, onUnavailable, video, mediaReady }: SceneProps) {
+function Laptop({ style, progress, invalidateScene, onUnavailable, frameCanvas, paintedFrame, mediaReady }: SceneProps) {
   const { scene } = useGLTF(MODEL_PATH);
   const source = useTexture(NKS_PATH);
   const assembly = useRef<Group>(null);
+  const lastTextureFrame = useRef(-1);
   const { camera, gl, invalidate, size } = useThree();
 
   const asset = useMemo(() => {
@@ -66,16 +63,14 @@ function Laptop({ style, progress, invalidateScene, onUnavailable, video, mediaR
     screenShellMaterial.depthWrite = false;
     screen.material = screenShellMaterial;
 
-    const canvas = document.createElement('canvas');
-    canvas.width = 1600;
-    canvas.height = 900;
+    const canvas = frameCanvas ?? document.createElement('canvas');
+    if (!frameCanvas) {
+      canvas.width = 1600;
+      canvas.height = 900;
+    }
     const ctx = canvas.getContext('2d', { alpha: false });
-    if (ctx && source.image) {
-      try {
-        ctx.drawImage(source.image, 0, 0, canvas.width, canvas.height);
-      } catch {
-        // ignore
-      }
+    if (ctx && source.image && paintedFrame.current < 0) {
+      ctx.drawImage(source.image, 0, 0, canvas.width, canvas.height);
     }
 
     const screenTexture = new CanvasTexture(canvas);
@@ -103,73 +98,8 @@ function Laptop({ style, progress, invalidateScene, onUnavailable, video, mediaR
     model.position.set(-center.x * scale, -center.y * scale, -center.z * scale);
     model.scale.setScalar(scale);
 
-    return { model, frameMaterial, screenShellMaterial, screenMaterial, screenTexture, screenGeometry, canvas, ctx };
-  }, [scene, source]);
-
-  useEffect(() => {
-    if (!video) return;
-    const canvas = asset.canvas;
-    const ctx = asset.ctx;
-    const texture = asset.screenTexture;
-    if (!canvas || !ctx || !texture) return;
-
-    const mediaVideo = video as VideoWithCallback | null;
-    let rvfcId: number | null = null;
-    let isDisposed = false;
-
-    const paint = () => {
-      if (isDisposed || !video || video.readyState < 2 || !mediaReady) return;
-      if (video.seeking) return;
-      if (video.videoWidth === 0 || video.videoHeight === 0) return;
-      try {
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        texture.needsUpdate = true;
-        invalidate();
-      } catch {
-        // ignore
-      }
-    };
-
-    const hasRvfc = mediaVideo && typeof mediaVideo.requestVideoFrameCallback === 'function';
-
-    const onFrame = () => {
-      if (isDisposed) return;
-      paint();
-      if (hasRvfc) {
-        rvfcId = mediaVideo.requestVideoFrameCallback(onFrame);
-      }
-    };
-
-    if (hasRvfc) {
-      rvfcId = mediaVideo.requestVideoFrameCallback(onFrame);
-    }
-
-    const onSeekOrLoad = () => {
-      paint();
-    };
-
-    if (!hasRvfc) {
-      video.addEventListener('seeked', onSeekOrLoad);
-      video.addEventListener('loadeddata', onSeekOrLoad);
-      video.addEventListener('timeupdate', onSeekOrLoad);
-    } else {
-      video.addEventListener('loadeddata', onSeekOrLoad);
-    }
-
-    if (video.readyState >= 2 && mediaReady && !video.seeking) {
-      paint();
-    }
-
-    return () => {
-      isDisposed = true;
-      if (rvfcId !== null && mediaVideo && typeof mediaVideo.cancelVideoFrameCallback === 'function') {
-        mediaVideo.cancelVideoFrameCallback(rvfcId);
-      }
-      video.removeEventListener('seeked', onSeekOrLoad);
-      video.removeEventListener('loadeddata', onSeekOrLoad);
-      video.removeEventListener('timeupdate', onSeekOrLoad);
-    };
-  }, [asset, video, mediaReady, invalidate]);
+    return { model, frameMaterial, screenShellMaterial, screenMaterial, screenTexture, screenGeometry };
+  }, [scene, source, frameCanvas, paintedFrame]);
 
   useEffect(() => {
     invalidateScene.current = invalidate;
@@ -192,6 +122,10 @@ function Laptop({ style, progress, invalidateScene, onUnavailable, video, mediaR
   }, [asset, gl, invalidate, invalidateScene, onUnavailable]);
 
   useFrame(() => {
+    if (mediaReady && paintedFrame.current !== lastTextureFrame.current) {
+      asset.screenTexture.needsUpdate = true;
+      lastTextureFrame.current = paintedFrame.current;
+    }
     const value = Math.max(0, Math.min(1, progress.current));
     const mobile = size.width < 760;
     const align = Math.min(1, value / 0.16);
@@ -220,9 +154,9 @@ function Laptop({ style, progress, invalidateScene, onUnavailable, video, mediaR
 
   return (
     <>
-      <ambientLight intensity={style === 'ember' ? 1.8 : 1.35} />
-      <directionalLight color={style === 'ember' ? '#ffe2b7' : '#c6e5ff'} intensity={3.2} position={[2.8, 4.2, 5]} />
-      <directionalLight color={style === 'ember' ? '#f89069' : '#7899ff'} intensity={1.7} position={[-3, 1, -2]} />
+      <ambientLight intensity={style === 'ember' ? 1.65 : 1.35} />
+      <directionalLight color={style === 'ember' ? '#eee5ff' : '#c6e5ff'} intensity={3.2} position={[2.8, 4.2, 5]} />
+      <directionalLight color={style === 'ember' ? '#9b7bdf' : '#7899ff'} intensity={1.7} position={[-3, 1, -2]} />
       <group ref={assembly}>
         <primitive object={asset.model} dispose={null} />
       </group>
