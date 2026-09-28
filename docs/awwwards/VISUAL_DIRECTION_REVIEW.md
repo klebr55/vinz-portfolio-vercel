@@ -1,5 +1,13 @@
 # P2 · Sistemas em travessia — direção e protótipo para o Mastermind
 
+## Revisão 4 · 28/09/2026 · Beams púrpura e último quadro editorial
+
+O proprietário rejeitou os feixes finos e quentes vistos no corte anterior e forneceu o componente Beams React Bits com suas props exatas. A variante A / Matéria agora usa feixes volumétricos púrpura atrás do GLB real; nome, CTA e NKS permanecem à frente. O fundo escurece e cede espaço à câmera na aproximação. A nova hero pode ser avaliada no [styleframe desktop](evidence-corte4/desktop-00-hero.png) e no [mobile](evidence-corte4/mobile390-00-hero.png). A variante B permanece comparação histórica, sem adoção. A pesquisa gratuita do shadcn MCP e a exceção do segundo contexto WebGL estão registradas no [checkpoint](P2-Checkpoint-Worker.md).
+
+O vídeo autorizado de NKS percorre os 18,88 s até o footer, com quadros WebP derivados do original para resposta reversível ao scroll. A entrega 3D → HTML conserva o mesmo canvas de mídia; em seguida ocorre uma mudança *deliberadamente visível* do footer para um mockup editorial feito de capturas reais do NKS. [Footer](evidence-corte4/desktop-97-forward.png) → [mockup](evidence-corte4/desktop-100-forward.png) → [case](evidence-corte4/desktop-101-case.png). [Vídeo desktop](evidence-corte4/desktop-journey.mp4) e [mobile](evidence-corte4/mobile390-journey.mp4) registram ida, reversão e nova ida. A navegação KV permanece no dock inferior até o fim da entrega para não cobrir a navegação gravada.
+
+GSAP/ScrollTrigger mantém a única timeline de progresso; Lenis suaviza o scroll; R3F/Three lê esse progresso para câmera e máquina; Motion limita-se aos gestos dos controles. Beams tem Canvas próprio e invalida frames apenas enquanto visível. Reduced motion e falha de WebGL mostram conteúdo e links sem efeito; falha da sequência mantém o pôster. O contrato editorial PT/EN foi preparado para quatro cases, mas apenas NKS aparece neste corte; atribuições técnicas e resultados sem evidência seguem explicitamente pendentes. **P2 continua aberta**, aguardando a avaliação visual Mastermind antes da expansão.
+
 Revisão 3 · 27/09/2026 · Worker · `redesign/awwwards-repagination` · corte para decisão visual, sem conclusão da P2.
 
 ## Correção de direção

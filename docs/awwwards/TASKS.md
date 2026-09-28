@@ -1,5 +1,15 @@
 # Execução por fases
 
+## Corte 4 · 28/09/2026 · revisão visual pendente
+
+- [x] Substituir os feixes quentes pelo Beams React Bits fornecido, com props pedidas e paleta púrpura; preservar GLB, texto e CTA.
+- [x] Sincronizar saída do Beams e passagem ao NKS pelo mesmo progresso GSAP; manter navbar fora da navegação gravada.
+- [x] Apresentar o vídeo NKS integral até o footer e transição reversível para mockup próprio feito de mídia autorizada.
+- [x] Criar contrato editorial PT/EN para quatro cases sem inventar contribuição, stack ou resultado; renderizar apenas NKS.
+- [x] Adicionar à home original o acesso localizado à prévia Awwwards.
+- [x] Capturar desktop/mobile, ida, reversão e nova ida; auditar interação e fallbacks, registrar limitações no checkpoint.
+- [ ] Mastermind aprovar visualmente o Corte 4; P2 permanece aberta e nenhum outro case será expandido antes dessa decisão.
+
 Estado inicial: todas as tarefas abaixo estão abertas. O Kiro relatou verificações em commits anteriores, mas nenhum gate desta especificação foi comprovado no HEAD atual por este documento. Antes de alterar, execute `git fetch`, confira o SHA remoto e leia `SPEC.md`.
 
 ## P0 · Recursos no ambiente de cada agente
