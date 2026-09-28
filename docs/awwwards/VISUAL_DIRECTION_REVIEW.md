@@ -87,18 +87,21 @@ Capturas do build local de produção, rota `/pt-br/awwwards-preview/ember` e `/
 | Ponto | Descrição | Desktop (1440×900) | Mobile (390×844 DPR 2) |
 | --- | --- | --- | --- |
 | **1. Hero** | Notebook GLB em perspectiva, teclado e espessura reconhecíveis, sem X; título, função e CTA legíveis. | ![Hero Desktop](evidence-laptop/01-hero-desktop.jpg) | ![Hero Mobile](evidence-laptop/01-hero-mobile.jpg) |
-| **2. Frontal com NKS** | Centralização e rotação frontal; vídeo de navegação NKS ativo na tela; navbar KV docada na base sem colisão. | ![Frontal Desktop](evidence-laptop/02-notebook-frontal-motion-desktop.jpg) | ![Frontal Mobile](evidence-laptop/02-notebook-frontal-motion-mobile.jpg) |
-| **3. Início do zoom** | Câmera avança em direção à tela; vídeo navega para os planos da plataforma. | ![Zoom Desktop](evidence-laptop/03-zoom-start-desktop.jpg) | ![Zoom Mobile](evidence-laptop/03-zoom-start-mobile.jpg) |
+| **2. Frontal com NKS** | Centralização e rotação frontal; gravação completa NKS (18,87s) ativa na tela cobrindo hero, planos, afiliados, meios de pagamento e rodapé; navbar KV no topo sem colisão com o teclado. | ![Frontal Desktop](evidence-laptop/02-notebook-frontal-motion-desktop.jpg) | ![Frontal Mobile](evidence-laptop/02-notebook-frontal-motion-mobile.jpg) |
+| **3. Início do zoom** | Câmera avança em direção à tela; vídeo navega pelos planos e seções de comissão e afiliação da plataforma. | ![Zoom Desktop](evidence-laptop/03-zoom-start-desktop.jpg) | ![Zoom Mobile](evidence-laptop/03-zoom-start-mobile.jpg) |
 | **4. Tela quase cobrindo** | Tela preenche a viewport; chassi dissolve suavemente no final da aproximação sem fade da máquina inteira. | ![Tela Quase Cobrindo Desktop](evidence-laptop/04-screen-fullscreen-desktop.jpg) | ![Tela Quase Cobrindo Mobile](evidence-laptop/04-screen-fullscreen-mobile.jpg) |
-| **5. Primeiro quadro após entrega** | Handover 3D → HTML: primeiro quadro da camada de destino perfeitamente alinhado em posição, escala e conteúdo. | ![Entrega Desktop](evidence-laptop/05-handover-desktop.jpg) | ![Entrega Mobile](evidence-laptop/05-handover-mobile.jpg) |
-| **6. Case estabelecido** | Conteúdo semântico editorial com título, link ativo para o site oficial, contribuição e imagem estática. | ![Case Estabelecido Desktop](evidence-laptop/06-case-established-desktop.jpg) | ![Case Estabelecido Mobile](evidence-laptop/06-case-established-mobile.jpg) |
+| **5. Primeiro quadro após entrega** | Handover 3D → HTML: entrega no rodapé e ecossistema NKS (18,87s); camada HTML `.caseStill` assume com `nks-editorial-handover.jpg`, mantendo continuidade visual sem salto para trás. | ![Entrega Desktop](evidence-laptop/05-handover-desktop.jpg) | ![Entrega Mobile](evidence-laptop/05-handover-mobile.jpg) |
+| **6. Case estabelecido** | Conteúdo semântico editorial com título, link ativo para o site oficial, contribuição e imagem estática contínua do ecossistema. | ![Case Estabelecido Desktop](evidence-laptop/06-case-established-desktop.jpg) | ![Case Estabelecido Mobile](evidence-laptop/06-case-established-mobile.jpg) |
 
-### 2. Prova de calibração das bordas e reversibilidade
+### 2. Prova de calibração das bordas, continuidade de handover e reversibilidade
 
 - **Calibração das bordas:** [Detalhe das bordas da tela](evidence-laptop/07-screen-edges-detail-desktop.jpg) comprovando ajuste milimétrico, ausência de z-fighting e sem vazamento fora do bezel.
-- **Scroll reverso contínuo:** [Hero restaurada Desktop](evidence-laptop/reverse-hero-desktop.jpg) e [Hero restaurada Mobile](evidence-laptop/reverse-hero-mobile.jpg).
-- **Vídeos MP4 da passagem completa (ida e volta):**
-  - Desktop: `docs/awwwards/evidence-laptop/passagem-nks-desktop.mp4` (1,06 MB)
-  - Mobile: `docs/awwwards/evidence-laptop/passagem-nks-mobile.mp4` (535 KB)
+- **Quadros adjacentes de handover (continuidade no rodapé):**
+  - Antes do handover (`p = 0.935`, 3D Canvas ativo): [3D Handover Frame](evidence-laptop/handover-before-desktop.jpg)
+  - Primeiro quadro após entrega (`p = 0.945`, camada HTML `.caseStill` ativa): [HTML Handover Frame](evidence-laptop/05-handover-desktop.jpg)
+- **Scroll reverso contínuo sem tela cinza:** Buffer desacoplado em 2D `<canvas>` retém o último frame válido decodificado via `requestVideoFrameCallback`, eliminando o defeito de tela cinza nos ~14s. Reversão completa comprovada: [Hero restaurada Desktop](evidence-laptop/reverse-hero-desktop.jpg) e [Hero restaurada Mobile](evidence-laptop/reverse-hero-mobile.jpg).
+- **Vídeos MP4 da passagem contínua (ida, pausa, volta rápida, pausa intermediária, nova ida):**
+  - Desktop: `docs/awwwards/evidence-laptop/passagem-nks-desktop.mp4` (2,12 MB, 1440×900, 30 fps, H.264)
+  - Mobile: `docs/awwwards/evidence-laptop/passagem-nks-mobile.mp4` (1,43 MB, 390×844 DPR 2, 30 fps, H.264)
 
-**Gate:** O corte de calibração, mídia em movimento, reversibilidade e entrega visual hero → NKS está pronto para a revisão do Mastermind. P2 permanece aberta.
+**Gate:** O corte de restauração integral da jornada NKS (18,87s), buffer 2D anti-tela cinza, pacing de scroll calibrado, dock KV desobstruído e handover contínuo está pronto para a revisão do Mastermind. P2 permanece aberta.

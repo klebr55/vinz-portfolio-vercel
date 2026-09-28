@@ -66,7 +66,6 @@
   transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1), background-color 220ms ease, color 220ms ease, border-color 220ms ease;
 }
 
-.root[data-screen-focus='true'] .nav { --nav-shift: calc(100dvh - 100% - max(36px, env(safe-area-inset-bottom) + 18px)); }
 .root[data-screen-focus='true'] .stageIndex { opacity: 0; }
 .root[data-screen-focus='true'] .reviewSwitcher { opacity: 0; visibility: hidden; pointer-events: none; }
 
@@ -126,7 +125,7 @@
 
 .languageLinks [aria-current='page'] { color: var(--accent); }
 
-.sequence { position: relative; height: 410dvh; }
+.sequence { position: relative; height: 560dvh; }
 
 .stage {
   position: sticky;
@@ -484,7 +483,7 @@
   .navLinks { gap: 12px; font-size: 0.72rem; }
   .navLinks a:nth-child(2), .navLinks a:nth-child(3) { display: none; }
   .languageLinks { font-size: 0.72rem; }
-  .sequence { height: 380dvh; }
+  .sequence { height: 500dvh; }
   .stage { min-height: 0; }
   .heroCopy, .root[data-style='spectral'] .heroCopy { top: 24vh; left: 22px; right: 22px; text-align: left; }
   .heroTitle, .root[data-style='spectral'] .heroTitle { font-size: clamp(4.5rem, 18vw, 8rem); line-height: 0.82; }

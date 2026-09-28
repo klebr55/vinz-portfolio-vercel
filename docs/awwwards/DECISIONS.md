@@ -191,3 +191,19 @@ Atendendo à revisão do Mastermind e às instruções do proprietário, este co
    - Rota EN verificada (`hero-en-desktop.jpg`)
    - Vídeos da passagem completa e reversa gerados com ffmpeg: `passagem-nks-desktop.mp4` (1,06 MB) e `passagem-nks-mobile.mp4` (535 KB).
 7. **Verificações:** `npm run type-check` (exit 0), `npm run lint` (exit 0), `npm run build` (exit 0), `git diff --check` (exit 0).
+
+## Checkpoint P2: Restauração da Jornada Completa NKS, Buffer 2D Anti-Tela Cinza e Dock no Topo
+
+Data: 2026-09-27 · Papel: Worker · Base remota: `29500d6912915c3bf2c1749b9274d928e6ea40e7`. Branch: `redesign/awwwards-repagination`.
+
+Atendendo às diretrizes do adendo mais recente de `docs/awwwards/P2-MASTER-REVIEW.md` e instruções do proprietário:
+
+1. **Restauração integral da jornada NKS (18,87 s):** O percurso completo foi restaurado a partir de `nksconnect.mp4` sem encurtamento artificial, percorrendo hero, proposta de valor, planos de assinatura, programa de afiliados/comissões, gateways de pagamento e rodapé do ecossistema. Re-encodado com FFmpeg (`public/awwwards/nks-editorial-seek.mp4`, 4,45 MB, GOP=4, `-tune fastdecode`, `+faststart`). Duração hardcoded `8.875` removida do código, passando a derivar dinamicamente `video.duration`.
+2. **Arquitetura Canvas Buffer contra tela cinza:** Desacoplamento da amostragem WebGL através de um canvas 2D persistente em memória e `CanvasTexture`. A atualização do canvas ocorre apenas após decodificação garantida por `requestVideoFrameCallback`. O buffer retém o último quadro válido durante a latência de seeking do decodificador Chromium/Direct3D, eliminando o defeito de tela cinza nos ~14s no scroll reverso.
+3. **Pacing de scroll e entrega narrativa contínua:** Altura expandida para `560dvh` (desktop) e `500dvh` (mobile). O ponto de entrega 3D → HTML aos `0.94` agora entrega no rodapé (18,87s) e `.caseStill` continua a história com `public/awwwards/nks-editorial-handover.jpg`, eliminando o salto para trás para a imagem da hero.
+4. **Dock KV ancorado no topo:** O deslocamento `--nav-shift` para a base foi eliminado, pois cruzava o teclado e trackpad do notebook 3D. A navbar permanece no topo em área segura, 100% desobstruída e com acessibilidade total por touch e teclado.
+5. **Evidências salvas em `docs/awwwards/evidence-laptop/`:**
+   - Vídeos contínuos em MP4 (ida, pausa, volta rápida sem tela cinza, pausa intermediária, nova ida): `passagem-nks-desktop.mp4` (2,12 MB) e `passagem-nks-mobile.mp4` (1,43 MB).
+   - Quadros adjacentes de handover: `handover-before-desktop.jpg` (p=0.935) e `handover-after-desktop.jpg` / `05-handover-desktop.jpg` (p=0.945).
+   - Marcos fotográficos (Desktop 1440×900, Mobile 390×844 DPR 2, EN Desktop, detalhe das bordas e reversão à hero).
+6. **Verificações literais:** `npm run type-check` (exit 0), `npm run lint` (exit 0), `npm run build` (exit 0), `git diff --check` (exit 0).

@@ -3,7 +3,7 @@
 import { Component, Suspense, useEffect, useMemo, useRef, type MutableRefObject, type ReactNode } from 'react';
 import { useGLTF, useTexture } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Box3, DoubleSide, Mesh, MeshBasicMaterial, PlaneGeometry, SRGBColorSpace, Vector3, VideoTexture, type Group, type MeshStandardMaterial } from 'three';
+import { Box3, CanvasTexture, DoubleSide, LinearFilter, Mesh, MeshBasicMaterial, PlaneGeometry, SRGBColorSpace, Vector3, type Group, type MeshStandardMaterial } from 'three';
 import type { PrototypeStyle } from './prototype-copy';
 
 const MODEL_PATH = '/awwwards/laptop-aullwen-original.glb';
@@ -11,6 +11,11 @@ const NKS_PATH = '/awwwards/nks-editorial-poster.jpg';
 const SCREEN_WIDTH = 0.2936;
 const SCREEN_HEIGHT = 0.1696;
 const SCREEN_CROP = (SCREEN_WIDTH / SCREEN_HEIGHT) / (16 / 9);
+
+type VideoWithCallback = HTMLVideoElement & {
+  requestVideoFrameCallback?: (callback: () => void) => number;
+  cancelVideoFrameCallback?: (handle: number) => void;
+};
 
 type SceneProps = {
   style: PrototypeStyle;
@@ -61,11 +66,27 @@ function Laptop({ style, progress, invalidateScene, onUnavailable, video, mediaR
     screenShellMaterial.depthWrite = false;
     screen.material = screenShellMaterial;
 
-    const screenTexture = source.clone();
+    const canvas = document.createElement('canvas');
+    canvas.width = 1600;
+    canvas.height = 900;
+    const ctx = canvas.getContext('2d', { alpha: false });
+    if (ctx && source.image) {
+      try {
+        ctx.drawImage(source.image, 0, 0, canvas.width, canvas.height);
+      } catch {
+        // ignore
+      }
+    }
+
+    const screenTexture = new CanvasTexture(canvas);
     screenTexture.colorSpace = SRGBColorSpace;
     screenTexture.repeat.set(SCREEN_CROP, 1);
     screenTexture.offset.set((1 - SCREEN_CROP) / 2, 0);
+    screenTexture.generateMipmaps = false;
+    screenTexture.minFilter = LinearFilter;
+    screenTexture.magFilter = LinearFilter;
     screenTexture.needsUpdate = true;
+
     const screenMaterial = new MeshBasicMaterial({ map: screenTexture, side: DoubleSide, toneMapped: false, transparent: true, depthWrite: false });
     const screenGeometry = new PlaneGeometry(SCREEN_WIDTH, SCREEN_HEIGHT);
     const screenMedia = new Mesh(screenGeometry, screenMaterial);
@@ -82,22 +103,63 @@ function Laptop({ style, progress, invalidateScene, onUnavailable, video, mediaR
     model.position.set(-center.x * scale, -center.y * scale, -center.z * scale);
     model.scale.setScalar(scale);
 
-    return { model, frameMaterial, screenShellMaterial, screenMaterial, screenTexture, screenGeometry };
+    return { model, frameMaterial, screenShellMaterial, screenMaterial, screenTexture, screenGeometry, canvas, ctx };
   }, [scene, source]);
 
   useEffect(() => {
-    if (!video || !mediaReady) return;
-    const texture = new VideoTexture(video);
-    texture.colorSpace = SRGBColorSpace;
-    texture.repeat.set(SCREEN_CROP, 1);
-    texture.offset.set((1 - SCREEN_CROP) / 2, 0);
-    asset.screenMaterial.map = texture;
-    asset.screenMaterial.needsUpdate = true;
-    invalidate();
+    if (!video) return;
+    const canvas = asset.canvas;
+    const ctx = asset.ctx;
+    const texture = asset.screenTexture;
+    if (!canvas || !ctx || !texture) return;
+
+    const mediaVideo = video as VideoWithCallback | null;
+    let rvfcId: number | null = null;
+    let isDisposed = false;
+
+    const paint = () => {
+      if (isDisposed || !video || video.readyState < 2 || !mediaReady) return;
+      try {
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        texture.needsUpdate = true;
+        invalidate();
+      } catch {
+        // ignore
+      }
+    };
+
+    const onFrame = () => {
+      if (isDisposed) return;
+      paint();
+      if (mediaVideo && typeof mediaVideo.requestVideoFrameCallback === 'function') {
+        rvfcId = mediaVideo.requestVideoFrameCallback(onFrame);
+      }
+    };
+
+    if (mediaVideo && typeof mediaVideo.requestVideoFrameCallback === 'function') {
+      rvfcId = mediaVideo.requestVideoFrameCallback(onFrame);
+    }
+
+    const onSeekOrLoad = () => {
+      paint();
+    };
+
+    video.addEventListener('seeked', onSeekOrLoad);
+    video.addEventListener('loadeddata', onSeekOrLoad);
+    video.addEventListener('timeupdate', onSeekOrLoad);
+
+    if (video.readyState >= 2 && mediaReady) {
+      paint();
+    }
+
     return () => {
-      asset.screenMaterial.map = asset.screenTexture;
-      asset.screenMaterial.needsUpdate = true;
-      texture.dispose();
+      isDisposed = true;
+      if (rvfcId !== null && mediaVideo && typeof mediaVideo.cancelVideoFrameCallback === 'function') {
+        mediaVideo.cancelVideoFrameCallback(rvfcId);
+      }
+      video.removeEventListener('seeked', onSeekOrLoad);
+      video.removeEventListener('loadeddata', onSeekOrLoad);
+      video.removeEventListener('timeupdate', onSeekOrLoad);
     };
   }, [asset, video, mediaReady, invalidate]);
 
@@ -124,12 +186,16 @@ function Laptop({ style, progress, invalidateScene, onUnavailable, video, mediaR
   useFrame(() => {
     const value = Math.max(0, Math.min(1, progress.current));
     const mobile = size.width < 760;
-    const align = Math.min(1, value / 0.18);
+    const align = Math.min(1, value / 0.16);
     const aligned = align * align * (3 - 2 * align);
     const zoom = Math.max(0, Math.min(1, (value - 0.72) / 0.22));
     const zoomed = zoom * zoom * (3 - 2 * zoom);
     const screenY = 0.0641576;
-    camera.position.set(mobile ? 0.1 * (1 - aligned) : 1.1 * (1 - aligned), (mobile ? 0.3 : 0.7) * (1 - aligned) + screenY * aligned, (mobile ? 9.2 : 8.2) * (1 - aligned) + (mobile ? 9.3 : 5.8) * aligned + (1.9 - (mobile ? 9.3 : 5.8)) * zoomed);
+    camera.position.set(
+      mobile ? 0.1 * (1 - aligned) : 1.1 * (1 - aligned),
+      (mobile ? 0.3 : 0.7) * (1 - aligned) + screenY * aligned,
+      (mobile ? 9.2 : 8.2) * (1 - aligned) + (mobile ? 9.3 : 5.8) * aligned + (1.9 - (mobile ? 9.3 : 5.8)) * zoomed
+    );
     camera.lookAt(0, screenY * aligned, -1.5687628 * zoomed);
 
     if (assembly.current) {
@@ -140,7 +206,7 @@ function Laptop({ style, progress, invalidateScene, onUnavailable, video, mediaR
       assembly.current.scale.setScalar(mobile ? 0.54 + 0.18 * aligned + 0.28 * zoomed : 1);
     }
 
-    asset.frameMaterial.opacity = 1 - Math.max(0, Math.min(1, (value - 0.86) / 0.06));
+    asset.frameMaterial.opacity = 1 - Math.max(0, Math.min(1, (value - 0.86) / 0.07));
     asset.screenShellMaterial.opacity = asset.frameMaterial.opacity;
   });
 

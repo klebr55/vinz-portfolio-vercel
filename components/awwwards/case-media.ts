@@ -2,6 +2,7 @@ export const caseMedia = {
   nks: {
     title: 'NKS CONNECT',
     source: '/awwwards/nks-editorial-poster.jpg',
+    handover: '/awwwards/nks-editorial-handover.jpg',
     video: '/awwwards/nks-editorial-seek.mp4',
     original: '/LaptopMockup.svg',
     link: 'https://honeydew-cobra-953075.hostingersite.com/',

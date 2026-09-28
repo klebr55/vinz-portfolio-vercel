@@ -35,9 +35,11 @@ O Mastermind e o Worker usam todos os recursos para suas responsabilidades: pesq
 - [x] Entregar dois styleframes e protótipo funcional hero → NKS com GSAP, Lenis, Three.js e Framer Motion, PT/EN e fallbacks.
 - [x] Substituir wireframe/mockup plano pelo GLB do proprietário no primeiro corte; inspecionar `Frame`/`Screen`, registrar atribuição, fallbacks e reversão do scroll.
 - [x] Calibrar a malha Screen milimetricamente (proporção 16:9, crop intencional sem estiramento, sem z-fighting ou vazamento de imagem).
-- [x] Implementar mídia seekable a partir da gravação original de NKS (`nks-editorial-seek.mp4`), sincronizada bidirecionalmente ao scroll sem flash branco e com restauração total na reversão.
-- [x] Resolver sobreposição da navbar KV recolhendo-a para a base durante o foco na tela e garantindo alinhamento pixel-a-pixel com a camada HTML na entrega.
-- [x] Produzir evidências fotográficas dos 6 marcos em Desktop (1440×900) e Mobile (390×844), detalhe das bordas, reversão e vídeos MP4 completos (Desktop e Mobile).
+- [x] Restaurar a jornada completa de NKS (18,87 s) cobrindo hero, recursos, planos, afiliados/comissões, pagamentos e rodapé sem encurtamento artificial, eliminando duração hardcoded.
+- [x] Eliminar defeito de tela cinza nos ~14s em scroll reverso rápido via arquitetura de buffer 2D canvas desacoplado e `requestVideoFrameCallback`.
+- [x] Repaginar pacing de scroll (560dvh desktop, 500dvh mobile) e garantir continuidade de handover 3D → HTML no rodapé do ecossistema NKS (`nks-editorial-handover.jpg`).
+- [x] Ajustar dock KV para ancoragem permanente no topo da viewport, 100% desobstruída em relação ao teclado/trackpad do notebook 3D com acessibilidade total.
+- [x] Produzir novas evidências com os 6 marcos, quadros adjacentes de handover, reversão à hero e vídeos MP4 contínuos (Desktop 1440×900 e Mobile 390×844 DPR 2).
 - [x] Preparar mapeamento de mídia dos quatro cases reais; somente NKS renderiza na experiência nova até a revisão visual.
 - [ ] Implementar a experiência inteira, preservando os quatro cases, três depoimentos, PT/EN, âncoras e contato.
 - [ ] Entregar navbar refrativa autoral e cena de assinatura, com texto e controles independentes do efeito, fallbacks e movimento reduzido.

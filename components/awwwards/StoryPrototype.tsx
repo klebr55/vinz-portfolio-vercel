@@ -40,6 +40,8 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
   const caseCopyRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const durationRef = useRef(18.87);
+  const pendingSeekTime = useRef<number | null>(null);
   const requestedTime = useRef(0);
   const firstFrameRequested = useRef(false);
   const progressRef = useRef(0);
@@ -53,25 +55,45 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
   const requestFrame = useCallback((time: number) => {
     requestedTime.current = time;
     const video = videoRef.current;
-    if (!video || video.readyState < 2 || video.seeking || Math.abs(video.currentTime - time) < 1 / 48) return;
+    if (!video || video.readyState < 2) return;
+    if (video.seeking) {
+      pendingSeekTime.current = time;
+      return;
+    }
+    if (Math.abs(video.currentTime - time) < 1 / 60) return;
     video.currentTime = time;
   }, []);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+    const updateDuration = () => {
+      if (video.duration && !isNaN(video.duration) && video.duration > 0.5) {
+        durationRef.current = video.duration;
+      }
+    };
     const ready = () => {
+      updateDuration();
       requestFrame(requestedTime.current);
     };
     const settle = () => {
-      if (video.currentTime > 0.5) setMotionFrameReady(true);
+      updateDuration();
+      if (video.currentTime > 0.1) setMotionFrameReady(true);
       invalidateScene.current?.();
-      requestFrame(requestedTime.current);
+      if (pendingSeekTime.current !== null) {
+        const next = pendingSeekTime.current;
+        pendingSeekTime.current = null;
+        if (Math.abs(video.currentTime - next) >= 1 / 60) {
+          video.currentTime = next;
+        }
+      }
     };
+    video.addEventListener('loadedmetadata', updateDuration);
     video.addEventListener('loadeddata', ready);
     video.addEventListener('seeked', settle);
     if (video.readyState >= 2) ready();
     return () => {
+      video.removeEventListener('loadedmetadata', updateDuration);
       video.removeEventListener('loadeddata', ready);
       video.removeEventListener('seeked', settle);
     };
@@ -82,6 +104,9 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
       const video = videoRef.current;
       if (video && video.readyState >= 2 && !firstFrameRequested.current) {
         firstFrameRequested.current = true;
+        if (video.duration && !isNaN(video.duration) && video.duration > 0.5) {
+          durationRef.current = video.duration;
+        }
         if ('requestVideoFrameCallback' in video) {
           video.requestVideoFrameCallback(() => {
             setMediaReady(true);
@@ -154,8 +179,10 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
           const value = timeline.progress();
           progressRef.current = value;
           invalidateScene.current?.();
-          requestFrame(Math.max(0.08, Math.min(8.875, 0.08 + ((value - 0.18) / 0.54) * 8.795)));
-          const focused = value >= 0.18 && value < 0.999;
+          const duration = durationRef.current;
+          const videoProgress = Math.max(0, Math.min(1, (value - 0.14) / 0.70));
+          requestFrame(videoProgress * duration);
+          const focused = value >= 0.14 && value < 0.999;
           if (focused !== screenFocusRef.current) {
             screenFocusRef.current = focused;
             setScreenFocus(focused);
@@ -248,7 +275,7 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
             <div className={styles.poster} />
             {(!webglAvailable || reducedMotion) && <Image className={styles.fallbackScene} src={caseMedia.nks.source} alt="" fill sizes="100vw" unoptimized />}
             {webglAvailable && !reducedMotion && (
-              <StoryScene style={style} progress={progressRef} invalidateScene={invalidateScene} onUnavailable={onUnavailable} video={videoRef.current} mediaReady={mediaReady && motionFrameReady && screenFocus && !mediaFailed} />
+              <StoryScene style={style} progress={progressRef} invalidateScene={invalidateScene} onUnavailable={onUnavailable} video={videoRef.current} mediaReady={mediaReady && motionFrameReady && !mediaFailed} />
             )}
           </div>
 
@@ -308,7 +335,7 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
         </div>
         <div className={styles.caseStill} role="img" aria-label={copy.caseName}>
           <div className={styles.screenCapture}>
-            <Image src={caseMedia.nks.source} alt="" fill sizes="(max-width: 760px) 100vw, 88vw" unoptimized />
+            <Image src={caseMedia.nks.handover} alt="" fill sizes="(max-width: 760px) 100vw, 88vw" unoptimized />
           </div>
         </div>
         <a className={styles.nextLink} href={`${base}#projects`}>{copy.next}<span aria-hidden="true">↗</span></a>
