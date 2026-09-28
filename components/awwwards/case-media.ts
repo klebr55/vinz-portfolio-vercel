@@ -1,9 +1,10 @@
 export const caseMedia = {
   nks: {
     title: 'NKS CONNECT',
-    source: '/awwwards/nks-source-from-existing-mockup.png',
+    source: '/awwwards/nks-editorial-poster.jpg',
+    video: '/awwwards/nks-editorial-seek.mp4',
     original: '/LaptopMockup.svg',
-    link: 'https://nksconnect.com.br',
+    link: 'https://honeydew-cobra-953075.hostingersite.com/',
   },
   milan: {
     title: 'Milan Móveis',

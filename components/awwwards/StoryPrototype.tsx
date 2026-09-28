@@ -26,6 +26,10 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
   const [reducedMotion, setReducedMotion] = useState(false);
   const [webglAvailable, setWebglAvailable] = useState(false);
   const [caseActive, setCaseActive] = useState(false);
+  const [screenFocus, setScreenFocus] = useState(false);
+  const [mediaReady, setMediaReady] = useState(false);
+  const [motionFrameReady, setMotionFrameReady] = useState(false);
+  const [mediaFailed, setMediaFailed] = useState(false);
   const [ctaPressed, setCtaPressed] = useState(false);
   const rootRef = useRef<HTMLElement>(null);
   const sequenceRef = useRef<HTMLElement>(null);
@@ -35,12 +39,63 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
   const caseMediaRef = useRef<HTMLDivElement>(null);
   const caseCopyRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const requestedTime = useRef(0);
+  const firstFrameRequested = useRef(false);
   const progressRef = useRef(0);
   const invalidateScene = useRef<(() => void) | null>(null);
   const activeRef = useRef(false);
+  const screenFocusRef = useRef(false);
   const lensRaf = useRef<number | null>(null);
   const lensPoint = useRef({ x: 50, y: 50 });
   const onUnavailable = useCallback(() => setWebglAvailable(false), []);
+
+  const requestFrame = useCallback((time: number) => {
+    requestedTime.current = time;
+    const video = videoRef.current;
+    if (!video || video.readyState < 2 || video.seeking || Math.abs(video.currentTime - time) < 1 / 48) return;
+    video.currentTime = time;
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const ready = () => {
+      requestFrame(requestedTime.current);
+    };
+    const settle = () => {
+      if (video.currentTime > 0.5) setMotionFrameReady(true);
+      invalidateScene.current?.();
+      requestFrame(requestedTime.current);
+    };
+    video.addEventListener('loadeddata', ready);
+    video.addEventListener('seeked', settle);
+    if (video.readyState >= 2) ready();
+    return () => {
+      video.removeEventListener('loadeddata', ready);
+      video.removeEventListener('seeked', settle);
+    };
+  }, [requestFrame]);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      const video = videoRef.current;
+      if (video && video.readyState >= 2 && !firstFrameRequested.current) {
+        firstFrameRequested.current = true;
+        if ('requestVideoFrameCallback' in video) {
+          video.requestVideoFrameCallback(() => {
+            setMediaReady(true);
+            invalidateScene.current?.();
+          });
+          video.currentTime = requestedTime.current > 0.12 ? requestedTime.current - 0.04 : 0.12;
+        } else {
+          setMediaReady(true);
+        }
+        window.clearInterval(timer);
+      }
+    }, 100);
+    return () => window.clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -99,7 +154,13 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
           const value = timeline.progress();
           progressRef.current = value;
           invalidateScene.current?.();
-          const next = value >= 0.86;
+          requestFrame(Math.max(0.08, Math.min(8.875, 0.08 + ((value - 0.18) / 0.54) * 8.795)));
+          const focused = value >= 0.18 && value < 0.999;
+          if (focused !== screenFocusRef.current) {
+            screenFocusRef.current = focused;
+            setScreenFocus(focused);
+          }
+          const next = value >= 0.965;
           if (next !== activeRef.current) {
             activeRef.current = next;
             setCaseActive(next);
@@ -108,11 +169,11 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
       });
 
       timeline
-        .to(hero, { autoAlpha: 0, yPercent: -20, duration: 0.3, ease: 'none' }, 0.1)
-        .to(scene, { opacity: 0, duration: 0.07, ease: 'none' }, 0.75)
-        .to(media, { autoAlpha: 1, duration: 0.03, ease: 'none' }, 0.79)
-        .to(stage, { backgroundColor: style === 'ember' ? '#e9e1d4' : '#d9e8ed', duration: 0.17, ease: 'none' }, 0.83)
-        .to(details, { autoAlpha: 1, y: 0, duration: 0.12, ease: 'none' }, 0.88);
+        .to(hero, { autoAlpha: 0, yPercent: -16, duration: 0.16, ease: 'none' }, 0.04)
+        .to(scene, { opacity: 0, duration: 0.025, ease: 'none' }, 0.94)
+        .to(media, { autoAlpha: 1, duration: 0.025, ease: 'none' }, 0.94)
+        .to(stage, { backgroundColor: style === 'ember' ? '#e9e1d4' : '#d9e8ed', duration: 0.035, ease: 'none' }, 0.965)
+        .to(details, { autoAlpha: 1, y: 0, duration: 0.035, ease: 'none' }, 0.965);
 
       const heading = hero.querySelector('h1');
       if (heading) gsap.from(heading, { opacity: 0.72, y: 18, duration: 0.75, ease: 'power3.out', clearProps: 'transform,opacity' });
@@ -130,7 +191,7 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
       lenis.destroy();
       context.revert();
     };
-  }, [reducedMotion, style]);
+  }, [reducedMotion, style, requestFrame]);
 
   useEffect(() => () => {
     if (lensRaf.current !== null) cancelAnimationFrame(lensRaf.current);
@@ -155,7 +216,7 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
   const base = `/${locale}`;
 
   return (
-    <main ref={rootRef} className={styles.root} data-style={style} data-reduced={reducedMotion ? 'true' : 'false'} data-case-active={caseActive ? 'true' : 'false'}>
+    <main ref={rootRef} className={styles.root} data-style={style} data-reduced={reducedMotion ? 'true' : 'false'} data-case-active={caseActive ? 'true' : 'false'} data-screen-focus={screenFocus ? 'true' : 'false'}>
       <a className={styles.skipLink} href="#case-01">{locale === 'pt-br' ? 'Pular para o projeto' : 'Skip to project'}</a>
       <nav ref={navRef} className={styles.nav} aria-label={locale === 'pt-br' ? 'Navegação da prévia' : 'Preview navigation'} onPointerMove={updateLens}>
         <svg className={styles.filterDefs} aria-hidden="true" focusable="false">
@@ -185,8 +246,9 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
           <div className={styles.atmosphere} aria-hidden="true" />
           <div ref={sceneLayerRef} className={styles.sceneLayer} aria-hidden="true">
             <div className={styles.poster} />
+            {(!webglAvailable || reducedMotion) && <Image className={styles.fallbackScene} src={caseMedia.nks.source} alt="" fill sizes="100vw" unoptimized />}
             {webglAvailable && !reducedMotion && (
-              <StoryScene style={style} progress={progressRef} invalidateScene={invalidateScene} onUnavailable={onUnavailable} />
+              <StoryScene style={style} progress={progressRef} invalidateScene={invalidateScene} onUnavailable={onUnavailable} video={videoRef.current} mediaReady={mediaReady && motionFrameReady && screenFocus && !mediaFailed} />
             )}
           </div>
 
@@ -214,7 +276,8 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
             <div className={styles.caseMediaInner}>
               <span className={styles.caseMediaIndex}>01 / 04</span>
               <div className={styles.screenCapture}>
-                <Image src={caseMedia.nks.source} alt="" width={1280} height={853} priority unoptimized />
+                <video ref={videoRef} src={caseMedia.nks.video} poster={caseMedia.nks.source} muted playsInline preload="auto" aria-hidden="true" onLoadedData={() => requestFrame(requestedTime.current)} onError={() => setMediaFailed(true)} />
+                {mediaFailed && <Image src={caseMedia.nks.source} alt="" fill sizes="100vw" unoptimized />}
               </div>
             </div>
           </div>
@@ -245,7 +308,7 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
         </div>
         <div className={styles.caseStill} role="img" aria-label={copy.caseName}>
           <div className={styles.screenCapture}>
-            <Image src={caseMedia.nks.source} alt="" width={1280} height={853} unoptimized />
+            <Image src={caseMedia.nks.source} alt="" fill sizes="(max-width: 760px) 100vw, 88vw" unoptimized />
           </div>
         </div>
         <a className={styles.nextLink} href={`${base}#projects`}>{copy.next}<span aria-hidden="true">↗</span></a>
@@ -253,7 +316,7 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
           {locale === 'pt-br' ? 'Modelo 3D Laptop por ' : 'Laptop 3D model by '}
           <a href="https://sketchfab.com/3d-models/laptop-7d870e900889481395b4a575b9fa8c3e" target="_blank" rel="noopener noreferrer">Aullwen</a>
           {' · '}<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>
-          {locale === 'pt-br' ? ' · tela adaptada com captura NKS Connect' : ' · screen adapted with an NKS Connect capture'}
+          {locale === 'pt-br' ? ' · tela com gravação original fornecida para NKS Connect' : ' · screen with an original NKS Connect recording'}
         </p>
       </section>
 

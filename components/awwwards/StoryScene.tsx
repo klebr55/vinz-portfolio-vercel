@@ -3,17 +3,22 @@
 import { Component, Suspense, useEffect, useMemo, useRef, type MutableRefObject, type ReactNode } from 'react';
 import { useGLTF, useTexture } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Box3, CanvasTexture, DoubleSide, Mesh, MeshBasicMaterial, PlaneGeometry, SRGBColorSpace, Vector3, type Group, type MeshStandardMaterial } from 'three';
+import { Box3, DoubleSide, Mesh, MeshBasicMaterial, PlaneGeometry, SRGBColorSpace, Vector3, VideoTexture, type Group, type MeshStandardMaterial } from 'three';
 import type { PrototypeStyle } from './prototype-copy';
 
 const MODEL_PATH = '/awwwards/laptop-aullwen-original.glb';
-const NKS_PATH = '/awwwards/nks-source-from-existing-mockup.png';
+const NKS_PATH = '/awwwards/nks-editorial-poster.jpg';
+const SCREEN_WIDTH = 0.2936;
+const SCREEN_HEIGHT = 0.1696;
+const SCREEN_CROP = (SCREEN_WIDTH / SCREEN_HEIGHT) / (16 / 9);
 
 type SceneProps = {
   style: PrototypeStyle;
   progress: MutableRefObject<number>;
   invalidateScene: MutableRefObject<(() => void) | null>;
   onUnavailable: () => void;
+  video: HTMLVideoElement | null;
+  mediaReady: boolean;
 };
 
 class SceneBoundary extends Component<{ children: ReactNode; onUnavailable: () => void }, { failed: boolean }> {
@@ -32,7 +37,7 @@ class SceneBoundary extends Component<{ children: ReactNode; onUnavailable: () =
   }
 }
 
-function Laptop({ style, progress, invalidateScene, onUnavailable }: SceneProps) {
+function Laptop({ style, progress, invalidateScene, onUnavailable, video, mediaReady }: SceneProps) {
   const { scene } = useGLTF(MODEL_PATH);
   const source = useTexture(NKS_PATH);
   const assembly = useRef<Group>(null);
@@ -56,22 +61,18 @@ function Laptop({ style, progress, invalidateScene, onUnavailable }: SceneProps)
     screenShellMaterial.depthWrite = false;
     screen.material = screenShellMaterial;
 
-    const canvas = document.createElement('canvas');
-    canvas.width = 1024;
-    canvas.height = 608;
-    const context = canvas.getContext('2d');
-    if (!context) throw new Error('2D canvas unavailable for NKS screen');
-    context.drawImage(source.image, 320, 250, 525, 300, 0, 0, canvas.width, canvas.height);
-    const screenTexture = new CanvasTexture(canvas);
+    const screenTexture = source.clone();
     screenTexture.colorSpace = SRGBColorSpace;
-    screenTexture.anisotropy = 4;
+    screenTexture.repeat.set(SCREEN_CROP, 1);
+    screenTexture.offset.set((1 - SCREEN_CROP) / 2, 0);
+    screenTexture.needsUpdate = true;
     const screenMaterial = new MeshBasicMaterial({ map: screenTexture, side: DoubleSide, toneMapped: false, transparent: true, depthWrite: false });
-    const screenGeometry = new PlaneGeometry(0.294, 0.179);
+    const screenGeometry = new PlaneGeometry(SCREEN_WIDTH, SCREEN_HEIGHT);
     const screenMedia = new Mesh(screenGeometry, screenMaterial);
     screenMedia.name = 'NKS_screen_media';
-    screenMedia.position.set(-0.003, 0.101, -0.006);
+    screenMedia.position.set(0, 0.100355, 0.0032);
     screenMedia.rotation.y = Math.PI;
-    screenMedia.renderOrder = 2;
+    screenMedia.renderOrder = 3;
     screen.add(screenMedia);
 
     const bounds = new Box3().setFromObject(model);
@@ -83,6 +84,22 @@ function Laptop({ style, progress, invalidateScene, onUnavailable }: SceneProps)
 
     return { model, frameMaterial, screenShellMaterial, screenMaterial, screenTexture, screenGeometry };
   }, [scene, source]);
+
+  useEffect(() => {
+    if (!video || !mediaReady) return;
+    const texture = new VideoTexture(video);
+    texture.colorSpace = SRGBColorSpace;
+    texture.repeat.set(SCREEN_CROP, 1);
+    texture.offset.set((1 - SCREEN_CROP) / 2, 0);
+    asset.screenMaterial.map = texture;
+    asset.screenMaterial.needsUpdate = true;
+    invalidate();
+    return () => {
+      asset.screenMaterial.map = asset.screenTexture;
+      asset.screenMaterial.needsUpdate = true;
+      texture.dispose();
+    };
+  }, [asset, video, mediaReady, invalidate]);
 
   useEffect(() => {
     invalidateScene.current = invalidate;
@@ -107,22 +124,24 @@ function Laptop({ style, progress, invalidateScene, onUnavailable }: SceneProps)
   useFrame(() => {
     const value = Math.max(0, Math.min(1, progress.current));
     const mobile = size.width < 760;
-    const approach = Math.min(1, value / 0.73);
-    const eased = approach * approach * (3 - 2 * approach);
-    camera.position.set(mobile ? 0.1 - eased * 0.1 : 1.1 - eased * 1.1, mobile ? 0.3 - eased * 0.2 : 0.7 - eased * 0.55, (mobile ? 9.2 : 8.2) - eased * (mobile ? 2.1 : 5.6));
-    camera.lookAt(0, 0, 0);
+    const align = Math.min(1, value / 0.18);
+    const aligned = align * align * (3 - 2 * align);
+    const zoom = Math.max(0, Math.min(1, (value - 0.72) / 0.22));
+    const zoomed = zoom * zoom * (3 - 2 * zoom);
+    const screenY = 0.0641576;
+    camera.position.set(mobile ? 0.1 * (1 - aligned) : 1.1 * (1 - aligned), (mobile ? 0.3 : 0.7) * (1 - aligned) + screenY * aligned, (mobile ? 9.2 : 8.2) * (1 - aligned) + (mobile ? 9.3 : 5.8) * aligned + (1.9 - (mobile ? 9.3 : 5.8)) * zoomed);
+    camera.lookAt(0, screenY * aligned, -1.5687628 * zoomed);
 
     if (assembly.current) {
-      assembly.current.position.x = mobile ? 0 : 1.22 - eased * 1.22;
-      assembly.current.position.y = mobile ? -2.05 + eased * 2.05 : -0.28 + eased * 0.28;
-      assembly.current.rotation.y = -0.28 + eased * 0.28;
-      assembly.current.rotation.x = -0.07 + eased * 0.07;
-      assembly.current.scale.setScalar(mobile ? 0.54 + eased * 0.24 : 1);
+      assembly.current.position.x = mobile ? 0 : 1.22 * (1 - aligned);
+      assembly.current.position.y = mobile ? -2.05 * (1 - aligned) : -0.28 * (1 - aligned);
+      assembly.current.rotation.y = -0.28 * (1 - aligned);
+      assembly.current.rotation.x = -0.07 * (1 - aligned);
+      assembly.current.scale.setScalar(mobile ? 0.54 + 0.18 * aligned + 0.28 * zoomed : 1);
     }
 
-    asset.frameMaterial.opacity = 1 - Math.max(0, Math.min(1, (value - 0.43) / 0.38));
+    asset.frameMaterial.opacity = 1 - Math.max(0, Math.min(1, (value - 0.86) / 0.06));
     asset.screenShellMaterial.opacity = asset.frameMaterial.opacity;
-    asset.screenMaterial.opacity = 1 - Math.max(0, Math.min(1, (value - 0.79) / 0.16));
   });
 
   return (

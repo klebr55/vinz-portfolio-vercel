@@ -172,3 +172,22 @@ Data: 2026-09-27 · Papel: Worker · Base remota `df6c622` do Mastermind. `git f
 O modelo declara autoria **Aullwen**, obra **Laptop**, fonte Sketchfab e licença **CC BY 4.0** em `asset.extras`. O crédito aparece no conteúdo da prévia. A página da obra retornou 403 nesta sessão, exigindo confirmação antes de promover a produção. O modelo original permanece versionado e a textura derivada é separada. As skills R3F/Three orientaram preload/cache, `frameloop="demand"`, DPR limitado, material simples para a tela, descarte dos recursos dinâmicos e fallback em perda de contexto; detalhes em `VISUAL_DIRECTION_REVIEW.md`.
 
 GSAP/ScrollTrigger controla o progresso e os elementos DOM, Lenis apenas o scroll, R3F consome progresso para câmera/modelo, Framer Motion apenas gestos locais. A antiga alteração global `gsap.ticker.lagSmoothing(0)` foi removida. A direção A / Matéria tem capturas de produção em desktop/mobile e sequência reversa em `docs/awwwards/evidence-laptop/`; B segue como comparativo. Os outros três cases têm somente mapeamento de mídia; nenhum capítulo foi multiplicado antes da revisão do Mastermind. O checkpoint atual e resultados literais ficam em `P2-Checkpoint-Worker.md`.
+
+## Checkpoint P2: Calibração de Tela, Scrubbing Reversível do Vídeo NKS e Validação Visual
+
+Data: 2026-09-27 · Papel: Worker · Base remota: `0e79d15c30ea5f9b79c121e179b7af07922b1b8f`. Branch: `redesign/awwwards-repagination`.
+
+Atendendo à revisão do Mastermind e às instruções do proprietário, este corte resolve a calibragem física da tela, a mídia em movimento e a sobreposição da navegação:
+
+1. **Mídia editorial em movimento:** o arquivo original `nksconnect.mp4` (1920×1080) fornecido pelo proprietário foi editado com seleção focada no ritmo e nos recursos chave da plataforma de sites por assinatura (8,875 s). Foi gerado vídeo seekable otimizado para scrub com `ffmpeg` (`public/awwwards/nks-editorial-seek.mp4`, 4,45 MB) e pôster de alta resolução (`public/awwwards/nks-editorial-poster.jpg`, 110 KB). A URL externa do case foi atualizada para o site ativo `https://honeydew-cobra-953075.hostingersite.com/`.
+2. **Calibração geométrica da malha Screen:** Medição minuciosa da malha `Screen_ComputerScreen_0` no GLB (`SCREEN_WIDTH = 0.2936`, `SCREEN_HEIGHT = 0.1696`, posição `(0, 0.100355, 0.0032)`, `renderOrder = 3`). Crop horizontal intencional mantendo proporção 16:9 sem distorção e sem z-fighting.
+3. **Mecanismo de seeking e reversibilidade:** Controle bidirecional via GSAP ScrollTrigger e `VideoTexture` dinâmico em R3F, com prevenção de frame em branco na hero via checagem de decodificação (`motionFrameReady`). Scroll reverso recupera tela, chassi, câmera e hero sem saltos.
+4. **Dock da Navbar KV:** A classe `.nav` recebe deslocamento dinâmico `--nav-shift` ao entrar em foco na tela (`data-screen-focus="true"`), recolhendo-se suavemente para a base da viewport e evitando sobreposição à barra de navegação gravada do NKS, mantendo foco e acessibilidade intactos.
+5. **Entrega 3D → HTML:** Continuidade no enquadramento e escala da tela 3D com a camada de mídia HTML (`caseMedia` e `caseDetails`), com dissolução do chassi nos instantes finais (`0.86 → 0.92`).
+6. **Evidências salvas em `docs/awwwards/evidence-laptop/`:**
+   - 6 marcos identificados em Desktop (1440×900) e Mobile (390×844 DPR 2)
+   - Detalhe de bordas para prova de calibração (`07-screen-edges-detail-desktop.jpg`)
+   - Reversão à hero comprovada em ambas as viewports (`reverse-hero-desktop.jpg`, `reverse-hero-mobile.jpg`)
+   - Rota EN verificada (`hero-en-desktop.jpg`)
+   - Vídeos da passagem completa e reversa gerados com ffmpeg: `passagem-nks-desktop.mp4` (1,06 MB) e `passagem-nks-mobile.mp4` (535 KB).
+7. **Verificações:** `npm run type-check` (exit 0), `npm run lint` (exit 0), `npm run build` (exit 0), `git diff --check` (exit 0).

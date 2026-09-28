@@ -34,6 +34,10 @@ O Mastermind e o Worker usam todos os recursos para suas responsabilidades: pesq
 - [x] Documentar tese visual, referências humanas com autor/URL, procedência e limites de direitos dos assets, paleta, tipografia, grid, narrativa, breakpoints, plano WebGL/vidro e matriz de movimento no escopo de revisão.
 - [x] Entregar dois styleframes e protótipo funcional hero → NKS com GSAP, Lenis, Three.js e Framer Motion, PT/EN e fallbacks.
 - [x] Substituir wireframe/mockup plano pelo GLB do proprietário no primeiro corte; inspecionar `Frame`/`Screen`, registrar atribuição, fallbacks e reversão do scroll.
+- [x] Calibrar a malha Screen milimetricamente (proporção 16:9, crop intencional sem estiramento, sem z-fighting ou vazamento de imagem).
+- [x] Implementar mídia seekable a partir da gravação original de NKS (`nks-editorial-seek.mp4`), sincronizada bidirecionalmente ao scroll sem flash branco e com restauração total na reversão.
+- [x] Resolver sobreposição da navbar KV recolhendo-a para a base durante o foco na tela e garantindo alinhamento pixel-a-pixel com a camada HTML na entrega.
+- [x] Produzir evidências fotográficas dos 6 marcos em Desktop (1440×900) e Mobile (390×844), detalhe das bordas, reversão e vídeos MP4 completos (Desktop e Mobile).
 - [x] Preparar mapeamento de mídia dos quatro cases reais; somente NKS renderiza na experiência nova até a revisão visual.
 - [ ] Implementar a experiência inteira, preservando os quatro cases, três depoimentos, PT/EN, âncoras e contato.
 - [ ] Entregar navbar refrativa autoral e cena de assinatura, com texto e controles independentes do efeito, fallbacks e movimento reduzido.

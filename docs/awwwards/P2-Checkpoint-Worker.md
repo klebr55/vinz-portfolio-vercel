@@ -2,9 +2,50 @@
 
 Data: 27/09/2026 · Branch: `redesign/awwwards-repagination`.
 
-Este resumo acompanha a branch. O histórico detalhado permanece em `DECISIONS.md`; a direção e as capturas estão em `VISUAL_DIRECTION_REVIEW.md`. A seção de 27/09 abaixo prevalece sobre os estados de validação históricos mantidos depois dela. O SHA da implementação inspecionada é `69324b725be80ae8aaea5f4f9d0034717b92ad6d`; o checkpoint documental entra no commit seguinte.
+Este resumo acompanha a branch. O histórico detalhado permanece em `DECISIONS.md`; a direção e as capturas estão em `VISUAL_DIRECTION_REVIEW.md`. A seção do Corte 2 abaixo prevalece sobre os registros anteriores mantidos como histórico.
 
-## 27/09 · Corte GLB hero → NKS para revisão
+## 27/09 · Corte 2: Calibração da Tela GLB, Vídeo Scrubbing NKS e Entrega Visual
+
+Base remota: `0e79d15c30ea5f9b79c121e179b7af07922b1b8f`. Implementação desenvolvida na branch `redesign/awwwards-repagination`. Não houve merge em `master` nem promoção a produção. A P2 **continua aberta**.
+
+### 1. O que foi implementado e por quê
+- **Mídia NKS editorial e seekable:** A gravação original fornecida pelo proprietário (`nksconnect.mp4`, 18,88 s, 1920×1080) foi tratada editorialmente, extraindo os trechos de maior clareza de navegação (8,875 s) com keyframes densos e `+faststart` em `public/awwwards/nks-editorial-seek.mp4` (4,45 MB) e pôster `public/awwwards/nks-editorial-poster.jpg` (110 KB). A URL do case foi atualizada para o site ativo e acessível `https://honeydew-cobra-953075.hostingersite.com/`.
+- **Calibração geométrica da malha Screen:** Medição e calibração milimétrica da malha `Screen_ComputerScreen_0` no GLB (`SCREEN_WIDTH = 0.2936`, `SCREEN_HEIGHT = 0.1696`, posição `(0, 0.100355, 0.0032)`, `renderOrder = 3`). Crop horizontal intencional mantendo aspect ratio 16:9 sem distorção nem estiramento. Z-fighting e vazamento de imagem eliminados.
+- **Scrubbing bidirecional e reversível:** Mecanismo `VideoTexture` sincronizado com timeline GSAP ScrollTrigger via `requestFrame` e `video.currentTime`, sem perdas de frame nem flash branco na hero (`motionFrameReady`). Scroll reverso reconstitui hero, chassi, câmera e tela continuamente.
+- **Dock da Navbar KV:** Durante o foco na tela (`data-screen-focus="true"`), a navbar KV recolhe-se suavemente para a base da viewport via `--nav-shift`, agindo como rodapé/dock e liberando 100% da visualização da navegação original do NKS.
+- **Entrega 3D → HTML:** Alinhamento contínuo entre a malha 3D e a primeira imagem da camada HTML (`caseMedia`), dissolução do chassi apenas no final da aproximação (`0.86 → 0.92`), sem fade da máquina inteira.
+
+| Recurso verificado neste ambiente | Chamada/regra efetivamente usada |
+| --- | --- |
+| Orchestrator Pipeline e sete recursos | `SKILL.md` lido; shadcn MCP `get_project_registries` chamado; 21st.dev MCP `search("cinematic 3d portfolio laptop scroll")` chamado (IDs 24368, 31720, 20039, 2449 retornados); Taste, Build Awwwards-Quality Sites, Animate e Web Design Guidelines carregadas; Chrome DevTools MCP conectado e operante (`list_pages`, `navigate_page`, `resize_page`, `emulate`, `evaluate_script`, `take_screenshot`). |
+| `r3f-best-practices` | `useGLTF` e `useTexture` com cache; `VideoTexture` dinâmico montado e descartado com `dispose()`; `frameloop="demand"` com invalidação controlada; `useFrame` livre de `setState` e de alocações em loop. |
+| `three-best-practices` | DPR limitado a 1.5, câmera near/far 0.1/40, materiais de frame com controle de opacidade independente, descarte explícito de texturas/geometrias no desmonte e tratamento de perda de contexto WebGL. |
+
+### 2. Rotas, viewports e capturas
+Rotas locais inspecionadas na build de produção:
+- `/pt-br/awwwards-preview/ember` e `/en/awwwards-preview/ember`
+- Desktop: 1440×900; Mobile: 390×844 (DPR 2) e 360×800.
+
+Evidências salvas em `docs/awwwards/evidence-laptop/`:
+1. **Hero:** [Desktop](evidence-laptop/01-hero-desktop.jpg) · [Mobile](evidence-laptop/01-hero-mobile.jpg) · [EN Desktop](evidence-laptop/hero-en-desktop.jpg)
+2. **Notebook frontal com NKS em movimento:** [Desktop](evidence-laptop/02-notebook-frontal-motion-desktop.jpg) · [Mobile](evidence-laptop/02-notebook-frontal-motion-mobile.jpg)
+3. **Início do zoom:** [Desktop](evidence-laptop/03-zoom-start-desktop.jpg) · [Mobile](evidence-laptop/03-zoom-start-mobile.jpg)
+4. **Tela quase cobrindo a viewport:** [Desktop](evidence-laptop/04-screen-fullscreen-desktop.jpg) · [Mobile](evidence-laptop/04-screen-fullscreen-mobile.jpg)
+5. **Primeiro quadro após a entrega:** [Desktop](evidence-laptop/05-handover-desktop.jpg) · [Mobile](evidence-laptop/05-handover-mobile.jpg)
+6. **Case estabelecido:** [Desktop](evidence-laptop/06-case-established-desktop.jpg) · [Mobile](evidence-laptop/06-case-established-mobile.jpg)
+7. **Detalhes das bordas da tela:** [Bordas calibradas](evidence-laptop/07-screen-edges-detail-desktop.jpg)
+8. **Reversão completa:** [Hero restaurada Desktop](evidence-laptop/reverse-hero-desktop.jpg) · [Hero restaurada Mobile](evidence-laptop/reverse-hero-mobile.jpg)
+9. **Vídeo da passagem completa e reversa:** [Vídeo Desktop MP4](evidence-laptop/passagem-nks-desktop.mp4) (1,06 MB) · [Vídeo Mobile MP4](evidence-laptop/passagem-nks-mobile.mp4) (535 KB)
+
+### 3. Verificações literais
+- `npm run type-check`: exit 0
+- `npm run lint`: exit 0 (3 warnings pré-existentes de hooks em `Globe.tsx`, `CanvasRevealEffect.tsx`, `InfiniteMovingCards.tsx`)
+- `npm run build`: exit 0 (15 rotas estáticas compiladas com sucesso)
+- `git diff --check`: exit 0 sem erros
+
+---
+
+## 27/09 · Corte 1: GLB hero → NKS (Histórico anterior)
 
 Base obtida com `git fetch` e fast-forward: `df6c622` do Mastermind, worktree limpa antes das edições; commits locais anteriores preservados. Commit deste protótipo: `69324b7`. Não houve merge em master nem promoção de produção. A P2 **não está concluída**.
 

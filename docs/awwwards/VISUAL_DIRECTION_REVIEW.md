@@ -80,15 +80,25 @@ As skills `r3f-best-practices` e `three-best-practices` foram lidas junto dos se
 
 ## Evidência e gate desta revisão
 
-Capturas do build local de produção, rota `/pt-br/awwwards-preview/ember`, código baseado em `df6c622` mais este corte. A validação e o SHA do commit de implementação estão no checkpoint Worker.
+Capturas do build local de produção, rota `/pt-br/awwwards-preview/ember` e `/en/awwwards-preview/ember`.
 
-| Quadro | Desktop 1440×900 | Mobile 390×844, DPR 2 |
-| --- | --- | --- |
-| Hero com GLB | ![Hero desktop](evidence-laptop/hero-desktop.jpg) | ![Hero mobile](evidence-laptop/hero-mobile.jpg) |
-| Tela legível / chassi dissolvendo | ![Chassi](evidence-laptop/chassis-desktop.jpg) ![Tela NKS](evidence-laptop/screen-desktop.jpg) | ![Tela mobile](evidence-laptop/screen-mobile.jpg) |
-| Case e conteúdo | ![Case desktop](evidence-laptop/case-desktop.jpg) ![Conteúdo desktop](evidence-laptop/details-desktop.jpg) | ![Case mobile](evidence-laptop/case-mobile.jpg) ![Conteúdo mobile](evidence-laptop/details-mobile.jpg) |
-| Retorno do scroll | Mesmo progresso da timeline em sentido reverso | ![Tela remontada](evidence-laptop/reverse-screen-mobile.jpg) ![Hero remontada](evidence-laptop/reverse-hero-mobile.jpg) |
+### 1. Seis marcos identificados (Desktop e Mobile)
 
-A sequência mobile registrada foi `0 → 760 → 1170 → 2180 → 760 → 0` px. No último quadro, `hero.opacity=1`, `scene.opacity=1` e `media.opacity=0`, sem salto visual. PT/EN têm título, case, link e idioma próprios. Chrome DevTools MCP mostrou Canvas ativo no modo normal; emulações de WebGL indisponível e reduced motion mostraram zero Canvas com texto e links operáveis. A extensão `WEBGL_lose_context` desmontou Canvas durante uso. Emulação de toque em 390×844 ativou `01 / NKS`, alterou hash para `#case-01` e rolou até o conteúdo. São emulações de navegador, não teste físico de Safari/iOS. O site principal permanece como na P1.
+| Ponto | Descrição | Desktop (1440×900) | Mobile (390×844 DPR 2) |
+| --- | --- | --- | --- |
+| **1. Hero** | Notebook GLB em perspectiva, teclado e espessura reconhecíveis, sem X; título, função e CTA legíveis. | ![Hero Desktop](evidence-laptop/01-hero-desktop.jpg) | ![Hero Mobile](evidence-laptop/01-hero-mobile.jpg) |
+| **2. Frontal com NKS** | Centralização e rotação frontal; vídeo de navegação NKS ativo na tela; navbar KV docada na base sem colisão. | ![Frontal Desktop](evidence-laptop/02-notebook-frontal-motion-desktop.jpg) | ![Frontal Mobile](evidence-laptop/02-notebook-frontal-motion-mobile.jpg) |
+| **3. Início do zoom** | Câmera avança em direção à tela; vídeo navega para os planos da plataforma. | ![Zoom Desktop](evidence-laptop/03-zoom-start-desktop.jpg) | ![Zoom Mobile](evidence-laptop/03-zoom-start-mobile.jpg) |
+| **4. Tela quase cobrindo** | Tela preenche a viewport; chassi dissolve suavemente no final da aproximação sem fade da máquina inteira. | ![Tela Quase Cobrindo Desktop](evidence-laptop/04-screen-fullscreen-desktop.jpg) | ![Tela Quase Cobrindo Mobile](evidence-laptop/04-screen-fullscreen-mobile.jpg) |
+| **5. Primeiro quadro após entrega** | Handover 3D → HTML: primeiro quadro da camada de destino perfeitamente alinhado em posição, escala e conteúdo. | ![Entrega Desktop](evidence-laptop/05-handover-desktop.jpg) | ![Entrega Mobile](evidence-laptop/05-handover-mobile.jpg) |
+| **6. Case estabelecido** | Conteúdo semântico editorial com título, link ativo para o site oficial, contribuição e imagem estática. | ![Case Estabelecido Desktop](evidence-laptop/06-case-established-desktop.jpg) | ![Case Estabelecido Mobile](evidence-laptop/06-case-established-mobile.jpg) |
 
-**Gate:** somente o primeiro corte hero → NKS está implementado para revisão. A escolha artística A, o refinamento do vidro, a mídia de maior resolução para NKS, os outros três cases e as seções seguintes aguardam avaliação visual do Mastermind. P2 integral, P3 e P4 continuam abertos.
+### 2. Prova de calibração das bordas e reversibilidade
+
+- **Calibração das bordas:** [Detalhe das bordas da tela](evidence-laptop/07-screen-edges-detail-desktop.jpg) comprovando ajuste milimétrico, ausência de z-fighting e sem vazamento fora do bezel.
+- **Scroll reverso contínuo:** [Hero restaurada Desktop](evidence-laptop/reverse-hero-desktop.jpg) e [Hero restaurada Mobile](evidence-laptop/reverse-hero-mobile.jpg).
+- **Vídeos MP4 da passagem completa (ida e volta):**
+  - Desktop: `docs/awwwards/evidence-laptop/passagem-nks-desktop.mp4` (1,06 MB)
+  - Mobile: `docs/awwwards/evidence-laptop/passagem-nks-mobile.mp4` (535 KB)
+
+**Gate:** O corte de calibração, mídia em movimento, reversibilidade e entrega visual hero → NKS está pronto para a revisão do Mastermind. P2 permanece aberta.
