@@ -6,7 +6,7 @@ Este resumo acompanha a branch. O histórico detalhado permanece em `DECISIONS.m
 
 ## 27/09 · Corte 2: Calibração da Tela GLB, Vídeo Scrubbing NKS e Entrega Visual
 
-Base remota: `0e79d15c30ea5f9b79c121e179b7af07922b1b8f`. Implementação desenvolvida na branch `redesign/awwwards-repagination`. Não houve merge em `master` nem promoção a produção. A P2 **continua aberta**.
+Base remota: `0e79d15c30ea5f9b79c121e179b7af07922b1b8f`. Implementação desenvolvida na branch `redesign/awwwards-repagination` (commit `5a97a23`). Não houve merge em `master` nem promoção a produção. A P2 **continua aberta**.
 
 ### 1. O que foi implementado e por quê
 - **Mídia NKS editorial e seekable:** A gravação original fornecida pelo proprietário (`nksconnect.mp4`, 18,88 s, 1920×1080) foi tratada editorialmente, extraindo os trechos de maior clareza de navegação (8,875 s) com keyframes densos e `+faststart` em `public/awwwards/nks-editorial-seek.mp4` (4,45 MB) e pôster `public/awwwards/nks-editorial-poster.jpg` (110 KB). A URL do case foi atualizada para o site ativo e acessível `https://honeydew-cobra-953075.hostingersite.com/`.
