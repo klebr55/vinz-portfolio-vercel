@@ -11,17 +11,18 @@ Base remota: `29500d6912915c3bf2c1749b9274d928e6ea40e7`. Implementação desenvo
 ### 1. O que foi implementado e por quê
 - **Restauração integral da jornada NKS (18,87 s):** Atendendo à determinação do proprietário e do Mastermind, a gravação original completa (`nksconnect.mp4`, 18,88 s) foi restabelecida sem cortes artificiais. A travessia agora cobre todo o ciclo do produto: abertura hero, proposta de valor, planos por assinatura, área de afiliação e comissões, meios de pagamento e ecossistema de parceiros no rodapé.
 - **Re-codificação de alta densidade de keyframes:** O arquivo `public/awwwards/nks-editorial-seek.mp4` (4,45 MB) foi transcodificado via FFmpeg (`-scale 1600:900,fps=30 -tune fastdecode -crf 23.5 -g 4 -keyint_min 4 -bf 0 +faststart`) com GOP máximo de 4 frames, garantindo seek bidirecional imediato em qualquer direção de rolagem. Pôster `public/awwwards/nks-editorial-poster.jpg` (0.0s) e quadro de handover `public/awwwards/nks-editorial-handover.jpg` (18.87s no rodapé) foram extraídos.
-- **Duração dinâmica de mídia:** A constante fixa `8.875` em `StoryPrototype.tsx` foi removida. A timeline GSAP agora extrai e reflete dinamicamente a duração real da mídia (`durationRef.current = video.duration`), adaptando-se automaticamente a qualquer arquivo.
+- **Duração dinâmica de mídia:** A constante fixa `8.875` em `StoryPrototype.tsx` foi removida e substituída por inicialização dinâmica (`durationRef = useRef(0)`), atualizada reativamente em `loadedmetadata`, `loadeddata`, `canplay` e `seeked`. A timeline GSAP extrai dinamicamente `durationRef.current || videoRef.current?.duration || 0`. O seek probe inicial agora re-ancora estritamente em `0.0s` (`pendingSeekTime.current = 0.0`), garantindo que o hero renderize perfeitamente o primeiro quadro sem desvio estático.
 - **Eliminação definitiva da tela cinza via Canvas Buffer Architecture:**
-  - *Diagnóstico:* Decodificadores de hardware Direct3D/Chromium descarregam os buffers de vídeo internos durante reversão rápida de seeks, gerando quadros cinzas/pretos intermitentes no Three.js `VideoTexture`.
-  - *Arquitetura:* O `VideoTexture` direto foi substituído em `StoryScene.tsx` por um `<canvas>` 2D em memória persistente associado a um `CanvasTexture`. O canvas 2D é repintado estritamente através de `requestVideoFrameCallback` (com fallbacks `seeked`/`timeupdate`). Durante a latência de busca, o canvas preserva o último frame válido decodificado, tornando impossível a exibição de telas cinzas em qualquer ponto do scroll reverso.
+  - *Diagnóstico:* Decodificadores de hardware Direct3D/Chromium descarregam os buffers de vídeo internos durante reversão rápida de seeks. Quando ouvintes síncronos de `seeked` pintavam imediatamente na media timeline, capturavam o buffer descarregado do decodificador, gerando flashes cinzas.
+  - *Arquitetura:* O `VideoTexture` direto foi substituído em `StoryScene.tsx` por um `<canvas>` 2D em memória persistente associado a um `CanvasTexture`. A função de pintura é estritamente guardada com `if (video.seeking) return;` e checagem de dimensões. Quando `requestVideoFrameCallback` está disponível, a renderização é acionada exclusivamente pelos quadros apresentados pelo compositor, suprimindo chamadas redundantes e preservando ininterruptamente o último quadro válido decodificado no buffer 2D.
 - **Repaginação de Pacing e Handover Narrativo Contínuo:**
   - Pacing de scroll expandido para `560dvh` (desktop) e `500dvh` (mobile) para garantir tempo perceptivo adequado a todos os capítulos.
   - Scrub do vídeo mapeado no intervalo `0.14 -> 0.84`, zoom da câmera entre `0.72 -> 0.94`, e dissolução do chassi `Frame` entre `0.86 -> 0.93`.
   - No ponto de entrega 3D → HTML (`0.94`), a cena entrega a tela no rodapé (18,87s) e a camada HTML `.caseStill` assume exibindo `nks-editorial-handover.jpg`, mantendo a linha contínua do percurso em vez de saltar bruscamente de volta ao hero poster.
-- **Ajuste da Navbar Dock KV:**
+- **Ajuste da Navbar Dock KV e Acessibilidade:**
   - Removido o deslocamento `--nav-shift` para o rodapé (que cruzava o teclado e trackpad do notebook 3D quando em foco na tela).
-  - A barra KV permanece fixada no topo da viewport com área segura (`top: max(16px, env(safe-area-inset-top))`), mantendo o notebook 100% visível e desobstruído em qualquer ângulo e preservando foco, teclado e toque intactos.
+  - A barra KV permanece fixada no topo da viewport com área segura (`top: max(16px, env(safe-area-inset-top))`), mantendo o notebook 100% visível e desobstruído em qualquer ângulo.
+  - Alvos de toque nos links de navegação ampliados para `min-height: 44px` no mobile (WCAG 2.5.5) e estilização explícita de teclado com `:focus-visible` (`outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px;`) implementada em toda a interface. Instância do Lenis exposta em `window.__lenis` com cleanup estrito para testes e automações imediatas.
 
 | Recurso verificado neste ambiente | Chamada/regra efetivamente usada |
 | --- | --- |
@@ -35,19 +36,23 @@ Rotas locais inspecionadas na build de produção (`http://localhost:3001`):
 - Desktop: 1440×900; Mobile: 390×844 (DPR 2) e 360×800.
 
 Evidências registradas em `docs/awwwards/evidence-laptop/`:
-1. **Hero inicial:** [Desktop](evidence-laptop/01-hero-desktop.jpg) · [Mobile](evidence-laptop/01-hero-mobile.jpg) · [EN Desktop](evidence-laptop/hero-en-desktop.jpg)
+1. **Hero inicial:** [Desktop](evidence-laptop/01-hero-desktop.jpg) · [Mobile](evidence-laptop/01-hero-mobile.jpg) · [Mobile 360×800](evidence-laptop/01-hero-360.jpg) · [EN Desktop](evidence-laptop/hero-en-desktop.jpg)
 2. **Notebook frontal com NKS em movimento:** [Desktop](evidence-laptop/02-notebook-frontal-motion-desktop.jpg) · [Mobile](evidence-laptop/02-notebook-frontal-motion-mobile.jpg)
 3. **Início do zoom na tela:** [Desktop](evidence-laptop/03-zoom-start-desktop.jpg) · [Mobile](evidence-laptop/03-zoom-start-mobile.jpg)
 4. **Tela ocupando o quadro com dissolução do chassi:** [Desktop](evidence-laptop/04-screen-fullscreen-desktop.jpg) · [Mobile](evidence-laptop/04-screen-fullscreen-mobile.jpg)
-5. **Quadros adjacentes de handover (continuidade no rodapé):**
-   - Antes do handover (`p = 0.935`, malha 3D Canvas ativa): [3D Handover Frame](evidence-laptop/handover-before-desktop.jpg)
-   - Primeiro quadro após entrega (`p = 0.945`, camada HTML `.caseStill` ativa): [HTML Handover Frame](evidence-laptop/05-handover-desktop.jpg) · [Mobile Handover](evidence-laptop/05-handover-mobile.jpg)
+5. **Quadros adjacentes de handover (continuidade 1:1 no rodapé):**
+   - Desktop: Antes do handover (`p = 0.935`, malha 3D Canvas ativa): [3D Handover Frame](evidence-laptop/handover-before-desktop.jpg) vs Primeiro quadro após entrega (`p = 0.945`, camada HTML `.caseStill` ativa): [HTML Handover Frame](evidence-laptop/05-handover-desktop.jpg) / [Handover After](evidence-laptop/handover-after-desktop.jpg)
+   - Mobile (390×844): [3D Handover Frame Mobile](evidence-laptop/handover-before-mobile.jpg) vs [HTML Handover Frame Mobile](evidence-laptop/05-handover-mobile.jpg) / [Handover After Mobile](evidence-laptop/handover-after-mobile.jpg)
+   - Mobile Compacto (360×800): [Handover 360](evidence-laptop/05-handover-360.jpg)
 6. **Case estabelecido com título e conteúdo:** [Desktop](evidence-laptop/06-case-established-desktop.jpg) · [Mobile](evidence-laptop/06-case-established-mobile.jpg)
 7. **Detalhes milimétricos das bordas da tela:** [Bordas calibradas sem vazamento](evidence-laptop/07-screen-edges-detail-desktop.jpg)
 8. **Scroll reverso rápido com reconstituição total:** [Hero restaurada Desktop](evidence-laptop/reverse-hero-desktop.jpg) · [Hero restaurada Mobile](evidence-laptop/reverse-hero-mobile.jpg)
-9. **Vídeos contínuos em MP4 (ida, pausa, volta rápida, pausa intermediária, nova ida):**
-   - [Vídeo Desktop 1440×900 MP4](evidence-laptop/passagem-nks-desktop.mp4) (2,12 MB, 30 fps, H.264)
-   - [Vídeo Mobile 390×844 DPR 2 MP4](evidence-laptop/passagem-nks-mobile.mp4) (1,43 MB, 30 fps, H.264)
+9. **Fallbacks funcionais:**
+   - [Reduced Motion Desktop](evidence-laptop/reduced-motion-desktop.jpg) (`data-reduced="true"`, zero Canvas, mídia e tipografia acessíveis)
+   - [WebGL Indisponível Desktop](evidence-laptop/webgl-unavailable-desktop.jpg) (zero Canvas, poster SVG/JPEG ativo, navegação preservada)
+10. **Vídeos contínuos em MP4 (ida, pausa, volta rápida sem tela cinza, pausa intermediária, nova ida):**
+   - [Vídeo Desktop 1440×900 MP4](evidence-laptop/passagem-nks-desktop.mp4) (2,78 MB, 272 quadros, 30 fps H.264)
+   - [Vídeo Mobile 390×844 DPR 2 MP4](evidence-laptop/passagem-nks-mobile.mp4) (1,94 MB, 272 quadros, 30 fps H.264)
 
 ### 3. Verificações literais
 - `npm run type-check`: exit 0

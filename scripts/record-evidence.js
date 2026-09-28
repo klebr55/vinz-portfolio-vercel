@@ -15,7 +15,7 @@ async function main() {
   fs.mkdirSync(framesDirMobile, { recursive: true });
 
   const chromeArgs = [
-    '--remote-debugging-port=9444',
+    '--remote-debugging-port=9455',
     '--headless=new',
     '--disable-extensions',
     '--hide-scrollbars',
@@ -28,14 +28,14 @@ async function main() {
     'http://localhost:3001/pt-br/awwwards-preview/ember'
   ];
 
-  console.log('Launching Chrome on port 9444...');
+  console.log('Launching Chrome on port 9455...');
   const proc = spawn(CHROME_PATH, chromeArgs);
 
   let wsUrl = null;
   for (let i = 0; i < 40; i++) {
     await new Promise(r => setTimeout(r, 200));
     try {
-      const res = await fetch('http://127.0.0.1:9444/json/list');
+      const res = await fetch('http://127.0.0.1:9455/json/list');
       const list = await res.json();
       const pageTarget = list && list.find(t => t.type === 'page' && t.url.includes('localhost'));
       if (pageTarget && pageTarget.webSocketDebuggerUrl) {
@@ -80,28 +80,31 @@ async function main() {
   await send('Page.enable');
 
   async function waitForPageReady() {
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 50; i++) {
       await new Promise(r => setTimeout(r, 200));
       const res = await send('Runtime.evaluate', {
         expression: 'Boolean(document.querySelector("canvas") && document.querySelector("video")?.readyState >= 2)',
         returnByValue: true
       });
       if (res.result?.value) {
-        // give brief extra time for shaders and initial draw
-        await new Promise(r => setTimeout(r, 800));
+        await new Promise(r => setTimeout(r, 600));
         return true;
       }
     }
     return false;
   }
 
-  async function scrollToProgress(progress, waitMs = 80) {
+  async function scrollToProgress(progress, waitMs = 70) {
     await send('Runtime.evaluate', {
       expression: `(() => {
         const seq = document.querySelector('[class*="sequence"]');
         const maxScroll = (seq ? seq.offsetHeight : (window.innerHeight * 5.6)) - window.innerHeight;
         const targetY = Math.round(${progress} * maxScroll);
-        window.scrollTo(0, targetY);
+        if (window.__lenis) {
+          window.__lenis.scrollTo(targetY, { immediate: true });
+        } else {
+          window.scrollTo(0, targetY);
+        }
         window.dispatchEvent(new Event('scroll'));
       })()`
     });
@@ -141,7 +144,7 @@ async function main() {
 
   // 1. Milestone Screenshots
   console.log('Capturing Desktop milestones...');
-  await scrollToProgress(0.0, 200);
+  await scrollToProgress(0.0, 300);
   await captureShot('01-hero-desktop.jpg');
 
   await scrollToProgress(0.32, 250);
@@ -156,7 +159,7 @@ async function main() {
   await scrollToProgress(0.91, 250);
   await captureShot('04-screen-fullscreen-desktop.jpg');
 
-  // Handover adjacent frames
+  // Handover adjacent frames (p=0.935 in 3D canvas vs p=0.945 in HTML)
   await scrollToProgress(0.935, 250);
   await captureShot('handover-before-desktop.jpg');
 
@@ -168,43 +171,46 @@ async function main() {
   await captureShot('06-case-established-desktop.jpg');
 
   // Reverse back to hero
-  await scrollToProgress(0.0, 300);
+  await scrollToProgress(0.0, 350);
   await captureShot('reverse-hero-desktop.jpg');
 
-  // 2. Continuous Desktop Video
+  // 2. Continuous Desktop Video (perceptible pacing through chapters)
   console.log('Recording Desktop video frames (ida, pausa, volta rapida, pausa intermediaria, nova ida)...');
   let frameIdx = 1;
 
-  // Scrub ida: 0.0 -> 1.0 (55 steps)
-  for (let i = 0; i <= 55; i++) {
-    const p = i / 55;
-    await scrollToProgress(p, 65);
+  // Initial pause on hero (20 frames)
+  for (let i = 0; i < 20; i++) {
     await captureFrameToDir(framesDirDesktop, frameIdx++);
   }
 
-  // Pausa no case details (12 frames)
-  for (let i = 0; i < 12; i++) {
-    await new Promise(r => setTimeout(r, 40));
+  // Scrub ida: 0.0 -> 1.0 (120 steps)
+  for (let i = 0; i <= 120; i++) {
+    const p = i / 120;
+    await scrollToProgress(p, 50);
     await captureFrameToDir(framesDirDesktop, frameIdx++);
   }
 
-  // Volta rápida: 1.0 -> 0.0 (24 steps)
-  for (let i = 24; i >= 0; i--) {
-    const p = i / 24;
+  // Pausa no case details (24 frames)
+  for (let i = 0; i < 24; i++) {
+    await captureFrameToDir(framesDirDesktop, frameIdx++);
+  }
+
+  // Volta rápida: 1.0 -> 0.0 (35 steps)
+  for (let i = 35; i >= 0; i--) {
+    const p = i / 35;
+    await scrollToProgress(p, 40);
+    await captureFrameToDir(framesDirDesktop, frameIdx++);
+  }
+
+  // Pausa intermediária na hero (20 frames)
+  for (let i = 0; i < 20; i++) {
+    await captureFrameToDir(framesDirDesktop, frameIdx++);
+  }
+
+  // Nova ida: 0.0 -> 0.95 (50 steps)
+  for (let i = 0; i <= 50; i++) {
+    const p = (i / 50) * 0.95;
     await scrollToProgress(p, 45);
-    await captureFrameToDir(framesDirDesktop, frameIdx++);
-  }
-
-  // Pausa intermediária (10 frames)
-  for (let i = 0; i < 10; i++) {
-    await new Promise(r => setTimeout(r, 40));
-    await captureFrameToDir(framesDirDesktop, frameIdx++);
-  }
-
-  // Nova ida: 0.0 -> 0.95 (35 steps)
-  for (let i = 0; i <= 35; i++) {
-    const p = (i / 35) * 0.95;
-    await scrollToProgress(p, 60);
     await captureFrameToDir(framesDirDesktop, frameIdx++);
   }
 
@@ -220,6 +226,31 @@ async function main() {
   await waitForPageReady();
   await scrollToProgress(0.0, 300);
   await captureShot('hero-en-desktop.jpg');
+
+  // Reduced motion capture
+  console.log('Capturing reduced motion fallback...');
+  await send('Emulation.setEmulatedMedia', {
+    features: [{ name: 'prefers-reduced-motion', value: 'reduce' }]
+  });
+  await send('Page.navigate', { url: 'http://localhost:3001/pt-br/awwwards-preview/ember' });
+  await new Promise(r => setTimeout(r, 600));
+  await captureShot('reduced-motion-desktop.jpg');
+  await send('Emulation.setEmulatedMedia', { features: [] });
+
+  // WebGL unavailable capture
+  console.log('Capturing WebGL context loss fallback...');
+  await send('Page.navigate', { url: 'http://localhost:3001/pt-br/awwwards-preview/ember' });
+  await waitForPageReady();
+  await send('Runtime.evaluate', {
+    expression: `(() => {
+      const canvas = document.querySelector('canvas');
+      const gl = canvas?.getContext('webgl2') || canvas?.getContext('webgl');
+      const ext = gl?.getExtension('WEBGL_lose_context');
+      if (ext) ext.loseContext();
+    })()`
+  });
+  await new Promise(r => setTimeout(r, 500));
+  await captureShot('webgl-unavailable-desktop.jpg');
 
   // ==========================================
   // PHASE 2: MOBILE (390 x 844, DPR 2)
@@ -239,7 +270,7 @@ async function main() {
 
   // 1. Mobile Milestones
   console.log('Capturing Mobile milestones...');
-  await scrollToProgress(0.0, 200);
+  await scrollToProgress(0.0, 300);
   await captureShot('01-hero-mobile.jpg');
 
   await scrollToProgress(0.32, 250);
@@ -251,50 +282,57 @@ async function main() {
   await scrollToProgress(0.91, 250);
   await captureShot('04-screen-fullscreen-mobile.jpg');
 
+  // Mobile Handover adjacent frames
+  await scrollToProgress(0.935, 250);
+  await captureShot('handover-before-mobile.jpg');
+
   await scrollToProgress(0.945, 250);
   await captureShot('05-handover-mobile.jpg');
+  await captureShot('handover-after-mobile.jpg');
 
   await scrollToProgress(0.98, 250);
   await captureShot('06-case-established-mobile.jpg');
 
   // Reverse back to mobile hero
-  await scrollToProgress(0.0, 300);
+  await scrollToProgress(0.0, 350);
   await captureShot('reverse-hero-mobile.jpg');
 
   // 2. Continuous Mobile Video
   console.log('Recording Mobile video frames...');
   let mobFrameIdx = 1;
 
-  // Scrub ida: 0.0 -> 1.0 (55 steps)
-  for (let i = 0; i <= 55; i++) {
-    const p = i / 55;
-    await scrollToProgress(p, 65);
+  for (let i = 0; i < 20; i++) {
     await captureFrameToDir(framesDirMobile, mobFrameIdx++);
   }
 
-  // Pausa no case details (12 frames)
-  for (let i = 0; i < 12; i++) {
-    await new Promise(r => setTimeout(r, 40));
+  // Scrub ida: 0.0 -> 1.0 (120 steps)
+  for (let i = 0; i <= 120; i++) {
+    const p = i / 120;
+    await scrollToProgress(p, 50);
     await captureFrameToDir(framesDirMobile, mobFrameIdx++);
   }
 
-  // Volta rápida: 1.0 -> 0.0 (24 steps)
-  for (let i = 24; i >= 0; i--) {
-    const p = i / 24;
+  // Pausa no case details (24 frames)
+  for (let i = 0; i < 24; i++) {
+    await captureFrameToDir(framesDirMobile, mobFrameIdx++);
+  }
+
+  // Volta rápida: 1.0 -> 0.0 (35 steps)
+  for (let i = 35; i >= 0; i--) {
+    const p = i / 35;
+    await scrollToProgress(p, 40);
+    await captureFrameToDir(framesDirMobile, mobFrameIdx++);
+  }
+
+  // Pausa intermediária (20 frames)
+  for (let i = 0; i < 20; i++) {
+    await captureFrameToDir(framesDirMobile, mobFrameIdx++);
+  }
+
+  // Nova ida: 0.0 -> 0.95 (50 steps)
+  for (let i = 0; i <= 50; i++) {
+    const p = (i / 50) * 0.95;
     await scrollToProgress(p, 45);
-    await captureFrameToDir(framesDirMobile, mobFrameIdx++);
-  }
-
-  // Pausa intermediária (10 frames)
-  for (let i = 0; i < 10; i++) {
-    await new Promise(r => setTimeout(r, 40));
-    await captureFrameToDir(framesDirMobile, mobFrameIdx++);
-  }
-
-  // Nova ida: 0.0 -> 0.95 (35 steps)
-  for (let i = 0; i <= 35; i++) {
-    const p = (i / 35) * 0.95;
-    await scrollToProgress(p, 60);
     await captureFrameToDir(framesDirMobile, mobFrameIdx++);
   }
 
@@ -303,6 +341,24 @@ async function main() {
   const ffmpegCmdMobile = `"${FFMPEG_PATH}" -y -framerate 30 -i "${framesDirMobile}\\frame_%04d.jpg" -c:v libx264 -pix_fmt yuv420p -crf 23 -preset medium "${mobileMp4}"`;
   execSync(ffmpegCmdMobile, { stdio: 'inherit' });
   console.log('Mobile video saved:', mobileMp4);
+
+  // ==========================================
+  // PHASE 3: COMPACT MOBILE (360 x 800)
+  // ==========================================
+  console.log('\n--- PHASE 3: COMPACT MOBILE (360 x 800) ---');
+  await send('Emulation.setDeviceMetricsOverride', {
+    width: 360,
+    height: 800,
+    deviceScaleFactor: 2,
+    mobile: true
+  });
+  await send('Page.navigate', { url: 'http://localhost:3001/pt-br/awwwards-preview/ember' });
+  await waitForPageReady();
+  await scrollToProgress(0.0, 300);
+  await captureShot('01-hero-360.jpg');
+
+  await scrollToProgress(0.945, 250);
+  await captureShot('05-handover-360.jpg');
 
   ws.close();
   proc.kill();

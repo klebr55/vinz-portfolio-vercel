@@ -119,6 +119,8 @@ function Laptop({ style, progress, invalidateScene, onUnavailable, video, mediaR
 
     const paint = () => {
       if (isDisposed || !video || video.readyState < 2 || !mediaReady) return;
+      if (video.seeking) return;
+      if (video.videoWidth === 0 || video.videoHeight === 0) return;
       try {
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
         texture.needsUpdate = true;
@@ -128,15 +130,17 @@ function Laptop({ style, progress, invalidateScene, onUnavailable, video, mediaR
       }
     };
 
+    const hasRvfc = mediaVideo && typeof mediaVideo.requestVideoFrameCallback === 'function';
+
     const onFrame = () => {
       if (isDisposed) return;
       paint();
-      if (mediaVideo && typeof mediaVideo.requestVideoFrameCallback === 'function') {
+      if (hasRvfc) {
         rvfcId = mediaVideo.requestVideoFrameCallback(onFrame);
       }
     };
 
-    if (mediaVideo && typeof mediaVideo.requestVideoFrameCallback === 'function') {
+    if (hasRvfc) {
       rvfcId = mediaVideo.requestVideoFrameCallback(onFrame);
     }
 
@@ -144,11 +148,15 @@ function Laptop({ style, progress, invalidateScene, onUnavailable, video, mediaR
       paint();
     };
 
-    video.addEventListener('seeked', onSeekOrLoad);
-    video.addEventListener('loadeddata', onSeekOrLoad);
-    video.addEventListener('timeupdate', onSeekOrLoad);
+    if (!hasRvfc) {
+      video.addEventListener('seeked', onSeekOrLoad);
+      video.addEventListener('loadeddata', onSeekOrLoad);
+      video.addEventListener('timeupdate', onSeekOrLoad);
+    } else {
+      video.addEventListener('loadeddata', onSeekOrLoad);
+    }
 
-    if (video.readyState >= 2 && mediaReady) {
+    if (video.readyState >= 2 && mediaReady && !video.seeking) {
       paint();
     }
 

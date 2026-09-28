@@ -96,12 +96,14 @@ Capturas do build local de produção, rota `/pt-br/awwwards-preview/ember` e `/
 ### 2. Prova de calibração das bordas, continuidade de handover e reversibilidade
 
 - **Calibração das bordas:** [Detalhe das bordas da tela](evidence-laptop/07-screen-edges-detail-desktop.jpg) comprovando ajuste milimétrico, ausência de z-fighting e sem vazamento fora do bezel.
-- **Quadros adjacentes de handover (continuidade no rodapé):**
-  - Antes do handover (`p = 0.935`, 3D Canvas ativo): [3D Handover Frame](evidence-laptop/handover-before-desktop.jpg)
-  - Primeiro quadro após entrega (`p = 0.945`, camada HTML `.caseStill` ativa): [HTML Handover Frame](evidence-laptop/05-handover-desktop.jpg)
+- **Quadros adjacentes de handover (continuidade 1:1 no rodapé):**
+  - Desktop: Antes do handover (`p = 0.935`, 3D Canvas ativo): [3D Handover Frame](evidence-laptop/handover-before-desktop.jpg) vs Primeiro quadro após entrega (`p = 0.945`, camada HTML `.caseStill` ativa): [HTML Handover Frame](evidence-laptop/05-handover-desktop.jpg) / [Handover After](evidence-laptop/handover-after-desktop.jpg)
+  - Mobile (390×844): [3D Handover Frame Mobile](evidence-laptop/handover-before-mobile.jpg) vs [HTML Handover Frame Mobile](evidence-laptop/05-handover-mobile.jpg) / [Handover After Mobile](evidence-laptop/handover-after-mobile.jpg)
+  - Mobile Compacto (360×800): [Handover 360](evidence-laptop/05-handover-360.jpg)
 - **Scroll reverso contínuo sem tela cinza:** Buffer desacoplado em 2D `<canvas>` retém o último frame válido decodificado via `requestVideoFrameCallback`, eliminando o defeito de tela cinza nos ~14s. Reversão completa comprovada: [Hero restaurada Desktop](evidence-laptop/reverse-hero-desktop.jpg) e [Hero restaurada Mobile](evidence-laptop/reverse-hero-mobile.jpg).
+- **Fallbacks auditados:** [Reduced Motion Desktop](evidence-laptop/reduced-motion-desktop.jpg) e [WebGL Indisponível Desktop](evidence-laptop/webgl-unavailable-desktop.jpg).
 - **Vídeos MP4 da passagem contínua (ida, pausa, volta rápida, pausa intermediária, nova ida):**
-  - Desktop: `docs/awwwards/evidence-laptop/passagem-nks-desktop.mp4` (2,12 MB, 1440×900, 30 fps, H.264)
-  - Mobile: `docs/awwwards/evidence-laptop/passagem-nks-mobile.mp4` (1,43 MB, 390×844 DPR 2, 30 fps, H.264)
+  - Desktop: `docs/awwwards/evidence-laptop/passagem-nks-desktop.mp4` (2,78 MB, 1440×900, 272 frames, 30 fps, H.264)
+  - Mobile: `docs/awwwards/evidence-laptop/passagem-nks-mobile.mp4` (1,94 MB, 390×844 DPR 2, 272 frames, 30 fps, H.264)
 
 **Gate:** O corte de restauração integral da jornada NKS (18,87s), buffer 2D anti-tela cinza, pacing de scroll calibrado, dock KV desobstruído e handover contínuo está pronto para a revisão do Mastermind. P2 permanece aberta.

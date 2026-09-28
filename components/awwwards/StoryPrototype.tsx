@@ -40,7 +40,7 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
   const caseCopyRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const durationRef = useRef(18.87);
+  const durationRef = useRef(0);
   const pendingSeekTime = useRef<number | null>(null);
   const requestedTime = useRef(0);
   const firstFrameRequested = useRef(false);
@@ -74,11 +74,12 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
     };
     const ready = () => {
       updateDuration();
+      setMotionFrameReady(true);
       requestFrame(requestedTime.current);
     };
     const settle = () => {
       updateDuration();
-      if (video.currentTime > 0.1) setMotionFrameReady(true);
+      setMotionFrameReady(true);
       invalidateScene.current?.();
       if (pendingSeekTime.current !== null) {
         const next = pendingSeekTime.current;
@@ -90,11 +91,13 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
     };
     video.addEventListener('loadedmetadata', updateDuration);
     video.addEventListener('loadeddata', ready);
+    video.addEventListener('canplay', ready);
     video.addEventListener('seeked', settle);
     if (video.readyState >= 2) ready();
     return () => {
       video.removeEventListener('loadedmetadata', updateDuration);
       video.removeEventListener('loadeddata', ready);
+      video.removeEventListener('canplay', ready);
       video.removeEventListener('seeked', settle);
     };
   }, [requestFrame]);
@@ -110,11 +113,18 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
         if ('requestVideoFrameCallback' in video) {
           video.requestVideoFrameCallback(() => {
             setMediaReady(true);
+            setMotionFrameReady(true);
             invalidateScene.current?.();
           });
-          video.currentTime = requestedTime.current > 0.12 ? requestedTime.current - 0.04 : 0.12;
+          if (requestedTime.current > 0) {
+            video.currentTime = requestedTime.current;
+          } else {
+            video.currentTime = 0.04;
+            pendingSeekTime.current = 0.0;
+          }
         } else {
           setMediaReady(true);
+          setMotionFrameReady(true);
         }
         window.clearInterval(timer);
       }
@@ -144,6 +154,7 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
     gsap.registerPlugin(ScrollTrigger);
 
     const lenis = new Lenis({ autoRaf: false, anchors: true, duration: 1.15, smoothWheel: true, syncTouch: false });
+    (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
     const updateTrigger = () => ScrollTrigger.update();
     const tick = (time: number) => lenis.raf(time * 1000);
     const handleVisibility = () => {
@@ -176,12 +187,24 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
       const timeline = gsap.timeline({
         scrollTrigger: { trigger: sequence, start: 'top top', end: 'bottom bottom', scrub: 0.5, invalidateOnRefresh: true },
         onUpdate: () => {
+          // Timeline Milestones:
+          // p = 0.00 -> 0.04: Hero idle with notebook in 3D perspective
+          // p = 0.04 -> 0.20: Hero copy fades out (-16% yPercent), laptop aligns frontal (align: 0 -> 0.16)
+          // p = 0.14: Video scrub starts at 0.0s (NKS hero)
+          // p = 0.14 -> 0.84: Video scrubs full 18.88s journey (hero -> features -> plans -> affiliate -> payments -> footer)
+          // p = 0.72 -> 0.94: Camera enters screen (zoom: Z: 5.8 -> 1.9)
+          // p = 0.84: Video arrives at footer ecosystem (18.87s / 18.88s)
+          // p = 0.86 -> 0.93: Laptop chassis (frame/keyboard) dissolves from opacity 1 -> 0
+          // p = 0.94: 3D scene hands over to HTML layer (both displaying 18.87s footer frame)
+          // p = 0.965 -> 1.0: Case title & details established in editorial flow
           const value = timeline.progress();
           progressRef.current = value;
           invalidateScene.current?.();
-          const duration = durationRef.current;
-          const videoProgress = Math.max(0, Math.min(1, (value - 0.14) / 0.70));
-          requestFrame(videoProgress * duration);
+          const duration = durationRef.current || videoRef.current?.duration || 0;
+          if (duration > 0) {
+            const videoProgress = Math.max(0, Math.min(1, (value - 0.14) / 0.70));
+            requestFrame(videoProgress * duration);
+          }
           const focused = value >= 0.14 && value < 0.999;
           if (focused !== screenFocusRef.current) {
             screenFocusRef.current = focused;
@@ -212,6 +235,7 @@ export default function StoryPrototype({ locale, style, copy }: Props) {
     document.fonts?.ready.then(refresh).catch(() => undefined);
 
     return () => {
+      delete (window as unknown as { __lenis?: Lenis }).__lenis;
       document.removeEventListener('visibilitychange', handleVisibility);
       lenis.off('scroll', updateTrigger);
       gsap.ticker.remove(tick);
