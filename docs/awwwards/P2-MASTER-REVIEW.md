@@ -1,5 +1,22 @@
 # Revisão Mastermind · P2 · commit `304188b`
 
+## Adendo de 28/09/2026 · revisão do Corte 2 (`29500d6`)
+
+**Decisão:** aprovo o notebook GLB e a passagem NKS como direção de prototipagem. **O Corte 2 ainda não passa no gate de reversão e entrega visual; P2 permanece aberta.** Esta revisão usa o código e as evidências versionadas em `29500d6` e a gravação desktop de 19,2 s enviada pelo proprietário. Não equivale a ensaio em dispositivo físico.
+
+O primeiro quadro tem materialidade e hierarquia, e a tela do GLB está alinhada ao bezel sem vazamento evidente. O avanço frontal e o zoom dão à obra real o papel principal desejado. Manter A / Matéria como base; preservar o notebook, o vídeo fornecido, o site ativo e o caminho GSAP → R3F → HTML. A experiência deve continuar cinematográfica, sem simplificar a passagem para uma galeria convencional.
+
+**Correções obrigatórias antes de expandir para Milan, Sincad-MT e Criactive:**
+
+1. **Tela cinza no scroll reverso.** Na gravação do proprietário, por volta de `00:14`, a tela inteira do notebook fica cinza claro; perto de `00:15`, o NKS reaparece. Isso contradiz a afirmação de “sem perdas de frame nem flash” no checkpoint. Reproduzir com ida e volta, pausas e mudanças rápidas de direção. Investigar o seek do `HTMLVideoElement`, o frame decodificado, a atualização da `VideoTexture` e a troca para o pôster. Em `StoryPrototype.tsx`, `requestFrame` ignora pedidos durante `video.seeking`; `mediaReady`/`motionFrameReady` são estados de prontidão acumulados, não uma garantia de que o frame do tempo atual está decodificado. Manter o último frame válido ou uma imagem de fallback coerente enquanto o novo frame não estiver pronto; não mostrar cinza/preto/branco nem resetar o vídeo para a hero durante a reversão. Comprovar em gravação contínua, não apenas em capturas dos extremos.
+2. **Handover 3D → HTML.** Na gravação, por volta de `00:08–00:10`, a imagem amplia e a camada HTML aparece, mas a barra KV e o título NKS passam sobre a mídia antes da página editorial. Medir, quadro a quadro, posição, escala, crop e *mesmo frame de vídeo* imediatamente antes/depois da troca em `0.94–0.965`; ajustar a interpolação para que o notebook desapareça sem corte perceptível. Não trocar para uma captura estática da hero NKS no momento da entrega. A leitura do vídeo deve continuar enquanto for visível.
+3. **Dock da navbar.** Na gravação, por volta de `00:08` e `00:14–00:15`, a cápsula KV cobre a área de teclado/parte inferior da tela. Isso pode ser uma escolha compositiva, mas conflita com a intenção documentada de desobstruir o NKS e faz a navbar parecer colada ao notebook. Testar recolhimento real, menor escala/opacidade ou deslocamento para fora do quadro durante a aproximação, preservando acesso por teclado e retorno previsível ao subir/entrar no case. Verificar desktop e mobile, inclusive safe area.
+4. **Mobile e copy do case.** As evidências mobile mostram o site desktop extremamente ampliado no preenchimento da viewport; conferir intenção editorial, leitura, posição do logo e recorte durante a transição, em 390×844 e 360×800. O case estabelecido usa um still inicial, enquanto a passagem chega aos planos: tornar a mudança de conteúdo intencional e legível. Não introduzir fatos novos sobre o projeto sem validação.
+
+**Próximo corte autorizado:** corrigir e validar estes pontos na rota isolada `/pt-br/awwwards-preview/ember` e em `/en/`, mantendo a branch `redesign/awwwards-repagination`, `master` e produção intactas. Usar Orchestrator Pipeline com seus sete recursos e as skills Animate, Build Awwwards-Quality Sites, Taste, `r3f-best-practices` e `three-best-practices` no ambiente do Worker; registrar chamadas e regras efetivamente aplicadas. Entregar vídeo contínuo de ida, pausa, reversão e nova ida, com tempos/progressos marcados, além de recortes de quadros antes/depois de cada handover e da falha corrigida. Inspecionar console/rede e validar PT/EN, desktop/mobile, reduced motion, WebGL indisponível, teclado/touch, `type-check`, lint, build e `git diff --check`. Registrar limites reais. **Não declarar o Corte 2 aprovado ou começar os outros três cases até nova revisão Mastermind.**
+
+---
+
 Data: 26/09/2026. Base examinada: `304188b8ec9c6aabd8e9e1cace2a578c0c1738a2`. Esta revisão cobre a direção, o protótipo e as quatro capturas versionadas; é uma análise estática e visual, não uma nova execução do site. P2 continua aberta.
 
 ## Decisão
