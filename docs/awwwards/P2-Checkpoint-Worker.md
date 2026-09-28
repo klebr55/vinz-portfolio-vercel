@@ -6,7 +6,7 @@ Este resumo acompanha a branch. O histórico detalhado permanece em `DECISIONS.m
 
 ## 27/09 · Corte 3: Restauração da Jornada Completa NKS (18,87s), Arquitetura Canvas Buffer Anti-Tela Cinza e Ajuste Dock KV
 
-Base remota: `29500d6912915c3bf2c1749b9274d928e6ea40e7`. Implementação desenvolvida na branch `redesign/awwwards-repagination` (commit `b584bff`). Não houve merge em `master` nem promoção a produção. A P2 **continua aberta**.
+Base remota: `29500d6912915c3bf2c1749b9274d928e6ea40e7`. Implementação desenvolvida na branch `redesign/awwwards-repagination` (commits `b584bff` e `8a7ce1e`). Não houve merge em `master` nem promoção a produção. A P2 **continua aberta**.
 
 ### 1. O que foi implementado e por quê
 - **Restauração integral da jornada NKS (18,87 s):** Atendendo à determinação do proprietário e do Mastermind, a gravação original completa (`nksconnect.mp4`, 18,88 s) foi restabelecida sem cortes artificiais. A travessia agora cobre todo o ciclo do produto: abertura hero, proposta de valor, planos por assinatura, área de afiliação e comissões, meios de pagamento e ecossistema de parceiros no rodapé.
