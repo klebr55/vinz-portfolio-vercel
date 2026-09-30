@@ -2,7 +2,11 @@
 
 ## Atualização de direção · 30/09/2026
 
-Leia [2026-09-30-NARRATIVE-DESIGN.md](2026-09-30-NARRATIVE-DESIGN.md) como especificação da nova narrativa contínua, aprovada por escrito pelo proprietário em 30/09/2026. O [plano de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md) aguarda revisão antes de UI. A especificação prevalece sobre os requisitos de direção históricos deste documento: Plasma na hero, SDIMT primeiro, cinco cases, notebook reservado a NKS, checkpoints laterais, navbar SDIMT e motion blur seletivo. Regras de fundação, fatos, evidências, branch e produção continuam válidas.
+Leia [2026-09-30-NARRATIVE-DESIGN.md](2026-09-30-NARRATIVE-DESIGN.md) como especificação da nova narrativa contínua e [2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md) como seu plano aprovado. O prompt [2026-09-30-WORKER-START.md](2026-09-30-WORKER-START.md) autoriza o Corte 5. A especificação prevalece sobre os requisitos de direção históricos deste documento: Plasma na hero, SDIMT primeiro, cinco cases, notebook reservado a NKS, checkpoints laterais, navbar SDIMT e motion blur seletivo. Regras de fundação, fatos, evidências, branch e produção continuam válidas.
+
+### Precedência atual de recursos (30/09/2026)
+
+Os gates fixos de “sete recursos” e as chamadas obrigatórias a 21st.dev nos prompts e seções históricas abaixo foram substituídos para esta execução. A versão atual da Orchestrator Pipeline carrega apenas skills pertinentes, usa Playwright CLI para verificação browser normal e Chrome DevTools MCP para diagnóstico dirigido. O proprietário dispensou 21st.dev. `components.json` já aponta para `@react-bits`, e o código Plasma fornecido está arquivado em `docs/awwwards/reference-sources/Plasma.owner-source.txt`; implemente essa fonte diretamente sem MCP/listagem/instalação redundante. Teste as ferramentas que forem realmente necessárias, registre evidências reais e não herde PASS de outra sessão.
 
 As seções de estado e os prompts de P1 abaixo são históricos; não reiniciar P1 nem aplicar a antiga hero ao retomar. O HEAD remoto observado na revisão documental foi `628ae56f60eb3dda1fabe7a6db0e400a5ae0aa40`; conferir o HEAD vigente no ambiente do Worker.
 

@@ -1,8 +1,12 @@
 # Revisões Mastermind · P2
 
-## Direção vigente · 30/09/2026 · especificação aprovada, plano em revisão
+## Direção vigente · 30/09/2026 · especificação e plano aprovados
 
-O proprietário aprovou o arco contínuo Hero/Plasma → SDIMT → NKS → Milan → Sincad → Criactive → Sobre/Processo/Depoimentos → Contato, com checkpoints no centro direito e borrão de movimento seletivo, e aprovou a [especificação escrita](2026-09-30-NARRATIVE-DESIGN.md) em 30/09/2026. Leia o [plano de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md), agora em revisão. **Depois do aceite do plano, o Worker inicia somente Corte 5 (tarefas 1–4); Cortes 6/7 seguem revisão Mastermind. P2 permanece aberta.** O [prompt inicial preparado](2026-09-30-WORKER-START.md) não deve ser ativado antes desse aceite.
+O proprietário aprovou o arco contínuo Hero/Plasma → SDIMT → NKS → Milan → Sincad → Criactive → Sobre/Processo/Depoimentos → Contato, com checkpoints no centro direito e borrão de movimento seletivo, a [especificação escrita](2026-09-30-NARRATIVE-DESIGN.md) e o [plano de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md) em 30/09/2026. O [prompt inicial](2026-09-30-WORKER-START.md) está liberado para Corte 5 (tarefas 1–4); Cortes 6/7 seguem revisão Mastermind. **P2 permanece aberta.**
+
+### Recursos vigentes para esta execução
+
+A versão atual da Orchestrator Pipeline usa Playwright CLI como fluxo normal de browser e Chrome DevTools MCP para investigação dirigida; ela não inclui 21st.dev. O proprietário descartou 21st.dev. O Plasma já está no arquivo local `reference-sources/Plasma.owner-source.txt`, e `components.json` já aponta para o React Bits gratuito: não fazer descoberta/instalação duplicada pelo shadcn MCP. Usar as skills pertinentes e registrar a prova de browser e quaisquer ferramentas realmente chamadas, sem gate antigo de sete MCPs.
 
 A direção substitui Beams/púrpura na hero, notebook na abertura, início obrigatório em NKS e exploração por galeria intermediária. SDIMT é o primeiro de cinco cases. O notebook e a mídia NKS são preservados no capítulo NKS. A navbar reutiliza o mecanismo real SDIMT e seu hook; fontes de referência estão em `reference-sources/`.
 

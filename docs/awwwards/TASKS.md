@@ -9,12 +9,13 @@ Contrato vigente: [2026-09-30-NARRATIVE-DESIGN.md](2026-09-30-NARRATIVE-DESIGN.m
 - [x] Mastermind escreveu a especificação e preservou fontes Plasma/navbar/hook como referências documentais.
 - [x] Proprietário revisar e aprovar a especificação escrita, incluindo copy PT/EN e regras de movimento (30/09/2026).
 - [x] Mastermind elaborar [plano de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md) e [prompt de início](2026-09-30-WORKER-START.md), preservando método Codex Worker/Antigravity.
-- [ ] Proprietário revisar o plano; só depois ativar prompt do Corte 5.
+- [x] Proprietário aprovar o plano com os ajustes de eficiência do gate de recursos (30/09/2026).
+- [ ] Worker iniciar Corte 5 usando o prompt preparado em sessão nova do Codex e checkpoint enxuto; Antigravity assume a primeira tarefa aberta se o limite diário terminar.
 - [ ] Antes de UI, Worker comprovar o gate de recursos no próprio ambiente e confirmar HEAD/worktree.
 - [ ] Executar os cortes aprovados; adquirir mídia de painel SDIMT, corrigir cadência NKS e validar motion blur sem usar borrão para esconder saltos.
 - [ ] Validar a história inteira, checkpoints/entrada direta, navbar óptica, PT/EN, desktop/mobile e fallbacks com evidência do commit implementado.
 
-Nesta revisão só há alteração documental e fontes de referência como texto. Não houve execução de build ou validação nova da UI atual. P1 é preservada; P2–P4 continuam abertas. A ausência de shadcn/21st.dev/Chrome MCP no ambiente desta escrita não é registrada como PASS nem impede documentação independente. Checkboxes de implementação detalhados estão no plano; não duplicar estados contraditórios nestes registros históricos.
+Nesta revisão houve somente ajuste documental de plano/prompt e precedência dos recursos. Não houve execução de build ou validação nova da UI atual. P1 é preservada; P2–P4 continuam abertas. A versão atual da Orchestrator não exige 21st.dev; o proprietário também dispensou esse MCP. Plasma local arquivado elimina a necessidade de busca/instalação shadcn para este componente. Playwright CLI é o browser padrão; DevTools é dirigido. Checkboxes de implementação detalhados estão no plano; registros P0 antigos abaixo são históricos, não gate atual.
 
 ## Corte 4 · 28/09/2026 · revisão visual pendente
 
