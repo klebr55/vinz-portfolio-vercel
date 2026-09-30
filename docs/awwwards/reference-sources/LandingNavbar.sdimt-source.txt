@@ -1,0 +1,132 @@
+/**
+ * LandingNavbar — barra flutuante da landing pública com efeito "liquid glass".
+ * Não é o AppHeader institucional; é usada apenas na experiência de entrada.
+ *
+ * O efeito de vidro líquido usa um filtro SVG de deslocamento (feDisplacementMap)
+ * aplicado via backdrop-filter em navegadores baseados em Blink/Gecko, com
+ * fallback para blur + saturate em WebKit (Safari/iOS) onde feDisplacementMap
+ * em backdrop-filter não funciona de forma confiável.
+ *
+ * A cor escura original da navbar da landing é preservada.
+ */
+import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import { useLiquidGlass } from "@/components/visual-system/use-liquid-glass";
+
+const NAV_LINKS = [
+  { id: "o-que-e", label: "O que é" },
+  { id: "recursos", label: "Recursos" },
+  { id: "seguranca", label: "Segurança" },
+  { id: "acesso", label: "Acesso" },
+] as const;
+
+export function LandingNavbar({
+  ctaLabel,
+  ctaTo,
+  onCtaClick,
+}: {
+  ctaLabel: string;
+  ctaTo: string;
+  /** Se definido, o CTA vira botão e não navega para `ctaTo`. */
+  onCtaClick?: () => void;
+}) {
+  const [scrolled, setScrolled] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const { surfaceRef: navRef, backdropFilter: backdrop } = useLiquidGlass<HTMLElement>();
+
+  useEffect(() => {
+    let timeoutId: number | null = null;
+    const onScroll = () => {
+      const next = window.scrollY > 8;
+      // Set idempotente: evita re-render quando o boolean não mudou.
+      setScrolled((prev) => (prev === next ? prev : next));
+      // Ativa will-change apenas durante scroll ativo; libera após 250 ms de
+      // ociosidade para não manter a navbar em camada dedicada de GPU.
+      setIsScrolling(true);
+      if (timeoutId) window.clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(() => setIsScrolling(false), 250);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (timeoutId) window.clearTimeout(timeoutId);
+    };
+  }, []);
+
+  // Cor escura original preservada.
+  const bgColor = scrolled ? "rgba(0, 0, 0, 0.55)" : "rgba(0, 0, 0, 0.35)";
+  const borderColor = scrolled ? "rgba(255, 255, 255, 0.15)" : "rgba(255, 255, 255, 0.10)";
+
+  return (
+    <header
+      className="fixed inset-x-0 top-3 z-50 flex justify-center px-3 md:top-5"
+      data-testid="landing-navbar"
+    >
+      <nav
+        ref={navRef}
+        aria-label="Navegação da landing"
+        className="relative flex w-full max-w-4xl items-center gap-3 overflow-hidden rounded-full px-3 py-2 transition-[background-color,box-shadow,border-color] duration-500 md:gap-6 md:px-5 md:py-2.5 [transform:translateZ(0)]"
+        data-scrolling={isScrolling ? "" : undefined}
+        style={{
+          backdropFilter: backdrop,
+          WebkitBackdropFilter: backdrop,
+          backgroundColor: bgColor,
+          border: `1px solid ${borderColor}`,
+          // will-change apenas durante scroll ativo — libera camada de GPU no idle.
+          willChange: isScrolling ? "backdrop-filter" : "auto",
+          boxShadow: scrolled
+            ? "inset 0 1px 0 rgba(255,255,255,0.08), inset 0 0 0 1px rgba(255,255,255,0.04), 0 10px 40px rgba(0,0,0,0.45)"
+            : "inset 0 1px 0 rgba(255,255,255,0.06), inset 0 0 0 1px rgba(255,255,255,0.03), 0 8px 32px rgba(0,0,0,0.35)",
+        }}
+      >
+        <a
+          href="#top"
+          className="flex shrink-0 items-center rounded-full pr-2 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+          aria-label="SDIMT — início"
+        >
+          <img
+            src="/branding/seplag-mt-horizontal-monochrome.png"
+            alt=""
+            aria-hidden="true"
+            draggable={false}
+            className="block h-auto w-[104px] select-none sm:w-[108px]"
+          />
+        </a>
+        <ul className="ml-2 hidden flex-1 items-center justify-center gap-1 md:flex">
+          {NAV_LINKS.map((l) => (
+            <li key={l.id}>
+              <a
+                href={`#${l.id}`}
+                className="rounded-full px-3 py-1.5 text-sm text-white/75 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className="ml-auto flex items-center gap-2">
+          {onCtaClick ? (
+            <Button
+              size="sm"
+              onClick={onCtaClick}
+              className="rounded-full bg-white px-4 text-[13px] font-semibold text-black hover:bg-white/90"
+              data-testid="landing-navbar-cta"
+            >
+              {ctaLabel}
+            </Button>
+          ) : (
+            <Button
+              asChild
+              size="sm"
+              className="rounded-full bg-white px-4 text-[13px] font-semibold text-black hover:bg-white/90"
+            >
+              <Link to={ctaTo}>{ctaLabel}</Link>
+            </Button>
+          )}
+        </div>
+      </nav>
+    </header>
+  );
+}

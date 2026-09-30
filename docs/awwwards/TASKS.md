@@ -1,5 +1,20 @@
 # Execução por fases
 
+## Nova direção narrativa · 30/09/2026
+
+Contrato vigente: [2026-09-30-NARRATIVE-DESIGN.md](2026-09-30-NARRATIVE-DESIGN.md). Os checklists dos cortes anteriores abaixo são históricos; não são aprovação da direção final.
+
+- [x] Proprietário aprovou narrativa contínua e ordem com SDIMT primeiro, cinco cases, notebook apenas em NKS e checkpoints no centro direito.
+- [x] Proprietário escolheu Plasma e frase autoral/assinatura para a hero; acrescentou borrão de movimento onde expressa deslocamento.
+- [x] Mastermind escreveu a especificação e preservou fontes Plasma/navbar/hook como referências documentais.
+- [ ] Proprietário revisar e aprovar a especificação escrita, incluindo copy PT/EN e regras de movimento.
+- [ ] Após aprovação escrita, elaborar e revisar o plano de implementação, cortes e método de execução.
+- [ ] Antes de UI, Worker comprovar o gate de recursos no próprio ambiente e confirmar HEAD/worktree.
+- [ ] Executar os cortes aprovados; adquirir mídia de painel SDIMT, corrigir cadência NKS e validar motion blur sem usar borrão para esconder saltos.
+- [ ] Validar a história inteira, checkpoints/entrada direta, navbar óptica, PT/EN, desktop/mobile e fallbacks com evidência do commit implementado.
+
+Nesta revisão só há alteração documental e arquivo de fontes como texto. Não houve execução de build ou validação nova da UI atual. P1 é preservada; P2–P4 continuam abertas. A ausência de shadcn/21st.dev/Chrome MCP no ambiente desta escrita não é registrada como PASS nem impede documentação independente.
+
 ## Corte 4 · 28/09/2026 · revisão visual pendente
 
 - [x] Substituir os feixes quentes pelo Beams React Bits fornecido, com props pedidas e paleta púrpura; preservar GLB, texto e CTA.

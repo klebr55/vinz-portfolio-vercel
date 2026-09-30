@@ -1,5 +1,22 @@
 # Decisões e checkpoints
 
+## Decisões do proprietário · narrativa contínua · 30/09/2026
+
+O arco proposto foi aprovado em conversa. Detalhes vigentes e critérios: [2026-09-30-NARRATIVE-DESIGN.md](2026-09-30-NARRATIVE-DESIGN.md). A especificação escrita aguarda revisão; autorização de implementação exige ainda plano revisto. As entradas anteriores continuam como histórico.
+
+| ID | Decisão vigente | Estado |
+| --- | --- | --- |
+| N01 | Hero com Plasma azul nas props do proprietário, frase autoral e assinatura abaixo; notebook fora da hero. | Direção aprovada; copy escrita PT/EN em revisão |
+| N02 | SDIMT é primeiro case; sequência completa segue NKS, Milan, Sincad e Criactive. | Arco aprovado |
+| N03 | Narrativa vertical contínua; checkpoints no centro direito permitem saltos sem virar uma galeria intermediária. | Aprovado |
+| N04 | Cada case tem coreografia distinta; o truque do notebook pertence a NKS. | Aprovado |
+| N05 | Navbar reutiliza LandingNavbar e useLiquidGlass do SDIMT; identidade e navegação adaptadas para Next/KV. | Aprovado como referência |
+| N06 | Motion blur seletivo por velocidade/direção, zero no repouso e fora de texto/UI em leitura. | Requisito solicitado; calibração escrita em revisão |
+
+D01 está superada para a direção da hero pelas decisões N01 e pela seção 1 da especificação nova. D04 está parcialmente resolvida: SDIMT pode integrar a narrativa com mídia pública/apropriada; métricas, endosso e dados privados não foram aprovados. D03 continua quanto ao vínculo profissional, sem atribuição nova. As gravações SDIMT recebidas mostram landing/entrada; a mídia de painel em uso ainda deve ser obtida para uma demonstração substancial.
+
+**Evidência desta escrita:** branch remota confirmada no GitHub em `628ae56`; documentos/fonte e gravações analisados; original NKS medido por ffprobe em 18,88 s e aproximadamente 60 fps. Cópia local antiga estava limpa, mas git fetch falhou por conexão ao proxy; o trabalho documental usa leitura/publicação pelo conector GitHub. Sem build atual, instalação, implementação de UI, merge ou promoção de produção. Recursos de implementação não disponíveis aqui não recebem PASS.
+
 ## Aguardando o proprietário
 
 | ID | Decisão | Regra provisória | Estado |

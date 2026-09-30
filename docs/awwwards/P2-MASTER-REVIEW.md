@@ -1,4 +1,10 @@
-# Revisão Mastermind · P2 · commit `304188b`
+# Revisões Mastermind · P2
+
+## Direção vigente · 30/09/2026 · revisão escrita pendente
+
+O proprietário aprovou o arco contínuo Hero/Plasma → SDIMT → NKS → Milan → Sincad → Criactive → Sobre/Processo/Depoimentos → Contato, com checkpoints no centro direito e borrão de movimento seletivo. Leia [a especificação narrativa](2026-09-30-NARRATIVE-DESIGN.md) antes dos registros históricos abaixo. Este documento escrito ainda aguarda revisão; o plano de implementação vem depois. **Nenhuma expansão de UI está autorizada por este checkpoint documental. P2 permanece aberta.**
+
+A direção substitui Beams/púrpura na hero, notebook na abertura, início obrigatório em NKS e exploração por galeria intermediária. SDIMT é o primeiro de cinco cases. O notebook e a mídia NKS são preservados no capítulo NKS. A navbar reutiliza o mecanismo real SDIMT e seu hook; fontes de referência estão em `reference-sources/`.
 
 ## Adendo de 28/09/2026 · revisão do Corte 3 (`0521ded`)
 
