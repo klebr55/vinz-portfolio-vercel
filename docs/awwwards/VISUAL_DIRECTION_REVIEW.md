@@ -1,8 +1,8 @@
 # P2 · Direção visual e histórico de protótipos
 
-## Direção vigente · 30/09/2026 · revisão escrita pendente
+## Direção vigente · 30/09/2026 · especificação aprovada, plano em revisão
 
-O proprietário aprovou o arco contínuo Hero/Plasma → SDIMT → NKS → Milan → Sincad → Criactive → Sobre/Processo/Depoimentos → Contato, com checkpoints no centro direito e borrão de movimento seletivo. Leia [a especificação narrativa](2026-09-30-NARRATIVE-DESIGN.md) antes dos registros históricos abaixo. Este documento escrito ainda aguarda revisão; o plano de implementação vem depois. **Nenhuma expansão de UI está autorizada por este checkpoint documental. P2 permanece aberta.**
+O proprietário aprovou o arco contínuo Hero/Plasma → SDIMT → NKS → Milan → Sincad → Criactive → Sobre/Processo/Depoimentos → Contato, com checkpoints no centro direito e borrão de movimento seletivo, e aprovou a [especificação escrita](2026-09-30-NARRATIVE-DESIGN.md) em 30/09/2026. O [plano de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md) aguarda revisão antes de UI. Corte 5 mostrará Hero→SDIMT; Corte 6 mostrará SDIMT→NKS e blur; Corte 7 completará o arco. **A aprovação da especificação não é aceite visual de uma implementação; P2 permanece aberta.**
 
 A direção substitui Beams/púrpura na hero, notebook na abertura, início obrigatório em NKS e exploração por galeria intermediária. SDIMT é o primeiro de cinco cases. O notebook e a mídia NKS são preservados no capítulo NKS. A navbar reutiliza o mecanismo real SDIMT e seu hook; fontes de referência estão em `reference-sources/`.
 

@@ -6,7 +6,7 @@ Base remota examinada: `628ae56f60eb3dda1fabe7a6db0e400a5ae0aa40`.
 
 ## 0. Estado, precedência e autorização
 
-O proprietário aprovou em conversa o arco contínuo desta direção e acrescentou borrão de movimento seletivo. **Este documento escrito aguarda sua revisão.** Sua publicação é um checkpoint documental; não autoriza implementação por si só, não aprova o Corte 4 como experiência final e não encerra P2.
+O proprietário aprovou em conversa o arco contínuo desta direção e acrescentou borrão de movimento seletivo. **A especificação escrita foi aprovada pelo proprietário em 30/09/2026 (“Aprovada, e agora?”).** Sua publicação é um checkpoint documental; não aprova o Corte 4 como experiência final e não encerra P2. O [plano de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md) foi preparado e aguarda revisão antes da execução de UI.
 
 Leia primeiro este documento para a direção vigente, depois `SPEC.md` para fundação, fatos, evidências e operação. Em conflito de direção, prevalece este documento. Os registros anteriores de A/Matéria, hero púrpura/Beams, notebook na abertura, quatro cases e início obrigatório em NKS são históricos. Continuam válidos os cuidados com mídia real, atribuições, teclado, PT/EN e integridade da branch.
 
@@ -222,7 +222,7 @@ A skill atual do Orchestrator usa Playwright CLI na validação normal e Chrome 
 
 Nesta revisão documental o Mastermind leu brainstorming, Orchestrator, instruções, checkpoint, contratos e fontes; analisou gravações e mídia; consultou referências oficiais. Não comprovou shadcn/21st.dev/Chrome MCP neste ambiente, não executou build atual nem fez uma nova validação do site em navegador. P0 da implementação permanece independente; não herdar os PASS do Worker.
 
-Próximo passo após revisão deste documento: plano escrito com cortes, arquivos afetados, método de blur, aquisição da mídia SDIMT, validação e checkpoints. Só depois da revisão do plano inicia-se implementação. A retomada conserva P1, GLB, mídia e histórico; não reinicia o redesign nem toca master/produção.
+Próximo passo vigente: revisar o [plano escrito de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md), com cortes, arquivos afetados, método de blur, aquisição da mídia SDIMT, validação e checkpoints. Só depois da revisão do plano inicia-se implementação. A retomada conserva P1, GLB, mídia e histórico; não reinicia o redesign nem toca master/produção.
 
 ## 13. Fontes para implementação e revisão
 

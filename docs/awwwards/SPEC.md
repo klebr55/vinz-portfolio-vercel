@@ -2,7 +2,7 @@
 
 ## Atualização de direção · 30/09/2026
 
-Leia [2026-09-30-NARRATIVE-DESIGN.md](2026-09-30-NARRATIVE-DESIGN.md) como especificação da nova narrativa contínua. O arco foi aprovado em conversa; a especificação escrita está em revisão antes do plano e da implementação. Ela prevalece sobre os requisitos de direção históricos deste documento: Plasma na hero, SDIMT primeiro, cinco cases, notebook reservado a NKS, checkpoints laterais, navbar SDIMT e motion blur seletivo. Regras de fundação, fatos, evidências, branch e produção continuam válidas.
+Leia [2026-09-30-NARRATIVE-DESIGN.md](2026-09-30-NARRATIVE-DESIGN.md) como especificação da nova narrativa contínua, aprovada por escrito pelo proprietário em 30/09/2026. O [plano de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md) aguarda revisão antes de UI. A especificação prevalece sobre os requisitos de direção históricos deste documento: Plasma na hero, SDIMT primeiro, cinco cases, notebook reservado a NKS, checkpoints laterais, navbar SDIMT e motion blur seletivo. Regras de fundação, fatos, evidências, branch e produção continuam válidas.
 
 As seções de estado e os prompts de P1 abaixo são históricos; não reiniciar P1 nem aplicar a antiga hero ao retomar. O HEAD remoto observado na revisão documental foi `628ae56f60eb3dda1fabe7a6db0e400a5ae0aa40`; conferir o HEAD vigente no ambiente do Worker.
 

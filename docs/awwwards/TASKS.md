@@ -7,13 +7,14 @@ Contrato vigente: [2026-09-30-NARRATIVE-DESIGN.md](2026-09-30-NARRATIVE-DESIGN.m
 - [x] Proprietário aprovou narrativa contínua e ordem com SDIMT primeiro, cinco cases, notebook apenas em NKS e checkpoints no centro direito.
 - [x] Proprietário escolheu Plasma e frase autoral/assinatura para a hero; acrescentou borrão de movimento onde expressa deslocamento.
 - [x] Mastermind escreveu a especificação e preservou fontes Plasma/navbar/hook como referências documentais.
-- [ ] Proprietário revisar e aprovar a especificação escrita, incluindo copy PT/EN e regras de movimento.
-- [ ] Após aprovação escrita, elaborar e revisar o plano de implementação, cortes e método de execução.
+- [x] Proprietário revisar e aprovar a especificação escrita, incluindo copy PT/EN e regras de movimento (30/09/2026).
+- [x] Mastermind elaborar [plano de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md) e [prompt de início](2026-09-30-WORKER-START.md), preservando método Codex Worker/Antigravity.
+- [ ] Proprietário revisar o plano; só depois ativar prompt do Corte 5.
 - [ ] Antes de UI, Worker comprovar o gate de recursos no próprio ambiente e confirmar HEAD/worktree.
 - [ ] Executar os cortes aprovados; adquirir mídia de painel SDIMT, corrigir cadência NKS e validar motion blur sem usar borrão para esconder saltos.
 - [ ] Validar a história inteira, checkpoints/entrada direta, navbar óptica, PT/EN, desktop/mobile e fallbacks com evidência do commit implementado.
 
-Nesta revisão só há alteração documental e arquivo de fontes como texto. Não houve execução de build ou validação nova da UI atual. P1 é preservada; P2–P4 continuam abertas. A ausência de shadcn/21st.dev/Chrome MCP no ambiente desta escrita não é registrada como PASS nem impede documentação independente.
+Nesta revisão só há alteração documental e fontes de referência como texto. Não houve execução de build ou validação nova da UI atual. P1 é preservada; P2–P4 continuam abertas. A ausência de shadcn/21st.dev/Chrome MCP no ambiente desta escrita não é registrada como PASS nem impede documentação independente. Checkboxes de implementação detalhados estão no plano; não duplicar estados contraditórios nestes registros históricos.
 
 ## Corte 4 · 28/09/2026 · revisão visual pendente
 

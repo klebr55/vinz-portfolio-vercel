@@ -2,16 +2,17 @@
 
 ## Decisões do proprietário · narrativa contínua · 30/09/2026
 
-O arco proposto foi aprovado em conversa. Detalhes vigentes e critérios: [2026-09-30-NARRATIVE-DESIGN.md](2026-09-30-NARRATIVE-DESIGN.md). A especificação escrita aguarda revisão; autorização de implementação exige ainda plano revisto. As entradas anteriores continuam como histórico.
+O arco proposto e a [especificação escrita](2026-09-30-NARRATIVE-DESIGN.md) foram aprovados pelo proprietário em 30/09/2026; última manifestação: “Aprovada, e agora?”. O [plano de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md) foi elaborado e aguarda revisão antes de executar UI. Método preservado: Codex Worker sequencial, Antigravity para continuidade, Mastermind para revisão. As entradas anteriores continuam como histórico.
 
 | ID | Decisão vigente | Estado |
 | --- | --- | --- |
-| N01 | Hero com Plasma azul nas props do proprietário, frase autoral e assinatura abaixo; notebook fora da hero. | Direção aprovada; copy escrita PT/EN em revisão |
+| N01 | Hero com Plasma azul nas props do proprietário, frase autoral e assinatura abaixo; notebook fora da hero. | Especificação e copy PT/EN aprovadas |
 | N02 | SDIMT é primeiro case; sequência completa segue NKS, Milan, Sincad e Criactive. | Arco aprovado |
 | N03 | Narrativa vertical contínua; checkpoints no centro direito permitem saltos sem virar uma galeria intermediária. | Aprovado |
 | N04 | Cada case tem coreografia distinta; o truque do notebook pertence a NKS. | Aprovado |
 | N05 | Navbar reutiliza LandingNavbar e useLiquidGlass do SDIMT; identidade e navegação adaptadas para Next/KV. | Aprovado como referência |
-| N06 | Motion blur seletivo por velocidade/direção, zero no repouso e fora de texto/UI em leitura. | Requisito solicitado; calibração escrita em revisão |
+| N06 | Motion blur seletivo por velocidade/direção, zero no repouso e fora de texto/UI em leitura. | Especificação aprovada; calibração visual será ensaiada |
+| N07 | Cortes 5/6/7, contratos de navegação/mídia/blur e prompt inicial do Worker. | Plano em revisão; nenhum corte novo implementado |
 
 D01 está superada para a direção da hero pelas decisões N01 e pela seção 1 da especificação nova. D04 está parcialmente resolvida: SDIMT pode integrar a narrativa com mídia pública/apropriada; métricas, endosso e dados privados não foram aprovados. D03 continua quanto ao vínculo profissional, sem atribuição nova. As gravações SDIMT recebidas mostram landing/entrada; a mídia de painel em uso ainda deve ser obtida para uma demonstração substancial.
 
