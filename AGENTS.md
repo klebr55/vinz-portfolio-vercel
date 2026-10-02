@@ -1,3 +1,9 @@
+## Prioridade vigente · revisão e ScrollExpand · 02/10/2026
+
+Tasks 1–3 identidade/C1 entregues em `ec70bf8`/`e56a5ad`. O proprietário pediu única alteração na direção da revisão: ScrollExpand com imagem expansiva → vídeo → SDIMT. Leia `docs/awwwards/2026-10-02-IDENTITY-RHYTHM-WORKER.md` e **somente o adendo Tasks 4–7** do plano existente. Revisão/spec adaptadas são a fonte atual. Ordem expressa de executar esses documentos na sessão Worker confirma sua revisão; não duplicar confirmação por estado histórico. Não repetir Tasks 1–3, upgrade Motion ou pesquisa de componentes fornecidos. Codex sequencial/Antigravity, sem subagentes/master/produção/Cortes 6–7 implícitos. Fonte em `reference-sources/scroll-expand`; vídeo pertinente SDIMT real, pausa/play/frame e acesso conforme contrato atual.
+
+---
+
 # Instruções da repaginação
 
 ## Prioridade vigente · identidade elétrica A · 02/10/2026

@@ -1,3 +1,16 @@
+## Adendo vigente · ponte ScrollExpand · 02/10/2026
+
+- [x] Proprietário aceitar direção anterior com única mudança: poster expansivo → vídeo → SDIMT.
+- [x] Arquivar fonte completa/defaults/preview ScrollExpand, sem recuperar registry.
+- [x] Adaptar spec/revisão e plano existente; preparar prompt atual Tasks 4–7.
+- [ ] Proprietário ler documentos e dar ordem expressa de execução na sessão Worker.
+- [ ] Task 4: fechar seam elétrico e marca preenchida/reflexos/cadência Processo.
+- [ ] Task 5: mídia real da ponte, expansão→primeiro frame→SDIMT, pausa/reverse/fallback e roda curta.
+- [ ] Task 6: navbar Motion compacta/ícones com vidro/refração e acesso preservados.
+- [ ] Task 7: C5.1/C2–C4, provas/checks/commits e revisão Mastermind.
+
+Tasks 1–3/C1 entregues não são refeitas. Somente docs/fontes alterados neste adendo; não é aceite da UI atual nem conclusão P2.
+
 ## Revisão vigente · 02/10/2026 · identidade e ritmo
 
 - [x] Inspecionar HEAD `e56a5ad`, gravações próprias e componentes.

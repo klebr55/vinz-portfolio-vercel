@@ -2,7 +2,7 @@
 
 Base inspecionada: `e56a5adf5f3ab25757a76eb272bd6a5e482d70b1`; implementação `ec70bf84475199859c5cda809fc54e6914321ddf`. Branch `redesign/awwwards-repagination`. 02/10/2026, Cuiabá.
 
-**Estado:** entrega preservada; aceite visual não concedido. Este documento reúne diagnóstico e uma proposta para aprovação do proprietário. Não constitui novo plano aprovado nem ordem de execução. P2/Cortes 6–7 continuam abertos. C1 não deve ser refeito sem regressão reproduzida.
+**Estado atualizado:** entrega preservada; aceite visual da implementação ainda não concedido. O proprietário aceitou a direção apresentada com uma única alteração: a ponte usa ScrollExpand, seguido de vídeo em movimento e chegada ao SDIMT. Esta revisão escrita foi adaptada junto ao plano existente, sem reiniciar o briefing. Ler os documentos e dar ordem expressa de execução ao Worker confirma a revisão escrita para essa sessão. P2/Cortes 6–7 continuam abertos; C1 não repetir sem regressão.
 
 ## Entendimento do pedido
 
@@ -44,7 +44,7 @@ Ampliar a área renderizada ao redor da forma para conter luz/arcos e fazer a co
 
 ## Abordagens consideradas
 
-1. **Continuidade causal, recomendada:** a tese da hero ganha um conectivo; um vestígio de energia conduz ao plano real do SDIMT. Ritmo em beats amplos, estabilização em pausas e uma navbar que se recolhe. Reaproveita a arquitetura e dá sentido à experiência.
+1. **Continuidade causal, recomendada:** a tese da hero ganha um conectivo; o ScrollExpand conduz imagem→vídeo→plano real do SDIMT. Ritmo em beats amplos, estabilização em pausas e uma navbar que se recolhe. Reaproveita a arquitetura e dá sentido à experiência.
 2. Metamorfose 3D completa entre marca e SDIMT: forte espetáculo, mas demanda novo subsistema e pode antecipar o gesto de materialização reservado a Processo. Não recomendada neste incremento.
 3. Intertítulo independente entre hero e projeto: simples de ler, mas pode parecer outro capítulo solto. Usar frase dentro da travessia, sem seção vazia adicional.
 
@@ -52,9 +52,19 @@ Ampliar a área renderizada ao redor da forma para conter luz/arcos e fazer a co
 
 ### 1. Abertura: declaração → consequência → prova
 
-Preservar composição A, Plasma e morph VINZ/tecnologias. Ao iniciar a travessia, concluir visualmente a saída do símbolo sem exigir ciclo completo. Um vestígio de luz/linha, compatível com o motivo elétrico, conduz o olhar para a primeira interface; não fingir morph geométrico entre SVG e website.
+Preservar composição A, Plasma e morph VINZ/tecnologias. Ao iniciar a travessia, concluir visualmente a saída do símbolo sem exigir ciclo completo. O **ScrollExpand fornecido pelo proprietário** conduz o olhar: uma imagem enquadrada se expande até ocupar a viewport; quando a expansão visual termina, a mesma imagem ganha movimento via vídeo, que conduz ao SDIMT. Este gesto substitui a proposta anterior de vestígio elétrico/linha; não acrescentar duas pontes em sequência.
 
-**Conectivo sugerido:** “É nos problemas reais que essa ousadia ganha forma.”
+A imagem é um poster extraído do próprio vídeo, não mídia genérica. Fonte/preview/defaults em [ScrollExpand](reference-sources/scroll-expand/README.md). O screenshot fornecido é exemplo de composição, não aprovação de pessoa/floresta ou texto inglês. Encaixar o conectivo no título/overlay do componente com tipografia do portfólio.
+
+Um progresso coordenado com GSAP alimenta o cálculo de clip-path/zoom; Lenis continua único motor global. Não integrar o scroll interno da demo, duplicar triggers/pins ou acumular sua suavização de 60 Hz com outros filtros. A expansão deve completar no enquadramento real antes de habilitar o vídeo. O overlay não deve escurecer a ponto de apagar a mídia.
+
+Vídeo local, muted/playsInline, sem autoplay durante expansão nem loop automático. Precarregar próximo da entrada; manter poster até confirmar um quadro decodificado. Escolha de mídia: primeiro gravação SDIMT pertinente já autorizada; na ausência, capturar a landing pública real, sem entrar no painel. Um vídeo autoral do proprietário que corresponda à ponte pode substituir depois, sem nova arquitetura. Não usar gravação NKS antes do SDIMT. Registrar fonte; o pedido atual não inclui esse vídeo.
+
+Ao reverter, pausar e conservar o último quadro decodificado enquanto o frame contrai. Só restaurar o poster inicial quando a ponte estiver totalmente fora de exposição/pronta para uma entrada nova; não saltar para o primeiro quadro no meio da contração. A expansão é reversível; o vídeo reproduz em tempo real, não é vídeo scrubbado ou invertido automaticamente. Scroll/CTA/checkpoint não esperam o vídeo terminar. Hidden/pausa global/reduced motion/erro suspendem playback e deixam mídia/links úteis. Promessa de play que resolve depois da saída é cancelada pelo token de intenção e pausa imediata.
+
+Entregar o último quadro útil ao gesto SDIMT sem quadro vazio, corte no recorte ou repetição de dois zooms fullscreen. Se o vídeo já apresenta a landing, ele vira o plano do case; a sequência anterior começa na acomodação/leitura, sem replay da chegada. Se a mídia autoral terminar em outro enquadramento, calibrar uma entrega editorial explícita e registrar a decisão, mantendo o propósito do case legível.
+
+**Conectivo da direção:** “É nos problemas reais que essa ousadia ganha forma.”
 
 **Entrada do case:** “No SDIMT, ela começa com uma pergunta: como tornar a comparação remuneratória mais clara?”
 
@@ -103,4 +113,4 @@ Preservar a refração de `use-liquid-glass`, reavaliar deslocamento óptico dur
 
 ## Próxima decisão
 
-O proprietário avalia **a continuidade causal recomendada**, conectivo, faixas do Processo e navbar expandida→ícones. Após aprovação conversacional, consolidar a especificação escrita e seu plano de execução no fluxo já adotado; não reiniciar descoberta A/B/stack nem validar sete recursos históricos. Implementação por Codex Worker sequencial, continuidade Antigravity, já escolhidas. Não liberar Cortes 6/7 por este documento.
+Direção aceita conversacionalmente com ScrollExpand como única mudança. Especificação/revisão e plano existente foram adaptados a pedido do proprietário. Usar o [prompt atual](2026-10-02-IDENTITY-RHYTHM-WORKER.md) após leitura/ordem expressa do proprietário; não refazer A/B, métodos, briefing ou gate histórico. Codex sequencial e continuidade Antigravity preservados. Cortes 6/7 não são liberados por este adendo.

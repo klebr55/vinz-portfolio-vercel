@@ -1,3 +1,11 @@
+## Adaptação vigente · ScrollExpand · 02/10/2026
+
+O proprietário aceitou a direção anterior com única mudança na ponte: imagem expande, vídeo ganha movimento e entrega SDIMT. [Revisão escrita adaptada](2026-10-02-IDENTITY-RHYTHM-MASTER-REVIEW.md), [plano existente com adendo Tasks 4–7](2026-10-02-ELECTRIC-IDENTITY-IMPLEMENTATION-PLAN.md) e [prompt atual](2026-10-02-IDENTITY-RHYTHM-WORKER.md). A leitura e ordem expressa ao Worker confirmam revisão escrita; sem confirmação duplicada por histórico.
+
+Fonte ScrollExpand já arquivada; usar progresso global Lenis/GSAP, sem scroller interno/autoplay precoce/segundo zoom. Poster corresponde ao vídeo; movimento só após expansão entregue/quadro decodificado. Vídeo específico ainda não foi anexado: priorizar mídia SDIMT real autorizada/landing pública, sem NKS/painel fictício. Demais correções identidade/Processo/navbar/C5.1 preservadas. Tasks 1–3/C1 e Motion 13.5.0 já entregues, não repetir. P2/aceite visual/Cortes 6–7 seguem abertos.
+
+---
+
 # Revisão vigente · identidade e continuidade · 02/10/2026
 
 Inspecionados `e56a5ad`/`ec70bf8`, fontes e gravações do proprietário. **Aceite visual não concedido**: corrigir fronteira do elétrico, cadência/acabamento de Processo; propor costura narrativa, ritmo SDIMT e navbar compacta. [Diagnóstico e design para aprovação](2026-10-02-IDENTITY-RHYTHM-MASTER-REVIEW.md). [Nova marca alternativa e evidência](reference-sources/identity-review-2026-10-02/README.md).

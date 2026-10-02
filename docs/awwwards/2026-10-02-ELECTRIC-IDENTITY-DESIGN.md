@@ -1,3 +1,13 @@
+## Adendo escrito vigente · 02/10/2026
+
+Tasks 1–3 entregues em `ec70bf8`/`e56a5ad`, sem aceite visual final. O proprietário aceitou a direção da revisão com única mudança: **ScrollExpand expande uma imagem, revela vídeo em movimento e entrega SDIMT**. [Revisão/especificação adaptada](2026-10-02-IDENTITY-RHYTHM-MASTER-REVIEW.md) e [adendo do plano existente](2026-10-02-ELECTRIC-IDENTITY-IMPLEMENTATION-PLAN.md) têm precedência para Tasks 4–7. [Prompt atual](2026-10-02-IDENTITY-RHYTHM-WORKER.md). Sua leitura e ordem expressa de execução pelo proprietário confirmam a revisão escrita para o Worker; não refazer perguntas A/B/método.
+
+Hero preserva fonte VINZ original. Processo passa à `vinz-alt.owner.svg` preenchida, derivada em asset próprio; faixas/reflexos/orientação final atualizados na revisão. Navbar Motion compacta e costura/pacing aprovados conceitualmente; expansão vídeo não duplica engine/pin nem espera fim do playback. Frase do retorno recente: “Ousadia também é um ato de rebeldia e criatividade”. Motion 13.5.0 já foi integrado; restrição antiga de export abaixo é registro histórico, não pedido de upgrade. C1 já entregue; C2–C4 permanecem. Nenhum produto alterado neste adendo.
+
+---
+
+## Histórico · especificação de Tasks 1–3
+
 # Especificação · Identidade elétrica · composição A
 
 **Composição aprovada:** Vinícius escolheu A em 02/10/2026, America/Cuiaba. **Estado deste documento:** especificação escrita aprovada pelo proprietário em 02/10/2026 (Cuiabá). [Plano](2026-10-02-ELECTRIC-IDENTITY-IMPLEMENTATION-PLAN.md) e [prompt](2026-10-02-ELECTRIC-IDENTITY-WORKER-START.md) publicados; execução depende da revisão/ordem do proprietário para esse plano. **Base:** `9eacf85`, branch `redesign/awwwards-repagination`. Este incremento antecede a retomada geral do Corte 5.1; não conclui P2 nem o Processo/cases do Corte 7.

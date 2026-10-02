@@ -1,0 +1,21 @@
+{
+  "origin": "Owner pasted ScrollExpand source twice; single full copy archived with normalized whitespace. Screenshot preserved byte-identical. React Bits attribution supplied by owner; upstream item/version not re-fetched.",
+  "files": [
+    {
+      "path": "ScrollExpand.supplied-defaults.json",
+      "bytes": 244,
+      "sha256": "a26ad11d3796b148ccba96aa207f5a10f3dc52aa28d4c69c41364b0bf18907d2"
+    },
+    {
+      "path": "ScrollExpand.owner-source.tsx.txt",
+      "bytes": 9029,
+      "sha256": "72ddf22e7dba85b7e1aaf080cf01419c04f573366c9dd7913b68d1567bd398fd"
+    },
+    {
+      "path": "ScrollExpand.owner-preview.png",
+      "bytes": 226680,
+      "sha256": "0acc9956aacb3b0e708be24d1cb5e51453116747e03d43455d0b29a281f91734"
+    }
+  ],
+  "integration": "Window scroll through existing Lenis/GSAP. Defaults are reference, not obligation to preserve nested scroll, immediate autoplay or per-frame smoothing."
+}

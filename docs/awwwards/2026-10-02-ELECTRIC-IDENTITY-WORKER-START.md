@@ -1,3 +1,5 @@
+> **Histórico executado:** Tasks 1–3 entregues em `ec70bf8`/`e56a5ad`. Para revisão/ponte ScrollExpand, use [prompt atual](2026-10-02-IDENTITY-RHYTHM-WORKER.md) e apenas Tasks 4–7 do adendo do plano. Não repetir a execução abaixo.
+
 # Prompt de execução · Codex Worker · identidade elétrica A
 
 **Liberação:** composição A e especificação aprovadas pelo proprietário em 02/10/2026 (Cuiabá). O plano está pronto para revisão. **Inicie quando o proprietário confirmar o plano ou enviar este prompt com ordem expressa de executá-lo na sua sessão.** Essa ordem registra a aprovação do plano; não peça confirmação duplicada por um status documental anterior. Sem essa ordem, limite-se à leitura. Método já escolhido: Codex Worker sequencial; Antigravity continua do checkpoint se o limite diário chegar.
