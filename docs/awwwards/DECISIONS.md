@@ -1,5 +1,13 @@
 # Decisões e checkpoints
 
+## Revisão Mastermind Corte 5 · 02/10/2026
+
+Base `22d81c0`; direção e fundação preservadas, aceite de Corte 5 condicionado ao [Corte 5.1](2026-10-02-CORTE5-1-WORKER.md). Corte 6 não foi liberado. O diagnóstico isolado do reset wheel do Lenis 1.3.26 resultou em 0 px para um delta 500 px, contra 500 px nos controles. A rota completa não foi validada pelo Mastermind; o ensaio local encontrou falha de proxy/middleware. Evidência visual publicada mostra intervalo vazio SDIMT→NKS e recorte lateral da mídia SDIMT em mobile. Copy deve explicar função pública verificável do sistema. [Método e limites](evidence-narrative/master-review-corte5/README.md).
+
+A correção conserva Plasma, frase/assinatura, mecanismo SDIMT da navbar, checkpoints e gestos distintos. Falta de painel autorizado não bloqueia esse escopo. Não exigir 21st.dev, redescoberta React Bits, releitura integral do chat, novo brainstorming ou refação histórica. Cadência NKS e blur permanecem nas tarefas 5–6 após revisão; ausência de Safari físico/hardware WebGL real é limite explícito, sem aprovação inferida.
+
+---
+
 ## Corte 5 entregue para revisão · 01/10/2026
 
 Implementação 11c5ef3 sobre f015f24. Plasma voltou à matemática da fonte; gesto hero→SDIMT tem plano compartilhado, leitura e reversão. Corrigidos limite do sticky ao NKS e salto após hidratação/resize. [Checkpoint](P2-Checkpoint-Worker.md) e [evidência](evidence-narrative/corte5/README.md) registram checks, fonte pública SDIMT e diferenças do método (TypeScript existente, commit consolidado, RED não registrado).

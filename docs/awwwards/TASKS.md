@@ -1,5 +1,21 @@
 # Execução por fases
 
+## Estado vigente · revisão Mastermind · 02/10/2026
+
+- [x] Mastermind revisou o Corte 5 no HEAD `22d81c0`, código, vídeos e limites; seis testes repetidos e diagnóstico wheel isolado executado.
+- [x] Preservar direção Plasma/SDIMT e trabalho entregue; [revisão](P2-MASTER-REVIEW.md) e [ordem Corte 5.1](2026-10-02-CORTE5-1-WORKER.md) publicadas.
+- [ ] C5.1/C1: rolagem normal Lenis, interrupção com delta preservado, foco e remount sem duplicação.
+- [ ] C5.1/C2: costura SDIMT→NKS sem viewport vazia ou retirada prematura de poster, ida/reverso e cache frio/quente.
+- [ ] C5.1/C3: mídia SDIMT adequada a 360×800/390×844 sem recorte lateral do título do produto.
+- [ ] C5.1/C4: propósito/contexto PT/EN com fatos públicos verificados e pendências técnicas fora da copy principal.
+- [ ] Worker publicar provas com input de navegador e checks reprodutíveis; Mastermind revisar o Corte 5.1.
+- [ ] Adquirir gravação autorizada do painel SDIMT para aprovação de sua demonstração; não bloqueia C5.1.
+- [ ] Liberar Corte 6, tarefas 5–6, somente após revisão corretiva. Cortes 6/7 e P2 permanecem abertos.
+
+Os estados abaixo registram entregas anteriores; “revisão pendente” de Corte 5 foi substituído pelo estado acima. Não reexecutar etapas históricas como novo gate.
+
+---
+
 ## Estado vigente · Corte 5 · 01/10/2026
 
 - [x] Worker iniciou a execução sequencial sobre o HEAD remoto f015f24 e carregou os recursos pertinentes.

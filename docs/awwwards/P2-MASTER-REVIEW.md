@@ -1,5 +1,28 @@
 # Revisões Mastermind · P2
 
+## Revisão vigente · Corte 5 · 02/10/2026 · correções antes de Corte 6
+
+**Base:** `22d81c0` (implementação `11c5ef3`). **Decisão:** preservar a direção e a fundação entregues; solicitar **Corte 5.1** antes de liberar Corte 6. P2 permanece aberta. O [prompt corretivo](2026-10-02-CORTE5-1-WORKER.md) é a próxima ordem ao Worker. Este bloco tem precedência sobre o estado “aguarda revisão” do checkpoint, sem mudar a especificação artística aprovada.
+
+A hero Plasma azul com frase/assinatura, a separação SDIMT/NKS, a base de navegação e o gesto espacial SDIMT avançam na direção aprovada. O código usa as fontes fornecidas e omite tecnologias/contribuições sem comprovação. Não reiniciar brainstorming, substituir Plasma ou repetir o notebook nos outros cases.
+
+### Correções observadas
+
+1. **Input normal do Lenis:** `use-story-runtime.ts` reseta a instância em todo wheel, mesmo fora de viagem programática. Reprodução isolada com Lenis 1.3.26 e input real de browser terminou em **0 px** após wheel de **500 px**; controles sem o reset ou com guarda terminaram em **500 px**. Isso é evidência do conflito da biblioteca com o handler, não teste da rota completa. Corrigir e comprovar na página real, inclusive o primeiro delta de interrupção, a retomada e a ausência de foco tardio.
+2. **SDIMT → NKS:** os vídeos desktop/mobile contêm um intervalo com apenas gradiente/navbar/checkpoints. O desktop em ~7,4 s e o mobile em ~7,0 s são exemplos. Investigar prontidão do GLB/textura e fronteira do layout; manter mídia útil até a cena realmente aparecer e encadear a saída/chegada sem viewport vazia, inclusive em cache frio e no reverso.
+3. **SDIMT mobile:** o screenshot desktop recortado em plano alto corta o título principal (~1,5 s no vídeo 360×800). Usar captura mobile pública real ou enquadramento integral legível, preservando o gesto próprio e o estado de leitura.
+4. **Propósito do case:** a copy descreve a landing em vez da função do produto. Explicar a comparação remuneratória descrita pela fonte pública, com PT/EN e rastreabilidade, sem inventar stack/papel/impacto. Deixar a pendência técnica da gravação do painel no checkpoint e identificar naturalmente a mídia como experiência pública.
+
+### Evidência e escopo
+
+A [revisão com método, reprodução e limites](evidence-narrative/master-review-corte5/README.md) distingue prova executada, observação visual e relato do Worker. Os seis testes puros passaram também neste checkout; não verificam rolagem de browser. GitHub/Vercel registra deployment concluído; os checks de type-check/lint/build são relatados pelo Worker. As gravações programáticas não cobrem a rolagem comum; software WebGL/captura variável não comprovam fluidez em hardware real. A tentativa local da rota completa falhou no encaminhamento do middleware e não recebeu PASS.
+
+O Corte 5.1 fecha os riscos concretos acima e um ensaio de saída/retorno da prévia para comprovar que não duplicou ticker/listeners. Não exige refazer P1, testar toda a aplicação ou adquirir novos MCPs. Use instalação fiel ao lockfile para os checks de entrega; Next divergente do build local anterior permanece uma limitação documentada.
+
+**Painel SDIMT:** ainda falta a gravação autorizada. Ela é necessária para aprovar uma demonstração substancial do painel, mas não impede as correções de scroll, costura, responsividade e copy pública. Não fazer login, obter credenciais nem criar telas fictícias. A cadência NKS integral/entrega para mockup e motion blur continuam nas tarefas 5–6 do Corte 6, após esta revisão; os capítulos finais seguem pendentes.
+
+---
+
 ## Direção vigente · 30/09/2026 · especificação e plano aprovados
 
 O proprietário aprovou o arco contínuo Hero/Plasma → SDIMT → NKS → Milan → Sincad → Criactive → Sobre/Processo/Depoimentos → Contato, com checkpoints no centro direito e borrão de movimento seletivo, a [especificação escrita](2026-09-30-NARRATIVE-DESIGN.md) e o [plano de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md) em 30/09/2026. O [prompt inicial](2026-09-30-WORKER-START.md) está liberado para Corte 5 (tarefas 1–4); Cortes 6/7 seguem revisão Mastermind. **P2 permanece aberta.**

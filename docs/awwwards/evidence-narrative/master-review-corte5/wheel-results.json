@@ -1,0 +1,28 @@
+{
+  "scope": "Isolated actual Lenis 1.3.26 with the runtime wheel reset reproduced; not a live-site browser validation.",
+  "browser": "Chrome Headless Shell 140.0.7339.16",
+  "input": "Playwright mouse.wheel(0,500), idle navigation, 1350ms settling",
+  "results": [
+    {
+      "mode": "current-unconditional",
+      "before": 0,
+      "scrollY": 0,
+      "target": 0,
+      "isScrolling": false
+    },
+    {
+      "mode": "no-cancel-control",
+      "before": 0,
+      "scrollY": 500,
+      "target": 500,
+      "isScrolling": false
+    },
+    {
+      "mode": "guarded-control",
+      "before": 0,
+      "scrollY": 500,
+      "target": 500,
+      "isScrolling": false
+    }
+  ]
+}
