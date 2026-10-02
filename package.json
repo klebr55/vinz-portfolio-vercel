@@ -13,6 +13,7 @@
     "optimize-svgs": "node scripts/optimize-svgs.js",
     "performance-budget": "node scripts/performance-budget.js",
     "type-check": "tsc --noEmit",
+    "test:awwwards": "node scripts/test-awwwards.mjs",
     "preview": "npm run build && npm run start",
     "clean": "rimraf .next out",
     "vercel-build": "npm run clean && npm run build"

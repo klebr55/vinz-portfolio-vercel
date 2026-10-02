@@ -1,311 +1,192 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
-import 'lenis/dist/lenis.css';
-import { caseMedia } from './case-media';
-import { editorialCases } from './case-content';
-import { useNksFrames } from './use-nks-frames';
-import Beams from './StoryBeams';
+import { CaseEditorial } from './CaseEditorial';
+import { ChapterCheckpoints } from './ChapterCheckpoints';
+import { StoryNavigation } from './StoryNavigation';
+import Plasma from './StoryPlasma';
+import { SdimtChapter } from './chapters/SdimtChapter';
+import { NksChapter } from './chapters/NksChapter';
+import { editorialCases, type EditorialCase } from './case-content';
 import type { prototypeCopy, PrototypeLocale, PrototypeStyle } from './prototype-copy';
+import { useStoryRuntime } from './use-story-runtime';
+import type { ChapterId } from './story-model';
 import styles from './story-prototype.module.css';
-
-const StoryScene = dynamic(() => import('./StoryScene'), { ssr: false });
+import 'lenis/dist/lenis.css';
 
 type Copy = (typeof prototypeCopy)[PrototypeLocale];
+type Props = { locale: PrototypeLocale; style: PrototypeStyle; copy: Copy };
 
-type Props = {
-  locale: PrototypeLocale;
-  style: PrototypeStyle;
-  copy: Copy;
+const closingCopy = {
+  'pt-br': {
+    about: 'Kleber Vinícius é desenvolvedor web full-stack. Sua trajetória reúne projetos comerciais, institucionais e experiências digitais.',
+    process: 'Descoberta, desenvolvimento com feedback e entrega: uma prática construída em diálogo com cada projeto.',
+    testimonials: 'Palavras de pessoas com quem trabalhei.',
+    contact: 'Vamos construir a próxima experiência?',
+  },
+  en: {
+    about: 'Kleber Vinícius is a full-stack web developer. His work spans commercial and institutional projects and digital experiences.',
+    process: 'Discovery, development with feedback, and delivery: a practice shaped through each project.',
+    testimonials: 'Words from people I have worked with.',
+    contact: 'Shall we build the next experience?',
+  },
 };
 
-export default function StoryPrototype({ locale, style, copy }: Props) {
+function FutureCase({ caseData, locale, index }: { caseData: EditorialCase; locale: PrototypeLocale; index: number }) {
+  return (
+    <section id={caseData.slug} data-story-chapter={caseData.slug} data-case={caseData.slug} className={styles.futureCase} aria-labelledby={`${caseData.slug}-title`}>
+      <div className={styles.futureMedia}><Image src={caseData.media.poster} alt={caseData.media.alt} fill sizes="(max-width: 760px) 100vw, 54vw" unoptimized /></div>
+      <div className={styles.futureContent}>
+        <p className={styles.caseEyebrow}>{String(index).padStart(2, '0')} / 05</p>
+        <h2 id={`${caseData.slug}-title`} data-story-read tabIndex={-1}>{caseData.title}</h2>
+        <CaseEditorial caseData={caseData} locale={locale} />
+      </div>
+    </section>
+  );
+}
+
+export default function StoryPrototype({ locale, copy }: Props) {
+  const root = useRef<HTMLElement>(null);
+  const opening = useRef<HTMLDivElement>(null);
+  const intro = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
+  const phrase = useRef<HTMLDivElement>(null);
+  const openingVisual = useRef<HTMLDivElement>(null);
   const [reducedMotion, setReducedMotion] = useState(false);
-  const [webglAvailable, setWebglAvailable] = useState(false);
-  const [caseActive, setCaseActive] = useState(false);
-  const [screenFocus, setScreenFocus] = useState(false);
-  const [beamsActive, setBeamsActive] = useState(true);
-  const [ctaPressed, setCtaPressed] = useState(false);
-  const rootRef = useRef<HTMLElement>(null);
-  const sequenceRef = useRef<HTMLElement>(null);
-  const stageRef = useRef<HTMLDivElement>(null);
-  const heroRef = useRef<HTMLDivElement>(null);
-  const sceneLayerRef = useRef<HTMLDivElement>(null);
-  const beamsLayerRef = useRef<HTMLDivElement>(null);
-  const caseMediaRef = useRef<HTMLDivElement>(null);
-  const mockupRef = useRef<HTMLDivElement>(null);
-  const navRef = useRef<HTMLElement>(null);
-  const frameCanvasRef = useRef<HTMLCanvasElement>(null);
-  const progressRef = useRef(0);
-  const invalidateScene = useRef<(() => void) | null>(null);
-  const activeRef = useRef(false);
-  const screenFocusRef = useRef(false);
-  const beamsActiveRef = useRef(true);
-  const lensRaf = useRef<number | null>(null);
-  const lensPoint = useRef({ x: 50, y: 50 });
-  const onUnavailable = useCallback(() => setWebglAvailable(false), []);
-  const frames = useNksFrames(frameCanvasRef, invalidateScene);
-  const requestNksFrame = frames.request;
-  const nks = editorialCases[locale][0];
-
-  useEffect(() => {
-    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const update = () => setReducedMotion(preference.matches);
-    update();
-    preference.addEventListener('change', update);
-    return () => preference.removeEventListener('change', update);
-  }, []);
-
-  useEffect(() => {
-    if (reducedMotion) return;
-    const probe = document.createElement('canvas');
-    const context = probe.getContext('webgl2') || probe.getContext('webgl');
-    setWebglAvailable(Boolean(context));
-    const extension = context?.getExtension('WEBGL_lose_context');
-    extension?.loseContext();
-  }, [reducedMotion]);
+  const [plasmaPaused, setPlasmaPaused] = useState(false);
+  const [plasmaUnavailable, setPlasmaUnavailable] = useState(false);
+  const [contactVisible, setContactVisible] = useState(false);
+  const [motionReady, setMotionReady] = useState(false);
+  const [plasmaExposed, setPlasmaExposed] = useState(true);
+  const [viewportRevision, setViewportRevision] = useState(0);
+  const onPlasmaUnavailable = useCallback(() => setPlasmaUnavailable(true), []);
+  const runtime = useStoryRuntime(root, reducedMotion);
+  const refreshRuntime = runtime.refresh;
+  const cases = editorialCases[locale];
+  const sdimt = cases.find((item) => item.slug === 'sdimt')!;
+  const nks = cases.find((item) => item.slug === 'nks')!;
 
   useLayoutEffect(() => {
-    if (reducedMotion || !rootRef.current || !sequenceRef.current || !stageRef.current) return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    const lenis = new Lenis({ autoRaf: false, anchors: true, duration: 1.15, smoothWheel: true, syncTouch: false });
-    (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
-    const updateTrigger = () => ScrollTrigger.update();
-    const tick = (time: number) => lenis.raf(time * 1000);
-    const handleVisibility = () => {
-      if (document.hidden) {
-        lenis.stop();
-        gsap.ticker.remove(tick);
-      } else {
-        lenis.start();
-        gsap.ticker.add(tick);
-        ScrollTrigger.refresh();
-      }
-    };
-
-    lenis.on('scroll', updateTrigger);
-    gsap.ticker.add(tick);
-    document.addEventListener('visibilitychange', handleVisibility);
-
-    const context = gsap.context(() => {
-      const hero = heroRef.current;
-      const media = caseMediaRef.current;
-      const mockup = mockupRef.current;
-      const scene = sceneLayerRef.current;
-      const beams = beamsLayerRef.current;
-      const stage = stageRef.current;
-      const sequence = sequenceRef.current;
-      if (!hero || !media || !mockup || !scene || !beams || !stage || !sequence) return;
-
-      gsap.set(media, { autoAlpha: 0 });
-      gsap.set(mockup, { autoAlpha: 0, scale: 1.08 });
-
-      const timeline = gsap.timeline({
-        scrollTrigger: { trigger: sequence, start: 'top top', end: 'bottom bottom', scrub: 0.5, invalidateOnRefresh: true },
-        onUpdate: () => {
-          const value = timeline.progress();
-          progressRef.current = value;
-          rootRef.current?.style.setProperty('--story-progress', value.toFixed(4));
-          invalidateScene.current?.();
-          const lightsActive = value < 0.22;
-          if (lightsActive !== beamsActiveRef.current) {
-            beamsActiveRef.current = lightsActive;
-            setBeamsActive(lightsActive);
-          }
-          requestNksFrame(Math.max(0, Math.min(1, (value - 0.14) / 0.64)));
-          const focused = value >= 0.14 && value < 0.995;
-          if (focused !== screenFocusRef.current) {
-            screenFocusRef.current = focused;
-            setScreenFocus(focused);
-          }
-          const next = value >= 0.975;
-          if (next !== activeRef.current) {
-            activeRef.current = next;
-            setCaseActive(next);
-          }
-        },
-      });
-
-      timeline
-        .to(hero, { autoAlpha: 0, yPercent: -16, duration: 0.16, ease: 'none' }, 0.04)
-        .to(beams, { opacity: 0, duration: 0.16, ease: 'none' }, 0.04)
-        .to(scene, { opacity: 0, duration: 0.016, ease: 'none' }, 0.94)
-        .to(media, { autoAlpha: 1, duration: 0.016, ease: 'none' }, 0.94)
-        .to(mockup, { autoAlpha: 1, scale: 1, duration: 0.026, ease: 'power2.inOut' }, 0.968)
-        .to(stage, { backgroundColor: style === 'ember' ? '#e8e3f2' : '#d9e8ed', duration: 0.026, ease: 'none' }, 0.974);
-
-      const heading = hero.querySelector('h1');
-      if (heading) gsap.from(heading, { opacity: 0.72, y: 18, duration: 0.75, ease: 'power3.out', clearProps: 'transform,opacity' });
-    }, rootRef);
-
-    const refresh = () => ScrollTrigger.refresh();
-    const image = caseMediaRef.current?.querySelector('img');
-    image?.decode?.().then(refresh).catch(() => undefined);
-    document.fonts?.ready.then(refresh).catch(() => undefined);
-
-    return () => {
-      delete (window as unknown as { __lenis?: Lenis }).__lenis;
-      document.removeEventListener('visibilitychange', handleVisibility);
-      lenis.off('scroll', updateTrigger);
-      gsap.ticker.remove(tick);
-      lenis.destroy();
-      context.revert();
-    };
-  }, [reducedMotion, style, requestNksFrame]);
-
-  useEffect(() => () => {
-    if (lensRaf.current !== null) cancelAnimationFrame(lensRaf.current);
+    const media = matchMedia('(prefers-reduced-motion: reduce)');
+    const update = () => setReducedMotion(media.matches);
+    update();
+    setMotionReady(true);
+    media.addEventListener('change', update);
+    return () => media.removeEventListener('change', update);
   }, []);
 
-  const updateLens = (event: React.PointerEvent<HTMLElement>) => {
-    if (reducedMotion) return;
-    if (event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
-    const rect = event.currentTarget.getBoundingClientRect();
-    lensPoint.current = {
-      x: ((event.clientX - rect.left) / rect.width) * 100,
-      y: ((event.clientY - rect.top) / rect.height) * 100,
+  useEffect(() => {
+    let timer = 0;
+    const onResize = () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => setViewportRevision((value) => value + 1), 120);
     };
-    if (lensRaf.current !== null) return;
-    lensRaf.current = requestAnimationFrame(() => {
-      navRef.current?.style.setProperty('--lens-x', `${lensPoint.current.x}%`);
-      navRef.current?.style.setProperty('--lens-y', `${lensPoint.current.y}%`);
-      lensRaf.current = null;
-    });
-  };
+    window.addEventListener('resize', onResize);
+    return () => { window.removeEventListener('resize', onResize); window.clearTimeout(timer); };
+  }, []);
 
-  const base = `/${locale}`;
+  useEffect(() => {
+    if (!contactRef.current) return;
+    const observer = new IntersectionObserver(([entry]) => setContactVisible(entry.isIntersecting), { threshold: 0 });
+    observer.observe(contactRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useLayoutEffect(() => {
+    if (!motionReady || reducedMotion || !opening.current || !openingVisual.current || !intro.current || !phrase.current) return;
+    gsap.registerPlugin(ScrollTrigger);
+    const context = gsap.context(() => {
+      const visual = openingVisual.current!;
+      const plane = visual.querySelector<HTMLElement>(`.${styles.sdimtPlane}`)!;
+      const detail = visual.querySelector<HTMLElement>(`.${styles.sdimtDetail}`)!;
+      const plasma = visual.querySelector<HTMLElement>(`.${styles.plasmaCanvas}`)!;
+      const shade = visual.querySelector<HTMLElement>(`.${styles.openingShade}`)!;
+      const orbit = visual.querySelector<HTMLElement>(`.${styles.sdimtOrbit}`)!;
+      const reading = root.current!.querySelector<HTMLElement>(`.${styles.sdimtReading}`)!;
+      const mobile = window.innerWidth <= 760;
+      const vh = window.innerHeight;
+      const vw = window.innerWidth;
+      const openingY = opening.current!.getBoundingClientRect().top + window.scrollY;
+      const readY = reading.getBoundingClientRect().top + window.scrollY - openingY;
+      const total = opening.current!.offsetHeight - vh;
+      const arrive = intro.current!.offsetHeight - vh * .35;
+      const settle = readY - vh * .35;
+      const exit = Math.min(total - vh * .45, readY + reading.offsetHeight - vh * .9);
+      gsap.set(plane, { x: mobile ? vw * .04 : vw * .18, y: vh * .36, z: -700, scale: .48, rotationY: mobile ? -16 : -28, rotationX: 9, rotationZ: -6, opacity: 0, force3D: true });
+      gsap.set(detail, { x: vw * .16, y: vh * .22, z: -180, scale: .68, rotationY: 18, rotationZ: 9, opacity: 0, force3D: true });
+      gsap.set(orbit, { y: 22, opacity: 0 });
+      const clock = { progress: 0 };
+      const timeline = gsap.timeline({ scrollTrigger: { trigger: opening.current, start: 'top top', end: 'bottom bottom', scrub: true, invalidateOnRefresh: true, onUpdate: (self) => setPlasmaExposed(self.progress * total < vh * 1.55) } });
+      timeline.to(clock, { progress: 1, duration: total, ease: 'none' }, 0)
+        .to(phrase.current!.querySelectorAll(`.${styles.heroLineInner}`), { yPercent: -45, z: -180, rotationX: 10, opacity: 0, stagger: vh * .065, duration: vh * .7, ease: 'power2.inOut' }, vh * .3)
+        .to(phrase.current!.querySelectorAll('[data-hero-support]'), { y: -24, opacity: 0, duration: vh * .3, ease: 'power2.in' }, vh * .18)
+        .to(intro.current!.querySelector(`.${styles.heroFolio}`), { opacity: 0, duration: vh * .25 }, vh * .2)
+        .to(plane, { opacity: 1, duration: vh * .45, ease: 'power1.inOut' }, vh * .35)
+        .to(plane, { x: 0, y: 0, z: 0, scale: 1, rotationX: 0, rotationY: 0, rotationZ: 0, duration: arrive - vh * .4, ease: 'power2.inOut' }, vh * .4)
+        .to(plasma, { opacity: 0, duration: vh * .85, ease: 'power1.inOut' }, vh * .65)
+        .to(shade, { opacity: 1, duration: vh * .9, ease: 'none' }, vh * .65)
+        .to(detail, { x: 0, y: 0, z: 40, scale: 1, rotationY: 0, rotationZ: -4, opacity: 1, duration: vh * .55, ease: 'power2.out' }, arrive - vh * .12)
+        .to(orbit, { y: 0, opacity: 1, duration: vh * .3, ease: 'power1.out' }, arrive)
+        .to(plane, { x: mobile ? 0 : -vw * .225, y: mobile ? -vh * .1 : -vh * .015, scale: mobile ? .9 : .55, rotationY: mobile ? 0 : 8, rotationZ: mobile ? 0 : -2, duration: vh * .7, ease: 'power2.inOut' }, settle - vh * .7)
+        .to(detail, { x: mobile ? 0 : -vw * .43, y: mobile ? vh * .06 : vh * .04, scale: mobile ? .7 : .57, opacity: mobile ? 0 : .85, rotationZ: 3, duration: vh * .7, ease: 'power2.inOut' }, settle - vh * .7)
+        .to([plane, detail], { x: -vw * .6, z: -350, rotationY: -25, opacity: 0, duration: Math.max(vh * .35, total - exit), ease: 'power2.in' }, exit)
+        .to(orbit, { opacity: 0, duration: vh * .3 }, exit);
+      refreshRuntime();
+    }, opening);
+    return () => context.revert();
+  }, [motionReady, reducedMotion, locale, refreshRuntime, viewportRevision]);
+
+  const navigate = useCallback((id: ChapterId) => runtime.jumpTo(id, reducedMotion ? 'immediate' : 'animated', true), [runtime, reducedMotion]);
+  const onPrimaryClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    history.pushState(null, '', '#sdimt');
+    navigate('sdimt');
+  };
+  const c = closingCopy[locale];
 
   return (
-    <main ref={rootRef} className={styles.root} data-style={style} data-reduced={reducedMotion ? 'true' : 'false'} data-webgl={webglAvailable ? 'true' : 'false'} data-case-active={caseActive ? 'true' : 'false'} data-screen-focus={screenFocus ? 'true' : 'false'}>
-      <a className={styles.skipLink} href="#case-01">{locale === 'pt-br' ? 'Pular para o projeto' : 'Skip to project'}</a>
-      <nav ref={navRef} className={styles.nav} aria-label={locale === 'pt-br' ? 'Navegação da prévia' : 'Preview navigation'} onPointerMove={updateLens}>
-        <svg className={styles.filterDefs} aria-hidden="true" focusable="false">
-          <defs>
-            <filter id="kv-nav-refract" x="-20%" y="-20%" width="140%" height="140%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="1" seed="3" result="noise" />
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="11" xChannelSelector="R" yChannelSelector="G" />
-            </filter>
-          </defs>
-        </svg>
-        <span className={styles.lens} aria-hidden="true" />
-        <a className={styles.brand} href={`${base}`} aria-label={copy.portfolio}>KV<span className={styles.brandPoint}>.</span></a>
-        <div className={styles.navLinks}>
-          <a href="#case-01">01 / NKS</a>
-          <a href={`${base}#projects`}>{copy.portfolio}</a>
-          <a href={`${base}#contact`}>{copy.contact}</a>
+    <main ref={root} className={styles.root} data-reduced={reducedMotion} data-client-ready={motionReady} data-motion-ready={motionReady && !reducedMotion} data-plasma-unavailable={plasmaUnavailable}>
+      <a className={styles.skipLink} href="#projects">{locale === 'pt-br' ? 'Pular para projetos' : 'Skip to projects'}</a>
+      <StoryNavigation locale={locale} activeChapter={runtime.activeChapter} navigate={navigate} />
+      <ChapterCheckpoints locale={locale} activeChapter={runtime.activeChapter} navigate={navigate} />
+
+      <div ref={opening} className={styles.opening}>
+        <div className={styles.openingBackdrop} aria-hidden="true">
+        <div ref={openingVisual} className={styles.openingVisual} aria-hidden="true">
+          <div className={styles.plasmaPoster} />
+          <div className={styles.plasmaCanvas}><Plasma active={plasmaExposed && !plasmaPaused && !plasmaUnavailable} reducedMotion={reducedMotion} onUnavailable={onPlasmaUnavailable} /></div>
+          <div className={styles.openingShade} />
+          <div className={styles.sdimtOrbit}>01 / 05 <span>SDIMT</span></div>
+          <div className={styles.sdimtPlane}><Image src={sdimt.media.poster} alt="" fill sizes="(max-width: 760px) 94vw, 80vw" unoptimized priority /></div>
+          <div className={styles.sdimtDetail}><Image src="/awwwards/sdimt/landing-resources.webp" alt="" fill sizes="(max-width: 760px) 62vw, 35vw" unoptimized /></div>
         </div>
-        <div className={styles.languageLinks}>
-          <a href={`/pt-br/awwwards-preview/${style}`} lang="pt-BR" aria-current={locale === 'pt-br' ? 'page' : undefined}>PT</a>
-          <span aria-hidden="true">/</span>
-          <a href={`/en/awwwards-preview/${style}`} lang="en" aria-current={locale === 'en' ? 'page' : undefined}>EN</a>
         </div>
-      </nav>
-
-      <section ref={sequenceRef} className={styles.sequence} aria-label={copy.role}>
-        <div ref={stageRef} className={styles.stage}>
-          <div className={styles.atmosphere} aria-hidden="true" />
-          <div ref={beamsLayerRef} className={styles.beamsLayer} aria-hidden="true">
-            {webglAvailable && !reducedMotion && style === 'ember' && (
-              <Beams beamWidth={3} beamHeight={30} beamNumber={20} lightColor="#ffffff" speed={2} noiseIntensity={1.75} scale={0.2} rotation={30} beamColor="#06010e" backgroundColor="#000000" active={beamsActive} />
-            )}
+        <section id="intro" ref={intro} data-story-chapter="intro" className={styles.intro} aria-labelledby="intro-title">
+        <div className={styles.introStage}>
+          <div ref={phrase} className={styles.heroCopy}>
+            <p className={styles.heroRole} data-hero-support>{copy.role}</p>
+            <h1 id="intro-title" data-story-read tabIndex={-1} aria-label={copy.heroStatement}>{(locale === 'pt-br' ? ['Ousadia também', 'é uma forma', 'de rebeldia', 'e criatividade'] : ['Daring is also', 'a form of rebellion', 'and creativity']).map((line) => <span key={line} className={styles.heroLine} aria-hidden="true"><span className={styles.heroLineInner}>{line}</span></span>)}</h1>
+            <p className={styles.signature} data-hero-support>{copy.signature}</p>
+            <div data-hero-support><a className={styles.primaryLink} href="#sdimt" onClick={onPrimaryClick}>{locale === 'pt-br' ? 'Explorar SDIMT' : 'Explore SDIMT'} <span aria-hidden="true">↗</span></a>
+            {!reducedMotion && !plasmaUnavailable && <button className={styles.motionToggle} type="button" onClick={() => setPlasmaPaused((value) => !value)}>{plasmaPaused ? (locale === 'pt-br' ? 'Retomar movimento' : 'Resume motion') : (locale === 'pt-br' ? 'Pausar movimento' : 'Pause motion')}</button>}</div>
           </div>
-          <div ref={sceneLayerRef} className={styles.sceneLayer} aria-hidden="true">
-            <div className={styles.poster} />
-            {(!webglAvailable || reducedMotion) && <Image className={styles.fallbackScene} src={caseMedia.nks.source} alt="" fill sizes="100vw" unoptimized />}
-            {webglAvailable && !reducedMotion && (
-              <StoryScene style={style} progress={progressRef} invalidateScene={invalidateScene} onUnavailable={onUnavailable} frameCanvas={frameCanvasRef.current} paintedFrame={frames.painted} mediaReady={frames.ready && !frames.failed} />
-            )}
-          </div>
-
-          <div ref={heroRef} className={styles.heroCopy}>
-            <p className={styles.role}>{copy.role}</p>
-            <h1 className={styles.heroTitle}><span>{copy.heroLead}</span>{' '}<em>{copy.heroEnd}</em></h1>
-            <div className={styles.heroBottom}>
-              <p>{copy.heroAside}</p>
-              <motion.a
-                className={styles.primaryLink}
-                href="#case-01"
-                animate={{ transform: ctaPressed && !reducedMotion ? 'scale(0.97)' : 'scale(1)' }}
-                transition={{ duration: 0.14, ease: [0.23, 1, 0.32, 1] }}
-                onPointerDown={() => setCtaPressed(true)}
-                onPointerUp={() => setCtaPressed(false)}
-                onPointerCancel={() => setCtaPressed(false)}
-                onPointerLeave={() => setCtaPressed(false)}
-              >
-                {copy.explore}<span aria-hidden="true">↗</span>
-              </motion.a>
-            </div>
-          </div>
-
-          <div ref={caseMediaRef} className={styles.caseMedia} aria-hidden="true">
-            <div className={styles.caseMediaInner}>
-              <span className={styles.caseMediaIndex}>01 / 04</span>
-              <div className={styles.screenCapture}>
-                <Image src={caseMedia.nks.source} alt="" fill sizes="100vw" unoptimized />
-                <canvas ref={frameCanvasRef} width={1600} height={900} data-ready={frames.ready ? 'true' : 'false'} />
-              </div>
-              <div ref={mockupRef} className={styles.mockupArrival}>
-                <div className={styles.mockupImage}>
-                  <Image className={styles.mockupDesktop} src={nks.media.mockup!} alt="" fill sizes="100vw" unoptimized />
-                  <Image className={styles.mockupMobile} src={nks.media.mobileMockup!} alt="" fill sizes="100vw" unoptimized />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.stageIndex} aria-hidden="true"><span>KV / 01</span><span>01 — 04</span></div>
+          <div className={styles.heroFolio} aria-hidden="true"><span>KV / 2026</span><span>01 — 05</span></div>
         </div>
       </section>
 
-      <section id="case-01" className={styles.caseDetails}>
-        <div className={styles.caseDetailsHead}>
-          <p>{copy.caseLabel}</p>
-          <h2>{copy.caseName}</h2>
-        </div>
-        <div className={styles.caseDetailsBody}>
-          <p>{nks.purpose.text}</p>
-          <motion.a
-            href={caseMedia.nks.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={reducedMotion ? undefined : { transform: 'translateY(-3px)' }}
-            transition={{ duration: 0.16, ease: [0.23, 1, 0.32, 1] }}
-          >{copy.caseLink}<span aria-hidden="true">↗</span></motion.a>
-        </div>
-        <dl className={styles.caseFacts}>
-          {[nks.need, nks.contribution, nks.technologies].map((field) => (
-            <div key={field.label}>
-              <dt>{field.label}</dt>
-              <dd>{field.text}</dd>
-            </div>
-          ))}
-        </dl>
-        <div className={styles.caseStill} role="img" aria-label={copy.caseName}>
-          <div className={styles.screenCapture}>
-            <Image className={styles.mockupDesktop} src={nks.media.mockup!} alt="" fill sizes="(max-width: 760px) 100vw, 88vw" unoptimized />
-            <Image className={styles.mockupMobile} src={nks.media.mobileMockup!} alt="" fill sizes="100vw" unoptimized />
-          </div>
-        </div>
-        <a className={styles.nextLink} href={`${base}#projects`}>{copy.next}<span aria-hidden="true">↗</span></a>
-        <p className={styles.assetCredit}>
-          {locale === 'pt-br' ? 'Modelo 3D Laptop por ' : 'Laptop 3D model by '}
-          <a href="https://sketchfab.com/3d-models/laptop-7d870e900889481395b4a575b9fa8c3e" target="_blank" rel="noopener noreferrer">Aullwen</a>
-          {' · '}<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>
-          {locale === 'pt-br' ? ' · tela com gravação original fornecida para NKS Connect' : ' · screen with an original NKS Connect recording'}
-        </p>
-      </section>
+      <SdimtChapter locale={locale} sample={runtime.sample} reducedMotion={reducedMotion} caseData={sdimt} />
+      </div>
+      <NksChapter locale={locale} sample={runtime.sample} reducedMotion={reducedMotion} caseData={nks} />
+      {cases.filter((item) => !['sdimt', 'nks'].includes(item.slug)).map((item, index) => <FutureCase key={item.slug} caseData={item} locale={locale} index={index + 3} />)}
 
-      <aside className={styles.reviewSwitcher} aria-label={copy.reviewLabel}>
-        <a href={`${base}/awwwards-preview/ember`} aria-current={style === 'ember' ? 'page' : undefined}>{copy.firstStyle}</a>
-        <a href={`${base}/awwwards-preview/spectral`} aria-current={style === 'spectral' ? 'page' : undefined}>{copy.secondStyle}</a>
-      </aside>
+      <section id="about" data-story-chapter="about" className={styles.closingSection}><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Pessoa' : 'Person'}</p><h2 data-story-read tabIndex={-1}>{locale === 'pt-br' ? 'Sobre' : 'About'}</h2><p>{c.about}</p></section>
+      <section id="process" data-story-chapter="process" className={styles.closingSection}><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Método' : 'Method'}</p><h2 data-story-read tabIndex={-1}>{locale === 'pt-br' ? 'Processo' : 'Process'}</h2><p>{c.process}</p></section>
+      <section id="testimonials" data-story-chapter="testimonials" className={styles.closingSection}><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Vozes' : 'Voices'}</p><h2 data-story-read tabIndex={-1}>{locale === 'pt-br' ? 'Depoimentos' : 'Testimonials'}</h2><p>{c.testimonials}</p><ul className={styles.testimonialNames}><li>Éder Lemes</li><li>João Paulo da Silva</li><li>Jéssika Lorena</li></ul></section>
+      <section id="contact" ref={contactRef} data-story-chapter="contact" className={styles.closingSection} data-contact><div className={styles.contactPlasma} aria-hidden="true"><Plasma active={contactVisible && !plasmaPaused && !plasmaUnavailable} reducedMotion={reducedMotion} onUnavailable={onPlasmaUnavailable} /></div><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Contato' : 'Contact'}</p><h2 data-story-read tabIndex={-1}>{c.contact}</h2><a href="mailto:klebervinicius.dev@gmail.com">klebervinicius.dev@gmail.com</a><a href="https://www.linkedin.com/in/klebervinicius08/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#intro" onClick={(event) => { if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return; event.preventDefault(); history.pushState(null, '', '#intro'); navigate('intro'); }}>{locale === 'pt-br' ? 'Voltar ao início' : 'Back to start'} ↑</a>{!reducedMotion && !plasmaUnavailable && <button className={styles.motionToggle} type="button" onClick={() => setPlasmaPaused((value) => !value)}>{plasmaPaused ? (locale === 'pt-br' ? 'Retomar movimento' : 'Resume motion') : (locale === 'pt-br' ? 'Pausar movimento' : 'Pause motion')}</button>}</section>
     </main>
   );
 }

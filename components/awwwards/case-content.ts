@@ -1,9 +1,9 @@
 import type { PrototypeLocale } from './prototype-copy';
 
-type CaseField = { label: string; text: string; verified: boolean };
+export type CaseField = { label: string; text: string; verified: boolean };
 
 export type EditorialCase = {
-  slug: 'nks' | 'milan' | 'sincad' | 'criactive';
+  slug: 'sdimt' | 'nks' | 'milan' | 'sincad' | 'criactive';
   title: string;
   purpose: CaseField;
   need: CaseField;
@@ -16,6 +16,15 @@ export type EditorialCase = {
 
 export const editorialCases: Record<PrototypeLocale, EditorialCase[]> = {
   'pt-br': [
+    {
+      slug: 'sdimt', title: 'SDIMT',
+      purpose: { label: 'Propósito', text: 'Apresentar o SDIMT em sua experiência pública de entrada.', verified: true },
+      need: { label: 'Contexto', text: 'A landing pública apresenta o sistema e seu acesso.', verified: true },
+      contribution: { label: 'Contribuição de Vinícius', text: 'Escopo individual ainda não comprovado.', verified: false },
+      technologies: { label: 'Tecnologias', text: 'Atribuição técnica individual ainda não comprovada.', verified: false },
+      media: { poster: '/awwwards/sdimt/landing-desktop.webp', alt: 'Captura da landing pública do SDIMT em 30 de setembro de 2026' },
+      link: 'https://sdimt-seplag.lovable.app/?panel=home', treatment: 'pending',
+    },
     {
       slug: 'nks', title: 'NKS Connect',
       purpose: { label: 'Propósito', text: 'Apresentar uma oferta de criação de sites por assinatura e conduzir visitantes aos planos e canais de contato.', verified: true },
@@ -52,6 +61,15 @@ export const editorialCases: Record<PrototypeLocale, EditorialCase[]> = {
   ],
   en: [
     {
+      slug: 'sdimt', title: 'SDIMT',
+      purpose: { label: 'Purpose', text: 'Introduce SDIMT through its public entry experience.', verified: true },
+      need: { label: 'Context', text: 'The public landing introduces the system and its access route.', verified: true },
+      contribution: { label: 'Vinícius’s contribution', text: 'Individual scope is not yet verified.', verified: false },
+      technologies: { label: 'Technologies', text: 'Individual technical attribution is not yet verified.', verified: false },
+      media: { poster: '/awwwards/sdimt/landing-desktop.webp', alt: 'Public SDIMT landing captured on September 30, 2026' },
+      link: 'https://sdimt-seplag.lovable.app/?panel=home', treatment: 'pending',
+    },
+    {
       slug: 'nks', title: 'NKS Connect',
       purpose: { label: 'Purpose', text: 'Present a subscription website service and guide visitors to plans and contact routes.', verified: true },
       need: { label: 'Need', text: 'The published site brings subscription options, features, an affiliate programme and payment methods into one journey.', verified: true },
@@ -86,3 +104,8 @@ export const editorialCases: Record<PrototypeLocale, EditorialCase[]> = {
     },
   ],
 };
+
+export function publicCaseFields(caseData: EditorialCase): readonly CaseField[] {
+  return [caseData.purpose, caseData.need, caseData.contribution, caseData.technologies]
+    .filter((field) => field.verified);
+}

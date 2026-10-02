@@ -1,0 +1,165 @@
+import { useEffect, useRef, useState, type RefObject } from "react";
+
+type LiquidGlassOptions = {
+  depth?: number;
+  strength?: number;
+  chromaticAberration?: number;
+};
+
+function getDisplacementMap({
+  height,
+  width,
+  radius,
+  depth,
+}: {
+  height: number;
+  width: number;
+  radius: number;
+  depth: number;
+}) {
+  return (
+    "data:image/svg+xml;utf8," +
+    encodeURIComponent(
+      `<svg height="${height}" width="${width}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .mix { mix-blend-mode: screen; }
+        </style>
+        <defs>
+          <linearGradient id="Y" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#0F0"/>
+            <stop offset="1" stop-color="#000"/>
+          </linearGradient>
+          <linearGradient id="X" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#F00"/>
+            <stop offset="1" stop-color="#000"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" height="${height}" width="${width}" fill="#808080"/>
+        <g filter="blur(2px)">
+          <rect x="0" y="0" height="${height}" width="${width}" fill="#000"/>
+          <rect x="0" y="0" height="${height}" width="${width}" rx="${radius}" fill="url(#Y)" class="mix"/>
+          <rect x="0" y="0" height="${height}" width="${width}" rx="${radius}" fill="url(#X)" class="mix"/>
+          <rect x="${depth}" y="${depth}" height="${height - depth * 2}" width="${width - depth * 2}" rx="${radius}" fill="#808080" style="filter:blur(${depth}px)"/>
+        </g>
+      </svg>`,
+    )
+  );
+}
+
+function getDisplacementFilter({
+  height,
+  width,
+  radius,
+  depth,
+  strength,
+  chromaticAberration,
+}: {
+  height: number;
+  width: number;
+  radius: number;
+  depth: number;
+  strength: number;
+  chromaticAberration: number;
+}) {
+  const map = getDisplacementMap({ height, width, radius, depth });
+  return (
+    "data:image/svg+xml;utf8," +
+    encodeURIComponent(
+      `<svg height="${height}" width="${width}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="displace" color-interpolation-filters="sRGB">
+            <feImage x="0" y="0" height="${height}" width="${width}" href="${map}" result="displacementMap"/>
+            <feDisplacementMap in="SourceGraphic" in2="displacementMap" scale="${strength + chromaticAberration * 2}" xChannelSelector="R" yChannelSelector="G"/>
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="R"/>
+            <feDisplacementMap in="SourceGraphic" in2="displacementMap" scale="${strength + chromaticAberration}" xChannelSelector="R" yChannelSelector="G"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="G"/>
+            <feDisplacementMap in="SourceGraphic" in2="displacementMap" scale="${strength}" xChannelSelector="R" yChannelSelector="G"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="B"/>
+            <feBlend in="R" in2="G" mode="screen"/>
+            <feBlend in2="B" mode="screen"/>
+          </filter>
+        </defs>
+      </svg>`,
+    ) +
+    "#displace"
+  );
+}
+
+function getCachedFilter(
+  width: number,
+  height: number,
+  { depth, strength, chromaticAberration }: Required<LiquidGlassOptions>,
+  filterCache: Map<string, string>,
+) {
+  const key = `${width}x${height}:${depth}:${strength}:${chromaticAberration}`;
+  const cached = filterCache.get(key);
+  if (cached) return cached;
+  const filter = getDisplacementFilter({
+    height,
+    width,
+    radius: height / 2,
+    depth,
+    strength,
+    chromaticAberration,
+  });
+  if (filterCache.size >= 12) filterCache.delete(filterCache.keys().next().value!);
+  filterCache.set(key, filter);
+  return filter;
+}
+
+/**
+ * Compartilha o mesmo filtro de deslocamento da navbar da landing.
+ * Safari/iOS recebe o fallback de blur, saturação e brilho.
+ */
+export function useLiquidGlass<T extends HTMLElement>({
+  depth = 4,
+  strength = 100,
+  chromaticAberration = 3,
+}: LiquidGlassOptions = {}): {
+  surfaceRef: RefObject<T | null>;
+  backdropFilter: string;
+} {
+  const surfaceRef = useRef<T>(null);
+  const filterCache = useRef(new Map<string, string>());
+  const [isWebKit, setIsWebKit] = useState(false);
+  const [filterUrl, setFilterUrl] = useState("");
+
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    const isIOS =
+      /iPad|iPhone|iPod/.test(ua) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+    setIsWebKit(isIOS || isSafari);
+  }, []);
+
+  useEffect(() => {
+    if (isWebKit) return;
+    const element = surfaceRef.current;
+    if (!element || typeof ResizeObserver === "undefined") return;
+
+    const update = () => {
+      const rect = element.getBoundingClientRect();
+      const width = Math.round(rect.width);
+      const height = Math.round(rect.height);
+      if (!width || !height) return;
+      const next = getCachedFilter(width, height, { depth, strength, chromaticAberration }, filterCache.current);
+      setFilterUrl((current) => (current === next ? current : next));
+    };
+
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [chromaticAberration, depth, isWebKit, strength]);
+
+  const blinkBackdrop = filterUrl
+    ? `url('${filterUrl}') blur(4px) saturate(180%) brightness(0.6)`
+    : "blur(16px) saturate(180%) brightness(0.9)";
+  const webkitBackdrop = "blur(20px) saturate(200%) brightness(0.85)";
+
+  return {
+    surfaceRef,
+    backdropFilter: isWebKit ? webkitBackdrop : blinkBackdrop,
+  };
+}

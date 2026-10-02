@@ -1,4 +1,10 @@
 export const caseMedia = {
+  sdimt: {
+    title: 'SDIMT',
+    source: '/awwwards/sdimt/landing-desktop.webp',
+    detail: '/awwwards/sdimt/landing-resources.webp',
+    link: 'https://sdimt-seplag.lovable.app/?panel=home',
+  },
   nks: {
     title: 'NKS CONNECT',
     source: '/awwwards/nks-editorial-poster.jpg',
