@@ -1,3 +1,15 @@
+## Revisão vigente · 02/10/2026 · identidade e ritmo
+
+- [x] Inspecionar HEAD `e56a5ad`, gravações próprias e componentes.
+- [x] Arquivar `vinz-alt.svg` exclusiva de Processo, screenshots e marcos visuais.
+- [x] Publicar diagnóstico/proposta em `2026-10-02-IDENTITY-RHYTHM-MASTER-REVIEW.md`.
+- [ ] Proprietário aprovar proposta de continuidade causal, Processo e navbar.
+- [ ] Consolidar spec/plano da revisão e executar após aceite aplicável.
+- [ ] Fechar aceite visual: seam elétrico, marca sólida/reflexos, cadência com wheel em rajadas, costura hero→SDIMT, navbar Motion.
+- [ ] Retomar C5.1/C2–C4 preservados antes de liberar Corte 6.
+
+C1 já entregue com provas do Worker; não refazer por histórico. Produto não alterado nesta revisão. P2 segue aberta.
+
 # Execução por fases
 
 ## Estado vigente · plano de identidade A · 02/10/2026 (Cuiabá)

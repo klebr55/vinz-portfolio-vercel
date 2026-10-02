@@ -1,0 +1,63 @@
+{
+  "base": "e56a5adf5f3ab25757a76eb272bd6a5e482d70b1",
+  "files": [
+    {
+      "originalName": "vinz-alt.svg",
+      "path": "vinz-alt.owner.svg",
+      "bytes": 252010,
+      "sha256": "a64fb915610b99ab95304ccd80668d17b63ee30d4fadecf66272db19b4e33538",
+      "kind": "original byte-identical"
+    },
+    {
+      "originalName": "image(20261002-122920).png",
+      "path": "electric-canvas-edge.owner.png",
+      "bytes": 239407,
+      "sha256": "8bce33b697777a9281461efc202991a54d285de4aa4a4a0a7cca23ef14dff10f",
+      "kind": "original byte-identical"
+    },
+    {
+      "originalName": "image(20261002-125010).png",
+      "path": "navbar.owner.png",
+      "bytes": 90355,
+      "sha256": "1ead3ea9b4290bab4316357861644753216fcb5e19a92edf443cf6f05b740a70",
+      "kind": "original byte-identical"
+    },
+    {
+      "path": "original-contact.jpg",
+      "bytes": 31447,
+      "sha256": "619beb1656b5cd2cbb4e7d63e0b188f3aaef5eadc5e0db44ee0d3c9ad9f9bdf4",
+      "kind": "diagnostic frames extracted from owner recording, not FPS evidence"
+    },
+    {
+      "path": "portfolio-contact.jpg",
+      "bytes": 119831,
+      "sha256": "ad6aa02ff90d9154e37aa3be6af65d090e3652baed327af8a802f271fdcdf62c",
+      "kind": "diagnostic frames extracted from owner recording, not FPS evidence"
+    },
+    {
+      "originalName": "Desktop 2026.10.02 - 08.19.38.01.mp4",
+      "bytes": 9532192,
+      "sha256": "ce63f238a73af2857c456a1644cd84e27b07a8bbe8978a458bc6e1030a5e5c35",
+      "kind": "original owner video inspected locally; contact sheet archived; full video not added to repository"
+    },
+    {
+      "originalName": "Desktop 2026.10.02 - 08.20.10.02.mp4",
+      "bytes": 84211696,
+      "sha256": "e4efdc45b9b239b8429185f0e1057241743578d4375549cb8758dfe451bafc63",
+      "kind": "original owner video inspected locally; contact sheet archived; full video not added to repository"
+    }
+  ],
+  "svgTags": {
+    "svg": 1,
+    "defs": 1,
+    "filter": 2,
+    "feColorMatrix": 2,
+    "clipPath": 2,
+    "path": 1,
+    "mask": 1,
+    "g": 7,
+    "image": 2,
+    "rect": 1
+  },
+  "note": "Only Processo may use vinz-alt. Hero retains original VINZ and supplied electric props. Contact sheets cannot establish live frame pacing."
+}

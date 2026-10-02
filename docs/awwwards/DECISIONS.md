@@ -1,3 +1,7 @@
+## 02/10/2026 · revisão Mastermind após identidade elétrica
+
+Entrega `e56a5ad` preservada, sem aceite visual. [Revisão dirigida](2026-10-02-IDENTITY-RHYTHM-MASTER-REVIEW.md) documenta gravações do proprietário, nova VINZ preenchida exclusiva de Processo, seam do canvas, cadência, narrativa e navbar. Continuidade causal é recomendação **pendente de aprovação**, sem alteração de produto. Fontes/SHA-256 arquivados; originais de vídeo não adicionados ao git. C1 não reabrir sem regressão; C5.1/C2–C4 e P2/Cortes 6–7 seguem pendentes.
+
 # Decisões e checkpoints
 
 ## 02/10/2026 · execução autorizada de identidade A

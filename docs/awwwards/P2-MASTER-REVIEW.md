@@ -1,3 +1,11 @@
+# Revisão vigente · identidade e continuidade · 02/10/2026
+
+Inspecionados `e56a5ad`/`ec70bf8`, fontes e gravações do proprietário. **Aceite visual não concedido**: corrigir fronteira do elétrico, cadência/acabamento de Processo; propor costura narrativa, ritmo SDIMT e navbar compacta. [Diagnóstico e design para aprovação](2026-10-02-IDENTITY-RHYTHM-MASTER-REVIEW.md). [Nova marca alternativa e evidência](reference-sources/identity-review-2026-10-02/README.md).
+
+`vinz-alt.svg` é exclusiva de Processo, não da hero. C1 preservado, sem repetição automática; C5.1/C2–C4 e P2/Cortes 6–7 continuam abertos. Este bloco atualiza a revisão dos Tasks 1–3 executados; **não libera a nova coreografia proposta antes do aceite e planejamento correspondente**. Execução Codex sequencial/continuidade Antigravity permanecem.
+
+---
+
 # Revisões Mastermind · P2
 
 ## Especificação aprovada · plano publicado · 02/10/2026 (Cuiabá)
