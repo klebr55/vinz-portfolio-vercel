@@ -288,3 +288,5 @@
 .navMotionButton:focus-visible .navTooltip { opacity: 1; }
 @media (hover: hover) and (pointer: fine) { .navMotionButton:hover .navTooltip { opacity: 1; } }
 @media (max-width: 760px) { .nav { gap: 4px !important; padding-right: 10px !important; padding-left: 10px !important; } }
+
+@media (max-width: 760px) { .sdimtDetail { display: none; } }
