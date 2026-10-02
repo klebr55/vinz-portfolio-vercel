@@ -1,14 +1,27 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { motion, useTransform, useMotionValueEvent, type MotionValue } from 'motion/react';
+import { PanelsTopLeft, UserRound, Workflow, Send } from 'lucide-react';
 import { useLiquidGlass } from './use-liquid-glass';
 import { localeChapterHref, type ChapterId } from './story-model';
 import type { PrototypeLocale } from './prototype-copy';
 import styles from './story-prototype.module.css';
 
-export function StoryNavigation({ locale, activeChapter, navigate }: { locale: PrototypeLocale; activeChapter: ChapterId; navigate: (id: ChapterId) => void }) {
+export function StoryNavigation({ locale, activeChapter, navigate, progress, reducedMotion }: { locale: PrototypeLocale; activeChapter: ChapterId; navigate: (id: ChapterId) => void; progress: MotionValue<number>; reducedMotion: boolean }) {
   const { surfaceRef, backdropFilter } = useLiquidGlass<HTMLSpanElement>();
   const [open, setOpen] = useState(false);
+  const [compact, setCompact] = useState(false);
+  const amount = useTransform(progress, value => reducedMotion ? 0 : Math.max(0, Math.min(1, value)));
+  const width = useTransform(amount, value => `min(100%, ${970 - 550 * value}px)`);
+  const padding = useTransform(amount, [0, 1], [24, 12]);
+  const gap = useTransform(amount, [0, 1], [36, 10]);
+  const linkGap = useTransform(amount, [0, 1], [20, 0]);
+  const labelWidth = useTransform(amount, [0, 1], [86, 0]);
+  const labelOpacity = useTransform(amount, [.15, .7], [1, 0]);
+  const iconOpacity = useTransform(amount, [.2, .8], [0, 1]);
+  useMotionValueEvent(amount, 'change', value => setCompact(value > .8));
+  const icons = { sdimt: PanelsTopLeft, about: UserRound, process: Workflow, contact: Send };
   const menuButton = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     if (!open) return;
@@ -30,19 +43,22 @@ export function StoryNavigation({ locale, activeChapter, navigate }: { locale: P
   };
   return (
     <header className={styles.navShell}>
-      <nav className={styles.nav} aria-label={locale === 'pt-br' ? 'Navegação principal' : 'Main navigation'}>
+      <motion.nav className={styles.nav} style={{ width, paddingLeft: padding, paddingRight: padding, gap }} data-compact={compact} aria-label={locale === 'pt-br' ? 'Navegação principal' : 'Main navigation'}>
         <span ref={surfaceRef} className={styles.glassSurface} style={{ backdropFilter, WebkitBackdropFilter: backdropFilter }} aria-hidden="true" />
         <a className={styles.brand} href="#intro" onClick={(event) => onNavigate(event, 'intro', 'intro')} aria-label={locale === 'pt-br' ? 'KV, início' : 'KV, start'}>KV<span>.</span></a>
         <button ref={menuButton} className={styles.menuButton} type="button" aria-expanded={open} aria-controls="story-nav-links" onClick={() => setOpen((value) => !value)}>Menu</button>
-        <div id="story-nav-links" className={styles.navLinks} data-open={open}>
-          {navItems.map(({ id, label, hash }) => <a key={id} href={`#${hash}`} onClick={(event) => onNavigate(event, id, hash)}>{label}</a>)}
-        </div>
+        <motion.div id="story-nav-links" className={styles.navLinks} data-open={open} style={{ gap: linkGap }}>
+          {navItems.map(({ id, label, hash }) => {
+            const Icon = icons[id as keyof typeof icons];
+            return <a key={id} href={`#${hash}`} aria-label={label} aria-current={activeChapter === id || (id === 'sdimt' && ['nks', 'milan', 'sincad', 'criactive'].includes(activeChapter)) ? 'location' : undefined} onClick={(event) => onNavigate(event, id, hash)}><motion.span className={styles.navIcon} style={{ opacity: iconOpacity }} aria-hidden="true"><Icon size={20} /></motion.span><motion.span className={styles.navLabel} style={{ width: labelWidth, opacity: labelOpacity }} aria-hidden="true">{label}</motion.span><span className={styles.navTooltip} aria-hidden="true">{label}</span></a>;
+          })}
+        </motion.div>
         <div className={styles.languageLinks} aria-label={locale === 'pt-br' ? 'Idioma' : 'Language'}>
           <a href={localeChapterHref('pt-br', activeChapter)} lang="pt-BR" aria-current={locale === 'pt-br' ? 'page' : undefined}>PT</a>
           <span aria-hidden="true">/</span>
           <a href={localeChapterHref('en', activeChapter)} lang="en" aria-current={locale === 'en' ? 'page' : undefined}>EN</a>
         </div>
-      </nav>
+      </motion.nav>
     </header>
   );
 }

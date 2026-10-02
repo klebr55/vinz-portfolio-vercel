@@ -252,6 +252,21 @@
  .root[data-motion-ready='true'] .sdimtReading { padding-top: 9vh; padding-bottom: 12vh; }
 }
 
+.navLinks a { position: relative; justify-content: center; min-width: 44px; }
+.navIcon { display: inline-flex; align-items: center; justify-content: center; }
+.navLabel { overflow: hidden; white-space: nowrap; text-align: center; }
+.navTooltip { position: absolute; top: calc(100% + 16px); left: 50%; padding: 8px 12px; border: 1px solid rgb(255 255 255 / 20%); border-radius: 8px; background: #0a1524; opacity: 0; transform: translateX(-50%); pointer-events: none; }
+.nav[data-compact='true'] a:focus-visible .navTooltip { opacity: 1; }
+.navLinks a[aria-current] { color: #a9caff; }
+@media (hover: hover) and (pointer: fine) { .nav[data-compact='true'] a:hover .navTooltip { opacity: 1; } }
+@media (max-width: 760px) {
+ .nav { gap: 14px !important; padding-right: 17px !important; padding-left: 17px !important; }
+ .navIcon { opacity: 1 !important; margin-right: 10px; }
+ .navLabel { width: auto !important; opacity: 1 !important; }
+ .navTooltip { display: none; }
+ .navLinks a { justify-content: flex-start; }
+}
+
 .root[data-motion-ready='true'] .intro { pointer-events: none; }
 .heroCopy, .heroIdentity { pointer-events: auto; }
 
@@ -266,3 +281,4 @@
 }
 
 .bridgeControls[hidden] { display: none; }
+.languageLinks a { justify-content: center; min-width: 44px; }

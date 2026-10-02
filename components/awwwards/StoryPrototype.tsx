@@ -159,7 +159,7 @@ export default function StoryPrototype({ locale, copy }: Props) {
   return (
     <main ref={root} className={styles.root} data-reduced={reducedMotion} data-client-ready={motionReady} data-motion-ready={motionReady && !reducedMotion} data-plasma-unavailable={plasmaUnavailable}>
       <a className={styles.skipLink} href="#projects">{locale === 'pt-br' ? 'Pular para projetos' : 'Skip to projects'}</a>
-      <StoryNavigation locale={locale} activeChapter={runtime.activeChapter} navigate={navigate} />
+      <StoryNavigation locale={locale} activeChapter={runtime.activeChapter} navigate={navigate} progress={navProgress} reducedMotion={reducedMotion} />
       <ChapterCheckpoints locale={locale} activeChapter={runtime.activeChapter} navigate={navigate} />
 
       <div ref={opening} className={styles.opening}>
