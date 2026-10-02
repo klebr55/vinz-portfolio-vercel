@@ -24,9 +24,9 @@ info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/d
    Collecting page data ...
  ⚠ Using edge runtime on a page currently disables static generation for that page
    Generating static pages (0/16) ...
-   Generating static pages (4/16) 
-   Generating static pages (8/16) 
-   Generating static pages (12/16) 
+   Generating static pages (4/16)
+   Generating static pages (8/16)
+   Generating static pages (12/16)
  ✓ Generating static pages (16/16)
    Finalizing page optimization ...
    Collecting build traces ...
@@ -76,4 +76,3 @@ Route (app)                                         Size  First Load JS  Revalid
 ○  (Static)   prerendered as static content
 ●  (SSG)      prerendered as static HTML (uses generateStaticParams)
 ƒ  (Dynamic)  server-rendered on demand
-

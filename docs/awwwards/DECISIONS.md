@@ -1,5 +1,15 @@
 # Decisões e checkpoints
 
+## 02/10/2026 · execução autorizada de identidade A
+
+- Ordem expressa do proprietário confirmou o plano atual; Codex Worker sequencial executou somente Tasks 1–3, sem nova confirmação, subagentes ou 21st.dev.
+- C1 concluída uma vez com RED e prova real; captures antecedem Lenis e cancelam apenas navegação pendente.
+- ElectricLogo mantém shader/props e slots; fase usa tempo ativo para impedir alongamento artificial do morph em software, com pausa/hidden/exposição. Renderer não remonta no ciclo ou na retomada.
+- VINZ deriva das máscaras reais; tolerância 0,45 px/IoU 0,9958119, vazados preservados. Wire frontal/traseiro evita arestas de pixel; extrusão e material seguem a marca. Motion 13.5.0 pontual, Next/Three/Framer raiz preservados.
+- Processo entrega poster até valores escritos/renderizados; preflight WebGL descartável corrige rejeição assíncrona do Canvas sem contexto. Calibração end end conclui o volume antes da saída, com capítulo 170/180dvh e texto vigente.
+- Implementação `ec70bf84475199859c5cda809fc54e6914321ddf`; relatório `evidence-narrative/electric-identity/README.md`. Checks de modelo e browser verdes, limites de software registrados. P2 aberta para Mastermind; sem C2–C4/Cortes 6/7/home/master/produção nesta entrega.
+
+
 ## Especificação aprovada e plano pronto · 02/10/2026 (Cuiabá)
 
 O proprietário respondeu “Ok, vamos prosseguir” ao pedido de revisão da especificação A. Registrada sua aprovação; [plano](2026-10-02-ELECTRIC-IDENTITY-IMPLEMENTATION-PLAN.md) e [prompt](2026-10-02-ELECTRIC-IDENTITY-WORKER-START.md) preparados com writing-plans lida da fonte oficial. Execução selecionada permanece Codex sequencial/continuidade Antigravity. Plano ainda não é marcado aprovado por existir: sua revisão pode ser confirmada por ordem expressa do proprietário ao Worker, que registra aprovação e continua sem pedir confirmação duplicada. Sem implementação, upgrade ou testes novos do produto neste checkpoint documental.

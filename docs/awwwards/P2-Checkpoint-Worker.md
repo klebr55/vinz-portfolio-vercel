@@ -1,5 +1,25 @@
 # Checkpoint Worker · P2 para revisão do Mastermind
 
+## Identidade elétrica A · Tasks 1–3 · 02/10/2026
+
+Ordem expressa recebida na sessão do proprietário: “Execute este plano na branch indicada.” Base remota `a9f3b0bfdc038d0a3e160681b19b08c5a713e15f`. Execução sequencial, sem subagentes. Branch exclusiva `redesign/awwwards-repagination`.
+
+Implementação consolidada: [ec70bf8](https://github.com/klebr55/vinz-portfolio-vercel/commit/ec70bf84475199859c5cda809fc54e6914321ddf). Commits focados anteriores: `08ac02b` C1 e `801f1cf` hero. Este checkpoint documental registra o aceite técnico do Worker; Mastermind ainda revisa. [Relatório completo e provas](evidence-narrative/electric-identity/README.md).
+
+- Task 1/C1 concluída: wheel/reverso, primeiro delta durante interrupção, ausência de foco tardio, primeira rolagem após checkpoint, teclado/histórico/retorno de rota. Uma instância Lenis e uma chamada RAF por tick. Não repetir C1 na retomada.
+- Task 2 concluída: composição A e morph real das seis formas; renderer único, cache/labels coerentes, asset lento/inválido, pausa durante morph, retomada VINZ e aba oculta sem catch-up. Plasma independente e preservado.
+- Task 3 concluída: vetor original derivado com vazados/IoU 99,58%; extrusão real, Motion dono do desenho/fill/orientação em R3F por demanda, leitura/checkpoint útil, SVG até primeiro quadro válido, fallback em ausência/perda de WebGL, resize/idioma/reentrada. Offset final calibrado end end para leitura antes da saída; fonte/modelo/gesto no relatório.
+
+Sete testes, type-check, lint, build Next 15.3.8 e diff-check verdes. Apenas três warnings de hooks anteriores. Instalação real pelo lockfile, Motion 13.5.0 pontual, Framer raiz 12.23.9 e Three 0.177.0 preservados. PT/EN, 360×800, 390×844, 1440×900, wheel/touch nativos, reduced motion e HTML sem JS comprovados. Arquivos de log têm apenas whitespace normalizado para o diff-check; seu conteúdo técnico foi preservado.
+
+Prévia ativa local: [hero PT](http://localhost:3004/pt-br/awwwards-preview/ember), [Processo EN](http://localhost:3004/en/awwwards-preview/ember#process). Processo start oculto em segundo plano, build exata de entrega. Publicação solicitada somente nesta branch; SHA remoto/checkpoint final no retorno Worker. Não há promoção de produção.
+
+Limites: Chrome/software WebGL, sem comprovação de 60 fps em GPU física/Safari/aparelho real. Vídeo final do ciclo ~43 s, entregas até VINZ ~40 s; os tempos reais de software constam no JSON, além dos tempos nominais do scheduler. Recursos efetivamente usados e diferenças metodológicas documentados no relatório. Arquivos alheios Analytics permanecem não rastreados e não publicados.
+
+**Parada para revisão Mastermind.** P2 aberta; próxima ação é revisar identidade/input/Processo e depois retomar somente C5.1/C2–C4 ainda abertos. Cortes 6/7 não foram iniciados.
+
+---
+
 ## Corte 5 · 01/10/2026 · correção Plasma e gesto contínuo
 
 Base remota confirmada: f015f246ee535bf85ec8c45c4ccfb77dd9be8d39. Implementação: [11c5ef3](https://github.com/klebr55/vinz-portfolio-vercel/commit/11c5ef3d6fb9b1318ca11eddab7cdfb2577a49c5). Branch redesign/awwwards-repagination. Código/testes/assets em um commit; este checkpoint tem evidências em commit documental posterior. P2 aberta, revisão Mastermind pendente antes de Corte 6.

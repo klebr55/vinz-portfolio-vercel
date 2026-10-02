@@ -4,10 +4,10 @@
 
 - [x] Proprietário aprovou composição A e especificação escrita.
 - [x] Mastermind escreveu/revisou [plano Tasks 1–3](2026-10-02-ELECTRIC-IDENTITY-IMPLEMENTATION-PLAN.md) e [prompt atual](2026-10-02-ELECTRIC-IDENTITY-WORKER-START.md).
-- [ ] Proprietário revisar plano e confirmar execução (ordem expressa ao Worker é suficiente; registrar na sessão/checkpoint).
-- [ ] Task 1: input C1 mínimo com prova real, sem duplicar tarefa após conclusão.
-- [ ] Task 2: hero elétrica/morph de stack, composição responsiva, pausa/fallback/lifecycle.
-- [ ] Task 3: vetor VINZ fiel, compatibilidade Motion, gesto Processo e validação integrada.
+- [x] Proprietário autorizou expressamente a execução na sessão Worker em 02/10/2026: “Execute este plano na branch indicada.”
+- [x] Task 1: C1 corrigido em `08ac02b`; RED/verde, wheel, interrupção, teclado, histórico e instância/ticker no [relatório](evidence-narrative/electric-identity/README.md). Não repetir C1.
+- [x] Task 2: hero elétrica/morph completo, composição A PT/EN/mobile, pausa/fallback/lifecycle; provas em `evidence-narrative/electric-identity/`.
+- [x] Task 3: vetor VINZ fiel, Motion 13.5.0/Three existente, desenho/extrusão por scroll e checks integrados; entregue para revisão Mastermind.
 - [ ] Mastermind revisar incremento; retomar somente correções ainda abertas do Corte 5.1.
 
 Codex sequencial/Antigravity já definido. P2/Cortes 6–7 abertos. Estados anteriores de “especificação pendente” e rascunho são históricos; não são gates novos.
@@ -44,7 +44,7 @@ Os checkboxes de Corte 5.1 abaixo permanecem válidos; sua execução geral foi 
 
 - [x] Mastermind revisou o Corte 5 no HEAD `22d81c0`, código, vídeos e limites; seis testes repetidos e diagnóstico wheel isolado executado.
 - [x] Preservar direção Plasma/SDIMT e trabalho entregue; [revisão](P2-MASTER-REVIEW.md) e [ordem Corte 5.1](2026-10-02-CORTE5-1-WORKER.md) publicadas.
-- [ ] C5.1/C1: rolagem normal Lenis, interrupção com delta preservado, foco e remount sem duplicação.
+- [x] C5.1/C1: concluído neste incremento; primeiro delta preservado, sem foco tardio e instância/ticker únicos após retorno de rota. Prova em `evidence-narrative/electric-identity/input-green.json`.
 - [ ] C5.1/C2: costura SDIMT→NKS sem viewport vazia ou retirada prematura de poster, ida/reverso e cache frio/quente.
 - [ ] C5.1/C3: mídia SDIMT adequada a 360×800/390×844 sem recorte lateral do título do produto.
 - [ ] C5.1/C4: propósito/contexto PT/EN com fatos públicos verificados e pendências técnicas fora da copy principal.
