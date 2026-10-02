@@ -1,5 +1,18 @@
 # Execução por fases
 
+## Estado vigente · composição A aprovada · 02/10/2026 (Cuiabá)
+
+- [x] Proprietário aprovou A: ElectricLogo na hero, VINZ 3D em Processo.
+- [x] Mastermind consolidou [especificação escrita](2026-10-02-ELECTRIC-IDENTITY-DESIGN.md) e atualizou handoff/precedência.
+- [ ] Proprietário revisar e aprovar a especificação escrita.
+- [ ] Mastermind elaborar plano e prompt executável; proprietário revisar plano. Codex sequencial/Antigravity já escolhidos.
+- [ ] Worker executar o incremento, incluindo dependência mínima C1 quando comprovada, e entregar evidências.
+- [ ] Revisão Mastermind; retomada dos itens ainda abertos de Corte 5.1.
+
+A/B não é mais decisão pendente. Os estados históricos abaixo têm precedência inferior. Somente documentação neste checkpoint.
+
+---
+
 ## Prioridade nova · identidade elétrica · 01/10/2026 (Cuiabá)
 
 - [x] Arquivar os nove anexos, props, exemplo Motion fornecido e fontes/procedência no repo.

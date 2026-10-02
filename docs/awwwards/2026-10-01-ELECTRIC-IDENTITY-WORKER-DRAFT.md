@@ -1,13 +1,13 @@
 # Prompt Worker · identidade elétrica · rascunho não liberado
 
-**Estado:** fontes publicadas; localização/coreografia 3D proposta pelo Mastermind aguarda revisão do proprietário. Este documento pode orientar leitura e análise, mas **não autoriza implementar a direção proposta, instalar dependências ou modificar produto antes da especificação e do plano aprovados**. Não tratar a recomendação A como escolha já confirmada.
+**Estado:** composição **A aprovada** em 02/10/2026 (Cuiabá): ElectricLogo na hero e VINZ 3D em Processo. A [especificação escrita](2026-10-02-ELECTRIC-IDENTITY-DESIGN.md) aguarda revisão e o plano ainda não foi elaborado. Este rascunho orienta leitura; não autoriza implementar, instalar dependências ou modificar produto antes dessas aprovações. Não reabrir a escolha A/B.
 
 Você é o **Worker**. Continue o portfólio em `klebr55/vinz-portfolio-vercel`, branch `redesign/awwwards-repagination`, preservando trabalho existente e sem merge em master ou promoção a produção. O proprietário pediu um incremento de identidade elétrica antes de retomar o restante do Corte 5.1.
 
 Leia apenas:
 
 1. `AGENTS.md` e instruções locais aplicáveis; confira branch/HEAD/árvore.
-2. `docs/awwwards/2026-10-01-ELECTRIC-IDENTITY-PROPOSAL.md` e, quando existir, sua especificação/plano aprovados.
+2. `docs/awwwards/2026-10-02-ELECTRIC-IDENTITY-DESIGN.md` e, quando estiver publicado/aprovado, o plano correspondente; a proposta inicial é somente histórico.
 3. `docs/awwwards/reference-sources/electric-identity/README.md`, manifest, props e fontes fornecidas. Veja `hero-prototype-gemini-owner.png` e a captura de settings.
 4. Topo de `P2-MASTER-REVIEW.md`, para distinguir a prioridade nova dos itens corretivos que continuam pendentes.
 5. Código pertinente: `StoryPrototype`, CSS, `StoryPlasma`, runtime/navigation/checkpoints, capítulo Processo e assets. Consulte o design narrativo vigente só onde precisar preservar contratos.
@@ -18,7 +18,7 @@ Use **Orchestrator Pipeline como Worker**, Taste, Build Awwwards-Quality Sites e
 
 - ElectricLogo na hero conforme protótipo: símbolo VINZ à direita da frase no desktop, Plasma azul preservado, assinatura/CTA e vidro SDIMT intactos. Mobile recebe composição própria. Props exatas em `ElectricLogo.owner-props.json`.
 - Morph real entre VINZ e SVGs locais React, TypeScript, Tailwind, Motion, GSAP, voltando a VINZ; aproveitar o morph de dois campos já presente ao mudar `src`. Não usar `key=src`, fade simples ou renderer novo para cada ícone. Cache/preparação de shapes e descarte devem ser limitados aos assets necessários.
-- A localização do desenho Three depende da escolha do proprietário. Se A for aprovada: integra-se ao checkpoint Processo já existente. Se B for aprovada: só planejar a entrega hero→wire→SDIMT após calibração de alinhamento/progresso. Não implantar as duas versões automaticamente.
+- Composição A confirmada: integrar o desenho VINZ Three ao checkpoint Processo existente, segundo a especificação escrita e o futuro plano aprovado. Não fazer a entrega 2D→3D na saída da hero nem implementar a alternativa B.
 - Usar a identidade VINZ no desenho/extrusão e a técnica Motion como referência, sem colar suas formas hardcoded. VINZ contém PNGs no SVG: preparar paths reais fiéis, com comparação ao original. TypeScript rasterizado pode participar do ElectricLogo sem extrusão. Nunca fingir que `SVGLoader` converteu PNG em geometria.
 - Verificar `motion/three`: hoje `motion@12.23.9` não o exporta. O plano aprovado deve definir atualização compatível e impactos no lockfile, sem upgrade amplo da aplicação. Preservar arquitetura React/R3F; não acrescentar renderer Three manual concorrente dentro do Canvas.
 - Lenis continua sozinho na suavização. Motion controla propriedades próprias do logo; GSAP não concorre nessas propriedades. Pausa existente governa Plasma/ciclo/efeitos; reduced motion e erro mostram VINZ estático com conteúdo acessível. Pointer/toque não capturam rolagem nem bloqueiam CTA/menu/rail.

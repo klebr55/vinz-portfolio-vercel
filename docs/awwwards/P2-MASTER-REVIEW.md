@@ -1,6 +1,14 @@
 # Revisões Mastermind · P2
 
-## Prioridade solicitada · identidade elétrica · 01/10/2026 (Cuiabá)
+## Opção A aprovada · 02/10/2026 (Cuiabá)
+
+O proprietário confirmou **A: ElectricLogo na hero e VINZ desenhado/extrudado em Processo**. A alternativa B está descartada. A [especificação consolidada](2026-10-02-ELECTRIC-IDENTITY-DESIGN.md) está publicada para revisão escrita; depois será preparado o plano e liberado o prompt de execução. Não pedir nova escolha de composição. O [rascunho Worker](2026-10-01-ELECTRIC-IDENTITY-WORKER-DRAFT.md) foi atualizado e continua sem liberar implementação nesta etapa.
+
+Direção geral e prioridade deste incremento sobre a retomada geral do Corte 5.1 permanecem. C1 wheel é dependência mínima da prova; demais correções voltam depois. P2/Cortes 6–7 continuam abertos. Nenhum pacote ou UI alterado.
+
+---
+
+## Histórico · proposta de identidade elétrica · 01/10/2026 (Cuiabá)
 
 O proprietário solicitou arquivar ElectricLogo, SVGs e protótipos e elaborar sua integração **antes de retomar o restante do Corte 5.1**. [Fontes](reference-sources/electric-identity/README.md), [proposta de brainstorming](2026-10-01-ELECTRIC-IDENTITY-PROPOSAL.md) e [prompt em rascunho](2026-10-01-ELECTRIC-IDENTITY-WORKER-DRAFT.md) publicados. A recomendação Mastermind é hero elétrica com morph de identidade/stack e desenho VINZ 3D em Processo; alternativa é a entrega conjunta na abertura. **Localização/coreografia novas ainda não aprovadas; implementação não liberada por este arquivamento.**
 

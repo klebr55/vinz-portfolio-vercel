@@ -1,12 +1,12 @@
 # Proposta Mastermind · Identidade elétrica e forma 3D
 
-**Data do pedido:** 01/10/2026, America/Cuiaba. **Estado:** proposta de brainstorming para revisão do proprietário, não direção adicional já aprovada. Nenhuma UI ou dependência foi alterada. O prompt de desenvolvimento permanece [em rascunho](2026-10-01-ELECTRIC-IDENTITY-WORKER-DRAFT.md) até a validação do desenho e do plano.
+**Data do pedido:** 01/10/2026, America/Cuiaba. **Estado:** composição A aprovada pelo proprietário em 02/10/2026 (Cuiabá); comparação A/B abaixo preservada como histórico. A [especificação consolidada](2026-10-02-ELECTRIC-IDENTITY-DESIGN.md) aguarda revisão escrita. Nenhuma UI ou dependência foi alterada. O prompt de desenvolvimento permanece [em rascunho](2026-10-01-ELECTRIC-IDENTITY-WORKER-DRAFT.md) até a validação do desenho e do plano.
 
 ## Entendimento do pedido
 
 O proprietário quer a hero com seu símbolo VINZ elétrico na composição do protótipo Gemini, mantendo Plasma/frase/assinatura/navbar e morfando entre os SVGs reais de React, TypeScript, Tailwind CSS, Motion e GSAP. Também quer o gesto do exemplo Motion/Three: arestas aparecem com o scroll, a forma ganha volume e material reflexivo. Esta integração tem prioridade sobre a retomada dos demais itens do Corte 5.1.
 
-A frase atual e o arco contínuo aprovados permanecem. A interpretação proposta é que os ícones representam ferramentas do **portfólio** (dependências existentes), sem afirmar que todos os cases utilizam todas elas. A posição do desenho 3D não foi definida pelo proprietário; abaixo está a recomendação Mastermind. Só os cinco ícones fornecidos entram nesta primeira sequência; “e tudo mais” não autoriza inventar logos nem tecnologias de projetos.
+A frase atual e o arco contínuo aprovados permanecem. A interpretação proposta é que os ícones representam ferramentas do **portfólio** (dependências existentes), sem afirmar que todos os cases utilizam todas elas. O proprietário escolheu posicionar o desenho 3D no Processo; a comparação inicial abaixo fica como histórico. Só os cinco ícones fornecidos entram nesta primeira sequência; “e tudo mais” não autoriza inventar logos nem tecnologias de projetos.
 
 ## Duas composições possíveis
 
@@ -55,4 +55,4 @@ O conflito wheel de Corte 5.1/C1 prejudica a prova do novo gesto. Autorizar no f
 
 ## Próximo ponto de decisão
 
-O proprietário revisa a localização do gesto 3D: **A (Hero elétrica + Processo desenhado) ou B (entrega conjunta na abertura)**. Após aprovação da coreografia, consolidar a especificação escrita e submetê-la à revisão; depois preparar o plano e liberar o prompt de execução ao Codex Worker. A seleção de ferramenta de execução já foi dada: Codex, com continuidade pelo Antigravity se necessário. Não repetir perguntas sobre briefing/stack/arco já resolvidos.
+O proprietário escolheu **A (Hero elétrica + Processo desenhado)**. A alternativa B não será implementada. Revisar agora a especificação consolidada; depois preparar o plano e liberar o prompt ao Codex Worker. A seleção de ferramenta de execução já foi dada: Codex, com continuidade pelo Antigravity se necessário. Não repetir perguntas sobre briefing/stack/arco já resolvidos.

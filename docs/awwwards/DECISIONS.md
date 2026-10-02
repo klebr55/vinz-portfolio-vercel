@@ -1,5 +1,11 @@
 # Decisões e checkpoints
 
+## Aprovação da composição A · 02/10/2026 (Cuiabá)
+
+O proprietário escolheu explicitamente A: identidade elétrica/morph de stack na hero, VINZ construído por scroll no Processo. B não será implementada. [Especificação escrita](2026-10-02-ELECTRIC-IDENTITY-DESIGN.md) consolidada para revisão; aprovação da composição não foi registrada como aprovação de plano inexistente ou execução. Codex sequencial/continuidade Antigravity já definidos. Preservar props/assets/arco aprovado e retomar Corte 5.1 depois do incremento, com C1 mínimo como dependência de input. Não houve implementação nem novas alegações de browser/hardware.
+
+---
+
 ## Pedido do proprietário · identidade elétrica · 01/10/2026 (Cuiabá)
 
 Priorizar ElectricLogo com VINZ/morph de React, TypeScript, Tailwind, Motion e GSAP e um gesto Three/Motion de desenho por scroll antes da retomada geral do Corte 5.1. Fontes e dois protótipos arquivados sem alterar os uploads; props preservadas. O morph já existe no componente recebido. VINZ/TypeScript contêm PNGs; extrusão VINZ exige contornos reais. `motion@12.23.9` instalado não exporta `motion/three` e não foi atualizado. [Proposta](2026-10-01-ELECTRIC-IDENTITY-PROPOSAL.md) com recomendação hero/Processo e alternativa conjunta; escolha e plano permanecem sujeitos à revisão. Não houve implementação, instalação ou teste visual do novo efeito. Problemas de Corte 5.1 continuam registrados.
