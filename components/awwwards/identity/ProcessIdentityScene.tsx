@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
-import { BufferGeometry, Float32BufferAttribute, ExtrudeGeometry, Group, LineDashedMaterial, LineSegments, MeshPhysicalMaterial, PMREMGenerator, Shape, Path, Vector2 } from 'three';
+import { BufferGeometry, Float32BufferAttribute, ExtrudeGeometry, Group, LineDashedMaterial, LineSegments, MeshPhysicalMaterial, PMREMGenerator, Shape, Path, Vector2, Mesh, PlaneGeometry, MeshBasicMaterial, Color } from 'three';
 import { cancelFrame, frame, transformValue, type MotionValue } from 'motion';
 import { threeEffect } from 'motion/three';
 import { resolveProcessFrame } from './process-model';
@@ -50,7 +50,7 @@ function Identity({ svg, progress, active, onUnavailable, onReady }: { svg: stri
     wire.computeLineDistances();
     const distances = edges.getAttribute('lineDistance');
     const length = distances.getX(distances.count - 1);
-    const material = new MeshPhysicalMaterial({ color: '#9bbff5', emissive: '#1e5bc1', emissiveIntensity: .08, metalness: .95, roughness: .2, clearcoat: 1, clearcoatRoughness: .12, envMapIntensity: 1.4, transparent: true, opacity: 0, depthWrite: false });
+    const material = new MeshPhysicalMaterial({ color: '#9bbff5', emissive: '#1e5bc1', emissiveIntensity: .08, metalness: .95, roughness: .12, clearcoat: 1, clearcoatRoughness: .12, envMapIntensity: 1.4, transparent: true, opacity: 0, depthWrite: false });
     return { geometry, edges, material, wireMaterial, wire, length };
   }, [svg]);
 
@@ -58,6 +58,12 @@ function Identity({ svg, progress, active, onUnavailable, onReady }: { svg: stri
     const lost = () => onUnavailable('context');
     gl.domElement.addEventListener('webglcontextlost', lost);
     const room = new RoomEnvironment();
+    for (const [x, y, z, width, height, strength] of [[-4, 2, 5, 3, 6, 5], [2, -2, 4, 7, .7, 3]]) {
+      const panel = new Mesh(new PlaneGeometry(width, height), new MeshBasicMaterial({ color: new Color().setRGB(strength, strength, strength) }));
+      panel.position.set(x, y, z);
+      panel.lookAt(0, 0, 0);
+      room.add(panel);
+    }
     const pmrem = new PMREMGenerator(gl);
     const target = pmrem.fromScene(room, .04);
     scene.environment = target.texture;
@@ -74,7 +80,7 @@ function Identity({ svg, progress, active, onUnavailable, onReady }: { svg: stri
     if (!active || !group.current) return;
     const drawn = transformValue(() => resources.length * resolveProcessFrame(progress.get()).drawn);
     const filled = transformValue(() => resolveProcessFrame(progress.get()).filled);
-    const opacity = transformValue(() => 1 - filled.get() * .92);
+    const opacity = transformValue(() => 1 - filled.get());
     const rotateX = transformValue(() => resolveProcessFrame(progress.get()).rotateX);
     const rotateY = transformValue(() => resolveProcessFrame(progress.get()).rotateY);
     const cancels = [threeEffect(resources.wireMaterial, { dashSize: drawn, opacity }), threeEffect(resources.material, { opacity: filled }), threeEffect(group.current, { rotateX, rotateY })];

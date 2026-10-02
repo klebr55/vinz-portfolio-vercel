@@ -15,7 +15,7 @@ export function StoryNavigation({ locale, activeChapter, navigate, progress, red
   const amount = useTransform(progress, value => reducedMotion ? 0 : Math.max(0, Math.min(1, value)));
   const width = useTransform(amount, value => `min(100%, ${970 - 506 * value}px)`);
   const padding = useTransform(amount, [0, 1], [24, 12]);
-  const gap = useTransform(amount, [0, 1], [36, 10]);
+  const gap = useTransform(amount, value => `${36 - 26 * value}px`);
   const linkGap = useTransform(amount, [0, 1], [20, 0]);
   const labelWidth = useTransform(amount, [0, 1], [86, 0]);
   const labelOpacity = useTransform(amount, [.15, .7], [1, 0]);
@@ -43,7 +43,7 @@ export function StoryNavigation({ locale, activeChapter, navigate, progress, red
   };
   return (
     <header className={styles.navShell}>
-      <motion.nav className={styles.nav} style={{ width, paddingLeft: padding, paddingRight: padding, gap }} data-compact={compact} aria-label={locale === 'pt-br' ? 'Navegação principal' : 'Main navigation'}>
+      <motion.nav className={styles.nav} style={{ width, paddingLeft: padding, paddingRight: padding, columnGap: gap }} data-compact={compact} aria-label={locale === 'pt-br' ? 'Navegação principal' : 'Main navigation'}>
         <span ref={surfaceRef} className={styles.glassSurface} style={{ backdropFilter, WebkitBackdropFilter: backdropFilter }} aria-hidden="true" />
         <a className={styles.brand} href="#intro" onClick={(event) => onNavigate(event, 'intro', 'intro')} aria-label={locale === 'pt-br' ? 'KV, início' : 'KV, start'}>KV<span>.</span></a>
         <button ref={menuButton} className={styles.menuButton} type="button" aria-expanded={open} aria-controls="story-nav-links" onClick={() => setOpen((value) => !value)}>Menu</button>
