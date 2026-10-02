@@ -1,13 +1,19 @@
 {
   "mode": "input",
-  "origin": "http://localhost:3003",
+  "origin": "http://localhost:3004",
   "method": "Native Chrome CDP, trusted browser input, software WebGL",
   "checks": {},
   "errors": [],
-  "wheelAdvance": 500,
-  "wheelReverse": -300,
-  "interruptionAdvance": 555,
+  "wheelAdvance": 497,
+  "wheelReverse": -298,
+  "interruptionAdvance": 565,
   "lateDestinationFocus": false,
   "afterCompletedCheckpointAdvance": 500,
+  "keyboardNoLateFocus": true,
+  "tabPreservesNavigation": true,
+  "backHash": "",
+  "forwardHash": "#sdimt",
+  "activeLenisAfterReturn": 1,
+  "maxRafCallsPerTick": 1,
   "pass": true
 }

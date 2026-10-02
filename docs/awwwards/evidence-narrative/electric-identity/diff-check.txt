@@ -1,0 +1,9 @@
+warning: in the working copy of 'components/awwwards/StoryPrototype.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/awwwards/identity/ElectricLogo.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'components/awwwards/identity/use-identity-cycle.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/awwwards/evidence-narrative/electric-identity/audit.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/awwwards/evidence-narrative/electric-identity/hero-cycle.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/awwwards/evidence-narrative/electric-identity/input-green.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/check-awwwards-identity.mjs', LF will be replaced by CRLF the next time Git touches it

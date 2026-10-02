@@ -23,7 +23,7 @@ export function useIdentityCycle({ active, paused }: { active: boolean; paused: 
   useEffect(() => {
     if (!paused) return;
     remaining.current = 4000;
-    setTargetId('vinz'); setDisplayedId('vinz'); setSettled(true);
+    setTargetId('vinz'); setDisplayedId('vinz'); setSettled(false);
   }, [paused]);
 
   useEffect(() => {

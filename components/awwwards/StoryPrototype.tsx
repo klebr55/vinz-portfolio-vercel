@@ -9,6 +9,7 @@ import { ChapterCheckpoints } from './ChapterCheckpoints';
 import { StoryNavigation } from './StoryNavigation';
 import Plasma from './StoryPlasma';
 import { SdimtChapter } from './chapters/SdimtChapter';
+import { ProcessChapter } from './chapters/ProcessChapter';
 import { HeroIdentity } from './identity/HeroIdentity';
 import { NksChapter } from './chapters/NksChapter';
 import { editorialCases, type EditorialCase } from './case-content';
@@ -62,6 +63,7 @@ export default function StoryPrototype({ locale, copy }: Props) {
   const [contactVisible, setContactVisible] = useState(false);
   const [motionReady, setMotionReady] = useState(false);
   const [plasmaExposed, setPlasmaExposed] = useState(true);
+  const [heroExposed, setHeroExposed] = useState(true);
   const [viewportRevision, setViewportRevision] = useState(0);
   const onPlasmaUnavailable = useCallback(() => setPlasmaUnavailable(true), []);
   const runtime = useStoryRuntime(root, reducedMotion);
@@ -121,14 +123,14 @@ export default function StoryPrototype({ locale, copy }: Props) {
       gsap.set(detail, { x: vw * .16, y: vh * .22, z: -180, scale: .68, rotationY: 18, rotationZ: 9, opacity: 0, force3D: true });
       gsap.set(orbit, { y: 22, opacity: 0 });
       const clock = { progress: 0 };
-      const timeline = gsap.timeline({ scrollTrigger: { trigger: opening.current, start: 'top top', end: 'bottom bottom', scrub: true, invalidateOnRefresh: true, onUpdate: (self) => setPlasmaExposed(self.progress * total < vh * 1.55) } });
+      const timeline = gsap.timeline({ scrollTrigger: { trigger: opening.current, start: 'top top', end: 'bottom bottom', scrub: true, invalidateOnRefresh: true, onUpdate: (self) => { setPlasmaExposed(self.progress * total < vh * 1.55); setHeroExposed(self.progress * total < heroOverflow + vh * .83); } } });
       timeline.to(clock, { progress: 1, duration: total, ease: 'none' }, 0)
         .to(phrase.current!.querySelectorAll(`.${styles.heroLineInner}`), { yPercent: -45, z: -180, rotationX: 10, opacity: 0, stagger: vh * .065, duration: vh * .7, ease: 'power2.inOut' }, heroOverflow + vh * .3)
         .to(phrase.current!.querySelectorAll('[data-hero-support]'), { y: -24, opacity: 0, duration: vh * .3, ease: 'power2.in' }, heroOverflow + vh * .18)
         .to(intro.current!.querySelector('[data-hero-identity]'), { y: -60, z: -180, opacity: 0, duration: vh * .65, ease: 'power2.inOut' }, heroOverflow + vh * .18)
         .to(intro.current!.querySelector(`.${styles.heroFolio}`), { opacity: 0, duration: vh * .25 }, vh * .2)
         .to(plane, { opacity: 1, duration: vh * .45, ease: 'power1.inOut' }, heroOverflow + vh * .35)
-        .to(plane, { x: 0, y: 0, z: 0, scale: 1, rotationX: 0, rotationY: 0, rotationZ: 0, duration: arrive - vh * .4, ease: 'power2.inOut' }, heroOverflow + vh * .4)
+        .to(plane, { x: 0, y: 0, z: 0, scale: 1, rotationX: 0, rotationY: 0, rotationZ: 0, duration: arrive - heroOverflow - vh * .4, ease: 'power2.inOut' }, heroOverflow + vh * .4)
         .to(plasma, { opacity: 0, duration: vh * .85, ease: 'power1.inOut' }, heroOverflow + vh * .65)
         .to(shade, { opacity: 1, duration: vh * .9, ease: 'none' }, heroOverflow + vh * .65)
         .to(detail, { x: 0, y: 0, z: 40, scale: 1, rotationY: 0, rotationZ: -4, opacity: 1, duration: vh * .55, ease: 'power2.out' }, arrive - vh * .12)
@@ -178,7 +180,7 @@ export default function StoryPrototype({ locale, copy }: Props) {
             <div data-hero-support><a className={styles.primaryLink} href="#sdimt" onClick={onPrimaryClick}>{locale === 'pt-br' ? 'Explorar SDIMT' : 'Explore SDIMT'} <span aria-hidden="true">↗</span></a>
             {!reducedMotion && <button className={styles.motionToggle} type="button" onClick={() => setMotionPaused((value) => !value)}>{motionPaused ? (locale === 'pt-br' ? 'Retomar movimento' : 'Resume motion') : (locale === 'pt-br' ? 'Pausar movimento' : 'Pause motion')}</button>}</div>
           </div>
-          <HeroIdentity locale={locale} exposed={plasmaExposed} paused={motionPaused} reducedMotion={reducedMotion} />
+          <HeroIdentity locale={locale} exposed={heroExposed} paused={motionPaused} reducedMotion={reducedMotion} />
           </div>
           <div className={styles.heroFolio} aria-hidden="true"><span>KV / 2026</span><span>01 — 05</span></div>
         </div>
@@ -190,7 +192,7 @@ export default function StoryPrototype({ locale, copy }: Props) {
       {cases.filter((item) => !['sdimt', 'nks'].includes(item.slug)).map((item, index) => <FutureCase key={item.slug} caseData={item} locale={locale} index={index + 3} />)}
 
       <section id="about" data-story-chapter="about" className={styles.closingSection}><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Pessoa' : 'Person'}</p><h2 data-story-read tabIndex={-1}>{locale === 'pt-br' ? 'Sobre' : 'About'}</h2><p>{c.about}</p></section>
-      <section id="process" data-story-chapter="process" className={styles.closingSection}><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Método' : 'Method'}</p><h2 data-story-read tabIndex={-1}>{locale === 'pt-br' ? 'Processo' : 'Process'}</h2><p>{c.process}</p></section>
+      <ProcessChapter locale={locale} paused={motionPaused} reducedMotion={reducedMotion} text={c.process} />
       <section id="testimonials" data-story-chapter="testimonials" className={styles.closingSection}><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Vozes' : 'Voices'}</p><h2 data-story-read tabIndex={-1}>{locale === 'pt-br' ? 'Depoimentos' : 'Testimonials'}</h2><p>{c.testimonials}</p><ul className={styles.testimonialNames}><li>Éder Lemes</li><li>João Paulo da Silva</li><li>Jéssika Lorena</li></ul></section>
       <section id="contact" ref={contactRef} data-story-chapter="contact" className={styles.closingSection} data-contact><div className={styles.contactPlasma} aria-hidden="true"><Plasma active={contactVisible && !motionPaused && !plasmaUnavailable} reducedMotion={reducedMotion} onUnavailable={onPlasmaUnavailable} /></div><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Contato' : 'Contact'}</p><h2 data-story-read tabIndex={-1}>{c.contact}</h2><a href="mailto:klebervinicius.dev@gmail.com">klebervinicius.dev@gmail.com</a><a href="https://www.linkedin.com/in/klebervinicius08/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#intro" onClick={(event) => { if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return; event.preventDefault(); history.pushState(null, '', '#intro'); navigate('intro'); }}>{locale === 'pt-br' ? 'Voltar ao início' : 'Back to start'} ↑</a>{!reducedMotion && <button className={styles.motionToggle} type="button" onClick={() => setMotionPaused((value) => !value)}>{motionPaused ? (locale === 'pt-br' ? 'Retomar movimento' : 'Resume motion') : (locale === 'pt-br' ? 'Pausar movimento' : 'Pause motion')}</button>}</section>
     </main>

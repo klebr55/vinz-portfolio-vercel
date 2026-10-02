@@ -1,0 +1,53 @@
+vinz-portfolio@0.1.0 F:\Users\Vinz\Documents\Codex\2026-09-30\lei\work\repo
+├─┬ @react-three/drei@10.3.0
+│ ├─┬ @monogrid/gainmap-js@3.1.0
+│ │ └── three@0.177.0 deduped
+│ ├─┬ camera-controls@2.10.1
+│ │ └── three@0.177.0 deduped
+│ ├─┬ maath@0.10.8
+│ │ └── three@0.177.0 deduped
+│ ├─┬ meshline@3.3.1
+│ │ └── three@0.177.0 deduped
+│ ├─┬ stats-gl@2.4.2
+│ │ └── three@0.170.0
+│ ├─┬ three-mesh-bvh@0.8.3
+│ │ └── three@0.177.0 deduped
+│ ├─┬ three-stdlib@2.36.0
+│ │ └── three@0.177.0 deduped
+│ ├── three@0.177.0
+│ └─┬ troika-three-text@0.52.4
+│   ├── three@0.177.0 deduped
+│   └─┬ troika-three-utils@0.52.4
+│     └── three@0.177.0 deduped
+├─┬ @react-three/fiber@9.1.2
+│ └── three@0.177.0 deduped
+├─┬ @vercel/analytics@1.5.0
+│ └── next@15.3.8 deduped
+├─┬ @vercel/speed-insights@1.2.0
+│ └── next@15.3.8 deduped
+├─┬ framer-motion@12.23.9
+│ ├─┬ motion-dom@12.23.9
+│ │ └── motion-utils@12.23.6 deduped
+│ └── motion-utils@12.23.6
+├─┬ motion@13.5.0
+│ └─┬ framer-motion@13.5.0
+│   ├─┬ motion-dom@13.5.0
+│   │ └── motion-utils@13.5.0 deduped
+│   └── motion-utils@13.5.0
+├─┬ next-image-export-optimizer@1.19.0
+│ └── next@15.3.8 deduped
+├─┬ next-intl@4.3.4
+│ └── next@15.3.8 deduped
+├─┬ next-translate-plugin@2.6.2
+│ └─┬ next-translate@2.6.2
+│   └── next@15.3.8 deduped
+├── next@15.3.8
+└─┬ three-globe@2.42.11
+  ├─┬ three-conic-polygon-geometry@2.1.2
+  │ └── three@0.177.0 deduped
+  ├─┬ three-geojson-geometry@2.1.1
+  │ └── three@0.177.0 deduped
+  ├─┬ three-slippy-map-globe@1.0.3
+  │ └── three@0.177.0 deduped
+  └── three@0.177.0 deduped
+

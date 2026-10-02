@@ -1,0 +1,46 @@
+{
+  "mode": "hero",
+  "origin": "http://localhost:3004",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "heroPresent": true,
+  "completedCycle": [
+    "vinz",
+    "react",
+    "typescript",
+    "tailwind",
+    "motion",
+    "gsap",
+    "vinz"
+  ],
+  "completedAtSeconds": [
+    0,
+    10.461,
+    17.122,
+    23.527,
+    29.549,
+    35.786,
+    42.024
+  ],
+  "activeElectricRenderers": 1,
+  "rendererRecreationsDuringCycle": 0,
+  "labelMatchesPresentedShape": true,
+  "framesWhilePaused": 0,
+  "video": {
+    "name": "hero-full-cycle.mp4",
+    "frames": 83,
+    "seconds": 46.97072982788086,
+    "method": "Actual Chrome screencast timestamps, VFR, no interpolation"
+  },
+  "actualHidden": true,
+  "hiddenMorphPhaseBefore": 0.41668750000000265,
+  "hiddenMorphPhaseAfter": 0.9478750000000036,
+  "hiddenCatchUp": true,
+  "framesPausedDuringMorph": 0,
+  "resumeStartsVinz": true,
+  "rendererRecreationsIncludingResume": 0,
+  "lastValidShapeRetainedOnError": true,
+  "pass": false,
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\ntrue !== false\n"
+}

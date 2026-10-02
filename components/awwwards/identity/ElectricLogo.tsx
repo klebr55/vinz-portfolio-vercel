@@ -907,10 +907,12 @@ const ElectricLogo = ({
       raf = 0;
       if (!running()) return;
       const s = settingsRef.current;
-      const dt = Math.min(0.05, Math.max(0, (now - last) / 1000));
+      const elapsed = Math.max(0, (now - last) / 1000);
+      const dt = Math.min(0.05, elapsed);
       last = now;
 
       const incoming = shapeRef.current;
+      let loaded = false;
       if (incoming && incoming !== slots[target].shape) pending = incoming;
       if (pending && morph >= 1) {
         if (slots[target].shape) {
@@ -919,13 +921,14 @@ const ElectricLogo = ({
           sparks.length = 0;
         }
         load(slots[target], pending);
+        loaded = true;
         pending = null;
       }
-      if (morph < 1) morph = Math.min(1, morph + dt / (pending ? 0.3 : 1.6));
+      if (morph < 1 && !loaded) morph = Math.min(1, morph + elapsed / (pending ? 0.3 : 1.6));
 
       const to = slots[target].shape;
       const from = morph < 1 ? slots[1 - target].shape : null;
-      if (to) progress = Math.min(1, progress + dt / 1.4);
+      if (to && !loaded) progress = Math.min(1, progress + elapsed / 1.4);
       const presence = progress * progress * (3 - 2 * progress);
 
       if (to && s) {

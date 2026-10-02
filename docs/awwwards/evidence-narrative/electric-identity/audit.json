@@ -1,6 +1,6 @@
 {
   "mode": "audit",
-  "origin": "http://localhost:3003",
+  "origin": "http://localhost:3004",
   "method": "Native Chrome CDP, trusted browser input, software WebGL",
   "checks": {
     "touch-pt-br-360": 355,
@@ -65,8 +65,41 @@
       "canvasFocus": false
     }
   ],
+  "video": {
+    "name": "process-touch-forward-reverse.mp4",
+    "frames": 50,
+    "seconds": 2.7638821601867676,
+    "method": "Actual Chrome screencast timestamps, VFR, no interpolation"
+  },
+  "pausedProcessStatic": true,
+  "resizeKeepsProcess": true,
+  "localeKeepsProcess": true,
+  "processContextFallback": true,
+  "heroContextFallback": true,
+  "plasmaIndependent": true,
+  "caseContinuity": [
+    {
+      "id": "sdimt",
+      "heading": "SDIMT.",
+      "top": 153.421875,
+      "bottom": 283.015625,
+      "readable": true,
+      "chapters": 10
+    },
+    {
+      "id": "nks",
+      "heading": "NKS Connect.",
+      "top": 153.421875,
+      "bottom": 283.015625,
+      "readable": true,
+      "chapters": 10
+    }
+  ],
   "reducedHeroNoRenderer": true,
   "reducedProcessNoRenderer": true,
   "noJsHero": true,
+  "noJsProcess": true,
+  "unavailableWebGLHero": true,
+  "unavailableWebGLProcess": true,
   "pass": true
 }

@@ -1,0 +1,19 @@
+
+> vinz-portfolio@0.1.0 test:awwwards
+> node scripts/test-awwwards.mjs
+
+✔ process drawing, filling and orientation clamp at their reading endpoints (1.3324ms)
+✔ direct_entry_selects_nks_without_intro (1.5626ms)
+✔ boundaries_clamp_and_choose_next (0.1844ms)
+✔ aliases_are_locale_independent (0.2389ms)
+✔ unverified_fields_are_not_public (0.2645ms)
+✔ locale_keeps_chapter_not_pixel_offset (0.7031ms)
+✔ latest_navigation_invalidates_old_completion (0.1359ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 811.2995

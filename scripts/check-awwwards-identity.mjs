@@ -15,9 +15,34 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 let ws;
 let recording;
 let failAsset = false;
+let delayAsset = 0;
+let assetWaiting = false;
 let id = 0;
 const calls = new Map();
 const report = { mode, origin, method: 'Native Chrome CDP, trusted browser input, software WebGL', checks: {}, errors: [] };
+function instrumentRuntime() {
+  let current;
+  let tick;
+  let writes = 0;
+  window.__runtimeProbe = { active: 0, maxPerTick: 0 };
+  Object.defineProperty(Window.prototype, '__lenis', { configurable: true, get() { return current; }, set(instance) {
+    if (!instance || current === instance) return;
+    current = instance;
+    window.__runtimeProbe.active++;
+    const raf = instance.raf.bind(instance);
+    instance.raf = time => { if(tick === time) writes++; else {tick=time;writes=1;} window.__runtimeProbe.maxPerTick=Math.max(window.__runtimeProbe.maxPerTick,writes); return raf(time); };
+    const destroy = instance.destroy.bind(instance);
+    instance.destroy = () => { window.__runtimeProbe.active--; if(current===instance)current=null; return destroy(); };
+  }});
+  window.__identityMorphs = new WeakMap();
+  const names = new WeakMap();
+  for(const Type of [WebGLRenderingContext,WebGL2RenderingContext]) {
+    const location = Type.prototype.getUniformLocation;
+    Type.prototype.getUniformLocation = function(...args) { const result=location.apply(this,args); if(result)names.set(result,args[1]); return result; };
+    const uniform = Type.prototype.uniform1f;
+    Type.prototype.uniform1f = function(location,value) { if(names.get(location)==='uMorph')window.__identityMorphs.set(this.canvas,value); return uniform.call(this,location,value); };
+  }
+}
 const send = (method, params = {}) => new Promise((resolve, reject) => { const key = ++id; calls.set(key, { resolve, reject }); ws.send(JSON.stringify({ id: key, method, params })); });
 const evaluate = async expression => { const value = await send('Runtime.evaluate', { expression, returnByValue: true, awaitPromise: true }); if (value.exceptionDetails) throw Error(value.exceptionDetails.text); return value.result.value; };
 async function shot(name) { const result = await send('Page.captureScreenshot', { format: 'png' }); mkdirSync(dirname(output), { recursive: true }); writeFileSync(join(dirname(output), name), Buffer.from(result.data, 'base64')); }
@@ -43,9 +68,10 @@ try {
   for (let n = 0; n < 60; n++) { try { endpoint = (await (await fetch(`http://127.0.0.1:${port}/json/list`)).json()).find(x => x.type === 'page')?.webSocketDebuggerUrl; } catch {} if (endpoint) break; await sleep(150); }
   if (!endpoint) throw Error('Chrome unavailable');
   ws = new WebSocket(endpoint);
-  ws.onmessage = event => { const message = JSON.parse(event.data); if(message.method==='Fetch.requestPaused'){send(failAsset?'Fetch.failRequest':'Fetch.continueRequest',{requestId:message.params.requestId,...(failAsset?{errorReason:'Failed'}:{})});return;} if (message.method === 'Page.screencastFrame') { if(recording) { const path=join(temp,`frame-${recording.length}.jpg`); writeFileSync(path,Buffer.from(message.params.data,'base64')); recording.push({path,time:message.params.metadata.timestamp}); } send('Page.screencastFrameAck',{sessionId:message.params.sessionId}); return; } if (message.method === 'Runtime.exceptionThrown') report.errors.push(message.params.exceptionDetails.text); const call = calls.get(message.id); if (!call) return; calls.delete(message.id); if (message.error) call.reject(Error(message.error.message)); else call.resolve(message.result); };
+  ws.onmessage = event => { const message = JSON.parse(event.data); if(message.method==='Fetch.requestPaused'){assetWaiting=true;sleep(delayAsset).then(()=>send(failAsset?'Fetch.failRequest':'Fetch.continueRequest',{requestId:message.params.requestId,...(failAsset?{errorReason:'Failed'}:{})}));return;} if (message.method === 'Page.screencastFrame') { if(recording) { const path=join(temp,`frame-${recording.length}.jpg`); writeFileSync(path,Buffer.from(message.params.data,'base64')); recording.push({path,time:message.params.metadata.timestamp}); } send('Page.screencastFrameAck',{sessionId:message.params.sessionId}); return; } if (message.method === 'Runtime.exceptionThrown') report.errors.push(message.params.exceptionDetails.text); const call = calls.get(message.id); if (!call) return; calls.delete(message.id); if (message.error) call.reject(Error(message.error.message)); else call.resolve(message.result); };
   await new Promise(r => ws.onopen = r);
   await send('Page.enable'); await send('Runtime.enable');
+  await send('Page.addScriptToEvaluateOnNewDocument', { source: `(${instrumentRuntime.toString()})()` });
   await send('Page.addScriptToEvaluateOnNewDocument', { source: `window.__identityPaints=new WeakMap();window.__identityContexts=new WeakSet();window.__identityCreated=0;for(const T of [WebGLRenderingContext,WebGL2RenderingContext])for(const name of ['drawArrays','drawElements']){const f=T.prototype[name];T.prototype[name]=function(...args){if(this.canvas.closest('[data-electric-logo]')){if(!window.__identityContexts.has(this.canvas)){window.__identityContexts.add(this.canvas);window.__identityCreated++;}window.__identityPaints.set(this.canvas,(window.__identityPaints.get(this.canvas)||0)+1);}return f.apply(this,args);}}` });
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
   await visit();
@@ -58,18 +84,33 @@ try {
     report.lateDestinationFocus = await evaluate('document.activeElement?.closest("[data-story-chapter]")?.id === "sdimt"');
     await visit(); await click('a[href="#sdimt"]'); await sleep(1500);
     report.afterCompletedCheckpointAdvance = await wheel(500);
+    await visit(); await click('a[href="#sdimt"]'); await sleep(200);
+    await send('Input.dispatchKeyEvent',{type:'keyDown',key:'ArrowDown',code:'ArrowDown',windowsVirtualKeyCode:40});await send('Input.dispatchKeyEvent',{type:'keyUp',key:'ArrowDown',code:'ArrowDown',windowsVirtualKeyCode:40});await sleep(1400);
+    report.keyboardNoLateFocus=await evaluate('document.activeElement?.closest("[data-story-chapter]")?.id !== "sdimt"');assert.equal(report.keyboardNoLateFocus,true);
+    await visit();await click('a[href="#sdimt"]');await sleep(200);await send('Input.dispatchKeyEvent',{type:'keyDown',key:'Tab',code:'Tab',windowsVirtualKeyCode:9});await send('Input.dispatchKeyEvent',{type:'keyUp',key:'Tab',code:'Tab',windowsVirtualKeyCode:9});await sleep(1400);report.tabPreservesNavigation=await evaluate('document.activeElement?.closest("[data-story-chapter]")?.id === "sdimt"');assert.equal(report.tabPreservesNavigation,true);
+    await evaluate('history.back()');await sleep(800);report.backHash=await evaluate('location.hash');await evaluate('history.forward()');await sleep(800);report.forwardHash=await evaluate('location.hash');assert.equal(report.forwardHash,'#sdimt');
+    await send('Page.navigate',{url:`${origin}/pt-br`});await sleep(1300);await visit();await sleep(300);
+    report.activeLenisAfterReturn=await evaluate('window.__runtimeProbe.active');report.maxRafCallsPerTick=await evaluate('window.__runtimeProbe.maxPerTick');assert.equal(report.activeLenisAfterReturn,1);assert.equal(report.maxRafCallsPerTick,1);
     assert.ok(report.wheelAdvance > 0); assert.ok(report.wheelReverse < 0); assert.ok(report.interruptionAdvance > 0); assert.equal(report.lateDestinationFocus, false); assert.ok(report.afterCompletedCheckpointAdvance > 0);
+  } else if(mode==='slow') {
+    delayAsset=4500;await send('Fetch.enable',{patterns:[{urlPattern:'*identity/react.png',requestStage:'Request'}]});await visit();
+    for(let i=0;i<300&&!assetWaiting;i++)await sleep(100);
+    assert.equal(assetWaiting,true);await sleep(1700);
+    report.delayedAssetKeepsVinz=await evaluate('document.querySelector("[data-hero-identity]").dataset.displayedIdentity === "vinz" && document.querySelector("[data-electric-logo]").style.opacity === "1"');assert.equal(report.delayedAssetKeepsVinz,true);
+    await until('window.__identityMorphs.get(document.querySelector("[data-electric-logo] canvas")) > 0 && window.__identityMorphs.get(document.querySelector("[data-electric-logo] canvas")) < 1',60000);report.realMorphAfterDelay=true;
+    await until('document.querySelector("[data-hero-identity]").dataset.displayedIdentity === "react"',60000);report.deliveredLabelAfterDelay=true;await shot('hero-delayed-react.png');await send('Fetch.disable');
   } else if (mode === 'hero') {
     report.heroPresent = await evaluate('Boolean(document.querySelector("[data-hero-identity]"))');
     assert.equal(report.heroPresent, true);
     await until('document.querySelector("[data-electric-logo] canvas") && window.__identityCreated === 1');
     mkdirSync(dirname(output), { recursive: true }); await startRecording();
     report.completedCycle = ['vinz'];
+    report.completedAtSeconds = [0];
     let previous = 'vinz';
     const started = Date.now();
     while (Date.now() - started < 120000 && report.completedCycle.length < 7) {
       const current = await evaluate('document.querySelector("[data-hero-identity]").dataset.displayedIdentity');
-      if (current !== previous) { report.completedCycle.push(current); previous = current; await shot(`hero-${current}.png`); }
+      if (current !== previous) { report.completedCycle.push(current); report.completedAtSeconds.push((Date.now()-started)/1000); previous = current; await shot(`hero-${current}.png`); }
       await sleep(150);
     }
     report.activeElectricRenderers = await evaluate('document.querySelectorAll("[data-electric-logo] canvas").length');
@@ -81,14 +122,27 @@ try {
     report.framesWhilePaused = await evaluate(`(window.__identityPaints.get(document.querySelector('[data-electric-logo] canvas')) || 0) - ${paints}`);
     await stopRecording('hero-full-cycle.mp4');
     await click('button[class*="motionToggle"]'); await sleep(700);
-    const hiddenBefore = await evaluate('document.querySelector("[data-hero-identity]").dataset.displayedIdentity');
+    await until('(()=>{const value=window.__identityMorphs.get(document.querySelector("[data-electric-logo] canvas"));return value>0 && value<.8;})()',45000);
+    const phaseBefore = await evaluate('window.__identityMorphs.get(document.querySelector("[data-electric-logo] canvas"))');
     const tab = await send('Target.createTarget', { url: 'about:blank' });
     await send('Target.activateTarget', { targetId: tab.targetId }); await sleep(300);
     report.actualHidden = await evaluate('document.hidden');
+    const hiddenBefore = await evaluate('document.querySelector("[data-hero-identity]").dataset.displayedIdentity');
+    const hiddenPhase = await evaluate('window.__identityMorphs.get(document.querySelector("[data-electric-logo] canvas"))');
     await sleep(6000);
     const hiddenAfter = await evaluate('document.querySelector("[data-hero-identity]").dataset.displayedIdentity');
-    report.hiddenCatchUp = hiddenBefore !== hiddenAfter;
+    report.phaseBeforeHiding = phaseBefore;
+    report.hiddenMorphPhaseBefore = hiddenPhase;
+    report.hiddenMorphPhaseAfter = await evaluate('window.__identityMorphs.get(document.querySelector("[data-electric-logo] canvas"))');
+    report.hiddenCatchUp = hiddenBefore !== hiddenAfter || report.hiddenMorphPhaseAfter !== hiddenPhase;
     await send('Target.closeTarget', { targetId: tab.targetId }); await send('Page.bringToFront');
+    await click('button[class*="motionToggle"]');await sleep(200);
+    const duringPause=await evaluate('window.__identityPaints.get(document.querySelector("[data-electric-logo] canvas")) || 0');await sleep(700);
+    report.framesPausedDuringMorph=await evaluate(`(window.__identityPaints.get(document.querySelector('[data-electric-logo] canvas')) || 0)-${duringPause}`);assert.equal(report.framesPausedDuringMorph,0);
+    await click('button[class*="motionToggle"]');await sleep(200);
+    report.resumeStartsVinz=await evaluate('document.querySelector("[data-hero-identity]").dataset.displayedIdentity === "vinz"');assert.equal(report.resumeStartsVinz,true);
+    await until('document.querySelector("[data-electric-logo]").style.opacity === "1" && document.querySelector("[data-hero-identity]").dataset.displayedIdentity === "vinz"',12000);
+    report.rendererRecreationsIncludingResume=await evaluate('window.__identityCreated-1');assert.equal(report.rendererRecreationsIncludingResume,0);
     await send('Fetch.enable', { patterns: [{ urlPattern: '*identity/react.png', requestStage: 'Request' }] }); failAsset = true;
     await visit(); await sleep(10000);
     report.lastValidShapeRetainedOnError = await evaluate('document.querySelector("[data-hero-identity]").dataset.displayedIdentity === "vinz" && document.querySelector("[data-electric-logo]").style.opacity === "1"');
@@ -128,12 +182,33 @@ try {
         await shot(`hero-${locale}-${width}.png`);
         if(width<760) { const before=await evaluate('scrollY'); await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:180,y:650}]}); for(let y=600;y>=260;y-=40){await send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:180,y}]});await sleep(45);} await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await sleep(700); report.checks[`touch-${locale}-${width}`]=(await evaluate('scrollY'))-before; assert.ok(report.checks[`touch-${locale}-${width}`]>0); await shot(`hero-symbol-${locale}-${width}.png`); }
         await send('Page.navigate',{url:`${origin}/${locale}/awwwards-preview/ember#process`});await until('Boolean(document.querySelector("#process canvas"))');await sleep(1500);await shot(`process-${locale}-${width}.png`);
+        if(width===360 && locale==='pt-br') {
+          await startRecording();
+          for(const [start,end,step] of [[650,250,-40],[250,650,40]]) {
+            await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:180,y:start}]});
+            for(let y=start+step;step<0?y>=end:y<=end;y+=step){await send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:180,y}]});await sleep(50);}
+            await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await sleep(800);
+          }
+          await stopRecording('process-touch-forward-reverse.mp4');
+        }
       }
     }
+    await visit();await click('button[class*="motionToggle"]');await click('nav a[href="#process"]');await sleep(1700);report.pausedProcessStatic=await evaluate('!document.querySelector("#process img").hidden');assert.equal(report.pausedProcessStatic,true);
+    await visit('#process');await until('Boolean(document.querySelector("#process canvas"))');await sleep(1800);
+    await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});await sleep(1200);report.resizeKeepsProcess=await evaluate('location.hash === "#process" && document.querySelector("#process h2").getBoundingClientRect().top >= 75 && document.documentElement.scrollWidth <= innerWidth');assert.equal(report.resizeKeepsProcess,true);await shot('process-resize.png');
+    await send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});await sleep(900);
+    await click('a[lang="en"]');await until('location.pathname.startsWith("/en/") && Boolean(document.querySelector("#process canvas"))');await sleep(700);report.localeKeepsProcess=await evaluate('location.hash === "#process"');assert.equal(report.localeKeepsProcess,true);
+    await evaluate('(()=>{const c=document.querySelector("#process canvas");const gl=c.getContext("webgl2")||c.getContext("webgl");gl.getExtension("WEBGL_lose_context").loseContext();})()');await sleep(800);report.processContextFallback=await evaluate('!document.querySelector("#process canvas") && !document.querySelector("#process img").hidden');assert.equal(report.processContextFallback,true);await shot('process-context-loss.png');
+    await visit();await until('Boolean(document.querySelector("[data-electric-logo] canvas"))');await evaluate('(()=>{const c=document.querySelector("[data-electric-logo] canvas");c.getContext("webgl2").getExtension("WEBGL_lose_context").loseContext();})()');await sleep(700);report.heroContextFallback=await evaluate('!document.querySelector("[data-electric-logo] canvas") && !document.querySelector("[data-hero-identity] img").hidden');report.plasmaIndependent=await evaluate('Boolean(document.querySelector("[class*=plasmaCanvas] canvas"))');assert.equal(report.heroContextFallback,true);assert.equal(report.plasmaIndependent,true);await shot('hero-context-loss.png');
+    report.caseContinuity=[];
+    for(const id of ['sdimt','nks']) { await visit(`#${id}`);const state=await evaluate(`(()=>{const h=document.querySelector('#${id} [data-story-read]'),r=h.getBoundingClientRect();return {id:'${id}',heading:h.textContent,top:r.top,bottom:r.bottom,readable:r.top>=80 && r.top<innerHeight,chapters:document.querySelectorAll('[data-story-chapter]').length}})()`);report.caseContinuity.push(state);assert.equal(state.readable,true);assert.equal(state.chapters,10);await shot(`continuity-${id}.png`); }
     await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]}); await visit(); await sleep(800);
     report.reducedHeroNoRenderer=await evaluate('!document.querySelector("[data-electric-logo] canvas") && !document.querySelector("[data-hero-identity] img").hidden'); assert.equal(report.reducedHeroNoRenderer,true);await shot('hero-reduced.png');
     await send('Page.navigate',{url:`${origin}/pt-br/awwwards-preview/ember#process`});await sleep(2200);report.reducedProcessNoRenderer=await evaluate('!document.querySelector("#process canvas") && !document.querySelector("#process img").hidden'); assert.equal(report.reducedProcessNoRenderer,true);await shot('process-reduced.png');
-    await send('Emulation.setEmulatedMedia',{features:[]});await send('Emulation.setScriptExecutionDisabled',{value:true});await send('Page.navigate',{url:`${origin}/pt-br/awwwards-preview/ember`});await sleep(2000);report.noJsHero=await evaluate('!!document.querySelector("[data-hero-identity] img") && !document.querySelector("[data-hero-identity] img").hidden');await shot('hero-no-js.png');await send('Emulation.setScriptExecutionDisabled',{value:false});assert.equal(report.noJsHero,true);
+    await send('Emulation.setEmulatedMedia',{features:[]});await send('Emulation.setScriptExecutionDisabled',{value:true});await send('Page.navigate',{url:`${origin}/pt-br/awwwards-preview/ember`});await sleep(2000);report.noJsHero=await evaluate('!!document.querySelector("[data-hero-identity] img") && !document.querySelector("[data-hero-identity] img").hidden');await shot('hero-no-js.png');await send('Page.navigate',{url:`${origin}/pt-br/awwwards-preview/ember#process`});await sleep(1200);report.noJsProcess=await evaluate('!document.querySelector("#process img").hidden && !document.querySelector("#process canvas")');await shot('process-no-js.png');await send('Emulation.setScriptExecutionDisabled',{value:false});assert.equal(report.noJsHero,true);assert.equal(report.noJsProcess,true);
+    const blocked = await send('Page.addScriptToEvaluateOnNewDocument',{source:`const context=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){if(/^webgl/.test(type))return null;return context.call(this,type,...args);};`});
+    await visit();await sleep(500);report.unavailableWebGLHero=await evaluate('!document.querySelector("[data-electric-logo] canvas") && !document.querySelector("[data-hero-identity] img").hidden');assert.equal(report.unavailableWebGLHero,true);await shot('hero-webgl-unavailable.png');
+    await visit('#process');await sleep(700);report.unavailableWebGLProcess=await evaluate('!document.querySelector("#process canvas") && !document.querySelector("#process img").hidden');assert.equal(report.unavailableWebGLProcess,true);await shot('process-webgl-unavailable.png');await send('Page.removeScriptToEvaluateOnNewDocument',{identifier:blocked.identifier});
   } else throw Error(`Unknown mode ${mode}`);
   report.pass = true;
 } catch (error) { report.pass = false; report.failure = String(error); process.exitCode = 1; }

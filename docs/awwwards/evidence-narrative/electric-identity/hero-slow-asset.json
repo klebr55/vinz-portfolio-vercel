@@ -1,0 +1,11 @@
+{
+  "mode": "slow",
+  "origin": "http://localhost:3004",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "delayedAssetKeepsVinz": true,
+  "realMorphAfterDelay": true,
+  "deliveredLabelAfterDelay": true,
+  "pass": true
+}

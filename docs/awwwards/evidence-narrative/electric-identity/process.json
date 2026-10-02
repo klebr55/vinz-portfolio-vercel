@@ -1,0 +1,17 @@
+{
+  "mode": "process",
+  "origin": "http://localhost:3004",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "scenePresent": true,
+  "forward": 650,
+  "reverse": -850,
+  "video": {
+    "name": "process-wheel-forward-reverse.mp4",
+    "frames": 96,
+    "seconds": 8.667159080505371,
+    "method": "Actual Chrome screencast timestamps, VFR, no interpolation"
+  },
+  "pass": true
+}

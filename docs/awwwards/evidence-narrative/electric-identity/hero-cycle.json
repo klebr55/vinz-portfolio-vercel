@@ -1,6 +1,6 @@
 {
   "mode": "hero",
-  "origin": "http://localhost:3003",
+  "origin": "http://localhost:3004",
   "method": "Native Chrome CDP, trusted browser input, software WebGL",
   "checks": {},
   "errors": [],
@@ -14,18 +14,33 @@
     "gsap",
     "vinz"
   ],
+  "completedAtSeconds": [
+    0,
+    9.99,
+    16.341,
+    22.289,
+    28.28,
+    34.244,
+    39.995
+  ],
   "activeElectricRenderers": 1,
   "rendererRecreationsDuringCycle": 0,
   "labelMatchesPresentedShape": true,
   "framesWhilePaused": 0,
   "video": {
     "name": "hero-full-cycle.mp4",
-    "frames": 178,
-    "seconds": 90.53088998794556,
+    "frames": 102,
+    "seconds": 42.89596700668335,
     "method": "Actual Chrome screencast timestamps, VFR, no interpolation"
   },
   "actualHidden": true,
+  "phaseBeforeHiding": 0.3124375000000009,
+  "hiddenMorphPhaseBefore": 0.5103749999999991,
+  "hiddenMorphPhaseAfter": 0.5103749999999991,
   "hiddenCatchUp": false,
+  "framesPausedDuringMorph": 0,
+  "resumeStartsVinz": true,
+  "rendererRecreationsIncludingResume": 0,
   "lastValidShapeRetainedOnError": true,
   "pass": true
 }

@@ -1,0 +1,108 @@
+{
+  "mode": "audit",
+  "origin": "http://localhost:3004",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {
+    "touch-pt-br-360": 355,
+    "touch-en-360": 355,
+    "touch-pt-br-390": 355,
+    "touch-en-390": 355
+  },
+  "errors": [
+    "Uncaught (in promise)"
+  ],
+  "layouts": [
+    {
+      "locale": "pt-br",
+      "width": 360,
+      "horizontalOverflow": false,
+      "heroRight": 338,
+      "textRight": 338,
+      "heroBelowText": true,
+      "canvasFocus": false
+    },
+    {
+      "locale": "en",
+      "width": 360,
+      "horizontalOverflow": false,
+      "heroRight": 338,
+      "textRight": 338,
+      "heroBelowText": true,
+      "canvasFocus": false
+    },
+    {
+      "locale": "pt-br",
+      "width": 390,
+      "horizontalOverflow": false,
+      "heroRight": 368,
+      "textRight": 368,
+      "heroBelowText": true,
+      "canvasFocus": false
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "horizontalOverflow": false,
+      "heroRight": 368,
+      "textRight": 368,
+      "heroBelowText": true,
+      "canvasFocus": false
+    },
+    {
+      "locale": "pt-br",
+      "width": 1440,
+      "horizontalOverflow": false,
+      "heroRight": 1343.609375,
+      "textRight": 722.953125,
+      "heroBelowText": false,
+      "canvasFocus": false
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "horizontalOverflow": false,
+      "heroRight": 1343.609375,
+      "textRight": 722.953125,
+      "heroBelowText": false,
+      "canvasFocus": false
+    }
+  ],
+  "video": {
+    "name": "process-touch-forward-reverse.mp4",
+    "frames": 50,
+    "seconds": 3.6122329235076904,
+    "method": "Actual Chrome screencast timestamps, VFR, no interpolation"
+  },
+  "pausedProcessStatic": true,
+  "resizeKeepsProcess": true,
+  "localeKeepsProcess": true,
+  "processContextFallback": true,
+  "heroContextFallback": true,
+  "plasmaIndependent": true,
+  "caseContinuity": [
+    {
+      "id": "sdimt",
+      "heading": "SDIMT.",
+      "top": 153.421875,
+      "bottom": 283.015625,
+      "readable": true,
+      "chapters": 10
+    },
+    {
+      "id": "nks",
+      "heading": "NKS Connect.",
+      "top": 153.421875,
+      "bottom": 283.015625,
+      "readable": true,
+      "chapters": 10
+    }
+  ],
+  "reducedHeroNoRenderer": true,
+  "reducedProcessNoRenderer": true,
+  "noJsHero": true,
+  "noJsProcess": true,
+  "unavailableWebGLHero": true,
+  "unavailableWebGLProcess": false,
+  "pass": false,
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+}

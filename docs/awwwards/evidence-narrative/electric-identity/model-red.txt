@@ -1,0 +1,43 @@
+
+> vinz-portfolio@0.1.0 test:awwwards
+> node scripts/test-awwwards.mjs
+
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module 'F:\Users\Vinz\Documents\Codex\2026-09-30\lei\work\repo\components\awwwards\identity\process-model.ts' imported from F:\Users\Vinz\Documents\Codex\2026-09-30\lei\work\repo\tests\awwwards\process-model.test.mjs
+    at finalizeResolution (node:internal/modules/esm/resolve:274:11)
+    at moduleResolve (node:internal/modules/esm/resolve:864:10)
+    at defaultResolve (node:internal/modules/esm/resolve:990:11)
+    at nextResolve (node:internal/modules/esm/hooks:785:28)
+    at AsyncLoaderHooksOnLoaderHookWorker.resolve (node:internal/modules/esm/hooks:269:30)
+    at MessagePort.handleMessage (node:internal/modules/esm/worker:251:24)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:845:20)
+    at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28) {
+  code: 'ERR_MODULE_NOT_FOUND',
+  url: 'file:///F:/Users/Vinz/Documents/Codex/2026-09-30/lei/work/repo/components/awwwards/identity/process-model.ts'
+}
+
+Node.js v24.13.0
+✖ F:\Users\Vinz\Documents\Codex\2026-09-30\lei\work\repo\tests\awwwards\process-model.test.mjs (1134.1431ms)
+✔ direct_entry_selects_nks_without_intro (2.0446ms)
+✔ boundaries_clamp_and_choose_next (0.1968ms)
+✔ aliases_are_locale_independent (0.746ms)
+✔ unverified_fields_are_not_public (0.2885ms)
+✔ locale_keeps_chapter_not_pixel_offset (0.9765ms)
+✔ latest_navigation_invalidates_old_completion (0.166ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1354.2194
+
+✖ failing tests:
+
+test at tests\awwwards\process-model.test.mjs:1:1
+✖ F:\Users\Vinz\Documents\Codex\2026-09-30\lei\work\repo\tests\awwwards\process-model.test.mjs (1134.1431ms)
+  'test failed'
