@@ -74,6 +74,7 @@ try {
   await send('Page.addScriptToEvaluateOnNewDocument', { source: `(${instrumentRuntime.toString()})()` });
   await send('Page.addScriptToEvaluateOnNewDocument', { source: `window.__identityPaints=new WeakMap();window.__identityContexts=new WeakSet();window.__identityCreated=0;for(const T of [WebGLRenderingContext,WebGL2RenderingContext])for(const name of ['drawArrays','drawElements']){const f=T.prototype[name];T.prototype[name]=function(...args){if(this.canvas.closest('[data-electric-logo]')){if(!window.__identityContexts.has(this.canvas)){window.__identityContexts.add(this.canvas);window.__identityCreated++;}window.__identityPaints.set(this.canvas,(window.__identityPaints.get(this.canvas)||0)+1);}return f.apply(this,args);}}` });
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
+  if(mode === 'seam') await send('Page.addScriptToEvaluateOnNewDocument',{source:`const timer=window.setTimeout;window.setTimeout=(f,d,...a)=>timer(f,d===2800||d===4000?7000:d,...a);`});
   await visit();
   if(mode === 'source') {
     const original=readFileSync('docs/awwwards/reference-sources/identity-review-2026-10-02/vinz-alt.owner.svg','utf8');
@@ -129,6 +130,8 @@ try {
       await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<760});await send('Emulation.setTouchEmulationEnabled',{enabled:width<760});
       await send('Page.navigate',{url:`${origin}/${locale}/awwwards-preview/ember`});await until('Boolean(window.__lenis)');await sleep(500);await shot(`rhythm-${locale}-${width}-hero.png`);
       if(width<760){
+        await click('button[aria-controls="story-nav-links"]');assert.equal(await evaluate(`document.querySelector('#story-nav-links').dataset.open==='true'`),true);
+        await send('Input.dispatchKeyEvent',{type:'keyDown',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});await send('Input.dispatchKeyEvent',{type:'keyUp',key:'Escape',code:'Escape',windowsVirtualKeyCode:27});assert.equal(await evaluate(`document.activeElement===document.querySelector('button[aria-controls="story-nav-links"]')`),true);
         await startRecording();
         for(let i=0;i<10;i++){
           await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:180,y:650}]});for(let y=610;y>=270;y-=40){await send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:180,y}]});await sleep(35);}await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await sleep(350);
@@ -144,12 +147,12 @@ try {
     }
   } else if(mode === 'seam') {
     await until('Boolean(document.querySelector("[data-electric-logo] canvas"))');
-    report.shapes=[];
+    report.shapes=[];report.samples=[];report.seamHoldOnly='Test-only hold extended to 7s to capture each shape; original cycle timing is not tested in this mode';
     for(const name of ['vinz','react','gsap']) {
-      await until(`document.querySelector('[data-hero-identity]').dataset.displayedIdentity==='${name}'`,60000);
+      await until(`document.querySelector('[data-hero-identity]').dataset.displayedIdentity==='${name}'`,120000);
       for(const [tone,color] of [['dark','#100e17'],['light','#426fa3']]){
         await evaluate(`document.querySelector('[class*=plasmaCanvas]').style.visibility='hidden';document.querySelector('[class*=plasmaPoster]').style.background='${color}'`);
-        for(const side of ['left','right']){const pt=await evaluate(`(()=>{const r=document.querySelector('[data-electric-logo]').getBoundingClientRect();return {x:${'side'}==='left'?r.left+5:r.right-5,y:r.top+r.height/2}})()`.replaceAll('side',JSON.stringify(side)));await send('Input.dispatchMouseEvent',{type:'mouseMoved',...pt});await sleep(250);await shot(`seam-${name}-${tone}-${side}.png`);}
+        for(const side of ['left','right']){const pt=await evaluate(`(()=>{const r=document.querySelector('[data-electric-logo]').getBoundingClientRect();return {x:${'side'}==='left'?r.left+5:r.right-5,y:r.top+r.height/2}})()`.replaceAll('side',JSON.stringify(side)));await send('Input.dispatchMouseEvent',{type:'mouseMoved',...pt});await sleep(250);const actual=await evaluate(`document.querySelector('[data-hero-identity]').dataset.displayedIdentity`);report.samples.push({expected:name,actual,tone,side});assert.equal(actual,name);await shot(`seam-${name}-${tone}-${side}.png`);}
       }
       report.shapes.push(name);await evaluate(`document.querySelector('[class*=plasmaCanvas]').style.visibility='visible'`);
     }

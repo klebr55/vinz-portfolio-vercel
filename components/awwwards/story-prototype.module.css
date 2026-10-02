@@ -10,7 +10,7 @@
 .root * { box-sizing: border-box; }
 .root a { color: inherit; }
 .root a, .root button, .root summary { touch-action: manipulation; -webkit-tap-highlight-color: rgb(86 146 240 / 25%); }
-.root[data-client-ready='false'] .menuButton, .root[data-client-ready='false'] .motionToggle { display: none; }
+.root[data-client-ready='false'] .menuButton, .root[data-client-ready='false'] .navMotionButton, .root[data-client-ready='false'] .motionToggle { display: none; }
 .root a:focus-visible, .root button:focus-visible, .root summary:focus-visible, .root h1:focus-visible, .root h2:focus-visible { outline: 2px solid #91b8ff; outline-offset: 5px; }
 .root [data-story-read] { scroll-margin-top: 155px; }
 .root dd, .root p { overflow-wrap: anywhere; }
