@@ -3,7 +3,7 @@ export type PrototypeLocale = 'pt-br' | 'en';
 
 export const prototypeCopy = {
   'pt-br': {
-    heroStatement: 'Ousadia também é uma forma de rebeldia e criatividade',
+    heroStatement: 'Ousadia também é um ato de rebeldia e criatividade',
     signature: 'Kleber Vinícius',
     role: 'Desenvolvedor web full-stack',
     heroLead: 'Kleber',
@@ -23,7 +23,7 @@ export const prototypeCopy = {
     next: 'Ver os quatro projetos no portfólio',
   },
   en: {
-    heroStatement: 'Daring is also a form of rebellion and creativity',
+    heroStatement: 'Daring is also an act of rebellion and creativity',
     signature: 'Kleber Vinícius',
     role: 'Full-stack web developer',
     heroLead: 'Kleber',

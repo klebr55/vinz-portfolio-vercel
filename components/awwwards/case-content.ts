@@ -18,8 +18,8 @@ export const editorialCases: Record<PrototypeLocale, EditorialCase[]> = {
   'pt-br': [
     {
       slug: 'sdimt', title: 'SDIMT',
-      purpose: { label: 'Propósito', text: 'Apresentar o SDIMT em sua experiência pública de entrada.', verified: true },
-      need: { label: 'Contexto', text: 'A landing pública apresenta o sistema e seu acesso.', verified: true },
+      purpose: { label: 'Propósito', text: 'Organizar dados interestaduais para consulta e comparação de estruturas remuneratórias, cargos, órgãos e unidades federativas.', verified: true },
+      need: { label: 'Contexto', text: 'A landing pública apresenta o Panorama Remuneratório Nacional, recursos de análise e acesso institucional ao painel.', verified: true },
       contribution: { label: 'Contribuição de Vinícius', text: 'Escopo individual ainda não comprovado.', verified: false },
       technologies: { label: 'Tecnologias', text: 'Atribuição técnica individual ainda não comprovada.', verified: false },
       media: { poster: '/awwwards/sdimt/landing-desktop.webp', alt: 'Captura da landing pública do SDIMT em 30 de setembro de 2026' },
@@ -62,8 +62,8 @@ export const editorialCases: Record<PrototypeLocale, EditorialCase[]> = {
   en: [
     {
       slug: 'sdimt', title: 'SDIMT',
-      purpose: { label: 'Purpose', text: 'Introduce SDIMT through its public entry experience.', verified: true },
-      need: { label: 'Context', text: 'The public landing introduces the system and its access route.', verified: true },
+      purpose: { label: 'Purpose', text: 'Organise interstate data for querying and comparing remuneration structures, roles, agencies and states.', verified: true },
+      need: { label: 'Context', text: 'The public landing introduces the National Remuneration Panorama, analysis features and institutional access to the dashboard.', verified: true },
       contribution: { label: 'Vinícius’s contribution', text: 'Individual scope is not yet verified.', verified: false },
       technologies: { label: 'Technologies', text: 'Individual technical attribution is not yet verified.', verified: false },
       media: { poster: '/awwwards/sdimt/landing-desktop.webp', alt: 'Public SDIMT landing captured on September 30, 2026' },

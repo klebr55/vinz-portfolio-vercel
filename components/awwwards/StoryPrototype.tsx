@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { motionValue } from 'motion';
+import { ScrollExpandBridge } from './chapters/ScrollExpandBridge';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CaseEditorial } from './CaseEditorial';
 import { ChapterCheckpoints } from './ChapterCheckpoints';
@@ -64,6 +66,9 @@ export default function StoryPrototype({ locale, copy }: Props) {
   const [motionReady, setMotionReady] = useState(false);
   const [plasmaExposed, setPlasmaExposed] = useState(true);
   const [heroExposed, setHeroExposed] = useState(true);
+  const [bridgeProgress] = useState(() => motionValue(0));
+  const [navProgress] = useState(() => motionValue(0));
+  const [bridgeActive, setBridgeActive] = useState(false);
   const [viewportRevision, setViewportRevision] = useState(0);
   const onPlasmaUnavailable = useCallback(() => setPlasmaUnavailable(true), []);
   const runtime = useStoryRuntime(root, reducedMotion);
@@ -116,33 +121,31 @@ export default function StoryPrototype({ locale, copy }: Props) {
       const openingY = opening.current!.getBoundingClientRect().top + window.scrollY;
       const readY = reading.getBoundingClientRect().top + window.scrollY - openingY;
       const total = opening.current!.offsetHeight - vh;
-      const arrive = intro.current!.offsetHeight - vh * .35;
-      const settle = readY - vh * .35;
-      const exit = Math.min(total - vh * .45, readY + reading.offsetHeight - vh * .9);
-      gsap.set(plane, { x: mobile ? vw * .04 : vw * .18, y: vh * .36, z: -700, scale: .48, rotationY: mobile ? -16 : -28, rotationX: 9, rotationZ: -6, opacity: 0, force3D: true });
+      const expandStart = heroOverflow + vh * .85;
+      const arrive = expandStart + vh * 1.2;
+      const settle = readY - vh * .1;
+      gsap.set(plane, { x: 0, y: 0, z: 0, scale: 1, rotationY: 0, rotationX: 0, rotationZ: 0, opacity: 0, force3D: true });
       gsap.set(detail, { x: vw * .16, y: vh * .22, z: -180, scale: .68, rotationY: 18, rotationZ: 9, opacity: 0, force3D: true });
       gsap.set(orbit, { y: 22, opacity: 0 });
       const clock = { progress: 0 };
-      const timeline = gsap.timeline({ scrollTrigger: { trigger: opening.current, start: 'top top', end: 'bottom bottom', scrub: true, invalidateOnRefresh: true, onUpdate: (self) => { setPlasmaExposed(self.progress * total < vh * 1.55); setHeroExposed(self.progress * total < heroOverflow + vh * .83); } } });
+      const timeline = gsap.timeline({ scrollTrigger: { trigger: opening.current, start: 'top top', end: 'bottom bottom', scrub: true, invalidateOnRefresh: true, onUpdate: (self) => { setPlasmaExposed(self.progress * total < vh * 1.55); setHeroExposed(self.progress * total < heroOverflow + vh * .83); phrase.current!.style.pointerEvents = self.progress * total < heroOverflow + vh * .83 ? 'auto' : 'none'; bridgeProgress.set(Math.max(0, (self.progress * total - expandStart) / (vh * 1.2))); setBridgeActive(self.progress * total > expandStart - vh * .25 && self.progress * total < settle - vh * .9); navProgress.set(Math.max(0, Math.min(1, (self.progress * total - heroOverflow) / (vh * .8)))); } } });
       timeline.to(clock, { progress: 1, duration: total, ease: 'none' }, 0)
         .to(phrase.current!.querySelectorAll(`.${styles.heroLineInner}`), { yPercent: -45, z: -180, rotationX: 10, opacity: 0, stagger: vh * .065, duration: vh * .7, ease: 'power2.inOut' }, heroOverflow + vh * .3)
         .to(phrase.current!.querySelectorAll('[data-hero-support]'), { y: -24, opacity: 0, duration: vh * .3, ease: 'power2.in' }, heroOverflow + vh * .18)
         .to(intro.current!.querySelector('[data-hero-identity]'), { y: -60, z: -180, opacity: 0, duration: vh * .65, ease: 'power2.inOut' }, heroOverflow + vh * .18)
         .to(intro.current!.querySelector(`.${styles.heroFolio}`), { opacity: 0, duration: vh * .25 }, vh * .2)
-        .to(plane, { opacity: 1, duration: vh * .45, ease: 'power1.inOut' }, heroOverflow + vh * .35)
-        .to(plane, { x: 0, y: 0, z: 0, scale: 1, rotationX: 0, rotationY: 0, rotationZ: 0, duration: arrive - heroOverflow - vh * .4, ease: 'power2.inOut' }, heroOverflow + vh * .4)
+        .to(plane, { opacity: 1, duration: vh * .4, ease: 'power1.inOut' }, expandStart - vh * .35)
         .to(plasma, { opacity: 0, duration: vh * .85, ease: 'power1.inOut' }, heroOverflow + vh * .65)
         .to(shade, { opacity: 1, duration: vh * .9, ease: 'none' }, heroOverflow + vh * .65)
         .to(detail, { x: 0, y: 0, z: 40, scale: 1, rotationY: 0, rotationZ: -4, opacity: 1, duration: vh * .55, ease: 'power2.out' }, arrive - vh * .12)
         .to(orbit, { y: 0, opacity: 1, duration: vh * .3, ease: 'power1.out' }, arrive)
-        .to(plane, { x: mobile ? 0 : -vw * .225, y: mobile ? -vh * .1 : -vh * .015, scale: mobile ? .9 : .55, rotationY: mobile ? 0 : 8, rotationZ: mobile ? 0 : -2, duration: vh * .7, ease: 'power2.inOut' }, settle - vh * .7)
-        .to(detail, { x: mobile ? 0 : -vw * .43, y: mobile ? vh * .06 : vh * .04, scale: mobile ? .7 : .57, opacity: mobile ? 0 : .85, rotationZ: 3, duration: vh * .7, ease: 'power2.inOut' }, settle - vh * .7)
-        .to([plane, detail], { x: -vw * .6, z: -350, rotationY: -25, opacity: 0, duration: Math.max(vh * .35, total - exit), ease: 'power2.in' }, exit)
-        .to(orbit, { opacity: 0, duration: vh * .3 }, exit);
+        .to(plane, { x: mobile ? 0 : -vw * .24, y: mobile ? -vh * .23 : 0, scale: mobile ? .72 : .46, rotationY: mobile ? 0 : 8, rotationZ: mobile ? 0 : -2, duration: vh * 1.2, ease: 'power2.inOut' }, settle - vh * 1.2)
+        .to(detail, { x: mobile ? 0 : -vw * .43, y: mobile ? vh * .06 : vh * .04, scale: mobile ? .7 : .57, opacity: mobile ? 0 : .7, rotationZ: 3, duration: vh * 1.2, ease: 'power2.inOut' }, settle - vh * 1.2)
+;
       refreshRuntime();
     }, opening);
     return () => context.revert();
-  }, [motionReady, reducedMotion, locale, refreshRuntime, viewportRevision]);
+  }, [motionReady, reducedMotion, locale, refreshRuntime, viewportRevision, bridgeProgress, navProgress]);
 
   const navigate = useCallback((id: ChapterId) => runtime.jumpTo(id, reducedMotion ? 'immediate' : 'animated', true), [runtime, reducedMotion]);
   const onPrimaryClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -160,13 +163,13 @@ export default function StoryPrototype({ locale, copy }: Props) {
       <ChapterCheckpoints locale={locale} activeChapter={runtime.activeChapter} navigate={navigate} />
 
       <div ref={opening} className={styles.opening}>
-        <div className={styles.openingBackdrop} aria-hidden="true">
-        <div ref={openingVisual} className={styles.openingVisual} aria-hidden="true">
+        <div className={styles.openingBackdrop}>
+        <div ref={openingVisual} className={styles.openingVisual}>
           <div className={styles.plasmaPoster} />
           <div className={styles.plasmaCanvas}><Plasma active={plasmaExposed && !motionPaused && !plasmaUnavailable} reducedMotion={reducedMotion} onUnavailable={onPlasmaUnavailable} /></div>
           <div className={styles.openingShade} />
           <div className={styles.sdimtOrbit}>01 / 05 <span>SDIMT</span></div>
-          <div className={styles.sdimtPlane}><Image src={sdimt.media.poster} alt="" fill sizes="(max-width: 760px) 94vw, 80vw" unoptimized priority /></div>
+          <div className={styles.sdimtPlane}><ScrollExpandBridge locale={locale} paused={motionPaused} reducedMotion={reducedMotion} progress={bridgeProgress} active={bridgeActive} togglePause={() => setMotionPaused(value => !value)} media={{ poster: '/awwwards/sdimt/bridge/poster.webp', video: '/awwwards/sdimt/bridge/landing.mp4', alt: locale === 'pt-br' ? 'Landing pública SDIMT: inteligência remuneratória interestadual' : 'SDIMT public landing: interstate remuneration intelligence', source: sdimt.link }} /></div>
           <div className={styles.sdimtDetail}><Image src="/awwwards/sdimt/landing-resources.webp" alt="" fill sizes="(max-width: 760px) 62vw, 35vw" unoptimized /></div>
         </div>
         </div>
@@ -175,7 +178,7 @@ export default function StoryPrototype({ locale, copy }: Props) {
           <div className={styles.heroGrid}>
           <div ref={phrase} className={styles.heroCopy}>
             <p className={styles.heroRole} data-hero-support>{copy.role}</p>
-            <h1 id="intro-title" data-story-read tabIndex={-1} aria-label={copy.heroStatement}>{(locale === 'pt-br' ? ['Ousadia também', 'é uma forma', 'de rebeldia', 'e criatividade'] : ['Daring is also', 'a form of rebellion', 'and creativity']).map((line) => <span key={line} className={styles.heroLine} aria-hidden="true"><span className={styles.heroLineInner}>{line}</span></span>)}</h1>
+            <h1 id="intro-title" data-story-read tabIndex={-1} aria-label={copy.heroStatement}>{(locale === 'pt-br' ? ['Ousadia também', 'é um ato de', 'rebeldia', 'e criatividade'] : ['Daring is also', 'an act of rebellion', 'and creativity']).map((line) => <span key={line} className={styles.heroLine} aria-hidden="true"><span className={styles.heroLineInner}>{line}</span></span>)}</h1>
             <p className={styles.signature} data-hero-support>{copy.signature}</p>
             <div data-hero-support><a className={styles.primaryLink} href="#sdimt" onClick={onPrimaryClick}>{locale === 'pt-br' ? 'Explorar SDIMT' : 'Explore SDIMT'} <span aria-hidden="true">↗</span></a>
             {!reducedMotion && <button className={styles.motionToggle} type="button" onClick={() => setMotionPaused((value) => !value)}>{motionPaused ? (locale === 'pt-br' ? 'Retomar movimento' : 'Resume motion') : (locale === 'pt-br' ? 'Pausar movimento' : 'Pause motion')}</button>}</div>
