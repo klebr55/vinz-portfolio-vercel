@@ -70,7 +70,7 @@ export function ProcessChapter({ locale, paused, reducedMotion, text }: { locale
   return <section ref={root} id="process" data-story-chapter="process" className={styles.processChapter} aria-labelledby="process-title">
     <div className={styles.processStage}>
       <div className={styles.processText}><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Método' : 'Method'}</p><h2 id="process-title" data-story-read tabIndex={-1}>{locale === 'pt-br' ? 'Processo' : 'Process'}</h2><p>{text}</p></div>
-      <div className={styles.processVisual} aria-hidden="true">
+      <div className={styles.processVisual} data-preparing={active && !sceneReady && !checkpoint.current} aria-hidden="true">
         <Image className={styles.processFallback} src="/awwwards/identity/vinz-process-contours.svg" alt="" fill unoptimized hidden={!staticIdentity} />
         {initialized && !reducedMotion && !unavailable && <div className={styles.processCanvas} style={{ opacity: staticIdentity ? 0 : 1 }}><SceneBoundary onUnavailable={fail}><Scene progress={progress} active={active} onUnavailable={fail} onReady={ready} /></SceneBoundary></div>}
       </div>

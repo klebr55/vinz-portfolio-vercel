@@ -228,3 +228,5 @@
 
 .root[data-client-ready='false'] .processChapter { min-height: auto; }
 .root[data-client-ready='false'] .processStage { position: relative; }
+
+.processVisual[data-preparing='true'] .processFallback { opacity: .12; }
