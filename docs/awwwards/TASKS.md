@@ -1,5 +1,19 @@
 # Execução por fases
 
+## Estado vigente · plano de identidade A · 02/10/2026 (Cuiabá)
+
+- [x] Proprietário aprovou composição A e especificação escrita.
+- [x] Mastermind escreveu/revisou [plano Tasks 1–3](2026-10-02-ELECTRIC-IDENTITY-IMPLEMENTATION-PLAN.md) e [prompt atual](2026-10-02-ELECTRIC-IDENTITY-WORKER-START.md).
+- [ ] Proprietário revisar plano e confirmar execução (ordem expressa ao Worker é suficiente; registrar na sessão/checkpoint).
+- [ ] Task 1: input C1 mínimo com prova real, sem duplicar tarefa após conclusão.
+- [ ] Task 2: hero elétrica/morph de stack, composição responsiva, pausa/fallback/lifecycle.
+- [ ] Task 3: vetor VINZ fiel, compatibilidade Motion, gesto Processo e validação integrada.
+- [ ] Mastermind revisar incremento; retomar somente correções ainda abertas do Corte 5.1.
+
+Codex sequencial/Antigravity já definido. P2/Cortes 6–7 abertos. Estados anteriores de “especificação pendente” e rascunho são históricos; não são gates novos.
+
+---
+
 ## Estado vigente · composição A aprovada · 02/10/2026 (Cuiabá)
 
 - [x] Proprietário aprovou A: ElectricLogo na hero, VINZ 3D em Processo.

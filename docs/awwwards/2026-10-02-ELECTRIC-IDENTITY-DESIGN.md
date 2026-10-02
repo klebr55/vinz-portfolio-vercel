@@ -1,6 +1,6 @@
 # Especificação · Identidade elétrica · composição A
 
-**Composição aprovada:** Vinícius escolheu A em 02/10/2026, America/Cuiaba. **Estado deste documento:** especificação consolidada para revisão escrita; plano e execução ainda não liberados. **Base:** `9eacf85`, branch `redesign/awwwards-repagination`. Este incremento antecede a retomada geral do Corte 5.1; não conclui P2 nem o Processo/cases do Corte 7.
+**Composição aprovada:** Vinícius escolheu A em 02/10/2026, America/Cuiaba. **Estado deste documento:** especificação escrita aprovada pelo proprietário em 02/10/2026 (Cuiabá). [Plano](2026-10-02-ELECTRIC-IDENTITY-IMPLEMENTATION-PLAN.md) e [prompt](2026-10-02-ELECTRIC-IDENTITY-WORKER-START.md) publicados; execução depende da revisão/ordem do proprietário para esse plano. **Base:** `9eacf85`, branch `redesign/awwwards-repagination`. Este incremento antecede a retomada geral do Corte 5.1; não conclui P2 nem o Processo/cases do Corte 7.
 
 ## 1. Intenção e encaixe narrativo
 
@@ -78,4 +78,4 @@ Intervalo SDIMT→NKS, recorte SDIMT mobile e copy pública continuam registrado
 
 ## 8. Próxima etapa
 
-O proprietário revisa **esta especificação escrita**. Após essa aprovação, Mastermind prepara o plano e o prompt executável ao Codex Worker; execução sequencial já foi escolhida, com continuidade Antigravity se necessário. Não pedir novamente escolha A/B. Neste commit houve somente escrita documental, sem implementação, upgrade de pacote ou nova prova visual do efeito.
+O proprietário aprovou esta especificação escrita. O [plano](2026-10-02-ELECTRIC-IDENTITY-IMPLEMENTATION-PLAN.md) está pronto para revisão; a ordem expressa de execução ao Worker confirma essa revisão e ativa o [prompt](2026-10-02-ELECTRIC-IDENTITY-WORKER-START.md). Método preservado: Codex sequencial com continuidade Antigravity. Não pedir novamente escolha A/B. Neste commit houve somente escrita documental, sem implementação, upgrade de pacote ou nova prova visual do efeito.

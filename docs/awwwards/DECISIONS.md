@@ -1,5 +1,11 @@
 # Decisões e checkpoints
 
+## Especificação aprovada e plano pronto · 02/10/2026 (Cuiabá)
+
+O proprietário respondeu “Ok, vamos prosseguir” ao pedido de revisão da especificação A. Registrada sua aprovação; [plano](2026-10-02-ELECTRIC-IDENTITY-IMPLEMENTATION-PLAN.md) e [prompt](2026-10-02-ELECTRIC-IDENTITY-WORKER-START.md) preparados com writing-plans lida da fonte oficial. Execução selecionada permanece Codex sequencial/continuidade Antigravity. Plano ainda não é marcado aprovado por existir: sua revisão pode ser confirmada por ordem expressa do proprietário ao Worker, que registra aprovação e continua sem pedir confirmação duplicada. Sem implementação, upgrade ou testes novos do produto neste checkpoint documental.
+
+---
+
 ## Aprovação da composição A · 02/10/2026 (Cuiabá)
 
 O proprietário escolheu explicitamente A: identidade elétrica/morph de stack na hero, VINZ construído por scroll no Processo. B não será implementada. [Especificação escrita](2026-10-02-ELECTRIC-IDENTITY-DESIGN.md) consolidada para revisão; aprovação da composição não foi registrada como aprovação de plano inexistente ou execução. Codex sequencial/continuidade Antigravity já definidos. Preservar props/assets/arco aprovado e retomar Corte 5.1 depois do incremento, com C1 mínimo como dependência de input. Não houve implementação nem novas alegações de browser/hardware.

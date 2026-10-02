@@ -1,6 +1,6 @@
 # Proposta Mastermind · Identidade elétrica e forma 3D
 
-**Data do pedido:** 01/10/2026, America/Cuiaba. **Estado:** composição A aprovada pelo proprietário em 02/10/2026 (Cuiabá); comparação A/B abaixo preservada como histórico. A [especificação consolidada](2026-10-02-ELECTRIC-IDENTITY-DESIGN.md) aguarda revisão escrita. Nenhuma UI ou dependência foi alterada. O prompt de desenvolvimento permanece [em rascunho](2026-10-01-ELECTRIC-IDENTITY-WORKER-DRAFT.md) até a validação do desenho e do plano.
+**Data do pedido:** 01/10/2026, America/Cuiaba. **Estado:** composição A aprovada pelo proprietário em 02/10/2026 (Cuiabá); comparação A/B abaixo preservada como histórico. A [especificação consolidada](2026-10-02-ELECTRIC-IDENTITY-DESIGN.md) foi aprovada e o [plano](2026-10-02-ELECTRIC-IDENTITY-IMPLEMENTATION-PLAN.md) está pronto para revisão. Nenhuma UI ou dependência foi alterada. O [prompt atual](2026-10-02-ELECTRIC-IDENTITY-WORKER-START.md) define a ativação pela ordem do proprietário após revisar o plano.
 
 ## Entendimento do pedido
 
@@ -55,4 +55,4 @@ O conflito wheel de Corte 5.1/C1 prejudica a prova do novo gesto. Autorizar no f
 
 ## Próximo ponto de decisão
 
-O proprietário escolheu **A (Hero elétrica + Processo desenhado)**. A alternativa B não será implementada. Revisar agora a especificação consolidada; depois preparar o plano e liberar o prompt ao Codex Worker. A seleção de ferramenta de execução já foi dada: Codex, com continuidade pelo Antigravity se necessário. Não repetir perguntas sobre briefing/stack/arco já resolvidos.
+O proprietário escolheu **A (Hero elétrica + Processo desenhado)**. A alternativa B não será implementada. A especificação foi aprovada; revisar agora o plano publicado e confirmar a execução ao Codex Worker. A seleção de ferramenta de execução já foi dada: Codex, com continuidade pelo Antigravity se necessário. Não repetir perguntas sobre briefing/stack/arco já resolvidos.

@@ -1,5 +1,9 @@
 # Instruções da repaginação
 
+## Prioridade vigente · identidade elétrica A · 02/10/2026
+
+Composição A e especificação de identidade elétrica aprovadas. Leia `docs/awwwards/2026-10-02-ELECTRIC-IDENTITY-IMPLEMENTATION-PLAN.md` e `2026-10-02-ELECTRIC-IDENTITY-WORKER-START.md` para este incremento antes da retomada geral do Corte 5.1. O plano precisa de revisão/ordem expressa do proprietário; a ordem na sessão do Worker registra essa aprovação, sem nova confirmação por status antigo. Preservar Codex sequencial/continuidade Antigravity. Executar apenas Tasks 1–3 e parar para revisão Mastermind. Não iniciar Cortes 6/7 automaticamente. Os documentos atuais têm precedência sobre prompts em rascunho e estados históricos abaixo.
+
 ## Execução vigente · plano aprovado em 30/09/2026
 
 Para a narrativa atual, leia `docs/awwwards/2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md` e `docs/awwwards/2026-09-30-NARRATIVE-DESIGN.md`; eles têm precedência sobre requisitos artísticos e de ferramentas nos documentos históricos abaixo. O Worker também consulta o topo de `docs/awwwards/P2-MASTER-REVIEW.md` e o checkpoint mais recente apenas para contexto da implementação existente. Não releia o chat inteiro nem todo o histórico `TASKS.md`/`DECISIONS.md`.

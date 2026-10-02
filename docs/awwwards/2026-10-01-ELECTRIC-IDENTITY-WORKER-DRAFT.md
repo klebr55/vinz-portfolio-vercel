@@ -1,6 +1,6 @@
-# Prompt Worker · identidade elétrica · rascunho não liberado
+# Prompt Worker · identidade elétrica · rascunho histórico
 
-**Estado:** composição **A aprovada** em 02/10/2026 (Cuiabá): ElectricLogo na hero e VINZ 3D em Processo. A [especificação escrita](2026-10-02-ELECTRIC-IDENTITY-DESIGN.md) aguarda revisão e o plano ainda não foi elaborado. Este rascunho orienta leitura; não autoriza implementar, instalar dependências ou modificar produto antes dessas aprovações. Não reabrir a escolha A/B.
+**Estado:** substituído pelo [prompt atual](2026-10-02-ELECTRIC-IDENTITY-WORKER-START.md), após aprovação da composição A e da especificação. Use o documento atual e o plano; instruções condicionais abaixo são histórico, não um novo gate.
 
 Você é o **Worker**. Continue o portfólio em `klebr55/vinz-portfolio-vercel`, branch `redesign/awwwards-repagination`, preservando trabalho existente e sem merge em master ou promoção a produção. O proprietário pediu um incremento de identidade elétrica antes de retomar o restante do Corte 5.1.
 
