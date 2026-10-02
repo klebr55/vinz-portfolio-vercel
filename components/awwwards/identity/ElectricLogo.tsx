@@ -656,8 +656,8 @@ void main() {
   float grain = (fract(52.9829189 * fract(dot(gl_FragCoord.xy, vec2(0.06711056, 0.00583715)))) - 0.5) / 255.0;
   alpha = clamp(alpha + grain, 0.0, 1.0);
   vec2 edgeDistance = min(vUv, 1.0 - vUv);
-  float edge = smoothstep(0.0, 0.12, min(edgeDistance.x, edgeDistance.y));
-  fragColor = vec4(clamp(color + grain, 0.0, alpha), alpha) * edge;
+  float edgeFade = smoothstep(0.0, 0.12, min(edgeDistance.x, edgeDistance.y));
+  fragColor = vec4(clamp(color + grain, 0.0, alpha), alpha) * edgeFade;
 }
 `;
 
