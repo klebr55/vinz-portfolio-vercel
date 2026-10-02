@@ -1,5 +1,11 @@
 # Decisões e checkpoints
 
+## Pedido do proprietário · identidade elétrica · 01/10/2026 (Cuiabá)
+
+Priorizar ElectricLogo com VINZ/morph de React, TypeScript, Tailwind, Motion e GSAP e um gesto Three/Motion de desenho por scroll antes da retomada geral do Corte 5.1. Fontes e dois protótipos arquivados sem alterar os uploads; props preservadas. O morph já existe no componente recebido. VINZ/TypeScript contêm PNGs; extrusão VINZ exige contornos reais. `motion@12.23.9` instalado não exporta `motion/three` e não foi atualizado. [Proposta](2026-10-01-ELECTRIC-IDENTITY-PROPOSAL.md) com recomendação hero/Processo e alternativa conjunta; escolha e plano permanecem sujeitos à revisão. Não houve implementação, instalação ou teste visual do novo efeito. Problemas de Corte 5.1 continuam registrados.
+
+---
+
 ## Revisão Mastermind Corte 5 · 02/10/2026
 
 Base `22d81c0`; direção e fundação preservadas, aceite de Corte 5 condicionado ao [Corte 5.1](2026-10-02-CORTE5-1-WORKER.md). Corte 6 não foi liberado. O diagnóstico isolado do reset wheel do Lenis 1.3.26 resultou em 0 px para um delta 500 px, contra 500 px nos controles. A rota completa não foi validada pelo Mastermind; o ensaio local encontrou falha de proxy/middleware. Evidência visual publicada mostra intervalo vazio SDIMT→NKS e recorte lateral da mídia SDIMT em mobile. Copy deve explicar função pública verificável do sistema. [Método e limites](evidence-narrative/master-review-corte5/README.md).

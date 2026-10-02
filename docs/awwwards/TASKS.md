@@ -1,5 +1,18 @@
 # Execução por fases
 
+## Prioridade nova · identidade elétrica · 01/10/2026 (Cuiabá)
+
+- [x] Arquivar os nove anexos, props, exemplo Motion fornecido e fontes/procedência no repo.
+- [x] Inspecionar morph ElectricLogo, estrutura SVG e disponibilidade atual `motion/three`.
+- [x] Mastermind apresentar [proposta](2026-10-01-ELECTRIC-IDENTITY-PROPOSAL.md) e preservar [rascunho do prompt](2026-10-01-ELECTRIC-IDENTITY-WORKER-DRAFT.md).
+- [ ] Proprietário aprovar localização/coreografia, revisar especificação escrita e plano antes da implementação.
+- [ ] Worker implementar incremento de identidade aprovado; correção wheel mínima entra se necessária à prova.
+- [ ] Mastermind revisar incremento; retomar itens abertos de Corte 5.1, sem repetir correção já comprovada.
+
+Os checkboxes de Corte 5.1 abaixo permanecem válidos; sua execução geral foi adiada pelo proprietário. Nenhum novo efeito foi implementado nesta etapa.
+
+---
+
 ## Estado vigente · revisão Mastermind · 02/10/2026
 
 - [x] Mastermind revisou o Corte 5 no HEAD `22d81c0`, código, vídeos e limites; seis testes repetidos e diagnóstico wheel isolado executado.

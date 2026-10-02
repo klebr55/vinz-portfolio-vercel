@@ -1,0 +1,19 @@
+{
+  "src": "/logo.svg",
+  "color": "#c2fff1",
+  "glowColor": "#1e5bc1",
+  "scale": 0.7,
+  "strands": 4,
+  "bend": 0.6,
+  "crackle": 1.85,
+  "arcs": 0.95,
+  "speed": 2.5,
+  "interactive": true,
+  "intensity": 1,
+  "glow": 0.5,
+  "thickness": 2,
+  "flicker": 0.6,
+  "fill": 0,
+  "cursorIntensity": 0.75,
+  "cursorRadius": 100
+}

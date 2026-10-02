@@ -1,0 +1,153 @@
+{
+  "status": "Fontes arquivadas; não são implementação da hero",
+  "implementation_base": "22d81c0",
+  "branch_base": "61f61846b3ef707108572b0adddb4edd2fe29168",
+  "files": [
+    {
+      "uploaded_name": "Pasted text(3).txt",
+      "archived_path": "ElectricLogo.owner-source.tsx.txt",
+      "bytes": 37022,
+      "sha256": "84778e9da260126ef728044d2637246496d0298288817256bcb40f118953aef0",
+      "source": "Anexo fornecido pelo proprietário em 01/10/2026 (America/Cuiaba)"
+    },
+    {
+      "uploaded_name": "vinz.svg",
+      "archived_path": "vinz.svg",
+      "bytes": 345770,
+      "sha256": "7efa2782d72ceeaaf0cb0e53a3b6c91ea5dd9a581b4e3b76e1c9dc9d68193649",
+      "source": "Anexo fornecido pelo proprietário em 01/10/2026 (America/Cuiaba)",
+      "viewBox": "0 0 810 809.999993",
+      "elements": {
+        "svg": 1,
+        "defs": 1,
+        "filter": 2,
+        "feColorMatrix": 2,
+        "clipPath": 2,
+        "path": 1,
+        "mask": 1,
+        "g": 7,
+        "image": 2,
+        "rect": 1
+      },
+      "embedded_raster": true
+    },
+    {
+      "uploaded_name": "React-icon.svg",
+      "archived_path": "react.svg",
+      "bytes": 366,
+      "sha256": "f2cadfd0d3f726df66f2fbbb0e0c8ae9bbb83e9a4d3c740e2a676e5be2e4edea",
+      "source": "Anexo fornecido pelo proprietário em 01/10/2026 (America/Cuiaba)",
+      "viewBox": "-11.5 -10.23174 23 20.46348",
+      "elements": {
+        "svg": 1,
+        "title": 1,
+        "circle": 1,
+        "g": 1,
+        "ellipse": 3
+      },
+      "embedded_raster": false
+    },
+    {
+      "uploaded_name": "typescript-logo (1).svg",
+      "archived_path": "typescript.svg",
+      "bytes": 200186,
+      "sha256": "4e5e1e0d998f631d88c47d2e515074d452f2029b9b3a5ce78bfb712ee32ab6c7",
+      "source": "Anexo fornecido pelo proprietário em 01/10/2026 (America/Cuiaba)",
+      "viewBox": "0 0 810 809.999993",
+      "elements": {
+        "svg": 1,
+        "defs": 1,
+        "filter": 2,
+        "feColorMatrix": 2,
+        "clipPath": 1,
+        "path": 1,
+        "mask": 2,
+        "g": 9,
+        "image": 4
+      },
+      "embedded_raster": true
+    },
+    {
+      "uploaded_name": "Tailwind_CSS_Logo.svg",
+      "archived_path": "tailwind.svg",
+      "bytes": 771,
+      "sha256": "7c29d9706e21cb4dec8e2c19f7bcb7814df8c105ce28b684c88a5b3e2e98fb6d",
+      "source": "Anexo fornecido pelo proprietário em 01/10/2026 (America/Cuiaba)",
+      "viewBox": "0 0 54 33",
+      "elements": {
+        "svg": 1,
+        "g": 1,
+        "path": 2,
+        "defs": 1,
+        "clipPath": 1
+      },
+      "embedded_raster": false
+    },
+    {
+      "uploaded_name": "motion.svg",
+      "archived_path": "motion.svg",
+      "bytes": 521,
+      "sha256": "ff33187c54d2f607080cead8bc3809504acb87538a0b442bd6b7ab16aa00947c",
+      "source": "Anexo fornecido pelo proprietário em 01/10/2026 (America/Cuiaba)",
+      "viewBox": "0 0 25.364 9",
+      "elements": {
+        "svg": 1,
+        "path": 1
+      },
+      "embedded_raster": false
+    },
+    {
+      "uploaded_name": "gsap-white.svg",
+      "archived_path": "gsap.svg",
+      "bytes": 5522,
+      "sha256": "d770719cd6983c5fe9ff16a512ed8a9fe81a5ac3e9926f16759616d87103995d",
+      "source": "Anexo fornecido pelo proprietário em 01/10/2026 (America/Cuiaba)",
+      "viewBox": "0 0 623 231",
+      "elements": {
+        "svg": 1,
+        "path": 5
+      },
+      "embedded_raster": false
+    },
+    {
+      "uploaded_name": "image(20261002-030315).png",
+      "archived_path": "electric-logo-settings-owner.png",
+      "bytes": 333320,
+      "sha256": "60c534f042981c378acf341680097b6e354de980e1a439e2403dd51e1aba6a65",
+      "source": "Anexo fornecido pelo proprietário em 01/10/2026 (America/Cuiaba)"
+    },
+    {
+      "uploaded_name": "image(20261002-030414).png",
+      "archived_path": "hero-prototype-gemini-owner.png",
+      "bytes": 507020,
+      "sha256": "b4e5b2e172f6a5b911e43ad6788a11ee7460adeb0038abdc17934b762e05b351",
+      "source": "Anexo fornecido pelo proprietário em 01/10/2026 (America/Cuiaba)"
+    }
+  ],
+  "additional_references": [
+    {
+      "archived_path": "ElectricLogo.owner-props.json",
+      "bytes": 326,
+      "sha256": "0a3e14c5621daaec6337043a4abfa034114a45562bedf124d5114d1a76b7ac9c",
+      "byte_identical_upload": false
+    },
+    {
+      "archived_path": "ElectricLogo.usage-owner.tsx.txt",
+      "bytes": 453,
+      "sha256": "6e336dfb5e64fd39587bd35dd1b1bb24287df1fb6c54fd713589ec16ba786361",
+      "byte_identical_upload": false
+    },
+    {
+      "archived_path": "Motion-three-scroll.owner-reference.html.txt",
+      "bytes": 5251,
+      "sha256": "01462f6e47ca4fef0b1593f02a0f83550c6f920abfb737a6a483120ffd595f1b",
+      "byte_identical_upload": false
+    },
+    {
+      "archived_path": "ReactBits.LICENSE.upstream.md",
+      "bytes": 1303,
+      "sha256": "f4c33af6739191537738662d223b68d77bc226f4b57ea883e16481d8cc5c73c9",
+      "byte_identical_upload": false
+    }
+  ]
+}

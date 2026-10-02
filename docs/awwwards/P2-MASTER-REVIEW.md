@@ -1,5 +1,13 @@
 # Revisões Mastermind · P2
 
+## Prioridade solicitada · identidade elétrica · 01/10/2026 (Cuiabá)
+
+O proprietário solicitou arquivar ElectricLogo, SVGs e protótipos e elaborar sua integração **antes de retomar o restante do Corte 5.1**. [Fontes](reference-sources/electric-identity/README.md), [proposta de brainstorming](2026-10-01-ELECTRIC-IDENTITY-PROPOSAL.md) e [prompt em rascunho](2026-10-01-ELECTRIC-IDENTITY-WORKER-DRAFT.md) publicados. A recomendação Mastermind é hero elétrica com morph de identidade/stack e desenho VINZ 3D em Processo; alternativa é a entrega conjunta na abertura. **Localização/coreografia novas ainda não aprovadas; implementação não liberada por este arquivamento.**
+
+Direção geral, frase/assinatura, Plasma e arco de cases continuam aprovados. Corte 5.1 não foi anulado; sua correção mínima wheel pode ser dependência da nova prova de scroll, e os demais itens voltam depois. Corte 6/P2 seguem abertos. Não exigir 21st.dev, registry duplicado ou nova investigação ampla. VINZ/TypeScript têm raster dentro do SVG e Motion instalado não exporta `motion/three`; planejamento deve resolver esses fatos sem fingir que assets/APIs já estão prontos.
+
+---
+
 ## Revisão vigente · Corte 5 · 02/10/2026 · correções antes de Corte 6
 
 **Base:** `22d81c0` (implementação `11c5ef3`). **Decisão:** preservar a direção e a fundação entregues; solicitar **Corte 5.1** antes de liberar Corte 6. P2 permanece aberta. O [prompt corretivo](2026-10-02-CORTE5-1-WORKER.md) é a próxima ordem ao Worker. Este bloco tem precedência sobre o estado “aguarda revisão” do checkpoint, sem mudar a especificação artística aprovada.

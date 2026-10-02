@@ -1,0 +1,175 @@
+<section class="track">
+    <div class="viewport">
+        <canvas></canvas>
+        <p class="hint">Scroll to draw</p>
+    </div>
+</section>
+
+<script type="module">
+    import { frame, motionValue, scroll, transformValue } from "motion"
+    import { threeEffect } from "motion/three"
+    import * as THREE from "three"
+    import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js"
+
+    const token = (name) =>
+        getComputedStyle(document.body).getPropertyValue(name).trim()
+    const mint = token("--hue-6")
+
+    const canvas = document.querySelector("canvas")
+
+    function runScrollMotion(logo, wireMaterial, fillMaterial, wireLength) {
+        /**
+         * One scroll progress value fans out to the wireframe, the fill and the
+         * rotation through transformValue, each bound with threeEffect.
+         */
+        const progress = motionValue(0)
+        const clamp = (value) => Math.min(1, Math.max(0, value))
+        const drawn = transformValue(() => clamp(progress.get() / 0.6))
+        const filled = transformValue(() => clamp((progress.get() - 0.5) / 0.4))
+
+        threeEffect(wireMaterial, {
+            dashSize: transformValue(() => wireLength * drawn.get()),
+            opacity: transformValue(() => 1 - filled.get() * 0.9),
+        })
+        threeEffect(fillMaterial, { opacity: filled })
+        threeEffect(logo, {
+            rotateY: transformValue(() => -50 + progress.get() * 70),
+            rotateX: transformValue(() => 25 - progress.get() * 25),
+        })
+
+        scroll((value) => progress.set(value), {
+            target: document.querySelector(".track"),
+        })
+    }
+
+    const renderer = new THREE.WebGLRenderer({
+        canvas,
+        antialias: true,
+        alpha: true,
+    })
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2))
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight, false)
+    renderer.toneMapping = THREE.ACESFilmicToneMapping
+
+    const scene = new THREE.Scene()
+    const camera = new THREE.PerspectiveCamera(
+        32,
+        canvas.clientWidth / canvas.clientHeight,
+        0.1,
+        100
+    )
+    camera.position.set(0, 0.6, 7.5)
+    camera.lookAt(0, 0, 0)
+
+    const pmrem = new THREE.PMREMGenerator(renderer)
+    scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture
+
+    /**
+     * The Motion logo as extruded shapes. Coordinates are the SVG path with
+     * y flipped, then centred and scaled to world units.
+     */
+    function logoShapes() {
+        const left = new THREE.Shape()
+        left.moveTo(9.587, 9)
+        left.lineTo(4.57, 0)
+        left.lineTo(0, 0)
+        left.lineTo(3.917, 7.028)
+        left.bezierCurveTo(4.524, 8.117, 6.039, 9, 7.301, 9)
+
+        const middle = new THREE.Shape()
+        middle.moveTo(10.443, 9)
+        middle.lineTo(15.013, 9)
+        middle.lineTo(9.997, 0)
+        middle.lineTo(5.427, 0)
+
+        const right = new THREE.Shape()
+        right.moveTo(15.841, 9)
+        right.lineTo(20.411, 9)
+        right.lineTo(16.494, 1.972)
+        right.bezierCurveTo(15.887, 0.883, 14.372, 0, 13.11, 0)
+        right.lineTo(10.825, 0)
+
+        const dot = new THREE.Shape()
+        dot.absarc(23.079, 6.75, 2.285, 0, Math.PI * 2)
+
+        return [left, middle, right, dot]
+    }
+
+    const geometry = new THREE.ExtrudeGeometry(logoShapes(), {
+        depth: 1.6,
+        bevelEnabled: false,
+        curveSegments: 12,
+    })
+    geometry.center()
+    geometry.scale(4 / 25.364, 4 / 25.364, 4 / 25.364)
+
+    const logo = new THREE.Group()
+    scene.add(logo)
+
+    /**
+     * The wireframe is a dashed line with one dash and a gap longer than
+     * every edge combined. Growing the dash from 0 to the total edge length
+     * makes the outline draw itself in.
+     */
+    const wireMaterial = new THREE.LineDashedMaterial({
+        color: mint,
+        transparent: true,
+        dashSize: 0,
+    })
+    const wire = new THREE.LineSegments(
+        new THREE.EdgesGeometry(geometry, 20),
+        wireMaterial
+    )
+    wire.computeLineDistances()
+    const distances = wire.geometry.attributes.lineDistance.array
+    const wireLength = distances[distances.length - 1]
+    wireMaterial.gapSize = wireLength * 10
+    logo.add(wire)
+
+    const fillMaterial = new THREE.MeshPhysicalMaterial({
+        color: mint,
+        metalness: 1,
+        roughness: 0.15,
+        transparent: true,
+        opacity: 0,
+    })
+    const fill = new THREE.Mesh(geometry, fillMaterial)
+    logo.add(fill)
+
+    frame.render(() => renderer.render(scene, camera), true)
+    runScrollMotion(logo, wireMaterial, fillMaterial, wireLength)
+</script>
+
+<style>
+    .track {
+        width: 100vw;
+        height: 400vh;
+    }
+
+    .viewport {
+        position: sticky;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        height: 100vh;
+    }
+
+    .viewport canvas {
+        display: block;
+        width: 480px;
+        max-width: 100vw;
+        aspect-ratio: 3 / 2;
+    }
+
+    .hint {
+        margin: 0;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--white-feint);
+    }
+</style>
