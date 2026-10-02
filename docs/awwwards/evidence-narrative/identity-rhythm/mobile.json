@@ -1,0 +1,292 @@
+{
+  "mode": "mobile",
+  "origin": "http://localhost:3004",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "layouts": [
+    {
+      "locale": "pt-br",
+      "width": 360,
+      "overflow": false,
+      "h1": 1,
+      "chapters": 10,
+      "targets": [
+        {
+          "name": "KV, início",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Menu",
+          "width": 48,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Pausar movimento",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "PT",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "EN",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        }
+      ],
+      "videoFit": "contain"
+    },
+    {
+      "locale": "en",
+      "width": 360,
+      "overflow": false,
+      "h1": 1,
+      "chapters": 10,
+      "targets": [
+        {
+          "name": "KV, start",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Menu",
+          "width": 48,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Pause motion",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "PT",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "EN",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        }
+      ],
+      "videoFit": "contain"
+    },
+    {
+      "locale": "pt-br",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "chapters": 10,
+      "targets": [
+        {
+          "name": "KV, início",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Menu",
+          "width": 48,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Pausar movimento",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "PT",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "EN",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        }
+      ],
+      "videoFit": "contain"
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "chapters": 10,
+      "targets": [
+        {
+          "name": "KV, start",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Menu",
+          "width": 48,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Pause motion",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "PT",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "EN",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        }
+      ],
+      "videoFit": "contain"
+    },
+    {
+      "locale": "pt-br",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "chapters": 10,
+      "targets": [
+        {
+          "name": "KV, início",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Projetos",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Sobre",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Processo",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Contato",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Pausar movimento",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "PT",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "EN",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        }
+      ],
+      "videoFit": "cover"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "chapters": 10,
+      "targets": [
+        {
+          "name": "KV, start",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Projects",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "About",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Process",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Contact",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "Pause motion",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "PT",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        },
+        {
+          "name": "EN",
+          "width": 44,
+          "height": 44,
+          "insideNav": true
+        }
+      ],
+      "videoFit": "cover"
+    }
+  ],
+  "video": {
+    "name": "bridge-touch-en-390.mp4",
+    "frames": 136,
+    "seconds": 12.161611080169678,
+    "method": "Actual Chrome screencast timestamps, VFR, no interpolation"
+  },
+  "pass": true
+}

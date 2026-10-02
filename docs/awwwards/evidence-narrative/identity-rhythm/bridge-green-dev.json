@@ -1,0 +1,757 @@
+{
+  "mode": "bridge",
+  "origin": "http://localhost:3005",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "samples": [
+    {
+      "label": "top",
+      "y": 0,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 970,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-0",
+      "y": 80,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 908.875,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-1",
+      "y": 197,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 819.5,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-2",
+      "y": 280,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 756.109375,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-3",
+      "y": 398,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 665.96875,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-4",
+      "y": 480,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 603.328125,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-5",
+      "y": 598,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 513.1875,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-6",
+      "y": 680,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 450.546875,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-7",
+      "y": 799,
+      "phase": "expanding",
+      "p": 0.03148148148148148,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-8",
+      "y": 880,
+      "phase": "expanding",
+      "p": 0.10648148148148148,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-9",
+      "y": 997,
+      "phase": "expanding",
+      "p": 0.2148148148148147,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-10",
+      "y": 1080,
+      "phase": "expanding",
+      "p": 0.2916666666666667,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-11",
+      "y": 1198,
+      "phase": "expanding",
+      "p": 0.4009259259259259,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-12",
+      "y": 1280,
+      "phase": "expanding",
+      "p": 0.47685185185185186,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-13",
+      "y": 1398,
+      "phase": "expanding",
+      "p": 0.5861111111111111,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-14",
+      "y": 1480,
+      "phase": "expanding",
+      "p": 0.6620370370370371,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-15",
+      "y": 1597,
+      "phase": "expanding",
+      "p": 0.7703703703703704,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-16",
+      "y": 1680,
+      "phase": "expanding",
+      "p": 0.8472222222222222,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-17",
+      "y": 1797,
+      "phase": "expanding",
+      "p": 0.9555555555555556,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-18",
+      "y": 1880,
+      "phase": "playing",
+      "p": 1.0324074074074072,
+      "presented": "true",
+      "videoTime": 0.792449,
+      "paused": false,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "burst-240",
+      "y": 2120,
+      "phase": "playing",
+      "p": 1.2546296296296295,
+      "presented": "true",
+      "videoTime": 1.825696,
+      "paused": false,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "first-frame",
+      "y": 2120,
+      "phase": "playing",
+      "p": 1.2546296296296295,
+      "presented": "true",
+      "videoTime": 1.826987,
+      "paused": false,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "reverse-frozen",
+      "y": 2000,
+      "phase": "frozen",
+      "p": 1.1435185185185186,
+      "presented": "true",
+      "videoTime": 2.112431,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "reverse-hold",
+      "y": 2000,
+      "phase": "frozen",
+      "p": 1.1435185185185186,
+      "presented": "true",
+      "videoTime": 2.112431,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "forward-resume",
+      "y": 2120,
+      "phase": "playing",
+      "p": 1.2546296296296295,
+      "presented": "true",
+      "videoTime": 4.825927,
+      "paused": false,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "global-pause",
+      "y": 2120,
+      "phase": "frozen",
+      "p": 1.2546296296296295,
+      "presented": "true",
+      "videoTime": 4.848707,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "pause-hold",
+      "y": 2120,
+      "phase": "frozen",
+      "p": 1.2546296296296295,
+      "presented": "true",
+      "videoTime": 4.848707,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "handoff-0",
+      "y": 2359,
+      "phase": "playing",
+      "p": 1.4759259259259259,
+      "presented": "true",
+      "videoTime": 6.38242,
+      "paused": false,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": -0.6770423650741577,
+        "top": 6.517487525939941,
+        "width": 1411.49560546875,
+        "height": 889.4154052734375
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "handoff-1",
+      "y": 2839,
+      "phase": "handoff",
+      "p": 1.9203703703703703,
+      "presented": "true",
+      "videoTime": 6.537051,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 4.053931713104248,
+        "top": 209.18405151367188,
+        "width": 843.5498046875,
+        "height": 537.6595458984375
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "handoff-2",
+      "y": 3079,
+      "phase": "handoff",
+      "p": 2.1425925925925924,
+      "presented": "true",
+      "videoTime": 6.537051,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 12.301709175109863,
+        "top": 258.7459411621094,
+        "width": 699.0015258789062,
+        "height": 445.0701599121094
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "handoff-3",
+      "y": 3558,
+      "phase": "handoff",
+      "p": 2.5861111111111112,
+      "presented": "true",
+      "videoTime": 6.537051,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": -122.25899505615234,
+        "top": 276.37652587890625,
+        "width": 486.6930236816406,
+        "height": 371.01336669921875
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "handoff-4",
+      "y": 3658,
+      "phase": "handoff",
+      "p": 2.6351851851851853,
+      "presented": "true",
+      "videoTime": 6.537051,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": -152.01443481445312,
+        "top": 234.9185791015625,
+        "width": 380.7122497558594,
+        "height": 359.55718994140625
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "handoff-5",
+      "y": 4278,
+      "phase": "handoff",
+      "p": 2.6351851851851853,
+      "presented": "true",
+      "videoTime": 6.537051,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": -152.01443481445312,
+        "top": -385.0814208984375,
+        "width": 380.7122497558594,
+        "height": 359.55718994140625
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "handoff-6",
+      "y": 4519,
+      "phase": "handoff",
+      "p": 2.6351851851851853,
+      "presented": "true",
+      "videoTime": 6.537051,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": -152.01443481445312,
+        "top": -626.0814208984375,
+        "width": 380.7122497558594,
+        "height": 359.55718994140625
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "handoff-7",
+      "y": 4998,
+      "phase": "handoff",
+      "p": 2.6351851851851853,
+      "presented": "true",
+      "videoTime": 6.537051,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": -152.01443481445312,
+        "top": -1105.0814208984375,
+        "width": 380.7122497558594,
+        "height": 359.55718994140625
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "handoff-8",
+      "y": 5239,
+      "phase": "handoff",
+      "p": 2.6351851851851853,
+      "presented": "true",
+      "videoTime": 6.537051,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": -152.01443481445312,
+        "top": -1346.0814208984375,
+        "width": 380.7122497558594,
+        "height": 359.55718994140625
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "case-exit",
+      "y": 5240,
+      "phase": "handoff",
+      "p": 2.6351851851851853,
+      "presented": "true",
+      "videoTime": 6.537051,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": -152.01443481445312,
+        "top": -1347.0814208984375,
+        "width": 380.7122497558594,
+        "height": 359.55718994140625
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "top-return",
+      "y": 29,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 947.84375,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    }
+  ],
+  "video": {
+    "name": "bridge-short-wheel-pause-reverse.mp4",
+    "frames": 333,
+    "seconds": 45.167561054229736,
+    "method": "Actual Chrome screencast timestamps, VFR, no interpolation"
+  },
+  "restored": {
+    "y": 29,
+    "phase": "still",
+    "p": 0,
+    "presented": "false",
+    "videoTime": 0,
+    "paused": true,
+    "ready": 4,
+    "navWidth": 947.84375,
+    "plane": {
+      "left": 0,
+      "top": 0,
+      "width": 1430,
+      "height": 900
+    },
+    "lenis": 1,
+    "raf": 1
+  },
+  "pass": false,
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(report.restored.y<5)\n"
+}

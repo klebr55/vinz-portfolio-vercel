@@ -1,0 +1,136 @@
+{
+  "mode": "process-rhythm",
+  "origin": "http://localhost:3004",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "samples": [
+    {
+      "label": "arrival",
+      "y": 10495,
+      "p": 0,
+      "stickyDistance": 990,
+      "stageTop": 81.109375,
+      "stageBottom": 981.109375,
+      "canvas": true,
+      "fallback": false
+    },
+    {
+      "label": "short-0",
+      "y": 10575,
+      "p": 0,
+      "stickyDistance": 990,
+      "stageTop": 1.109375,
+      "stageBottom": 901.109375,
+      "canvas": true,
+      "fallback": false
+    },
+    {
+      "label": "short-1",
+      "y": 10693,
+      "p": 0.11908143939393939,
+      "stickyDistance": 990,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false
+    },
+    {
+      "label": "short-2",
+      "y": 10775,
+      "p": 0.20190972222222223,
+      "stickyDistance": 990,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false
+    },
+    {
+      "label": "short-3",
+      "y": 10893,
+      "p": 0.32110164141414144,
+      "stickyDistance": 990,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false
+    },
+    {
+      "label": "short-4",
+      "y": 10975,
+      "p": 0.40392992424242424,
+      "stickyDistance": 990,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false
+    },
+    {
+      "label": "short-5",
+      "y": 11093,
+      "p": 0.5231218434343434,
+      "stickyDistance": 990,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false
+    },
+    {
+      "label": "short-6",
+      "y": 11175,
+      "p": 0.6059501262626262,
+      "stickyDistance": 990,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false
+    },
+    {
+      "label": "short-7",
+      "y": 11293,
+      "p": 0.7251420454545454,
+      "stickyDistance": 990,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false
+    },
+    {
+      "label": "short-8",
+      "y": 11375,
+      "p": 0.8079703282828283,
+      "stickyDistance": 990,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false
+    },
+    {
+      "label": "reverse-240",
+      "y": 11135,
+      "p": 0.5655460858585859,
+      "stickyDistance": 990,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false
+    },
+    {
+      "label": "forward-again",
+      "y": 11255,
+      "p": 0.6867582070707071,
+      "stickyDistance": 990,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false
+    }
+  ],
+  "video": {
+    "name": "process-short-wheel-pause-reverse.mp4",
+    "frames": 113,
+    "seconds": 12.004286050796509,
+    "method": "Actual Chrome screencast timestamps, VFR, no interpolation"
+  },
+  "pass": true
+}

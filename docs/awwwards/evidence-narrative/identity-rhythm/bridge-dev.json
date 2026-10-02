@@ -1,0 +1,522 @@
+{
+  "mode": "bridge",
+  "origin": "http://localhost:3005",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [
+    {
+      "exceptionId": 1,
+      "text": "Uncaught",
+      "lineNumber": 182,
+      "columnNumber": 30,
+      "scriptId": "1013",
+      "url": "webpack-internal:///(app-pages-browser)/./node_modules/ogl/src/core/Program.js",
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "use",
+            "scriptId": "1013",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/ogl/src/core/Program.js",
+            "lineNumber": 182,
+            "columnNumber": 30
+          },
+          {
+            "functionName": "draw",
+            "scriptId": "1014",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/ogl/src/core/Mesh.js",
+            "lineNumber": 72,
+            "columnNumber": 21
+          },
+          {
+            "functionName": "eval",
+            "scriptId": "1008",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/ogl/src/core/Renderer.js",
+            "lineNumber": 400,
+            "columnNumber": 17
+          },
+          {
+            "functionName": "render",
+            "scriptId": "1008",
+            "url": "webpack-internal:///(app-pages-browser)/./node_modules/ogl/src/core/Renderer.js",
+            "lineNumber": 399,
+            "columnNumber": 19
+          },
+          {
+            "functionName": "ElectricLogo.useEffect.frame",
+            "scriptId": "1028",
+            "url": "webpack-internal:///(app-pages-browser)/./components/awwwards/identity/ElectricLogo.tsx",
+            "lineNumber": 895,
+            "columnNumber": 33
+          }
+        ]
+      },
+      "exception": {
+        "type": "object",
+        "subtype": "error",
+        "className": "TypeError",
+        "description": "TypeError: Cannot read properties of undefined (reading 'forEach')\n    at Program.use (webpack-internal:///(app-pages-browser)/./node_modules/ogl/src/core/Program.js:183:31)\n    at Mesh.draw (webpack-internal:///(app-pages-browser)/./node_modules/ogl/src/core/Mesh.js:73:22)\n    at eval (webpack-internal:///(app-pages-browser)/./node_modules/ogl/src/core/Renderer.js:401:18)\n    at Array.forEach (<anonymous>)\n    at Renderer.render (webpack-internal:///(app-pages-browser)/./node_modules/ogl/src/core/Renderer.js:400:20)\n    at ElectricLogo.useEffect.frame (webpack-internal:///(app-pages-browser)/./components/awwwards/identity/ElectricLogo.tsx:896:34)",
+        "objectId": "2564353419721870517.2.3",
+        "preview": {
+          "type": "object",
+          "subtype": "error",
+          "description": "TypeError: Cannot read properties of undefined (reading 'forEach')\n    at Program.use (webpack-internal:///(app-pages-browser)/./node_modules/ogl/src/core/Program.js:183:31)\n    at Mesh.draw (webpack-internal:///(app-pages-browser)/./node_modules/ogl/src/core/Mesh.js:73:22)\n    at eval (webpack-internal:///(app-pages-browser)/./node_modules/ogl/src/core/Renderer.js:401:18)\n    at Array.forEach (<anonymous>)\n    at Renderer.render (webpack-internal:///(app-pages-browser)/./node_modules/ogl/src/core/Renderer.js:400:20)\n    at ElectricLogo.useEffect.frame (webpack-internal:///(app-pages-browser)/./components/awwwards/identity/ElectricLogo.tsx:896:34)",
+          "overflow": false,
+          "properties": [
+            {
+              "name": "stack",
+              "type": "string",
+              "value": "TypeError: Cannot read properties of undefined (re…onents/awwwards/identity/ElectricLogo.tsx:896:34)"
+            },
+            {
+              "name": "message",
+              "type": "string",
+              "value": "Cannot read properties of undefined (reading 'forEach')"
+            }
+          ]
+        }
+      },
+      "executionContextId": 2
+    }
+  ],
+  "samples": [
+    {
+      "label": "top",
+      "y": 0,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 970,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-0",
+      "y": 80,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 908.875,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-1",
+      "y": 198,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 818.75,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-2",
+      "y": 280,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 756.109375,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-3",
+      "y": 397,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 666.734375,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-4",
+      "y": 480,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 603.328125,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-5",
+      "y": 598,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 513.1875,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-6",
+      "y": 680,
+      "phase": "still",
+      "p": 0,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 450.546875,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-7",
+      "y": 797,
+      "phase": "expanding",
+      "p": 0.02963,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-8",
+      "y": 880,
+      "phase": "expanding",
+      "p": 0.106481,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-9",
+      "y": 997,
+      "phase": "expanding",
+      "p": 0.214815,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-10",
+      "y": 1080,
+      "phase": "expanding",
+      "p": 0.291667,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-11",
+      "y": 1197,
+      "phase": "expanding",
+      "p": 0.4,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-12",
+      "y": 1280,
+      "phase": "expanding",
+      "p": 0.476852,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-13",
+      "y": 1398,
+      "phase": "expanding",
+      "p": 0.586111,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-14",
+      "y": 1480,
+      "phase": "expanding",
+      "p": 0.662037,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-15",
+      "y": 1597,
+      "phase": "expanding",
+      "p": 0.77037,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-16",
+      "y": 1680,
+      "phase": "expanding",
+      "p": 0.847222,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-17",
+      "y": 1797,
+      "phase": "expanding",
+      "p": 0.955556,
+      "presented": "false",
+      "videoTime": 0,
+      "paused": true,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "short-18",
+      "y": 1880,
+      "phase": "playing",
+      "p": 1,
+      "presented": "true",
+      "videoTime": 0.796195,
+      "paused": false,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "burst-240",
+      "y": 2120,
+      "phase": "playing",
+      "p": 1,
+      "presented": "true",
+      "videoTime": 1.825845,
+      "paused": false,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "first-frame",
+      "y": 2120,
+      "phase": "playing",
+      "p": 1,
+      "presented": "true",
+      "videoTime": 1.826777,
+      "paused": false,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    },
+    {
+      "label": "reverse-frozen",
+      "y": 2000,
+      "phase": "playing",
+      "p": 1,
+      "presented": "true",
+      "videoTime": 3.783481,
+      "paused": false,
+      "ready": 4,
+      "navWidth": 420,
+      "plane": {
+        "left": 0,
+        "top": 0,
+        "width": 1430,
+        "height": 900
+      },
+      "lenis": 1,
+      "raf": 1
+    }
+  ],
+  "pass": false,
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+}

@@ -9,7 +9,7 @@
       "phase": "frozen",
       "p": 1.097222222222222,
       "presented": "true",
-      "time": 0.475874,
+      "time": 0.506227,
       "paused": true,
       "ready": 4
     },
@@ -17,14 +17,14 @@
       "phase": "frozen",
       "p": 1.097222222222222,
       "presented": "true",
-      "time": 0.475874,
+      "time": 0.506227,
       "paused": true,
       "ready": 4
     }
   },
   "reset": {
     "phase": "still",
-    "p": 0,
+    "p": -0.7083333333333334,
     "presented": "false",
     "time": 0,
     "paused": true,
@@ -42,7 +42,7 @@
     "phase": "expanding",
     "p": 2.439814814814815,
     "presented": "false",
-    "time": 0.000343,
+    "time": 0.00018,
     "paused": true,
     "ready": 4
   },
@@ -58,7 +58,7 @@
     "phase": "playing",
     "p": 1.097222222222222,
     "presented": "true",
-    "time": 0.046515,
+    "time": 0.060926,
     "paused": false,
     "ready": 4
   },
@@ -72,7 +72,7 @@
   },
   "interruptedBeforePlay": {
     "phase": "still",
-    "p": 0,
+    "p": -0.004629629629629629,
     "presented": "false",
     "time": 0,
     "paused": true,

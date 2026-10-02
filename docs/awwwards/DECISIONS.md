@@ -1,3 +1,17 @@
+## Worker · Tasks 4–7 · 02/10/2026
+
+Ordem expressa do proprietário confirmou o adendo vigente; o vídeo anexado supersede sua ausência histórica. Base `d53cf6e`; implementação `65a6e5f`. Codex sequencial/Antigravity, sem novos agentes, upgrades, registry ou promoção de produção.
+
+Domínio elétrico 30% maior com ajuste do fit mantém tamanho/props, RGB/alpha tendem a zero na borda. Marca alternativa real restrita a Processo, derivação IoU 99,95%; Shapes refletidas antes de extrusão positiva, bevel/PMREM/reflexos e final oblíquo X8°/Y−16°. Fases locais atualizadas e teste correspondente. Progresso acompanha a distância sticky útil (990 px desktop), com último quinto reservado à leitura.
+
+Ponte ScrollExpand usa progresso GSAP/MotionValue estável, cálculo fornecido sem smoothing/RAF/scroller interno. Progresso cru preserva direção no hold e retirada; visual clampa 0–1. O vídeo fornecido vira o plano SDIMT após primeiro frame confirmado. Reverse/hidden/pausa/saída cancelam intenção e congelam o último frame; reset ocorre depois da retirada completa. Não há loop/scrub nem espera para terminar o vídeo. Desktop usa derivado do anexo; mobile usa captura da mesma landing pública 390×844 e poster do próprio vídeo. Fonte pública confirma comparação remuneratória; não houve login ou atribuição individual inventada.
+
+Navbar Motion 970→464 px, mesmos anchors e ícones Lucide, alvos 44 px e refração pelas dimensões reais. `columnGap` explícito resolve shorthand que mantinha valor inicial. Pausa global fica disponível no percurso todo. Plano SDIMT permanece até entrada do NKS; altura sobrante/retirada prematura removidas. Captura mobile aparece sem corte lateral. C1/lockfile preservados.
+
+Checks técnicos e browser estão no [relatório](evidence-narrative/identity-rhythm/README.md). Software WebGL/captura não aprovam 60 fps em hardware; painel autenticado permanece ausente. Entregar para Mastermind após Tasks 4–7, P2/Cortes 6–7 abertos. Arquivos Analytics alheios preservados.
+
+---
+
 ## 02/10/2026 · ponte ScrollExpand, plano adaptado
 
 O proprietário aceitou a direção anterior alterando exclusivamente a ponte: imagem expansiva → vídeo em movimento → SDIMT. Fonte/preview/defaults arquivados em `reference-sources/scroll-expand`; sem nova recuperação MCP. Revisão/spec e plano existente adaptados, prompt Tasks 4–7 publicado. Executar após leitura/ordem expressa do proprietário na sessão Worker; não repetir Tasks 1–3/C1, upgrade Motion ou descoberta artística. Lenis global/GSAP, vídeo somente após expansão/quadro pronto, poster correspondente, reverso com freeze e mídia SDIMT pública real. Vídeo específico ainda não entregue; não fake/NKS. Demais correções/limites preservados. Nenhum produto modificado.

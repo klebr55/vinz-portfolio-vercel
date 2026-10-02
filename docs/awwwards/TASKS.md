@@ -3,13 +3,14 @@
 - [x] Proprietário aceitar direção anterior com única mudança: poster expansivo → vídeo → SDIMT.
 - [x] Arquivar fonte completa/defaults/preview ScrollExpand, sem recuperar registry.
 - [x] Adaptar spec/revisão e plano existente; preparar prompt atual Tasks 4–7.
-- [ ] Proprietário ler documentos e dar ordem expressa de execução na sessão Worker.
-- [ ] Task 4: fechar seam elétrico e marca preenchida/reflexos/cadência Processo.
-- [ ] Task 5: mídia real da ponte, expansão→primeiro frame→SDIMT, pausa/reverse/fallback e roda curta.
-- [ ] Task 6: navbar Motion compacta/ícones com vidro/refração e acesso preservados.
-- [ ] Task 7: C5.1/C2–C4, provas/checks/commits e revisão Mastermind.
+- [x] Proprietário autorizou Tasks 4–7 nesta sessão, anexando vídeo da landing SDIMT.
+- [x] Task 4: fechar seam elétrico e marca preenchida/reflexos/cadência Processo.
+- [x] Task 5: mídia real da ponte, expansão→primeiro frame→SDIMT, pausa/reverse/fallback e roda curta.
+- [x] Task 6: navbar Motion compacta/ícones com vidro/refração e acesso preservados.
+- [x] Task 7: implementação C5.1/C2–C4, provas/checks/commits e checkpoint técnico.
+- [ ] Mastermind revisar o incremento e conceder aceite visual; P2 continua aberta.
 
-Tasks 1–3/C1 entregues não são refeitas. Somente docs/fontes alterados neste adendo; não é aceite da UI atual nem conclusão P2.
+Tasks 1–3/C1 preservados; C1 recebeu apenas regressão focada. Implementação final `5afd09e`, base `d53cf6e`; [provas Tasks 4–7](evidence-narrative/identity-rhythm/README.md). Revisão artística/fluidez GPU física permanecem pendentes. Não é conclusão P2.
 
 ## Revisão vigente · 02/10/2026 · identidade e ritmo
 

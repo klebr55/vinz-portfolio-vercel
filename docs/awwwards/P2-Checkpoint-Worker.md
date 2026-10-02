@@ -1,3 +1,18 @@
+# Checkpoint Worker · Tasks 4–7 · 02/10/2026
+
+Pedido: executar plano adaptado na branch indicada, com vídeo da ponte anexado. Base remota confirmada `d53cf6e`; implementação final **`65a6e5f8a46d10951cc1857dfbc5e162efde4191`**. Branch `redesign/awwwards-repagination`. [Relatório, fontes, comandos e provas](evidence-narrative/identity-rhythm/README.md).
+
+- Task 4: halo sem fronteira dura, props preservadas; marca preenchida exclusiva de Processo, contornos reais/negativos, bevel/normais/reflexos, final oblíquo e fases pela distância sticky. Hero mantém a marca anterior.
+- Task 5: ScrollExpand com conectivo PT/EN, poster correspondente → primeiro frame apresentado → vídeo real → plano SDIMT/leitura. Mídia fria/lenta/falha, autoplay rejeitado, promessa atrasada, reverse/hidden/pausa/reentrada testados; scroll não espera reprodução. Anexo desktop e gravação da landing pública mobile, hashes/procedência versionados.
+- Task 6: Motion contrai navbar e troca labels por Lucide, mesmos nós focáveis/anchors, PT/EN, menu/Escape, vidro, alvos ≥44 px e pausa global acessível. Topo restaura expansão; subir no meio do case mantém cápsula.
+- Task 7: C2 sem retirada antecipada/corredor vazio, C3 mobile legível, C4 propósito remuneratório confirmado publicamente; C1 recebeu regressão, sem refação. Provas PT/EN desktop/mobile, input nativo curto/pausa/rajadas/reverse, touch, teclado/history, foco/idioma/remount, Lenis único, reduced/noJS/WebGL.
+
+Sete testes, type-check, lint, build Next 15.3.8 e diff-check verdes; três warnings anteriores de hooks. Motion 13.5.0 e lockfile preservados. Prévia da build exata: [PT](http://localhost:3004/pt-br/awwwards-preview/ember), [EN/Processo](http://localhost:3004/en/awwwards-preview/ember#process). Publicação somente nesta branch; SHA remoto final e status no retorno Worker.
+
+**Estado de retomada:** implementação Tasks 4–7 entregue; próxima etapa é revisão Mastermind deste incremento, com avaliação visual no hardware do proprietário. P2/Cortes 6–7 permanecem abertos. Nenhum novo case, login no painel ou produção. Browser usou software WebGL: não comprova 60 fps em GPU física/Safari. O vídeo autenticado SDIMT segue ausente; a landing real está entregue. Analytics alheios continuam não rastreados e excluídos.
+
+---
+
 # Checkpoint Worker · P2 para revisão do Mastermind
 
 ## Identidade elétrica A · Tasks 1–3 · 02/10/2026

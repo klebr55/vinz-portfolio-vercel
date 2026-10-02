@@ -1,0 +1,58 @@
+{
+  "implementationSHA": "65a6e5f8a46d10951cc1857dfbc5e162efde4191",
+  "method": "Sequential native Chrome CDP, software WebGL; scope-preserving final CSS mobile check",
+  "reports": {
+    "nav-probe": {
+      "pass": true,
+      "errors": [],
+      "codeSHA": "5afd09ef174d12caeb6f23c4e81dea52f08fde0e"
+    },
+    "process-rhythm": {
+      "pass": true,
+      "errors": [],
+      "codeSHA": "5afd09ef174d12caeb6f23c4e81dea52f08fde0e"
+    },
+    "bridge": {
+      "pass": true,
+      "errors": [],
+      "codeSHA": "5afd09ef174d12caeb6f23c4e81dea52f08fde0e"
+    },
+    "failures": {
+      "pass": true,
+      "errors": [],
+      "codeSHA": "5afd09ef174d12caeb6f23c4e81dea52f08fde0e"
+    },
+    "mobile": {
+      "pass": true,
+      "errors": [],
+      "codeSHA": "65a6e5f8a46d10951cc1857dfbc5e162efde4191"
+    },
+    "seam": {
+      "pass": true,
+      "errors": [],
+      "codeSHA": "5afd09ef174d12caeb6f23c4e81dea52f08fde0e"
+    },
+    "input": {
+      "pass": true,
+      "errors": [],
+      "codeSHA": "5afd09ef174d12caeb6f23c4e81dea52f08fde0e"
+    },
+    "audit": {
+      "pass": true,
+      "errors": [],
+      "codeSHA": "5afd09ef174d12caeb6f23c4e81dea52f08fde0e"
+    },
+    "hero": {
+      "pass": true,
+      "errors": [],
+      "codeSHA": "5afd09ef174d12caeb6f23c4e81dea52f08fde0e"
+    }
+  },
+  "checks": {
+    "tests": 0,
+    "typeCheck": 0,
+    "lint": 0,
+    "build": 0,
+    "diff": 0
+  }
+}

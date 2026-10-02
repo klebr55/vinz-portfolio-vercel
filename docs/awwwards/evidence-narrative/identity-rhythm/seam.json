@@ -1,0 +1,88 @@
+{
+  "mode": "seam",
+  "origin": "http://localhost:3004",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "shapes": [
+    "vinz",
+    "react",
+    "gsap"
+  ],
+  "samples": [
+    {
+      "expected": "vinz",
+      "actual": "vinz",
+      "tone": "dark",
+      "side": "left"
+    },
+    {
+      "expected": "vinz",
+      "actual": "vinz",
+      "tone": "dark",
+      "side": "right"
+    },
+    {
+      "expected": "vinz",
+      "actual": "vinz",
+      "tone": "light",
+      "side": "left"
+    },
+    {
+      "expected": "vinz",
+      "actual": "vinz",
+      "tone": "light",
+      "side": "right"
+    },
+    {
+      "expected": "react",
+      "actual": "react",
+      "tone": "dark",
+      "side": "left"
+    },
+    {
+      "expected": "react",
+      "actual": "react",
+      "tone": "dark",
+      "side": "right"
+    },
+    {
+      "expected": "react",
+      "actual": "react",
+      "tone": "light",
+      "side": "left"
+    },
+    {
+      "expected": "react",
+      "actual": "react",
+      "tone": "light",
+      "side": "right"
+    },
+    {
+      "expected": "gsap",
+      "actual": "gsap",
+      "tone": "dark",
+      "side": "left"
+    },
+    {
+      "expected": "gsap",
+      "actual": "gsap",
+      "tone": "dark",
+      "side": "right"
+    },
+    {
+      "expected": "gsap",
+      "actual": "gsap",
+      "tone": "light",
+      "side": "left"
+    },
+    {
+      "expected": "gsap",
+      "actual": "gsap",
+      "tone": "light",
+      "side": "right"
+    }
+  ],
+  "seamHoldOnly": "Test-only hold extended to 7s to capture each shape; original cycle timing is not tested in this mode",
+  "pass": true
+}
