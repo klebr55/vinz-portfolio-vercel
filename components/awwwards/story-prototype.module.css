@@ -282,3 +282,9 @@
 
 .bridgeControls[hidden] { display: none; }
 .languageLinks a { justify-content: center; min-width: 44px; }
+
+.navMotionButton { position: relative; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: #d9e7fa; }
+.navMotionButton:hover, .navMotionButton[aria-pressed='true'] { background: rgb(86 146 240 / 15%); }
+.navMotionButton:focus-visible .navTooltip { opacity: 1; }
+@media (hover: hover) and (pointer: fine) { .navMotionButton:hover .navTooltip { opacity: 1; } }
+@media (max-width: 760px) { .nav { gap: 4px !important; padding-right: 10px !important; padding-left: 10px !important; } }

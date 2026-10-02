@@ -85,7 +85,7 @@ try {
   } else if(mode === 'source-mobile') {
     await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
     await send('Page.navigate',{url:'https://sdimt-seplag.lovable.app/?panel=home'});await sleep(4500);
-    report.purpose=await evaluate('document.body.innerText');await shot('sdimt-public-mobile.png');
+    report.purpose=await evaluate('document.body.innerText');await shot('sdimt-public-mobile.png');await startRecording();await sleep(12000);await stopRecording('sdimt-public-mobile-motion.mp4');
   } else if(mode === 'bridge') {
     report.samples=[];
     const sample=async label=>{const r=await evaluate(`(()=>{const b=document.querySelector('[data-bridge-phase]'),v=b.querySelector('video'),n=document.querySelector('header nav'),p=document.querySelector('[class*=sdimtPlane]').getBoundingClientRect();return {y:scrollY,phase:b.dataset.bridgePhase,p:Number(b.dataset.bridgeProgress),presented:b.dataset.presentedFrame,videoTime:v.currentTime,paused:v.paused,ready:v.readyState,navWidth:n.getBoundingClientRect().width,plane:{left:p.left,top:p.top,width:p.width,height:p.height},lenis:window.__runtimeProbe.active,raf:window.__runtimeProbe.maxPerTick}})()`);report.samples.push({label,...r});return r;};
@@ -112,6 +112,15 @@ try {
     await send('Fetch.enable',{patterns:[{urlPattern:'*sdimt/bridge/landing.mp4',requestStage:'Request'}]});failAsset=true;await visit();await at(1950);await sleep(500);report.failed=await bridgeState();assert.equal(report.failed.presented,'false');assert.equal(report.failed.paused,true);await shot('bridge-video-failed.png');failAsset=false;await send('Fetch.disable');
     await visit();await at(1000);await wheel(-240);report.interruptedBeforePlay=await bridgeState();assert.equal(report.interruptedBeforePlay.time,0);assert.equal(report.interruptedBeforePlay.presented,'false');
     await visit();await evaluate(`document.querySelector('header a[href="#about"]').focus()`);await wheel(500);report.focusPreserved=await evaluate(`document.activeElement===document.querySelector('header a[href="#about"]')`);assert.equal(report.focusPreserved,true);await shot('navbar-focus-compact.png');
+  } else if(mode === 'process-rhythm') {
+    await visit('#about');await evaluate(`window.__lenis.scrollTo(document.querySelector('#process').getBoundingClientRect().top+scrollY-80,{immediate:true})`);await sleep(500);await until('Boolean(document.querySelector("#process canvas"))');await startRecording();
+    report.samples=[];
+    const state=async label=>{const value=await evaluate(`(()=>{const section=document.querySelector('#process'),stage=section.firstElementChild,r=section.getBoundingClientRect(),v=stage.getBoundingClientRect();return {y:scrollY,p:Math.max(0,Math.min(1,-r.top/(section.offsetHeight-innerHeight))),stickyDistance:section.offsetHeight-innerHeight,stageTop:v.top,stageBottom:v.bottom,canvas:!!section.querySelector('canvas'),fallback:!section.querySelector('img').hidden}})()`);report.samples.push({label,...value});return value;};
+    await state('arrival');
+    for(let i=0;i<11;i++){await send('Input.dispatchMouseEvent',{type:'mouseWheel',x:650,y:400,deltaX:0,deltaY:i%2?120:80});await sleep(i%2?650:1000);const value=await state(`short-${i}`);if(i===3)await shot('process-short-drawing.png');if(i===6)await shot('process-short-volume.png');if(value.p>=.78){await shot('process-short-reading.png');break;}}
+    const reading=report.samples.at(-1);assert.ok(reading.p>=.78);assert.ok(reading.stageBottom<=901);
+    await click('header button[aria-pressed]');await sleep(300);assert.equal(await evaluate(`!document.querySelector('#process img').hidden`),true);await shot('process-global-pause.png');await click('header button[aria-pressed]');await sleep(400);
+    await wheel(-240);await state('reverse-240');await shot('process-short-reverse.png');await wheel(120);await state('forward-again');await stopRecording('process-short-wheel-pause-reverse.mp4');
   } else if(mode === 'mobile') {
     report.layouts=[];
     for(const [width,height] of [[360,800],[390,844],[1440,900]]) for(const locale of ['pt-br','en']) {
@@ -128,7 +137,7 @@ try {
         assert.equal(await evaluate(`document.querySelector('[data-bridge-phase] video').paused`),true);await shot(`rhythm-${locale}-${width}-reverse.png`);await stopRecording(`bridge-touch-${locale}-${width}.mp4`);
       }
       await evaluate(`window.__lenis.scrollTo(document.querySelector('[class*=sdimtReading]').getBoundingClientRect().top+scrollY-100,{immediate:true})`);await sleep(500);await shot(`rhythm-${locale}-${width}-reading.png`);
-      const layout=await evaluate(`(()=>{const n=document.querySelector('header nav'),links=[...n.querySelectorAll('a')].filter(a=>a.getBoundingClientRect().width>0);return {locale:'${locale}',width:${width},overflow:document.documentElement.scrollWidth>innerWidth,h1:document.querySelectorAll('h1').length,chapters:document.querySelectorAll('[data-story-chapter]').length,targets:links.map(a=>({name:a.getAttribute('aria-label')||a.textContent,width:a.getBoundingClientRect().width,height:a.getBoundingClientRect().height})),videoFit:getComputedStyle(document.querySelector('[data-bridge-phase] video')).objectFit}})()`);report.layouts.push(layout);assert.equal(layout.overflow,false);assert.equal(layout.h1,1);assert.equal(layout.chapters,10);for(const target of layout.targets)assert.ok(target.height>=44);
+      const layout=await evaluate(`(()=>{const n=document.querySelector('header nav'),links=[...n.querySelectorAll('a,button')].filter(a=>a.getBoundingClientRect().width>0);return {locale:'${locale}',width:${width},overflow:document.documentElement.scrollWidth>innerWidth,h1:document.querySelectorAll('h1').length,chapters:document.querySelectorAll('[data-story-chapter]').length,targets:links.map(a=>({name:a.getAttribute('aria-label')||a.textContent,width:a.getBoundingClientRect().width,height:a.getBoundingClientRect().height})),videoFit:getComputedStyle(document.querySelector('[data-bridge-phase] video')).objectFit}})()`);report.layouts.push(layout);assert.equal(layout.overflow,false);assert.equal(layout.h1,1);assert.equal(layout.chapters,10);for(const target of layout.targets)assert.ok(target.height>=44);
       if(width<760)assert.equal(layout.videoFit,'contain');
     }
   } else if(mode === 'seam') {

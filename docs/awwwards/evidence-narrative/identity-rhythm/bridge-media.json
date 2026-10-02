@@ -14,5 +14,19 @@
   "videoSHA256": "256c4ea91ec9e15481b6b5260a7f5c8322372f5e073ffa80fab9e408a8daf7de",
   "videoBytes": 2215330,
   "posterSHA256": "250cbe1dc87a6f5ebf1309a0b9c5f0f52a6d871b7d19725040cda0c78348664c",
-  "poster": "First decoded frame of the delivered video, same dimensions and crop"
+  "poster": "First decoded frame of the delivered video, same dimensions and crop",
+  "mobile": {
+    "source": "Native Chrome CDP capture of the same public SDIMT landing at 390x844, 2026-10-02; software WebGL, no login",
+    "website": "https://sdimt-seplag.lovable.app/?panel=home",
+    "capture": "public-mobile-motion.json",
+    "dimensions": [
+      390,
+      844
+    ],
+    "durationSeconds": 11.964627027511597,
+    "fps": "Variable frame rate from actual screencast timestamps, 360 delivered frames; no interpolation",
+    "videoSHA256": "79ca6eda935a2af0c212267c6833fbd24f8ecb61c0ed100587ed988c65051baa",
+    "posterSHA256": "5b1a951a5f273ccd304ff569d60af9ef68b4af54a3415a66945ef4eb30f80f17",
+    "poster": "First decoded frame of mobile.mp4; identical composition and crop"
+  }
 }

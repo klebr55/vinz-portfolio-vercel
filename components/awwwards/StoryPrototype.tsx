@@ -128,7 +128,7 @@ export default function StoryPrototype({ locale, copy }: Props) {
       gsap.set(detail, { x: vw * .16, y: vh * .22, z: -180, scale: .68, rotationY: 18, rotationZ: 9, opacity: 0, force3D: true });
       gsap.set(orbit, { y: 22, opacity: 0 });
       const clock = { progress: 0 };
-      const timeline = gsap.timeline({ scrollTrigger: { trigger: opening.current, start: 'top top', end: 'bottom bottom', scrub: true, invalidateOnRefresh: true, onUpdate: (self) => { setPlasmaExposed(self.progress * total < vh * 1.55); setHeroExposed(self.progress * total < heroOverflow + vh * .83); phrase.current!.style.pointerEvents = self.progress * total < heroOverflow + vh * .83 ? 'auto' : 'none'; bridgeProgress.set(Math.max(0, (self.progress * total - expandStart) / (vh * 1.2))); setBridgeActive(self.progress * total > expandStart - vh * .25 && self.progress * total < settle - vh * .9); navProgress.set(Math.max(0, Math.min(1, (self.progress * total - heroOverflow) / (vh * .8)))); } } });
+      const timeline = gsap.timeline({ scrollTrigger: { trigger: opening.current, start: 'top top', end: 'bottom bottom', scrub: true, invalidateOnRefresh: true, onUpdate: (self) => { setPlasmaExposed(self.progress * total < vh * 1.55); setHeroExposed(self.progress * total < heroOverflow + vh * .83); phrase.current!.style.pointerEvents = self.progress * total < heroOverflow + vh * .83 ? 'auto' : 'none'; bridgeProgress.set(Math.max(-1, (self.progress * total - expandStart) / (vh * 1.2))); setBridgeActive(self.progress * total > expandStart - vh * .25 && self.progress * total < settle - vh * .9); navProgress.set(Math.max(0, Math.min(1, (self.progress * total - heroOverflow) / (vh * .8)))); } } });
       timeline.to(clock, { progress: 1, duration: total, ease: 'none' }, 0)
         .to(phrase.current!.querySelectorAll(`.${styles.heroLineInner}`), { yPercent: -45, z: -180, rotationX: 10, opacity: 0, stagger: vh * .065, duration: vh * .7, ease: 'power2.inOut' }, heroOverflow + vh * .3)
         .to(phrase.current!.querySelectorAll('[data-hero-support]'), { y: -24, opacity: 0, duration: vh * .3, ease: 'power2.in' }, heroOverflow + vh * .18)
@@ -159,7 +159,7 @@ export default function StoryPrototype({ locale, copy }: Props) {
   return (
     <main ref={root} className={styles.root} data-reduced={reducedMotion} data-client-ready={motionReady} data-motion-ready={motionReady && !reducedMotion} data-plasma-unavailable={plasmaUnavailable}>
       <a className={styles.skipLink} href="#projects">{locale === 'pt-br' ? 'Pular para projetos' : 'Skip to projects'}</a>
-      <StoryNavigation locale={locale} activeChapter={runtime.activeChapter} navigate={navigate} progress={navProgress} reducedMotion={reducedMotion} />
+      <StoryNavigation locale={locale} activeChapter={runtime.activeChapter} navigate={navigate} progress={navProgress} reducedMotion={reducedMotion} paused={motionPaused} togglePause={() => setMotionPaused(value => !value)} />
       <ChapterCheckpoints locale={locale} activeChapter={runtime.activeChapter} navigate={navigate} />
 
       <div ref={opening} className={styles.opening}>
@@ -169,7 +169,7 @@ export default function StoryPrototype({ locale, copy }: Props) {
           <div className={styles.plasmaCanvas}><Plasma active={plasmaExposed && !motionPaused && !plasmaUnavailable} reducedMotion={reducedMotion} onUnavailable={onPlasmaUnavailable} /></div>
           <div className={styles.openingShade} />
           <div className={styles.sdimtOrbit}>01 / 05 <span>SDIMT</span></div>
-          <div className={styles.sdimtPlane}><ScrollExpandBridge locale={locale} paused={motionPaused} reducedMotion={reducedMotion} progress={bridgeProgress} active={bridgeActive} togglePause={() => setMotionPaused(value => !value)} media={{ poster: '/awwwards/sdimt/bridge/poster.webp', video: '/awwwards/sdimt/bridge/landing.mp4', alt: locale === 'pt-br' ? 'Landing pública SDIMT: inteligência remuneratória interestadual' : 'SDIMT public landing: interstate remuneration intelligence', source: sdimt.link }} /></div>
+          <div className={styles.sdimtPlane}><ScrollExpandBridge locale={locale} paused={motionPaused} reducedMotion={reducedMotion} progress={bridgeProgress} active={bridgeActive} togglePause={() => setMotionPaused(value => !value)} media={{ poster: '/awwwards/sdimt/bridge/poster.webp', video: '/awwwards/sdimt/bridge/landing.mp4', mobilePoster: '/awwwards/sdimt/bridge/mobile-poster.webp', mobileVideo: '/awwwards/sdimt/bridge/mobile.mp4', alt: locale === 'pt-br' ? 'Landing pública SDIMT: inteligência remuneratória interestadual' : 'SDIMT public landing: interstate remuneration intelligence', source: sdimt.link }} /></div>
           <div className={styles.sdimtDetail}><Image src="/awwwards/sdimt/landing-resources.webp" alt="" fill sizes="(max-width: 760px) 62vw, 35vw" unoptimized /></div>
         </div>
         </div>

@@ -2,18 +2,18 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, useTransform, useMotionValueEvent, type MotionValue } from 'motion/react';
-import { PanelsTopLeft, UserRound, Workflow, Send } from 'lucide-react';
+import { PanelsTopLeft, UserRound, Workflow, Send, Pause, Play } from 'lucide-react';
 import { useLiquidGlass } from './use-liquid-glass';
 import { localeChapterHref, type ChapterId } from './story-model';
 import type { PrototypeLocale } from './prototype-copy';
 import styles from './story-prototype.module.css';
 
-export function StoryNavigation({ locale, activeChapter, navigate, progress, reducedMotion }: { locale: PrototypeLocale; activeChapter: ChapterId; navigate: (id: ChapterId) => void; progress: MotionValue<number>; reducedMotion: boolean }) {
+export function StoryNavigation({ locale, activeChapter, navigate, progress, reducedMotion, paused, togglePause }: { locale: PrototypeLocale; activeChapter: ChapterId; navigate: (id: ChapterId) => void; progress: MotionValue<number>; reducedMotion: boolean; paused: boolean; togglePause(): void }) {
   const { surfaceRef, backdropFilter } = useLiquidGlass<HTMLSpanElement>();
   const [open, setOpen] = useState(false);
   const [compact, setCompact] = useState(false);
   const amount = useTransform(progress, value => reducedMotion ? 0 : Math.max(0, Math.min(1, value)));
-  const width = useTransform(amount, value => `min(100%, ${970 - 550 * value}px)`);
+  const width = useTransform(amount, value => `min(100%, ${970 - 506 * value}px)`);
   const padding = useTransform(amount, [0, 1], [24, 12]);
   const gap = useTransform(amount, [0, 1], [36, 10]);
   const linkGap = useTransform(amount, [0, 1], [20, 0]);
@@ -53,6 +53,7 @@ export function StoryNavigation({ locale, activeChapter, navigate, progress, red
             return <a key={id} href={`#${hash}`} aria-label={label} aria-current={activeChapter === id || (id === 'sdimt' && ['nks', 'milan', 'sincad', 'criactive'].includes(activeChapter)) ? 'location' : undefined} onClick={(event) => onNavigate(event, id, hash)}><motion.span className={styles.navIcon} style={{ opacity: iconOpacity }} aria-hidden="true"><Icon size={20} /></motion.span><motion.span className={styles.navLabel} style={{ width: labelWidth, opacity: labelOpacity }} aria-hidden="true">{label}</motion.span><span className={styles.navTooltip} aria-hidden="true">{label}</span></a>;
           })}
         </motion.div>
+        {!reducedMotion && <button className={styles.navMotionButton} type="button" aria-pressed={paused} aria-label={paused ? (locale === 'pt-br' ? 'Retomar movimento' : 'Resume motion') : (locale === 'pt-br' ? 'Pausar movimento' : 'Pause motion')} onClick={togglePause}>{paused ? <Play size={18} aria-hidden="true" /> : <Pause size={18} aria-hidden="true" />}<span className={styles.navTooltip} aria-hidden="true">{paused ? (locale === 'pt-br' ? 'Retomar' : 'Resume') : (locale === 'pt-br' ? 'Pausar' : 'Pause')}</span></button>}
         <div className={styles.languageLinks} aria-label={locale === 'pt-br' ? 'Idioma' : 'Language'}>
           <a href={localeChapterHref('pt-br', activeChapter)} lang="pt-BR" aria-current={locale === 'pt-br' ? 'page' : undefined}>PT</a>
           <span aria-hidden="true">/</span>

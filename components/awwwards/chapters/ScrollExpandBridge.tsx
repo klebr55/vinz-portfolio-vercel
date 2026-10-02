@@ -1,18 +1,29 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { MotionValue } from 'motion';
 import type { PrototypeLocale } from '../prototype-copy';
 import styles from '../story-prototype.module.css';
 
-type BridgeMedia = { poster: string; video: string; alt: string; source: string };
+type BridgeMedia = { poster: string; video: string; alt: string; source: string; mobileVideo?: string; mobilePoster?: string };
 const smooth = (a: number, b: number, p: number) => {
   const t = Math.max(0, Math.min(1, (p - a) / (b - a)));
   return t * t * (3 - 2 * t);
 };
 
 export function ScrollExpandBridge({ locale, paused, reducedMotion, progress, active, media, togglePause }: { locale: PrototypeLocale; paused: boolean; reducedMotion: boolean; progress: MotionValue<number>; active: boolean; media: BridgeMedia; togglePause(): void }) {
+  const [mobile, setMobile] = useState(false);
+  const selectedVideo = mobile && media.mobileVideo ? media.mobileVideo : media.video;
+  const selectedPoster = mobile && media.mobilePoster ? media.mobilePoster : media.poster;
+  const previousSource = useRef(selectedVideo);
+  useEffect(() => {
+    const query = matchMedia('(max-width: 760px)');
+    const update = () => setMobile(query.matches);
+    update();
+    query.addEventListener('change', update);
+    return () => query.removeEventListener('change', update);
+  }, []);
   const root = useRef<HTMLElement>(null);
   const frame = useRef<HTMLDivElement>(null);
   const visual = useRef<HTMLDivElement>(null);
@@ -27,6 +38,13 @@ export function ScrollExpandBridge({ locale, paused, reducedMotion, progress, ac
     const element = root.current;
     const player = video.current;
     if (!element || !player) return;
+    if (previousSource.current !== selectedVideo) {
+      delivered.current = false;
+      session.current = false;
+      element.dataset.presentedFrame = 'false';
+      if (visual.current) visual.current.dataset.videoPresented = 'false';
+      previousSource.current = selectedVideo;
+    }
     let token = 0;
     let requested = false;
     let failed = false;
@@ -58,7 +76,7 @@ export function ScrollExpandBridge({ locale, paused, reducedMotion, progress, ac
     const sync = () => {
       const p = progress.get();
       element.dataset.bridgeProgress = String(p);
-      if (!active && p <= .001) {
+      if (!active && p <= -.3) {
         suspend();
         delivered.current = false;
         session.current = false;
@@ -119,13 +137,13 @@ export function ScrollExpandBridge({ locale, paused, reducedMotion, progress, ac
     apply(progress.get());
     const cancel = progress.on('change', apply);
     return () => { disposed = true; suspend(); cancel(); document.removeEventListener('visibilitychange', sync); player.removeEventListener('error', error); player.removeEventListener('ended', ended); player.removeEventListener('loadeddata', sync); };
-  }, [active, paused, reducedMotion, progress, media.video]);
+  }, [active, paused, reducedMotion, progress, selectedVideo]);
 
   return <figure ref={root} className={styles.bridge} data-bridge-phase="still" data-presented-frame="false" aria-label={media.alt}>
     <div ref={frame} className={styles.bridgeFrame}>
       <div ref={visual} className={styles.bridgeMedia} data-video-presented="false">
-        <Image src={media.poster} alt={media.alt} fill sizes="100vw" unoptimized />
-        <video ref={video} src={reducedMotion ? undefined : media.video} poster={media.poster} muted playsInline preload="auto" aria-hidden="true" />
+        <Image src={selectedPoster} alt={media.alt} fill sizes="100vw" unoptimized />
+        <video ref={video} src={reducedMotion ? undefined : selectedVideo} poster={selectedPoster} muted playsInline preload="auto" aria-hidden="true" />
       </div>
       <div ref={scrim} className={styles.bridgeScrim} />
     </div>
