@@ -189,3 +189,22 @@
 }
 @media (prefers-reduced-transparency: reduce) { .glassSurface { background: #0d1828; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; } }
 @supports not (backdrop-filter: blur(1px)) { .glassSurface { background: #0d1828; } }
+
+.heroGrid { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 1vw; min-height: 100dvh; padding: 120px 6vw 90px; }
+.heroGrid .heroCopy { position: relative; top: auto; left: auto; width: auto; padding: 0; transform: none; }
+.heroGrid .heroCopy h1 { font-size: clamp(3rem, 5.15vw, 6rem); }
+.heroIdentity { position: relative; z-index: 3; width: 100%; margin: 0; }
+.identityVisual { position: relative; width: 100%; aspect-ratio: 1; }
+.electricCanvas { position: absolute; inset: 0; }
+.identityFallback { position: absolute; width: 70%; height: 70%; inset: 15%; object-fit: contain; filter: drop-shadow(0 0 25px rgb(30 91 193 / 45%)); }
+.identityFallback[hidden] { display: none; }
+.heroIdentity figcaption { display: flex; justify-content: center; gap: 20px; color: #c2fff1; font-size: .7rem; letter-spacing: .09em; }
+.heroIdentity figcaption span + span { color: #adc2dd; }
+@media (max-width: 760px) {
+  .heroGrid { grid-template-columns: 1fr; gap: 15px; min-height: auto; padding: 125px 22px 100px; }
+  .heroGrid .heroCopy h1 { font-size: clamp(2.2rem, 10vw, 4.2rem); }
+  .heroIdentity { max-width: 480px; justify-self: center; }
+  .heroGrid .heroCopy { right: auto; }
+  .introStage { position: relative; height: auto; min-height: 100dvh; overflow: visible; }
+  .root[data-motion-ready='true'] .intro { height: 240dvh; }
+}

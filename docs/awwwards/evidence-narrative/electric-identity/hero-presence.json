@@ -1,0 +1,9 @@
+{
+  "mode": "hero",
+  "origin": "http://localhost:3003",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "heroPresent": true,
+  "pass": true
+}

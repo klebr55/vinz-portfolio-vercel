@@ -1,0 +1,72 @@
+{
+  "mode": "audit",
+  "origin": "http://localhost:3003",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {
+    "touch-pt-br-360": 355,
+    "touch-en-360": 355,
+    "touch-pt-br-390": 355,
+    "touch-en-390": 355
+  },
+  "errors": [],
+  "layouts": [
+    {
+      "locale": "pt-br",
+      "width": 360,
+      "horizontalOverflow": false,
+      "heroRight": 338,
+      "textRight": 338,
+      "heroBelowText": true,
+      "canvasFocus": false
+    },
+    {
+      "locale": "en",
+      "width": 360,
+      "horizontalOverflow": false,
+      "heroRight": 338,
+      "textRight": 338,
+      "heroBelowText": true,
+      "canvasFocus": false
+    },
+    {
+      "locale": "pt-br",
+      "width": 390,
+      "horizontalOverflow": false,
+      "heroRight": 368,
+      "textRight": 368,
+      "heroBelowText": true,
+      "canvasFocus": false
+    },
+    {
+      "locale": "en",
+      "width": 390,
+      "horizontalOverflow": false,
+      "heroRight": 368,
+      "textRight": 368,
+      "heroBelowText": true,
+      "canvasFocus": false
+    },
+    {
+      "locale": "pt-br",
+      "width": 1440,
+      "horizontalOverflow": false,
+      "heroRight": 1343.609375,
+      "textRight": 722.953125,
+      "heroBelowText": false,
+      "canvasFocus": false
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "horizontalOverflow": false,
+      "heroRight": 1343.609375,
+      "textRight": 722.953125,
+      "heroBelowText": false,
+      "canvasFocus": false
+    }
+  ],
+  "reducedHeroNoRenderer": true,
+  "reducedProcessNoRenderer": true,
+  "noJsHero": true,
+  "pass": true
+}

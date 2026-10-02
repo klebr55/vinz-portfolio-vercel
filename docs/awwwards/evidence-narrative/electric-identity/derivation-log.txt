@@ -1,0 +1,90 @@
+[
+  {
+    "id": "vinz",
+    "bounds": [
+      0,
+      6,
+      810,
+      804
+    ],
+    "size": [
+      810,
+      798
+    ],
+    "method": "Chrome SVG raster at 810px; source alpha or owner border difference coverage; tight crop without stretching",
+    "contours": 10,
+    "vertices": 2213,
+    "binaryIntersectionOverUnion": 0.9958118957075038,
+    "traceTolerancePixels": 0.45
+  },
+  {
+    "id": "react",
+    "bounds": [
+      0,
+      0,
+      810,
+      719
+    ],
+    "size": [
+      810,
+      719
+    ],
+    "method": "Chrome SVG raster at 810px; source alpha or owner border difference coverage; tight crop without stretching"
+  },
+  {
+    "id": "typescript",
+    "bounds": [
+      10,
+      312,
+      787,
+      498
+    ],
+    "size": [
+      777,
+      186
+    ],
+    "method": "Chrome SVG raster at 810px; source alpha or owner border difference coverage; tight crop without stretching"
+  },
+  {
+    "id": "tailwind",
+    "bounds": [
+      0,
+      0,
+      810,
+      487
+    ],
+    "size": [
+      810,
+      487
+    ],
+    "method": "Chrome SVG raster at 810px; source alpha or owner border difference coverage; tight crop without stretching"
+  },
+  {
+    "id": "motion",
+    "bounds": [
+      0,
+      0,
+      810,
+      295
+    ],
+    "size": [
+      810,
+      295
+    ],
+    "method": "Chrome SVG raster at 810px; source alpha or owner border difference coverage; tight crop without stretching"
+  },
+  {
+    "id": "gsap",
+    "bounds": [
+      0,
+      0,
+      810,
+      301
+    ],
+    "size": [
+      810,
+      301
+    ],
+    "method": "Chrome SVG raster at 810px; source alpha or owner border difference coverage; tight crop without stretching"
+  }
+]

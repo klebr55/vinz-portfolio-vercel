@@ -1,0 +1,31 @@
+{
+  "mode": "hero",
+  "origin": "http://localhost:3003",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "heroPresent": true,
+  "completedCycle": [
+    "vinz",
+    "react",
+    "typescript",
+    "tailwind",
+    "motion",
+    "gsap",
+    "vinz"
+  ],
+  "activeElectricRenderers": 1,
+  "rendererRecreationsDuringCycle": 0,
+  "labelMatchesPresentedShape": true,
+  "framesWhilePaused": 0,
+  "video": {
+    "name": "hero-full-cycle.mp4",
+    "frames": 178,
+    "seconds": 90.53088998794556,
+    "method": "Actual Chrome screencast timestamps, VFR, no interpolation"
+  },
+  "actualHidden": true,
+  "hiddenCatchUp": false,
+  "lastValidShapeRetainedOnError": true,
+  "pass": true
+}
