@@ -1,0 +1,39 @@
+01-hero-desktop.webp: 42840 bytes
+04-desktop-scroll.mp4: 211 frames, 18.23 seconds
+02a-sdimt-arrival.webp: 38218 bytes
+02-sdimt-desktop.webp: 56348 bytes
+03-nks-desktop.webp: 40848 bytes
+nksSceneExposed {"pass":true,"openingBottom":-20,"notebookCanvas":true}
+03-nks-laptop-desktop.webp: 38156 bytes
+contactDirect {"pass":true,"headingTop":152.828125}
+contactReload {"pass":true}
+completedJumpFocus {"pass":true,"focused":"sdimt-title","hash":"#sdimt"}
+historyBack {"pass":true}
+historyForward {"pass":true}
+localeAfterResize {"pass":true,"width":1024,"documentWidth":1024}
+10-nks-en-1024.webp: 36582 bytes
+11-hero-en-desktop.webp: 38746 bytes
+04c-en-scroll.mp4: 245 frames, 17.46 seconds
+wheelInterrupt {"pass":true,"hash":"#process","focused":"BODY"}
+rendererExposure {"pass":true,"drawCalls":[12,0]}
+plasmaPause {"pass":true}
+syntheticHiddenTab {"pass":true}
+syntheticVisibleTab {"pass":true}
+webglContextLoss {"pass":true,"canvasVisibility":"hidden"}
+12-webgl-fallback.webp: 42438 bytes
+05-hero-mobile.webp: 17760 bytes
+04b-mobile-scroll.mp4: 351 frames, 17.38 seconds
+06-sdimt-mobile.webp: 20294 bytes
+07-nks-en-mobile.webp: 18774 bytes
+mobile direct entry {"width":360,"documentWidth":360,"hash":"#nks","active":"#nks","nksTop":135.796875}
+mobileMenu {"pass":true}
+escapeFocus {"pass":true}
+touchInterrupt {"pass":true,"hash":"#about"}
+13-hero-en-mobile390.webp: 16586 bytes
+mobile390 {"pass":true,"width":390}
+reduced motion {"reduced":true,"lenis":false,"visual":"none","fallback":"block","active":"#sdimt"}
+08-reduced-motion-mobile.webp: 20404 bytes
+no JS {"h1":1,"chapters":10,"anchors":28}
+09-no-js-mobile.webp: 16806 bytes
+09b-no-js-sdimt-mobile.webp: 19406 bytes
+WebSocket closed 1000

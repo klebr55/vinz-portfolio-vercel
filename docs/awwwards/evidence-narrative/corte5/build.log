@@ -1,0 +1,76 @@
+
+> vinz-portfolio@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.26
+   - Experiments (use with caution):
+     · optimizePackageImports
+
+   Creating an optimized production build ...
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: Unable to snapshot resolve dependencies
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: Unable to snapshot resolve dependencies
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: Unable to snapshot resolve dependencies
+ ✓ Compiled successfully in 19.8s
+   Linting and checking validity of types ...
+
+./components/ui/about-me/Globe.tsx
+248:6  Warning: React Hook useEffect has missing dependencies: 'gl', 'size.height', and 'size.width'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./components/ui/approach/CanvasRevealEffect.tsx
+284:6  Warning: React Hook useMemo has a missing dependency: 'getUniforms'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./components/ui/clients/InfiniteMovingCards.tsx
+31:6  Warning: React Hook useEffect has a missing dependency: 'addAnimation'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+   Generating static pages (0/16) ...
+   Generating static pages (4/16)
+   Generating static pages (8/16)
+   Generating static pages (12/16)
+ ✓ Generating static pages (16/16)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                         Size  First Load JS  Revalidate  Expire
+┌ ○ /_not-found                                    272 B         384 kB
+├ ● /[locale]                                     202 kB         798 kB
+├   ├ /en
+├   └ /pt-br
+├ ● /[locale]/awwwards-preview/[style]           40.2 kB         636 kB
+├   ├ /pt-br/awwwards-preview/ember
+├   ├ /pt-br/awwwards-preview/spectral
+├   ├ /en/awwwards-preview/ember
+├   └ /en/awwwards-preview/spectral
+├ ○ /api/analytics                                 218 B         384 kB          5m      1y
+├ ƒ /api/contact                                   218 B         384 kB
+├ ƒ /api/edge                                      218 B         384 kB
+├ ƒ /api/og                                        218 B         384 kB
+├ ƒ /api/og-fallback                               218 B         384 kB
+├ ƒ /api/test-og                                   218 B         384 kB
+├ ○ /robots.txt                                    218 B         384 kB
+└ ○ /sitemap.xml                                   218 B         384 kB
++ First Load JS shared by all                     384 kB
+  ├ chunks/7d99c71c-7e512124309a1362.js          54.2 kB
+  ├ chunks/vendors-05d26463-c3307dddb9ce3f25.js  35.4 kB
+  ├ chunks/vendors-13ea83b9-66fb67aa248badfa.js  12.1 kB
+  ├ chunks/vendors-298df1c9-430a19d403d11f05.js  15.3 kB
+  ├ chunks/vendors-5383af71-752788147aa95e4b.js  24.7 kB
+  ├ chunks/vendors-7485187e-d1e19eb209993124.js  14.3 kB
+  ├ chunks/vendors-83c3b7b2-301dade5a04e4236.js  23.2 kB
+  ├ chunks/vendors-92ef16f5-482f0916f95c350f.js  24.8 kB
+  ├ chunks/vendors-a4995f33-76d5681b550c1123.js  17.7 kB
+  └ chunks/vendors-ab45c5d7-cd3ae4208bd901c7.js    18 kB
+  ├ chunks/vendors-b6a83294-2b88709ad23ed833.js  13.8 kB
+  ├ chunks/vendors-cbd2b3ec-d3848ac7849d10d5.js    15 kB
+  ├ chunks/vendors-da0d8149-94867848ede5382d.js  11.7 kB
+  ├ chunks/vendors-de568098-1e6123a88a112182.js  22.7 kB
+  └ other shared chunks (total)                  81.1 kB
+
+
+ƒ Middleware                                     46.4 kB
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand

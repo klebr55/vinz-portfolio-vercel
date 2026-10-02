@@ -1,5 +1,14 @@
 # P2 · Direção visual e histórico de protótipos
 
+## Corte 5 · correção para revisão · 01/10/2026
+
+Implementação 11c5ef3. [Hero PT](evidence-narrative/corte5/01-hero-desktop.webp), [SDIMT frontal](evidence-narrative/corte5/02a-sdimt-arrival.webp), [leitura](evidence-narrative/corte5/02-sdimt-desktop.webp), [notebook NKS](evidence-narrative/corte5/03-nks-laptop-desktop.webp) e [gravações/limites](evidence-narrative/corte5/README.md).
+
+Plasma azul da fonte do proprietário, frase/assinatura integrais, saída escalonada e plano SDIMT contínuo em profundidade. Frontal→leitura→recuo são fases do mesmo plano; notebook pertence a NKS. Coreografia reversível; sem JS/reduced motion oferece texto, poster e destinos em fluxo. A landing é identificada honestamente. Não há aceite Mastermind registrado para esta implementação; P2 permanece aberta.
+
+---
+
+
 ## Direção vigente · 30/09/2026 · especificação e plano aprovados
 
 O proprietário aprovou o arco contínuo, a [especificação escrita](2026-09-30-NARRATIVE-DESIGN.md) e o [plano de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md) em 30/09/2026. Corte 5 mostrará Hero→SDIMT; Corte 6 mostrará SDIMT→NKS e blur; Corte 7 completará o arco. **P2 permanece aberta até a revisão visual da implementação.**

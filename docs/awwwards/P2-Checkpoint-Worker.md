@@ -1,5 +1,28 @@
 # Checkpoint Worker · P2 para revisão do Mastermind
 
+## Corte 5 · 01/10/2026 · correção Plasma e gesto contínuo
+
+Base remota confirmada: f015f246ee535bf85ec8c45c4ccfb77dd9be8d39. Implementação: [11c5ef3](https://github.com/klebr55/vinz-portfolio-vercel/commit/11c5ef3d6fb9b1318ca11eddab7cdfb2577a49c5). Branch redesign/awwwards-repagination. Código/testes/assets em um commit; este checkpoint tem evidências em commit documental posterior. P2 aberta, revisão Mastermind pendente antes de Corte 6.
+
+### Estado para retomada
+
+Tarefas 1–4 implementadas: modelo/HTML de dez capítulos e cinco cases; conteúdo comprovado; runtime Lenis/GSAP medido; rail e hash/idioma; Plasma do proprietário; glass SDIMT; plano SDIMT em profundidade e início do notebook NKS. O shader e a travessia foram corrigidos após o retorno do proprietário. Detalhes, fontes, desvios e todos os limites: [relatório Corte 5](evidence-narrative/corte5/README.md).
+
+Não reiniciar P1, hero ou o runner por um checkbox histórico de RED/tsx. A implementação atual usa TypeScript existente, seis testes verdes; primeiro FAIL não registrado. Não iniciar tarefas 5–9 antes da revisão do corte. GLB/frames originais restaurados do HEAD real e preservados. Arquivos locais alheios de Analytics não entram nestes commits.
+
+### Evidência verificável
+
+Vídeos: [PT desktop](evidence-narrative/corte5/04-desktop-scroll.mp4), [PT mobile](evidence-narrative/corte5/04b-mobile-scroll.mp4), [EN desktop](evidence-narrative/corte5/04c-en-scroll.mp4). Quadros e audit no relatório. Testes 6/6, type-check, lint, build e diff check passaram. Lint mantém três warnings anteriores. Browser comprovou hash/reload, foco, histórico, wheel/toque, idioma após resize, pausa, contexto perdido, reduced motion e anchors com JS desativado.
+
+Next local 15.5.26 versus lockfile 15.3.8; validar versão exata em CI/preview. Inter original na build local, sem substituição por Arial. Vídeos VFR de screencast software: não declarar 60 fps. Safari/iOS físico e remount SPA instrumentado não ensaiados. Cadência integral NKS/blur/cases finais reservados para próximos cortes.
+
+### Próxima ação
+
+Submeter ao Mastermind o gesto, a referência Plasma e as gravações; aguardar revisão antes de Corte 6 conforme WORKER-START. Solicitar gravação autorizada do painel SDIMT operado; landing pública é a única mídia SDIMT atual. Checkpoint/publicação somente nesta branch, sem merge em master ou produção. Servidor local de produção na porta 3002, reconstruível com os comandos do relatório; nenhum processo local é pré-requisito para a próxima sessão.
+
+---
+
+
 Data: 28/09/2026 · Branch: `redesign/awwwards-repagination`.
 
 Este resumo acompanha a branch. O histórico detalhado permanece em `DECISIONS.md`; a direção e as capturas estão em `VISUAL_DIRECTION_REVIEW.md`. O Corte 4 abaixo prevalece sobre os registros anteriores mantidos como histórico.

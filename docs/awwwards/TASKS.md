@@ -1,5 +1,21 @@
 # Execução por fases
 
+## Estado vigente · Corte 5 · 01/10/2026
+
+- [x] Worker iniciou a execução sequencial sobre o HEAD remoto f015f24 e carregou os recursos pertinentes.
+- [x] Implementou modelo, anchors, runtime, Plasma/glass e gesto SDIMT das tarefas 1–4 no commit 11c5ef3.
+- [x] Corrigiu o shader e a travessia após o retorno do proprietário, incluindo hash na hidratação e saída sticky ao notebook.
+- [x] Checks locais e ensaio browser com vídeos PT/EN, desktop/mobile, reversão e fallbacks; [evidência e limites](evidence-narrative/corte5/README.md).
+- [ ] Mastermind revisar Corte 5 antes de Corte 6.
+- [ ] Obter gravação autorizada do painel SDIMT; atualmente só landing pública.
+- [ ] Tarefas 5–6: cadência NKS integral e blur seletivo, após revisão.
+- [ ] Tarefas 7–9 e aceite P2 completo.
+
+Nenhum checkbox histórico de recursos, RED ou instalação tsx determina reinício desta execução. Runner equivalente usa TypeScript existente. P2 aberta; home/produção preservadas.
+
+---
+
+
 ## Nova direção narrativa · 30/09/2026
 
 Contrato vigente: [2026-09-30-NARRATIVE-DESIGN.md](2026-09-30-NARRATIVE-DESIGN.md). Os checklists dos cortes anteriores abaixo são históricos; não são aprovação da direção final.
@@ -10,8 +26,8 @@ Contrato vigente: [2026-09-30-NARRATIVE-DESIGN.md](2026-09-30-NARRATIVE-DESIGN.m
 - [x] Proprietário revisar e aprovar a especificação escrita, incluindo copy PT/EN e regras de movimento (30/09/2026).
 - [x] Mastermind elaborar [plano de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md) e [prompt de início](2026-09-30-WORKER-START.md), preservando método Codex Worker/Antigravity.
 - [x] Proprietário aprovar o plano com os ajustes de eficiência do gate de recursos (30/09/2026).
-- [ ] Worker iniciar Corte 5 usando o prompt preparado em sessão nova do Codex e checkpoint enxuto; Antigravity assume a primeira tarefa aberta se o limite diário terminar.
-- [ ] Antes de UI, Worker comprovar o gate de recursos no próprio ambiente e confirmar HEAD/worktree.
+- [x] Worker iniciar Corte 5 usando o prompt preparado em sessão nova do Codex e checkpoint enxuto; Antigravity assume a primeira tarefa aberta se o limite diário terminar.
+- [x] Antes de UI, Worker comprovar o gate de recursos no próprio ambiente e confirmar HEAD/worktree.
 - [ ] Executar os cortes aprovados; adquirir mídia de painel SDIMT, corrigir cadência NKS e validar motion blur sem usar borrão para esconder saltos.
 - [ ] Validar a história inteira, checkpoints/entrada direta, navbar óptica, PT/EN, desktop/mobile e fallbacks com evidência do commit implementado.
 

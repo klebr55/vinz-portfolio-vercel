@@ -1,0 +1,220 @@
+{
+  "date": "2026-10-01",
+  "method": "Chrome CDP, software WebGL; actual screencast timestamps, VFR without interpolation",
+  "journeys": [
+    {
+      "name": "04-desktop-scroll.mp4",
+      "frames": 211,
+      "seconds": 18.22795605659485
+    },
+    {
+      "name": "04c-en-scroll.mp4",
+      "frames": 245,
+      "seconds": 17.459157943725586
+    },
+    {
+      "name": "04b-mobile-scroll.mp4",
+      "frames": 351,
+      "seconds": 17.3833909034729
+    }
+  ],
+  "checks": {
+    "nksSceneExposed": {
+      "pass": true,
+      "openingBottom": -20,
+      "notebookCanvas": true
+    },
+    "contactDirect": {
+      "pass": true,
+      "headingTop": 152.828125
+    },
+    "contactReload": {
+      "pass": true
+    },
+    "completedJumpFocus": {
+      "pass": true,
+      "focused": "sdimt-title",
+      "hash": "#sdimt"
+    },
+    "historyBack": {
+      "pass": true
+    },
+    "historyForward": {
+      "pass": true
+    },
+    "localeAfterResize": {
+      "pass": true,
+      "width": 1024,
+      "documentWidth": 1024
+    },
+    "wheelInterrupt": {
+      "pass": true,
+      "hash": "#process",
+      "focused": "BODY"
+    },
+    "rendererExposure": {
+      "pass": true,
+      "drawCalls": [
+        12,
+        0
+      ]
+    },
+    "plasmaPause": {
+      "pass": true
+    },
+    "syntheticHiddenTab": {
+      "pass": true
+    },
+    "syntheticVisibleTab": {
+      "pass": true
+    },
+    "webglContextLoss": {
+      "pass": true,
+      "canvasVisibility": "hidden"
+    },
+    "mobileDirect": {
+      "width": 360,
+      "documentWidth": 360,
+      "hash": "#nks",
+      "active": "#nks",
+      "nksTop": 135.796875
+    },
+    "mobileMenu": {
+      "pass": true
+    },
+    "escapeFocus": {
+      "pass": true
+    },
+    "touchInterrupt": {
+      "pass": true,
+      "hash": "#about"
+    },
+    "mobile390": {
+      "pass": true,
+      "width": 390
+    },
+    "reduced": {
+      "reduced": true,
+      "lenis": false,
+      "visual": "none",
+      "fallback": "block",
+      "active": "#sdimt"
+    },
+    "noJs": {
+      "h1": 1,
+      "chapters": 10,
+      "anchors": 28
+    },
+    "nativeAnchor": {
+      "pass": true
+    }
+  },
+  "errors": [],
+  "failedResponses": [
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/speed-insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/speed-insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/speed-insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/speed-insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/en/_vercel/speed-insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/en/_vercel/insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/en/_vercel/speed-insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/en/_vercel/insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/en/_vercel/speed-insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/en/_vercel/insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/speed-insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/speed-insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/en/_vercel/speed-insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/en/_vercel/insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/en/_vercel/speed-insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/en/_vercel/insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/speed-insights/script.js",
+      "status": 404
+    },
+    {
+      "url": "http://localhost:3002/pt-br/_vercel/insights/script.js",
+      "status": 404
+    }
+  ],
+  "implementation": "11c5ef3d6fb9b1318ca11eddab7cdfb2577a49c5",
+  "historicalStudy": {
+    "method": "Chrome DevTools MCP, production build, 1440x900",
+    "title": "Kleber Vinícius · Historical study",
+    "h1": 1,
+    "caseTitle": "NKS CONNECT",
+    "robots": "noindex, nofollow",
+    "nksMedia": true
+  }
+}

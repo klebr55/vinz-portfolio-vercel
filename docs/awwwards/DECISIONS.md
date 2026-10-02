@@ -1,5 +1,14 @@
 # Decisões e checkpoints
 
+## Corte 5 entregue para revisão · 01/10/2026
+
+Implementação 11c5ef3 sobre f015f24. Plasma voltou à matemática da fonte; gesto hero→SDIMT tem plano compartilhado, leitura e reversão. Corrigidos limite do sticky ao NKS e salto após hidratação/resize. [Checkpoint](P2-Checkpoint-Worker.md) e [evidência](evidence-narrative/corte5/README.md) registram checks, fonte pública SDIMT e diferenças do método (TypeScript existente, commit consolidado, RED não registrado).
+
+P2 segue aberta; Corte 6 aguarda revisão Mastermind. Aproximadamente 18 s de captura por trajetória não demonstram 60 fps. Next exato do lockfile e Safari físico ainda não foram verificados. Falta painel SDIMT autorizado. Não foram alterados produção, home, GLB ou cadência NKS.
+
+---
+
+
 ## Decisões do proprietário · narrativa contínua · 30/09/2026
 
 O arco, a [especificação escrita](2026-09-30-NARRATIVE-DESIGN.md) e o [plano de implementação](2026-09-30-NARRATIVE-IMPLEMENTATION-PLAN.md) foram aprovados pelo proprietário em 30/09/2026. Método: Codex Worker sequencial em nova sessão, Antigravity para continuidade, Mastermind para revisão. O prompt [WORKER-START](2026-09-30-WORKER-START.md) libera Corte 5. As entradas anteriores continuam como histórico.
