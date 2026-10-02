@@ -47,7 +47,7 @@ export function useStoryRuntime(root: RefObject<HTMLElement | null>, reducedMoti
   const jumpTo = useCallback((id: ChapterId, mode: 'animated' | 'immediate', focus: boolean) => {
     const currentToken = token.current = nextNavigationToken(token.current);
     anchoredChapter.current = null;
-    navigating.current = mode === 'animated' && !reducedMotion && Boolean(lenis.current);
+    navigating.current = true;
     const target = checkpointY(id, ranges.current);
     const finish = () => {
       if (!isCurrentNavigation(currentToken, token.current)) return;
@@ -86,13 +86,21 @@ export function useStoryRuntime(root: RefObject<HTMLElement | null>, reducedMoti
     };
     const cancelTravel = () => {
       anchoredChapter.current = null;
-      if (navigating.current) {
+      if (!navigating.current) return;
+      {
         const current = resolveStoryState(lenis.current?.scroll ?? window.scrollY, ranges.current).chapterId;
         history.replaceState(null, '', `#${current}`);
       }
       navigating.current = false;
       token.current = nextNavigationToken(token.current);
       if (lenis.current) lenis.current.scrollTo(lenis.current.scroll, { immediate: true, force: true });
+    };
+    const onScrollKey = (event: KeyboardEvent) => {
+      if (event.defaultPrevented || event.ctrlKey || event.metaKey || event.altKey) return;
+      const target = event.target instanceof Element ? event.target : null;
+      if (target?.closest('input, textarea, select, [contenteditable]:not([contenteditable="false"])')) return;
+      if (event.key === ' ' && target?.closest('button, a, [role="button"]')) return;
+      if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(event.key)) cancelTravel();
     };
     const onHistory = () => {
       if (disposed) return;
@@ -118,9 +126,9 @@ export function useStoryRuntime(root: RefObject<HTMLElement | null>, reducedMoti
       document.addEventListener('visibilitychange', onVisibility);
       (window as typeof window & { __lenis?: Lenis }).__lenis = instance;
       window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('wheel', cancelTravel, { passive: true });
-      window.addEventListener('touchstart', cancelTravel, { passive: true });
-      window.addEventListener('keydown', cancelTravel);
+      window.addEventListener('wheel', cancelTravel, { passive: true, capture: true });
+      window.addEventListener('touchstart', cancelTravel, { passive: true, capture: true });
+      window.addEventListener('keydown', onScrollKey, true);
       window.addEventListener('popstate', onHistory);
       window.addEventListener('hashchange', onHistory);
       document.fonts?.ready.then(measure).catch(() => undefined);
@@ -135,9 +143,9 @@ export function useStoryRuntime(root: RefObject<HTMLElement | null>, reducedMoti
         observer.disconnect();
         document.removeEventListener('visibilitychange', onVisibility);
         window.removeEventListener('scroll', onScroll);
-        window.removeEventListener('wheel', cancelTravel);
-        window.removeEventListener('touchstart', cancelTravel);
-        window.removeEventListener('keydown', cancelTravel);
+        window.removeEventListener('wheel', cancelTravel, true);
+        window.removeEventListener('touchstart', cancelTravel, true);
+        window.removeEventListener('keydown', onScrollKey, true);
         window.removeEventListener('popstate', onHistory);
         window.removeEventListener('hashchange', onHistory);
         instance.off('scroll', syncTrigger);
@@ -149,9 +157,9 @@ export function useStoryRuntime(root: RefObject<HTMLElement | null>, reducedMoti
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('wheel', cancelTravel, { passive: true });
-    window.addEventListener('touchstart', cancelTravel, { passive: true });
-    window.addEventListener('keydown', cancelTravel);
+    window.addEventListener('wheel', cancelTravel, { passive: true, capture: true });
+    window.addEventListener('touchstart', cancelTravel, { passive: true, capture: true });
+    window.addEventListener('keydown', onScrollKey, true);
     window.addEventListener('popstate', onHistory);
     window.addEventListener('hashchange', onHistory);
     document.fonts?.ready.then(measure).catch(() => undefined);
@@ -165,9 +173,9 @@ export function useStoryRuntime(root: RefObject<HTMLElement | null>, reducedMoti
       cancelAnimationFrame(measureFrame);
       observer.disconnect();
       window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('wheel', cancelTravel);
-      window.removeEventListener('touchstart', cancelTravel);
-      window.removeEventListener('keydown', cancelTravel);
+      window.removeEventListener('wheel', cancelTravel, true);
+      window.removeEventListener('touchstart', cancelTravel, true);
+      window.removeEventListener('keydown', onScrollKey, true);
       window.removeEventListener('popstate', onHistory);
       window.removeEventListener('hashchange', onHistory);
     };

@@ -1,0 +1,13 @@
+{
+  "mode": "input",
+  "origin": "http://localhost:3003",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "wheelAdvance": 500,
+  "wheelReverse": -300,
+  "interruptionAdvance": 555,
+  "lateDestinationFocus": false,
+  "afterCompletedCheckpointAdvance": 500,
+  "pass": true
+}

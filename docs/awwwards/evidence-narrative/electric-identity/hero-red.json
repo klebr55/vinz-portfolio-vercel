@@ -1,0 +1,10 @@
+{
+  "mode": "hero",
+  "origin": "http://localhost:3002",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "heroPresent": false,
+  "pass": false,
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n"
+}

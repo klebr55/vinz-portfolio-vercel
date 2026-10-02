@@ -1,0 +1,14 @@
+{
+  "mode": "input",
+  "origin": "http://localhost:3003",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "wheelAdvance": 0,
+  "wheelReverse": 0,
+  "interruptionAdvance": 55,
+  "lateDestinationFocus": false,
+  "afterCompletedCheckpointAdvance": 0,
+  "pass": false,
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(report.wheelAdvance > 0)\n"
+}
