@@ -62,7 +62,7 @@ export function ProcessChapter({ locale, paused, reducedMotion, text }: { locale
     window.addEventListener('wheel', release, { passive: true, capture: true });
     window.addEventListener('touchstart', release, { passive: true, capture: true });
     window.addEventListener('keydown', key);
-    const cancel = scroll(value => { current = value; if (!checkpoint.current) progress.set(value); }, { target: root.current, offset: ['start center', 'end end'] });
+    const cancel = scroll(value => { current = value; if (!checkpoint.current) progress.set(value); }, { target: root.current, offset: ['start start', 'end end'] });
     return () => { cancel(); window.removeEventListener('wheel', release, true); window.removeEventListener('touchstart', release, true); window.removeEventListener('keydown', key); };
   }, [active, progress]);
 
@@ -71,7 +71,7 @@ export function ProcessChapter({ locale, paused, reducedMotion, text }: { locale
     <div className={styles.processStage}>
       <div className={styles.processText}><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Método' : 'Method'}</p><h2 id="process-title" data-story-read tabIndex={-1}>{locale === 'pt-br' ? 'Processo' : 'Process'}</h2><p>{text}</p></div>
       <div className={styles.processVisual} aria-hidden="true">
-        <Image className={styles.processFallback} src="/awwwards/identity/vinz-contours.svg" alt="" fill unoptimized hidden={!staticIdentity} />
+        <Image className={styles.processFallback} src="/awwwards/identity/vinz-process-contours.svg" alt="" fill unoptimized hidden={!staticIdentity} />
         {initialized && !reducedMotion && !unavailable && <div className={styles.processCanvas} style={{ opacity: staticIdentity ? 0 : 1 }}><SceneBoundary onUnavailable={fail}><Scene progress={progress} active={active} onUnavailable={fail} onReady={ready} /></SceneBoundary></div>}
       </div>
     </div>

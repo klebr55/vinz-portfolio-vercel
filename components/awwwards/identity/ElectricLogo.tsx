@@ -655,7 +655,9 @@ void main() {
   alpha += tint * (1.0 - alpha);
   float grain = (fract(52.9829189 * fract(dot(gl_FragCoord.xy, vec2(0.06711056, 0.00583715)))) - 0.5) / 255.0;
   alpha = clamp(alpha + grain, 0.0, 1.0);
-  fragColor = vec4(clamp(color + grain, 0.0, alpha), alpha);
+  vec2 edgeDistance = min(vUv, 1.0 - vUv);
+  float edge = smoothstep(0.0, 0.12, min(edgeDistance.x, edgeDistance.y));
+  fragColor = vec4(clamp(color + grain, 0.0, alpha), alpha) * edge;
 }
 `;
 
@@ -886,7 +888,7 @@ const ElectricLogo = ({
     };
 
     const place = (shape: Shape, s: Settings) => {
-      const fit = Math.max(1e-4, Math.min((width * s.scale) / shape.logoWidth, (height * s.scale) / shape.logoHeight));
+      const fit = Math.max(1e-4, Math.min((width / 1.3 * s.scale) / shape.logoWidth, (height / 1.3 * s.scale) / shape.logoHeight));
       return {
         fit,
         ox: width / 2 - (shape.pad + shape.logoWidth / 2) * fit,

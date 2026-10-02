@@ -1,0 +1,15 @@
+{
+  "source": "docs/awwwards/reference-sources/identity-review-2026-10-02/vinz-alt.owner.svg",
+  "sha256": "a64fb915610b99ab95304ccd80668d17b63ee30d4fadecf66272db19b4e33538",
+  "bounds": [
+    0,
+    6,
+    810,
+    804
+  ],
+  "contours": 5,
+  "vertices": 1123,
+  "tolerancePixels": 0.45,
+  "iou": 0.9994896417813262,
+  "method": "Chrome composite SVG raster, source alpha or owner border-difference coverage, OpenCV evenodd contours; no stretch"
+}

@@ -2,11 +2,11 @@ const clamp = (value: number) => Math.min(1, Math.max(0, value));
 
 export function resolveProcessFrame(progress: number) {
   const p = clamp(Number.isFinite(progress) ? progress : 0);
-  const orientation = 1 - clamp(p / .9);
+  const orientation = p >= .78 ? 0 : 1 - clamp((p - .1) / .68);
   return {
-    drawn: clamp((p - .1) / .45),
-    filled: clamp((p - .5) / .4),
-    rotateX: 20 * orientation,
-    rotateY: orientation === 0 ? 0 : -35 * orientation,
+    drawn: p >= .42 ? 1 : clamp((p - .1) / .32),
+    filled: p >= .62 ? 1 : clamp((p - .38) / .24),
+    rotateX: 8 + 12 * orientation,
+    rotateY: -16 - 19 * orientation,
   };
 }

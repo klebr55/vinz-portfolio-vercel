@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
-import { BufferGeometry, Float32BufferAttribute, ExtrudeGeometry, Group, LineDashedMaterial, LineSegments, MeshPhysicalMaterial, PMREMGenerator } from 'three';
+import { BufferGeometry, Float32BufferAttribute, ExtrudeGeometry, Group, LineDashedMaterial, LineSegments, MeshPhysicalMaterial, PMREMGenerator, Shape, Path, Vector2 } from 'three';
 import { cancelFrame, frame, transformValue, type MotionValue } from 'motion';
 import { threeEffect } from 'motion/three';
 import { resolveProcessFrame } from './process-model';
@@ -15,30 +15,31 @@ function Identity({ svg, progress, active, onUnavailable, onReady }: { svg: stri
   const { gl, scene, invalidate } = useThree();
   const resources = useMemo(() => {
     const parsed = new SVGLoader().parse(svg);
-    const shapes = parsed.paths.flatMap(path => SVGLoader.createShapes(path));
-    const geometry = new ExtrudeGeometry(shapes, { depth: 32, bevelEnabled: false, curveSegments: 8 });
-    geometry.scale(4 / 810, -4 / 810, 4 / 810);
-    geometry.center();
-    const vertices: number[] = [];
+    const shapes = parsed.paths.flatMap(path => SVGLoader.createShapes(path)).map(source => {
+      const reflect = (path: Path) => path.getPoints().map(point => new Vector2(point.x, -point.y));
+      const shape = new Shape(reflect(source));
+      shape.holes = source.holes.map(hole => new Path(reflect(hole)));
+      return shape;
+    });
+    const geometry = new ExtrudeGeometry(shapes, { depth: 58, bevelEnabled: true, bevelThickness: 2, bevelSize: .4, bevelSegments: 3, curveSegments: 8 });
     geometry.computeBoundingBox();
-    const centerX = (geometry.boundingBox!.max.x + geometry.boundingBox!.min.x) / 2;
-    const centerY = (geometry.boundingBox!.max.y + geometry.boundingBox!.min.y) / 2;
-    const raw = new ExtrudeGeometry(shapes, { depth: 32, bevelEnabled: false });
-    raw.computeBoundingBox();
-    const cx = (raw.boundingBox!.min.x + raw.boundingBox!.max.x) / 2;
-    const cy = (raw.boundingBox!.min.y + raw.boundingBox!.max.y) / 2;
-    raw.dispose();
+    const cx = (geometry.boundingBox!.min.x + geometry.boundingBox!.max.x) / 2;
+    const cy = (geometry.boundingBox!.min.y + geometry.boundingBox!.max.y) / 2;
+    geometry.scale(4 / 810, 4 / 810, 4 / 810);
+    geometry.center();
+    geometry.computeVertexNormals();
+    const vertices: number[] = [];
     for (const shape of shapes) {
       for (const path of [shape, ...shape.holes]) {
         const points = path.getPoints();
-        for (const z of [-16, 16]) {
+        for (const z of [-29, 29]) {
           for (let i = 0; i < points.length - 1; i++) {
-            for (const p of [points[i], points[i + 1]]) vertices.push((p.x - cx) * 4 / 810 + centerX, -(p.y - cy) * 4 / 810 + centerY, z * 4 / 810);
+            for (const p of [points[i], points[i + 1]]) vertices.push((p.x - cx) * 4 / 810, (p.y - cy) * 4 / 810, z * 4 / 810);
           }
         }
         for (let i = 0; i < points.length; i += Math.max(1, Math.floor(points.length / 4))) {
           const p = points[i];
-          for (const z of [-16, 16]) vertices.push((p.x - cx) * 4 / 810, -(p.y - cy) * 4 / 810, z * 4 / 810);
+          for (const z of [-29, 29]) vertices.push((p.x - cx) * 4 / 810, (p.y - cy) * 4 / 810, z * 4 / 810);
         }
       }
     }
@@ -49,7 +50,7 @@ function Identity({ svg, progress, active, onUnavailable, onReady }: { svg: stri
     wire.computeLineDistances();
     const distances = edges.getAttribute('lineDistance');
     const length = distances.getX(distances.count - 1);
-    const material = new MeshPhysicalMaterial({ color: '#5692f0', emissive: '#1e5bc1', emissiveIntensity: .2, metalness: 1, roughness: .15, transparent: true, opacity: 0, depthWrite: false });
+    const material = new MeshPhysicalMaterial({ color: '#9bbff5', emissive: '#1e5bc1', emissiveIntensity: .08, metalness: .95, roughness: .2, clearcoat: 1, clearcoatRoughness: .12, envMapIntensity: 1.4, transparent: true, opacity: 0, depthWrite: false });
     return { geometry, edges, material, wireMaterial, wire, length };
   }, [svg]);
 
@@ -106,7 +107,7 @@ export default function ProcessIdentityScene({ progress, active, onUnavailable, 
     } catch { onUnavailable('webgl'); return; }
     setAvailable(true);
     const controller = new AbortController();
-    fetch('/awwwards/identity/vinz-contours.svg', { signal: controller.signal }).then(response => { if (!response.ok) throw Error('Asset unavailable'); return response.text(); }).then(setSvg).catch(error => { if (error.name !== 'AbortError') onUnavailable('asset'); });
+    fetch('/awwwards/identity/vinz-process-contours.svg', { signal: controller.signal }).then(response => { if (!response.ok) throw Error('Asset unavailable'); return response.text(); }).then(setSvg).catch(error => { if (error.name !== 'AbortError') onUnavailable('asset'); });
     return () => controller.abort();
   }, [onUnavailable]);
   if (!available) return null;
