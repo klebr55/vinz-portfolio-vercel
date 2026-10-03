@@ -1,3 +1,11 @@
+## Pedido vigente · Processo comercial e Rotato SDIMT · 03/10/2026 (Cuiabá)
+
+O proprietário solicitou substituir a VINZ exclusiva de Processo pela ilustração de código, fixada à direita por GSAP, enquanto as etapas do serviço são lidas à esquerda. Desenho só conclui na última etapa. A correção `8bf29bd` já foi implementada em `653bb2a`/checkpoint `7123019`; não repetir sua execução nem o antigo diagnóstico de 317 px como se descrevesse o HEAD atual.
+
+[Proposta de brainstorming para revisão](2026-10-03-PROCESS-BUSINESS-PROPOSAL.md) e [fontes reais/manifesto](reference-sources/process-business/README.md). Composição em camadas e copy são propostas, ainda sem spec/plano/prompt de implementação novo aprovado. Rotato: 422 frames RGB sem alpha, 131 slots finais idênticos/escuros; integração candidata no case SDIMT, preservando ponte, hero e notebook NKS. Esta publicação apenas arquiva/anota o novo pedido. P2/aceite artístico/expansão permanecem abertos.
+
+---
+
 ## Revisão vigente · fidelidade de Processo · 03/10/2026 UTC
 
 Inspecionados `42d7f6f`, código e gravações comparativas do proprietário. Tasks 4–7 estão entregues; **aceite visual de Processo não concedido**. A construção atual é comprimida em cerca de 317 px de scroll desktop e usa wire manual com conectores arbitrários. As faixas curtas também vinham do plano Mastermind e estão corrigidas nesta orientação. [Revisão dirigida](2026-10-03-PROCESS-DRAW-MASTER-REVIEW.md), [evidência/método](evidence-narrative/process-draw-master-review/README.md) e [próximo prompt Worker](2026-10-03-PROCESS-DRAW-WORKER.md).

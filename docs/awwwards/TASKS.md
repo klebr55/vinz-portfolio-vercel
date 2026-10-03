@@ -1,3 +1,19 @@
+## Pedido vigente · Processo comercial · 03/10/2026 (Cuiabá)
+
+- [x] Recuperar três etapas antigas por capturas e `Approach`/mensagens PT/EN.
+- [x] Inspecionar HEAD `7123019` e correção já implementada `653bb2a`, sem reexecutá-la.
+- [x] Arquivar SVG de código e capturas originais com hashes.
+- [x] Analisar sequência Rotato SDIMT existente e registrar ausência de alpha/cauda final.
+- [x] Elaborar [proposta para revisão](2026-10-03-PROCESS-BUSINESS-PROPOSAL.md), sem implementar produto.
+- [ ] Proprietário revisar composição em camadas, etapas/copy e integração candidata do mockup SDIMT.
+- [ ] Consolidar spec e plano do incremento após os aceites aplicáveis, mantendo execução sequencial.
+- [ ] Worker implementar o incremento definido no futuro prompt, com prova de desenho incompleto antes da última etapa.
+- [ ] Mastermind revisar; P2/aceite geral/expansão seguem abertos.
+
+O pedido substitui a VINZ apenas na nova direção de Processo. A hero mantém VINZ elétrica. Os checks da correção anterior continuam histórico técnico; não autorizam novo aceite artístico nem indicam que o novo SVG já está implementado.
+
+---
+
 ## Prioridade vigente · Processo fiel à referência · 03/10/2026 UTC
 
 - [x] Inspecionar HEAD `42d7f6f`/implementação `65a6e5f` e comparação gravada pelo proprietário.

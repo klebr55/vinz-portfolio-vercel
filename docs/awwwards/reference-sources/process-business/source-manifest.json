@@ -1,0 +1,60 @@
+{
+  "attachments": [
+    {
+      "uploaded_name": "code-svgrepo-com.svg",
+      "archived_name": "code.owner.svg",
+      "bytes": 13679,
+      "sha256": "efb3feb28ea735b51e143b56f873f2090d016777f31644d2e419a4ab67811dcb",
+      "original_unchanged": true
+    },
+    {
+      "uploaded_name": "image(20261003-112218).png",
+      "archived_name": "approach-phase-1.owner.png",
+      "bytes": 147394,
+      "sha256": "f4a79b05ad58ba63e6742caed86649f398e68dd7ed43ed08e962649c6a7dc298",
+      "original_unchanged": true
+    },
+    {
+      "uploaded_name": "image(20261003-112228).png",
+      "archived_name": "approach-phase-2.owner.png",
+      "bytes": 217015,
+      "sha256": "ef8cedeee394f8cf3ea21c3fd1351167fd456ced2590712b796181175688ee38",
+      "original_unchanged": true
+    },
+    {
+      "uploaded_name": "image(20261003-112240).png",
+      "archived_name": "approach-phase-3.owner.png",
+      "bytes": 166469,
+      "sha256": "df2fafec3cfe9bc2283d86a0b528b4904ba837768bfd87e2529dfd39cd61d778",
+      "original_unchanged": true
+    }
+  ],
+  "rotato": {
+    "inspected_head": "7123019a6f7a10cfabfa44958be2c337bcc08de2",
+    "owner_supplied_commit_link": "7c0e70cc77c80f9cf1a67baafa9c422630c77161",
+    "owner_commit_link_api_result": "422: No commit found",
+    "verified_sequence_introduction": "e7b642046dfb8a529655a30be819b9d499c011eb",
+    "path": "public/awwwards/sdimt/motion-sdimt",
+    "frame_count": 422,
+    "size_bytes": 16981354,
+    "dimensions": [
+      2880,
+      1620
+    ],
+    "pixel_modes": {
+      "RGB": 422
+    },
+    "alpha_present": false,
+    "unique_git_blobs": 242,
+    "trailing_identical_from": "frame_000292.webp",
+    "trailing_identical_count": 131,
+    "source_fps": "not supplied; do not infer duration from count",
+    "decoded_rgba_all_frames_bytes": 7875532800,
+    "corner_rgb": [
+      4,
+      6,
+      10
+    ],
+    "all_sources_preserved": true
+  }
+}

@@ -1,3 +1,13 @@
+## 03/10/2026 (Cuiabá) · pedido de Processo comercial
+
+Novo pedido explícito: SVG de código no lugar da VINZ em Processo, cena pin GSAP à direita, explicações das etapas de serviço à esquerda e conclusão do desenho reservada à última etapa. Objetivo: demonstrar método e dar segurança ao cliente. Etapas antigas recuperadas em `Approach`/mensagens e nas três capturas do proprietário. O texto antigo da última etapa repete desenvolvimento; reescrita proposta, não promessa nova já atribuída ao proprietário.
+
+Inspecionado HEAD `7123019`; orientação `8bf29bd` já executada em `653bb2a`. Nova proposta preserva essa fundação, mantém VINZ elétrica na hero e recomenda construir a ilustração isométrica de 19 paths em camadas com profundidade contida. [Proposta pendente de revisão](2026-10-03-PROCESS-BUSINESS-PROPOSAL.md), sem produto/spec/plano/prompt novo liberado.
+
+Rotato SDIMT já está no repo, introduzido em `e7b6420`; link `7c0e70c` informado não resolveu pela API. Todos os 422 WebPs medem 2880×1620 e são RGB sem alpha; total 16.981.354 bytes, 242 blobs únicos, últimos 131 slots idênticos. Não assumir transparência real nem repetir/reenviar a mídia existente. [Fontes e análise](reference-sources/process-business/README.md). Integração candidata no case SDIMT, sem usar o mesmo gesto em Processo/hero/NKS. Sem teste de reprodução ou PASS de fluidez nesta etapa. P2 e expansão continuam abertos.
+
+---
+
 ## 03/10/2026 · Worker · construção de Processo corrigida
 
 Implementação `653bb2af628354f962d12b7c1ca1088812f6772b`, sobre união preservada de `8bf29bd` e `e7b6420`. [Prova e método](evidence-narrative/process-draw-worker/README.md). Normalização de 1 px retém cinco contornos/63 vértices, IoU 99,4465%; a extrusão sem bevel usa suas próprias 160 arestas EdgesGeometry(20), todas exatamente uma vez. Percurso por componente: frente, conexão física, verso e cantos restantes. Sem conectores por índice ou ligação entre componentes.
