@@ -8,6 +8,8 @@
 - [x] Worker entregar evidência visual das fases, valores reais da cena, checks e checkpoint.
 - [ ] Mastermind avaliar a correção; P2/aceite geral/expansão permanecem abertos.
 
+Entrega corretiva técnica: `653bb2a`; [capturas, dados reais e checks](evidence-narrative/process-draw-worker/README.md). Aceite artístico permanece na tarefa Mastermind acima.
+
 Tasks 4–7 anteriores foram entregues, não são reexecutados por esta revisão. Suas outras alterações permanecem preservadas. As faixas curtas prescritas para Processo estão supersedidas pela [revisão atual](2026-10-03-PROCESS-DRAW-MASTER-REVIEW.md). A revisão documental de 8bf29bd foi seguida pela implementação do Worker indicada acima.
 
 ---
