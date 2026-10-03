@@ -1,3 +1,12 @@
+## 03/10/2026 · Worker · construção de Processo corrigida
+
+Implementação `653bb2af628354f962d12b7c1ca1088812f6772b`, sobre união preservada de `8bf29bd` e `e7b6420`. [Prova e método](evidence-narrative/process-draw-worker/README.md). Normalização de 1 px retém cinco contornos/63 vértices, IoU 99,4465%; a extrusão sem bevel usa suas próprias 160 arestas EdgesGeometry(20), todas exatamente uma vez. Percurso por componente: frente, conexão física, verso e cantos restantes. Sem conectores por índice ou ligação entre componentes.
+
+Span = stage medido + três viewports, desenho 0–0,60, material 0,50–0,90 e leitura 0,90–1. Desktop ganha 1.620 px de desenho; mobile 390×844, 1.519,2 px. Pausa mantém o intermediário; PNG da marca desacopla fallback do SVG. Paisagem corrigida após captura real. Valores derivados conduzem threeEffect; seu flush antes da invalidação garante o último frame de teclado, sem loop extra. Material, ambiente e endpoint oblíquo mantidos.
+
+Desktop/mobile/fallbacks passaram na build final, com valores reais de cena/uniforms e imagens das fases. Oito testes/tipos/lint/build/diff verdes, três warnings anteriores. Software WebGL identificado; nenhum PASS artístico ou de GPU física. Hero/ponte/navbar/cases preservados, arquivos Analytics excluídos. Worker entrega para Mastermind, P2/expansão continuam abertas.
+
+---
 ## 03/10/2026 UTC · revisão Mastermind do desenho Processo
 
 Entrega `42d7f6f`/`65a6e5f` preservada, com correção visual dirigida a Processo. A gravação do proprietário demonstra construção muito comprimida frente ao exemplo Motion. Desktop do relatório Worker: span 990 px; desenho .10–.42 equivale a 316,8 px, preenchimento .38–.62 a 237,6 px. O Mastermind reconhece que suas faixas anteriores contribuíram e as supersede; a sobreposição desenho/material, presente também no original, não constitui defeito isolado.

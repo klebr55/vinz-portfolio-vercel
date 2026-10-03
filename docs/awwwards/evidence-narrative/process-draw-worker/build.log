@@ -1,0 +1,78 @@
+
+> vinz-portfolio@0.1.0 build
+> next build
+
+   ▲ Next.js 15.3.8
+
+   Creating an optimized production build ...
+Browserslist: browsers data (caniuse-lite) is 16 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+ ✓ Compiled successfully in 11.0s
+   Linting and checking validity of types ...
+
+./components/ui/about-me/Globe.tsx
+248:6  Warning: React Hook useEffect has missing dependencies: 'gl', 'size.height', and 'size.width'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./components/ui/approach/CanvasRevealEffect.tsx
+284:6  Warning: React Hook useMemo has a missing dependency: 'getUniforms'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./components/ui/clients/InfiniteMovingCards.tsx
+31:6  Warning: React Hook useEffect has a missing dependency: 'addAnimation'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+   Generating static pages (0/16) ...
+   Generating static pages (4/16)
+   Generating static pages (8/16)
+   Generating static pages (12/16)
+ ✓ Generating static pages (16/16)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                         Size  First Load JS  Revalidate  Expire
+┌ ○ /_not-found                                    296 B         445 kB
+├ ● /[locale]                                     202 kB         858 kB
+├   ├ /en
+├   └ /pt-br
+├ ● /[locale]/awwwards-preview/[style]           53.9 kB         709 kB
+├   ├ /pt-br/awwwards-preview/ember
+├   ├ /pt-br/awwwards-preview/spectral
+├   ├ /en/awwwards-preview/ember
+├   └ /en/awwwards-preview/spectral
+├ ○ /api/analytics                                 245 B         445 kB          5m      1y
+├ ƒ /api/contact                                   245 B         445 kB
+├ ƒ /api/edge                                      245 B         445 kB
+├ ƒ /api/og                                        245 B         445 kB
+├ ƒ /api/og-fallback                               245 B         445 kB
+├ ƒ /api/test-og                                   245 B         445 kB
+├ ○ /robots.txt                                    245 B         445 kB
+└ ○ /sitemap.xml                                   245 B         445 kB
++ First Load JS shared by all                     444 kB
+  ├ chunks/4bd1b696-89616870fefd8a70.js          53.2 kB
+  ├ chunks/vendors-074a4645-6f245e17563a14cd.js  24.5 kB
+  ├ chunks/vendors-1577a0f7-e6869ee616609434.js  23.2 kB
+  ├ chunks/vendors-2898f16f-a9103ff4b24b34e7.js  16.7 kB
+  ├ chunks/vendors-362d063c-257ae802b94800cc.js  13.5 kB
+  ├ chunks/vendors-377fed06-a884776a7721393d.js  11.2 kB
+  ├ chunks/vendors-4a7382ad-42da321e41f06377.js  11.9 kB
+  ├ chunks/vendors-6b948b9f-8e6dcc79f7a98d20.js  17.6 kB
+  ├ chunks/vendors-8cbd2506-e63450e5e8c91bf4.js  19.4 kB
+  ├ chunks/vendors-91fbc7f7-286a192df46dee7f.js  17.9 kB
+  ├ chunks/vendors-98a6762f-f436af87ccbaac87.js  12.5 kB
+  ├ chunks/vendors-992a813f-bb69115647fd0c1b.js  11.7 kB
+  └ chunks/vendors-b9f70e77-ee7d450ad3cf1a7e.js    15 kB
+  ├ chunks/vendors-c0d76f48-d0d809538ae8f740.js  35.3 kB
+  ├ chunks/vendors-d929e15b-fcee735acd9b6b08.js  19.4 kB
+  ├ chunks/vendors-e1bed6ae-a4abe00b810cd369.js  24.9 kB
+  ├ chunks/vendors-f945abb9-abebafff55355adc.js  15.9 kB
+  ├ chunks/vendors-fd1acf68-ffe2f29ae0dba8c0.js  13.9 kB
+  └ other shared chunks (total)                  86.8 kB
+
+
+ƒ Middleware                                     44.9 kB
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand

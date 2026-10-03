@@ -1,0 +1,57 @@
+{
+  "implementation": "653bb2af628354f962d12b7c1ca1088812f6772b",
+  "remoteBase": "8bf29bd",
+  "preservedOwnerCommit": "e7b6420",
+  "merge": "a6afb85",
+  "branch": "redesign/awwwards-repagination",
+  "nextBuildId": "ToZcwEl45yANZarG-haey",
+  "sourceSha256": {
+    "components/awwwards/chapters/ProcessChapter.tsx": "72afb7294c727858d23b516b7888d987a4daa07e896310ff207543375876fd04",
+    "components/awwwards/identity/ProcessIdentityScene.tsx": "73009a1b402157a3f01e726990b6476decf9da7747074bb8d060439c7269e91e",
+    "components/awwwards/identity/process-model.ts": "b4e2445d35dcd72aa11bd996a9c460d356dfc88e92c36010cdef7bc820c590dc",
+    "components/awwwards/identity/process-geometry.ts": "ff8171be1b4f334a5232b96a46d48b5413de1c6510212191a6a8dd31397b7e32",
+    "components/awwwards/story-prototype.module.css": "6e2b5066912f5f6e3ddb7e93b2cacc65ec095167b8f8802c70ca10415b16f4b9",
+    "public/awwwards/identity/vinz-process-contours.svg": "28a8f31e8e9535c1a4383d5c1f366aa9e5f1bd7cf608dff642f0e7dd96fd6e74",
+    "public/awwwards/identity/vinz-process-static.png": "2f41df845dc355c2be0d0318e56e3b1d85ef607f243f387200c994aca6f30bb6",
+    "scripts/check-awwwards-rhythm.mjs": "2ecaa064b6eaee703e62bbbb8b7c809e35cffc2f42affc60ecfde470f6fb7032"
+  },
+  "reports": {
+    "desktop.json": {
+      "sha256": "9738f19c4121eb536f97e9b5cc658b250ad9fa820320d9fb888deb2134e1032f",
+      "pass": true,
+      "runtimeExceptions": 0,
+      "video": {
+        "name": "process-desktop-native-input.mp4",
+        "frames": 600,
+        "seconds": 43.08699989318848,
+        "method": "Actual Chrome screencast timestamps, VFR, no interpolation"
+      }
+    },
+    "mobile.json": {
+      "sha256": "1e5cb7037a32d402613d22cd7d54b33879669edc155e50cc79021824440e4a52",
+      "pass": true,
+      "runtimeExceptions": 0,
+      "video": {
+        "name": "process-mobile-native-input.mp4",
+        "frames": 763,
+        "seconds": 42.048564195632935,
+        "method": "Actual Chrome screencast timestamps, VFR, no interpolation"
+      }
+    },
+    "fallbacks.json": {
+      "sha256": "375165db2d136637be7803c6be0754c2aa8b835ced511dc83f91924d4abe8552",
+      "pass": true,
+      "runtimeExceptions": 0,
+      "video": null
+    }
+  },
+  "checks": {
+    "tests": 8,
+    "typesExit": 0,
+    "lintExit": 0,
+    "buildExit": 0,
+    "existingHookWarnings": 3
+  },
+  "artisticAcceptance": "Pending Mastermind",
+  "hardwareFluidity": "Not measured; software WebGL"
+}

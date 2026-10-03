@@ -1,0 +1,45 @@
+{
+  "source": "docs/awwwards/reference-sources/identity-review-2026-10-02/vinz-alt.owner.svg",
+  "sourceSha256": "a64fb915610b99ab95304ccd80668d17b63ee30d4fadecf66272db19b4e33538",
+  "rasterSha256": "9891110d3545284581852c1fba63f2ac6c1392328262239fb29f362cdfeed2ee",
+  "bounds": [
+    0,
+    6,
+    810,
+    804
+  ],
+  "contours": 5,
+  "vertices": [
+    12,
+    4,
+    26,
+    6,
+    15
+  ],
+  "tolerancePixels": 1,
+  "iou": 0.9944653382309537,
+  "maxSourceVertexToNormalizedContourPixels": 1.0,
+  "contourAreas": [
+    {
+      "source": 26218.0,
+      "normalized": 26350.0
+    },
+    {
+      "source": 4.0,
+      "normalized": 3.0
+    },
+    {
+      "source": 43712.0,
+      "normalized": 43717.0
+    },
+    {
+      "source": 69967.0,
+      "normalized": 70231.0
+    },
+    {
+      "source": 196982.5,
+      "normalized": 197400.0
+    }
+  ],
+  "method": "Existing owner composite raster; alpha coverage, closed OpenCV approxPolyDP 1px, evenodd fill; all five contours retained, including four-vertex hole"
+}

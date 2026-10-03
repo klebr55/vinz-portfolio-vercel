@@ -1,0 +1,212 @@
+{
+  "mode": "process-fallbacks",
+  "origin": "http://localhost:3004",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "states": [
+    {
+      "label": "checkpoint",
+      "y": 11037,
+      "p": 1,
+      "paused": false,
+      "physicalProgress": 0.17107060185185186,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "fallbackLoaded": true,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.09999999999999998,
+        "dashSize": 91.08690643310547,
+        "totalSize": 1001.9559707641602,
+        "at": 2231.60000000149
+      },
+      "fill": {
+        "opacity": 1,
+        "at": 2231.60000000149
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "before-hidden",
+      "y": 11055,
+      "p": 0.1778436457947388,
+      "paused": false,
+      "physicalProgress": 0.1777372685185185,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "fallbackLoaded": true,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 26.99871254037954,
+        "totalSize": 937.8677768714342,
+        "at": 4130.89999999851
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 4130.800000000745
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "hidden",
+      "y": 11061,
+      "p": 0.1778436457947388,
+      "paused": false,
+      "physicalProgress": 0.17787615740740742,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "fallbackLoaded": true,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 26.99871254037954,
+        "totalSize": 937.8677768714342,
+        "at": 4130.89999999851
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 4130.800000000745
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "hidden-held",
+      "y": 11061,
+      "p": 0.1778436457947388,
+      "paused": false,
+      "physicalProgress": 0.17787615740740742,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "fallbackLoaded": true,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 26.99871254037954,
+        "totalSize": 937.8677768714342,
+        "at": 4130.89999999851
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 4130.800000000745
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "visible-again",
+      "y": 11055,
+      "p": 0.1778436457947388,
+      "paused": false,
+      "physicalProgress": 0.1777372685185185,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "fallbackLoaded": true,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 26.99871254037954,
+        "totalSize": 937.8677768714342,
+        "at": 5192.60000000149
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 5192.60000000149
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "context-loss",
+      "y": 11055,
+      "paused": false,
+      "physicalProgress": 0.1777372685185185,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": false,
+      "fallback": true,
+      "fallbackLoaded": true,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 26.99871254037954,
+        "totalSize": 937.8677768714342,
+        "at": 6298.10000000149
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 6298.10000000149
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "cold-preparing",
+      "y": 10575,
+      "paused": false,
+      "physicalProgress": 0,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 1.109375,
+      "stageBottom": 901.109375,
+      "canvas": false,
+      "fallback": true,
+      "fallbackLoaded": true,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 26.99871254037954,
+        "totalSize": 937.8677768714342,
+        "at": 6298.10000000149
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 6298.10000000149
+      },
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "pass": false,
+  "failure": "Error: Timed out: document.querySelector('#process img').hidden"
+}

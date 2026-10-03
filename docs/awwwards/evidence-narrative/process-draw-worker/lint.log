@@ -1,0 +1,15 @@
+
+> vinz-portfolio@0.1.0 lint
+> next lint
+
+
+./components/ui/about-me/Globe.tsx
+248:6  Warning: React Hook useEffect has missing dependencies: 'gl', 'size.height', and 'size.width'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./components/ui/approach/CanvasRevealEffect.tsx
+284:6  Warning: React Hook useMemo has a missing dependency: 'getUniforms'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./components/ui/clients/InfiniteMovingCards.tsx
+31:6  Warning: React Hook useEffect has a missing dependency: 'addAnimation'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules

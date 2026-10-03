@@ -1,0 +1,61 @@
+{
+  "method": "Same pure geometry builder as product; normalized SVG contours mapped to four Shapes and the source hole; no renderer",
+  "three": "0.177.0",
+  "shapes": 4,
+  "contours": [
+    12,
+    4,
+    26,
+    6,
+    15
+  ],
+  "extractedSegments": 160,
+  "renderedSegments": 160,
+  "length": 91.08690643310547,
+  "thresholdDegrees": 20,
+  "bevel": false,
+  "depth": 58,
+  "scale": 0.0049382716049382715,
+  "paths": [
+    {
+      "start": 0,
+      "end": 58,
+      "segments": 26,
+      "connectors": 6,
+      "startLength": 0,
+      "endLength": 17.81731414794922
+    },
+    {
+      "start": 58,
+      "end": 74,
+      "segments": 6,
+      "connectors": 4,
+      "startLength": 17.81731414794922,
+      "endLength": 35.113128662109375
+    },
+    {
+      "start": 74,
+      "end": 115,
+      "segments": 15,
+      "connectors": 11,
+      "startLength": 35.113128662109375,
+      "endLength": 72.90660095214844
+    },
+    {
+      "start": 115,
+      "end": 148,
+      "segments": 12,
+      "connectors": 9,
+      "startLength": 72.90660095214844,
+      "endLength": 89.86912536621094
+    },
+    {
+      "start": 148,
+      "end": 160,
+      "segments": 4,
+      "connectors": 4,
+      "startLength": 89.86912536621094,
+      "endLength": 91.08690643310547
+    }
+  ]
+}

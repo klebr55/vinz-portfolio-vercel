@@ -1,3 +1,16 @@
+# Checkpoint Worker · Processo construído por scroll · 03/10/2026
+
+Ordem corretiva `8bf29bd` executada na branch `redesign/awwwards-repagination`. Implementação **`653bb2af628354f962d12b7c1ca1088812f6772b`**. Remoto inicial `8bf29bd` e commit local do proprietário `e7b6420` preservados pelo merge `a6afb85`, sem reset. Execução sequencial. [Relatório, gravações e medições](evidence-narrative/process-draw-worker/README.md).
+
+- Contornos reais normalizados com tolerância 1 px/IoU 99,4465%; quatro componentes e vazado preservados. Extrusão sem bevel; todas as 160 arestas `EdgesGeometry(20)` usadas uma vez, em ordem frente → profundidade real → verso, sem linhas entre componentes.
+- Stage real medido; span de três viewports. Desktop: 2.700 px úteis, desenho 1.620 px; mobile 390×844: 2.532 / 1.519,2 px. Desenho 0–0,60, material 0,50–0,90, leitura 0,90–1. Contorno discreto até 10%, material/reflexos/orientação final preservados.
+- Pausa conserva estado intermediário. Preparação antecipada, frame final de teclado convergente, PNG independente para fallback. Paisagem 760×420 enquadra marca e texto inteiros.
+- Provas finais da build: desktop/mobile com wheel 80/120, 240/480, pausas, reversão/nova ida, PageUp, toque, saída/retorno, PT/EN/checkpoint. MotionValue real, uniforms de draw e capturas de traço/material. Cache frio, hidden, asset falho, reduced, perda/ausência de WebGL e HTML sem JS úteis.
+- Oito testes, tipos, lint, build e diff-check verdes; três warnings de hooks anteriores. Lockfile e versões preservados. Nenhuma alteração de produto em hero/ponte/navbar/cases. Analytics alheios excluídos.
+
+**Parada para revisão Mastermind.** P2/aceite artístico/expansão seguem abertos. Software WebGL não comprova fluidez em GPU física. Prévias locais da build: [PT](http://localhost:3004/pt-br/awwwards-preview/ember#process), [EN](http://localhost:3004/en/awwwards-preview/ember#process). Publicação somente nesta branch; SHA final confirmado no retorno Worker.
+
+---
 # Checkpoint Worker · Tasks 4–7 · 02/10/2026
 
 Pedido: executar plano adaptado na branch indicada, com vídeo da ponte anexado. Base remota confirmada `d53cf6e`; implementação final **`65a6e5f8a46d10951cc1857dfbc5e162efde4191`**. Branch `redesign/awwwards-repagination`. [Relatório, fontes, comandos e provas](evidence-narrative/identity-rhythm/README.md).

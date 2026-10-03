@@ -1,0 +1,234 @@
+{
+  "mode": "process-probe",
+  "origin": "http://localhost:3004",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "samples": [
+    {
+      "label": "start",
+      "y": 12175,
+      "p": 0.5928121526491293,
+      "active": true,
+      "physicalProgress": 0.5925520833333333,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.791172656539459,
+        "dashSize": 89.9957084679318,
+        "totalSize": 1000.8647727989865,
+        "at": 3455.099999997765
+      },
+      "fill": {
+        "opacity": 0.23203038162282336,
+        "at": 3455.099999997765
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "paused",
+      "y": 12175,
+      "p": 0.5928121526491293,
+      "active": false,
+      "physicalProgress": 0.5925520833333333,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.791172656539459,
+        "dashSize": 89.9957084679318,
+        "totalSize": 1000.8647727989865,
+        "at": 3971.199999999255
+      },
+      "fill": {
+        "opacity": 0.23203038162282336,
+        "at": 3971.199999999255
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "resumed",
+      "y": 12175,
+      "p": 0.5928121526491293,
+      "active": false,
+      "physicalProgress": 0.5925520833333333,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.791172656539459,
+        "dashSize": 89.9957084679318,
+        "totalSize": 1000.8647727989865,
+        "at": 4641.89999999851
+      },
+      "fill": {
+        "opacity": 0.23203038162282336,
+        "at": 4641.89999999851
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "keyboard-0",
+      "y": 11388,
+      "p": 0.30122267506483885,
+      "active": false,
+      "physicalProgress": 0.30107060185185186,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 46.40403717877734,
+        "totalSize": 957.273101509832,
+        "at": 5374.699999999255
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 5374.699999999255
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "keyboard-1",
+      "y": 11388,
+      "p": 0.30122267506483885,
+      "active": false,
+      "physicalProgress": 0.30107060185185186,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 46.40403717877734,
+        "totalSize": 957.273101509832,
+        "at": 5374.699999999255
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 5374.699999999255
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "keyboard-2",
+      "y": 11388,
+      "p": 0.30122267506483885,
+      "active": false,
+      "physicalProgress": 0.30107060185185186,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 46.40403717877734,
+        "totalSize": 957.273101509832,
+        "at": 5374.699999999255
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 5374.699999999255
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "keyboard-3",
+      "y": 11388,
+      "p": 0.30122267506483885,
+      "active": false,
+      "physicalProgress": 0.30107060185185186,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 46.40403717877734,
+        "totalSize": 957.273101509832,
+        "at": 5374.699999999255
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 5374.699999999255
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "keyboard-4",
+      "y": 11388,
+      "p": 0.30122267506483885,
+      "active": false,
+      "physicalProgress": 0.30107060185185186,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 46.40403717877734,
+        "totalSize": 957.273101509832,
+        "at": 5374.699999999255
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 5374.699999999255
+      },
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "pass": true
+}

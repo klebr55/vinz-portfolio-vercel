@@ -3,12 +3,12 @@
 - [x] Inspecionar HEAD `42d7f6f`/implementação `65a6e5f` e comparação gravada pelo proprietário.
 - [x] Verificar distâncias de fase e probe isolado de geometria; arquivar quadros/método.
 - [x] Publicar revisão e [prompt corretivo focado](2026-10-03-PROCESS-DRAW-WORKER.md).
-- [ ] Worker corrigir contornos/arestas estruturais e ordem do desenho VINZ, preservando marca/vazados reais.
-- [ ] Worker restituir distância útil e revelação traço→material→leitura, com input nativo/reversão desktop/mobile.
-- [ ] Worker entregar evidência visual das fases, valores reais da cena, checks e checkpoint.
+- [x] Worker corrigir contornos/arestas estruturais e ordem do desenho VINZ, preservando marca/vazados reais.
+- [x] Worker restituir distância útil e revelação traço→material→leitura, com input nativo/reversão desktop/mobile.
+- [x] Worker entregar evidência visual das fases, valores reais da cena, checks e checkpoint.
 - [ ] Mastermind avaliar a correção; P2/aceite geral/expansão permanecem abertos.
 
-Tasks 4–7 anteriores foram entregues, não são reexecutados por esta revisão. Suas outras alterações permanecem preservadas. As faixas curtas prescritas para Processo estão supersedidas pela [revisão atual](2026-10-03-PROCESS-DRAW-MASTER-REVIEW.md). Não há implementação de produto neste checkpoint documental.
+Tasks 4–7 anteriores foram entregues, não são reexecutados por esta revisão. Suas outras alterações permanecem preservadas. As faixas curtas prescritas para Processo estão supersedidas pela [revisão atual](2026-10-03-PROCESS-DRAW-MASTER-REVIEW.md). A revisão documental de 8bf29bd foi seguida pela implementação do Worker indicada acima.
 
 ---
 

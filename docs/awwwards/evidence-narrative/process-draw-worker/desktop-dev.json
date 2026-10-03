@@ -1,0 +1,823 @@
+{
+  "mode": "process-rhythm",
+  "origin": "http://localhost:3004",
+  "method": "Native Chrome CDP, trusted browser input, software WebGL",
+  "checks": {},
+  "errors": [],
+  "samples": [
+    {
+      "label": "arrival",
+      "y": 10495,
+      "p": 0,
+      "active": true,
+      "physicalProgress": 0,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 81.109375,
+      "stageBottom": 981.109375,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 0,
+        "totalSize": 910.8690643310547,
+        "at": 3670.800000000745
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 3670.7000000011176
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-0",
+      "y": 10574,
+      "p": 0,
+      "active": true,
+      "physicalProgress": 0,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 2.109375,
+      "stageBottom": 902.109375,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 0,
+        "totalSize": 910.8690643310547,
+        "at": 4736.4000000003725
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 4736.4000000003725
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-1",
+      "y": 10694,
+      "p": 0.04409040385327899,
+      "active": true,
+      "physicalProgress": 0.04403356481481482,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 6.6371834995099706,
+        "totalSize": 917.5062478305647,
+        "at": 5536.9000000003725
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 5536.800000000745
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-2",
+      "y": 10774,
+      "p": 0.07373101148573545,
+      "active": true,
+      "physicalProgress": 0.07366319444444444,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 11.13696892290656,
+        "totalSize": 922.0060332539613,
+        "at": 6337.200000001118
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 6337.200000001118
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-3",
+      "y": 10894,
+      "p": 0.11819192293442016,
+      "active": true,
+      "physicalProgress": 0.1181076388888889,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 17.886647058001444,
+        "totalSize": 928.7557113890562,
+        "at": 7170.5
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 7170.4000000003725
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-4",
+      "y": 10974,
+      "p": 0.14783253056687662,
+      "active": true,
+      "physicalProgress": 0.1477372685185185,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 22.38643248139803,
+        "totalSize": 933.2554968124527,
+        "at": 7920.700000001118
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 7920.60000000149
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-5",
+      "y": 11094,
+      "p": 0.1922934420155613,
+      "active": true,
+      "physicalProgress": 0.19218171296296296,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 29.136110616492925,
+        "totalSize": 940.0051749475476,
+        "at": 8753.10000000149
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 8753.10000000149
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-6",
+      "y": 11174,
+      "p": 0.22193404964801777,
+      "active": true,
+      "physicalProgress": 0.22181134259259258,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 33.63589603988951,
+        "totalSize": 944.5049603709442,
+        "at": 9487
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 9487
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-7",
+      "y": 11294,
+      "p": 0.26639496109670247,
+      "active": true,
+      "physicalProgress": 0.26625578703703706,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 40.38557417498439,
+        "totalSize": 951.2546385060391,
+        "at": 10386.400000000373
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 10386.300000000745
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-8",
+      "y": 11374,
+      "p": 0.2960355687291589,
+      "active": true,
+      "physicalProgress": 0.2958854166666667,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 44.88535959838098,
+        "totalSize": 955.7544239294357,
+        "at": 11118.900000000373
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 11118.900000000373
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-9",
+      "y": 11494,
+      "p": 0.3404964801778436,
+      "active": true,
+      "physicalProgress": 0.34032986111111113,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 51.63503773347587,
+        "totalSize": 962.5041020645306,
+        "at": 11952.400000000373
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 11952.300000000745
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-10",
+      "y": 11574,
+      "p": 0.37013708781030014,
+      "active": true,
+      "physicalProgress": 0.36995949074074075,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 56.13482315687246,
+        "totalSize": 967.0038874879272,
+        "at": 12685.900000000373
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 12685.900000000373
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-11",
+      "y": 11694,
+      "p": 0.41459799925898483,
+      "active": true,
+      "physicalProgress": 0.4144039351851852,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 62.88450129196734,
+        "totalSize": 973.753565623022,
+        "at": 13520.200000001118
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 13520.10000000149
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-12",
+      "y": 11774,
+      "p": 0.4442386068914413,
+      "active": true,
+      "physicalProgress": 0.4440335648148148,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 67.38428671536394,
+        "totalSize": 978.2533510464186,
+        "at": 14253.900000000373
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 14253.900000000373
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-13",
+      "y": 11894,
+      "p": 0.488699518340126,
+      "active": true,
+      "physicalProgress": 0.48847800925925927,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 1,
+        "dashSize": 74.13396485045882,
+        "totalSize": 985.0030291815135,
+        "at": 15086.10000000149
+      },
+      "fill": {
+        "opacity": 0,
+        "at": 15086
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-14",
+      "y": 11974,
+      "p": 0.5183401259725824,
+      "active": true,
+      "physicalProgress": 0.5181076388888889,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.9595683586513524,
+        "dashSize": 78.6337502738554,
+        "totalSize": 989.5028146049101,
+        "at": 15819.400000000373
+      },
+      "fill": {
+        "opacity": 0.04492404594294175,
+        "at": 15819.300000000745
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-15",
+      "y": 12094,
+      "p": 0.5628010374212671,
+      "active": true,
+      "physicalProgress": 0.5625520833333333,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.8595313078918119,
+        "dashSize": 85.38342840895028,
+        "totalSize": 996.252492740005,
+        "at": 16652
+      },
+      "fill": {
+        "opacity": 0.15607632456465348,
+        "at": 16651.900000000373
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-16",
+      "y": 12174,
+      "p": 0.5924416450537237,
+      "active": true,
+      "physicalProgress": 0.592181712962963,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.7928399407187848,
+        "dashSize": 89.88321383234688,
+        "totalSize": 1000.7522781634016,
+        "at": 17469.700000001118
+      },
+      "fill": {
+        "opacity": 0.23017784364579463,
+        "at": 17469.700000001118
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-17",
+      "y": 12294,
+      "p": 0.6369025565024083,
+      "active": true,
+      "physicalProgress": 0.6366261574074074,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.6928028899592442,
+        "dashSize": 91.08690643310547,
+        "totalSize": 1001.9559707641602,
+        "at": 18318.60000000149
+      },
+      "fill": {
+        "opacity": 0.34133012226750636,
+        "at": 18318.60000000149
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-18",
+      "y": 12374,
+      "p": 0.6665431641348648,
+      "active": true,
+      "physicalProgress": 0.666255787037037,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.6261115227862173,
+        "dashSize": 91.08690643310547,
+        "totalSize": 1001.9559707641602,
+        "at": 19118.700000001118
+      },
+      "fill": {
+        "opacity": 0.4154316413486475,
+        "at": 19118.5
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-19",
+      "y": 12494,
+      "p": 0.7110040755835495,
+      "active": true,
+      "physicalProgress": 0.7107002314814815,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.5260744720266765,
+        "dashSize": 91.08690643310547,
+        "totalSize": 1001.9559707641602,
+        "at": 19953.200000001118
+      },
+      "fill": {
+        "opacity": 0.5265839199703595,
+        "at": 19953.200000001118
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-20",
+      "y": 12574,
+      "p": 0.740644683216006,
+      "active": true,
+      "physicalProgress": 0.7403298611111111,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.4593831048536494,
+        "dashSize": 91.08690643310547,
+        "totalSize": 1001.9559707641602,
+        "at": 20769.400000000373
+      },
+      "fill": {
+        "opacity": 0.6006854390515006,
+        "at": 20769.400000000373
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-21",
+      "y": 12694,
+      "p": 0.7851055946646907,
+      "active": true,
+      "physicalProgress": 0.7847743055555556,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.3593460540941089,
+        "dashSize": 91.08690643310547,
+        "totalSize": 1001.9559707641602,
+        "at": 21603.5
+      },
+      "fill": {
+        "opacity": 0.7118377176732124,
+        "at": 21603.5
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-22",
+      "y": 12774,
+      "p": 0.8147462022971471,
+      "active": true,
+      "physicalProgress": 0.8144039351851852,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.2926546869210819,
+        "dashSize": 91.08690643310547,
+        "totalSize": 1001.9559707641602,
+        "at": 22336
+      },
+      "fill": {
+        "opacity": 0.7859392367543535,
+        "at": 22336
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-23",
+      "y": 12894,
+      "p": 0.8592071137458318,
+      "active": true,
+      "physicalProgress": 0.8588483796296297,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.19261763616154126,
+        "dashSize": 91.08690643310547,
+        "totalSize": 1001.9559707641602,
+        "at": 23185.800000000745
+      },
+      "fill": {
+        "opacity": 0.8970915153760652,
+        "at": 23185.800000000745
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-24",
+      "y": 12974,
+      "p": 0.8888477213782883,
+      "active": true,
+      "physicalProgress": 0.8884780092592592,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.12592626898851422,
+        "dashSize": 91.08690643310547,
+        "totalSize": 1001.9559707641602,
+        "at": 24002.700000001118
+      },
+      "fill": {
+        "opacity": 0.9711930344572064,
+        "at": 24002.700000001118
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "short-25",
+      "y": 13094,
+      "p": 0.933308632826973,
+      "active": true,
+      "physicalProgress": 0.9329224537037037,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.09999999999999998,
+        "dashSize": 91.08690643310547,
+        "totalSize": 1001.9559707641602,
+        "at": 24836
+      },
+      "fill": {
+        "opacity": 1,
+        "at": 24836
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "reading",
+      "y": 13094,
+      "p": 0.933308632826973,
+      "active": true,
+      "physicalProgress": 0.9329224537037037,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.09999999999999998,
+        "dashSize": 91.08690643310547,
+        "totalSize": 1001.9559707641602,
+        "at": 24836
+      },
+      "fill": {
+        "opacity": 1,
+        "at": 24836
+      },
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "label": "reverse-480",
+      "y": 12619,
+      "p": 0.7573175250092626,
+      "active": true,
+      "physicalProgress": 0.7569965277777778,
+      "viewport": 900,
+      "stageHeight": 900,
+      "span": 2700,
+      "stageTop": 0,
+      "stageBottom": 900,
+      "canvas": true,
+      "fallback": false,
+      "wire": {
+        "toneMappingExposure": 1,
+        "scale": 1,
+        "opacity": 0.4193682845498332,
+        "dashSize": 91.08690643310547,
+        "totalSize": 1001.9559707641602,
+        "at": 25742
+      },
+      "fill": {
+        "opacity": 0.6451463505001853,
+        "at": 25742
+      },
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "pass": false,
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(Math.abs(value.fill.opacity - fill) < .001)\n"
+}

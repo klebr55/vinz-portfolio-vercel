@@ -1,0 +1,20 @@
+
+> vinz-portfolio@0.1.0 test:awwwards
+> node scripts/test-awwwards.mjs
+
+✔ short scroll leaves observable drawing and gradual material before the reading interval (2.0266ms)
+✔ ordered wire contains every extracted physical edge exactly once, including the hole (26.0001ms)
+✔ direct_entry_selects_nks_without_intro (1.2265ms)
+✔ boundaries_clamp_and_choose_next (0.1423ms)
+✔ aliases_are_locale_independent (0.166ms)
+✔ unverified_fields_are_not_public (0.1986ms)
+✔ locale_keeps_chapter_not_pixel_offset (0.6785ms)
+✔ latest_navigation_invalidates_old_completion (0.1539ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1548.9449
