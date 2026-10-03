@@ -1,3 +1,13 @@
+## 03/10/2026 UTC · revisão Mastermind do desenho Processo
+
+Entrega `42d7f6f`/`65a6e5f` preservada, com correção visual dirigida a Processo. A gravação do proprietário demonstra construção muito comprimida frente ao exemplo Motion. Desktop do relatório Worker: span 990 px; desenho .10–.42 equivale a 316,8 px, preenchimento .38–.62 a 237,6 px. O Mastermind reconhece que suas faixas anteriores contribuíram e as supersede; a sobreposição desenho/material, presente também no original, não constitui defeito isolado.
+
+Probe isolado com Three 0.177.0: wire manual 2.259 segmentos e distâncias acumuladas corretas; `EdgesGeometry` cru sobre os contornos/bevel atuais gera 12.181 segmentos. Correção deve normalizar/fidelizar contornos e usar arestas estruturais reais/ordem legível, com span físico próximo da referência e transição gradual de material. [Revisão](2026-10-03-PROCESS-DRAW-MASTER-REVIEW.md), [prompt](2026-10-03-PROCESS-DRAW-WORKER.md) e [evidência](evidence-narrative/process-draw-master-review/README.md).
+
+Sem UI alterada ou novo PASS da rota pelo Mastermind. Preservar hero/ponte/navbar/cases/Lenis; não repetir Tasks 1–7, upgrades, registry ou brainstorming histórico. P2/expansão permanecem abertos para revisão. Execução Worker sequencial/continuidade Antigravity, sem subagentes/master/produção. O vídeo da landing SDIMT já foi entregue; painel autenticado continua pendência independente.
+
+---
+
 ## Worker · Tasks 4–7 · 02/10/2026
 
 Ordem expressa do proprietário confirmou o adendo vigente; o vídeo anexado supersede sua ausência histórica. Base `d53cf6e`; implementação `65a6e5f`. Codex sequencial/Antigravity, sem novos agentes, upgrades, registry ou promoção de produção.

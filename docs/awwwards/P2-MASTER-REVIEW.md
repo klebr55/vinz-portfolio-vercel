@@ -1,3 +1,11 @@
+## Revisão vigente · fidelidade de Processo · 03/10/2026 UTC
+
+Inspecionados `42d7f6f`, código e gravações comparativas do proprietário. Tasks 4–7 estão entregues; **aceite visual de Processo não concedido**. A construção atual é comprimida em cerca de 317 px de scroll desktop e usa wire manual com conectores arbitrários. As faixas curtas também vinham do plano Mastermind e estão corrigidas nesta orientação. [Revisão dirigida](2026-10-03-PROCESS-DRAW-MASTER-REVIEW.md), [evidência/método](evidence-narrative/process-draw-master-review/README.md) e [próximo prompt Worker](2026-10-03-PROCESS-DRAW-WORKER.md).
+
+Corrigir marca/arestas e recuperar distância física de desenho equivalente à referência, mantendo o sólido/reflexos e os contratos de entrada/reversão/fallback. Não aplicar `EdgesGeometry` cru à geometria serrilhada: o probe gerou 12.181 segmentos. Não repetir as outras entregas nem reabrir escolhas aprovadas. O vídeo real da landing SDIMT já foi entregue; sua ausência mencionada abaixo é histórica. Este incremento não concede aceite geral aos Tasks 4–7, P2 ou Cortes 6–7.
+
+---
+
 ## Adaptação vigente · ScrollExpand · 02/10/2026
 
 O proprietário aceitou a direção anterior com única mudança na ponte: imagem expande, vídeo ganha movimento e entrega SDIMT. [Revisão escrita adaptada](2026-10-02-IDENTITY-RHYTHM-MASTER-REVIEW.md), [plano existente com adendo Tasks 4–7](2026-10-02-ELECTRIC-IDENTITY-IMPLEMENTATION-PLAN.md) e [prompt atual](2026-10-02-IDENTITY-RHYTHM-WORKER.md). A leitura e ordem expressa ao Worker confirmam revisão escrita; sem confirmação duplicada por histórico.

@@ -1,0 +1,36 @@
+{
+  "threeVersion": "0.177.0",
+  "shapes": 4,
+  "paths": [
+    {
+      "pointCount": 255
+    },
+    {
+      "pointCount": 4
+    },
+    {
+      "pointCount": 308
+    },
+    {
+      "pointCount": 23
+    },
+    {
+      "pointCount": 533
+    }
+  ],
+  "manualWire": {
+    "segments": 2259,
+    "cumulativeLength": 84.20693969726562,
+    "finite": true,
+    "monotonic": true,
+    "consecutiveSegmentDiscontinuities": 32
+  },
+  "rawEdgesGeometry20": {
+    "segments": 12181,
+    "cumulativeLength": 506.6857604980469,
+    "finite": true,
+    "monotonic": true,
+    "consecutiveSegmentDiscontinuities": 12169
+  },
+  "note": "Read-only geometry probe; no GPU render and no product edits. Raw EdgesGeometry is not a production recommendation for these raster-derived contours."
+}

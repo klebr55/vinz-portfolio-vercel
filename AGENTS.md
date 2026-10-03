@@ -1,3 +1,9 @@
+## Prioridade vigente · correção de Processo · 03/10/2026 UTC
+
+Tasks 4–7 foram entregues em `42d7f6f` (implementação `65a6e5f`). O proprietário comparou a VINZ 3D com a referência Motion e pediu correção de seu desenho. Leia `docs/awwwards/2026-10-03-PROCESS-DRAW-WORKER.md` e a revisão dirigida referenciada ali. Corrigir somente construção/arestas/cadência de Processo e sua prova visual. As faixas anteriores 0,10–0,42 / 0,38–0,62 estão supersedidas. Não repetir hero/halo/morph, ponte/vídeo SDIMT, navbar ou Tasks 1–7 por estados históricos. A gravação real da landing já foi entregue. Execução sequencial, sem subagentes/21st.dev/registry/upgrade/master/produção; P2 e expansão continuam sem aceite automático. A ordem expressa do proprietário ao Worker autoriza a correção aprovada, sem uma nova rodada de escolha artística.
+
+---
+
 ## Prioridade vigente · revisão e ScrollExpand · 02/10/2026
 
 Tasks 1–3 identidade/C1 entregues em `ec70bf8`/`e56a5ad`. O proprietário pediu única alteração na direção da revisão: ScrollExpand com imagem expansiva → vídeo → SDIMT. Leia `docs/awwwards/2026-10-02-IDENTITY-RHYTHM-WORKER.md` e **somente o adendo Tasks 4–7** do plano existente. Revisão/spec adaptadas são a fonte atual. Ordem expressa de executar esses documentos na sessão Worker confirma sua revisão; não duplicar confirmação por estado histórico. Não repetir Tasks 1–3, upgrade Motion ou pesquisa de componentes fornecidos. Codex sequencial/Antigravity, sem subagentes/master/produção/Cortes 6–7 implícitos. Fonte em `reference-sources/scroll-expand`; vídeo pertinente SDIMT real, pausa/play/frame e acesso conforme contrato atual.
