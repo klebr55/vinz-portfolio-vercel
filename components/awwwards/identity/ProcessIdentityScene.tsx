@@ -4,10 +4,11 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
-import { BufferGeometry, Float32BufferAttribute, ExtrudeGeometry, Group, LineDashedMaterial, LineSegments, MeshPhysicalMaterial, PMREMGenerator, Shape, Path, Vector2, Mesh, PlaneGeometry, MeshBasicMaterial, Color } from 'three';
+import { Group, LineDashedMaterial, LineSegments, MeshPhysicalMaterial, PMREMGenerator, Shape, Path, Vector2, Mesh, PlaneGeometry, MeshBasicMaterial, Color } from 'three';
 import { cancelFrame, frame, transformValue, type MotionValue } from 'motion';
 import { threeEffect } from 'motion/three';
 import { resolveProcessFrame } from './process-model';
+import { createProcessGeometry } from './process-geometry';
 
 function Identity({ svg, progress, active, onUnavailable, onReady }: { svg: string; progress: MotionValue<number>; active: boolean; onUnavailable(reason: string): void; onReady(): void }) {
   const group = useRef<Group>(null);
@@ -21,35 +22,15 @@ function Identity({ svg, progress, active, onUnavailable, onReady }: { svg: stri
       shape.holes = source.holes.map(hole => new Path(reflect(hole)));
       return shape;
     });
-    const geometry = new ExtrudeGeometry(shapes, { depth: 58, bevelEnabled: true, bevelThickness: 2, bevelSize: .4, bevelSegments: 3, curveSegments: 8 });
-    geometry.computeBoundingBox();
-    const cx = (geometry.boundingBox!.min.x + geometry.boundingBox!.max.x) / 2;
-    const cy = (geometry.boundingBox!.min.y + geometry.boundingBox!.max.y) / 2;
-    geometry.scale(4 / 810, 4 / 810, 4 / 810);
-    geometry.center();
-    geometry.computeVertexNormals();
-    const vertices: number[] = [];
-    for (const shape of shapes) {
-      for (const path of [shape, ...shape.holes]) {
-        const points = path.getPoints();
-        for (const z of [-29, 29]) {
-          for (let i = 0; i < points.length - 1; i++) {
-            for (const p of [points[i], points[i + 1]]) vertices.push((p.x - cx) * 4 / 810, (p.y - cy) * 4 / 810, z * 4 / 810);
-          }
-        }
-        for (let i = 0; i < points.length; i += Math.max(1, Math.floor(points.length / 4))) {
-          const p = points[i];
-          for (const z of [-29, 29]) vertices.push((p.x - cx) * 4 / 810, (p.y - cy) * 4 / 810, z * 4 / 810);
-        }
-      }
-    }
-    const edges = new BufferGeometry();
-    edges.setAttribute('position', new Float32BufferAttribute(vertices, 3));
+    const { geometry, edges } = createProcessGeometry(shapes);
     const wireMaterial = new LineDashedMaterial({ color: '#c2fff1', transparent: true, dashSize: 0, gapSize: 10000 });
     const wire = new LineSegments(edges, wireMaterial);
     wire.computeLineDistances();
     const distances = edges.getAttribute('lineDistance');
     const length = distances.getX(distances.count - 1);
+    wireMaterial.gapSize = length * 10;
+    wireMaterial.depthTest = false;
+    wire.renderOrder = 1;
     const material = new MeshPhysicalMaterial({ color: '#9bbff5', emissive: '#1e5bc1', emissiveIntensity: .08, metalness: .95, roughness: .12, clearcoat: 1, clearcoatRoughness: .12, envMapIntensity: 1.4, transparent: true, opacity: 0, depthWrite: false });
     return { geometry, edges, material, wireMaterial, wire, length };
   }, [svg]);
@@ -80,15 +61,20 @@ function Identity({ svg, progress, active, onUnavailable, onReady }: { svg: stri
     if (!active || !group.current) return;
     const drawn = transformValue(() => resources.length * resolveProcessFrame(progress.get()).drawn);
     const filled = transformValue(() => resolveProcessFrame(progress.get()).filled);
-    const opacity = transformValue(() => 1 - filled.get());
+    const opacity = transformValue(() => resolveProcessFrame(progress.get()).wireOpacity);
     const rotateX = transformValue(() => resolveProcessFrame(progress.get()).rotateX);
     const rotateY = transformValue(() => resolveProcessFrame(progress.get()).rotateY);
     const cancels = [threeEffect(resources.wireMaterial, { dashSize: drawn, opacity }), threeEffect(resources.material, { opacity: filled }), threeEffect(group.current, { rotateX, rotateY })];
-    const render = () => invalidate();
-    const changed = () => frame.render(render);
-    const unsubscribe = progress.on('change', changed);
+    const render = () => {
+      threeEffect.flush(resources.wireMaterial);
+      threeEffect.flush(resources.material);
+      if (group.current) threeEffect.flush(group.current);
+      invalidate();
+    };
+    const changed = () => frame.postRender(render);
+    const subscriptions = [drawn, filled, opacity, rotateX, rotateY].map(value => value.on('change', changed));
     changed();
-    return () => { unsubscribe(); cancelFrame(render); cancels.forEach(cancel => cancel()); [drawn, filled, opacity, rotateX, rotateY].forEach(value => value.destroy()); };
+    return () => { subscriptions.forEach(unsubscribe => unsubscribe()); cancelFrame(render); cancels.forEach(cancel => cancel()); [drawn, filled, opacity, rotateX, rotateY].forEach(value => value.destroy()); };
   }, [active, progress, resources, invalidate]);
 
   const rendered = () => {
