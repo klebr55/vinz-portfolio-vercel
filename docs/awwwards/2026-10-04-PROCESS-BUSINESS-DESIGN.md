@@ -26,7 +26,8 @@ As três etapas partem de `components/Approach.tsx`, `messages/pt-br.json` e `me
 
 ### Português
 
-**Título:** Processo  
+**Título:** Processo
+
 **Abertura:** Da primeira conversa à entrega, cada etapa tem um propósito.
 
 | Etapa | Explicação principal | Participação do cliente | O que esta etapa define ou prepara |
@@ -37,7 +38,8 @@ As três etapas partem de `components/Approach.tsx`, `messages/pt-br.json` e `me
 
 ### English
 
-**Title:** Process  
+**Title:** Process
+
 **Opening:** From the first conversation to delivery, every stage has a purpose.
 
 | Stage | Main explanation | Client participation | What this stage defines or prepares |
