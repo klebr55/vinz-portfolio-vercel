@@ -1,6 +1,6 @@
 # Especificação · Processo como demonstração de método · 04/10/2026 (Cuiabá)
 
-**Estado:** composição aprovada pelo proprietário com “Aprovo”; especificação escrita consolidada para sua revisão. A aprovação registrada cobre a proposta apresentada: três etapas comerciais, construção por camadas do SVG de código e integração distinta do Rotato no case SDIMT. Este documento ainda não é plano nem prompt de execução. Método de execução já escolhido: Codex Worker sequencial, com continuidade no Antigravity quando necessária.
+**Estado atualizado:** composição aprovada com “Aprovo”; especificação escrita revisada pelo proprietário com “Revisado” em 04/10/2026 (Cuiabá). [Plano Processo](2026-10-04-PROCESS-BUSINESS-IMPLEMENTATION-PLAN.md), [plano Rotato SDIMT](2026-10-04-SDIMT-ROTATO-IMPLEMENTATION-PLAN.md) e [prompt Worker](2026-10-04-PROCESS-BUSINESS-WORKER.md) preparados para revisão dos planos antes de execução. Método já escolhido: Codex Worker sequencial, com continuidade no Antigravity. A ordem expressa ao Worker após essa leitura confirma a revisão dos planos sem nova confirmação duplicada.
 
 **Base documental:** `887ad10852c44badf494fb28ef5523b1e40d5d28`, branch `redesign/awwwards-repagination`. A [proposta anterior](2026-10-03-PROCESS-BUSINESS-PROPOSAL.md), as [fontes e análise](reference-sources/process-business/README.md) e o [manifesto](reference-sources/process-business/source-manifest.json) sustentam esta especificação. Sem alteração de produto nesta publicação; P2, aceite artístico e expansão permanecem abertos.
 
@@ -173,9 +173,9 @@ O movimento deve parecer agradável com o uso comum de mouse, em passos e pausas
 ## 10. Estado do handoff
 
 1. Composição e três etapas comerciais: **aprovadas em 04/10/2026 (Cuiabá)**.
-2. Especificação escrita: **consolidada e revisada pelo Mastermind; aguardando revisão do proprietário**.
-3. Plano de implementação e prompt Worker: **a elaborar após aprovação desta especificação**.
+2. Especificação escrita: **revisada pelo proprietário em 04/10/2026 com “Revisado”**.
+3. Planos Processo/Rotato e prompt Worker: **consolidados para revisão do proprietário; execução ainda pendente da revisão/ordem correspondente**.
 4. Execução sequencial Codex/continuidade Antigravity: **já selecionada**, sem nova escolha necessária.
 5. Implementação deste incremento, evidências e revisão artística: **pendentes**; a correção VINZ anterior permanece entregue e histórica.
 
-Após aprovação escrita, o plano deverá traduzir estes contratos em alterações e validações concretas, sem reabrir a composição, procurar os assets já arquivados, repetir o chat ou bloquear por recursos dispensados. Manter esta especificação como fonte vigente de intenção; nenhum prompt antigo autoriza substituir esta direção por VINZ em Processo. Sem subagentes, merge em `master` ou promoção de produção neste fluxo.
+Os planos vinculados traduzem estes contratos em alterações e validações concretas; não reabrir composição, procurar assets já arquivados, repetir o chat ou bloquear por recursos dispensados. Após leitura/ordem expressa do proprietário, o Worker registra a revisão dos planos e executa na sequência escolhida. Manter esta especificação como fonte vigente de intenção; nenhum prompt antigo autoriza substituir esta direção por VINZ em Processo. Sem subagentes, merge em `master` ou promoção de produção neste fluxo.

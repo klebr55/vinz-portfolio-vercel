@@ -1,3 +1,13 @@
+## 04/10/2026 (Cuiabá) · revisão escrita confirmada, planos e prompt preparados
+
+O proprietário respondeu “Revisado” ao handoff da especificação escrita de Processo/Rotato. Registrada essa revisão; composição e método não voltam a ser perguntas. Aplicada writing-plans lida da fonte oficial `obra/superpowers`: plano separado por entrega independente, interfaces/arquivos/valores e testes observáveis, sem subagentes. [Plano Processo](2026-10-04-PROCESS-BUSINESS-IMPLEMENTATION-PLAN.md), [plano Rotato](2026-10-04-SDIMT-ROTATO-IMPLEMENTATION-PLAN.md) e [prompt Worker](2026-10-04-PROCESS-BUSINESS-WORKER.md) consolidados sobre `a2f3086`.
+
+Planos publicados para revisão antes da execução; a ordem expressa do proprietário ao Worker depois da leitura registra essa revisão e autoriza o escopo ordenado. Não inferir aprovação do plano só por existir no repo, nem pedir confirmação duplicada depois dessa ordem. Processo e Rotato serão executados sequencialmente, com checkpoints independentes; revisão Mastermind após ambos. Preservar hero/navbar/ponte/NKS e fundação `653bb2a`, sem 21st.dev/registry/upgrade. Runtime GSAP/Lenis único e carga Rotato limitada, sem cauda vazia como fechamento.
+
+Entrega somente documental pelo Mastermind; sem produto/build/UI ou novo PASS de fluidez. P2/Corte 5.1/Cortes 6–7/produção continuam sem liberação implícita. Esta entrada supersede a revisão escrita pendente na entrada histórica abaixo.
+
+---
+
 ## 04/10/2026 (Cuiabá) · composição Processo aprovada e spec escrita
 
 O proprietário respondeu “Aprovo” à composição em camadas e às três etapas com foco comercial. Registrado aceite da direção apresentada: SVG de código somente em Processo, explicações à esquerda, cena pin GSAP à direita, desenho incompleto até a última etapa e Rotato como apresentação distinta no case SDIMT. Não inferir desse aceite aprovação de spec/plano que ainda não existiam.
