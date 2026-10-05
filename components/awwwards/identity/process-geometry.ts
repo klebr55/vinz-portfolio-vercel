@@ -4,10 +4,12 @@ type Point = [number, number, number];
 type Edge = { a: Point; b: Point; id: number };
 const key = (p: Point) => p.map(value => Math.round(value * 100000)).join(':');
 
-export function createProcessGeometry(shapes: Shape[]) {
-  const geometry = new ExtrudeGeometry(shapes, { depth: 58, bevelEnabled: false, curveSegments: 8 });
-  geometry.scale(4 / 810, 4 / 810, 4 / 810);
-  geometry.center();
+export function createProcessGeometry(shapes: Shape[], options?: { depth?: number; scale?: number; origin?: readonly [number, number, number] }) {
+  const geometry = new ExtrudeGeometry(shapes, { depth: options?.depth ?? 58, bevelEnabled: false, curveSegments: 8 });
+  if (options?.origin) geometry.translate(-options.origin[0], -options.origin[1], -options.origin[2]);
+  const scale = options?.scale ?? 4 / 810;
+  geometry.scale(scale, scale, scale);
+  if (!options?.origin) geometry.center();
   geometry.computeBoundingBox();
   const extracted = new EdgesGeometry(geometry, 20);
   const position = extracted.getAttribute('position');

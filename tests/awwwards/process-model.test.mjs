@@ -3,7 +3,7 @@ import test from 'node:test';
 import { readFileSync } from 'node:fs';
 import { Shape, Path, Vector2, LineSegments, LineDashedMaterial } from 'three';
 import { createProcessGeometry } from '../../components/awwwards/identity/process-geometry.ts';
-import { resolveProcessFrame } from '../../components/awwwards/identity/process-model.ts';
+import { resolveProcessFrame, resolveProcessProgress } from '../../components/awwwards/identity/process-model.ts';
 
 const fixture = () => {
   const svg = readFileSync(new URL('../../public/awwwards/identity/vinz-process-contours.svg', import.meta.url), 'utf8');
@@ -17,23 +17,39 @@ const fixture = () => {
   return shapes;
 };
 
-test('short scroll leaves observable drawing and gradual material before the reading interval', () => {
-  assert.equal(resolveProcessFrame(-1).drawn, 0);
-  assert.ok(resolveProcessFrame(80 / 2700).drawn > 0);
-  assert.ok(resolveProcessFrame(120 / 2700).drawn < .1);
-  assert.equal(resolveProcessFrame(.6).drawn, 1);
-  assert.equal(resolveProcessFrame(.5).filled, 0);
-  assert.equal(resolveProcessFrame(.7).filled.toFixed(3), '0.500');
-  assert.equal(resolveProcessFrame(.9).filled, 1);
-  assert.equal(resolveProcessFrame(.9).wireOpacity.toFixed(3), '0.100');
-  assert.deepEqual(resolveProcessFrame(1.2), resolveProcessFrame(1));
-  assert.deepEqual(resolveProcessFrame(NaN), resolveProcessFrame(0));
-  assert.equal(resolveProcessFrame(.9).rotateX, 8);
-  assert.equal(resolveProcessFrame(.9).rotateY, -16);
-  for (let i = 1; i <= 100; i++) {
-    assert.ok(resolveProcessFrame(i / 100).drawn >= resolveProcessFrame((i - 1) / 100).drawn);
-    assert.ok(resolveProcessFrame(i / 100).filled >= resolveProcessFrame((i - 1) / 100).filled);
+test('semantic stages reserve code and completion for the end of finalization', () => {
+  for (const p of [0, .2, .5, 2/3]) {
+    const f = resolveProcessFrame(p);
+    assert.equal(f.groups.code.drawn, 0);
+    assert.equal(f.sceneComplete, false);
   }
+  assert.equal(resolveProcessFrame(2/3 + .8/3).sceneComplete, true);
+  assert.deepEqual(resolveProcessFrame(-1), resolveProcessFrame(0));
+  assert.deepEqual(resolveProcessFrame(NaN), resolveProcessFrame(0));
+  assert.deepEqual(resolveProcessFrame(2), resolveProcessFrame(1));
+  assert.equal(resolveProcessFrame(1).rotateX, 0);
+  assert.equal(resolveProcessFrame(1).rotateY, 0);
+  for (let i=1; i<=300; i++) {
+    const previous=resolveProcessFrame((i-1)/300), current=resolveProcessFrame(i/300);
+    for (const group of ['foundation','windows','content','code']) {
+      assert.ok(current.groups[group].drawn >= previous.groups[group].drawn);
+      assert.ok(current.groups[group].filled >= previous.groups[group].filled);
+    }
+  }
+  const middle=resolveProcessFrame(.51);
+  resolveProcessFrame(1);
+  assert.deepEqual(resolveProcessFrame(.51),middle);
+});
+
+test('measured nonuniform anchors interpolate semantic thirds and reject invalid ranges', () => {
+  const anchors=[0,900,2100,3300];
+  assert.equal(resolveProcessProgress(900,anchors),1/3);
+  assert.equal(resolveProcessProgress(2100,anchors),2/3);
+  assert.equal(resolveProcessProgress(1500,anchors),.5);
+  assert.equal(resolveProcessProgress(3300,anchors),1);
+  assert.equal(resolveProcessProgress(-500,anchors),0);
+  for (const a of [[0,0,2,3],[0,2,1,3],[0,1,2,NaN]]) assert.equal(resolveProcessProgress(1,a),0);
+  assert.equal(resolveProcessProgress(NaN,anchors),0);
 });
 
 test('ordered wire contains every extracted physical edge exactly once, including the hole', () => {

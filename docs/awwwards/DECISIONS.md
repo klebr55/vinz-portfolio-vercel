@@ -1,3 +1,10 @@
+## Worker · Processo comercial · 05/10/2026
+
+A ordem do proprietário confirmou os planos de 23f6d4c. Preservados frames locais 7c0e70c e documentos remotos via merge, sem reset/force. Processo usa 19 partes, origem comum, extrusão curta e fases semânticas; somente o visual é pin, textos em fluxo. Apoios distribuídos ao fim das etapas e saída reservada evitam conclusão sem leitura/colisão com Depoimentos. PNG independente atende falha de SVG. Original e cópia SVG são -text para preservar hash no Windows.
+
+[Entrega e provas próprias](evidence-narrative/process-business/README.md), implementação d7fa954. Native Chrome/CDP substitui Playwright CLI ausente; WARP substitui SwiftShader inviável no sandbox; MediaRecorder WebM ao vivo substitui FFmpeg bloqueado. Não prova hardware/60 fps. Teste initial-WebGL dirigido ao renderer Processo, com limitação global registrada. Próximo: Rotato autorizado, sem aceite P2 automático.
+
+---
 ## 04/10/2026 (Cuiabá) · revisão escrita confirmada, planos e prompt preparados
 
 O proprietário respondeu “Revisado” ao handoff da especificação escrita de Processo/Rotato. Registrada essa revisão; composição e método não voltam a ser perguntas. Aplicada writing-plans lida da fonte oficial `obra/superpowers`: plano separado por entrega independente, interfaces/arquivos/valores e testes observáveis, sem subagentes. [Plano Processo](2026-10-04-PROCESS-BUSINESS-IMPLEMENTATION-PLAN.md), [plano Rotato](2026-10-04-SDIMT-ROTATO-IMPLEMENTATION-PLAN.md) e [prompt Worker](2026-10-04-PROCESS-BUSINESS-WORKER.md) consolidados sobre `a2f3086`.
@@ -172,7 +179,7 @@ Branch: redesign/awwwards-repagination
 HEAD inicial/local e remoto verificado: c381d4fd300e366cc335a85edb9b26713a7324e7
 HEAD de referência antigo no handoff: 78a81d7f39ebceeca01253029f54ef1a02d34f8e
 Worktree inicial: limpo; branch acompanhando origin.
-Clone: D:\Documents\React.js\Portfolio\vinz-portfolio-vercel-awwwards
+Clone: vinz-portfolio-vercel-awwwards
 Fase/gate: P0 parcial; P1 PASS; gates P2-P4 não iniciados.
 ```
 
@@ -236,8 +243,8 @@ Uma validação inicial de type-check/build falhou por types gerados de `/api/an
 | Depoimentos | `/en`, controle de pausa e snapshot Chrome | Botão muda para “Resume autoplay” e estado pressed; controles de anterior/próximo e dots nomeados. |
 | Analytics simulada | `GET /api/analytics` no build local | 404 após remoção. |
 | Console/rede | Chrome DevTools MCP, servidor local | Erros dos scripts `/_vercel/speed-insights/script.js` e `/_vercel/insights/script.js` (404 local, fora do runtime Vercel); não atribuídos à alteração de componentes. |
-| Screenshot completo PT | viewport 1440×900; página completa | `F:\Users\Vinz\Documents\Codex\2026-09-26\c\outputs\phase1-pt-br-1440-full-page.png` |
-| Screenshot completo EN | viewport 1440×900; página completa | `F:\Users\Vinz\Documents\Codex\2026-09-26\c\outputs\phase1-en-1440-full-page.png` |
+| Screenshot completo PT | viewport 1440×900; página completa | `phase1-pt-br-1440-full-page.png` |
+| Screenshot completo EN | viewport 1440×900; página completa | `phase1-en-1440-full-page.png` |
 
 Auditoria das regras atuais: links de idioma têm nome, idioma, `aria-current` e foco visível; botões do carrossel têm nomes; autoplay pode ser pausado; conteúdo de Approach é semântico e não depende de hover; `transition-all` e blur no texto do carrossel foram removidos dos trechos tocados. Sem auditoria integral do site nesta fase.
 
@@ -283,7 +290,7 @@ O MCP 21st.dev mostrou metadados de componentes, não evidência de licença de 
 - `docs/awwwards/TASKS.md`: P0 e pesquisa inicial de P2 atualizados com evidência.
 - `docs/awwwards/DECISIONS.md`: este checkpoint. D01–D05 continuam pendentes; cores, fontes e tratamento óptico são hipóteses para Mastermind.
 - Git `ls-remote origin refs/heads/redesign/awwwards-repagination` retornou o SHA remoto acima. A primeira tentativa no sandbox falhou por rede; a consulta repetida com acesso de rede concluiu. Nenhum fetch, rebase, push ou mudança no remoto.
-- A captura de base P1 consultada foi `F:\Users\Vinz\Documents\Codex\2026-09-26\c\outputs\phase1-pt-br-1440-full-page.png` (1440×900); ela mostra o estado anterior à P2, não valida a proposta.
+- A captura de base P1 consultada foi `phase1-pt-br-1440-full-page.png` (1440×900); ela mostra o estado anterior à P2, não valida a proposta.
 - `git diff --cached --check` concluído com exit 0 para os três documentos do checkpoint. Nenhum build, lint, type-check ou nova captura foi executado nesta etapa documental, pois não houve alteração de interface. O SHA do commit local fica registrado na entrega ao Mastermind.
 
 **Próximo passo atualizado:** a revisão do Mastermind rejeitou a composição Gallery. O protótipo hero → NKS e dois styleframes foram implementados depois; revisar `VISUAL_DIRECTION_REVIEW.md` e o checkpoint atual antes de expandir as demais seções.

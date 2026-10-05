@@ -27,13 +27,11 @@ type Props = { locale: PrototypeLocale; style: PrototypeStyle; copy: Copy };
 const closingCopy = {
   'pt-br': {
     about: 'Kleber Vinícius é desenvolvedor web full-stack. Sua trajetória reúne projetos comerciais, institucionais e experiências digitais.',
-    process: 'Descoberta, desenvolvimento com feedback e entrega: uma prática construída em diálogo com cada projeto.',
     testimonials: 'Palavras de pessoas com quem trabalhei.',
     contact: 'Vamos construir a próxima experiência?',
   },
   en: {
     about: 'Kleber Vinícius is a full-stack web developer. His work spans commercial and institutional projects and digital experiences.',
-    process: 'Discovery, development with feedback, and delivery: a practice shaped through each project.',
     testimonials: 'Words from people I have worked with.',
     contact: 'Shall we build the next experience?',
   },
@@ -195,7 +193,7 @@ export default function StoryPrototype({ locale, copy }: Props) {
       {cases.filter((item) => !['sdimt', 'nks'].includes(item.slug)).map((item, index) => <FutureCase key={item.slug} caseData={item} locale={locale} index={index + 3} />)}
 
       <section id="about" data-story-chapter="about" className={styles.closingSection}><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Pessoa' : 'Person'}</p><h2 data-story-read tabIndex={-1}>{locale === 'pt-br' ? 'Sobre' : 'About'}</h2><p>{c.about}</p></section>
-      <ProcessChapter locale={locale} paused={motionPaused} reducedMotion={reducedMotion} text={c.process} />
+      <ProcessChapter locale={locale} paused={motionPaused} reducedMotion={reducedMotion} refreshRuntime={refreshRuntime} />
       <section id="testimonials" data-story-chapter="testimonials" className={styles.closingSection}><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Vozes' : 'Voices'}</p><h2 data-story-read tabIndex={-1}>{locale === 'pt-br' ? 'Depoimentos' : 'Testimonials'}</h2><p>{c.testimonials}</p><ul className={styles.testimonialNames}><li>Éder Lemes</li><li>João Paulo da Silva</li><li>Jéssika Lorena</li></ul></section>
       <section id="contact" ref={contactRef} data-story-chapter="contact" className={styles.closingSection} data-contact><div className={styles.contactPlasma} aria-hidden="true"><Plasma active={contactVisible && !motionPaused && !plasmaUnavailable} reducedMotion={reducedMotion} onUnavailable={onPlasmaUnavailable} /></div><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Contato' : 'Contact'}</p><h2 data-story-read tabIndex={-1}>{c.contact}</h2><a href="mailto:klebervinicius.dev@gmail.com">klebervinicius.dev@gmail.com</a><a href="https://www.linkedin.com/in/klebervinicius08/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#intro" onClick={(event) => { if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return; event.preventDefault(); history.pushState(null, '', '#intro'); navigate('intro'); }}>{locale === 'pt-br' ? 'Voltar ao início' : 'Back to start'} ↑</a>{!reducedMotion && <button className={styles.motionToggle} type="button" onClick={() => setMotionPaused((value) => !value)}>{motionPaused ? (locale === 'pt-br' ? 'Retomar movimento' : 'Resume motion') : (locale === 'pt-br' ? 'Pausar movimento' : 'Pause motion')}</button>}</section>
     </main>

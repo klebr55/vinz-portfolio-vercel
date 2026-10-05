@@ -209,31 +209,44 @@
   .root[data-motion-ready='true'] .intro { height: 240dvh; }
 }
 
-.processChapter { position: relative; min-height: calc(var(--process-stage-height, 100dvh) + 300dvh); border-top: 1px solid rgb(255 255 255 / 8%); background: #090e17; }
-.processStage { position: sticky; top: 0; display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: 100dvh; gap: 4vw; padding: 130px 8vw 80px; }
-.processText h2 { margin: 0; font-size: clamp(3.3rem, 7.4vw, 8rem); letter-spacing: -.075em; line-height: .95; }
-.processText p:not(.caseEyebrow) { max-width: 32ch; color: #d0d9e7; font-size: clamp(1.2rem, 2vw, 1.8rem); line-height: 1.45; }
-.processVisual { position: relative; width: 100%; aspect-ratio: 1; }
+.processChapter { position: relative; border-top: 1px solid rgb(255 255 255 / 8%); background: #090e17; padding: 130px 7vw 80px; }
+.processHeading { max-width: 680px; margin-bottom: 90px; }
+.processHeading h2 { margin: 0; font-size: clamp(3.3rem, 7.4vw, 8rem); letter-spacing: -.075em; line-height: .95; }
+.processHeading > p:last-child { color: #d0d9e7; max-width: 32ch; font-size: clamp(1.2rem, 2vw, 1.8rem); line-height: 1.45; }
+.processStage { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; align-items: start; padding-bottom: min(580px, calc(100dvh - 170px)); }
+.processRail { min-width: 0; height: 100%; }
+.processVisual { position: relative; width: 100%; height: min(580px, calc(100dvh - 170px)); background: #090e17; pointer-events: none; }
 .processCanvas { position: absolute; inset: 0; pointer-events: none; }
-.processFallback { object-fit: contain; padding: 15%; filter: drop-shadow(0 0 24px rgb(86 146 240 / 25%)); }
+.processFallback { object-fit: contain; padding: 4%; }
 .processFallback[hidden] { display: none; }
-.root[data-reduced='true'] .processChapter { min-height: auto; }
-.root[data-reduced='true'] .processStage { position: relative; }
+.processWaiting { position: absolute; inset: 0; display: grid; place-content: center; color: #94a6be; font-size: .8rem; }
+.processArticle { display: flex; flex-direction: column; align-items: flex-start; min-height: 110dvh; padding-bottom: 24px; }
+.processNumber { display: block; margin-bottom: 24px; color: #86a7d9; font-size: .8rem; font-variant-numeric: tabular-nums; }
+.processArticle[data-active='true'] .processNumber { color: #c2fff1; }
+.processArticle h3 { max-width: 18ch; margin: 0 0 28px; font-size: clamp(2rem, 3.2vw, 3.6rem); line-height: 1.1; letter-spacing: -.045em; text-wrap: balance; }
+.processExplanation { max-width: 38ch; font-size: clamp(1.1rem, 1.5vw, 1.4rem); line-height: 1.6; color: #d0d9e7; }
+.processArticle dl { max-width: 40ch; margin: auto 0 0; padding-top: 36px; }
+.processArticle dl > div + div { margin-top: 24px; }
+.processArticle dt { color: #97b4dc; font-size: .75rem; margin-bottom: 8px; }
+.processArticle dd { margin: 0; color: #bdc9dc; font-size: 1rem; line-height: 1.6; }
+.processChapter[data-static='true'] .processArticle, .root[data-client-ready='false'] .processArticle { min-height: auto; padding-bottom: 80px; }
 @media (max-width: 760px) {
-  .processStage { grid-template-columns: 1fr; gap: 12px; padding: 100px 24px 36px; }
-  .processVisual { width: min(100%, max(220px, calc(100dvh - 420px))); max-width: 360px; justify-self: center; }
-  .processText h2 { font-size: 16vw; }
+ .processChapter { padding: 110px 24px 50px; }
+ .processHeading { margin-bottom: 48px; }
+ .processHeading h2 { font-size: 16vw; }
+ .processStage { display: block; padding-bottom: min(31dvh, 280px); }
+ .processRail { position: absolute; top: 0; left: -24px; right: -24px; height: 100%; }
+ .processVisual { height: min(31dvh, 280px); }
+ .processText { padding-top: calc(min(31dvh, 280px) + 24px); }
+ .processArticle { min-height: 125dvh; padding-bottom: 24px; }
+ .processArticle h3 { font-size: clamp(1.9rem, 8vw, 2.6rem); }
+ .processNumber { margin-bottom: 16px; }
+ .processChapter[data-static='true'] .processRail, .root[data-client-ready='false'] .processRail, .processChapter[data-process-pin='false'] .processRail { position: relative; left: auto; right: auto; height: auto; }
+ .processChapter[data-static='true'] .processStage, .root[data-client-ready='false'] .processStage, .processChapter[data-process-pin='false'] .processStage { display: flex; flex-direction: column-reverse; }
+ .processChapter[data-static='true'] .processRail, .root[data-client-ready='false'] .processRail, .processChapter[data-process-pin='false'] .processRail { width: 100%; }
+ .processChapter[data-static='true'] .processText, .root[data-client-ready='false'] .processText, .processChapter[data-process-pin='false'] .processText { padding-top: 24px; }
 }
-
-@media (max-width: 760px) and (max-height: 600px) and (orientation: landscape) {
-  .processStage { grid-template-columns: 1fr 1fr; gap: 20px; padding: 100px 5vw 32px; }
-  .processText h2 { font-size: clamp(2.8rem, 8vw, 4rem); }
-  .processText p:not(.caseEyebrow) { font-size: 1rem; }
-  .processVisual { width: min(100%, calc(100dvh - 140px)); max-width: none; }
-}
-
-.root[data-client-ready='false'] .processChapter { min-height: auto; }
-.root[data-client-ready='false'] .processStage { position: relative; }
+@media (prefers-reduced-motion: reduce) { .processArticle { min-height: auto; padding-bottom: 80px; } }
 
 .bridge { position: absolute; inset: 0; margin: 0; }
 .bridgeFrame { position: absolute; inset: 0; overflow: hidden; clip-path: inset(21% 29% round 24px); }
@@ -276,7 +289,7 @@
 .root[data-motion-ready='true'] .intro { pointer-events: none; }
 .heroCopy, .heroIdentity { pointer-events: auto; }
 
-.processVisual[data-preparing='true'] .processFallback { opacity: .12; }
+
 
 .bridgeScrim { background: rgb(3 9 16 / 78%); backdrop-filter: blur(4px); }
 .bridgeTitle { width: 86%; max-width: 24ch; padding: 0 4vw; }
@@ -296,3 +309,5 @@
 @media (max-width: 760px) { .nav { gap: 4px !important; padding-right: 10px !important; padding-left: 10px !important; } }
 
 @media (max-width: 760px) { .sdimtDetail { display: none; } }
+
+.processChapter[data-static='true'] .processStage, .root[data-client-ready='false'] .processStage, .processChapter[data-process-pin='false'] .processStage { padding-bottom: 0; }

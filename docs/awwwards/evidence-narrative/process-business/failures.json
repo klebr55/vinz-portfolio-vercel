@@ -1,0 +1,3298 @@
+{
+  "origin": "http://localhost:3004",
+  "mode": "failures",
+  "method": "Native Chrome CDP; software WebGL via ANGLE/D3D11 WARP; trusted wheel/key/touch. No physical GPU fluency claim.",
+  "samples": [
+    {
+      "label": "checkpoint",
+      "y": 10597,
+      "p": 0,
+      "anchors": [
+        10922.265625,
+        11912.265625,
+        12902.265625,
+        13892.265625
+      ],
+      "span": 2970,
+      "viewport": 900,
+      "width": 1440,
+      "pinned": true,
+      "visual": {
+        "top": 427.265625,
+        "bottom": 1007.265625,
+        "left": 758.1875,
+        "right": 1329.203125,
+        "height": 580
+      },
+      "articles": [
+        {
+          "stage": "1",
+          "active": "true",
+          "title": "Descoberta e planejamento",
+          "outcome": {
+            "top": 1341.671875,
+            "bottom": 1393.265625,
+            "left": 100.796875,
+            "right": 465.40625,
+            "height": 51.59375
+          },
+          "top": 427.265625,
+          "bottom": 1417.265625,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 990
+        },
+        {
+          "stage": "2",
+          "active": "false",
+          "title": "Desenvolvimento e acompanhamento",
+          "outcome": {
+            "top": 2306.078125,
+            "bottom": 2383.265625,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 77.1875
+          },
+          "top": 1417.265625,
+          "bottom": 2407.265625,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 990
+        },
+        {
+          "stage": "3",
+          "active": "false",
+          "title": "Finalização e lançamento",
+          "outcome": {
+            "top": 3321.671875,
+            "bottom": 3373.265625,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 51.59375
+          },
+          "top": 2407.265625,
+          "bottom": 3397.265625,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 990
+        }
+      ],
+      "ready": true,
+      "fallback": false,
+      "loaded": false,
+      "canvas": true,
+      "paint": {
+        "wires": [
+          {
+            "scale": 1,
+            "diffuse": [
+              0.4969329950515914,
+              0.5647115056965487,
+              0.7912979403281551
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 175.70558547973633
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.4969329950515914,
+              0.5647115056965487,
+              0.7912979403281551
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 17.150437831878662
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8962693533719567,
+              0.913098651791473,
+              0.9646862478936612
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 175.7054328918457
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7835377915215659,
+              0.9215818562755338
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 100.73789596557617
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.55201140150344,
+              0.5972017883558645,
+              0.7156935005005721
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 21.327621936798096
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 196.69240951538086
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 84.51930046081543
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.55201140150344,
+              0.5972017883558645,
+              0.7156935005005721
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 127.96406745910645
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 84.5183277130127
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 295.03862380981445
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 338.0745315551758
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.21586050010324417,
+              0.3005437944049895,
+              0.6375968739867731
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 150.9329128265381
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.057805430183792694,
+              0.12477181755144427,
+              0.48514994004665124
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 150.9330654144287
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 16.811184883117676
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 11.597474813461304
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 16.809433698654175
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 11.59874677658081
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.03954623527052923,
+              0.09084171117479915,
+              0.2917706498067337
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 90.59167861938477
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 52.57975101470947
+          }
+        ],
+        "fills": [
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.4969329950515914,
+              0.5647115056965487,
+              0.7912979403281551
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.4969329950515914,
+              0.5647115056965487,
+              0.7912979403281551
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8962693533719567,
+              0.913098651791473,
+              0.9646862478936612
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7835377915215659,
+              0.9215818562755338
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.55201140150344,
+              0.5972017883558645,
+              0.7156935005005721
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.55201140150344,
+              0.5972017883558645,
+              0.7156935005005721
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.21586050010324417,
+              0.3005437944049895,
+              0.6375968739867731
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.057805430183792694,
+              0.12477181755144427,
+              0.48514994004665124
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.03954623527052923,
+              0.09084171117479915,
+              0.2917706498067337
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          }
+        ],
+        "at": 2409.5999999996275
+      },
+      "overflow": false,
+      "runtime": {
+        "active": 1,
+        "maxPerTick": 1
+      },
+      "applied": {
+        "stage": 1,
+        "localProgress": 0,
+        "groups": {
+          "foundation": {
+            "drawn": 0,
+            "filled": 0,
+            "wireOpacity": 1
+          },
+          "windows": {
+            "drawn": 0,
+            "filled": 0,
+            "wireOpacity": 1
+          },
+          "content": {
+            "drawn": 0,
+            "filled": 0,
+            "wireOpacity": 1
+          },
+          "code": {
+            "drawn": 0,
+            "filled": 0,
+            "wireOpacity": 1
+          }
+        },
+        "finish": 0,
+        "sceneComplete": false,
+        "rotateX": 4,
+        "rotateY": -6
+      }
+    },
+    {
+      "label": "context-lost",
+      "y": 10597,
+      "anchors": [
+        10922.265625,
+        11476.171875,
+        12055.671875,
+        12549.671875
+      ],
+      "span": 1627.40625,
+      "viewport": 900,
+      "width": 1440,
+      "pinned": true,
+      "visual": {
+        "top": 427.265625,
+        "bottom": 1007.265625,
+        "left": 758.1875,
+        "right": 1329.203125,
+        "height": 580
+      },
+      "articles": [
+        {
+          "stage": "1",
+          "active": "true",
+          "title": "Descoberta e planejamento",
+          "outcome": {
+            "top": 849.578125,
+            "bottom": 901.171875,
+            "left": 100.796875,
+            "right": 465.40625,
+            "height": 51.59375
+          },
+          "top": 427.265625,
+          "bottom": 981.171875,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 553.90625
+        },
+        {
+          "stage": "2",
+          "active": "false",
+          "title": "Desenvolvimento e acompanhamento",
+          "outcome": {
+            "top": 1403.484375,
+            "bottom": 1480.671875,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 77.1875
+          },
+          "top": 981.171875,
+          "bottom": 1560.671875,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 579.5
+        },
+        {
+          "stage": "3",
+          "active": "false",
+          "title": "Finalização e lançamento",
+          "outcome": {
+            "top": 1923.359375,
+            "bottom": 1974.953125,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 51.59375
+          },
+          "top": 1560.671875,
+          "bottom": 2054.953125,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 494.28125
+        }
+      ],
+      "ready": false,
+      "fallback": true,
+      "loaded": true,
+      "canvas": false,
+      "paint": {
+        "wires": [
+          {
+            "scale": 1,
+            "diffuse": [
+              0.4969329950515914,
+              0.5647115056965487,
+              0.7912979403281551
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 175.70558547973633
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.4969329950515914,
+              0.5647115056965487,
+              0.7912979403281551
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 17.150437831878662
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8962693533719567,
+              0.913098651791473,
+              0.9646862478936612
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 175.7054328918457
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7835377915215659,
+              0.9215818562755338
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 100.73789596557617
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.55201140150344,
+              0.5972017883558645,
+              0.7156935005005721
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 21.327621936798096
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 196.69240951538086
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 84.51930046081543
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.55201140150344,
+              0.5972017883558645,
+              0.7156935005005721
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 127.96406745910645
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 84.5183277130127
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 295.03862380981445
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 338.0745315551758
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.21586050010324417,
+              0.3005437944049895,
+              0.6375968739867731
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 150.9329128265381
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.057805430183792694,
+              0.12477181755144427,
+              0.48514994004665124
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 150.9330654144287
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 16.811184883117676
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 11.597474813461304
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 16.809433698654175
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 11.59874677658081
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.03954623527052923,
+              0.09084171117479915,
+              0.2917706498067337
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 90.59167861938477
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 52.57975101470947
+          }
+        ],
+        "fills": [
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.4969329950515914,
+              0.5647115056965487,
+              0.7912979403281551
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.4969329950515914,
+              0.5647115056965487,
+              0.7912979403281551
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8962693533719567,
+              0.913098651791473,
+              0.9646862478936612
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7835377915215659,
+              0.9215818562755338
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.55201140150344,
+              0.5972017883558645,
+              0.7156935005005721
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.55201140150344,
+              0.5972017883558645,
+              0.7156935005005721
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.21586050010324417,
+              0.3005437944049895,
+              0.6375968739867731
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.057805430183792694,
+              0.12477181755144427,
+              0.48514994004665124
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.03954623527052923,
+              0.09084171117479915,
+              0.2917706498067337
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          }
+        ],
+        "at": 2409.5999999996275
+      },
+      "overflow": false,
+      "runtime": {
+        "active": 1,
+        "maxPerTick": 1
+      },
+      "applied": null
+    },
+    {
+      "label": "webgl-unavailable",
+      "y": 10597,
+      "anchors": [
+        10922.265625,
+        11476.171875,
+        12055.671875,
+        12549.671875
+      ],
+      "span": 1627.40625,
+      "viewport": 900,
+      "width": 1440,
+      "pinned": true,
+      "visual": {
+        "top": 427.265625,
+        "bottom": 1007.265625,
+        "left": 758.1875,
+        "right": 1329.203125,
+        "height": 580
+      },
+      "articles": [
+        {
+          "stage": "1",
+          "active": "true",
+          "title": "Descoberta e planejamento",
+          "outcome": {
+            "top": 849.578125,
+            "bottom": 901.171875,
+            "left": 100.796875,
+            "right": 465.40625,
+            "height": 51.59375
+          },
+          "top": 427.265625,
+          "bottom": 981.171875,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 553.90625
+        },
+        {
+          "stage": "2",
+          "active": "false",
+          "title": "Desenvolvimento e acompanhamento",
+          "outcome": {
+            "top": 1403.484375,
+            "bottom": 1480.671875,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 77.1875
+          },
+          "top": 981.171875,
+          "bottom": 1560.671875,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 579.5
+        },
+        {
+          "stage": "3",
+          "active": "false",
+          "title": "Finalização e lançamento",
+          "outcome": {
+            "top": 1923.359375,
+            "bottom": 1974.953125,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 51.59375
+          },
+          "top": 1560.671875,
+          "bottom": 2054.953125,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 494.28125
+        }
+      ],
+      "ready": false,
+      "fallback": true,
+      "loaded": true,
+      "canvas": false,
+      "paint": {
+        "wires": [],
+        "fills": []
+      },
+      "overflow": false,
+      "runtime": {
+        "active": 1,
+        "maxPerTick": 1
+      },
+      "applied": null
+    },
+    {
+      "label": "reduced",
+      "y": 66,
+      "anchors": [
+        8946.265625,
+        9449.5,
+        9994.453125,
+        10488.453125
+      ],
+      "span": 1542.1875,
+      "viewport": 900,
+      "width": 1440,
+      "pinned": true,
+      "visual": {
+        "top": 8982.265625,
+        "bottom": 9562.265625,
+        "left": 758.1875,
+        "right": 1329.203125,
+        "height": 580
+      },
+      "articles": [
+        {
+          "stage": "1",
+          "active": "true",
+          "title": "Discovery and planning",
+          "outcome": {
+            "top": 9353.90625,
+            "bottom": 9405.5,
+            "left": 100.796875,
+            "right": 435.828125,
+            "height": 51.59375
+          },
+          "top": 8982.265625,
+          "bottom": 9485.5,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 503.234375
+        },
+        {
+          "stage": "2",
+          "active": "false",
+          "title": "Development and collaboration",
+          "outcome": {
+            "top": 9873.265625,
+            "bottom": 9950.453125,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 77.1875
+          },
+          "top": 9485.5,
+          "bottom": 10030.453125,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 544.953125
+        },
+        {
+          "stage": "3",
+          "active": "false",
+          "title": "Finalization and launch",
+          "outcome": {
+            "top": 10393.140625,
+            "bottom": 10444.734375,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 51.59375
+          },
+          "top": 10030.453125,
+          "bottom": 10524.734375,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 494.28125
+        }
+      ],
+      "ready": false,
+      "fallback": true,
+      "loaded": false,
+      "canvas": false,
+      "paint": {
+        "wires": [],
+        "fills": []
+      },
+      "overflow": false,
+      "runtime": {
+        "active": 0,
+        "maxPerTick": 0
+      },
+      "applied": null
+    },
+    {
+      "label": "slow-cold",
+      "y": 10597,
+      "p": 0,
+      "anchors": [
+        10922.265625,
+        11912.265625,
+        12902.265625,
+        13892.265625
+      ],
+      "span": 2970,
+      "viewport": 900,
+      "width": 1440,
+      "pinned": true,
+      "visual": {
+        "top": 427.265625,
+        "bottom": 1007.265625,
+        "left": 758.1875,
+        "right": 1329.203125,
+        "height": 580
+      },
+      "articles": [
+        {
+          "stage": "1",
+          "active": "true",
+          "title": "Descoberta e planejamento",
+          "outcome": {
+            "top": 1341.671875,
+            "bottom": 1393.265625,
+            "left": 100.796875,
+            "right": 465.40625,
+            "height": 51.59375
+          },
+          "top": 427.265625,
+          "bottom": 1417.265625,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 990
+        },
+        {
+          "stage": "2",
+          "active": "false",
+          "title": "Desenvolvimento e acompanhamento",
+          "outcome": {
+            "top": 2306.078125,
+            "bottom": 2383.265625,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 77.1875
+          },
+          "top": 1417.265625,
+          "bottom": 2407.265625,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 990
+        },
+        {
+          "stage": "3",
+          "active": "false",
+          "title": "Finalização e lançamento",
+          "outcome": {
+            "top": 3321.671875,
+            "bottom": 3373.265625,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 51.59375
+          },
+          "top": 2407.265625,
+          "bottom": 3397.265625,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 990
+        }
+      ],
+      "ready": false,
+      "fallback": false,
+      "loaded": false,
+      "canvas": true,
+      "paint": {
+        "wires": [],
+        "fills": [],
+        "at": 890.5
+      },
+      "overflow": false,
+      "runtime": {
+        "active": 1,
+        "maxPerTick": 1
+      },
+      "applied": {
+        "stage": 1,
+        "localProgress": 0,
+        "groups": {
+          "foundation": {
+            "drawn": 0,
+            "filled": 0,
+            "wireOpacity": 1
+          },
+          "windows": {
+            "drawn": 0,
+            "filled": 0,
+            "wireOpacity": 1
+          },
+          "content": {
+            "drawn": 0,
+            "filled": 0,
+            "wireOpacity": 1
+          },
+          "code": {
+            "drawn": 0,
+            "filled": 0,
+            "wireOpacity": 1
+          }
+        },
+        "finish": 0,
+        "sceneComplete": false,
+        "rotateX": 4,
+        "rotateY": -6
+      }
+    },
+    {
+      "label": "slow-ready",
+      "y": 10597,
+      "p": 0,
+      "anchors": [
+        10922.265625,
+        11912.265625,
+        12902.265625,
+        13892.265625
+      ],
+      "span": 2970,
+      "viewport": 900,
+      "width": 1440,
+      "pinned": true,
+      "visual": {
+        "top": 427.265625,
+        "bottom": 1007.265625,
+        "left": 758.1875,
+        "right": 1329.203125,
+        "height": 580
+      },
+      "articles": [
+        {
+          "stage": "1",
+          "active": "true",
+          "title": "Descoberta e planejamento",
+          "outcome": {
+            "top": 1341.671875,
+            "bottom": 1393.265625,
+            "left": 100.796875,
+            "right": 465.40625,
+            "height": 51.59375
+          },
+          "top": 427.265625,
+          "bottom": 1417.265625,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 990
+        },
+        {
+          "stage": "2",
+          "active": "false",
+          "title": "Desenvolvimento e acompanhamento",
+          "outcome": {
+            "top": 2306.078125,
+            "bottom": 2383.265625,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 77.1875
+          },
+          "top": 1417.265625,
+          "bottom": 2407.265625,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 990
+        },
+        {
+          "stage": "3",
+          "active": "false",
+          "title": "Finalização e lançamento",
+          "outcome": {
+            "top": 3321.671875,
+            "bottom": 3373.265625,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 51.59375
+          },
+          "top": 2407.265625,
+          "bottom": 3397.265625,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 990
+        }
+      ],
+      "ready": true,
+      "fallback": false,
+      "loaded": false,
+      "canvas": true,
+      "paint": {
+        "wires": [
+          {
+            "scale": 1,
+            "diffuse": [
+              0.4969329950515914,
+              0.5647115056965487,
+              0.7912979403281551
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 175.70558547973633
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.4969329950515914,
+              0.5647115056965487,
+              0.7912979403281551
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 17.150437831878662
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8962693533719567,
+              0.913098651791473,
+              0.9646862478936612
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 175.7054328918457
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7835377915215659,
+              0.9215818562755338
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 100.73789596557617
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.55201140150344,
+              0.5972017883558645,
+              0.7156935005005721
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 21.327621936798096
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 196.69240951538086
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 84.51930046081543
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.55201140150344,
+              0.5972017883558645,
+              0.7156935005005721
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 127.96406745910645
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 84.5183277130127
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 295.03862380981445
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 338.0745315551758
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.21586050010324417,
+              0.3005437944049895,
+              0.6375968739867731
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 150.9329128265381
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.057805430183792694,
+              0.12477181755144427,
+              0.48514994004665124
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 150.9330654144287
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 16.811184883117676
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 11.597474813461304
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 16.809433698654175
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 11.59874677658081
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.03954623527052923,
+              0.09084171117479915,
+              0.2917706498067337
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 90.59167861938477
+          },
+          {
+            "scale": 1,
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "opacity": 1,
+            "dashSize": 0,
+            "totalSize": 52.57975101470947
+          }
+        ],
+        "fills": [
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.4969329950515914,
+              0.5647115056965487,
+              0.7912979403281551
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.4969329950515914,
+              0.5647115056965487,
+              0.7912979403281551
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8962693533719567,
+              0.913098651791473,
+              0.9646862478936612
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7835377915215659,
+              0.9215818562755338
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.55201140150344,
+              0.5972017883558645,
+              0.7156935005005721
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.55201140150344,
+              0.5972017883558645,
+              0.7156935005005721
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.7304607400847158,
+              0.7681511472425809,
+              0.8796223968851662
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.21586050010324417,
+              0.3005437944049895,
+              0.6375968739867731
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.057805430183792694,
+              0.12477181755144427,
+              0.48514994004665124
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.03954623527052923,
+              0.09084171117479915,
+              0.2917706498067337
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          },
+          {
+            "toneMappingExposure": 1,
+            "directionalLights[0].direction": [
+              0.3244428422615251,
+              0.48666426339228763,
+              0.8111071056538127
+            ],
+            "directionalLights[0].color": [
+              1.4,
+              1.4,
+              1.4
+            ],
+            "diffuse": [
+              0.8879231178794776,
+              0.8879231178794776,
+              0.8879231178794776
+            ],
+            "emissive": [
+              0,
+              0,
+              0
+            ],
+            "roughness": 0.55,
+            "metalness": 0.08,
+            "opacity": 0,
+            "ior": 1.5,
+            "specularIntensity": 1,
+            "specularColor": [
+              1,
+              1,
+              1
+            ],
+            "envMapIntensity": 1
+          }
+        ],
+        "at": 3501.800000000745
+      },
+      "overflow": false,
+      "runtime": {
+        "active": 1,
+        "maxPerTick": 1
+      },
+      "applied": {
+        "stage": 1,
+        "localProgress": 0,
+        "groups": {
+          "foundation": {
+            "drawn": 0,
+            "filled": 0,
+            "wireOpacity": 1
+          },
+          "windows": {
+            "drawn": 0,
+            "filled": 0,
+            "wireOpacity": 1
+          },
+          "content": {
+            "drawn": 0,
+            "filled": 0,
+            "wireOpacity": 1
+          },
+          "code": {
+            "drawn": 0,
+            "filled": 0,
+            "wireOpacity": 1
+          }
+        },
+        "finish": 0,
+        "sceneComplete": false,
+        "rotateX": 4,
+        "rotateY": -6
+      }
+    },
+    {
+      "label": "svg-failed",
+      "y": 10597,
+      "anchors": [
+        10922.265625,
+        11476.171875,
+        12055.671875,
+        12549.671875
+      ],
+      "span": 1627.40625,
+      "viewport": 900,
+      "width": 1440,
+      "pinned": true,
+      "visual": {
+        "top": 427.265625,
+        "bottom": 1007.265625,
+        "left": 758.1875,
+        "right": 1329.203125,
+        "height": 580
+      },
+      "articles": [
+        {
+          "stage": "1",
+          "active": "true",
+          "title": "Descoberta e planejamento",
+          "outcome": {
+            "top": 849.578125,
+            "bottom": 901.171875,
+            "left": 100.796875,
+            "right": 465.40625,
+            "height": 51.59375
+          },
+          "top": 427.265625,
+          "bottom": 981.171875,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 553.90625
+        },
+        {
+          "stage": "2",
+          "active": "false",
+          "title": "Desenvolvimento e acompanhamento",
+          "outcome": {
+            "top": 1403.484375,
+            "bottom": 1480.671875,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 77.1875
+          },
+          "top": 981.171875,
+          "bottom": 1560.671875,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 579.5
+        },
+        {
+          "stage": "3",
+          "active": "false",
+          "title": "Finalização e lançamento",
+          "outcome": {
+            "top": 1923.359375,
+            "bottom": 1974.953125,
+            "left": 100.796875,
+            "right": 504.546875,
+            "height": 51.59375
+          },
+          "top": 1560.671875,
+          "bottom": 2054.953125,
+          "left": 100.796875,
+          "right": 671.796875,
+          "height": 494.28125
+        }
+      ],
+      "ready": false,
+      "fallback": true,
+      "loaded": true,
+      "canvas": false,
+      "paint": {
+        "wires": [],
+        "fills": []
+      },
+      "overflow": false,
+      "runtime": {
+        "active": 1,
+        "maxPerTick": 1
+      },
+      "applied": null
+    }
+  ],
+  "checks": {
+    "nojs": {
+      "articles": 3,
+      "noscript": true,
+      "overflow": false
+    },
+    "contact": true
+  },
+  "errors": [],
+  "pass": true
+}

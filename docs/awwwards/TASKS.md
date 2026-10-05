@@ -1,3 +1,11 @@
+## Worker · Processo comercial entregue · 05/10/2026
+
+- [x] Ordem expressa confirmou revisão dos planos de 23f6d4c; execução sequencial, sem nova aprovação duplicada.
+- [x] Processo Tasks 1–4: três etapas PT/EN, SVG em camadas, progresso GSAP, pins/fallbacks, checks e browser próprio. Implementação d7fa954. [Provas e limites](evidence-narrative/process-business/README.md).
+- [ ] Rotato SDIMT R1–R3: próximo incremento autorizado, com checkpoint próprio; verificar os frames atuais de 7c0e70c.
+- [ ] Revisão Mastermind/P2 e aceite artístico; sem expansão/master/produção implícitos.
+
+---
 ## Estado vigente · spec Processo revisada e planos preparados · 04/10/2026 (Cuiabá)
 
 - [x] Recuperar três etapas antigas por capturas e `Approach`/mensagens PT/EN.
