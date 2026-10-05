@@ -118,15 +118,18 @@ export default function StoryPrototype({ locale, copy }: Props) {
       const heroOverflow = mobile ? Math.max(0, intro.current!.querySelector<HTMLElement>(`.${styles.introStage}`)!.offsetHeight - vh) : 0;
       const openingY = opening.current!.getBoundingClientRect().top + window.scrollY;
       const readY = reading.getBoundingClientRect().top + window.scrollY - openingY;
-      const total = opening.current!.offsetHeight - vh;
+      let total = opening.current!.offsetHeight - vh;
       const expandStart = heroOverflow + vh * .85;
       const arrive = expandStart + vh * 1.2;
       const settle = readY - vh * .1;
+      const rotato = root.current!.querySelector<HTMLElement>(`.${styles.sdimtRotatoStage}`)!;
+      const handoff = rotato.getBoundingClientRect().top + window.scrollY - openingY - vh * .45;
       gsap.set(plane, { x: 0, y: 0, z: 0, scale: 1, rotationY: 0, rotationX: 0, rotationZ: 0, opacity: 0, force3D: true });
       gsap.set(detail, { x: vw * .16, y: vh * .22, z: -180, scale: .68, rotationY: 18, rotationZ: 9, opacity: 0, force3D: true });
       gsap.set(orbit, { y: 22, opacity: 0 });
       const clock = { progress: 0 };
-      const timeline = gsap.timeline({ scrollTrigger: { trigger: opening.current, start: 'top top', end: 'bottom bottom', scrub: true, invalidateOnRefresh: true, onUpdate: (self) => { setPlasmaExposed(self.progress * total < vh * 1.55); setHeroExposed(self.progress * total < heroOverflow + vh * .83); phrase.current!.style.pointerEvents = self.progress * total < heroOverflow + vh * .83 ? 'auto' : 'none'; bridgeProgress.set(Math.max(-1, (self.progress * total - expandStart) / (vh * 1.2))); setBridgeActive(self.progress * total > expandStart - vh * .25 && self.progress * total < settle - vh * .9); navProgress.set(Math.max(0, Math.min(1, (self.progress * total - heroOverflow) / (vh * .8)))); } } });
+      const refreshTweens: { clock?: gsap.core.Tween; handoff?: gsap.core.Tween } = {};
+      const timeline = gsap.timeline({ scrollTrigger: { trigger: opening.current, start: 'top top', end: 'bottom bottom', scrub: true, invalidateOnRefresh: true, onRefresh: () => { total = opening.current!.offsetHeight - vh; refreshTweens.clock?.duration(total); refreshTweens.handoff?.startTime(Math.max(arrive, rotato.getBoundingClientRect().top + window.scrollY - openingY - vh * .45)); }, onUpdate: (self) => { setPlasmaExposed(self.progress * total < vh * 1.55); setHeroExposed(self.progress * total < heroOverflow + vh * .83); phrase.current!.style.pointerEvents = self.progress * total < heroOverflow + vh * .83 ? 'auto' : 'none'; bridgeProgress.set(Math.max(-1, (self.progress * total - expandStart) / (vh * 1.2))); setBridgeActive(self.progress * total > expandStart - vh * .25 && self.progress * total < settle - vh * .9); navProgress.set(Math.max(0, Math.min(1, (self.progress * total - heroOverflow) / (vh * .8)))); } } });
       timeline.to(clock, { progress: 1, duration: total, ease: 'none' }, 0)
         .to(phrase.current!.querySelectorAll(`.${styles.heroLineInner}`), { yPercent: -45, z: -180, rotationX: 10, opacity: 0, stagger: vh * .065, duration: vh * .7, ease: 'power2.inOut' }, heroOverflow + vh * .3)
         .to(phrase.current!.querySelectorAll('[data-hero-support]'), { y: -24, opacity: 0, duration: vh * .3, ease: 'power2.in' }, heroOverflow + vh * .18)
@@ -139,7 +142,9 @@ export default function StoryPrototype({ locale, copy }: Props) {
         .to(orbit, { y: 0, opacity: 1, duration: vh * .3, ease: 'power1.out' }, arrive)
         .to(plane, { x: mobile ? 0 : -vw * .24, y: mobile ? -vh * .23 : 0, scale: mobile ? .72 : .46, rotationY: mobile ? 0 : 8, rotationZ: mobile ? 0 : -2, duration: vh * 1.2, ease: 'power2.inOut' }, settle - vh * 1.2)
         .to(detail, { x: mobile ? 0 : -vw * .43, y: mobile ? vh * .06 : vh * .04, scale: mobile ? .7 : .57, opacity: mobile ? 0 : .7, rotationZ: 3, duration: vh * 1.2, ease: 'power2.inOut' }, settle - vh * 1.2)
-;
+        .to([plane, detail, orbit], { opacity: 0, duration: vh * .3, ease: 'none' }, Math.max(arrive, handoff));
+      const children = timeline.getChildren(false, true, false) as gsap.core.Tween[];
+      refreshTweens.clock = children[0]; refreshTweens.handoff = children[children.length - 1];
       refreshRuntime();
     }, opening);
     return () => context.revert();
@@ -187,7 +192,7 @@ export default function StoryPrototype({ locale, copy }: Props) {
         </div>
       </section>
 
-      <SdimtChapter locale={locale} sample={runtime.sample} reducedMotion={reducedMotion} caseData={sdimt} />
+      <SdimtChapter locale={locale} sample={runtime.sample} reducedMotion={reducedMotion} paused={motionPaused} refreshRuntime={refreshRuntime} caseData={sdimt} />
       </div>
       <NksChapter locale={locale} sample={runtime.sample} reducedMotion={reducedMotion} caseData={nks} />
       {cases.filter((item) => !['sdimt', 'nks'].includes(item.slug)).map((item, index) => <FutureCase key={item.slug} caseData={item} locale={locale} index={index + 3} />)}

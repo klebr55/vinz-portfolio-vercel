@@ -1,0 +1,923 @@
+{
+  "mode": "failures",
+  "method": "Native Chrome CDP, ANGLE/D3D11 WARP software renderer. Actual Canvas paints and cache reservations. No physical GPU performance claim.",
+  "samples": [
+    {
+      "name": "desktop-checkpoint",
+      "y": 4578,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 5,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1399,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1797.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 5,
+        "paints": 1,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 1677.300000000745
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "late-decode-reverse",
+      "y": 3498,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.2,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 49,
+        "target": 49,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 17,
+        "discarded": 2,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 2479,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2877.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 17,
+        "paints": 3,
+        "lastPaint": {
+          "index": 49,
+          "target": 49,
+          "allowed": true,
+          "hidden": false,
+          "at": 3214.89999999851
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "hidden",
+      "y": 3498,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.2,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 49,
+        "target": 49,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 17,
+        "discarded": 2,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 240,
+        "y": 2479,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2877.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1400,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 17,
+        "paints": 3,
+        "lastPaint": {
+          "index": 49,
+          "target": 49,
+          "allowed": true,
+          "hidden": false,
+          "at": 3214.89999999851
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "hidden-no-decodes",
+      "y": 4106,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.6503703703703704,
+      "stats": {
+        "entries": 0,
+        "estimatedDecodedBytes": 0,
+        "pending": 0,
+        "displayed": 49,
+        "target": 157,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 17,
+        "discarded": 2,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 240,
+        "y": 1871,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2269.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1400,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 17,
+        "paints": 3,
+        "lastPaint": {
+          "index": 49,
+          "target": 49,
+          "allowed": true,
+          "hidden": false,
+          "at": 3214.89999999851
+        },
+        "live": 0,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "visible-return",
+      "y": 4106,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.6503703703703704,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 157,
+        "target": 157,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 22,
+        "discarded": 2,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1871,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2269.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 22,
+        "paints": 4,
+        "lastPaint": {
+          "index": 157,
+          "target": 157,
+          "allowed": true,
+          "hidden": false,
+          "at": 5814.5999999996275
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "offscreen",
+      "y": 7292,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 2,
+        "estimatedDecodedBytes": 37324800,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 28,
+        "discarded": 4,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": -2112.53125,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": -1436.46875
+      },
+      "visual": {
+        "x": 0,
+        "y": -2162,
+        "width": 1430,
+        "height": 775,
+        "bottom": -1387
+      },
+      "title": {
+        "x": 86.390625,
+        "y": -1949.015625,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": -1819.421875
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": -1592.421875,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": -1556.578125
+      },
+      "editorial": {
+        "x": 235,
+        "y": -1315,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": -916.28125
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 28,
+        "paints": 5,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 6622
+        },
+        "live": 2,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "slow-cold-poster",
+      "y": 4578,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 0,
+        "estimatedDecodedBytes": 37324800,
+        "pending": 2,
+        "displayed": null,
+        "target": 241,
+        "peakEntries": 2,
+        "peakPending": 2,
+        "requests": 2,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1399,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1797.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": false,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 2,
+        "paints": 0,
+        "live": 0,
+        "decoding": 0,
+        "peakLive": 0,
+        "peakDecode": 0
+      }
+    },
+    {
+      "name": "slow-ready",
+      "y": 4578,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 2,
+        "estimatedDecodedBytes": 74649600,
+        "pending": 2,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 4,
+        "peakPending": 2,
+        "requests": 4,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1399,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1797.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 4,
+        "paints": 1,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 2960
+        },
+        "live": 2,
+        "decoding": 0,
+        "peakLive": 2,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "404-retains-frame",
+      "y": 3768,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.4,
+      "stats": {
+        "entries": 0,
+        "estimatedDecodedBytes": 0,
+        "pending": 0,
+        "displayed": 241,
+        "target": 97,
+        "peakEntries": 4,
+        "peakPending": 2,
+        "requests": 9,
+        "discarded": 0,
+        "failures": 5,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 2209,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2607.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 9,
+        "paints": 1,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 2960
+        },
+        "live": 0,
+        "decoding": 0,
+        "peakLive": 2,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "404-cold-poster",
+      "y": 4578,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 0,
+        "estimatedDecodedBytes": 0,
+        "pending": 0,
+        "displayed": null,
+        "target": 241,
+        "peakEntries": 2,
+        "peakPending": 2,
+        "requests": 5,
+        "discarded": 0,
+        "failures": 5,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1399,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1797.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": false,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 5,
+        "paints": 0,
+        "live": 0,
+        "decoding": 0,
+        "peakLive": 0,
+        "peakDecode": 0
+      }
+    },
+    {
+      "name": "reduced",
+      "y": 641,
+      "width": 1440,
+      "height": 900,
+      "static": true,
+      "p": 0,
+      "media": {
+        "x": 675.890625,
+        "y": 379,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 1055.0625
+      },
+      "visual": {
+        "x": 0,
+        "y": 259,
+        "width": 1430,
+        "height": 820.0625,
+        "bottom": 1079.0625
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 563.390625,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 692.984375
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 878.234375,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 914.078125
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1151.0625,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1549.78125
+      },
+      "stageTop": 900,
+      "markerTop": 1020,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": false,
+      "presented": false,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 0,
+        "paints": 0,
+        "live": 0,
+        "decoding": 0,
+        "peakLive": 0,
+        "peakDecode": 0
+      }
+    }
+  ],
+  "checks": {
+    "cancelledInterceptions": 2,
+    "nojs": {
+      "title": "SDIMT.",
+      "fields": 2,
+      "link": true,
+      "poster": true,
+      "overflow": false
+    },
+    "process": {
+      "articles": 3,
+      "firstActive": "true"
+    }
+  },
+  "errors": [],
+  "pass": true
+}

@@ -32,7 +32,10 @@ export function useStoryRuntime(root: RefObject<HTMLElement | null>, reducedMoti
       const startY = starts[index];
       const endY = starts[index + 1] ?? Math.round(element.getBoundingClientRect().bottom + window.scrollY);
       const readingElement = element.querySelector<HTMLElement>('[data-story-read]');
-      const preferred = id === 'intro' ? startY : readingElement ? Math.round(readingElement.getBoundingClientRect().top + window.scrollY - Math.min(170, window.innerHeight * 0.17)) : startY;
+      const anchorId = readingElement?.dataset.storyReadAnchor;
+      const readingPosition = anchorId ? element.querySelector<HTMLElement>(`#${CSS.escape(anchorId)}`) ?? readingElement : readingElement;
+      const readingOffset = readingElement?.dataset.storyReadOffset === 'navigation' ? Math.max(100, (document.querySelector('header')?.getBoundingClientRect().bottom ?? 80) + 20) : Math.min(170, window.innerHeight * 0.17);
+      const preferred = id === 'intro' ? startY : readingPosition ? Math.round(readingPosition.getBoundingClientRect().top + window.scrollY - readingOffset) : startY;
       return { id, startY, readY: Math.min(Math.max(startY, preferred), Math.max(startY, endY - 1)), endY };
     });
     if (anchoredChapter.current && !navigating.current) {

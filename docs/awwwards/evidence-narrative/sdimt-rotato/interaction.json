@@ -1,0 +1,7585 @@
+{
+  "mode": "interaction",
+  "method": "Native Chrome CDP, ANGLE/D3D11 WARP software renderer. Actual Canvas paints and cache reservations. No physical GPU performance claim.",
+  "samples": [
+    {
+      "name": "desktop-checkpoint",
+      "y": 4578,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 5,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1399,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1797.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 5,
+        "paints": 1,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 1832.5
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-bridge-before",
+      "y": 2688,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 1,
+        "target": 1,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 10,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 691.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 1367.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 642,
+        "width": 1430,
+        "height": 775,
+        "bottom": 1417
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 854.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 984.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 1211.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 1247.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 3289,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 3687.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "1",
+      "overflow": false,
+      "probe": {
+        "requests": 10,
+        "paints": 2,
+        "lastPaint": {
+          "index": 1,
+          "target": 1,
+          "allowed": true,
+          "hidden": false,
+          "at": 1451.2999999988824
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-0",
+      "y": 2806,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 1,
+        "target": 1,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 10,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 573.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 1249.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 524,
+        "width": 1430,
+        "height": 775,
+        "bottom": 1299
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 736.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 866.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 1093.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 1129.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 3171,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 3569.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "1",
+      "overflow": false,
+      "probe": {
+        "requests": 10,
+        "paints": 2,
+        "lastPaint": {
+          "index": 1,
+          "target": 1,
+          "allowed": true,
+          "hidden": false,
+          "at": 1451.2999999988824
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-1",
+      "y": 2965,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 1,
+        "target": 1,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 10,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 414.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 1090.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 365,
+        "width": 1430,
+        "height": 775,
+        "bottom": 1140
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 577.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 707.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 934.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 970.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 3012,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 3410.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0.8519",
+      "overflow": false,
+      "probe": {
+        "requests": 10,
+        "paints": 2,
+        "lastPaint": {
+          "index": 1,
+          "target": 1,
+          "allowed": true,
+          "hidden": false,
+          "at": 1451.2999999988824
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-2",
+      "y": 3086,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 1,
+        "target": 1,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 10,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 293.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 969.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 244,
+        "width": 1430,
+        "height": 775,
+        "bottom": 1019
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 456.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 586.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 813.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 849.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 2891,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 3289.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0.4037",
+      "overflow": false,
+      "probe": {
+        "requests": 10,
+        "paints": 2,
+        "lastPaint": {
+          "index": 1,
+          "target": 1,
+          "allowed": true,
+          "hidden": false,
+          "at": 1451.2999999988824
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-3",
+      "y": 3245,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.012592592592592593,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 4,
+        "target": 4,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 11,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 2732,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 3130.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 11,
+        "paints": 5,
+        "lastPaint": {
+          "index": 4,
+          "target": 4,
+          "allowed": true,
+          "hidden": false,
+          "at": 4731
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-4",
+      "y": 3366,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.10222222222222223,
+      "stats": {
+        "entries": 4,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 1,
+        "displayed": 26,
+        "target": 26,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 26,
+        "discarded": 5,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 2611,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 3009.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 26,
+        "paints": 10,
+        "lastPaint": {
+          "index": 26,
+          "target": 26,
+          "allowed": true,
+          "hidden": false,
+          "at": 5497.5999999996275
+        },
+        "live": 4,
+        "decoding": 1,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-5",
+      "y": 3525,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.22,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 54,
+        "target": 54,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 42,
+        "discarded": 11,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 2452,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2850.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 42,
+        "paints": 14,
+        "lastPaint": {
+          "index": 54,
+          "target": 54,
+          "allowed": true,
+          "hidden": false,
+          "at": 6131.199999999255
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-pause",
+      "y": 3648,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.30962962962962964,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 75,
+        "target": 75,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 56,
+        "discarded": 16,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 2329,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2727.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 56,
+        "paints": 18,
+        "lastPaint": {
+          "index": 75,
+          "target": 75,
+          "allowed": true,
+          "hidden": false,
+          "at": 6715.199999999255
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-pause-scroll",
+      "y": 3884,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.30962962962962964,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 75,
+        "target": 75,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 56,
+        "discarded": 16,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 2093,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2491.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 56,
+        "paints": 18,
+        "lastPaint": {
+          "index": 75,
+          "target": 75,
+          "allowed": true,
+          "hidden": false,
+          "at": 6715.199999999255
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-6",
+      "y": 3888,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.4888888888888889,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 118,
+        "target": 118,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 61,
+        "discarded": 16,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 2089,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2487.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 61,
+        "paints": 19,
+        "lastPaint": {
+          "index": 118,
+          "target": 118,
+          "allowed": true,
+          "hidden": false,
+          "at": 7971.9000000003725
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-7",
+      "y": 4045,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.6051851851851852,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 146,
+        "target": 146,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 76,
+        "discarded": 23,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1932,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2330.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 76,
+        "paints": 22,
+        "lastPaint": {
+          "index": 146,
+          "target": 146,
+          "allowed": true,
+          "hidden": false,
+          "at": 9076.900000000373
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-8",
+      "y": 4166,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.6948148148148148,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 168,
+        "target": 168,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 91,
+        "discarded": 28,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1811,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2209.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 91,
+        "paints": 26,
+        "lastPaint": {
+          "index": 168,
+          "target": 168,
+          "allowed": true,
+          "hidden": false,
+          "at": 9816
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-9",
+      "y": 4325,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.8125925925925926,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 196,
+        "target": 196,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 107,
+        "discarded": 34,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1652,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2050.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 107,
+        "paints": 29,
+        "lastPaint": {
+          "index": 196,
+          "target": 196,
+          "allowed": true,
+          "hidden": false,
+          "at": 10460
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-10",
+      "y": 4133,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.6703703703703704,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 2,
+        "displayed": 162,
+        "target": 162,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 141,
+        "discarded": 51,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1844,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2242.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 141,
+        "paints": 37,
+        "lastPaint": {
+          "index": 162,
+          "target": 162,
+          "allowed": true,
+          "hidden": false,
+          "at": 11881.199999999255
+        },
+        "live": 3,
+        "decoding": 2,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-11",
+      "y": 4285,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.782962962962963,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 189,
+        "target": 189,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 157,
+        "discarded": 58,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1692,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 2090.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 157,
+        "paints": 40,
+        "lastPaint": {
+          "index": 189,
+          "target": 189,
+          "allowed": true,
+          "hidden": false,
+          "at": 12515.900000000373
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-12",
+      "y": 4406,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.8725925925925926,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 210,
+        "target": 210,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 172,
+        "discarded": 62,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1571,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1969.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 172,
+        "paints": 43,
+        "lastPaint": {
+          "index": 210,
+          "target": 210,
+          "allowed": true,
+          "hidden": false,
+          "at": 13121.799999998882
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-13",
+      "y": 4565,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 0.9903703703703703,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 239,
+        "target": 239,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 188,
+        "discarded": 68,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1412,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1810.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 188,
+        "paints": 46,
+        "lastPaint": {
+          "index": 239,
+          "target": 239,
+          "allowed": true,
+          "hidden": false,
+          "at": 13931.099999999627
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-14",
+      "y": 4686,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 188,
+        "discarded": 68,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1291,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1689.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 188,
+        "paints": 47,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 14034.699999999255
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-15",
+      "y": 4845,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 188,
+        "discarded": 68,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1132,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1530.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 188,
+        "paints": 47,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 14034.699999999255
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-wheel-16",
+      "y": 4966,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 188,
+        "discarded": 68,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1011,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1409.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 188,
+        "paints": 47,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 14034.699999999255
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-after-keys",
+      "y": 5755,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 188,
+        "discarded": 68,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": -575.53125,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 100.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": -625,
+        "width": 1430,
+        "height": 775,
+        "bottom": 150
+      },
+      "title": {
+        "x": 86.390625,
+        "y": -412.015625,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": -282.421875
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": -55.421875,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": -19.578125
+      },
+      "editorial": {
+        "x": 235,
+        "y": 222,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 620.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 188,
+        "paints": 47,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 14034.699999999255
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-reading-hold",
+      "y": 4713,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 188,
+        "discarded": 68,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1264,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1662.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 188,
+        "paints": 47,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 14034.699999999255
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-editorial",
+      "y": 5903,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 188,
+        "discarded": 68,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": -723.53125,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": -47.46875
+      },
+      "visual": {
+        "x": 0,
+        "y": -773,
+        "width": 1430,
+        "height": 775,
+        "bottom": 2
+      },
+      "title": {
+        "x": 86.390625,
+        "y": -560.015625,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": -430.421875
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": -203.421875,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": -167.578125
+      },
+      "editorial": {
+        "x": 235,
+        "y": 74,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 472.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 188,
+        "paints": 47,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 14034.699999999255
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-checkpoint-return",
+      "y": 4578,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 188,
+        "discarded": 68,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1399,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1797.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 188,
+        "paints": 47,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 14034.699999999255
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-bridge-before",
+      "y": 2601,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 1,
+        "target": 1,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 6,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 910,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 1256.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 606.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 1325.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 646.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 699.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 799.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 833.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 3080.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 3497.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "1",
+      "overflow": false,
+      "probe": {
+        "requests": 6,
+        "paints": 2,
+        "lastPaint": {
+          "index": 1,
+          "target": 1,
+          "allowed": true,
+          "hidden": false,
+          "at": 1331.199999999255
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-0",
+      "y": 2719,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 1,
+        "target": 1,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 6,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 792,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 1138.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 488.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 1207.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 528.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 581.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 681.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 715.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 2962.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 3379.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "1",
+      "overflow": false,
+      "probe": {
+        "requests": 6,
+        "paints": 2,
+        "lastPaint": {
+          "index": 1,
+          "target": 1,
+          "allowed": true,
+          "hidden": false,
+          "at": 1331.199999999255
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-1",
+      "y": 2878,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 1,
+        "target": 1,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 6,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 633,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 979.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 329.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 1048.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 369.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 422.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 522.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 556.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 2803.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 3220.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0.8001",
+      "overflow": false,
+      "probe": {
+        "requests": 6,
+        "paints": 2,
+        "lastPaint": {
+          "index": 1,
+          "target": 1,
+          "allowed": true,
+          "hidden": false,
+          "at": 1331.199999999255
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-2",
+      "y": 2999,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 1,
+        "target": 1,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 6,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 512,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 858.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 208.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 927.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 248.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 301.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 401.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 435.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 2682.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 3099.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0.3222",
+      "overflow": false,
+      "probe": {
+        "requests": 6,
+        "paints": 2,
+        "lastPaint": {
+          "index": 1,
+          "target": 1,
+          "allowed": true,
+          "hidden": false,
+          "at": 1331.199999999255
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-3",
+      "y": 3158,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.04013625592417062,
+      "stats": {
+        "entries": 2,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 1,
+        "displayed": 11,
+        "target": 11,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 15,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 2523.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 2940.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 15,
+        "paints": 9,
+        "lastPaint": {
+          "index": 11,
+          "target": 11,
+          "allowed": true,
+          "hidden": false,
+          "at": 4586.5999999996275
+        },
+        "live": 2,
+        "decoding": 1,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-4",
+      "y": 3279,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.13571287519747235,
+      "stats": {
+        "entries": 2,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 1,
+        "displayed": 34,
+        "target": 34,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 32,
+        "discarded": 8,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 2402.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 2819.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 32,
+        "paints": 13,
+        "lastPaint": {
+          "index": 34,
+          "target": 34,
+          "allowed": true,
+          "hidden": false,
+          "at": 5286.4000000003725
+        },
+        "live": 2,
+        "decoding": 1,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-5",
+      "y": 3438,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.2613052922590837,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 64,
+        "target": 64,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 50,
+        "discarded": 19,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 2243.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 2660.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 50,
+        "paints": 17,
+        "lastPaint": {
+          "index": 64,
+          "target": 64,
+          "allowed": true,
+          "hidden": false,
+          "at": 5919.5
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-pause",
+      "y": 3561,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.35688191153238547,
+      "stats": {
+        "entries": 2,
+        "estimatedDecodedBytes": 37324800,
+        "pending": 0,
+        "displayed": 87,
+        "target": 87,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 66,
+        "discarded": 28,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 2120.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 2537.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 66,
+        "paints": 21,
+        "lastPaint": {
+          "index": 87,
+          "target": 87,
+          "allowed": true,
+          "hidden": false,
+          "at": 6653
+        },
+        "live": 2,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-pause-scroll",
+      "y": 3797,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.35688191153238547,
+      "stats": {
+        "entries": 2,
+        "estimatedDecodedBytes": 37324800,
+        "pending": 0,
+        "displayed": 87,
+        "target": 87,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 66,
+        "discarded": 28,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1884.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 2301.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 66,
+        "paints": 21,
+        "lastPaint": {
+          "index": 87,
+          "target": 87,
+          "allowed": true,
+          "hidden": false,
+          "at": 6653
+        },
+        "live": 2,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-6",
+      "y": 3801,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.548035150078989,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 133,
+        "target": 133,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 71,
+        "discarded": 28,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1880.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 2297.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 71,
+        "paints": 23,
+        "lastPaint": {
+          "index": 133,
+          "target": 133,
+          "allowed": true,
+          "hidden": false,
+          "at": 7952.9000000003725
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-7",
+      "y": 3958,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.6720477883096366,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 162,
+        "target": 162,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 88,
+        "discarded": 38,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1723.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 2140.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 88,
+        "paints": 26,
+        "lastPaint": {
+          "index": 162,
+          "target": 162,
+          "allowed": true,
+          "hidden": false,
+          "at": 8790.699999999255
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-8",
+      "y": 4079,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.7676244075829384,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 185,
+        "target": 185,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 104,
+        "discarded": 46,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1602.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 2019.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 104,
+        "paints": 30,
+        "lastPaint": {
+          "index": 185,
+          "target": 185,
+          "allowed": true,
+          "hidden": false,
+          "at": 9469.699999999255
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-9",
+      "y": 4238,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.8932168246445498,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 215,
+        "target": 215,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 121,
+        "discarded": 56,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1443.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 1860.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 121,
+        "paints": 33,
+        "lastPaint": {
+          "index": 215,
+          "target": 215,
+          "allowed": true,
+          "hidden": false,
+          "at": 10155.400000000373
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-10",
+      "y": 4046,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.7415580568720379,
+      "stats": {
+        "entries": 2,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 1,
+        "displayed": 179,
+        "target": 179,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 159,
+        "discarded": 79,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1635.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 2052.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 159,
+        "paints": 40,
+        "lastPaint": {
+          "index": 179,
+          "target": 179,
+          "allowed": true,
+          "hidden": false,
+          "at": 11622.299999998882
+        },
+        "live": 2,
+        "decoding": 1,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-11",
+      "y": 4198,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.8616212480252765,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 208,
+        "target": 208,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 177,
+        "discarded": 88,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1483.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 1900.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 177,
+        "paints": 43,
+        "lastPaint": {
+          "index": 208,
+          "target": 208,
+          "allowed": true,
+          "hidden": false,
+          "at": 12269.599999999627
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-12",
+      "y": 4319,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.9571978672985783,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 231,
+        "target": 231,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 192,
+        "discarded": 94,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1362.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 1779.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 192,
+        "paints": 49,
+        "lastPaint": {
+          "index": 231,
+          "target": 231,
+          "allowed": true,
+          "hidden": false,
+          "at": 12969.5
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-13",
+      "y": 4478,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 197,
+        "discarded": 96,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1203.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 1620.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 197,
+        "paints": 50,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 13180.599999999627
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-14",
+      "y": 4599,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 197,
+        "discarded": 96,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1082.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 1499.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 197,
+        "paints": 50,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 13180.599999999627
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-wheel-15",
+      "y": 4758,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 197,
+        "discarded": 96,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 923.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 1340.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 197,
+        "paints": 50,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 13180.599999999627
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-after-keys",
+      "y": 5499,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 197,
+        "discarded": 96,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": -300,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 46.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": -603.8125,
+        "width": 390,
+        "height": 719,
+        "bottom": 115.1875
+      },
+      "title": {
+        "x": 24,
+        "y": -563.015625,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": -510.375
+      },
+      "caption": {
+        "x": 24,
+        "y": -410.203125,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": -376.921875
+      },
+      "editorial": {
+        "x": 0,
+        "y": 182.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 599.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 197,
+        "paints": 50,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 13180.599999999627
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-reading-hold",
+      "y": 4500,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 197,
+        "discarded": 96,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1181.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 1598.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 197,
+        "paints": 50,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 13180.599999999627
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-editorial",
+      "y": 5690,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 197,
+        "discarded": 96,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": -491,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": -144.734375
+      },
+      "visual": {
+        "x": 0,
+        "y": -794.8125,
+        "width": 390,
+        "height": 719,
+        "bottom": -75.8125
+      },
+      "title": {
+        "x": 24,
+        "y": -754.015625,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": -701.375
+      },
+      "caption": {
+        "x": 24,
+        "y": -601.203125,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": -567.921875
+      },
+      "editorial": {
+        "x": 0,
+        "y": -8.296875,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 408.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 197,
+        "paints": 50,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 13180.599999999627
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-checkpoint-return",
+      "y": 4373,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.9998518957345972,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 197,
+        "discarded": 96,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1308.703125,
+        "width": 390,
+        "height": 417.0625,
+        "bottom": 1725.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 197,
+        "paints": 50,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 13180.599999999627
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "touch-forward",
+      "y": 3659,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.4358708530805687,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 106,
+        "target": 106,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 32,
+        "discarded": 9,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 2022.703125,
+        "width": 390,
+        "height": 441.0625,
+        "bottom": 2463.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 32,
+        "paints": 10,
+        "lastPaint": {
+          "index": 106,
+          "target": 106,
+          "allowed": true,
+          "hidden": false,
+          "at": 2506.5999999996275
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "resize-landscape",
+      "y": 1461,
+      "width": 844,
+      "height": 390,
+      "static": true,
+      "p": 1,
+      "media": {
+        "x": 457.96875,
+        "y": 102,
+        "width": 261.71875,
+        "height": 264.984375,
+        "bottom": 366.984375
+      },
+      "visual": {
+        "x": 0,
+        "y": -18,
+        "width": 834,
+        "height": 408.984375,
+        "bottom": 390.984375
+      },
+      "title": {
+        "x": 50.625,
+        "y": 149.71875,
+        "width": 318.34375,
+        "height": 48.953125,
+        "bottom": 198.671875
+      },
+      "caption": {
+        "x": 50.625,
+        "y": 320.296875,
+        "width": 318.34375,
+        "height": 31.75,
+        "bottom": 352.046875
+      },
+      "editorial": {
+        "x": 0,
+        "y": 448.984375,
+        "width": 834,
+        "height": 263.71875,
+        "bottom": 712.703125
+      },
+      "stageTop": 1443,
+      "markerTop": 1563,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 794,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": false,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 34,
+        "paints": 10,
+        "lastPaint": {
+          "index": 106,
+          "target": 106,
+          "allowed": true,
+          "hidden": false,
+          "at": 2506.5999999996275
+        },
+        "live": 0,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    }
+  ],
+  "checks": {
+    "1440-trace": {
+      "requests": [
+        {
+          "index": 241,
+          "start": 516,
+          "status": 200
+        },
+        {
+          "index": 240,
+          "start": 516.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 239,
+          "start": 561.0999999996275,
+          "status": 200
+        },
+        {
+          "index": 238,
+          "start": 561.7999999988824,
+          "status": 200
+        },
+        {
+          "index": 237,
+          "start": 620.0999999996275,
+          "status": 200
+        },
+        {
+          "index": 1,
+          "start": 1405.699999999255,
+          "status": 200
+        },
+        {
+          "index": 2,
+          "start": 1406,
+          "status": 200
+        },
+        {
+          "index": 3,
+          "start": 1449.0999999996275,
+          "status": 200
+        },
+        {
+          "index": 4,
+          "start": 1451.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 5,
+          "start": 1511.7999999988824,
+          "status": 200
+        },
+        {
+          "index": 6,
+          "start": 4731.299999998882,
+          "status": 200
+        },
+        {
+          "index": 7,
+          "start": 4868.799999998882,
+          "status": 200
+        },
+        {
+          "index": 8,
+          "start": 4869,
+          "status": 200
+        },
+        {
+          "index": 13,
+          "start": 4944.699999999255,
+          "status": 200
+        },
+        {
+          "index": 14,
+          "start": 4954.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 17,
+          "start": 5009.799999998882,
+          "status": 200
+        },
+        {
+          "index": 18,
+          "start": 5012.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 20,
+          "start": 5074.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 21,
+          "start": 5076.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 22,
+          "start": 5140.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 23,
+          "start": 5141.299999998882,
+          "status": 200
+        },
+        {
+          "index": 24,
+          "start": 5206.799999998882,
+          "status": 200
+        },
+        {
+          "index": 25,
+          "start": 5207.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 26,
+          "start": 5288.299999998882,
+          "status": 200
+        },
+        {
+          "index": 27,
+          "start": 5319.0999999996275,
+          "status": 200
+        },
+        {
+          "index": 28,
+          "start": 5497.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 29,
+          "start": 5549.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 30,
+          "start": 5553.299999998882,
+          "status": 200
+        },
+        {
+          "index": 39,
+          "start": 5637.299999998882,
+          "status": 200
+        },
+        {
+          "index": 40,
+          "start": 5639.199999999255,
+          "status": 200
+        },
+        {
+          "index": 43,
+          "start": 5697.699999999255,
+          "status": 200
+        },
+        {
+          "index": 44,
+          "start": 5706.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 47,
+          "start": 5762.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 48,
+          "start": 5771.699999999255,
+          "status": 200
+        },
+        {
+          "index": 49,
+          "start": 5832.5,
+          "status": 200
+        },
+        {
+          "index": 50,
+          "start": 5839.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 51,
+          "start": 5905.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 52,
+          "start": 5908.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 53,
+          "start": 5968.699999999255,
+          "status": 200
+        },
+        {
+          "index": 54,
+          "start": 5975.5,
+          "status": 200
+        },
+        {
+          "index": 55,
+          "start": 6052.799999998882,
+          "status": 200
+        },
+        {
+          "index": 56,
+          "start": 6131.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 57,
+          "start": 6236.299999998882,
+          "status": 200
+        },
+        {
+          "index": 58,
+          "start": 6236.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 64,
+          "start": 6321.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 65,
+          "start": 6323.299999998882,
+          "status": 200
+        },
+        {
+          "index": 67,
+          "start": 6381.299999998882,
+          "status": 200
+        },
+        {
+          "index": 68,
+          "start": 6390.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 70,
+          "start": 6447.199999999255,
+          "status": 200
+        },
+        {
+          "index": 71,
+          "start": 6455,
+          "status": 200
+        },
+        {
+          "index": 72,
+          "start": 6506.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 73,
+          "start": 6511.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 74,
+          "start": 6574.699999999255,
+          "status": 200
+        },
+        {
+          "index": 75,
+          "start": 6576.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 76,
+          "start": 6658.299999998882,
+          "status": 200
+        },
+        {
+          "index": 77,
+          "start": 6715.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 118,
+          "start": 7913.199999999255,
+          "status": 200
+        },
+        {
+          "index": 119,
+          "start": 7913.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 117,
+          "start": 7971.199999999255,
+          "status": 200
+        },
+        {
+          "index": 120,
+          "start": 7971.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 116,
+          "start": 8047.799999998882,
+          "status": 200
+        },
+        {
+          "index": 121,
+          "start": 8550.299999998882,
+          "status": 200
+        },
+        {
+          "index": 122,
+          "start": 8550.5,
+          "status": 200
+        },
+        {
+          "index": 128,
+          "start": 8612.400000000373,
+          "status": 200
+        },
+        {
+          "index": 130,
+          "start": 8620.699999999255,
+          "status": 200
+        },
+        {
+          "index": 135,
+          "start": 8688.199999999255,
+          "status": 200
+        },
+        {
+          "index": 136,
+          "start": 8692.400000000373,
+          "status": 200
+        },
+        {
+          "index": 139,
+          "start": 8756,
+          "status": 200
+        },
+        {
+          "index": 140,
+          "start": 8763.5,
+          "status": 200
+        },
+        {
+          "index": 142,
+          "start": 8829,
+          "status": 200
+        },
+        {
+          "index": 143,
+          "start": 8839.599999999627,
+          "status": 200
+        },
+        {
+          "index": 144,
+          "start": 8901.799999998882,
+          "status": 200
+        },
+        {
+          "index": 145,
+          "start": 8917.699999999255,
+          "status": 200
+        },
+        {
+          "index": 146,
+          "start": 8961.599999999627,
+          "status": 200
+        },
+        {
+          "index": 147,
+          "start": 8986.299999998882,
+          "status": 200
+        },
+        {
+          "index": 148,
+          "start": 9075.900000000373,
+          "status": 200
+        },
+        {
+          "index": 149,
+          "start": 9237.900000000373,
+          "status": 200
+        },
+        {
+          "index": 150,
+          "start": 9238.5,
+          "status": 200
+        },
+        {
+          "index": 155,
+          "start": 9304.5,
+          "status": 200
+        },
+        {
+          "index": 156,
+          "start": 9307,
+          "status": 200
+        },
+        {
+          "index": 159,
+          "start": 9371.599999999627,
+          "status": 200
+        },
+        {
+          "index": 160,
+          "start": 9374.699999999255,
+          "status": 200
+        },
+        {
+          "index": 162,
+          "start": 9436.900000000373,
+          "status": 200
+        },
+        {
+          "index": 163,
+          "start": 9441.199999999255,
+          "status": 200
+        },
+        {
+          "index": 164,
+          "start": 9504.400000000373,
+          "status": 200
+        },
+        {
+          "index": 165,
+          "start": 9511.599999999627,
+          "status": 200
+        },
+        {
+          "index": 166,
+          "start": 9569.900000000373,
+          "status": 200
+        },
+        {
+          "index": 167,
+          "start": 9578.400000000373,
+          "status": 200
+        },
+        {
+          "index": 168,
+          "start": 9627.599999999627,
+          "status": 200
+        },
+        {
+          "index": 169,
+          "start": 9676.400000000373,
+          "status": 200
+        },
+        {
+          "index": 170,
+          "start": 9816.199999999255,
+          "status": 200
+        },
+        {
+          "index": 171,
+          "start": 9918.299999998882,
+          "status": 200
+        },
+        {
+          "index": 172,
+          "start": 9918.5,
+          "status": 200
+        },
+        {
+          "index": 177,
+          "start": 9979.5,
+          "status": 200
+        },
+        {
+          "index": 179,
+          "start": 9987.299999998882,
+          "status": 200
+        },
+        {
+          "index": 185,
+          "start": 10055.699999999255,
+          "status": 200
+        },
+        {
+          "index": 186,
+          "start": 10058.099999999627,
+          "status": 200
+        },
+        {
+          "index": 189,
+          "start": 10130.799999998882,
+          "status": 200
+        },
+        {
+          "index": 190,
+          "start": 10132.5,
+          "status": 200
+        },
+        {
+          "index": 191,
+          "start": 10196,
+          "status": 200
+        },
+        {
+          "index": 192,
+          "start": 10203.5,
+          "status": 200
+        },
+        {
+          "index": 193,
+          "start": 10269.199999999255,
+          "status": 200
+        },
+        {
+          "index": 194,
+          "start": 10269.299999998882,
+          "status": 200
+        },
+        {
+          "index": 195,
+          "start": 10338,
+          "status": 200
+        },
+        {
+          "index": 196,
+          "start": 10342.299999998882,
+          "status": 200
+        },
+        {
+          "index": 197,
+          "start": 10437,
+          "status": 200
+        },
+        {
+          "index": 198,
+          "start": 10460.099999999627,
+          "status": 200
+        },
+        {
+          "index": 199,
+          "start": 10602,
+          "error": "AbortError"
+        },
+        {
+          "index": 200,
+          "start": 10602.199999999255,
+          "status": 200
+        },
+        {
+          "index": 202,
+          "start": 10636.299999998882,
+          "status": 200
+        },
+        {
+          "index": 206,
+          "start": 10691.900000000373,
+          "status": 200
+        },
+        {
+          "index": 207,
+          "start": 10696.299999998882,
+          "status": 200
+        },
+        {
+          "index": 210,
+          "start": 10761.799999998882,
+          "status": 200
+        },
+        {
+          "index": 211,
+          "start": 10764.299999998882,
+          "status": 200
+        },
+        {
+          "index": 213,
+          "start": 10822,
+          "status": 200
+        },
+        {
+          "index": 214,
+          "start": 10822.900000000373,
+          "status": 200
+        },
+        {
+          "index": 215,
+          "start": 10888.199999999255,
+          "status": 200
+        },
+        {
+          "index": 216,
+          "start": 10893.199999999255,
+          "status": 200
+        },
+        {
+          "index": 217,
+          "start": 10986.699999999255,
+          "status": 200
+        },
+        {
+          "index": 218,
+          "start": 11003.699999999255,
+          "status": 200
+        },
+        {
+          "index": 219,
+          "start": 11061.900000000373,
+          "status": 200
+        },
+        {
+          "index": 220,
+          "start": 11231,
+          "status": 200
+        },
+        {
+          "index": 212,
+          "start": 11286.5,
+          "status": 200
+        },
+        {
+          "index": 207,
+          "start": 11304.299999998882,
+          "status": 200
+        },
+        {
+          "index": 199,
+          "start": 11343.799999998882,
+          "error": "AbortError"
+        },
+        {
+          "index": 195,
+          "start": 11350.699999999255,
+          "status": 200
+        },
+        {
+          "index": 194,
+          "start": 11360.599999999627,
+          "status": 200
+        },
+        {
+          "index": 186,
+          "start": 11410.299999998882,
+          "status": 200
+        },
+        {
+          "index": 184,
+          "start": 11429.400000000373,
+          "status": 200
+        },
+        {
+          "index": 176,
+          "start": 11488.599999999627,
+          "status": 200
+        },
+        {
+          "index": 175,
+          "start": 11495.199999999255,
+          "status": 200
+        },
+        {
+          "index": 171,
+          "start": 11562,
+          "status": 200
+        },
+        {
+          "index": 170,
+          "start": 11569.299999998882,
+          "status": 200
+        },
+        {
+          "index": 168,
+          "start": 11631.099999999627,
+          "status": 200
+        },
+        {
+          "index": 167,
+          "start": 11638.799999998882,
+          "status": 200
+        },
+        {
+          "index": 165,
+          "start": 11704.799999998882,
+          "status": 200
+        },
+        {
+          "index": 164,
+          "start": 11706.699999999255,
+          "status": 200
+        },
+        {
+          "index": 163,
+          "start": 11768.599999999627,
+          "status": 200
+        },
+        {
+          "index": 162,
+          "start": 11770.5,
+          "status": 200
+        },
+        {
+          "index": 161,
+          "start": 11856.799999998882,
+          "status": 200
+        },
+        {
+          "index": 160,
+          "start": 11881.299999998882,
+          "status": 200
+        },
+        {
+          "index": 165,
+          "start": 11987.599999999627,
+          "status": 200
+        },
+        {
+          "index": 166,
+          "start": 11987.900000000373,
+          "status": 200
+        },
+        {
+          "index": 171,
+          "start": 12047.099999999627,
+          "status": 200
+        },
+        {
+          "index": 173,
+          "start": 12055.5,
+          "status": 200
+        },
+        {
+          "index": 178,
+          "start": 12121.400000000373,
+          "status": 200
+        },
+        {
+          "index": 179,
+          "start": 12123.099999999627,
+          "status": 200
+        },
+        {
+          "index": 181,
+          "start": 12181.199999999255,
+          "status": 200
+        },
+        {
+          "index": 182,
+          "start": 12189.900000000373,
+          "status": 200
+        },
+        {
+          "index": 184,
+          "start": 12247.599999999627,
+          "status": 200
+        },
+        {
+          "index": 185,
+          "start": 12255.299999998882,
+          "status": 200
+        },
+        {
+          "index": 186,
+          "start": 12310.900000000373,
+          "status": 200
+        },
+        {
+          "index": 187,
+          "start": 12319.400000000373,
+          "status": 200
+        },
+        {
+          "index": 188,
+          "start": 12377.099999999627,
+          "status": 200
+        },
+        {
+          "index": 189,
+          "start": 12387.199999999255,
+          "status": 200
+        },
+        {
+          "index": 190,
+          "start": 12472.199999999255,
+          "status": 200
+        },
+        {
+          "index": 191,
+          "start": 12516.199999999255,
+          "status": 200
+        },
+        {
+          "index": 192,
+          "start": 12670,
+          "error": "AbortError"
+        },
+        {
+          "index": 193,
+          "start": 12670.299999998882,
+          "status": 200
+        },
+        {
+          "index": 195,
+          "start": 12704.900000000373,
+          "status": 200
+        },
+        {
+          "index": 199,
+          "start": 12762.400000000373,
+          "status": 200
+        },
+        {
+          "index": 200,
+          "start": 12771.5,
+          "status": 200
+        },
+        {
+          "index": 203,
+          "start": 12828.799999998882,
+          "status": 200
+        },
+        {
+          "index": 204,
+          "start": 12838.299999998882,
+          "status": 200
+        },
+        {
+          "index": 205,
+          "start": 12891,
+          "status": 200
+        },
+        {
+          "index": 206,
+          "start": 12892.699999999255,
+          "status": 200
+        },
+        {
+          "index": 207,
+          "start": 12959.699999999255,
+          "status": 200
+        },
+        {
+          "index": 208,
+          "start": 12961.599999999627,
+          "status": 200
+        },
+        {
+          "index": 209,
+          "start": 13027.799999998882,
+          "status": 200
+        },
+        {
+          "index": 210,
+          "start": 13029.400000000373,
+          "status": 200
+        },
+        {
+          "index": 211,
+          "start": 13121.5,
+          "status": 200
+        },
+        {
+          "index": 212,
+          "start": 13121.799999998882,
+          "status": 200
+        },
+        {
+          "index": 213,
+          "start": 13351.099999999627,
+          "status": 200
+        },
+        {
+          "index": 214,
+          "start": 13351.400000000373,
+          "status": 200
+        },
+        {
+          "index": 216,
+          "start": 13369,
+          "status": 200
+        },
+        {
+          "index": 218,
+          "start": 13383.599999999627,
+          "status": 200
+        },
+        {
+          "index": 224,
+          "start": 13445.099999999627,
+          "status": 200
+        },
+        {
+          "index": 225,
+          "start": 13454.900000000373,
+          "status": 200
+        },
+        {
+          "index": 229,
+          "start": 13513.400000000373,
+          "status": 200
+        },
+        {
+          "index": 231,
+          "start": 13542.400000000373,
+          "status": 200
+        },
+        {
+          "index": 234,
+          "start": 13604,
+          "status": 200
+        },
+        {
+          "index": 235,
+          "start": 13610.799999998882,
+          "status": 200
+        },
+        {
+          "index": 236,
+          "start": 13671.699999999255,
+          "status": 200
+        },
+        {
+          "index": 237,
+          "start": 13686.599999999627,
+          "status": 200
+        },
+        {
+          "index": 238,
+          "start": 13737.400000000373,
+          "status": 200
+        },
+        {
+          "index": 239,
+          "start": 13746,
+          "status": 200
+        },
+        {
+          "index": 240,
+          "start": 13819.599999999627,
+          "status": 200
+        },
+        {
+          "index": 241,
+          "start": 13931.400000000373,
+          "status": 200
+        }
+      ],
+      "paints": [
+        {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 561.5999999996275
+        },
+        {
+          "index": 1,
+          "target": 1,
+          "allowed": true,
+          "hidden": false,
+          "at": 1451.2999999988824
+        },
+        {
+          "index": 2,
+          "target": 2,
+          "allowed": true,
+          "hidden": false,
+          "at": 4550.5999999996275
+        },
+        {
+          "index": 3,
+          "target": 3,
+          "allowed": true,
+          "hidden": false,
+          "at": 4617.699999999255
+        },
+        {
+          "index": 4,
+          "target": 4,
+          "allowed": true,
+          "hidden": false,
+          "at": 4731
+        },
+        {
+          "index": 6,
+          "target": 6,
+          "allowed": true,
+          "hidden": false,
+          "at": 4868.5
+        },
+        {
+          "index": 23,
+          "target": 23,
+          "allowed": true,
+          "hidden": false,
+          "at": 5207.4000000003725
+        },
+        {
+          "index": 24,
+          "target": 24,
+          "allowed": true,
+          "hidden": false,
+          "at": 5288.299999998882
+        },
+        {
+          "index": 25,
+          "target": 25,
+          "allowed": true,
+          "hidden": false,
+          "at": 5319
+        },
+        {
+          "index": 26,
+          "target": 26,
+          "allowed": true,
+          "hidden": false,
+          "at": 5497.5999999996275
+        },
+        {
+          "index": 28,
+          "target": 28,
+          "allowed": true,
+          "hidden": false,
+          "at": 5553.299999998882
+        },
+        {
+          "index": 52,
+          "target": 52,
+          "allowed": true,
+          "hidden": false,
+          "at": 5975.5
+        },
+        {
+          "index": 53,
+          "target": 53,
+          "allowed": true,
+          "hidden": false,
+          "at": 6052.799999998882
+        },
+        {
+          "index": 54,
+          "target": 54,
+          "allowed": true,
+          "hidden": false,
+          "at": 6131.199999999255
+        },
+        {
+          "index": 56,
+          "target": 56,
+          "allowed": true,
+          "hidden": false,
+          "at": 6236
+        },
+        {
+          "index": 73,
+          "target": 73,
+          "allowed": true,
+          "hidden": false,
+          "at": 6576.299999998882
+        },
+        {
+          "index": 74,
+          "target": 74,
+          "allowed": true,
+          "hidden": false,
+          "at": 6658.199999999255
+        },
+        {
+          "index": 75,
+          "target": 75,
+          "allowed": true,
+          "hidden": false,
+          "at": 6715.199999999255
+        },
+        {
+          "index": 118,
+          "target": 118,
+          "allowed": true,
+          "hidden": false,
+          "at": 7971.9000000003725
+        },
+        {
+          "index": 144,
+          "target": 144,
+          "allowed": true,
+          "hidden": false,
+          "at": 8961.5
+        },
+        {
+          "index": 145,
+          "target": 145,
+          "allowed": true,
+          "hidden": false,
+          "at": 8986.199999999255
+        },
+        {
+          "index": 146,
+          "target": 146,
+          "allowed": true,
+          "hidden": false,
+          "at": 9076.900000000373
+        },
+        {
+          "index": 165,
+          "target": 165,
+          "allowed": true,
+          "hidden": false,
+          "at": 9578.299999998882
+        },
+        {
+          "index": 166,
+          "target": 166,
+          "allowed": true,
+          "hidden": false,
+          "at": 9627.599999999627
+        },
+        {
+          "index": 167,
+          "target": 167,
+          "allowed": true,
+          "hidden": false,
+          "at": 9676.299999998882
+        },
+        {
+          "index": 168,
+          "target": 168,
+          "allowed": true,
+          "hidden": false,
+          "at": 9816
+        },
+        {
+          "index": 194,
+          "target": 194,
+          "allowed": true,
+          "hidden": false,
+          "at": 10342.299999998882
+        },
+        {
+          "index": 195,
+          "target": 195,
+          "allowed": true,
+          "hidden": false,
+          "at": 10437.299999998882
+        },
+        {
+          "index": 196,
+          "target": 196,
+          "allowed": true,
+          "hidden": false,
+          "at": 10460
+        },
+        {
+          "index": 198,
+          "target": 198,
+          "allowed": true,
+          "hidden": false,
+          "at": 10601.699999999255
+        },
+        {
+          "index": 214,
+          "target": 214,
+          "allowed": true,
+          "hidden": false,
+          "at": 10893.199999999255
+        },
+        {
+          "index": 216,
+          "target": 216,
+          "allowed": true,
+          "hidden": false,
+          "at": 10986.599999999627
+        },
+        {
+          "index": 217,
+          "target": 217,
+          "allowed": true,
+          "hidden": false,
+          "at": 11069
+        },
+        {
+          "index": 218,
+          "target": 218,
+          "allowed": true,
+          "hidden": false,
+          "at": 11230.799999998882
+        },
+        {
+          "index": 164,
+          "target": 164,
+          "allowed": true,
+          "hidden": false,
+          "at": 11770.5
+        },
+        {
+          "index": 163,
+          "target": 163,
+          "allowed": true,
+          "hidden": false,
+          "at": 11860.900000000373
+        },
+        {
+          "index": 162,
+          "target": 162,
+          "allowed": true,
+          "hidden": false,
+          "at": 11881.199999999255
+        },
+        {
+          "index": 187,
+          "target": 187,
+          "allowed": true,
+          "hidden": false,
+          "at": 12387.099999999627
+        },
+        {
+          "index": 188,
+          "target": 188,
+          "allowed": true,
+          "hidden": false,
+          "at": 12472.599999999627
+        },
+        {
+          "index": 189,
+          "target": 189,
+          "allowed": true,
+          "hidden": false,
+          "at": 12515.900000000373
+        },
+        {
+          "index": 191,
+          "target": 191,
+          "allowed": true,
+          "hidden": false,
+          "at": 12669.900000000373
+        },
+        {
+          "index": 208,
+          "target": 208,
+          "allowed": true,
+          "hidden": false,
+          "at": 13029.299999998882
+        },
+        {
+          "index": 210,
+          "target": 210,
+          "allowed": true,
+          "hidden": false,
+          "at": 13121.799999998882
+        },
+        {
+          "index": 237,
+          "target": 237,
+          "allowed": true,
+          "hidden": false,
+          "at": 13745.900000000373
+        },
+        {
+          "index": 238,
+          "target": 238,
+          "allowed": true,
+          "hidden": false,
+          "at": 13819.400000000373
+        },
+        {
+          "index": 239,
+          "target": 239,
+          "allowed": true,
+          "hidden": false,
+          "at": 13931.099999999627
+        },
+        {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 14034.699999999255
+        }
+      ],
+      "live": 5,
+      "decoding": 0,
+      "peakLive": 5,
+      "peakDecode": 2,
+      "delay": 0
+    },
+    "1440-video": {
+      "name": "1440-wheel-pause-reverse.webm",
+      "frames": 344,
+      "seconds": 15.129470109939575,
+      "timestamps": [
+        1791176691.578399,
+        1791176691.607248,
+        1791176691.66679,
+        1791176691.682995,
+        1791176691.710684,
+        1791176691.744588,
+        1791176691.781859,
+        1791176691.807011,
+        1791176691.843524,
+        1791176691.881319,
+        1791176691.905989,
+        1791176691.944008,
+        1791176691.977125,
+        1791176692.010622,
+        1791176692.043885,
+        1791176692.072279,
+        1791176692.110635,
+        1791176692.142767,
+        1791176692.206715,
+        1791176692.255309,
+        1791176692.29399,
+        1791176692.32552,
+        1791176692.36077,
+        1791176692.399624,
+        1791176692.427224,
+        1791176692.461676,
+        1791176692.496231,
+        1791176692.525866,
+        1791176692.565627,
+        1791176692.592104,
+        1791176692.630637,
+        1791176692.658664,
+        1791176692.695892,
+        1791176692.724828,
+        1791176692.760625,
+        1791176692.80343,
+        1791176692.877046,
+        1791176692.943062,
+        1791176692.977264,
+        1791176693.010483,
+        1791176693.044066,
+        1791176693.079058,
+        1791176693.109817,
+        1791176693.143974,
+        1791176693.177284,
+        1791176693.209351,
+        1791176693.244174,
+        1791176693.27657,
+        1791176693.31051,
+        1791176693.343819,
+        1791176693.377114,
+        1791176693.425843,
+        1791176693.472961,
+        1791176693.567888,
+        1791176693.643724,
+        1791176693.677299,
+        1791176693.708697,
+        1791176693.743752,
+        1791176693.777159,
+        1791176693.810466,
+        1791176693.843894,
+        1791176693.877075,
+        1791176693.910376,
+        1791176693.943414,
+        1791176693.977068,
+        1791176694.021167,
+        1791176694.052809,
+        1791176694.08518,
+        1791176694.143618,
+        1791176694.187517,
+        1791176694.255127,
+        1791176694.327646,
+        1791176694.358255,
+        1791176694.393768,
+        1791176694.425893,
+        1791176694.457461,
+        1791176694.488974,
+        1791176694.522065,
+        1791176694.560695,
+        1791176694.591226,
+        1791176694.619635,
+        1791176694.662136,
+        1791176694.701272,
+        1791176694.738082,
+        1791176694.781737,
+        1791176694.817322,
+        1791176694.893592,
+        1791176694.987906,
+        1791176695.028345,
+        1791176695.060973,
+        1791176695.092223,
+        1791176695.128402,
+        1791176695.156526,
+        1791176695.19572,
+        1791176695.227505,
+        1791176695.268533,
+        1791176695.30136,
+        1791176695.327518,
+        1791176695.360513,
+        1791176695.395491,
+        1791176695.442264,
+        1791176695.484165,
+        1791176695.519369,
+        1791176695.583046,
+        1791176695.660443,
+        1791176695.707203,
+        1791176695.73645,
+        1791176695.771983,
+        1791176695.805089,
+        1791176695.837492,
+        1791176695.878281,
+        1791176695.909878,
+        1791176695.940986,
+        1791176695.970487,
+        1791176696.007867,
+        1791176696.038971,
+        1791176696.08637,
+        1791176696.123601,
+        1791176696.193815,
+        1791176696.259919,
+        1791176696.383759,
+        1791176696.665935,
+        1791176696.71024,
+        1791176696.742879,
+        1791176696.776375,
+        1791176696.81026,
+        1791176696.843645,
+        1791176696.876994,
+        1791176696.91037,
+        1791176696.943656,
+        1791176696.977105,
+        1791176697.010588,
+        1791176697.041884,
+        1791176697.076994,
+        1791176697.110331,
+        1791176697.143853,
+        1791176697.176935,
+        1791176697.210317,
+        1791176697.260202,
+        1791176697.32478,
+        1791176697.405736,
+        1791176697.627025,
+        1791176697.994053,
+        1791176698.025488,
+        1791176698.061656,
+        1791176698.094395,
+        1791176698.137071,
+        1791176698.160837,
+        1791176698.194247,
+        1791176698.228559,
+        1791176698.260936,
+        1791176698.294657,
+        1791176698.326329,
+        1791176698.361032,
+        1791176698.393265,
+        1791176698.446854,
+        1791176698.469803,
+        1791176698.503878,
+        1791176698.544968,
+        1791176698.571038,
+        1791176698.607627,
+        1791176698.654203,
+        1791176698.699292,
+        1791176698.723858,
+        1791176698.763493,
+        1791176698.793661,
+        1791176698.827308,
+        1791176698.861371,
+        1791176698.895318,
+        1791176698.926073,
+        1791176698.96443,
+        1791176698.996168,
+        1791176699.048095,
+        1791176699.091707,
+        1791176699.139907,
+        1791176699.200519,
+        1791176699.310305,
+        1791176699.377252,
+        1791176699.410892,
+        1791176699.444439,
+        1791176699.476871,
+        1791176699.513061,
+        1791176699.542018,
+        1791176699.582523,
+        1791176699.609986,
+        1791176699.643513,
+        1791176699.678228,
+        1791176699.709939,
+        1791176699.744525,
+        1791176699.78592,
+        1791176699.8225,
+        1791176699.877184,
+        1791176699.918051,
+        1791176699.973949,
+        1791176700.060422,
+        1791176700.091309,
+        1791176700.121787,
+        1791176700.155317,
+        1791176700.194274,
+        1791176700.225313,
+        1791176700.25606,
+        1791176700.289986,
+        1791176700.321536,
+        1791176700.361784,
+        1791176700.411253,
+        1791176700.441148,
+        1791176700.484804,
+        1791176700.541662,
+        1791176700.583281,
+        1791176700.684862,
+        1791176700.743881,
+        1791176700.778591,
+        1791176700.811431,
+        1791176700.84637,
+        1791176700.879883,
+        1791176700.910286,
+        1791176700.944209,
+        1791176700.977352,
+        1791176701.011203,
+        1791176701.042806,
+        1791176701.080308,
+        1791176701.109543,
+        1791176701.144941,
+        1791176701.178396,
+        1791176701.210961,
+        1791176701.246562,
+        1791176701.277601,
+        1791176701.34526,
+        1791176701.375852,
+        1791176701.439543,
+        1791176701.470349,
+        1791176701.504859,
+        1791176701.538145,
+        1791176701.572698,
+        1791176701.604727,
+        1791176701.63822,
+        1791176701.671331,
+        1791176701.705086,
+        1791176701.738136,
+        1791176701.771451,
+        1791176701.800411,
+        1791176701.841823,
+        1791176701.868033,
+        1791176701.903908,
+        1791176701.94272,
+        1791176701.986715,
+        1791176702.049014,
+        1791176702.127857,
+        1791176702.158506,
+        1791176702.190777,
+        1791176702.222391,
+        1791176702.25375,
+        1791176702.294256,
+        1791176702.32565,
+        1791176702.353272,
+        1791176702.391261,
+        1791176702.42158,
+        1791176702.461308,
+        1791176702.49433,
+        1791176702.534355,
+        1791176702.576037,
+        1791176702.617673,
+        1791176702.686904,
+        1791176702.793615,
+        1791176702.827663,
+        1791176702.860376,
+        1791176702.893339,
+        1791176702.929013,
+        1791176702.959277,
+        1791176702.995757,
+        1791176703.029161,
+        1791176703.06042,
+        1791176703.092445,
+        1791176703.130299,
+        1791176703.163855,
+        1791176703.210808,
+        1791176703.260729,
+        1791176703.290803,
+        1791176703.359533,
+        1791176703.422492,
+        1791176703.493778,
+        1791176703.520264,
+        1791176703.56032,
+        1791176703.588772,
+        1791176703.619512,
+        1791176703.656191,
+        1791176703.688086,
+        1791176703.727021,
+        1791176703.753654,
+        1791176703.793713,
+        1791176703.820292,
+        1791176703.858951,
+        1791176703.886257,
+        1791176703.922953,
+        1791176703.970507,
+        1791176704.01652,
+        1791176704.110172,
+        1791176704.188149,
+        1791176704.210446,
+        1791176704.245693,
+        1791176704.276606,
+        1791176704.309918,
+        1791176704.344445,
+        1791176704.3752,
+        1791176704.409785,
+        1791176704.442395,
+        1791176704.473556,
+        1791176704.510452,
+        1791176704.540938,
+        1791176704.576999,
+        1791176704.610249,
+        1791176704.640451,
+        1791176704.676783,
+        1791176704.737145,
+        1791176704.843319,
+        1791176704.877159,
+        1791176704.90889,
+        1791176704.943912,
+        1791176704.975149,
+        1791176705.010368,
+        1791176705.04355,
+        1791176705.076848,
+        1791176705.110258,
+        1791176705.142037,
+        1791176705.173803,
+        1791176705.210191,
+        1791176705.242932,
+        1791176705.27691,
+        1791176705.326851,
+        1791176705.376578,
+        1791176705.470666,
+        1791176705.543378,
+        1791176705.576932,
+        1791176705.605807,
+        1791176705.645398,
+        1791176705.705147,
+        1791176705.970621,
+        1791176706.001563,
+        1791176706.259937,
+        1791176706.312673,
+        1791176706.334766,
+        1791176706.356435,
+        1791176706.395023,
+        1791176706.707869
+      ],
+      "method": "Actual Chrome CDP screencast streamed live to detached Canvas/MediaRecorder VP8 WebM; no interpolation. Capture adds browser encode work."
+    },
+    "390-trace": {
+      "requests": [
+        {
+          "index": 241,
+          "start": 485.69999999925494,
+          "status": 200
+        },
+        {
+          "index": 240,
+          "start": 486.19999999925494,
+          "status": 200
+        },
+        {
+          "index": 239,
+          "start": 528,
+          "status": 200
+        },
+        {
+          "index": 1,
+          "start": 1291.5,
+          "status": 200
+        },
+        {
+          "index": 2,
+          "start": 1291.7999999988824,
+          "status": 200
+        },
+        {
+          "index": 3,
+          "start": 1331.2999999988824,
+          "status": 200
+        },
+        {
+          "index": 4,
+          "start": 4172.5,
+          "status": 200
+        },
+        {
+          "index": 5,
+          "start": 4189.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 6,
+          "start": 4231.799999998882,
+          "status": 200
+        },
+        {
+          "index": 7,
+          "start": 4241.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 8,
+          "start": 4281.0999999996275,
+          "status": 200
+        },
+        {
+          "index": 9,
+          "start": 4308.799999998882,
+          "status": 200
+        },
+        {
+          "index": 10,
+          "start": 4356.799999998882,
+          "status": 200
+        },
+        {
+          "index": 11,
+          "start": 4456,
+          "status": 200
+        },
+        {
+          "index": 12,
+          "start": 4586.799999998882,
+          "status": 200
+        },
+        {
+          "index": 13,
+          "start": 4658.199999999255,
+          "status": 200
+        },
+        {
+          "index": 14,
+          "start": 4658.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 18,
+          "start": 4712.0999999996275,
+          "status": 200
+        },
+        {
+          "index": 19,
+          "start": 4713.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 22,
+          "start": 4765.5999999996275,
+          "error": "AbortError"
+        },
+        {
+          "index": 23,
+          "start": 4767.799999998882,
+          "status": 200
+        },
+        {
+          "index": 24,
+          "start": 4771.699999999255,
+          "status": 200
+        },
+        {
+          "index": 26,
+          "start": 4824.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 27,
+          "start": 4826.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 28,
+          "start": 4877.5,
+          "status": 200
+        },
+        {
+          "index": 29,
+          "start": 4878.199999999255,
+          "status": 200
+        },
+        {
+          "index": 30,
+          "start": 4928.799999998882,
+          "status": 200
+        },
+        {
+          "index": 31,
+          "start": 4930,
+          "status": 200
+        },
+        {
+          "index": 32,
+          "start": 4979.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 33,
+          "start": 5023.199999999255,
+          "status": 200
+        },
+        {
+          "index": 34,
+          "start": 5105.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 35,
+          "start": 5286.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 37,
+          "start": 5338.5,
+          "status": 200
+        },
+        {
+          "index": 38,
+          "start": 5340.199999999255,
+          "status": 200
+        },
+        {
+          "index": 44,
+          "start": 5393.299999998882,
+          "status": 200
+        },
+        {
+          "index": 45,
+          "start": 5395.299999998882,
+          "status": 200
+        },
+        {
+          "index": 49,
+          "start": 5446.5,
+          "status": 200
+        },
+        {
+          "index": 50,
+          "start": 5448.699999999255,
+          "status": 200
+        },
+        {
+          "index": 53,
+          "start": 5495.799999998882,
+          "status": 200
+        },
+        {
+          "index": 54,
+          "start": 5500.699999999255,
+          "status": 200
+        },
+        {
+          "index": 56,
+          "start": 5546.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 57,
+          "start": 5551.699999999255,
+          "status": 200
+        },
+        {
+          "index": 58,
+          "start": 5595.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 59,
+          "start": 5600.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 60,
+          "start": 5644,
+          "status": 200
+        },
+        {
+          "index": 61,
+          "start": 5655.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 62,
+          "start": 5693.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 63,
+          "start": 5729,
+          "status": 200
+        },
+        {
+          "index": 64,
+          "start": 5805.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 65,
+          "start": 5919.699999999255,
+          "status": 200
+        },
+        {
+          "index": 66,
+          "start": 6023.799999998882,
+          "status": 200
+        },
+        {
+          "index": 67,
+          "start": 6024,
+          "status": 200
+        },
+        {
+          "index": 71,
+          "start": 6074.5,
+          "status": 200
+        },
+        {
+          "index": 72,
+          "start": 6076.699999999255,
+          "status": 200
+        },
+        {
+          "index": 76,
+          "start": 6129.5,
+          "status": 200
+        },
+        {
+          "index": 77,
+          "start": 6132.199999999255,
+          "status": 200
+        },
+        {
+          "index": 79,
+          "start": 6182.199999999255,
+          "status": 200
+        },
+        {
+          "index": 80,
+          "start": 6189.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 81,
+          "start": 6240.5,
+          "status": 200
+        },
+        {
+          "index": 82,
+          "start": 6241.299999998882,
+          "status": 200
+        },
+        {
+          "index": 83,
+          "start": 6294.799999998882,
+          "status": 200
+        },
+        {
+          "index": 84,
+          "start": 6295.4000000003725,
+          "status": 200
+        },
+        {
+          "index": 85,
+          "start": 6346.699999999255,
+          "status": 200
+        },
+        {
+          "index": 86,
+          "start": 6373.5999999996275,
+          "status": 200
+        },
+        {
+          "index": 87,
+          "start": 6453.0999999996275,
+          "status": 200
+        },
+        {
+          "index": 88,
+          "start": 6653.0999999996275,
+          "status": 200
+        },
+        {
+          "index": 88,
+          "start": 7663.5999999996275,
+          "error": "AbortError"
+        },
+        {
+          "index": 132,
+          "start": 7663.699999999255,
+          "status": 200
+        },
+        {
+          "index": 133,
+          "start": 7663.799999998882,
+          "status": 200
+        },
+        {
+          "index": 131,
+          "start": 7721.9000000003725,
+          "status": 200
+        },
+        {
+          "index": 134,
+          "start": 7953,
+          "status": 200
+        },
+        {
+          "index": 136,
+          "start": 8289.199999999255,
+          "status": 200
+        },
+        {
+          "index": 137,
+          "start": 8289.299999998882,
+          "status": 200
+        },
+        {
+          "index": 143,
+          "start": 8341.799999998882,
+          "status": 200
+        },
+        {
+          "index": 144,
+          "start": 8343.699999999255,
+          "status": 200
+        },
+        {
+          "index": 148,
+          "start": 8394.5,
+          "status": 200
+        },
+        {
+          "index": 149,
+          "start": 8396.199999999255,
+          "status": 200
+        },
+        {
+          "index": 152,
+          "start": 8447.199999999255,
+          "status": 200
+        },
+        {
+          "index": 153,
+          "start": 8449.199999999255,
+          "status": 200
+        },
+        {
+          "index": 155,
+          "start": 8498.900000000373,
+          "status": 200
+        },
+        {
+          "index": 156,
+          "start": 8506.900000000373,
+          "status": 200
+        },
+        {
+          "index": 157,
+          "start": 8551.099999999627,
+          "status": 200
+        },
+        {
+          "index": 158,
+          "start": 8555.900000000373,
+          "status": 200
+        },
+        {
+          "index": 159,
+          "start": 8607,
+          "status": 200
+        },
+        {
+          "index": 160,
+          "start": 8609,
+          "status": 200
+        },
+        {
+          "index": 161,
+          "start": 8656.599999999627,
+          "status": 200
+        },
+        {
+          "index": 162,
+          "start": 8706.099999999627,
+          "status": 200
+        },
+        {
+          "index": 163,
+          "start": 8790.799999998882,
+          "status": 200
+        },
+        {
+          "index": 165,
+          "start": 8974.900000000373,
+          "status": 200
+        },
+        {
+          "index": 166,
+          "start": 8975.099999999627,
+          "status": 200
+        },
+        {
+          "index": 170,
+          "start": 9026.199999999255,
+          "status": 200
+        },
+        {
+          "index": 171,
+          "start": 9028.099999999627,
+          "status": 200
+        },
+        {
+          "index": 174,
+          "start": 9077.5,
+          "status": 200
+        },
+        {
+          "index": 175,
+          "start": 9079.699999999255,
+          "status": 200
+        },
+        {
+          "index": 177,
+          "start": 9127.299999998882,
+          "status": 200
+        },
+        {
+          "index": 178,
+          "start": 9130.400000000373,
+          "status": 200
+        },
+        {
+          "index": 179,
+          "start": 9180.799999998882,
+          "status": 200
+        },
+        {
+          "index": 180,
+          "start": 9181.699999999255,
+          "status": 200
+        },
+        {
+          "index": 181,
+          "start": 9231.699999999255,
+          "status": 200
+        },
+        {
+          "index": 182,
+          "start": 9238.699999999255,
+          "status": 200
+        },
+        {
+          "index": 183,
+          "start": 9279.400000000373,
+          "status": 200
+        },
+        {
+          "index": 184,
+          "start": 9303,
+          "status": 200
+        },
+        {
+          "index": 185,
+          "start": 9347.799999998882,
+          "status": 200
+        },
+        {
+          "index": 186,
+          "start": 9469.900000000373,
+          "status": 200
+        },
+        {
+          "index": 188,
+          "start": 9656.099999999627,
+          "status": 200
+        },
+        {
+          "index": 189,
+          "start": 9656.400000000373,
+          "status": 200
+        },
+        {
+          "index": 195,
+          "start": 9709.400000000373,
+          "status": 200
+        },
+        {
+          "index": 196,
+          "start": 9711.199999999255,
+          "status": 200
+        },
+        {
+          "index": 201,
+          "start": 9761.199999999255,
+          "status": 200
+        },
+        {
+          "index": 202,
+          "start": 9763.099999999627,
+          "status": 200
+        },
+        {
+          "index": 205,
+          "start": 9815.099999999627,
+          "status": 200
+        },
+        {
+          "index": 206,
+          "start": 9816.699999999255,
+          "status": 200
+        },
+        {
+          "index": 208,
+          "start": 9869.699999999255,
+          "status": 200
+        },
+        {
+          "index": 209,
+          "start": 9875.299999998882,
+          "status": 200
+        },
+        {
+          "index": 210,
+          "start": 9926.299999998882,
+          "status": 200
+        },
+        {
+          "index": 211,
+          "start": 9926.599999999627,
+          "status": 200
+        },
+        {
+          "index": 212,
+          "start": 9974.099999999627,
+          "status": 200
+        },
+        {
+          "index": 213,
+          "start": 9977.099999999627,
+          "status": 200
+        },
+        {
+          "index": 214,
+          "start": 10023.400000000373,
+          "status": 200
+        },
+        {
+          "index": 215,
+          "start": 10072.599999999627,
+          "status": 200
+        },
+        {
+          "index": 216,
+          "start": 10155.599999999627,
+          "status": 200
+        },
+        {
+          "index": 217,
+          "start": 10320.099999999627,
+          "status": 200
+        },
+        {
+          "index": 218,
+          "start": 10341.400000000373,
+          "status": 200
+        },
+        {
+          "index": 222,
+          "start": 10379.299999998882,
+          "status": 200
+        },
+        {
+          "index": 223,
+          "start": 10390.599999999627,
+          "status": 200
+        },
+        {
+          "index": 226,
+          "start": 10432,
+          "status": 200
+        },
+        {
+          "index": 227,
+          "start": 10443.599999999627,
+          "status": 200
+        },
+        {
+          "index": 230,
+          "start": 10490.099999999627,
+          "status": 200
+        },
+        {
+          "index": 231,
+          "start": 10494.299999998882,
+          "status": 200
+        },
+        {
+          "index": 232,
+          "start": 10543.400000000373,
+          "status": 200
+        },
+        {
+          "index": 233,
+          "start": 10544.5,
+          "status": 200
+        },
+        {
+          "index": 234,
+          "start": 10599,
+          "status": 200
+        },
+        {
+          "index": 235,
+          "start": 10599.5,
+          "status": 200
+        },
+        {
+          "index": 236,
+          "start": 10655.799999998882,
+          "status": 200
+        },
+        {
+          "index": 237,
+          "start": 10657.400000000373,
+          "status": 200
+        },
+        {
+          "index": 238,
+          "start": 10724.5,
+          "status": 200
+        },
+        {
+          "index": 239,
+          "start": 10820.199999999255,
+          "status": 200
+        },
+        {
+          "index": 232,
+          "start": 11022.5,
+          "status": 200
+        },
+        {
+          "index": 231,
+          "start": 11022.799999998882,
+          "status": 200
+        },
+        {
+          "index": 223,
+          "start": 11069.5,
+          "error": "AbortError"
+        },
+        {
+          "index": 218,
+          "start": 11073.400000000373,
+          "status": 200
+        },
+        {
+          "index": 217,
+          "start": 11075.699999999255,
+          "status": 200
+        },
+        {
+          "index": 208,
+          "start": 11124.799999998882,
+          "status": 200
+        },
+        {
+          "index": 207,
+          "start": 11128.199999999255,
+          "status": 200
+        },
+        {
+          "index": 200,
+          "start": 11179.400000000373,
+          "status": 200
+        },
+        {
+          "index": 199,
+          "start": 11182,
+          "status": 200
+        },
+        {
+          "index": 194,
+          "start": 11232.5,
+          "status": 200
+        },
+        {
+          "index": 193,
+          "start": 11235,
+          "status": 200
+        },
+        {
+          "index": 190,
+          "start": 11284.5,
+          "status": 200
+        },
+        {
+          "index": 189,
+          "start": 11286.199999999255,
+          "status": 200
+        },
+        {
+          "index": 186,
+          "start": 11340.799999998882,
+          "status": 200
+        },
+        {
+          "index": 185,
+          "start": 11342.599999999627,
+          "status": 200
+        },
+        {
+          "index": 184,
+          "start": 11390.099999999627,
+          "status": 200
+        },
+        {
+          "index": 183,
+          "start": 11391.799999998882,
+          "status": 200
+        },
+        {
+          "index": 182,
+          "start": 11444.199999999255,
+          "status": 200
+        },
+        {
+          "index": 181,
+          "start": 11444.799999998882,
+          "status": 200
+        },
+        {
+          "index": 180,
+          "start": 11492,
+          "status": 200
+        },
+        {
+          "index": 179,
+          "start": 11538.799999998882,
+          "status": 200
+        },
+        {
+          "index": 178,
+          "start": 11622.400000000373,
+          "status": 200
+        },
+        {
+          "index": 182,
+          "start": 11706.099999999627,
+          "status": 200
+        },
+        {
+          "index": 183,
+          "start": 11706.199999999255,
+          "status": 200
+        },
+        {
+          "index": 189,
+          "start": 11757.699999999255,
+          "status": 200
+        },
+        {
+          "index": 190,
+          "start": 11759.400000000373,
+          "status": 200
+        },
+        {
+          "index": 194,
+          "start": 11809,
+          "status": 200
+        },
+        {
+          "index": 195,
+          "start": 11810.900000000373,
+          "status": 200
+        },
+        {
+          "index": 198,
+          "start": 11859.099999999627,
+          "status": 200
+        },
+        {
+          "index": 199,
+          "start": 11861.699999999255,
+          "status": 200
+        },
+        {
+          "index": 200,
+          "start": 11911.900000000373,
+          "status": 200
+        },
+        {
+          "index": 201,
+          "start": 11913.299999998882,
+          "status": 200
+        },
+        {
+          "index": 202,
+          "start": 11962,
+          "status": 200
+        },
+        {
+          "index": 203,
+          "start": 11964.599999999627,
+          "status": 200
+        },
+        {
+          "index": 204,
+          "start": 12015.799999998882,
+          "status": 200
+        },
+        {
+          "index": 205,
+          "start": 12016.799999998882,
+          "status": 200
+        },
+        {
+          "index": 206,
+          "start": 12068.299999998882,
+          "status": 200
+        },
+        {
+          "index": 207,
+          "start": 12074.099999999627,
+          "status": 200
+        },
+        {
+          "index": 208,
+          "start": 12155.599999999627,
+          "status": 200
+        },
+        {
+          "index": 209,
+          "start": 12269.799999998882,
+          "status": 200
+        },
+        {
+          "index": 210,
+          "start": 12391.599999999627,
+          "status": 200
+        },
+        {
+          "index": 211,
+          "start": 12391.799999998882,
+          "status": 200
+        },
+        {
+          "index": 216,
+          "start": 12445,
+          "status": 200
+        },
+        {
+          "index": 217,
+          "start": 12446.799999998882,
+          "status": 200
+        },
+        {
+          "index": 220,
+          "start": 12498.799999998882,
+          "status": 200
+        },
+        {
+          "index": 221,
+          "start": 12500.299999998882,
+          "status": 200
+        },
+        {
+          "index": 224,
+          "start": 12556.900000000373,
+          "status": 200
+        },
+        {
+          "index": 225,
+          "start": 12558.299999998882,
+          "status": 200
+        },
+        {
+          "index": 226,
+          "start": 12608.400000000373,
+          "status": 200
+        },
+        {
+          "index": 227,
+          "start": 12624.099999999627,
+          "status": 200
+        },
+        {
+          "index": 228,
+          "start": 12672.599999999627,
+          "status": 200
+        },
+        {
+          "index": 229,
+          "start": 12689.599999999627,
+          "status": 200
+        },
+        {
+          "index": 230,
+          "start": 12746.199999999255,
+          "status": 200
+        },
+        {
+          "index": 231,
+          "start": 12822,
+          "status": 200
+        },
+        {
+          "index": 232,
+          "start": 12969.799999998882,
+          "status": 200
+        },
+        {
+          "index": 234,
+          "start": 13072.699999999255,
+          "status": 200
+        },
+        {
+          "index": 235,
+          "start": 13073,
+          "status": 200
+        },
+        {
+          "index": 241,
+          "start": 13127.599999999627,
+          "status": 200
+        },
+        {
+          "index": 240,
+          "start": 13129.699999999255,
+          "status": 200
+        },
+        {
+          "index": 239,
+          "start": 13180.400000000373,
+          "status": 200
+        }
+      ],
+      "paints": [
+        {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 528.5999999996275
+        },
+        {
+          "index": 1,
+          "target": 1,
+          "allowed": true,
+          "hidden": false,
+          "at": 1331.199999999255
+        },
+        {
+          "index": 2,
+          "target": 2,
+          "allowed": true,
+          "hidden": false,
+          "at": 4154.5
+        },
+        {
+          "index": 3,
+          "target": 3,
+          "allowed": true,
+          "hidden": false,
+          "at": 4172.199999999255
+        },
+        {
+          "index": 7,
+          "target": 7,
+          "allowed": true,
+          "hidden": false,
+          "at": 4292
+        },
+        {
+          "index": 8,
+          "target": 8,
+          "allowed": true,
+          "hidden": false,
+          "at": 4330
+        },
+        {
+          "index": 9,
+          "target": 9,
+          "allowed": true,
+          "hidden": false,
+          "at": 4361.299999998882
+        },
+        {
+          "index": 10,
+          "target": 10,
+          "allowed": true,
+          "hidden": false,
+          "at": 4455.799999998882
+        },
+        {
+          "index": 11,
+          "target": 11,
+          "allowed": true,
+          "hidden": false,
+          "at": 4586.5999999996275
+        },
+        {
+          "index": 31,
+          "target": 31,
+          "allowed": true,
+          "hidden": false,
+          "at": 4981.5999999996275
+        },
+        {
+          "index": 32,
+          "target": 32,
+          "allowed": true,
+          "hidden": false,
+          "at": 5041.5999999996275
+        },
+        {
+          "index": 33,
+          "target": 33,
+          "allowed": true,
+          "hidden": false,
+          "at": 5105.4000000003725
+        },
+        {
+          "index": 34,
+          "target": 34,
+          "allowed": true,
+          "hidden": false,
+          "at": 5286.4000000003725
+        },
+        {
+          "index": 61,
+          "target": 61,
+          "allowed": true,
+          "hidden": false,
+          "at": 5706
+        },
+        {
+          "index": 62,
+          "target": 62,
+          "allowed": true,
+          "hidden": false,
+          "at": 5745.699999999255
+        },
+        {
+          "index": 63,
+          "target": 63,
+          "allowed": true,
+          "hidden": false,
+          "at": 5805.699999999255
+        },
+        {
+          "index": 64,
+          "target": 64,
+          "allowed": true,
+          "hidden": false,
+          "at": 5919.5
+        },
+        {
+          "index": 84,
+          "target": 84,
+          "allowed": true,
+          "hidden": false,
+          "at": 6346.699999999255
+        },
+        {
+          "index": 85,
+          "target": 85,
+          "allowed": true,
+          "hidden": false,
+          "at": 6413.4000000003725
+        },
+        {
+          "index": 86,
+          "target": 86,
+          "allowed": true,
+          "hidden": false,
+          "at": 6453.0999999996275
+        },
+        {
+          "index": 87,
+          "target": 87,
+          "allowed": true,
+          "hidden": false,
+          "at": 6653
+        },
+        {
+          "index": 132,
+          "target": 132,
+          "allowed": true,
+          "hidden": false,
+          "at": 7723.5
+        },
+        {
+          "index": 133,
+          "target": 133,
+          "allowed": true,
+          "hidden": false,
+          "at": 7952.9000000003725
+        },
+        {
+          "index": 160,
+          "target": 160,
+          "allowed": true,
+          "hidden": false,
+          "at": 8656.599999999627
+        },
+        {
+          "index": 161,
+          "target": 161,
+          "allowed": true,
+          "hidden": false,
+          "at": 8710
+        },
+        {
+          "index": 162,
+          "target": 162,
+          "allowed": true,
+          "hidden": false,
+          "at": 8790.699999999255
+        },
+        {
+          "index": 182,
+          "target": 182,
+          "allowed": true,
+          "hidden": false,
+          "at": 9284.699999999255
+        },
+        {
+          "index": 183,
+          "target": 183,
+          "allowed": true,
+          "hidden": false,
+          "at": 9329.900000000373
+        },
+        {
+          "index": 184,
+          "target": 184,
+          "allowed": true,
+          "hidden": false,
+          "at": 9355.900000000373
+        },
+        {
+          "index": 185,
+          "target": 185,
+          "allowed": true,
+          "hidden": false,
+          "at": 9469.699999999255
+        },
+        {
+          "index": 213,
+          "target": 213,
+          "allowed": true,
+          "hidden": false,
+          "at": 10027
+        },
+        {
+          "index": 214,
+          "target": 214,
+          "allowed": true,
+          "hidden": false,
+          "at": 10073.299999998882
+        },
+        {
+          "index": 215,
+          "target": 215,
+          "allowed": true,
+          "hidden": false,
+          "at": 10155.400000000373
+        },
+        {
+          "index": 216,
+          "target": 216,
+          "allowed": true,
+          "hidden": false,
+          "at": 10319.900000000373
+        },
+        {
+          "index": 236,
+          "target": 236,
+          "allowed": true,
+          "hidden": false,
+          "at": 10710.199999999255
+        },
+        {
+          "index": 237,
+          "target": 237,
+          "allowed": true,
+          "hidden": false,
+          "at": 10724.400000000373
+        },
+        {
+          "index": 238,
+          "target": 238,
+          "allowed": true,
+          "hidden": false,
+          "at": 10820.199999999255
+        },
+        {
+          "index": 181,
+          "target": 181,
+          "allowed": true,
+          "hidden": false,
+          "at": 11492.199999999255
+        },
+        {
+          "index": 180,
+          "target": 180,
+          "allowed": true,
+          "hidden": false,
+          "at": 11549.099999999627
+        },
+        {
+          "index": 179,
+          "target": 179,
+          "allowed": true,
+          "hidden": false,
+          "at": 11622.299999998882
+        },
+        {
+          "index": 206,
+          "target": 206,
+          "allowed": true,
+          "hidden": false,
+          "at": 12123.099999999627
+        },
+        {
+          "index": 207,
+          "target": 207,
+          "allowed": true,
+          "hidden": false,
+          "at": 12155.299999998882
+        },
+        {
+          "index": 208,
+          "target": 208,
+          "allowed": true,
+          "hidden": false,
+          "at": 12269.599999999627
+        },
+        {
+          "index": 225,
+          "target": 225,
+          "allowed": true,
+          "hidden": false,
+          "at": 12609.299999998882
+        },
+        {
+          "index": 227,
+          "target": 227,
+          "allowed": true,
+          "hidden": false,
+          "at": 12672.900000000373
+        },
+        {
+          "index": 228,
+          "target": 228,
+          "allowed": true,
+          "hidden": false,
+          "at": 12731.400000000373
+        },
+        {
+          "index": 229,
+          "target": 229,
+          "allowed": true,
+          "hidden": false,
+          "at": 12747.5
+        },
+        {
+          "index": 230,
+          "target": 230,
+          "allowed": true,
+          "hidden": false,
+          "at": 12821.900000000373
+        },
+        {
+          "index": 231,
+          "target": 231,
+          "allowed": true,
+          "hidden": false,
+          "at": 12969.5
+        },
+        {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 13180.599999999627
+        }
+      ],
+      "live": 3,
+      "decoding": 0,
+      "peakLive": 3,
+      "peakDecode": 2,
+      "delay": 0
+    },
+    "390-video": {
+      "name": "390-wheel-pause-reverse.webm",
+      "frames": 352,
+      "seconds": 14.365747928619385,
+      "timestamps": [
+        1791176713.376195,
+        1791176713.407679,
+        1791176713.43869,
+        1791176713.470757,
+        1791176713.50175,
+        1791176713.54225,
+        1791176713.575602,
+        1791176713.608937,
+        1791176713.640869,
+        1791176713.671419,
+        1791176713.702396,
+        1791176713.733355,
+        1791176713.77562,
+        1791176713.808944,
+        1791176713.842231,
+        1791176713.875728,
+        1791176713.907983,
+        1791176713.938046,
+        1791176714.000493,
+        1791176714.046947,
+        1791176714.092276,
+        1791176714.125039,
+        1791176714.15706,
+        1791176714.189058,
+        1791176714.219069,
+        1791176714.250565,
+        1791176714.292261,
+        1791176714.325618,
+        1791176714.358983,
+        1791176714.391128,
+        1791176714.422154,
+        1791176714.453307,
+        1791176714.485262,
+        1791176714.525641,
+        1791176714.558961,
+        1791176714.608845,
+        1791176714.671391,
+        1791176714.742263,
+        1791176714.775688,
+        1791176714.808921,
+        1791176714.842298,
+        1791176714.873642,
+        1791176714.903722,
+        1791176714.942376,
+        1791176714.975722,
+        1791176715.00895,
+        1791176715.042294,
+        1791176715.075568,
+        1791176715.10895,
+        1791176715.140008,
+        1791176715.171604,
+        1791176715.218572,
+        1791176715.266042,
+        1791176715.375121,
+        1791176715.438141,
+        1791176715.469312,
+        1791176715.501208,
+        1791176715.542244,
+        1791176715.575544,
+        1791176715.623607,
+        1791176715.63641,
+        1791176715.670299,
+        1791176715.701236,
+        1791176715.742288,
+        1791176715.77581,
+        1791176715.809068,
+        1791176715.858615,
+        1791176715.890498,
+        1791176715.921552,
+        1791176715.968999,
+        1791176716.001003,
+        1791176716.04229,
+        1791176716.09227,
+        1791176716.124705,
+        1791176716.154662,
+        1791176716.186797,
+        1791176716.21886,
+        1791176716.250248,
+        1791176716.292449,
+        1791176716.325678,
+        1791176716.35881,
+        1791176716.38984,
+        1791176716.421864,
+        1791176716.452315,
+        1791176716.484365,
+        1791176716.52553,
+        1791176716.561753,
+        1791176716.608766,
+        1791176716.654914,
+        1791176716.701907,
+        1791176716.759007,
+        1791176716.809028,
+        1791176716.842253,
+        1791176716.873286,
+        1791176716.905272,
+        1791176716.936557,
+        1791176716.97566,
+        1791176717.008945,
+        1791176717.042298,
+        1791176717.075646,
+        1791176717.107271,
+        1791176717.138366,
+        1791176717.17629,
+        1791176717.214246,
+        1791176717.263323,
+        1791176717.292411,
+        1791176717.342358,
+        1791176717.380564,
+        1791176717.407343,
+        1791176717.455322,
+        1791176717.487508,
+        1791176717.525715,
+        1791176717.55897,
+        1791176717.592354,
+        1791176717.625591,
+        1791176717.659037,
+        1791176717.691165,
+        1791176717.72205,
+        1791176717.752743,
+        1791176717.792506,
+        1791176717.825822,
+        1791176717.859337,
+        1791176717.913973,
+        1791176717.954447,
+        1791176718.00136,
+        1791176718.048407,
+        1791176718.110878,
+        1791176718.189436,
+        1791176718.342324,
+        1791176718.453637,
+        1791176718.485655,
+        1791176718.516619,
+        1791176718.558998,
+        1791176718.592276,
+        1791176718.625666,
+        1791176718.657675,
+        1791176718.689711,
+        1791176718.720706,
+        1791176718.751771,
+        1791176718.79229,
+        1791176718.825622,
+        1791176718.858989,
+        1791176718.891817,
+        1791176718.922806,
+        1791176718.954697,
+        1791176718.98673,
+        1791176719.042244,
+        1791176719.09217,
+        1791176719.118422,
+        1791176719.157593,
+        1791176719.203665,
+        1791176719.292294,
+        1791176719.422106,
+        1791176719.753633,
+        1791176719.79238,
+        1791176719.825635,
+        1791176719.858969,
+        1791176719.892276,
+        1791176719.925681,
+        1791176719.958439,
+        1791176719.990943,
+        1791176720.022366,
+        1791176720.054651,
+        1791176720.092306,
+        1791176720.125581,
+        1791176720.15924,
+        1791176720.192261,
+        1791176720.223595,
+        1791176720.27094,
+        1791176720.296329,
+        1791176720.332842,
+        1791176720.364853,
+        1791176720.396845,
+        1791176720.442301,
+        1791176720.475097,
+        1791176720.506044,
+        1791176720.537067,
+        1791176720.568286,
+        1791176720.608932,
+        1791176720.642273,
+        1791176720.67563,
+        1791176720.706876,
+        1791176720.75255,
+        1791176720.800465,
+        1791176720.847356,
+        1791176720.892081,
+        1791176720.940894,
+        1791176720.96325,
+        1791176721.002973,
+        1791176721.048968,
+        1791176721.108967,
+        1791176721.142339,
+        1791176721.174183,
+        1791176721.20512,
+        1791176721.236116,
+        1791176721.267647,
+        1791176721.309006,
+        1791176721.342224,
+        1791176721.375512,
+        1791176721.408888,
+        1791176721.440175,
+        1791176721.471768,
+        1791176721.502648,
+        1791176721.53461,
+        1791176721.567267,
+        1791176721.612092,
+        1791176721.658746,
+        1791176721.692046,
+        1791176721.723069,
+        1791176721.775454,
+        1791176721.802336,
+        1791176721.842217,
+        1791176721.875492,
+        1791176721.90887,
+        1791176721.938878,
+        1791176721.970371,
+        1791176722.008846,
+        1791176722.042089,
+        1791176722.075516,
+        1791176722.108891,
+        1791176722.142184,
+        1791176722.191466,
+        1791176722.212939,
+        1791176722.253897,
+        1791176722.296232,
+        1791176722.347793,
+        1791176722.392055,
+        1791176722.44039,
+        1791176722.487511,
+        1791176722.525577,
+        1791176722.558762,
+        1791176722.592251,
+        1791176722.625576,
+        1791176722.658644,
+        1791176722.690544,
+        1791176722.721489,
+        1791176722.751588,
+        1791176722.792221,
+        1791176722.825478,
+        1791176722.858813,
+        1791176722.892272,
+        1791176722.924017,
+        1791176722.952466,
+        1791176722.986043,
+        1791176723.031917,
+        1791176723.077969,
+        1791176723.125385,
+        1791176723.172664,
+        1791176723.20478,
+        1791176723.235631,
+        1791176723.268113,
+        1791176723.308873,
+        1791176723.342143,
+        1791176723.37548,
+        1791176723.408977,
+        1791176723.440708,
+        1791176723.472189,
+        1791176723.503178,
+        1791176723.542236,
+        1791176723.574723,
+        1791176723.611351,
+        1791176723.642151,
+        1791176723.689949,
+        1791176723.736912,
+        1791176723.784398,
+        1791176723.842147,
+        1791176723.875465,
+        1791176723.90686,
+        1791176723.938211,
+        1791176723.968244,
+        1791176724.008833,
+        1791176724.042164,
+        1791176724.070892,
+        1791176724.109049,
+        1791176724.139839,
+        1791176724.171585,
+        1791176724.207507,
+        1791176724.242087,
+        1791176724.27769,
+        1791176724.325454,
+        1791176724.372757,
+        1791176724.425467,
+        1791176724.467419,
+        1791176724.525642,
+        1791176724.559044,
+        1791176724.592141,
+        1791176724.622979,
+        1791176724.652936,
+        1791176724.69206,
+        1791176724.725395,
+        1791176724.758758,
+        1791176724.792084,
+        1791176724.82399,
+        1791176724.855342,
+        1791176724.887586,
+        1791176724.9173,
+        1791176724.958721,
+        1791176724.992029,
+        1791176725.025334,
+        1791176725.073352,
+        1791176725.10532,
+        1791176725.137357,
+        1791176725.18493,
+        1791176725.215881,
+        1791176725.258786,
+        1791176725.29206,
+        1791176725.32334,
+        1791176725.35382,
+        1791176725.385766,
+        1791176725.416774,
+        1791176725.458669,
+        1791176725.492153,
+        1791176725.519892,
+        1791176725.55695,
+        1791176725.588894,
+        1791176725.621058,
+        1791176725.651968,
+        1791176725.708719,
+        1791176725.757747,
+        1791176725.805755,
+        1791176725.85323,
+        1791176725.901256,
+        1791176725.941947,
+        1791176725.975347,
+        1791176726.008678,
+        1791176726.040769,
+        1791176726.072791,
+        1791176726.103733,
+        1791176726.135743,
+        1791176726.167821,
+        1791176726.208616,
+        1791176726.241991,
+        1791176726.275283,
+        1791176726.308394,
+        1791176726.340409,
+        1791176726.371927,
+        1791176726.403861,
+        1791176726.450925,
+        1791176726.491954,
+        1791176726.525267,
+        1791176726.575381,
+        1791176726.606327,
+        1791176726.637283,
+        1791176726.668376,
+        1791176726.708598,
+        1791176726.808726,
+        1791176727.308619,
+        1791176727.342076,
+        1791176727.375528,
+        1791176727.398036,
+        1791176727.438096,
+        1791176727.741943
+      ],
+      "method": "Actual Chrome CDP screencast streamed live to detached Canvas/MediaRecorder VP8 WebM; no interpolation. Capture adds browser encode work."
+    }
+  },
+  "errors": [],
+  "pass": true
+}

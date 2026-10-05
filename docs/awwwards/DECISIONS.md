@@ -1,3 +1,15 @@
+## 05/10/2026 · Integração Rotato SDIMT entregue localmente
+
+Frames atuais fornecidos já em `7c0e70c`: RGBA/26.920.318 bytes, preservados; plano antigo descrevia RGB/16.981.354 bytes. Poster é cópia exata de 241; playback 1–241, sem cauda 292–422. Janela 1000,0,1600,1620 contém todos os limites alpha>32 verificados. Sem keying/blend/remoção de marca.
+
+Cache inclui reservas até resolução, prioriza último alvo e fecha bitmaps descartados. Políticas 5/96 MiB desktop e 3/64 MiB mobile, concorrência 2; resize reduz ready sem abandonar reservas. Canvas persistente conserva último frame durante miss/404. Nenhum segundo renderer Three ou Lenis para a mídia.
+
+Pin local 1,5 vp + 0,5 vp de leitura; ponte libera suas camadas com fronteiras medidas novamente no refresh. Extensão mínima opcional do runtime mede marcador estável e offset da navbar, mantendo foco no h2 real. Só SDIMT usa esta extensão. Telas baixas usam poster em fluxo; mudança de modo durante leitura reposiciona o mesmo Lenis para conservar SDIMT.
+
+R1 `dd19bd9`, R2 `f1bb2d0`, provas finais em [checkpoint Rotato](evidence-narrative/sdimt-rotato/README.md). Browser WARP/software, sem afirmar 60 fps/hardware. Build isolado sem Analytics passou; Process telemetry apenas compactada, sem alteração de valores. CLI Git/GCM não acessa credenciais Windows; elevação foi rejeitada pela política automática. Publicação usa conector GitHub e verificação de blobs/árvores, apenas branch autorizada, sem force push. Confirmar remoto em registro próprio.
+
+---
+
 ## Worker · Processo comercial · 05/10/2026
 
 A ordem do proprietário confirmou os planos de 23f6d4c. Preservados frames locais 7c0e70c e documentos remotos via merge, sem reset/force. Processo usa 19 partes, origem comum, extrusão curta e fases semânticas; somente o visual é pin, textos em fluxo. Apoios distribuídos ao fim das etapas e saída reservada evitam conclusão sem leitura/colisão com Depoimentos. PNG independente atende falha de SVG. Original e cópia SVG são -text para preservar hash no Windows.

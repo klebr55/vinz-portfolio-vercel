@@ -1,0 +1,414 @@
+{
+  "mode": "matrix",
+  "method": "Native Chrome CDP, ANGLE/D3D11 WARP software renderer. Actual Canvas paints and cache reservations. No physical GPU performance claim.",
+  "samples": [
+    {
+      "name": "desktop-checkpoint",
+      "y": 4578,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 5,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 314.984375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 444.578125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 671.578125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 707.421875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1399,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1797.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 5,
+        "paints": 1,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 1728.5999999996275
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "1440-900-en-checkpoint",
+      "y": 4578,
+      "width": 1440,
+      "height": 900,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 5,
+        "estimatedDecodedBytes": 93312000,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 5,
+        "peakPending": 2,
+        "requests": 5,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 5
+      },
+      "media": {
+        "x": 675.890625,
+        "y": 151.46875,
+        "width": 667.71875,
+        "height": 676.0625,
+        "bottom": 827.53125
+      },
+      "visual": {
+        "x": 0,
+        "y": 102,
+        "width": 1430,
+        "height": 775,
+        "bottom": 877
+      },
+      "title": {
+        "x": 86.390625,
+        "y": 335.859375,
+        "width": 546.3125,
+        "height": 129.59375,
+        "bottom": 465.453125
+      },
+      "caption": {
+        "x": 86.390625,
+        "y": 650.703125,
+        "width": 406.34375,
+        "height": 35.84375,
+        "bottom": 686.546875
+      },
+      "editorial": {
+        "x": 235,
+        "y": 1399,
+        "width": 960,
+        "height": 398.71875,
+        "bottom": 1797.71875
+      },
+      "stageTop": 3330,
+      "markerTop": 4680,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 1390,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 5,
+        "paints": 1,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 549.7000000011176
+        },
+        "live": 5,
+        "decoding": 0,
+        "peakLive": 5,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "390-844-pt-br-checkpoint",
+      "y": 4373,
+      "width": 390,
+      "height": 844,
+      "static": false,
+      "p": 0.9998518957345972,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 3,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 404,
+        "width": 342,
+        "height": 346.265625,
+        "bottom": 750.265625
+      },
+      "visual": {
+        "x": 0,
+        "y": 100.1875,
+        "width": 390,
+        "height": 719,
+        "bottom": 819.1875
+      },
+      "title": {
+        "x": 24,
+        "y": 140.984375,
+        "width": 342,
+        "height": 52.640625,
+        "bottom": 193.625
+      },
+      "caption": {
+        "x": 24,
+        "y": 293.796875,
+        "width": 342,
+        "height": 33.28125,
+        "bottom": 327.078125
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1308.703125,
+        "width": 390,
+        "height": 441.0625,
+        "bottom": 1749.765625
+      },
+      "stageTop": 3207.1875,
+      "markerTop": 4473.1875,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 366,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 3,
+        "paints": 1,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 520.7000000011176
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "360-800-en-checkpoint",
+      "y": 4140,
+      "width": 360,
+      "height": 800,
+      "static": false,
+      "p": 1,
+      "stats": {
+        "entries": 3,
+        "estimatedDecodedBytes": 55987200,
+        "pending": 0,
+        "displayed": 241,
+        "target": 241,
+        "peakEntries": 3,
+        "peakPending": 2,
+        "requests": 3,
+        "discarded": 0,
+        "failures": 0,
+        "maxEntries": 3
+      },
+      "media": {
+        "x": 24,
+        "y": 392.859375,
+        "width": 312,
+        "height": 315.890625,
+        "bottom": 708.75
+      },
+      "visual": {
+        "x": 0,
+        "y": 100,
+        "width": 360,
+        "height": 675,
+        "bottom": 775
+      },
+      "title": {
+        "x": 24,
+        "y": 140.796875,
+        "width": 312,
+        "height": 48.59375,
+        "bottom": 189.390625
+      },
+      "caption": {
+        "x": 24,
+        "y": 285.34375,
+        "width": 312,
+        "height": 33.28125,
+        "bottom": 318.625
+      },
+      "editorial": {
+        "x": 0,
+        "y": 1239,
+        "width": 360,
+        "height": 441.0625,
+        "bottom": 1680.0625
+      },
+      "stageTop": 3040,
+      "markerTop": 4240,
+      "nav": {
+        "x": 12,
+        "y": 16,
+        "width": 336,
+        "height": 58,
+        "bottom": 74
+      },
+      "poster": true,
+      "canvas": true,
+      "presented": true,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 3,
+        "paints": 1,
+        "lastPaint": {
+          "index": 241,
+          "target": 241,
+          "allowed": true,
+          "hidden": false,
+          "at": 503
+        },
+        "live": 3,
+        "decoding": 0,
+        "peakLive": 3,
+        "peakDecode": 2
+      }
+    },
+    {
+      "name": "844-390-en-checkpoint",
+      "y": 1461,
+      "width": 844,
+      "height": 390,
+      "static": true,
+      "p": 0,
+      "media": {
+        "x": 457.96875,
+        "y": 102,
+        "width": 261.71875,
+        "height": 264.984375,
+        "bottom": 366.984375
+      },
+      "visual": {
+        "x": 0,
+        "y": -18,
+        "width": 834,
+        "height": 408.984375,
+        "bottom": 390.984375
+      },
+      "title": {
+        "x": 50.625,
+        "y": 159.921875,
+        "width": 318.34375,
+        "height": 48.953125,
+        "bottom": 208.875
+      },
+      "caption": {
+        "x": 50.625,
+        "y": 310.09375,
+        "width": 318.34375,
+        "height": 31.75,
+        "bottom": 341.84375
+      },
+      "editorial": {
+        "x": 0,
+        "y": 448.984375,
+        "width": 834,
+        "height": 263.71875,
+        "bottom": 712.703125
+      },
+      "stageTop": 1443,
+      "markerTop": 1563,
+      "nav": {
+        "x": 20,
+        "y": 16,
+        "width": 794,
+        "height": 66,
+        "bottom": 82
+      },
+      "poster": true,
+      "canvas": false,
+      "presented": false,
+      "planeOpacity": "0",
+      "overflow": false,
+      "probe": {
+        "requests": 0,
+        "paints": 0,
+        "live": 0,
+        "decoding": 0,
+        "peakLive": 0,
+        "peakDecode": 0
+      }
+    }
+  ],
+  "checks": {},
+  "errors": [],
+  "pass": true
+}

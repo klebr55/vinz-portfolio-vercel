@@ -1,3 +1,16 @@
+# Checkpoint Worker · Rotato SDIMT · 05/10/2026
+
+Rotato R1–R3 implementado depois de Processo, conforme ordem expressa dos planos de `23f6d4c`. Modelo/cache local `dd19bd9`, integração local **`f1bb2d0`**. [Checkpoint Rotato, fontes, vídeos e medições](evidence-narrative/sdimt-rotato/README.md); [checkpoint Processo independente](evidence-narrative/process-business/README.md).
+
+- Telefone real no case SDIMT após a ponte, frames 1–241, poster 241 exato, palco #04060a. Os 422 originais locais de `7c0e70c` permanecem; exportação atual tem alpha e 26.920.318 bytes, divergindo do diagnóstico histórico. Não houve remoção de watermark.
+- GSAP local 1,5 vp de gesto + 0,5 de leitura, saída reversível da composição da ponte, marcador estável para #sdimt. Editorial/CTA preservados; dois campos verificados, sem atribuições inventadas. Mobile/paisagem sem corte no quadro final; orientação conserva o capítulo.
+- Cache limita ready+reservas a 5 desktop/3 mobile, concorrência 2; estimativa 93.312.000/55.987.200 bytes, sem medir memória nativa. Pausa/hidden/offscreen, late decode/reverse, rede lenta/404, reduced/noJS passaram. Matrix, interaction e failures: zero exceções inesperadas.
+- 16 testes, tipos, lint, build e diff verdes. Build isolado sem arquivos Analytics também passou. Captura Chrome WARP/software, sem prova de fluidez em GPU física. Artefatos de Processo compactados sem mudar seus valores.
+
+**Os dois checkpoints estão prontos para revisão; publicação remota em andamento e registrada separadamente. P2 continua aberto. Parar para Mastermind ao confirmar a branch.** Nenhum merge em master, upgrade, subagente ou produção.
+
+---
+
 # Checkpoint Worker · Processo comercial · 05/10/2026
 
 Ordem do proprietário confirmou revisão dos planos de `23f6d4c`; execução sequencial iniciada em 04/10, sem subagentes. Entrega Processo Tasks 1–4: implementação **`d7fa954`**, com modelo `d7c7955` e geometria `7371f53`. [Checkpoint independente, capturas, vídeos e limites](evidence-narrative/process-business/README.md).
