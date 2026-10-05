@@ -1,10 +1,12 @@
-## Prioridade vigente · pedido de Processo comercial · 03/10/2026 (Cuiabá)
+## Prioridade vigente · composição Processo aprovada · 04/10/2026 (Cuiabá)
 
-A correção VINZ de `8bf29bd` já foi executada em `653bb2a`, checkpoint `7123019`. Novo pedido do proprietário: substituir VINZ somente em Processo pelo SVG de código, com pin GSAP à direita e três etapas de serviço à esquerda; desenho completo somente na última etapa. A identidade elétrica da hero permanece. Leia `docs/awwwards/2026-10-03-PROCESS-BUSINESS-PROPOSAL.md` e suas fontes. Estado: brainstorming/proposta para revisão, sem novo prompt de execução liberado; não repetir a correção anterior ou tratar o pedido como um spec já aprovado. Frames Rotato SDIMT já existem na branch; ver manifesto antes de presumir transparência. Codex sequencial/Antigravity, sem subagentes/21st.dev/registry/upgrade/master/produção. P2/aceite visual continuam abertos.
+A resposta “Aprovo” aprovou a composição proposta: SVG de código construído em camadas somente em Processo, três etapas comerciais à esquerda, cena pin GSAP à direita e conclusão somente dentro da última etapa; Rotato como gesto distinto no case SDIMT. Leia `docs/awwwards/2026-10-04-PROCESS-BUSINESS-DESIGN.md` como fonte vigente. Especificação escrita pronta para revisão do proprietário; plano e prompt de execução ainda não elaborados. Não pedir novamente escolha de composição ou método de execução.
+
+A correção VINZ `8bf29bd` já foi executada em `653bb2a`/checkpoint `7123019`: preservar sua fundação e não repetir o diagnóstico de 317 px. Hero, navbar, ponte e NKS permanecem. Frames Rotato existentes são RGB sem alpha: palco escuro compatível, último quadro de leitura real e cache limitado, sem cauda vazia obrigatória. `#process` deve abrir o início, sem forçar progresso 1. Codex sequencial/continuidade Antigravity, sem subagentes/21st.dev/nova busca de registry/upgrade/master/produção. P2 e aceite visual permanecem abertos. Registros abaixo são históricos e não liberam execução desta direção nova antes dos aceites escritos aplicáveis.
 
 ---
 
-## Prioridade vigente · correção de Processo · 03/10/2026 UTC
+## Histórico · correção de Processo já executada · 03/10/2026 UTC
 
 Tasks 4–7 foram entregues em `42d7f6f` (implementação `65a6e5f`). O proprietário comparou a VINZ 3D com a referência Motion e pediu correção de seu desenho. Leia `docs/awwwards/2026-10-03-PROCESS-DRAW-WORKER.md` e a revisão dirigida referenciada ali. Corrigir somente construção/arestas/cadência de Processo e sua prova visual. As faixas anteriores 0,10–0,42 / 0,38–0,62 estão supersedidas. Não repetir hero/halo/morph, ponte/vídeo SDIMT, navbar ou Tasks 1–7 por estados históricos. A gravação real da landing já foi entregue. Execução sequencial, sem subagentes/21st.dev/registry/upgrade/master/produção; P2 e expansão continuam sem aceite automático. A ordem expressa do proprietário ao Worker autoriza a correção aprovada, sem uma nova rodada de escolha artística.
 

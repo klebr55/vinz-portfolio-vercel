@@ -1,6 +1,6 @@
 # Proposta para debate · Processo como demonstração de método · 03/10/2026
 
-**Status:** brainstorming; pedido registrado, fontes arquivadas e proposta apresentada para revisão do proprietário. Não é especificação/planejamento aprovado nem prompt liberado ao Worker. O próximo passo é o aceite da composição e da relação entre etapas e desenho; depois consolidar spec e plano no fluxo já escolhido, Codex sequencial/continuidade Antigravity.
+**Status atualizado em 04/10/2026 (Cuiabá):** composição em camadas e três etapas comerciais aprovadas pelo proprietário com “Aprovo”. A [especificação escrita consolidada](2026-10-04-PROCESS-BUSINESS-DESIGN.md) é a fonte vigente, publicada para revisão do proprietário. Plano/prompt de execução ainda pendentes. O texto abaixo preserva a proposta histórica; suas expressões de composição “candidata” ou “para revisão” descrevem o momento de 03/10, não reabrem a escolha aprovada. Execução já escolhida: Codex sequencial/continuidade Antigravity.
 
 **Base atual inspecionada:** `7123019a6f7a10cfabfa44958be2c337bcc08de2`. A orientação `8bf29bd` já foi implementada em `653bb2af628354f962d12b7c1ca1088812f6772b`, com checkpoint `07dd704`/`7123019`. Não repetir a correção anterior como se a branch ainda tivesse o desenho de 317 px. Ela agora registra três viewports úteis e arestas físicas. Seu aceite artístico não foi inferido dos checks técnicos.
 
@@ -80,4 +80,4 @@ Cache/decodificação devem trabalhar por janela de frames e descartar o que sai
 
 Fontes arquivadas em [reference-sources/process-business](reference-sources/process-business/README.md). Sem alteração de produto, instalação de dependências, execução de UI ou PASS de fluidez nesta etapa. Não exige novo registry, 21st.dev, refação da hero/navbar/ponte/NKS ou repetição do diagnóstico anterior.
 
-Aguardar revisão desta composição antes de consolidar spec e plano. Nenhum prompt de implementação novo está liberado por este arquivamento. A anterior ordem VINZ de `8bf29bd` foi executada e permanece histórica; não repetir a VINZ em Processo diante do novo pedido. P2/aceite visual e expansão continuam abertos.
+Composição aprovada em 04/10; especificação consolidada no documento vigente vinculado acima. Sua revisão escrita precede o plano/prompt de execução; o arquivamento não é uma ordem de implementação. A anterior ordem VINZ de `8bf29bd` foi executada e permanece histórica; não repetir a VINZ em Processo diante do novo pedido. P2/aceite visual e expansão continuam abertos.

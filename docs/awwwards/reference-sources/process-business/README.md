@@ -1,6 +1,6 @@
 # Fontes do pedido · Processo comercial e mockup SDIMT · 03/10/2026
 
-Arquivamento das fontes do proprietário para brainstorming. **Não é especificação aprovada nem ordem de implementação.** [Pedido e proposta para debate](../../2026-10-03-PROCESS-BUSINESS-PROPOSAL.md).
+Arquivamento das fontes do proprietário. **Não é uma ordem de implementação.** A composição foi aprovada em 04/10/2026 (Cuiabá); a [especificação escrita vigente](../../2026-10-04-PROCESS-BUSINESS-DESIGN.md) está pronta para revisão do proprietário. [Pedido e proposta histórica](../../2026-10-03-PROCESS-BUSINESS-PROPOSAL.md). A análise abaixo é da fonte, não evidência de reprodução em UI.
 
 - [SVG código original](code.owner.svg): 19 paths vetoriais, viewBox 1024×1024, sem raster embutido. Ilustração isométrica em múltiplas cores/camadas. Preservar a fonte; não tratá-la como a antiga VINZ monocromática. Origem SVG Repo indicada no comentário do arquivo; URL específica/autor/licença não foram fornecidos no anexo.
 - Capturas do site antigo: [descoberta](approach-phase-1.owner.png), [desenvolvimento](approach-phase-2.owner.png), [finalização](approach-phase-3.owner.png).

@@ -1,3 +1,13 @@
+## 04/10/2026 (Cuiabá) · composição Processo aprovada e spec escrita
+
+O proprietário respondeu “Aprovo” à composição em camadas e às três etapas com foco comercial. Registrado aceite da direção apresentada: SVG de código somente em Processo, explicações à esquerda, cena pin GSAP à direita, desenho incompleto até a última etapa e Rotato como apresentação distinta no case SDIMT. Não inferir desse aceite aprovação de spec/plano que ainda não existiam.
+
+[Especificação escrita](2026-10-04-PROCESS-BUSINESS-DESIGN.md) consolidada sobre HEAD `887ad108`: copy PT/EN, grupos reais dos 19 paths, leitura/progresso, GSAP como único dono do pin, Lenis existente e Motion/Three como bindings, checkpoint no início, pausa/cold-load/fallbacks e critérios de evidência. Rotato usa os arquivos RGB existentes sobre palco escuro; leitura não termina na cauda vazia. Fontes originais preservadas; sem novo download de registry/21st.dev ou upgrade.
+
+Spec revisada pelo Mastermind e publicada para revisão do proprietário; plano e prompt executável ainda pendentes desse aceite. Codex sequencial/continuidade Antigravity permanecem selecionados. Nenhuma mudança de produto, build/UI, PASS artístico, merge em master ou promoção de produção nesta etapa. A implementação anterior `653bb2a` é fundação preservada; P2 e expansão seguem abertas. Esta entrada supersede o estado de composição pendente abaixo.
+
+---
+
 ## 03/10/2026 (Cuiabá) · pedido de Processo comercial
 
 Novo pedido explícito: SVG de código no lugar da VINZ em Processo, cena pin GSAP à direita, explicações das etapas de serviço à esquerda e conclusão do desenho reservada à última etapa. Objetivo: demonstrar método e dar segurança ao cliente. Etapas antigas recuperadas em `Approach`/mensagens e nas três capturas do proprietário. O texto antigo da última etapa repete desenvolvimento; reescrita proposta, não promessa nova já atribuída ao proprietário.

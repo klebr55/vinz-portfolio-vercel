@@ -1,16 +1,18 @@
-## Pedido vigente · Processo comercial · 03/10/2026 (Cuiabá)
+## Estado vigente · composição Processo aprovada · 04/10/2026 (Cuiabá)
 
 - [x] Recuperar três etapas antigas por capturas e `Approach`/mensagens PT/EN.
 - [x] Inspecionar HEAD `7123019` e correção já implementada `653bb2a`, sem reexecutá-la.
 - [x] Arquivar SVG de código e capturas originais com hashes.
 - [x] Analisar sequência Rotato SDIMT existente e registrar ausência de alpha/cauda final.
-- [x] Elaborar [proposta para revisão](2026-10-03-PROCESS-BUSINESS-PROPOSAL.md), sem implementar produto.
-- [ ] Proprietário revisar composição em camadas, etapas/copy e integração candidata do mockup SDIMT.
-- [ ] Consolidar spec e plano do incremento após os aceites aplicáveis, mantendo execução sequencial.
+- [x] Elaborar [proposta](2026-10-03-PROCESS-BUSINESS-PROPOSAL.md), sem implementar produto.
+- [x] Proprietário aprovar composição em camadas e três etapas com foco comercial; resposta “Aprovo”.
+- [x] Mastermind consolidar e revisar a [especificação escrita](2026-10-04-PROCESS-BUSINESS-DESIGN.md), incluindo Rotato no case SDIMT.
+- [ ] Proprietário revisar e aprovar a especificação escrita.
+- [ ] Elaborar plano e prompt executável depois do aceite do spec; proprietário revisar plano.
 - [ ] Worker implementar o incremento definido no futuro prompt, com prova de desenho incompleto antes da última etapa.
 - [ ] Mastermind revisar; P2/aceite geral/expansão seguem abertos.
 
-O pedido substitui a VINZ apenas na nova direção de Processo. A hero mantém VINZ elétrica. Os checks da correção anterior continuam histórico técnico; não autorizam novo aceite artístico nem indicam que o novo SVG já está implementado.
+Composição e método de execução não são perguntas pendentes. Codex sequencial/continuidade Antigravity já selecionados. O SVG de código substitui VINZ somente em Processo; hero, ponte, navbar e NKS preservados. Esta entrega é documental. Os checks da correção anterior continuam histórico técnico e não indicam que a nova direção já está implementada. Acesso `#process` abre o início; desenho completo somente na última etapa. Rotato RGB sem alpha exige composição sobre fundo real, leitura antes da cauda escura e cache limitado.
 
 ---
 

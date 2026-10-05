@@ -1,12 +1,12 @@
-## Pedido vigente · Processo comercial e Rotato SDIMT · 03/10/2026 (Cuiabá)
+## Direção vigente · Processo comercial aprovada · 04/10/2026 (Cuiabá)
 
-O proprietário solicitou substituir a VINZ exclusiva de Processo pela ilustração de código, fixada à direita por GSAP, enquanto as etapas do serviço são lidas à esquerda. Desenho só conclui na última etapa. A correção `8bf29bd` já foi implementada em `653bb2a`/checkpoint `7123019`; não repetir sua execução nem o antigo diagnóstico de 317 px como se descrevesse o HEAD atual.
+O proprietário respondeu “Aprovo” à composição em camadas e às três etapas comerciais. A [especificação escrita de Processo e Rotato SDIMT](2026-10-04-PROCESS-BUSINESS-DESIGN.md) consolida conteúdo PT/EN, partes reais do SVG, pin GSAP, progresso vinculado à leitura e conclusão dentro da última etapa. `#process` passa a significar início do método; pausa mantém o intermediário. A VINZ elétrica da hero, navbar, ponte e notebook NKS permanecem.
 
-[Proposta de brainstorming para revisão](2026-10-03-PROCESS-BUSINESS-PROPOSAL.md) e [fontes reais/manifesto](reference-sources/process-business/README.md). Composição em camadas e copy são propostas, ainda sem spec/plano/prompt de implementação novo aprovado. Rotato: 422 frames RGB sem alpha, 131 slots finais idênticos/escuros; integração candidata no case SDIMT, preservando ponte, hero e notebook NKS. Esta publicação apenas arquiva/anota o novo pedido. P2/aceite artístico/expansão permanecem abertos.
+**Estado:** composição aprovada; spec consolidada para revisão do proprietário; plano e prompt Worker pendentes dessa revisão. Execução Codex sequencial/continuidade Antigravity já escolhida. Esta publicação não implementa produto nem concede PASS gráfico. A correção `8bf29bd` já foi implementada em `653bb2a`/checkpoint `7123019`; preservar a fundação, sem refazer o antigo diagnóstico. [Fontes/manifesto](reference-sources/process-business/README.md): Rotato RGB sem alpha, palco escuro compatível, leitura em quadro real antes da cauda final vazia e cache limitado. P2, aceite artístico e expansão permanecem abertos. Os estados pendentes nas entradas anteriores são históricos.
 
 ---
 
-## Revisão vigente · fidelidade de Processo · 03/10/2026 UTC
+## Histórico · revisão de fidelidade já executada · 03/10/2026 UTC
 
 Inspecionados `42d7f6f`, código e gravações comparativas do proprietário. Tasks 4–7 estão entregues; **aceite visual de Processo não concedido**. A construção atual é comprimida em cerca de 317 px de scroll desktop e usa wire manual com conectores arbitrários. As faixas curtas também vinham do plano Mastermind e estão corrigidas nesta orientação. [Revisão dirigida](2026-10-03-PROCESS-DRAW-MASTER-REVIEW.md), [evidência/método](evidence-narrative/process-draw-master-review/README.md) e [próximo prompt Worker](2026-10-03-PROCESS-DRAW-WORKER.md).
 
