@@ -1,6 +1,6 @@
 # Rotato SDIMT · checkpoint Worker · 05/10/2026
 
-Plano de `23f6d4c` executado depois de [Processo comercial](../process-business/README.md), sequencialmente, sem subagentes. Branch `redesign/awwwards-repagination`. Modelo/cache local `dd19bd9`; integração local `f1bb2d0`. Este checkpoint fica pronto para revisão independente; P2 e aceite artístico continuam abertos. Publicação e equivalência das árvores serão registradas separadamente após confirmação remota.
+Plano de `23f6d4c` executado depois de [Processo comercial](../process-business/README.md), sequencialmente, sem subagentes. Branch `redesign/awwwards-repagination`. Modelo/cache local `dd19bd9`; integração local `f1bb2d0`. Este checkpoint fica pronto para revisão independente; P2 e aceite artístico continuam abertos. Publicação remota confirmada em `7100486`; [SHAs e equivalência das árvores](../../2026-10-05-PUBLICATION-CHECKPOINT.md).
 
 ## Fonte e composição
 

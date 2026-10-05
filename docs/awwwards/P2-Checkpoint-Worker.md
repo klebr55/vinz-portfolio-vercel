@@ -7,7 +7,7 @@ Rotato R1–R3 implementado depois de Processo, conforme ordem expressa dos plan
 - Cache limita ready+reservas a 5 desktop/3 mobile, concorrência 2; estimativa 93.312.000/55.987.200 bytes, sem medir memória nativa. Pausa/hidden/offscreen, late decode/reverse, rede lenta/404, reduced/noJS passaram. Matrix, interaction e failures: zero exceções inesperadas.
 - 16 testes, tipos, lint, build e diff verdes. Build isolado sem arquivos Analytics também passou. Captura Chrome WARP/software, sem prova de fluidez em GPU física. Artefatos de Processo compactados sem mudar seus valores.
 
-**Os dois checkpoints estão prontos para revisão; publicação remota em andamento e registrada separadamente. P2 continua aberto. Parar para Mastermind ao confirmar a branch.** Nenhum merge em master, upgrade, subagente ou produção.
+**Os dois checkpoints foram publicados e estão prontos para revisão Mastermind. [SHAs e equivalência](2026-10-05-PUBLICATION-CHECKPOINT.md). P2 continua aberto; parada conforme o plano.** Nenhum merge em master, upgrade, subagente ou produção.
 
 ---
 

@@ -6,7 +6,7 @@ Cache inclui reservas até resolução, prioriza último alvo e fecha bitmaps de
 
 Pin local 1,5 vp + 0,5 vp de leitura; ponte libera suas camadas com fronteiras medidas novamente no refresh. Extensão mínima opcional do runtime mede marcador estável e offset da navbar, mantendo foco no h2 real. Só SDIMT usa esta extensão. Telas baixas usam poster em fluxo; mudança de modo durante leitura reposiciona o mesmo Lenis para conservar SDIMT.
 
-R1 `dd19bd9`, R2 `f1bb2d0`, provas finais em [checkpoint Rotato](evidence-narrative/sdimt-rotato/README.md). Browser WARP/software, sem afirmar 60 fps/hardware. Build isolado sem Analytics passou; Process telemetry apenas compactada, sem alteração de valores. CLI Git/GCM não acessa credenciais Windows; elevação foi rejeitada pela política automática. Publicação usa conector GitHub e verificação de blobs/árvores, apenas branch autorizada, sem force push. Confirmar remoto em registro próprio.
+R1 `dd19bd9`, R2 `f1bb2d0`, provas finais em [checkpoint Rotato](evidence-narrative/sdimt-rotato/README.md). Browser WARP/software, sem afirmar 60 fps/hardware. Build isolado sem Analytics passou; Process telemetry apenas compactada, sem alteração de valores. CLI Git/GCM não acessa credenciais Windows; elevação foi rejeitada pela política automática. Publicação usa conector GitHub e verificação de blobs/árvores, apenas branch autorizada, sem force push. Remoto confirmado: [registro de publicação](2026-10-05-PUBLICATION-CHECKPOINT.md), frames `e060c31`, Processo `fda2e0a`, Rotato `7100486`.
 
 ---
 

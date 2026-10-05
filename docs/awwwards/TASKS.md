@@ -3,7 +3,7 @@
 - [x] R1: seleção 1–241, cache testável limitado por ready+reservas; RED/GREEN e commit local `dd19bd9`.
 - [x] R2: mídia real, poster íntegro, gesto local, handoff da ponte, checkpoint e orientação; commit local `f1bb2d0`.
 - [x] R3 checks/provas: 16 testes + tipos/lint/build/diff; produção PT/EN, input real, falhas/lifecycle e smoke. Build isolado sem Analytics aprovado.
-- [ ] R3 publicação: confirmar remoto através do GitHub Git Database; registrar SHA/equivalência antes de considerar este item concluído.
+- [x] R3 publicação: Git Database, blobs/árvores conferidos, remoto confirmado em `7100486`. [Registro de publicação](2026-10-05-PUBLICATION-CHECKPOINT.md).
 
 [Checkpoint Rotato](evidence-narrative/sdimt-rotato/README.md) independente de [Processo](evidence-narrative/process-business/README.md). Ambos executados sequencialmente por autorização do proprietário; P2/arte/produção seguem abertos. Parada para Mastermind após publicação. Não iniciar outras expansões.
 

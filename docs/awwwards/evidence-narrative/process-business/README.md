@@ -1,6 +1,6 @@
 # Processo comercial · checkpoint Worker · 05/10/2026
 
-Ordem expressa do proprietário confirmou a revisão dos planos de `23f6d4c`. Execução sequencial, sem subagentes, na branch `redesign/awwwards-repagination`. Implementação: `d7fa954` (modelo `d7c7955`, geometria `7371f53`). Este checkpoint é independente da integração Rotato seguinte. P2 e aceite artístico permanecem abertos.
+Ordem expressa do proprietário confirmou a revisão dos planos de `23f6d4c`. Execução sequencial, sem subagentes, na branch `redesign/awwwards-repagination`. Implementação: `d7fa954` (modelo `d7c7955`, geometria `7371f53`). Este checkpoint é independente da integração Rotato seguinte. P2 e aceite artístico permanecem abertos. Publicação remota independente `fda2e0a`; [SHAs e equivalência](../../2026-10-05-PUBLICATION-CHECKPOINT.md).
 
 ## Implementação e procedência
 
