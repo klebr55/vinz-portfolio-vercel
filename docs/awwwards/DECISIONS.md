@@ -1,3 +1,11 @@
+## 11/10/2026 · Acabamento dirigido pós-revisão Mastermind
+
+Ordem de 10/10 executada sequencialmente sobre 41a432f. Preparação inicial sob demanda de Processo remove dependência do primeiro contato com a seção para readiness; margem e distância mantidas, timeout honesto. Calibração de luz/laterais/acabamento conserva SVG e modelo. Diagnóstico Rotato em RTX 3070 mostrou decode integral superando muitos alvos: derivados RGBA 1200×1215 da janela existente, mantendo originais/poster e limites 5/3/2, reduzem memória estimada em 68,75%. Qualidade 95 aumenta o payload útil em 14,6%, tradeoff documentado e comparado. Scheduler preservado. NKS mantém poster até render válido e cena preparada para reverse, com guards de pausa/hidden/offscreen e timeout; câmera, layout e mídia integral intactos.
+
+[Checkpoint com medidas, dois vídeos e limites](evidence-narrative/process-rotato-polish/README.md). 17 testes e checks de produção aprovados. GPU física de desktop não comprova hardware móvel nem 60 fps; P2/arte permanecem abertos. Sem subagentes, upgrade, mudanças na hero/ponte/navbar, expansão ou produção. Estado documental anterior preservado.
+
+---
+
 ## 05/10/2026 · Integração Rotato SDIMT entregue localmente
 
 Frames atuais fornecidos já em `7c0e70c`: RGBA/26.920.318 bytes, preservados; plano antigo descrevia RGB/16.981.354 bytes. Poster é cópia exata de 241; playback 1–241, sem cauda 292–422. Janela 1000,0,1600,1620 contém todos os limites alpha>32 verificados. Sem keying/blend/remoção de marca.

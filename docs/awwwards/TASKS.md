@@ -1,3 +1,16 @@
+## Worker · acabamento Processo / Rotato / fronteira NKS · 11/10/2026
+
+- [x] Ordem de 10/10 e AGENTS atualizados lidos; delta remoto 41a432f apenas documental, trabalho alheio preservado.
+- [x] Prontidão de Processo antes da exposição, acabamento físico e falhas limitadas, sem mudar conteúdo/etapas/pin.
+- [x] Rotato diagnosticado em RTX 3070 sem/com captura; derivados RGBA próprios do SDIMT reduzem decode, mantendo 422 originais e cache 5/3, concorrência 2.
+- [x] Fronteira fria NKS reproduzida e corrigida por readiness real; poster conservado, notebook/coreografia intactos.
+- [x] 17 testes, tipos/lint/build/diff e browser de produção PT/EN; vídeos desktop/mobile, três fases e lifecycle no checkpoint.
+- [ ] Revisão Mastermind / aceite artístico / P2. Publicação autorizada nesta branch; não expandir cases/Cortes 6–7 nem promover produção.
+
+[Checkpoint e evidências](evidence-narrative/process-rotato-polish/README.md). Esta entrada supersede estados históricos divergentes abaixo, que são preservados.
+
+---
+
 ## Entrega Rotato · 05/10/2026
 
 - [x] R1: seleção 1–241, cache testável limitado por ready+reservas; RED/GREEN e commit local `dd19bd9`.

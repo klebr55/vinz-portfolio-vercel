@@ -1,3 +1,11 @@
+# Checkpoint Worker · acabamento dirigido · 11/10/2026
+
+Ordem de 10/10 executada sobre o remoto 41a432f. Processo prepara o primeiro estado antes da exposição e reforça material/luz; Rotato usa derivados RGBA de procedência verificada após medição em GPU física; NKS conserva poster até readiness real. 422 originais SDIMT, poster 241, conteúdo, hero/ponte/navbar e coreografia do notebook preservados. Analytics alheios excluídos.
+
+[Checkpoint completo, dois vídeos e comparações](evidence-narrative/process-rotato-polish/README.md). 17 testes, tipos, lint, build e diff aprovados; browser PT/EN 1440×900/390×844 com gestos reais, reversão, pausa, reduced/noJS e falhas/lifecycle dirigidos. Chrome RTX 3070, sem garantia de 60 fps ou hardware móvel. Publicação autorizada somente em redesign/awwwards-repagination. **Parar para revisão Mastermind; P2 e aceite artístico continuam abertos.**
+
+---
+
 # Checkpoint Worker · Rotato SDIMT · 05/10/2026
 
 Rotato R1–R3 implementado depois de Processo, conforme ordem expressa dos planos de `23f6d4c`. Modelo/cache local `dd19bd9`, integração local **`f1bb2d0`**. [Checkpoint Rotato, fontes, vídeos e medições](evidence-narrative/sdimt-rotato/README.md); [checkpoint Processo independente](evidence-narrative/process-business/README.md).
