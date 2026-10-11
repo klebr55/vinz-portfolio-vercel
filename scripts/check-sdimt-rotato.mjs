@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import { openBrowser, sleep } from './native-browser.mjs';
 const output=resolve('docs/awwwards/evidence-narrative/sdimt-rotato');
 const mode=process.argv[2]||'probe';
+process.env.CHROME_RENDERER ??= 'software';
 const b=await openBrowser(output);
 const report={mode,method:'Native Chrome CDP, ANGLE/D3D11 WARP software renderer. Actual Canvas paints and cache reservations. No physical GPU performance claim.',samples:[],checks:{},errors:b.errors};
 function instrument(){
@@ -11,7 +12,7 @@ function instrument(){
   window.__rotato={requests:[],paints:[],live:0,decoding:0,peakLive:0,peakDecode:0,delay:0};
   const fetchOriginal=window.fetch;
   window.fetch=async(...args)=>{
-    const match=String(args[0]).match(/motion-sdimt\/frame_(\d+)\.webp/);
+    const match=String(args[0]).match(/motion-(?:sdimt|runtime)\/frame_(\d+)\.webp/);
     if(!match)return fetchOriginal(...args);
     const index=Number(match[1]),entry={index,start:performance.now()};window.__rotato.requests.push(entry);
     try{const response=await fetchOriginal(...args);entry.status=response.status;const blob=response.blob.bind(response);response.blob=async()=>{const value=await blob();blobs.set(value,index);return value;};return response;}
@@ -98,7 +99,7 @@ try{
     await b.send('Target.closeTarget',{targetId:tab.targetId});await b.send('Page.bringToFront');await sleep(700);const visible=await sample('visible-return');assert.equal(visible.stats.displayed,visible.stats.target);
     await b.click('a[href="#nks"]');await sleep(1500);const away=await sample('offscreen');await sleep(700);assert.equal((await state()).probe.requests.length,away.probe.requests.length);await b.shot('nks-smoke.png');
     await b.send('Network.setCacheDisabled',{cacheDisabled:true});
-    await b.send('Fetch.enable',{patterns:[{urlPattern:'*motion-sdimt/frame_*.webp',requestStage:'Request'}]});let failureMode='slow';
+    await b.send('Fetch.enable',{patterns:[{urlPattern:'*motion-*/frame_*.webp',requestStage:'Request'}]});let failureMode='slow';
     b.on('Fetch.requestPaused',async({requestId})=>{try{if(failureMode==='slow'){await sleep(2200);await b.send('Fetch.continueRequest',{requestId});}else await b.send('Fetch.fulfillRequest',{requestId,responseCode:404,body:''});}catch(error){if(/Invalid InterceptionId/.test(error.message))report.checks.cancelledInterceptions=(report.checks.cancelledInterceptions||0)+1;else b.errors.push(error.message);}});
     await visit();const cold=await sample('slow-cold-poster');assert.equal(cold.presented,false);assert.equal(cold.poster,true);await b.shot('slow-cold-poster.png');await sleep(2600);assert.equal((await sample('slow-ready')).stats.displayed,241);
     failureMode='404';await at(.4);await sleep(800);const failed=await sample('404-retains-frame');assert.equal(failed.stats.displayed,241);assert.ok(failed.stats.failures>0);await b.shot('404-retains-frame.png');

@@ -12,12 +12,16 @@ import styles from '../story-prototype.module.css';
 
 const StoryScene = dynamic(() => import('../StoryScene'), { ssr: false });
 
-export function NksChapter({ locale, sample, reducedMotion, caseData }: { locale: PrototypeLocale; sample: MutableRefObject<StorySample>; reducedMotion: boolean; caseData: EditorialCase }) {
+export function NksChapter({ locale, sample, reducedMotion, paused, caseData }: { locale: PrototypeLocale; sample: MutableRefObject<StorySample>; reducedMotion: boolean; paused: boolean; caseData: EditorialCase }) {
   const frameCanvas = useRef<HTMLCanvasElement>(null);
   const invalidateScene = useRef<(() => void) | null>(null);
   const progress = useRef(0);
   const [available, setAvailable] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [prepared, setPrepared] = useState(false);
+  const [sceneReady, setSceneReady] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const onReady = useCallback(() => setSceneReady(true), []);
   const onUnavailable = useCallback(() => setAvailable(false), []);
   const frames = useNksFrames(frameCanvas, invalidateScene);
   const requestFrame = frames.request;
@@ -25,21 +29,32 @@ export function NksChapter({ locale, sample, reducedMotion, caseData }: { locale
   useEffect(() => {
     if (reducedMotion) return;
     const canvas = document.createElement('canvas');
-    const context = canvas.getContext('webgl2') || canvas.getContext('webgl');
-    setAvailable(Boolean(context));
-    context?.getExtension('WEBGL_lose_context')?.loseContext();
+    try {
+      const context = canvas.getContext('webgl2');
+      setAvailable(Boolean(context));
+      context?.getExtension('WEBGL_lose_context')?.loseContext();
+    } catch { setAvailable(false); }
   }, [reducedMotion]);
 
   useEffect(() => {
     const section = document.getElementById('nks');
     if (!section) return;
-    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { rootMargin: '30% 0px' });
-    observer.observe(section);
-    return () => observer.disconnect();
+    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting));
+    const prepare = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setPrepared(true); }, { rootMargin: '30% 0px' });
+    observer.observe(section.querySelector('[class*=nksSticky]')!); prepare.observe(section);
+    const visibility = () => setHidden(document.hidden);
+    visibility(); document.addEventListener('visibilitychange', visibility);
+    return () => { observer.disconnect(); prepare.disconnect(); document.removeEventListener('visibilitychange', visibility); };
   }, []);
 
   useEffect(() => {
-    if (!visible || reducedMotion) return;
+    if (!prepared || !available || sceneReady || reducedMotion || hidden) return;
+    const timer = window.setTimeout(onUnavailable, 15000);
+    return () => clearTimeout(timer);
+  }, [prepared, available, sceneReady, reducedMotion, hidden, onUnavailable]);
+
+  useEffect(() => {
+    if (!visible || reducedMotion || hidden || paused) return;
     let frame = 0;
     const update = () => {
       cancelAnimationFrame(frame);
@@ -53,14 +68,14 @@ export function NksChapter({ locale, sample, reducedMotion, caseData }: { locale
     update();
     window.addEventListener('scroll', update, { passive: true });
     return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', update); };
-  }, [requestFrame, reducedMotion, sample, visible]);
+  }, [requestFrame, reducedMotion, sample, visible, hidden, paused]);
 
   return (
-    <section id="nks" data-story-chapter="nks" className={styles.nksChapter} aria-labelledby="nks-title">
+    <section id="nks" data-story-chapter="nks" data-scene-ready={available && sceneReady} className={styles.nksChapter} aria-labelledby="nks-title">
       <div className={styles.nksSticky} aria-hidden="true">
         <div className={styles.nksBackdrop} />
-        {(!available || reducedMotion || !visible) && <Image src={caseData.media.poster} alt="" fill sizes="100vw" unoptimized />}
-        {available && !reducedMotion && visible && <StoryScene style="ember" progress={progress} invalidateScene={invalidateScene} onUnavailable={onUnavailable} frameCanvas={frameCanvas.current} paintedFrame={frames.painted} mediaReady={frames.ready && !frames.failed} />}
+        {(!available || reducedMotion || !sceneReady) && <Image src={caseData.media.poster} alt="" fill sizes="100vw" unoptimized />}
+        {available && !reducedMotion && prepared && <StoryScene style="ember" progress={progress} invalidateScene={invalidateScene} onUnavailable={onUnavailable} onReady={onReady} active={(visible || !sceneReady) && !hidden && !paused} frameCanvas={frameCanvas.current} paintedFrame={frames.painted} mediaReady={frames.ready && !frames.failed} />}
         <canvas ref={frameCanvas} width={1600} height={900} className={styles.frameBuffer} />
       </div>
       <div className={styles.nksReading}>

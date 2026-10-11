@@ -5,14 +5,14 @@ import { useEffect, useRef } from 'react';
 import type { MotionValue } from 'motion';
 import type { PrototypeLocale } from '../prototype-copy';
 import { createSdimtFrameCache } from './sdimt-frame-cache';
-import { resolveSdimtFrame, sdimtFramePath, SDIMT_CACHE_LIMITS, SDIMT_FRAME_BYTES } from './sdimt-sequence-model';
+import { resolveSdimtFrame, sdimtRuntimeFramePath, SDIMT_CACHE_LIMITS, SDIMT_RUNTIME_FRAME_BYTES } from './sdimt-sequence-model';
 import styles from '../story-prototype.module.css';
 
 type Bitmap = ImageBitmap | HTMLImageElement;
 type Props = { progress: MotionValue<number>; active: boolean; paused: boolean; reducedMotion: boolean; locale: PrototypeLocale };
 
 async function decode(index: number, signal: AbortSignal): Promise<Bitmap> {
-  const response = await fetch(sdimtFramePath(index), { signal });
+  const response = await fetch(sdimtRuntimeFramePath(index), { signal });
   if (!response.ok) throw new Error(`SDIMT frame ${response.status}`);
   const blob = await response.blob();
   if (signal.aborted) throw new DOMException('Aborted', 'AbortError');
@@ -48,11 +48,11 @@ export function SdimtRotatoMedia({ progress, active, paused, reducedMotion }: Pr
     };
     resize();
     const scheduler = createSdimtFrameCache<Bitmap>({ limits: innerWidth <= 760 ? SDIMT_CACHE_LIMITS.mobile : SDIMT_CACHE_LIMITS.desktop,
-      bytesPerFrame: SDIMT_FRAME_BYTES, load: decode,
+      bytesPerFrame: SDIMT_RUNTIME_FRAME_BYTES, load: decode,
       dispose: bitmap => { if ('close' in bitmap) bitmap.close(); else bitmap.src = ''; },
       paint: bitmap => {
         context.clearRect(0, 0, surface.width, surface.height);
-        context.drawImage(bitmap, 1000, 0, 1600, 1620, 0, 0, surface.width, surface.height); element.dataset.presented = 'true';
+        context.drawImage(bitmap, 0, 0, bitmap.width, bitmap.height, 0, 0, surface.width, surface.height); element.dataset.presented = 'true';
       },
     });
     cache.current = scheduler; scheduler.setActive(allowed.current && !document.hidden);

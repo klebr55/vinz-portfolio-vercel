@@ -17,6 +17,8 @@ type SceneProps = {
   progress: MutableRefObject<number>;
   invalidateScene: MutableRefObject<(() => void) | null>;
   onUnavailable: () => void;
+  onReady?: () => void;
+  active?: boolean;
   frameCanvas: HTMLCanvasElement | null;
   paintedFrame: MutableRefObject<number>;
   mediaReady: boolean;
@@ -38,11 +40,15 @@ class SceneBoundary extends Component<{ children: ReactNode; onUnavailable: () =
   }
 }
 
-function Laptop({ style, progress, invalidateScene, onUnavailable, frameCanvas, paintedFrame, mediaReady }: SceneProps) {
+const readyNoop = () => {};
+function Laptop({ style, progress, invalidateScene, onUnavailable, onReady = readyNoop, active = true, frameCanvas, paintedFrame, mediaReady }: SceneProps) {
   const { scene } = useGLTF(MODEL_PATH);
   const source = useTexture(NKS_PATH);
   const assembly = useRef<Group>(null);
   const lastTextureFrame = useRef(-1);
+  const delivered = useRef(false);
+  const readinessFrame = useRef(0);
+  const rendering = useRef(active); rendering.current = active;
   const { camera, gl, invalidate, size } = useThree();
 
   const asset = useMemo(() => {
@@ -102,16 +108,25 @@ function Laptop({ style, progress, invalidateScene, onUnavailable, frameCanvas, 
   }, [scene, source, frameCanvas, paintedFrame]);
 
   useEffect(() => {
-    invalidateScene.current = invalidate;
+    const render = () => { if (rendering.current && !document.hidden) invalidate(); };
+    invalidateScene.current = render;
+    asset.screenMaterial.opacity = 0;
+    const screen = asset.model.getObjectByName('NKS_screen_media') as Mesh;
+    screen.onAfterRender = () => {
+      if (!rendering.current || delivered.current) return;
+      delivered.current = true;
+      readinessFrame.current = requestAnimationFrame(onReady);
+    };
     const canvas = gl.domElement;
     const handleLost = (event: Event) => {
       event.preventDefault();
       onUnavailable();
     };
     canvas.addEventListener('webglcontextlost', handleLost);
-    invalidate();
+    render();
     return () => {
-      if (invalidateScene.current === invalidate) invalidateScene.current = null;
+      cancelAnimationFrame(readinessFrame.current);
+      if (invalidateScene.current === render) invalidateScene.current = null;
       canvas.removeEventListener('webglcontextlost', handleLost);
       asset.frameMaterial.dispose();
       asset.screenShellMaterial.dispose();
@@ -119,9 +134,13 @@ function Laptop({ style, progress, invalidateScene, onUnavailable, frameCanvas, 
       asset.screenTexture.dispose();
       asset.screenGeometry.dispose();
     };
-  }, [asset, gl, invalidate, invalidateScene, onUnavailable]);
+  }, [asset, gl, invalidate, invalidateScene, onUnavailable, onReady]);
+
+  useEffect(() => { if (active && !document.hidden) invalidate(); }, [active, invalidate]);
 
   useFrame(() => {
+    if (!rendering.current || document.hidden) return;
+    asset.screenMaterial.opacity = 1;
     if (mediaReady && paintedFrame.current !== lastTextureFrame.current) {
       asset.screenTexture.needsUpdate = true;
       lastTextureFrame.current = paintedFrame.current;

@@ -1,0 +1,45 @@
+import assert from 'node:assert/strict';
+import { readFileSync, writeFileSync } from 'node:fs';
+import sharp from 'sharp';
+import { openBrowser, sleep } from './native-browser.mjs';
+const output='docs/awwwards/evidence-narrative/process-rotato-polish';
+const b=await openBrowser(output),report={checks:{},errors:b.errors};
+const source=readFileSync('scripts/check-process-rotato-polish.mjs','utf8');
+const instrument=source.slice(source.indexOf('function instrument(){'),source.indexOf("await b.send('Page.addScript"));
+await b.send('Page.addScriptToEvaluateOnNewDocument',{source:`(()=>{${instrument}\ninstrument();})()`});
+const visit=hash=>b.visit(`http://localhost:3004/pt-br/awwwards-preview/ember${hash}`);
+const move=async y=>{await b.send('Input.dispatchMouseEvent',{type:'mouseWheel',x:180,y:200,deltaX:0,deltaY:1});await b.evaluate(`window.__lenis.scrollTo(${y},{immediate:true,force:true})`);await sleep(450);};
+try{
+ await b.viewport(1440,900);await visit('#sdimt');await b.until(`window.__mediaState()?.stats?.displayed===241`);await sleep(600);
+ const clip=await b.evaluate(`(()=>{const r=document.querySelector('[class*=sdimtRotatoMedia]').getBoundingClientRect();return{x:r.x+scrollX,y:r.y+scrollY,width:r.width,height:r.height,scale:1}})()`);
+ const runtime=Buffer.from((await b.send('Page.captureScreenshot',{format:'png',clip})).data,'base64');writeFileSync(`${output}/rotato-runtime-detail.png`,runtime);
+ await b.evaluate(`(async()=>{const image=new Image();image.src='/awwwards/sdimt/motion-sdimt/frame_000241.webp';await image.decode();const c=document.querySelector('[class*=sdimtRotatoCanvas]'),g=c.getContext('2d');g.clearRect(0,0,c.width,c.height);g.drawImage(image,1000,0,1600,1620,0,0,c.width,c.height);image.src='';})()`);
+ const original=Buffer.from((await b.send('Page.captureScreenshot',{format:'png',clip})).data,'base64');writeFileSync(`${output}/rotato-original-detail.png`,original);
+ const [a,c]=await Promise.all([sharp(original).removeAlpha().raw().toBuffer(),sharp(runtime).removeAlpha().raw().toBuffer()]);
+ let sum=0;for(let i=0;i<a.length;i++)sum+=(a[i]-c[i])**2;
+ report.sharpness={rmse:Math.sqrt(sum/a.length),size:[clip.width,clip.height],method:'Actual browser renders of original crop and derived frame 241 at identical canvas and CSS size.'};
+ assert.ok((await sharp(runtime).stats()).channels[0].stdev>20,'comparison must contain the phone, not a blank region');
+ const stage=await b.evaluate(`document.querySelector('[class*=sdimtRotatoStage]').getBoundingClientRect().top+scrollY-Math.max(100,document.querySelector('header').getBoundingClientRect().bottom+20)`);
+ await move(stage+600);await b.until(`window.__mediaState().stats.displayed===window.__mediaState().stats.target`);
+ const tab=await b.send('Target.createTarget',{url:'about:blank'});await b.send('Target.activateTarget',{targetId:tab.targetId});await sleep(300);
+ const hidden=await b.evaluate('({state:window.__mediaState(),loads:window.__polish.loads.length})');await sleep(500);assert.equal(await b.evaluate('window.__polish.loads.length'),hidden.loads);
+ await b.send('Target.closeTarget',{targetId:tab.targetId});await b.send('Page.bringToFront');await sleep(500);report.checks.rotatoHidden=true;
+ await b.send('Fetch.enable',{patterns:[{urlPattern:'*motion-runtime/frame_*.webp',requestStage:'Request'}]});
+ b.on('Fetch.requestPaused',async({requestId})=>{try{await b.send('Fetch.fulfillRequest',{requestId,responseCode:404,body:''});}catch(error){if(!/Invalid InterceptionId/.test(error.message))b.errors.push(error.message);}});
+ const previous=await b.evaluate('window.__mediaState().stats.displayed');await move(stage+900);await sleep(600);assert.equal(await b.evaluate('window.__mediaState().stats.displayed'),previous);report.checks.failedFrameRetainsPrevious=true;
+ await b.send('Fetch.disable');
+ await visit('#nks');await b.until(`document.querySelector('#nks').dataset.sceneReady==='true'`);
+ await b.evaluate(`window.__nksDraws=0;for(const T of [WebGLRenderingContext,WebGL2RenderingContext])for(const name of ['drawArrays','drawElements']){const original=T.prototype[name];T.prototype[name]=function(...args){if(this.canvas.closest('#nks'))window.__nksDraws++;return original.apply(this,args)}}`);
+ const nksTop=await b.evaluate(`document.querySelector('#nks').getBoundingClientRect().top+scrollY`);await move(nksTop+200);
+ await b.click('header button[aria-pressed]');await sleep(200);const frozen=await b.evaluate(`({draws:window.__nksDraws,frame:document.querySelector('#nks [class*=frameBuffer]').dataset.frame})`);await move(nksTop+400);await sleep(300);assert.deepEqual(await b.evaluate(`({draws:window.__nksDraws,frame:document.querySelector('#nks [class*=frameBuffer]').dataset.frame})`),frozen);await b.click('header button[aria-pressed]');await sleep(500);assert.ok(await b.evaluate('window.__nksDraws')>frozen.draws);report.checks.nksPauseResume=true;
+ const nksTab=await b.send('Target.createTarget',{url:'about:blank'});await b.send('Target.activateTarget',{targetId:nksTab.targetId});await sleep(300);const hiddenDraws=await b.evaluate('window.__nksDraws');await sleep(500);assert.equal(await b.evaluate('window.__nksDraws'),hiddenDraws);report.checks.nksHidden=true;await b.send('Target.closeTarget',{targetId:nksTab.targetId});await b.send('Page.bringToFront');await sleep(400);
+ const away=await b.evaluate(`document.querySelector('#process').getBoundingClientRect().top+scrollY`);await move(away);const count=await b.evaluate('window.__nksDraws');await sleep(500);assert.equal(await b.evaluate('window.__nksDraws'),count);report.checks.nksOffscreen=true;
+ await b.evaluate(`document.querySelector('#nks canvas:not([class*=frameBuffer])').getContext('webgl2').getExtension('WEBGL_lose_context').loseContext()`);await sleep(400);assert.equal(await b.evaluate(`!!document.querySelector('#nks [class*=nksSticky]>img')`),true);report.checks.nksContextLoss=true;
+ await b.send('Fetch.enable',{patterns:[{urlPattern:'*awwwards/process/code.svg',requestStage:'Request'}]});
+ let policy='slow';b.on('Fetch.requestPaused',async({requestId})=>{try{if(policy==='hang')return;if(policy==='slow'){await sleep(3500);await b.send('Fetch.continueRequest',{requestId});}else await b.send('Fetch.fulfillRequest',{requestId,responseCode:404,body:''});}catch(error){if(!/Invalid InterceptionId/.test(error.message))b.errors.push(error.message);}});
+ await b.send('Network.setCacheDisabled',{cacheDisabled:true});await visit('#process');assert.equal(await b.evaluate(`!!document.querySelector('#process [class*=processWaiting]')&&document.querySelector('#process img').hidden`),true);await b.until(`document.querySelector('#process [class*=processCanvas]')?.style.opacity==='1'`);report.checks.processSlow=true;
+ policy='404';await visit('#process');await sleep(400);assert.equal(await b.evaluate(`!document.querySelector('#process img').hidden&&document.querySelectorAll('#process article').length===3`),true);report.checks.processFailedSvg=true;
+ policy='hang';const timeoutStart=Date.now();await visit('#process');await b.until(`document.querySelector('#process').dataset.static==='true'&&!document.querySelector('#process img').hidden`,18000);report.checks.processTimeoutMs=Date.now()-timeoutStart;assert.equal(await b.evaluate(`document.querySelectorAll('#process article').length`),3);await b.send('Fetch.disable');
+ report.pass=true;console.log('Lifecycle PASS',report.sharpness,report.checks);
+}catch(error){report.pass=false;report.failure=error.stack;process.exitCode=1;console.error(error.stack);}
+finally{writeFileSync(`${output}/lifecycle.json`,JSON.stringify(report));b.close();}

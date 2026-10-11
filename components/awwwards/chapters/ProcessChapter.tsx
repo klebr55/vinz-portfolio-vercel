@@ -33,12 +33,20 @@ export function ProcessChapter({ locale, paused, reducedMotion, refreshRuntime }
   const fail = useCallback(() => setUnavailable(true), []);
   const ready = useCallback(() => setSceneReady(true), []);
   const active = exposed && !hidden && !paused && !reducedMotion && !unavailable;
+  // One correct demand render prepares geometry, environment and shaders before exposure.
+  const preparing = initialized && !sceneReady && !hidden && !paused && !reducedMotion && !unavailable;
   const copy = processContent[locale];
   applying.current = active;
 
   useEffect(() => {
     if (active) progress.set(target.current);
   }, [active, progress]);
+
+  useEffect(() => {
+    if (!preparing) return;
+    const timer = window.setTimeout(fail, 15000);
+    return () => clearTimeout(timer);
+  }, [preparing, fail]);
 
   useEffect(() => {
     const section = root.current;
@@ -107,7 +115,7 @@ export function ProcessChapter({ locale, paused, reducedMotion, refreshRuntime }
         <Image className={styles.processFallback} src="/awwwards/process/code-static.png" alt="" fill unoptimized hidden={!fallback} />
         <noscript><Image className={styles.processFallback} src="/awwwards/process/code-static.png" alt="" fill unoptimized /></noscript>
         {!fallback && !sceneReady && <span className={styles.processWaiting}>{locale === 'pt-br' ? 'Preparando o desenho…' : 'Preparing the drawing…'}</span>}
-        {initialized && !fallback && <div className={styles.processCanvas} style={{ opacity: sceneReady ? 1 : 0 }}><SceneBoundary onUnavailable={fail}><Scene progress={progress} active={active} onUnavailable={fail} onReady={ready} /></SceneBoundary></div>}
+        {initialized && !fallback && <div className={styles.processCanvas} style={{ opacity: sceneReady ? 1 : 0 }}><SceneBoundary onUnavailable={fail}><Scene progress={progress} active={active || preparing} onUnavailable={fail} onReady={ready} /></SceneBoundary></div>}
       </div></div>
     </div>
   </section>;

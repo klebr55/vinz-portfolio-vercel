@@ -9,6 +9,7 @@ const output=resolve(option('--output','docs/awwwards/evidence-narrative/process
 const mode=option('--mode','matrix');
 const sceneChunk=readdirSync('.next/static/chunks').find(file=>file.endsWith('.js')&&readFileSync(join('.next/static/chunks',file),'utf8').includes('/awwwards/process/code.svg'));
 if(!sceneChunk)throw Error('Process production chunk missing');
+process.env.CHROME_RENDERER ??= 'software';
 const b=await openBrowser(output);
 const report={origin,mode,method:'Native Chrome CDP; software WebGL via ANGLE/D3D11 WARP; trusted wheel/key/touch. No physical GPU fluency claim.',samples:[],checks:{},errors:b.errors};
 function instrument(){

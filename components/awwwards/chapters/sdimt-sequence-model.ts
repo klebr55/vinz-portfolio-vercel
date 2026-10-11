@@ -1,6 +1,7 @@
 export type FrameCacheLimits = { maxEntries: number; maxDecodedBytes: number; concurrency: number };
 export const SDIMT_FINAL_FRAME = 241;
 export const SDIMT_FRAME_BYTES = 2880 * 1620 * 4;
+export const SDIMT_RUNTIME_FRAME_BYTES = 1200 * 1215 * 4;
 export const SDIMT_CACHE_LIMITS = {
   desktop: { maxEntries: 5, maxDecodedBytes: 96 * 1024 * 1024, concurrency: 2 },
   mobile: { maxEntries: 3, maxDecodedBytes: 64 * 1024 * 1024, concurrency: 2 },
@@ -16,4 +17,8 @@ export function clampSdimtFrame(index: number): number {
 
 export function sdimtFramePath(index: number): string {
   return `/awwwards/sdimt/motion-sdimt/frame_${String(clampSdimtFrame(index)).padStart(6, '0')}.webp`;
+}
+
+export function sdimtRuntimeFramePath(index: number): string {
+  return `/awwwards/sdimt/motion-runtime/frame_${String(clampSdimtFrame(index)).padStart(6, '0')}.webp`;
 }

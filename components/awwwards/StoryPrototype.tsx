@@ -194,7 +194,7 @@ export default function StoryPrototype({ locale, copy }: Props) {
 
       <SdimtChapter locale={locale} sample={runtime.sample} reducedMotion={reducedMotion} paused={motionPaused} refreshRuntime={refreshRuntime} caseData={sdimt} />
       </div>
-      <NksChapter locale={locale} sample={runtime.sample} reducedMotion={reducedMotion} caseData={nks} />
+      <NksChapter locale={locale} sample={runtime.sample} reducedMotion={reducedMotion} paused={motionPaused} caseData={nks} />
       {cases.filter((item) => !['sdimt', 'nks'].includes(item.slug)).map((item, index) => <FutureCase key={item.slug} caseData={item} locale={locale} index={index + 3} />)}
 
       <section id="about" data-story-chapter="about" className={styles.closingSection}><p className={styles.caseEyebrow}>KV / {locale === 'pt-br' ? 'Pessoa' : 'Person'}</p><h2 data-story-read tabIndex={-1}>{locale === 'pt-br' ? 'Sobre' : 'About'}</h2><p>{c.about}</p></section>

@@ -6,7 +6,8 @@ export const sleep = ms => new Promise(r => setTimeout(r, ms));
 export async function openBrowser(output, port=9471) {
  output=resolve(output);mkdirSync(output,{recursive:true});
  const temp=mkdtempSync(join(tmpdir(),'business-check-'));
- const browser=spawn(process.env.CHROME_PATH || 'F:/Program Files/Google/Chrome/Application/chrome.exe',['--headless=new','--no-first-run','--disable-extensions','--use-gl=angle','--use-angle=d3d11-warp','--disable-gpu-sandbox','--no-sandbox','--disable-features=RendererCodeIntegrity,NetworkServiceSandbox','--enable-unsafe-swiftshader','--remote-allow-origins=*',`--remote-debugging-port=${port}`,`--user-data-dir=${temp}`,'about:blank'],{stdio:['ignore','ignore','pipe'],windowsHide:true});
+ const gpuFlags=process.env.CHROME_RENDERER==='software'?['--use-gl=angle','--use-angle=d3d11-warp','--enable-unsafe-swiftshader']:[];
+ const browser=spawn(process.env.CHROME_PATH || 'F:/Program Files/Google/Chrome/Application/chrome.exe',['--headless=new','--no-first-run','--disable-extensions',...gpuFlags,'--disable-gpu-sandbox','--no-sandbox','--disable-features=RendererCodeIntegrity,NetworkServiceSandbox','--remote-allow-origins=*',`--remote-debugging-port=${port}`,`--user-data-dir=${temp}`,'about:blank'],{stdio:['ignore','ignore','pipe'],windowsHide:true});
  browser.stderr.on('data', data => { if (process.env.DEBUG_BROWSER) console.error(String(data)); });
  let endpoint,ws,id=0,recording;
  const calls=new Map(),errors=[],requests=[],events=new Map();
