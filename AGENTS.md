@@ -1,4 +1,12 @@
-## Prioridade vigente · spec Processo revisada, planos preparados · 04/10/2026 (Cuiabá)
+## Prioridade vigente · revisão corretiva pós-a19b237 · 10/10/2026 (Cuiabá)
+
+Processo e Rotato SDIMT foram implementados e publicados em `a19b237`; os planos de 04/10 estão executados. A próxima ordem é `docs/awwwards/2026-10-10-PROCESS-ROTATO-POLISH-WORKER.md`: entrada/acabamento de Processo, diagnóstico e correção demonstrada de fluidez do Rotato e costura local SDIMT → NKS. Ao receber a ordem do proprietário para executar esse prompt, prossiga no escopo delimitado e publique somente nesta branch. Não repetir escolhas, spec ou tarefas concluídas. Codex sequencial/continuidade Antigravity, sem subagentes/21st.dev/registry/upgrade/master/produção. P2, aceite artístico, expansão e Cortes 6–7 continuam abertos.
+
+Os frames atuais publicados em `e060c31` têm alpha: a descrição antiga “RGB sem alpha” abaixo e nos documentos de 04/10 está supersedida. Preservar os 422 originais; player 1–241 e poster 241. As entradas abaixo e o topo antigo de `P2-MASTER-REVIEW.md` são históricos quando divergirem deste estado. Fonte atual: os checkpoints `evidence-narrative/process-business/README.md` e `evidence-narrative/sdimt-rotato/README.md`.
+
+---
+
+## Histórico · spec Processo revisada, planos preparados · 04/10/2026 (Cuiabá)
 
 A resposta “Aprovo” aprovou a composição; “Revisado” confirmou a revisão da especificação escrita. Leia `docs/awwwards/2026-10-04-PROCESS-BUSINESS-DESIGN.md`, `2026-10-04-PROCESS-BUSINESS-IMPLEMENTATION-PLAN.md` e `2026-10-04-SDIMT-ROTATO-IMPLEMENTATION-PLAN.md`, todos em `docs/awwwards/`. Prompt: `2026-10-04-PROCESS-BUSINESS-WORKER.md`. Planos preparados para revisão do proprietário, sem produto implementado. Quando ele enviar a ordem de execução após ler os planos, registrar essa confirmação e executar ambos sequencialmente sem pedir nova aprovação por status antigo. Não repetir escolha de composição, spec ou método de execução.
 
